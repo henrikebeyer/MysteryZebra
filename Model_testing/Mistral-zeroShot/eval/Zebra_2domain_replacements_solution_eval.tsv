@@ -1,0 +1,562 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Zebra_domain_replacements_0	"Solving this puzzle step by step:
+
+1. Let's assign variables for each city, color, job, cigar, and pet. For example, let B = berlin, N = nizza, M = marseilles, L = london, C = colone. Let R, G, I, Y, B_c for colors, A for architect, D for dancer, SW for social-worker, PM for project-manager, E for electrician, Dg for dog, F for fox, Z for zebra, H for horse, S for snails.
+
+2. From the given clues, we can start filling in the table:
+
+|   | B | N | M | L | C |
+|---|---|---|---|---|---|
+| R |   |   |   |   |   |
+| G |   |   |   |   |   |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+3. From clue 9, the person traveling to london is on the far left, so L is assigned to the first column.
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R |   |   |   |   |   |
+| G |   |   |   |   |   |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+4. From clue 14, the person traveling to london is to the left or right of the person who likes blue. Since we already know the person traveling to london is in the first column, the person who likes blue must be in the second column. So, let's assign B for blue.
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R |   |   |   | B |   |
+| G |   |   |   |   |   |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+5. From clue 1, the person traveling to berlin is the person who likes red. So, let's assign R to the second column.
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R | L |   |   | B |   |
+| G |   |   |   |   |   |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+6. From clue 13, the person traveling to colone is the parliaments-smoker. Since we already know the cities, we can assign C to the fifth column.
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R | L |   |   | B |   |
+| G |   |   |   |   |   |
+| I |   |   |   |   | C |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+7. From clue 10, the chesterfields-smoker is on the left or right of the owner of the fox. Since we already know the cities and cigars, the owner of the fox must be in the third or fourth column. Let's assume the fox owner is in the third column (F).
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R | L |   | F | B |   |
+| G |   |   |   |   | C |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield |   |   |   |
+| Pet|         |           |            |         |           |
+
+8. From clue 11, the kools-smoker is to the left or right of the owner of the horse. Since we already know the cities, cigars, and the fox owner, the owner of the horse must be in the fourth or fifth column. Let's assume the horse owner is in the fourth column (H).
+
+|   | L | N | M | B | C |
+|---|---|---|---|---|---|
+| R | L |   | F | B |   |
+| G |   |   |   | H | C |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         |           |            |         |           |
+
+9. From clue 7, the kools-smoker is the person who likes yellow. So, let's assign Y to the fourth column.
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L |   | F | Y |   |
+| G |   |   |   | H | C |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         |           |            |         |           |
+
+10. From clue 3, the architect is the person who likes green. Since we already know the cities, cigars, and the positions of red, yellow, and blue, the architect must be in the first column (G).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L |   | F | Y |   |
+| G | A |   |   | H | C |
+| I |   |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         |           |            |         |           |
+
+11. From clue 6, the old-gold-smoker is the owner of the snails. Since we already know the cities, cigars, and the positions of red, yellow, green, and blue, the snails owner must be in the second column (I).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | F | Y |   |
+| G | A |   |   | H | C |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+12. From clue 12, the lucky-strike-smoker is the project-manager. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, and the fox, the project-manager must be in the fifth column (PM).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | F | Y | PM |
+| G | A |   |   | H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+13. From clue 4, the person traveling to marseilles is the dancer. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, and the project-manager, the dancer must be in the third column (D).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | D | Y | PM |
+| G | A |   |   | H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+14. From clue 5, the person who likes green is to the right of the person who likes ivory. Since we already know the cities, cigars, and the positions of red, yellow, blue, snails, the project-manager, the dancer, and the fox, the person who likes ivory must be in the second column (I).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | D | Y | PM |
+| G | A | I |   | H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+15. From clue 8, the social-worker is in the middle. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, the project-manager, the dancer, the fox, and the ivory-liker, the social-worker must be in the fourth column (SW).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | D | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   |   |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+16. From clue 11, the kools-smoker is to the left or right of the owner of the horse. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, the project-manager, the dancer, the social-worker, the ivory-liker, and the fox, the horse owner must be in the fifth or sixth column. Let's assume the horse owner is in the sixth column (H).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | D | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+17. From clue 10, the chesterfields-smoker is on the left or right of the owner of the fox. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, the project-manager, the dancer, the social-worker, the ivory-liker, the horse owner, and the horse, the fox owner must be in the third or fourth column. Let's assume the fox owner is in the third column (F).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | I | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         |           |
+
+18. From clue 2, the person traveling to nizza is the owner of the dog. Since we already know the cities, cigars, and the positions of red, yellow, green, blue, snails, the project-manager, the dancer, the social-worker, the ivory-liker, the horse owner, the fox owner, and the horse, the dog owner must be in the second column (N).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | N | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            |         | dog |
+
+19. From clue 5, the person who likes green is to the right of the person who likes ivory. Since we already know the cities, cigars, and the positions of red, yellow, blue, snails, the project-manager, the dancer, the social-worker, the dog owner, the fox owner, and the horse owner, the ivory-liker must be in the first column (I).
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | N | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   |   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            | ivory | dog |
+
+20. From clue 15, the social-worker is in the middle. Since we already know the cities, cigars, the positions of red, yellow, green, blue, snails, the project-manager, the dancer, the dog owner, the fox owner, the ivory-liker, and the horse owner, the social-worker must be in the fourth column (SW). This contradicts our previous assumption that the social-worker is in the fourth column.
+
+Assuming the social-worker is in the fifth column instead:
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | N | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   |   | SW|
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            | ivory | dog |
+
+Now, the table is consistent with all given clues.
+
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | N | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   | SW|   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            | ivory | dog |
+
+So, the final solution table is:
+
+#############
+|   | L | N | M | Y | C |
+|---|---|---|---|---|---|
+| R | L | N | F | Y | PM |
+| G | A | I | SW| H |   |
+| I | S |   |   | SW|   |
+| Y |   |   |   |   |   |
+| B_c|   |   |   |   |   |
+| A |   |   |   |   |   |
+| D |   |   |   |   |   |
+| SW|   |   |   |   |   |
+| PM|   |   |   |   |   |
+| E |   |   |   |   | H |
+| Cigar|   | chesterfield | K |   |   |
+| Pet|         | snails      |            | ivory | dog |
+#############"	{}	False	0	False
+Zebra_domain_replacements_1	"Solving this puzzle step by step:
+
+1. We can start by placing the person eating strawberry (S) next to the person who likes red (R) since they are the same person. Let's place them in the first column.
+
+| Food | S |  |  |  |  |
+|------|---|--|--|--|--|
+| Color| R |  |  |  |  |
+| Sport|   |  |  |  |  |
+| Cigar|   | C | O | L | P |
+| Pet  |   | D |   |   |   |
+
+2. The person eating lime (L) is the owner of the dog (D), so we can place L in the second column.
+
+| Food | S | L |  |  |  |
+|------|---|---|--|--|--|
+| Color| R | G |  |  |  |
+| Sport|   | C |  |  |  |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D |   |   |   |
+
+3. The person who's sport is skiing (S) is the person who likes green (G), so we can place S in the second row and G in the third column.
+
+| Food | S | L | P |  |  |
+|------|---|---|--|--|--|
+| Color| R | G | Y |  |  |
+| Sport| S | C |   |   |  |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D |   |   |   |
+
+4. The person eating potato (P) is the person who's sport is cycling (C), so we can place P in the third column and C in the fourth row.
+
+| Food | S | L | P | C |  |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B |  |
+| Sport| S | C |   |   |  |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D |   | H |   |
+
+5. The person who likes green (G) is to the right of the person who likes ivory (I), so we can place I in the second column.
+
+| Food | S | L | P | C | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | C |   |   |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D |   | H |   |
+
+6. The old-gold-smoker (O) is the owner of the snails (S), so we can place O in the fifth row and S in the fourth column.
+
+| Food | S | L | P | C | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | C |   |   |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H |   |
+
+7. The kools-smoker (K) is the person who likes yellow (Y), so we can place K in the second row and Y in the third column.
+
+| Food | S | L | P | C | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | K |   |   |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H |   |
+
+8. The person who's sport is surfing (F) is in the middle, so we can place F in the third row.
+
+| Food | S | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | K | C | F |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H |   |
+
+9. The person eating pomegranate (Pg) is on the far left, so we can place Pg in the first column.
+
+| Food | Pg | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | K | C | F |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H |   |
+
+10. The chesterfields-smoker (Ch) is on the left or right of the owner of the fox (Fx), so we can place Ch in the first or second column. Since the kools-smoker (K) is to the left or right of the owner of the horse (H), we can't place Ch in the first column. So, we'll place Ch in the second column.
+
+| Food | Pg | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | Ch | C | F |   |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H | Fx |
+
+11. The kools-smoker (K) is to the left or right of the owner of the horse (H), so we can place K in the third or fourth column. Since the chesterfields-smoker (Ch) is on the left or right of the owner of the fox (Fx), we can't place K in the fourth column. So, we'll place K in the fourth column.
+
+| Food | Pg | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | Ch | C | F | K |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H | Fx |
+
+12. The lucky-strike-smoker (Ls) is the person who's sport is handball (Hb), so we can place Ls in the fifth row and Hb in the fourth column.
+
+| Food | Pg | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | Ch | C | F | H |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H | Fx |
+| Handball|   |   |   | Ls |   |
+
+13. The person eating peach (Pc) is the parliaments-smoker (Pa), so we can place Pc in the fifth column and Pa in the fifth row.
+
+| Food | Pg | L | P | F | I |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | Ch | C | F | H |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H | Fx |
+| Handball|   |   |   | Ls |   |
+| Cigar (Parliaments)|   |   |   |   | Pa |
+
+14. The person eating pomegranate (Pg) is to the left or right of the person who likes blue (Bl), so we can place Bl in the third column.
+
+| Food | Pg | L | P | F | Bl |
+|------|---|---|--|--|--|
+| Color| R | G | Y | B | W |
+| Sport| S | Ch | C | F | H |
+| Cigar|   | K | O | L | P |
+| Pet  |   | D | S | H | Fx |
+| Handball|   |   |   | Ls |   |
+| Cigar (Parliaments)|   |   |   |   | Pa |
+| Color (Blue)|   |   |   |   | Bl |
+
+Now we have the final solution table:
+
+```
+#############
+| Pg | L | P | F | Bl |
+#############
+| R | G | Y | B | W |
+#############
+| S | Ch | C | F | H |
+#############
+|   | D | S | H | Fx |
+#############
+|   |   |   |   | Ls |
+#############
+|   |   |   |   |   | Pa |
+#############
+|   |   |   |   |   | Bl |
+#############
+```"	{}	False	0	False
+Zebra_domain_replacements_2	"Solving this puzzle step by step:
+
+1. Place the person eating cranberry (C) next to the person who likes red (R).
+2. Place the person eating potato (P) next to the owner of the dog (D).
+3. Place the person who's hobby is collecting (C) to the left of the person who likes green (G).
+4. Place the person eating banana (B) to the right of the person who's hobby is board-games (BG).
+5. Since G is to the right of Ivory (I), place I to the left of G.
+6. Place the old-gold-smoker (OG) next to the owner of the snails (S).
+7. Place the kools-smoker (K) next to the person who likes yellow (Y).
+8. Place the person who's hobby is photography (Ph) in the middle.
+9. Place the person eating tomato (T) on the far left.
+10. Since the chesterfields-smoker (CF) is on the left or right of the owner of the fox (F), place either F to the left of CF or to the right of CF. Let's place F to the left of CF for now.
+11. Since the kools-smoker (K) is to the left or right of the owner of the horse (H), place H to the right of K.
+12. Place the lucky-strike-smoker (LS) next to the person who's hobby is skydiving (SD).
+13. Place the person eating carrot (Ca) next to the parliaments-smoker (Pa).
+14. Since the person eating tomato (T) is to the left or right of the person who likes blue (B), place T to the left of B.
+
+Now we have the following arrangement:
+
+|		| T	| B	| F	| G	| Ph	|
+| Food	|	|	|	|	|	|
+| Color	|	|	|	|	|	|
+| Hobby	|	|	|	|	|	|
+| Cigar	|	|	| CF	|	|	|
+| Pet	| D	|	|	|	|	|
+
+We know that the person eating cranberry (C) is to the right of the person who likes red (R). Since R is not placed yet, we can't determine the exact position of C and R.
+
+We also know that the person eating banana (B) is to the right of the person who's hobby is board-games (BG). Since B is already placed, we can't determine the exact position of BG yet.
+
+We can't determine the exact positions of the colors, hobbies, cigars, and pets yet.
+
+Final solution table:
+
+#############
+|		| T	| B	| F	| G	| Ph	|
+| Food	|	|	|	|	|	|
+| Color	|	|	|	|	|	|
+| Hobby	|	|	|	|	|	|
+| Cigar	|	|	| CF	|	|	|
+| Pet	| D	|	|	|	|	|
+#############
+
+The exact positions of the colors, hobbies, cigars, and pets cannot be determined with the given information."	{}	False	0	False

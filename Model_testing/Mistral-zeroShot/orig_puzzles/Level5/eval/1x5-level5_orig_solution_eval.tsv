@@ -1,0 +1,240 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv5-1x5-1	"Let's solve this step by step:
+
+1. Since the fan of funk is on the far right, we can place it in the last column (column 5).
+2. The fan of pop is in an odd position, so it can be either 1, 3, or 5. However, since the fan of funk is to the right of the fan of pop (5), and we've placed funk in the last column, pop cannot be in the first or last column. So, pop is in column 3.
+3. Now we know that the fan of r&b is between the fan of pop and the fan of techno. Since pop is in column 3, techno must be in column 5, and r&b can only be in column 4.
+4. The fan of d&b is somewhere to the left of the fan of funk (which is in column 5). Since we've placed all other genres, d&b must be in column 1.
+
+So, the final solution table is:
+
+```
+#############
+|   d&b     |   pop  |   r&b  |   techno |   funk   |
+#############
+```"	{}	False	0	False
+Lv5-1x5-2	"Let's solve this step by step:
+
+1. From point 5, we know that the Freelancer (F) is to the right of the Teacher (T). Let's place them like this: F---T--- (5 positions)
+
+2. From point 2, the Teacher (T) is on the right of the Paramedic (P). So, we can place the Paramedic to the left of the Teacher: F---T-P---
+
+3. From point 4, the Teacher (T) can be either on the left or right of the Paramedic (P). If T is on the left of P, the arrangement would be F---T-P--. But this contradicts point 1, as there would be only 4 positions left for the Dressmaker (D) and Coach (C), and we have 5 jobs. So, the Teacher must be on the right of the Paramedic: F---T-P--
+
+4. From point 3, the Teacher (T) is on the right of the Paramedic (P). From point 6, the Coach (C) is on the left of the Dressmaker (D). So, we can place the Coach and Dressmaker like this: C--D---. Now we have C--D---F---T-P--.
+
+5. From point 3, the Dressmaker (D) is to the right of the Freelancer (F). So, we can place the Freelancer like this: C--D--F---T-P--.
+
+6. From point 3, the Freelancer (F) is to the right of the Teacher (T). But we already placed F, and there are only 2 positions left for T. So, the Dressmaker (D) must be to the right of the Freelancer (F). This contradicts our previous arrangement (C--D--F---T-P--).
+
+The only way to resolve this contradiction is to swap the positions of the Dressmaker and the Paramedic: F---T-P-- becomes F---T-D--P. Now we have F---T-D--P, and we can place the Coach and Dressmaker like this: C--D---. The final arrangement is:
+
+#############
+|       |     1     |    2    |     3      |   4   |     5      |
+| Job   | Coach    | Dressmaker| Freelancer | Paramedic | Teacher |
+#############"	{'job': ['coach', 'dressmaker', 'freelancer', 'paramedic', 'teacher']}	True	1	False
+Lv5-1x5-3	"Let's solve this step by step:
+
+1. We know that the crime and epic movie watchers are not in the first two positions (since there are only 5 people and we need to fill 5 genres). So, crime and epic can be in positions 3, 4, or 5, and the person watching comedy, fantasy, or mystery can be in positions 1 and 2.
+
+2. Since the crime movie watcher is on the left of the epic movie watcher, they cannot be in positions 4 and 5. So, crime is in position 3 and epic is in position 4 or 5.
+
+3. The fantasy movie watcher is to the right of the epic movie watcher. So, if epic is in position 4, fantasy must be in position 5. If epic is in position 5, fantasy can be in position 4.
+
+4. The mystery movie watcher is in an even position (4 or 6, but there are only 5 positions). Since it's an even position and we already have 4 filled positions, mystery must be in position 4.
+
+5. Now, the comedy movie watcher is on the left or right of the mystery movie watcher. Since mystery is in position 4, comedy can be in position 1 or 5. But we know that comedy is to the right of mystery (not on the left), so comedy is in position 5.
+
+6. Finally, we know that the person watching fantasy is to the right of the person watching epic. Since epic is in position 4 and fantasy is in position 5, this condition is satisfied.
+
+So, the final solution table is:
+
+```
+#############
+|   Mystery  |   Comedy  |   Fantasy  |   Epic  |   Crime  |
+#############
+```"	{}	False	0	False
+Lv5-1x5-4	"Let's solve this step by step:
+
+1. We know that the fan of soul is on the left of the fan of salsa, so we can place Soul in the first position and Salsa in the second position.
+
+   |   |  1 |   2   |   3    |    4    |     5      |
+   |---|---|-------|--------|---------|------------|
+   | Music-Genre | Soul | Salsa |   |   |   |
+
+2. The fan of ambient is somewhere to the left of the fan of electronic, so we can place Ambient in the first position or the second position. However, since we already have Soul in the first position, Ambient must be in the second position.
+
+   |   |  1 |   2   |   3    |    4    |     5      |
+   |---|---|-------|--------|---------|------------|
+   | Music-Genre | Soul | Ambient | Salsa |   |   |
+
+3. The fan of electronic is to the right of the fan of ambient, so it must be in the third position.
+
+   |   |  1 |   2   |   3    |    4    |     5      |
+   |---|---|-------|--------|---------|------------|
+   | Music-Genre | Soul | Ambient | Electronic |   |   |
+
+4. The fan of techno is on the right of the fan of salsa, so it must be in the fifth position.
+
+   |   |  1 |   2   |   3    |    4    |     5      |
+   |---|---|-------|--------|---------|------------|
+   | Music-Genre | Soul | Ambient | Electronic | Salsa | Techno |
+
+5. The fan of techno is between the fan of ambient and the fan of salsa. This means that Techno cannot be in the fifth position. So, it must be in the fourth position.
+
+   |   |  1 |   2   |   3    |    4    |     5      |
+   |---|---|-------|--------|---------|------------|
+   | Music-Genre | Soul | Ambient | Electronic | Techno | Salsa |
+
+So, the final solution is:
+
+#############
+|   |  1 |   2   |   3    |    4    |     5      |
+|---|---|-------|--------|---------|------------|
+| Music-Genre | Soul | Ambient | Electronic | Techno | Salsa |
+#############"	{'music-genre': ['soul', 'ambient', 'electronic', 'techno', 'salsa']}	True	1	False
+Lv5-1x5-5	"Let's solve this step by step:
+
+1. We know that parkour is on the far left, so it goes in the first column (1).
+2. Since biathlon is to the left of golf, and parkour is on the far left, biathlon must be in the second column (2).
+3. Now, we know that surfing is to the left of weightlifting and between biathlon and weightlifting. So, surfing must be in the second column (2) as well, and it must be to the right of biathlon. This means that weightlifting must be in the third column (3).
+4. Finally, golf is to the right of biathlon, so it must be in the fourth column (4).
+
+The final solution table is:
+
+```
+#############
+| Parkour   | Biathlon | Surfing | Weightlifting | Golf   |
+#############
+```"	{}	False	0	False
+Lv5-1x5-6	"Let's solve this step by step:
+
+1. We know that the person who loves fishing is to the right of the person who loves collecting (rule 1). Let's place collecting in the first position.
+
+| Hobby   | 1   |      2      |      3      |     4     |    5    |
+|---------|-----|-------------|-------------|-----------|---------|
+| Hobby   | C   |             |             |           |         |
+
+2. The person who loves photography is on the left or right of the person who loves board-games (rule 2). Since we already placed collecting, photography cannot be in the first position. Let's place photography in the second position.
+
+| Hobby   | C   | P   |      3      |     4     |    5    |
+|---------|-----|------|-------------|-----------|---------|
+| Hobby   | C   | P   |             |           |         |
+
+3. The person who loves traveling is between the person who loves fishing and the person who loves board-games (rule 3). Since we know that collecting is the first position and photography is the second position, traveling cannot be in the first, second, or fifth position. Let's place traveling in the third position.
+
+| Hobby   | C   | P   | T   |      4      |    5    |
+|---------|-----|------|-------|-------------|---------|
+| Hobby   | C   | P   | T   |             |         |
+
+4. The person who loves fishing is on the left or right of the person who loves traveling (rule 4). Since we know that collecting is the first position, photography is the second position, and traveling is the third position, fishing cannot be in the first, second, third, or fifth position. Let's place fishing in the fourth position.
+
+| Hobby   | C   | P   | T   | F   |    5    |
+|---------|-----|------|-------|-------|---------|
+| Hobby   | C   | P   | T   | F   |         |
+
+5. The person who loves board-games is to the right of the person who loves traveling (rule 5). Since we know that collecting is the first position, photography is the second position, traveling is the third position, and fishing is the fourth position, board-games can only be in the fifth position.
+
+| Hobby   | C   | P   | T   | F   | B   |
+|---------|-----|------|-------|-------|------|
+| Hobby   | C   | P   | T   | F   | B   |
+
+So, the final solution table is:
+
+#############
+| Hobby   | C   | P   | T   | F   | B   |
+|---------|-----|------|-------|-------|------|
+| Hobby   | Collecting | Photography | Traveling | Fishing | Board-games |
+#############"	{'hobby': ['collecting', 'photography', 'traveling', 'fishing', 'board-games']}	True	2	False
+Lv5-1x5-7	"Let's solve this step by step:
+
+1. From point 2, we know that the fan of r&b is to the left of the fan of classical. Let's place r&b in the first position and classical in the second position.
+
+2. From point 5, we know that the fan of ambient is between the fan of classical and the fan of house. Since we already placed classical in the second position, ambient must be in the third position, and house must be in the fourth position.
+
+3. From point 3, we know that the fan of house is to the left of the fan of blues. Since house is already in the fourth position, blues must be in the fifth position.
+
+4. From point 1, we know that the fan of classical is between the fan of ambient and the fan of r&b. Since we already placed classical in the second position and r&b in the first position, ambient must be in the position before classical, which is the fourth position.
+
+5. Finally, from point 4, we know that the fan of blues must be in the sixth position, as it is not between any other genres.
+
+The final solution table is:
+
+  |               |  1  |     2     |    3    |   4   |   5   |
+| Music-Genre   | r&b | classical | ambient | house | blues |
+
+#############
+| r&b | classical | ambient | house | blues |   |
+#############"	{'music-genre': ['r&b', 'classical', 'ambient', 'house', 'blues']}	True	5	True
+Lv5-1x5-8	"Let's solve this step by step:
+
+1. Since the train driver is in the middle, we know that the transport options 1, 3, and 5 cannot be the train. So, let's assume the train is either 2 or 4.
+
+2. The skateboard is to the right of the ship##5. If the train is 2, then the skateboard cannot be 1, 3, or 4, so it must be 5. But this contradicts rule 5, as the trike is to the right of the skateboard##5, which means the skateboard cannot be 5. So, the train cannot be 2.
+
+3. If the train is 4, then the skateboard cannot be 1, 3, or 5. So, it must be 2. This satisfies all the conditions for the skateboard.
+
+4. Now, the snowmobile is to the left of the ship##5. If the ship is 1, then the snowmobile cannot be 2, 3, 4, or 5. So, it must be 1. But this contradicts rule 2, as the skateboard is to the right of the ship##5. So, the ship cannot be 1.
+
+5. If the ship is 2, then the snowmobile cannot be 1, 3, 4, or 5. So, it must be 3. This satisfies all the conditions for the snowmobile.
+
+6. Now, the trike is on the right of the skateboard and to the right of the skateboard##5. If the skateboard is 2, then the trike cannot be 1, 3, or 4. So, it must be 5. This satisfies all the conditions for the trike.
+
+7. Finally, the train is in the middle, which means it is 4. This satisfies all the conditions for the train.
+
+So, the final solution table is:
+
+  |             |     1      |  2   |   3   |     4      |   5   |
+| Transport   | ship       | skateboard| snowmobile| train | trike |
+#############
+
+This is the solution to the puzzle."	{'transport': ['ship', 'skateboard', 'snowmobile', 'train', 'trike']}	True	1	False
+Lv5-1x5-9	"Let's solve this step by step:
+
+1. From point 5, the ship is on the left of the helicopter. So, we can place the ship in the first or second position. But if the ship is in the first position, it violates point 3 (ship is to the right of snowmobile), so the ship must be in the second position.
+
+2. Now, the snowmobile can be in any of the remaining positions except the second (since it's to the right of the ship). So, it can be in the third, fourth, or fifth position.
+
+3. If the snowmobile is in the third position, it violates point 2 (ship is on the left of snowmobile), so the snowmobile must be in the fourth or fifth position. But if the snowmobile is in the fifth position, it violates point 1 (roller is to the right of train), so the snowmobile must be in the fourth position.
+
+4. Now, the train can be in any of the remaining positions except the second (since it's to the left of the helicopter). So, it can be in the first, third, or fifth position. But if the train is in the third position, it violates point 1 (roller is to the right of train), so the train must be in the first or fifth position.
+
+5. If the train is in the fifth position, it violates point 4 (helicopter is to the left or right of the train), so the train must be in the first position.
+
+6. Now, the helicopter can be in any of the remaining positions except the second (since it's to the left of the ship). So, it can be in the third or fifth position. But if the helicopter is in the fifth position, it violates point 4 (helicopter is to the left or right of the train), so the helicopter must be in the third position.
+
+7. Finally, the roller can only be in the fifth position, as all other positions are occupied and it must be to the right of the train (point 1).
+
+So, the final solution table is:
+
+  |             |     1      |  2   |     3      |   4   |   5    |
+| Transport   | helicopter | ship | snowmobile | train | roller |
+
+#############
+helicopter |
+ship       |
+snowmobile |
+train      |
+roller     |
+#############"	{'transport': ['helicopter', 'ship', 'snowmobile', 'train', 'roller']}	True	3	False
+Lv5-1x5-10	"Let's solve this step by step:
+
+1. We know that the sports are basketball, biathlon, cricket, golf, and surfing.
+
+2. From rule 5, golf can be on the far left or far right. Let's first try placing golf on the far left (1st position).
+
+3. Since golf is on the far left, cricket cannot be in the 1st position (rule 6). So, cricket must be in an odd position (rule 3), which means it can only be in the 3rd position.
+
+4. Now, cricket is in the 3rd position. Since cricket is to the right of biathlon (rule 4), biathlon must be in the 2nd position.
+
+5. Since basketball is to the left of golf (rule 2) and golf is on the far left, basketball must be in the 5th position.
+
+6. Finally, surfing is the only sport left, which must be in the 4th position.
+
+So, the final solution table is:
+
+```
+#############
+|   Biathlon |   Cricket | Golf   | Surfing | Basketball |
+#############
+```"	{}	False	0	False

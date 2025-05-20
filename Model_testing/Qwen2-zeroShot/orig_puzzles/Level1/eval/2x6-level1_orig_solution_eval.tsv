@@ -1,0 +1,623 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x6-1	"Let's solve this step-by-step using the given clues and constraints.
+
+### Clues Summary:
+1. The person drinking lemonade is on the right of the person whose hobby is woodworking.
+2. The person whose hobby is skydiving is on the right of the person drinking lemonade.
+3. The person whose hobby is puzzles is on the left of the person drinking coffee.
+4. The person drinking coffee is on the left of the person drinking iced-tea.
+5. The person whose hobby is puzzles is on the left of the person whose hobby is writing.
+6. The person whose hobby is skydiving is on the left of the person whose hobby is singing.
+7. The person drinking milk is on the right of the person drinking cola.
+8. The person whose hobby is woodworking is on the right of the person drinking coffee.
+
+### Step-by-Step Solution:
+
+#### Step 1: Positioning Hobbies and Beverages Based on Clues
+- From clue 1, we know that the person drinking lemonade (L) is to the right of the person with woodworking (W).
+- From clue 2, the person with skydiving (S) is to the right of the person drinking lemonade (L).
+- From clue 3, the person with puzzles (P) is to the left of the person drinking coffee (C).
+- From clue 4, the person drinking coffee (C) is to the left of the person drinking iced-tea (I).
+- From clue 5, the person with puzzles (P) is to the left of the person with writing (Wri).
+- From clue 6, the person with skydiving (S) is to the left of the person with singing (Si).
+
+So, we can deduce:
+- W -> L -> S
+- P -> C -> I
+- P -> Wri
+- S -> Si
+
+#### Step 2: Refining the Order
+From the above, we can refine:
+- W -> L -> S
+- P -> C -> I
+- P -> Wri
+- S -> Si
+
+This gives us:
+- W -> L -> S -> P -> C -> I -> Wri -> Si
+
+#### Step 3: Applying Clue 7 and 8
+- Clue 7: Milk (M) is to the right of Cola (Co). This means Co -> M.
+- Clue 8: Woodworking (W) is to the right of Coffee (C). This means C -> W.
+
+Given these, we need to place the beverages:
+- Since W -> L -> S -> P -> C -> I -> Wri -> Si, we need to fit the beverages into this order while respecting Co -> M.
+
+#### Step 4: Placing Beverages
+- Let's try placing the beverages:
+  - Assume the order is: Co -> M -> L -> S -> P -> I -> Wri -> Si
+  - This fits all the clues:
+    - W -> L -> S (Woodworking -> Lemonade -> Skydiving)
+    - P -> C -> I (Puzzles -> Coffee -> Iced-tea)
+    - P -> Wri (Puzzles -> Writing)
+    - S -> Si (Skydiving -> Singing)
+    - Co -> M (Coffee -> Milk)
+
+So, the final arrangement is:
+- Co -> M -> L -> S -> P -> I -> Wri -> Si
+
+### Final Solution Table:
+```
+|            |    1     |    2    |      3      |     4     |     5     |    6    |
+| Beverage   | coffee   | milk    | lemonade    | skydiving | puzzles  | iced-tea|
+| Hobby      | singing  | writing | woodworking| puzzles   | skydiving| gardening|
+```
+
+```plaintext
+|            |    1     |    2    |      3      |     4     |     5     |    6    |
+| Beverage   | coffee   | milk    | lemonade    | skydiving | puzzles  | iced-tea|
+| Hobby      | singing  | writing | woodworking| puzzles   | skydiving| gardening|
+```"	{'beverage': ['coffee', 'milk', 'lemonade', 'skydiving', 'puzzles', 'iced-tea'], 'hobby': ['singing', 'writing', 'woodworking', 'puzzles', 'skydiving', 'gardening']}	True	3	False
+Lv1-2x6-2	"Let's solve the puzzle step-by-step using the given clues:
+
+1. **The owner of the guinea-pig is on the left of the owner of the lizard.**
+2. **The owner of the mouse is on the left of the person watching family movies.**
+3. **The owner of the dog is on the left of the owner of the mouse.**
+4. **The owner of the goldfish is on the far left.**
+5. **The person watching drama movies is on the right of the owner of the guinea-pig.**
+6. **The owner of the goat is on the right of the owner of the goldfish.**
+7. **The person watching sports movies is the owner of the mouse.**
+8. **The owner of the mouse is on the right of the person watching disaster movies.**
+9. **The person watching action movies is the owner of the goldfish.**
+
+### Step-by-Step Solution:
+
+#### Step 1: Identify the fixed positions.
+- From clue 4, the owner of the goldfish (GF) is on position 1.
+- From clue 7, the owner of the mouse (M) is the person watching sports (S).
+
+So, we have:
+```
+| GF | ?   | ?   | ?   | ?   | M   |
+```
+
+#### Step 2: Use other clues to fill in more positions.
+- From clue 1, the owner of the guinea-pig (G) is on the left of the owner of the lizard (L).
+- From clue 2, the owner of the mouse (M) is on the left of the person watching family movies (F).
+- From clue 3, the owner of the dog (D) is on the left of the owner of the mouse (M).
+
+Since the mouse (M) is at position 6 and the owner of the mouse (M) is the person watching sports (S), we can place D, G, and L accordingly.
+
+- From clue 5, the person watching drama (D) is on the right of the owner of the guinea-pig (G).
+- From clue 6, the owner of the goat (G) is on the right of the owner of the goldfish (GF).
+- From clue 8, the owner of the mouse (M) is on the right of the person watching disaster (Dis).
+
+Given these constraints, let's place the remaining genres and pets:
+
+```
+| GF | D   | G   | L   | Dis | M   |
+```
+
+Now, we need to assign the genres:
+- The person watching action (Act) is the owner of the goldfish (GF), so GF = Act.
+- The person watching drama (D) is on the right of G, so D = Drama.
+- The person watching disaster (Dis) is on the right of Dis, so Dis = Disaster.
+- The person watching sports (S) is M, so S = Sports.
+- The person watching family (F) is on the right of M, so F = Family.
+
+So, the final arrangement is:
+```
+| Act | Drama | Guinea-pig | Lizard | Disaster | Sports |
+| Dog | Goat  | Goldfish   | Mouse  | Goat     | Guinea-pig |
+```
+
+### Final Solution Table:
+```
+|               |    1     |    2    |    3     |   4    |     5      |   6    |
+| Movie-Genre   | Action  | Drama   | Guinea-pig | Disaster | Goat       | Sports |
+| Pet           | Dog     | Goat    | Goldfish   | Mouse    | Goat       | Guinea-pig |
+```"	{'movie-genre': ['action', 'drama', 'guinea-pig', 'disaster', 'goat', 'sports'], 'pet': ['dog', 'goat', 'goldfish', 'mouse', 'goat', 'guinea-pig']}	True	3	False
+Lv1-2x6-3	"To solve this logic puzzle, we need to carefully analyze each clue and place the information into the table accordingly. Let's break down the clues and determine the correct order.
+
+### Clues Analysis:
+
+1. **The fan of punk is on the right of the fan of soul**:
+   - If \( \text{Fan of Soul} \) is in position \( n \), then \( \text{Fan of Punk} \) must be in position \( n+1 \).
+
+2. **The colombian is on the right of the fan of blues**:
+   - If \( \text{Fan of Blues} \) is in position \( m \), then the Colombian must be in position \( m+1 \).
+
+3. **The fan of soul is on the right of the fan of indie**:
+   - If \( \text{Fan of Indie} \) is in position \( p \), then \( \text{Fan of Soul} \) must be in position \( p+1 \).
+
+4. **The fan of country is on the right of the german**:
+   - If \( \text{German} \) is in position \( q \), then \( \text{Fan of Country} \) must be in position \( q+1 \).
+
+5. **The fan of punk is on the right of the polish**:
+   - If \( \text{Polish} \) is in position \( r \), then \( \text{Fan of Punk} \) must be in position \( r+1 \).
+
+6. **The fan of punk is on the left of the british**:
+   - If \( \text{British} \) is in position \( s \), then \( \text{Fan of Punk} \) must be in position \( s-1 \).
+
+7. **The colombian is on the far right**:
+   - The Colombian must be in position 6.
+
+8. **The chinese is the fan of indie**:
+   - The Chinese must be in position where \( \text{Fan of Indie} \) is placed.
+
+9. **The fan of country is the colombian**:
+   - This contradicts clue 7, so it must be re-evaluated. Since the Colombian is on the far right (position 6), the Fan of Country cannot be the Colombian. Therefore, the Fan of Country must be in position 5, and the Colombian must be in position 6.
+
+### Solving the Clues:
+
+Let's start with the known positions:
+
+- Position 6: Colombian (from clue 7).
+- Position 5: Fan of Country (since the Fan of Country is not the Colombian).
+
+Now, let's use other clues to fill in the remaining positions:
+
+- From clue 9: Chinese = Fan of Indie.
+- From clue 8: Chinese must be in position 4 (since the Fan of Indie is in position 5).
+- From clue 3: Fan of Soul must be in position 4 (since the Fan of Indie is in position 5).
+- From clue 1: Fan of Punk must be in position 5 (since the Fan of Soul is in position 4).
+- From clue 2: Fan of Blues must be in position 3 (since the Fan of Punk is in position 5 and the Colombian is in position 6).
+- From clue 4: German must be in position 2 (since the Fan of Country is in position 5).
+- From clue 6: Polish must be in position 1 (since the Fan of Punk is in position 5 and the British must be in position 6).
+
+### Final Solution Table:
+
+```
+|               |    1    |   2    |     3     |     4     |   5    |     6     |
+| Music-Genre   |  Polish |  German |  Blues    |  Soul     |  Punk  |  Country  |
+| Nationality   |  Chinese|  Argentine |  British |  Colombian |  Chinese |  Argentine |
+```
+
+### Final Solution Table:
+
+```
+|               |    1    |   2    |     3     |     4     |   5    |     6     |
+| Music-Genre   |  Polish |  German |  Blues    |  Soul     |  Punk  |  Country  |
+| Nationality   |  Chinese|  Argentine |  British |  Colombian |  Chinese |  Argentine |
+```"	{'music-genre': ['polish', 'german', 'blues', 'soul', 'punk', 'country'], 'nationality': ['chinese', 'argentine', 'british', 'colombian', 'chinese', 'argentine']}	True	2	False
+Lv1-2x6-4	"Sure, let's solve this step-by-step using the given clues.
+
+### Clues Recap:
+1. The person driving the airplane is on the far left.
+2. The fan of country is on the far left.
+3. The person driving the snowmobile is on the right of the person driving the taxi.
+4. The fan of indie is on the left of the fan of dubstep.
+5. The person driving the taxi is the fan of disco.
+6. The person driving the bike is on the right of the person driving the ship.
+7. The fan of dubstep is on the far right.
+8. The person driving the helicopter is on the right of the fan of blues.
+
+### Step-by-Step Solution:
+
+#### Step 1: Place the Fan of Country and the Driver of Airplane
+- From clue 2, the fan of country is on the far left.
+- From clue 1, the driver of the airplane is on the far left.
+- Therefore, the fan of country and the driver of the airplane must be the same person. Let's call this position 1.
+
+#### Step 2: Place the Fan of Dubstep
+- From clue 7, the fan of dubstep is on the far right.
+- Therefore, position 6 is the fan of dubstep.
+
+#### Step 3: Place the Fan of Disco
+- From clue 5, the person driving the taxi is the fan of disco.
+- We need to determine who drives the taxi.
+
+#### Step 4: Determine the Drivers and Fans
+- From clue 3, the person driving the snowmobile is on the right of the person driving the taxi.
+- From clue 6, the person driving the bike is on the right of the person driving the ship.
+- From clue 8, the person driving the helicopter is on the right of the fan of blues.
+- From clue 4, the fan of indie is on the left of the fan of dubstep.
+
+Let's start placing the drivers and fans:
+
+- Position 1: Fan of Country (Airplane)
+- Position 6: Fan of Dubstep
+
+Now we have:
+```
+|               |    1     |   2   |     3      |     4      |   5   |    6    |
+| Music-Genre   |  Country |       |            |            |       |  Dubstep |
+| Transport     |  Airplane|       |            |            |       |         |
+```
+
+Next, we place the fans of disco and indie:
+- Position 5 must be the fan of disco (clue 5).
+- Position 4 must be the fan of indie (clue 4).
+
+So now we have:
+```
+|               |    1     |   2   |     3      |     4      |   5   |    6    |
+| Music-Genre   |  Country | Indie |            | Disco      |       |  Dubstep |
+| Transport     |  Airplane|       |            |            |  Disco |         |
+```
+
+Next, we place the remaining genres and transports:
+- From clue 3, the person driving the snowmobile is on the right of the person driving the taxi.
+- From clue 6, the person driving the bike is on the right of the person driving the ship.
+- From clue 8, the person driving the helicopter is on the right of the fan of blues.
+
+Since the fan of blues must be on the far left (since the person driving the airplane is the fan of country), and the person driving the helicopter must be on the right of the fan of blues, we can deduce:
+- Position 2: Fan of Blues
+- Position 3: Person driving the ship
+- Position 4: Fan of Disco (already placed)
+- Position 5: Fan of Disco (already placed)
+- Position 6: Fan of Dubstep (already placed)
+
+Finally, the remaining genres and transports:
+- Position 2: Fan of Blues
+- Position 3: Person driving the ship
+- Position 4: Fan of Disco
+- Position 5: Fan of Disco
+- Position 6: Fan of Dubstep
+
+So, the final solution is:
+```
+|               |    1     |   2   |     3      |     4      |   5   |    6    |
+| Music-Genre   |  Country | Indie | Classical  | Disco      | Blues |  Dubstep |
+| Transport     |  Airplane| Bike  | Ship       | Taxi       | Helicopter |  Snowmobile |
+```"	{'music-genre': ['country', 'indie', 'classical', 'disco', 'blues', 'dubstep'], 'transport': ['airplane', 'bike', 'ship', 'taxi', 'helicopter', 'snowmobile']}	True	3	False
+Lv1-2x6-5	"Let's solve this step-by-step using the given clues:
+
+1. **Clue 1**: The fan of disco is the person who's hobby is baking.
+   - This means Baking is associated with Disco.
+
+2. **Clue 2**: The person who's hobby is filmmaking is on the left of the fan of country.
+   - Let's denote the person who likes filmmaking as F and the fan of country as C. So, F is to the left of C.
+
+3. **Clue 3**: The fan of house is on the left of the person who's hobby is hiking.
+   - Let's denote the fan of house as H and the person who likes hiking as Hik. So, H is to the left of Hik.
+
+4. **Clue 4**: The fan of house is on the right of the fan of classical.
+   - Let's denote the fan of classical as Clas and the fan of house as H. So, Clas is to the left of H.
+
+5. **Clue 5**: The fan of classical is on the left of the person who's hobby is filmmaking.
+   - Let's denote the fan of classical as Clas and the person who likes filmmaking as F. So, Clas is to the left of F.
+
+6. **Clue 6**: The fan of classical is on the right of the fan of disco.
+   - Let's denote the fan of disco as Dis and the fan of classical as Clas. So, Dis is to the left of Clas.
+
+7. **Clue 7**: The person who's hobby is woodworking is on the right of the person who's hobby is singing.
+   - Let's denote the person who likes woodworking as W and the person who likes singing as Sing. So, Sing is to the left of W.
+
+8. **Clue 8**: The person who's hobby is baking is on the left of the fan of classical.
+   - Since baking is associated with Disco (Clue 1), Disco is to the left of Clas.
+
+9. **Clue 9**: The fan of disco is on the right of the fan of electronic.
+   - Let's denote the fan of electronic as Elec and the fan of disco as Dis. So, Elec is to the left of Dis.
+
+10. **Clue 10**: The person who's hobby is singing is the fan of techno.
+    - Let's denote the person who likes singing as Sing and the fan of techno as T. So, Sing = T.
+
+Now, let's organize these clues into a logical order:
+
+- From Clues 6 and 8: Dis is to the left of Clas, and Disco (Dis) is associated with Baking.
+- From Clues 1, 4, and 6: Disco (Dis) is to the left of Clas, and Clas is to the left of F (filmmaking).
+- From Clues 5 and 6: Clas is to the left of F, and Clas is to the right of Dis.
+- From Clues 2 and 5: F is to the right of Clas, and C (country) is to the right of F.
+- From Clues 7 and 9: Sing is to the left of W (woodworking), and Elec is to the left of Dis.
+- From Clue 10: Sing is the fan of techno (T).
+
+We can now place the elements in a sequence that fits all the clues:
+
+1. Disco (Baking)
+2. Classical
+3. Filmmaking
+4. Country
+5. House
+6. Hiking
+
+And for the music genres:
+
+1. Disco
+2. Classical
+3. Country
+4. Electronic
+5. House
+6. Techno
+
+Since Sing is the fan of techno and Sing is to the left of woodworking, we need to place the remaining hobbies and genres accordingly.
+
+Final solution:
+
+|               |    1    |      2      |   3    |     4     |     5      |    6    |
+| Hobby         | Baking  | Filmmaking  | Hiking | Singing   | Woodworking| Traveling|
+| Music-Genre   | Disco   | Classical   | Country| Electronic| House      | Techno  |
+
+```plaintext
+#############
+| Hobby         | Baking  | Filmmaking  | Hiking | Singing   | Woodworking| Traveling|
+| Music-Genre   | Disco   | Classical   | Country| Electronic| House      | Techno  |
+#############
+```"	{'hobby': ['baking', 'filmmaking', 'hiking', 'singing', 'woodworking', 'traveling'], 'music-genre': ['disco', 'classical', 'country', 'electronic', 'house', 'techno']}	True	1	False
+Lv1-2x6-6	"Let's solve the logic puzzle step by step using the given clues.
+
+1. **Clue 7**: The American is on the far right.
+   - This means the American is in position 6.
+
+2. **Clue 5**: The German is the fan of pop.
+   - So, the German is in position 6 and their music genre is pop.
+
+3. **Clue 3**: The Chinese is on the right of the fan of indie.
+   - Since the American is in position 6, the Chinese cannot be in position 6 (because they would need to be to the right of someone). Therefore, the Chinese must be in positions 1, 2, 3, or 4.
+
+4. **Clue 2**: The Chinese is on the left of the American.
+   - Since the American is in position 6, the Chinese must be in positions 1, 2, or 3.
+
+5. **Clue 8**: The fan of indie is on the left of the fan of disco.
+   - This means the fan of indie cannot be in position 6, and the fan of disco cannot be in position 1.
+
+6. **Clue 1**: The Mexican is on the right of the fan of dubstep.
+   - If the Mexican is in position 6, then the fan of dubstep must be in position 5. But since the German is in position 6, the Mexican cannot be in position 6. Therefore, the Mexican must be in positions 2, 3, 4, or 5, and the fan of dubstep must be one position to the left.
+
+7. **Clue 4**: The Australian is on the left of the fan of country.
+   - This means the Australian cannot be in position 6, and the fan of country cannot be in position 1.
+
+8. **Clue 6**: The fan of disco is on the right of the Brazilian.
+   - This means the Brazilian cannot be in position 6, and the fan of disco cannot be in position 1.
+
+9. **Clue 9**: The fan of pop is on the left of the fan of dubstep.
+   - Since the German is in position 6 and is the fan of pop, the fan of dubstep must be in position 5.
+
+Now let's piece it all together:
+
+- The American is in position 6.
+- The German is in position 6 and is the fan of pop.
+- The Mexican is in position 5 (since the German is in position 6 and the Mexican is on the right of the fan of dubstep).
+- The fan of dubstep is in position 4.
+- The Brazilian is in position 3 (since the fan of disco is on the right of the Brazilian and the fan of disco must be in position 5 or 6, but the Mexican is in position 5).
+
+So, we have:
+- Position 6: American (pop)
+- Position 5: Mexican (dubstep)
+- Position 4: Fan of disco (since the Brazilian is in position 3)
+- Position 3: Brazilian
+- Position 2: Chinese (since the Chinese is on the left of the American and on the right of the fan of indie, and the only possible positions for the Chinese are 1, 2, or 3, and the American is in position 6)
+
+This leaves us with:
+- Position 1: Fan of indie
+- Position 2: Chinese
+- Position 3: Brazilian
+- Position 4: Fan of disco
+- Position 5: Mexican (dubstep)
+- Position 6: American (pop)
+
+Now, we need to assign the remaining nationalities and music genres:
+- The Australian is on the left of the fan of country, so the Australian must be in position 1 and the fan of country must be in position 2.
+- The Chinese is on the right of the fan of indie, so the Chinese must be in position 2 and the fan of indie must be in position 1.
+- The fan of folk is left, so the Australian is in position 1 and the fan of folk is in position 2.
+- The fan of folk is in position 2, so the fan of folk is in position 2 and the Australian is in position 1.
+- The fan of folk is in position 2, so the fan of folk is in position 2 and the Australian is in position 1.
+- The fan of folk is in position 2, so the fan of folk is in position 2 and the Australian is in position 1.
+
+Final solution:
+
+|               |   1    |     2      |    3    |     4     |    5    |    6     |
+| Music-Genre   | folk   | disco      | country | indie     | dubstep | pop      |
+| Nationality   | australian | chinese   | mexican | brazilian |         | american |
+
+```plaintext
+#############
+| Music-Genre | folk   | disco      | country | indie     | dubstep | pop      |
+| Nationality | australian | chinese   | mexican | brazilian |         | american |
+#############
+```"	{'music-genre': ['folk', 'disco', 'country', 'indie', 'dubstep', 'pop'], 'nationality': ['australian', 'chinese', 'mexican', 'brazilian', '', 'american']}	True	5	False
+Lv1-2x6-7	"Let's solve the puzzle step-by-step using the given clues.
+
+### Step 1: Organize the Clues
+
+1. The owner of the chinchilla is on the right of the owner of the snake.
+2. The person driving the snowmobile is on the right of the owner of the dog.
+3. The owner of the guinea-pig is on the left of the person driving the bike.
+4. The owner of the horse is on the left of the person driving the roller.
+5. The owner of the horse is the person driving the trike.
+6. The owner of the guinea-pig is the person driving the roller.
+7. The person driving the bike is on the left of the person driving the ship.
+8. The owner of the dog is on the far left.
+
+### Step 2: Apply the Clues
+
+- **Clue 8**: The owner of the dog is on the far left. So, position 1 must be the dog.
+- **Clue 5**: The owner of the horse is the person driving the trike. So, position 5 must be the horse and the trike.
+- **Clue 6**: The owner of the guinea-pig is the person driving the roller. So, position 3 must be the guinea-pig and the roller.
+- **Clue 3**: The owner of the guinea-pig (position 3) is on the left of the person driving the bike. So, position 4 must be the bike.
+- **Clue 7**: The person driving the bike (position 4) is on the left of the person driving the ship. So, position 6 must be the ship.
+- **Clue 2**: The person driving the snowmobile is on the right of the owner of the dog. Since the dog is in position 1, the snowmobile must be in position 2 or 3 or 4 or 5 or 6. But since the owner of the guinea-pig (roller) is in position 3 and the bike is in position 4, the snowmobile cannot be in positions 3 or 4. Also, the horse (trike) is in position 5, so the snowmobile must be in position 2.
+- **Clue 1**: The owner of the chinchilla is on the right of the owner of the snake. Since the snowmobile is in position 2, the chinchilla must be in position 3 or 4 or 5 or 6. But position 3 is occupied by the guinea-pig and position 4 by the bike, so the chinchilla must be in position 5 or 6. Since the horse (trike) is in position 5, the chinchilla must be in position 6.
+
+So, we have:
+- Position 1: Dog
+- Position 2: Snowmobile
+- Position 3: Guinea-pig
+- Position 4: Bike
+- Position 5: Horse (trike)
+- Position 6: Chinchilla
+
+### Step 3: Fill in the Pets and Transport
+
+- **Pet**:
+  - Position 1: Dog
+  - Position 2: Snowmobile
+  - Position 3: Guinea-pig
+  - Position 4: Bike
+  - Position 5: Horse
+  - Position 6: Chinchilla
+
+- **Transport**:
+  - Position 1: Dog
+  - Position 2: Snowmobile
+  - Position 3: Guinea-pig
+  - Position 4: Bike
+  - Position 5: Trike (Horse)
+  - Position 6: Ship (Chinchilla)
+
+### Final Solution Table:
+
+```
+|             |     1     |     2      |   3   |     4      |   5   |     6      |
+| Pet         | Dog      |            | Guinea-pig |            | Horse | Chinchilla |
+| Transport   | motor    | Snowmobile |         | Bike       | Trike | Ship       |
+```"	{'pet': ['dog', '', 'guinea-pig', '', 'horse', 'chinchilla'], 'transport': ['motor', 'snowmobile', '', 'bike', 'trike', 'ship']}	True	4	False
+Lv1-2x6-8	"```markdown
+|               |   1   |    2     |     3      |     4      |   5   |       6       |
+| Music-Genre   | salsa | funk     | punk       | hip-hop    | reggae | ambient       |
+| Sport         | biathlon | golf     | ice-hockey | volleyball | weightlifting | weightlifting |
+```
+
+### Explanation:
+
+1. **The fan of hip-hop is the person who's sport is volleyball (Clue 1):**
+   - This means that the person who likes hip-hop plays volleyball.
+
+2. **The person who's sport is weightlifting is the fan of punk (Clue 2):**
+   - This means that the person who likes punk plays weightlifting and is on the far right.
+
+3. **The person who's sport is weightlifting is on the right of the fan of funk (Clue 3):**
+   - Since weightlifting is on the far right (6th position), the fan of funk must be in the 5th position.
+
+4. **The person who's sport is ice-hockey is on the right of the person who's sport is biathlon (Clue 4):**
+   - This means that biathlon comes before ice-hockey in the sequence.
+
+5. **The person who's sport is golf is the fan of salsa (Clue 5):**
+   - This means that the person who likes salsa plays golf.
+
+6. **The person who's sport is ice-hockey is on the left of the person who's sport is volleyball (Clue 6):**
+   - Since volleyball is in the 6th position, ice-hockey must be in the 4th position.
+
+7. **The fan of ambient is on the right of the fan of salsa (Clue 7):**
+   - Since salsa is in the 5th position, ambient must be in the 6th position.
+
+8. **The person who's sport is weightlifting is on the far right (Clue 8):**
+   - This confirms that weightlifting is in the 6th position.
+
+By putting all these clues together, we can fill in the table as follows:
+
+- Golf (salsa) is in position 1.
+- Biathlon is in position 2.
+- Ice-hockey is in position 4.
+- Volleyball is in position 6.
+- Weightlifting (punk) is in position 6.
+- The fan of funk is in position 5.
+- The fan of ambient is in position 6.
+
+This results in the final arrangement:
+
+```markdown
+|               |   1   |    2     |     3      |     4      |   5   |       6       |
+| Music-Genre   | salsa | funk     | punk       | hip-hop    | reggae | ambient       |
+| Sport         | biathlon | golf     | ice-hockey | volleyball | weightlifting | weightlifting |
+```"	{'music-genre': ['salsa', 'funk', 'punk', 'hip-hop', 'reggae', 'ambient'], 'sport': ['biathlon', 'golf', 'ice-hockey', 'volleyball', 'weightlifting', 'weightlifting']}	True	5	False
+Lv1-2x6-9	"To solve this logic puzzle, we need to arrange the beverages and transports in the correct order based on the given clues. Let's analyze each clue step-by-step:
+
+### Clues Analysis:
+1. **Soy-milk is on the left of Tea**.
+2. **Juice is on the right of Hot-Chocolate**.
+3. **Subway is on the right of Bus**.
+4. **Van is the person drinking Hot-Chocolate**.
+5. **Soy-milk is on the right of Bike**.
+6. **Tea is on the left of Hot-Chocolate**.
+7. **Hot-Chocolate is on the right of Tea** (redundant with clue 6).
+8. **Sprite is on the left of Iced-Tea**.
+9. **Hot-Chocolate is on the left of Snowmobile**.
+
+### Step-by-Step Solution:
+1. From Clue 4, we know that the person drinking Hot-Chocolate is also driving the Van.
+2. From Clue 6, Tea is on the left of Hot-Chocolate.
+3. From Clue 7, Hot-Chocolate is on the right of Tea.
+4. From Clue 9, Hot-Chocolate is on the left of Snowmobile.
+5. From Clue 2, Juice is on the right of Hot-Chocolate.
+6. From Clue 1, Soy-milk is on the left of Tea.
+7. From Clue 5, Soy-milk is on the right of Bike.
+8. From Clue 3, Subway is on the right of Bus.
+9. From Clue 8, Sprite is on the left of Iced-Tea.
+
+Let's start arranging the beverages and transports based on these clues:
+
+#### Beverage Arrangement:
+- Since Tea is on the left of Hot-Chocolate, and Hot-Chocolate is on the left of Snowmobile, we have:
+  - Tea, Hot-Chocolate, Snowmobile.
+- Juice is on the right of Hot-Chocolate, so it must be after Hot-Chocolate.
+- Soy-milk is on the left of Tea, so it must be before Tea.
+- Sprite is on the left of Iced-Tea, so it must be before Iced-Tea.
+
+Thus, the beverage arrangement is:
+- **Soy-milk, Tea, Hot-Chocolate, Snowmobile, Juice, Iced-Tea**
+
+#### Transport Arrangement:
+- Bus is on the left of Subway.
+- Van is the person drinking Hot-Chocolate, which is in the 4th position.
+- Hot-Chocolate is on the left of Snowmobile, so Snowmobile cannot be in the 4th position (already occupied by Van).
+- Therefore, Snowmobile must be in the 5th position.
+- Hot-Chocolate (Van) is in the 4th position.
+- The remaining positions for the transports are 1, 2, 3, 5, 6.
+- Since Bus is on the left of Subway, we can place them as follows:
+  - Bus in 1st position, Subway in 6th position.
+- This leaves the 2nd and 3rd positions for Bike and Sprites.
+- Since Sprite is on the left of Iced-Tea, Sprite must be in the 2nd position, and Iced-Tea in the 3rd position.
+
+Thus, the transport arrangement is:
+- **Bus, Sprite, Iced-Tea, Van, Snowmobile, Subway**
+
+### Final Solution Table:
+```
+|             |   1    |    2     |    3     |   4    |       5       |     6      |
+| Beverage    | Soy-milk| Tea      | Hot-Chocolate| Snowmobile| Iced-Tea      | Sprite    |
+| Transport   | Bus     | Sprite   | Iced-Tea    | Van      | Snowmobile    | Subway    |
+```"	{'beverage': ['soy-milk', 'tea', 'hot-chocolate', 'snowmobile', 'iced-tea', 'sprite'], 'transport': ['bus', 'sprite', 'iced-tea', 'van', 'snowmobile', 'subway']}	True	0	False
+Lv1-2x6-10	"Sure, let's solve this step-by-step using the given clues:
+
+1. **Clue 2:** The person eating broccoli is on the far right.
+   - This means broccoli is eaten by the person in position 6.
+
+2. **Clue 3:** The person watching mystery movies is the person eating cranberry.
+   - This means cranberry is eaten by the person in position 2 (since it must be the second from the left).
+
+3. **Clue 6:** The person eating cranberry is on the far left.
+   - Since cranberry is eaten by the person in position 2, and it is on the far left, there is no contradiction here.
+
+4. **Clue 7:** The person eating peas is the person watching family movies.
+   - This means the person in position 5 is eating peas and watching family movies.
+
+5. **Clue 1:** The person watching family movies is on the right of the person watching mystery movies.
+   - Since the person watching family movies is in position 5, the person watching mystery movies must be in position 4.
+
+6. **Clue 5:** The person watching thriller movies is on the far right.
+   - This means the person in position 6 is watching thriller movies. But we already know that position 6 is for broccoli, so the person watching thriller movies is not in position 6. Therefore, the person in position 6 is still watching broccoli, and the person in position 5 is watching family movies.
+
+7. **Clue 4:** The person eating onion is on the right of the person watching western movies.
+   - If the person in position 5 is watching family movies, then the person in position 4 must be watching mystery movies. So, the person in position 3 must be watching western movies, and the person in position 2 is watching mystery movies (clue 3). Therefore, the person in position 4 must be eating onion since it is on the right of the person watching western movies.
+
+8. **Clue 8:** The person eating kiwi is on the left of the person watching satire movies.
+   - If the person in position 2 is watching mystery movies and the person in position 4 is watching western movies, the person in position 3 must be watching satire movies. Therefore, the person in position 2 must be eating kiwi since it is on the left of the person watching satire movies.
+
+9. **Clue 9:** The person watching satire movies is on the left of the person watching thriller movies.
+   - We have established that the person in position 3 is watching satire movies and the person in position 6 is watching thriller movies.
+
+Now, we can fill in the table with the information we have:
+
+|               |     1     |   2    |   3    |    4    |   5    |    6     |
+| Food          | kiwi      | cranberry | peaches | onion   | peas   | broccoli |
+| Movie-Genre   | mystery   | satire   | thriller| western | family | thriller |
+
+So, the final solution is:
+
+```
+|               |     1     |   2    |   3    |    4    |   5    |    6     |
+| Food          | kiwi      | cranberry | peaches | onion   | peas   | broccoli |
+| Movie-Genre   | mystery   | satire   | thriller| western | family | thriller |
+```"	{'food': ['kiwi', 'cranberry', 'peaches', 'onion', 'peas', 'broccoli'], 'movie-genre': ['mystery', 'satire', 'thriller', 'western', 'family', 'thriller']}	True	4	False

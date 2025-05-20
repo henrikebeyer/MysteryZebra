@@ -1,0 +1,446 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-5x2-1	"Let's solve this step by step:
+
+1. We know that there are two different beverages, jobs, pets, sports, and transports. So, we can fill in the first row with the two beverages:
+
+|             | Cola   | Lemonade |
+|------------|--------|----------|
+| Beverage   | Cola   | Lemonade |
+
+2. From point 1, we know that the person drinking lemonade is on the right of the person who's sport is skiing. Since there are only two sports, the person who prefers baseball must be on the left of the person who prefers skiing. So, we can fill in the second row with the sports:
+
+|             | Cola   | Lemonade |
+|------------|--------|----------|
+| Beverage   | Cola   | Lemonade |
+| Sport      | Baseball| Skiing   |
+
+3. From point 2, we know that the person drinking cola is on the left of the person driving the train. Since there are only two transports, the person who uses jet-ski must be on the right of the person who uses the train. So, we can fill in the fourth row with the transports:
+
+|             | Cola   | Lemonade |
+|------------|--------|----------|
+| Beverage   | Cola   | Lemonade |
+| Sport      | Baseball| Skiing   |
+| Transport  | Train  | Jet-ski  |
+
+4. From point 3, we know that the freelancer is the person drinking cola. So, we can fill in the second row with the jobs:
+
+|             | Freelancer | Paramedic |
+|------------|------------|-----------|
+| Beverage   | Cola       | Lemonade  |
+| Sport      | Baseball   | Skiing    |
+| Transport  | Train      | Jet-ski   |
+
+5. From point 4, we know that the paramedic is the owner of the mouse. Since there are only two pets, the person who keeps a rat must be the other job (which is paramedic). So, we can fill in the first row with the pets:
+
+|             | Freelancer (with a rat) | Paramedic (with a mouse) |
+|------------|------------------------|--------------------------|
+| Beverage   | Cola                   | Lemonade                |
+| Sport      | Baseball               | Skiing                  |
+| Transport  | Train                  | Jet-ski                 |
+
+The final solution table is:
+
+#############
+|             | Freelancer (with a rat) | Paramedic (with a mouse) |
+|------------|------------------------|--------------------------|
+| Beverage   | Cola                   | Lemonade                |
+| Sport      | Baseball               | Skiing                  |
+| Transport  | Train                  | Jet-ski                 |
+#############"	{'beverage': ['cola', 'lemonade'], 'sport': ['baseball', 'skiing'], 'transport': ['train', 'jet-ski']}	False	0	False
+Lv1-5x2-2	"Let's solve this step by step:
+
+1. We know that there are two different beverages, jobs, pets, sports, and transport. So, we can fill in the first row with the two different beverages:
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   |          |         |
+| Job        |          |         |
+| Pet        |          |         |
+| Sport      |          |         |
+| Transport  |          |         |
+
+2. The paramedic is on the left of the person drinking sprite. Since there are only two people, the paramedic must be in the first column. Let's place the paramedic in the soy-milk column (as the sprite drinker is yet to be determined).
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Paramedic|         |
+| Job        | Librarian|         |
+| Pet        | Ferret   |         |
+| Sport      | Lacrosse |         |
+| Transport  | Roller   |         |
+
+3. The owner of the ferret is the person who's sport is skateboarding. So, we need to swap the pet and the sport for the second column.
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Paramedic|         |
+| Job        | Librarian|         |
+| Pet        |         | Skateboarding |
+| Sport      |         | Lacrosse  |
+| Transport  | Roller   |         |
+
+4. The owner of the ferret is the person drinking sprite. So, we need to swap the second and third columns.
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Paramedic| Sprite   |
+| Job        | Librarian|         |
+| Pet        |         | Ferret   |
+| Sport      |         | Lacrosse |
+| Transport  | Roller   |         |
+
+5. The person driving the roller is on the far right. Since there are only two people, the person driving the roller must be in the last column. Let's place the librarian in the soy-milk column and the tram driver in the first column.
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Tram     | Sprite   |
+| Job        | Librarian|         |
+| Pet        |         | Ferret   |
+| Sport      |         | Lacrosse |
+| Transport  | Roller   |         |
+
+6. Now, we have filled all the jobs, pets, sports, and transport. The only thing left is to fill the beverages for the librarian and the tram driver. Since the paramedic is drinking sprite, the librarian must be drinking soy-milk.
+
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Tram     | Sprite   |
+| Job        | Librarian|         |
+| Pet        |         | Ferret   |
+| Sport      |         | Lacrosse |
+| Transport  | Roller   |         |
+
+So, the final solution table is:
+
+#############
+|             | Soy-Milk | Sprite   |
+|------------|----------|---------|
+| Beverage   | Tram     | Sprite   |
+| Job        | Librarian|         |
+| Pet        |         | Ferret   |
+| Sport      |         | Lacrosse |
+| Transport  | Roller   |         |
+#############"	{'beverage': ['tram', 'sprite'], 'job': ['librarian', ''], 'pet': ['', 'ferret'], 'sport': ['', 'lacrosse'], 'transport': ['roller', '']}	True	2	False
+Lv1-5x2-3	"Let's solve this step by step:
+
+1. Since the person eating grapes is on the far left, we can place grapes in the first column.
+
+|               |         1          |    2     |
+| Food          | Grapes            |          |
+| Hobby         |                    |          |
+| Job           |                    |          |
+| Music-Genre   |                    |          |
+| Sport         |                    |          |
+
+2. The fan of pop is on the right of the software-developer. Since the person eating grapes is on the far left, the software-developer must be in the second column. Let's place software-developer in the second row, second column.
+
+|               |         1          |    2     |
+| Food          | Grapes            | Software-developer |
+| Hobby         |                    |          |
+| Job           |                    | Teacher |
+| Music-Genre   |                    |          |
+| Sport         |                    |          |
+
+3. The fan of electronic is on the left of the person who's sport is baseball. Since the software-developer is a teacher (not baseball), the fan of electronic must be in the first column. Let's place electronic in the first row, first column.
+
+|               |         1          |    2     |
+| Food          | Electronic (Fan of) | Software-developer |
+| Hobby         |                    |          |
+| Job           |                    | Teacher |
+| Music-Genre   | Pop                |          |
+| Sport         |                    |          |
+
+4. The person who's hobby is collecting is on the far left. Since we've already placed the hobby of the person on the far left, the hobby of collecting must be in the first row. Let's place collecting in the first row, first column.
+
+|               |         1          |    2     |
+| Food          | Collecting (Hobby of) | Software-developer |
+| Hobby         | Camping            |          |
+| Job           |                    | Teacher |
+| Music-Genre   | Pop                |          |
+| Sport         |                    | Baseball |
+
+5. The person who's sport is baseball is on the far right. Since we've already placed the sport of baseball in the last column, no further changes are needed.
+
+|               |         1          |    2     |
+| Food          | Collecting (Hobby of) | Software-developer |
+| Hobby         | Camping            |          |
+| Job           |                    | Teacher |
+| Music-Genre   | Pop                | Electronic |
+| Sport         |                    | Baseball |
+
+6. We've filled all the rows and columns, so the final solution table is:
+
+#############
+|               |         1          |    2     |
+| Food          | Collecting (Hobby of) | Software-developer |
+| Hobby         | Camping            |          |
+| Job           |                    | Teacher |
+| Music-Genre   | Pop                | Electronic |
+| Sport         |                    | Baseball |
+#############"	{'food': ['collecting (hobby of)', 'software-developer'], 'hobby': ['camping', ''], 'job': ['', 'teacher'], 'music-genre': ['pop', 'electronic'], 'sport': ['', 'baseball']}	True	2	False
+Lv1-5x2-4	"Let's solve this step by step:
+
+1. Since there are 2 different types of food, and the person eating radish is on the far right, the person eating lemon must be on the left. So, we can fill the first column as follows:
+
+   |               |    1     |     2      |
+   | Food          | Lemon    | Radish     |
+
+2. Since there are 2 different nationalities, and the Chinese is on the left of the person driving the taxi, the Chinese must be in the first row, and the person driving the taxi must be in the second row. Let's assume the Chinese is a nationality for the first row. So, we can fill the third column as follows:
+
+   |               |    1     |     2      |
+   | Food          | Lemon    | Radish     |
+   | Nationality   | Chinese  | Turkish    |
+
+3. Since the journalist is on the right of the dancer, the journalist must be in the second row. Since there are 2 different jobs, the dancer must be in the first row. So, we can fill the fourth column as follows:
+
+   |               |    1     |     2      |
+   | Food          | Lemon    | Radish     |
+   | Nationality   | Chinese  | Turkish    |
+   | Job           | Dancer   | Journalist |
+
+4. Since the person watching family movies is on the right of the person watching comedy movies, and we know the jobs and nationalities, we can deduce the movie genres. Let's assume the person watching comedy movies is in the first row. Since there are 2 different movie genres, the person watching family movies must be in the second row. So, we can fill the fifth column as follows:
+
+   |               |    1     |     2      |
+   | Food          | Lemon    | Radish     |
+   | Nationality   | Chinese  | Turkish    |
+   | Job           | Dancer   | Journalist |
+   | Movie-Genre   | Comedy   | Family     |
+
+5. Finally, since there are 2 different means of transport, the person using the airplane must be in the first row, and the person using the taxi must be in the second row. Since we already know the nationalities, jobs, and movie genres, the only remaining information is the means of transport. Let's assume the person using the airplane is in the first row. So, we can fill the last column as follows:
+
+   |               |    1     |     2      |
+   | Food          | Lemon    | Radish     |
+   | Nationality   | Chinese  | Turkish    |
+   | Job           | Dancer   | Journalist |
+   | Movie-Genre   | Comedy   | Family     |
+   | Transport     | Airplane | Taxi      |
+
+The final solution table is:
+
+#############
+|               |    1     |     2      |
+| Food          | Lemon    | Radish     |
+| Nationality   | Chinese  | Turkish    |
+| Job           | Dancer   | Journalist |
+| Movie-Genre   | Comedy   | Family     |
+| Transport     | Airplane | Taxi      |
+#############"	{'food': ['lemon', 'radish'], 'nationality': ['chinese', 'turkish'], 'job': ['dancer', 'journalist'], 'movie-genre': ['comedy', 'family'], 'transport': ['airplane', 'taxi']}	True	4	True
+Lv1-5x2-5	"Let's solve this step by step:
+
+1. We know there are 2 different beverages, 2 hobbies, 2 movie genres, 2 nationalities, and 2 pets. So, each category will have one unique item on the left and one on the right.
+
+2. The person who does magic-tricks is on the left of the person drinking sprite. This means that the hobby 'magic-tricks' must be on the left, and 'chess' on the right.
+
+3. The owner of the ferret is the person drinking sprite. Since we know the hobby of the left person, the only remaining option for the left column (besides beverage) is 'ferret' for the pet. So, 'ferret' must be on the left, and 'snake' on the right.
+
+4. The person watching action movies is on the right of the British. Since we know the pet of the left person, the only remaining option for the right column (besides movie genre) is 'British' for the nationality. So, 'British' must be on the right, and 'Canadian' on the left.
+
+5. Now we have placed 4 items: 'magic-tricks' (hobby), 'ferret' (pet), 'British' (nationality), and 'sprite' (beverage). The only remaining items are 'chess' (hobby), 'snake' (pet), 'Canadian' (nationality), and 'action' (movie genre).
+
+6. Since 'chess' and 'action' are the only remaining items, they must be the movie genre and the hobby of the person on the right, respectively. So, 'action' must be on the right, and 'chess' on the left.
+
+7. Now we have placed all items: 'magic-tricks' (hobby), 'ferret' (pet), 'British' (nationality), 'sprite' (beverage), 'action' (movie genre), and 'chess' (hobby).
+
+The final solution table is:
+
+|               |      1       |    2     |
+| Beverage      | sprite      | soda     |
+| Hobby         | magic-tricks| chess    |
+| Movie-Genre   | action      | documentary|
+| Nationality   | British     | Canadian  |
+| Pet           | ferret      | snake    |
+
+Note that the beverages are not specified as 'iced-tea' and 'sprite', but since there are only 2 different beverages, we can assume that the other beverage is 'iced-tea'. So, the final solution table with the beverages is:
+
+|               |      1       |    2     |
+| Beverage      | iced-tea    | sprite   |
+| Hobby         | magic-tricks| chess    |
+| Movie-Genre   | action      | documentary|
+| Nationality   | British     | Canadian  |
+| Pet           | ferret      | snake    |"	{'beverage': ['iced-tea', 'sprite'], 'hobby': ['magic-tricks', 'chess'], 'movie-genre': ['action', 'documentary'], 'nationality': ['british', 'canadian']}	False	0	False
+Lv1-5x2-6	"Let's solve this step by step:
+
+1. We know that there are two different beverages, two jobs, two music genres, two nationalities, and two sports. So, we can fill in the first row of the table with 'Beverage', 'Job', 'Music-Genre', 'Nationality', and 'Sport'.
+
+2. The coach is a fan of country music. Since there are two music genres, the other person must be a fan of folk music. So, we can fill in the second row with 'Job' (Coach) and 'Music-Genre' (Country), and the third row with 'Job' (Scientist) and 'Music-Genre' (Folk).
+
+3. The Italian is drinking mirinda. Since there are two beverages, the other person must be drinking iced-tea. So, we can fill in the fourth row with 'Nationality' (Italian) and 'Beverage' (Mirinda), and the fifth row with 'Nationality' (Turkish) and 'Beverage' (Iced-Tea).
+
+4. The Italian is on the left of the person who's sport is swimming. Since the Italian is in the fourth row, the person who's sport is swimming must be in the second row. So, we can fill in the sixth row with 'Sport' (Swimming). The first row must have 'Sport' (Cycling) because there are two sports and cycling hasn't been used yet.
+
+5. Now we know that the Italian is in the fourth row and the person who's sport is swimming is in the second row. Since the Italian is on the left of the person who's sport is swimming, the Italian must be in column 1 and the person who's sport is swimming must be in column 2. So, we can fill in the first column with 'Nationality' (Italian) and 'Sport' (Cycling), and the second column with 'Nationality' (Turkish) and 'Sport' (Swimming).
+
+6. Finally, we know that the Italian is a scientist. Since the Italian is in the fourth row, the scientist must be in the fourth row as well. But we already know that the fourth row is 'Nationality' (Italian) and 'Beverage' (Mirinda). Since a nationality can't be a job, the scientist must be in the third row. So, we can fill in the third row with 'Job' (Scientist) and 'Music-Genre' (Folk).
+
+The final solution table is:
+
+|               |    1    |     2     |
+| Beverage      | Iced-Tea | Mirinda   |
+| Job           | Coach   | Scientist |
+| Music-Genre   | Country | Folk     |
+| Nationality   | Italian | Turkish  |
+| Sport         | Cycling | Swimming |
+
+#############
+| Beverage      | Iced-Tea | Mirinda   |
+| Job           | Coach   | Scientist |
+| Music-Genre   | Country | Folk     |
+| Nationality   | Italian | Turkish  |
+| Sport         | Cycling | Swimming |
+#############"	{'beverage': ['iced-tea', 'mirinda'], 'job': ['coach', 'scientist'], 'music-genre': ['country', 'folk'], 'nationality': ['italian', 'turkish'], 'sport': ['cycling', 'swimming']}	True	8	False
+Lv1-5x2-7	"Let's solve this step by step:
+
+1. We know that there are 2 different hobbies, 2 different beverages, 2 different movie-genres, 2 different music-genres, and 2 different sports. So, each category will have one unique item.
+
+2. Since the person who's hobby is skydiving is the person who's sport is volleyball, we can pair them up:
+   - Hobby: card-games, Skydiving (Volleyball)
+   - Sport: Soccer, Volleyball (Skydiving)
+
+3. The person drinking cola is on the far right. Since we already know the sport of the person drinking cola is volleyball (Skydiving), and we know that the hobby of the person drinking cola cannot be card-games (since it's paired with skydiving), the only option left for the beverage of the person on the far right is 7up.
+   - Beverage: 7up, Cola
+
+4. The person who's sport is volleyball (Skydiving) is on the left of the person watching western movies. Since we know the hobby and beverage of the person on the far right, we can place the person watching western movies to the right of the person drinking cola. The only remaining movie-genre is comedy, so the person watching comedy movies must be on the far left.
+   - Movie-Genre: Comedy, Western
+
+5. The fan of reggae is on the far left. Since we know the movie-genre of the person on the far left, the only remaining music-genre is house.
+   - Music-Genre: House, Reggae
+
+6. Now we have enough information to fill the table:
+
+|               |     1      |     2      |
+| Beverage      | Cola      | 7up       |
+| Hobby         | card-games| Skydiving  |
+| Movie-Genre   | Comedy    | Western    |
+| Music-Genre   | House     | Reggae    |
+| Sport         | Soccer    | Volleyball |
+
+So, the final solution table is:
+
+#############
+|               |     1      |     2      |
+| Beverage      | Cola      | 7up       |
+| Hobby         | card-games| Skydiving  |
+| Movie-Genre   | Comedy    | Western    |
+| Music-Genre   | House     | Reggae    |
+| Sport         | Soccer    | Volleyball |
+#############"	{'beverage': ['cola', '7up'], 'hobby': ['card-games', 'skydiving'], 'movie-genre': ['comedy', 'western'], 'music-genre': ['house', 'reggae'], 'sport': ['soccer', 'volleyball']}	True	2	False
+Lv1-5x2-8	"Let's solve this step by step:
+
+1. Since there are 2 different nationalities (Canadian and Thai), we can place one of them in each column. Let's place the Thai in column 1 and the Canadian in column 2.
+
+   |               |     1     |      2      |
+   | Food          |           |             |
+   | Hobby         |           |             |
+   | Job           |           |             |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         |           |             |
+
+2. Since there are 2 different hobbies (dancing and traveling), the person with the hobby of dancing must be in one of the remaining empty cells. Let's place the dancer in the cell where the Thai is (column 1), as the dancer is on the right of the Canadian (according to rule 1).
+
+   |               |     1     |      2      |
+   | Food          |           |             |
+   | Hobby         | Dancing   |             |
+   | Job           |           |             |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         |           |             |
+
+3. Since there are 2 different jobs (electrician and paramedic), the paramedic must be in one of the remaining empty cells. According to rule 2, the paramedic cannot be in the same column as the person who prefers baseball (since the paramedic is on the left of the person who prefers baseball). So, the paramedic cannot be in column 1. Therefore, the paramedic must be in column 2.
+
+   |               |     1     |      2      |
+   | Food          |           |             |
+   | Hobby         | Dancing   |             |
+   | Job           |           | Paramedic   |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         |           |             |
+
+4. Since there are 2 different sports (baseball and swimming), the person who prefers baseball must be in one of the remaining empty cells. According to rule 2, the person who prefers baseball cannot be in the same column as the paramedic. So, the person who prefers baseball cannot be in column 2. Therefore, the person who prefers baseball must be in column 1.
+
+   |               |     1     |      2      |
+   | Food          | Baseball  |             |
+   | Hobby         | Dancing   |             |
+   | Job           |           | Paramedic   |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         | Swimming  |             |
+
+5. Since there are 2 different types of food (corn and pear), the person eating pear must be in the remaining empty cell. The person eating pear cannot be in the same column as the Thai (according to rule 3). So, the person eating pear must be in column 2.
+
+   |               |     1     |      2      |
+   | Food          | Baseball  | Pear        |
+   | Hobby         | Dancing   |             |
+   | Job           |           | Paramedic   |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         | Swimming  |             |
+
+6. Now we have filled all the information, so we can conclude that the final solution table is:
+
+   |               |     1     |      2      |
+   | Food          | Baseball  | Pear        |
+   | Hobby         | Dancing   |             |
+   | Job           |           | Paramedic   |
+   | Nationality   | Thai      | Canadian    |
+   | Sport         | Swimming  |             |
+
+This is the final solution table."	{}	False	0	False
+Lv1-5x2-9	"Let's solve this step by step:
+
+1. Since there are 2 different types of food, 2 different hobbies, 2 different music-genres, 2 different pets, and 2 different sports, we can place one of each in each row.
+
+2. From rule 1, we know that the metal fan is on the right of the person who's hobby is magic-tricks. So, let's place the hobby ""magic-tricks"" in the first column and ""collecting"" in the second column. Then, place ""metal"" in the row where ""magic-tricks"" is, and ""house"" in the other row.
+
+3. Now, the person eating pepper is on the far right. Since we have already placed two items in the second column, the only remaining item, ""pepper"", must go in the first row.
+
+4. The owner of the lizard is on the left of the person who's sport is rugby. Since we have already placed two items in the first row, the only remaining item, ""lizard"", must go in the second row.
+
+5. The sport ""basketball"" is left, and the sport ""rugby"" is right of the lizard owner. So, ""basketball"" goes in the first row and ""rugby"" in the second row.
+
+Here is the final solution table:
+
+|               |       Pepper       |      Basketball     |
+| Food          |                    |                     |
+| Hobby         |  Magic-tricks      |  Collecting         |
+| Music-Genre   |  House             |  Metal              |
+| Pet           |  Goldfish          |  Lizard             |
+| Sport         |  Rugby             |  Basketball         |
+
+#############
+|               |       Pepper       |      Basketball     |
+| Food          |                    |                     |
+| Hobby         |  Magic-tricks      |  Collecting         |
+| Music-Genre   |  House             |  Metal              |
+| Pet           |  Goldfish          |  Lizard             |
+| Sport         |  Rugby             |  Basketball         |
+#############"	{'food': ['', ''], 'hobby': ['magic-tricks', 'collecting'], 'music-genre': ['house', 'metal'], 'pet': ['goldfish', 'lizard'], 'sport': ['rugby', 'basketball']}	True	4	False
+Lv1-5x2-10	"Let's solve this step by step:
+
+1. We know that the people have 2 different hobbies, jobs, movie-genres, pets, and means of transport. So, each row must have a unique value.
+
+2. The fisherman is on the far left, so we can place him in the first row, first column. Let's say he is a Fisherman (F).
+
+3. Since the person watching satire movies is on the left of the owner of the cat, the person watching satire movies cannot be on the first column (as the cat owner is already decided). So, the satire movie-watcher must be in the second row, first column. Let's say he is watching Satire (S).
+
+4. Now, the person watching comedy movies is on the right of the person driving the snowmobile. The only available spot on the right of the snowmobile (which we will place later) is the second row, second column. So, the comedy movie-watcher is in the second row, second column. Let's say he is watching Comedy (C).
+
+5. The person who's hobby is traveling is on the right of the person who's hobby is rock-climbing. The only available spot on the right of rock-climbing (which we will place later) is the first row, second column. So, the traveler is in the first row, second column. Let's say he has the hobby of Traveling (T).
+
+6. Now, the person who's hobby is rock-climbing is on the left of the traveler. So, he must be in the first row, first column. Let's say he is a Rock-climber (R).
+
+7. The last person is the owner of the cat. Since the satire movie-watcher is already on the left of the cat owner, the cat owner must be in the second row, second column. Let's say he keeps a Cat (K).
+
+8. The last thing to determine is the means of transport. The person who's hobby is traveling is on the right of the person who's hobby is rock-climbing, so the traveler cannot be driving the snowmobile. So, the snowmobile driver must be the person who's hobby is rock-climbing (R). This means the transport must be a Snowmobile (S) for the fisherman (F). The only remaining transport is a Train (T).
+
+Here is the final solution table:
+
+|               |       1       |     2      |
+| Hobby         | Rock-climbing (R) | Traveling (T) |
+| Job           | Fisherman (F) | Journalist (J) |
+| Movie-Genre   | Satire (S) | Comedy (C) |
+| Pet           | Bird (B) | Cat (K) |
+| Transport     | Snowmobile (S) | Train (T) |
+
+#############
+|               |       1       |     2      |
+| Hobby         | Rock-climbing (R) | Traveling (T) |
+| Job           | Fisherman (F) | Journalist (J) |
+| Movie-Genre   | Satire (S) | Comedy (C) |
+| Pet           | Bird (B) | Cat (K) |
+| Transport     | Snowmobile (S) | Train (T) |
+#############"	{'hobby': ['rock-climbing (r)', 'traveling (t)'], 'job': ['fisherman (f)', 'journalist (j)'], 'movie-genre': ['satire (s)', 'comedy (c)'], 'pet': ['bird (b)', 'cat (k)'], 'transport': ['snowmobile (s)', 'train (t)']}	True	0	False

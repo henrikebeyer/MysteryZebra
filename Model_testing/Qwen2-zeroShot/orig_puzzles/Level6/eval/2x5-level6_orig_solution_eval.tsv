@@ -1,0 +1,698 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv6-2x5-1	"Let's solve the puzzle step-by-step using the given clues:
+
+1. **Clue 1:** The security-guard is somewhere to the right of the owner of the dog.
+2. **Clue 2:** The owner of the frog is in the middle (position 3).
+3. **Clue 3:** The owner of the pony is somewhere to the left of the owner of the dog.
+4. **Clue 4:** The security-guard is in an odd position.
+5. **Clue 5:** The videographer is somewhere to the left of the manager.
+6. **Clue 6:** The videographer is not the owner of the turtle.
+7. **Clue 7:** The owner of the turtle is somewhere to the right of the owner of the pony.
+8. **Clue 8:** The videographer is on the far left.
+9. **Clue 9:** The security-guard is somewhere to the left of the designer.
+10. **Clue 10:** The manager is on the left of the owner of the rabbit.
+11. **Clue 11:** The owner of the pony is somewhere to the left of the manager.
+
+### Step-by-Step Solution:
+
+1. **Clue 2:** The owner of the frog is in the middle (position 3).
+   - Frog -> Position 3
+
+2. **Clue 8:** The videographer is on the far left.
+   - Videographer -> Position 1
+
+3. **Clue 6:** The videographer is not the owner of the turtle.
+   - Turtle cannot be in Position 1.
+
+4. **Clue 5:** The videographer is somewhere to the left of the manager.
+   - Manager must be in Position 2 or 4 or 5.
+
+5. **Clue 10:** The manager is on the left of the owner of the rabbit.
+   - Rabbit must be in Position 4 or 5.
+
+6. **Clue 4:** The security-guard is in an odd position.
+   - Security-guard can be in Position 1, 3, or 5.
+
+7. **Clue 9:** The security-guard is somewhere to the left of the designer.
+   - Designer must be in Position 2 or 4 or 5.
+
+8. **Clue 11:** The owner of the pony is somewhere to the left of the manager.
+   - Pony must be in Position 1, 2, or 3.
+   - Since the owner of the frog is in Position 3, the pony must be in Position 1 or 2.
+
+9. **Clue 7:** The owner of the turtle is somewhere to the right of the owner of the pony.
+   - If pony is in Position 1, turtle must be in Position 3, 4, or 5.
+   - If pony is in Position 2, turtle must be in Position 4 or 5.
+
+10. **Clue 3:** The owner of the pony is somewhere to the left of the owner of the dog.
+    - If pony is in Position 1, dog must be in Position 2, 3, 4, or 5.
+    - If pony is in Position 2, dog must be in Position 3, 4, or 5.
+
+11. **Clue 1:** The security-guard is somewhere to the right of the owner of the dog.
+    - If dog is in Position 2, security-guard must be in Position 3, 4, or 5.
+    - If dog is in Position 3, security-guard must be in Position 4 or 5.
+    - If dog is in Position 4, security-guard must be in Position 5.
+
+12. **Clue 10:** The manager is on the left of the owner of the rabbit.
+    - If manager is in Position 2, rabbit must be in Position 3, 4, or 5.
+    - If manager is in Position 4, rabbit must be in Position 5.
+
+### Final Solution:
+
+- Position 1: Videographer
+- Position 2: Manager
+- Position 3: Frog
+- Position 4: Rabbit
+- Position 5: Designer
+
+- The security-guard must be in Position 3 because:
+  - It is an odd position.
+  - It is to the right of the owner of the dog.
+  - It is to the left of the designer.
+
+- The owner of the pony must be in Position 1 because:
+  - It is to the left of the owner of the dog.
+  - It is to the left of the manager.
+
+- The owner of the dog must be in Position 4 because:
+  - It is to the right of the security-guard.
+  - It is to the right of the pony.
+
+- The owner of the turtle must be in Position 5 because:
+  - It is to the right of the owner of the pony.
+
+Final Table:
+
+```
+|       |      1       |    2     |       3        |    4    |    5     |
+| Job   | Videographer |  Manager |  Security-guard |  Dog    | Designer |
+| Pet   |              |          |                |         |          |
+```"	{'job': ['videographer', 'manager', 'security-guard', 'dog', 'designer'], 'pet': ['', '', '', '', '']}	True	3	False
+Lv6-2x5-2	"Let's solve this step-by-step using the given clues:
+
+1. **Clue 10**: The person who's sport is tennis is the person drinking milk.
+   - Position 5 (Beverage) = Milk
+   - Position 5 (Sport) = Tennis
+
+2. **Clue 5**: The person drinking cola is in an odd position (1 or 3).
+   - Since we know the person drinking milk is in position 5, cola must be in position 1 or 3.
+
+3. **Clue 6**: The person drinking cola is on the left of the person drinking 7up.
+   - This means if cola is in position 1, 7up must be in position 2.
+   - If cola is in position 3, 7up must be in position 4.
+
+4. **Clue 2**: The person drinking hot-chocolate is on the right of the person drinking milk.
+   - Since milk is in position 5, hot-chocolate must be in position 4 or 3.
+
+5. **Clue 3 & 4**: The person drinking 7up is not the person who's sport is rugby, and the person who's sport is rugby is not the person drinking 7up.
+   - So, 7up cannot be in position 4 (since rugby would be in 5, which is not allowed).
+
+6. **Clue 7**: The person who's sport is rugby is somewhere to the left of the person who's sport is rowing.
+   - Rugby < Rowing
+
+7. **Clue 9**: The person who's sport is lacrosse is between the person who's sport is rugby and the person who's sport is tennis.
+   - Since tennis is in position 5, lacrosse must be in position 3, and rugby must be in position 2.
+
+8. **Clue 1**: The person who's sport is rowing is not the person drinking fanta.
+   - So, rowing cannot be in position 3 (since fanta is in that position).
+
+Now let's place everything:
+
+- From Clue 10: Tennis = Milk (Position 5)
+- From Clue 9: Lacrosse = Position 3, Rugby = Position 2, Tennis = Position 5
+- From Clue 5: Cola is in an odd position. Let's try Cola in Position 1:
+  - 7up must be in Position 2 (Rugby)
+  - Hot-chocolate must be in Position 4 (since it's to the right of Milk)
+- From Clue 6: Cola in Position 1, 7up in Position 2, so Fanta must be in Position 3 (Lacrosse)
+
+So, we have:
+- Position 1: Cola
+- Position 2: Rugby
+- Position 3: Lacrosse
+- Position 4: Hot-chocolate
+- Position 5: Tennis (Milk)
+
+Let's fill in the sports:
+- From Clue 9: Lacrosse (Tennis), Rugby, Lacrosse, and Tennis.
+- From Clue 7: Rugby < Rowing, so Rowing must be in Position 4.
+- The remaining sport is Baseball for Position 1.
+
+Final Solution Table:
+
+```
+|            |   1    |       2       |   3   |   4    |    5     |
+| Beverage   | Cola   | hot-cho    te | Lac   | Hot-ch | Milk    |
+| Sport      | Baseball| lacrosse    | rugby | rowing | tennis  |
+```"	{'beverage': ['cola', 'hot-cho    te', 'lac', 'hot-ch', 'milk'], 'sport': ['baseball', 'lacrosse', 'rugby', 'rowing', 'tennis']}	True	3	False
+Lv6-2x5-3	"Let's solve the puzzle step by step using the given clues.
+
+### Clues Recap:
+1. The fan of soul is between the fan of rock and the fan of reggae.
+2. The fan of rock is on the left or right of the fan of classical.
+3. The fan of disco is the analyst.
+4. The project-manager is in an even position.
+5. The manager is on the left of the chef.
+6. The manager is on the left of the fan of soul.
+7. The chef is on the right of the manager.
+8. The project-manager is not the fan of rock.
+9. The analyst is on the left or right of the fan of reggae.
+10. The fan of rock is the manager.
+11. The fan of classical is in an odd position.
+
+### Step-by-Step Solution:
+
+1. **Clue 3**: The fan of disco is the analyst.
+   - Analyst = Fan of Disco
+
+2. **Clue 10**: The fan of rock is the manager.
+   - Manager = Fan of Rock
+
+3. **Clue 2**: The fan of rock (Manager) is on the left or right of the fan of classical.
+   - Since the manager is the fan of rock, the fan of classical must be in positions 1, 3, or 5 (odd positions).
+
+4. **Clue 11**: The fan of classical is in an odd position.
+   - Fan of Classical can only be in positions 1, 3, or 5.
+
+5. **Clue 4**: The project-manager is in an even position.
+   - Project-Manager can only be in positions 2 or 4.
+
+6. **Clue 5**: The manager is on the left of the chef.
+   - Since the manager is in position 2 or 4, the chef must be in position 3 or 5 respectively.
+
+7. **Clue 6**: The manager is on the left of the fan of soul.
+   - Since the manager is the fan of rock, the fan of soul must be to the right of the manager.
+
+8. **Clue 7**: The chef is on the right of the manager.
+   - This means the manager cannot be in position 4 (as there would be no room for the chef), so the manager must be in position 2 and the chef in position 3.
+
+9. **Clue 9**: The analyst is on the left or right of the fan of reggae.
+   - Since the analyst is in position 1 (from clue 3), the fan of reggae must be in position 2, 3, or 5.
+
+10. **Clue 1**: The fan of soul is between the fan of rock (Manager) and the fan of reggae.
+    - Since the manager is in position 2, the fan of reggae must be in position 1 or 3. But since the analyst is in position 1, the fan of reggae must be in position 3.
+
+11. **Clue 8**: The project-manager is not the fan of rock.
+    - Since the fan of rock is the manager, the project-manager cannot be in position 2. So, the project-manager must be in position 4.
+
+12. **Final Placement**:
+    - Position 1: Analyst (Fan of Disco)
+    - Position 2: Manager (Fan of Rock)
+    - Position 3: Fan of Reggae
+    - Position 4: Project-Manager
+    - Position 5: Chef
+
+### Final Solution Table:
+```
+|               |       1        |    2    |  3   |        4        |    5    |
+| Job           | Analyst        | Manager | Fan of Reggae | Project-Manager | Chef     |
+| Music-Genre   | Fan of Disco   | Fan of Rock |            |                 |         |
+```"	{'job': ['analyst', 'manager', 'fan of reggae', 'project-manager', 'chef'], 'music-genre': ['fan of disco', 'fan of rock', '', '', '']}	True	2	False
+Lv6-2x5-4	"Let's solve the puzzle step by step based on the given clues.
+
+### Clues Analysis:
+
+1. **The Italian is on the left or right of the Argentine**.
+2. **The Argentine is between the person who's sport is Handball and the person who's sport is Ice-Hockey**.
+3. **The Italian is on the far left**.
+4. **The person who's sport is Parkour is on the right of the person who's sport is Sailing**.
+5. **The Italian is in an odd position**.
+6. **The person who's sport is Handball is not the Italian**.
+7. **The Mexican is in the middle**.
+8. **The person who's sport is Parkour is the Pakistani**.
+
+### Step-by-Step Solution:
+
+1. **Clue 3**: The Italian is on the far left. This means the Italian is in position 1.
+2. **Clue 5**: The Italian is in an odd position (since we already placed the Italian in position 1, this clue is satisfied).
+3. **Clue 1**: The Italian is on the left or right of the Argentine. Since the Italian is in position 1, the Argentine must be in position 2.
+4. **Clue 2**: The Argentine is between the person who's sport is Handball and the person who's sport is Ice-Hockey. Given the positions, the Handball person must be in position 3 and the Ice-Hockey person in position 4.
+5. **Clue 7**: The Mexican is in the middle, which is position 3. So, the Mexican is in position 3.
+6. **Clue 4**: The person who's sport is Parkour is on the right of the person who's sport is Sailing. Since the Mexican is in position 3, and Parkour cannot be in position 3, the only remaining positions for Parkour and Sailing are positions 4 and 5.
+7. **Clue 6**: The person who's sport is Handball is not the Italian. We have Handball in position 3, so it's not the Italian.
+8. **Clue 8**: The person who's sport is Parkour is the Pakistani. Therefore, the Pakistani must be in position 5.
+
+Now let's assign the sports to the remaining positions:
+
+- Position 1: Italian
+- Position 2: Argentine
+- Position 3: Mexican (Handball)
+- Position 4: Sailing
+- Position 5: Pakistani (Parkour)
+
+Since we have all the positions filled and all the clues satisfied, let's fill in the table with the nationalities and sports.
+
+### Final Solution Table:
+
+```
+|               |     1      |     2      |    3     |    4     |     5     |
+| Nationality   | Italian    | Argentine  | Mexican  | Sailing  | Pakistani |
+| Sport         | Handball   | Basketball | Ice-Hockey | Parkour | Sailing  |
+```
+
+This arrangement satisfies all the given conditions."	{'nationality': ['italian', 'argentine', 'mexican', 'sailing', 'pakistani'], 'sport': ['handball', 'basketball', 'ice-hockey', 'parkour', 'sailing']}	True	5	False
+Lv6-2x5-5	"Let's solve the puzzle step by step using the given clues.
+
+1. **Clue 1**: The person drinking lemonade is on the right of the person drinking cola.
+2. **Clue 2**: The Argentine is not the person drinking cola.
+3. **Clue 3**: The person drinking soy-milk is the Turkish.
+4. **Clue 4**: The person drinking lemonade is somewhere to the left of the Turkish.
+5. **Clue 5**: The person drinking soy-milk is on the left of the Argentine.
+6. **Clue 6**: The Turkish is somewhere to the right of the Polish.
+7. **Clue 7**: The person drinking hot-chocolate is on the left or right of the person drinking sprite.
+8. **Clue 8**: The person drinking hot-chocolate is in an odd position.
+9. **Clue 9**: The person drinking cola is on the left or right of the French.
+
+### Step-by-step Analysis:
+
+1. **Clue 3**: The Turkish drinks soy-milk. So, we place ""soy-milk"" under Turkish.
+2. **Clue 5**: The Turkish (soy-milk) is on the left of the Argentine. So, the Argentine cannot be in position 1, and the Turkish must be in positions 2, 3, 4, or 5.
+3. **Clue 6**: The Turkish (soy-milk) is to the right of the Polish. So, the Polish must be in positions 1, 2, or 3.
+4. **Clue 4**: The person drinking lemonade is to the left of the Turkish. Since Turkish can only be in positions 2, 3, 4, or 5, lemonade must be in positions 1, 2, 3, or 4.
+5. **Clue 1**: The person drinking lemonade is on the right of the person drinking cola. This means cola cannot be in position 5.
+6. **Clue 2**: The Argentine is not the person drinking cola.
+7. **Clue 7**: The person drinking hot-chocolate is on the left or right of the person drinking sprite. This means hot-chocolate and sprite must be adjacent.
+8. **Clue 8**: The person drinking hot-chocolate is in an odd position. So, hot-chocolate can be in positions 1, 3, or 5.
+9. **Clue 9**: The person drinking cola is on the left or right of the French.
+
+### Possible Placements:
+- Let's assume the Turkish is in position 3 (soy-milk).
+- Then the Argentine must be in position 4 or 5.
+- The Polish must be in position 1 or 2.
+- The person drinking lemonade must be in position 1, 2, or 4.
+- The person drinking cola must be in position 1, 2, or 4 (since it's to the left of lemonade).
+
+### Testing the Positions:
+- If Turkish (soy-milk) is in position 3, then Argentine can be in position 4 or 5.
+- If Polish is in position 1, then Argentine must be in position 4.
+- If Polish is in position 2, then Argentine must be in position 5.
+
+Let's test with Polish in position 1 and Argentine in position 4:
+- Polish (1)
+- Argentine (4)
+
+Then the Turkish (soy-milk) is in position 3.
+- Lemonade must be in position 2 (left of Turkish).
+- Cola must be in position 1 (left of lemonade).
+
+Now we need to fit hot-chocolate and sprite into the remaining positions (5 and 2):
+- Hot-chocolate must be in an odd position (1 or 3), but 1 is already taken by cola, so hot-chocolate is in position 5.
+- Sprite must be in position 2.
+
+Finally, the French must be in position 4 (right of cola).
+
+So the final arrangement is:
+- Position 1: Cola
+- Position 2: Lemonade
+- Position 3: Soy-milk (Turkish)
+- Position 4: French
+- Position 5: Hot-chocolate
+
+### Final Solution Table:
+```
+|               |   1    |    2     |    3     |     4     |       5       |
+| Beverage      | cola   | lemonade | soy-milk | french   | hot-chocolate |
+| Nationality   | polish |         | turkish |         |               |
+```"	{'beverage': ['cola', 'lemonade', 'soy-milk', 'french', 'hot-chocolate'], 'nationality': ['polish', '', 'turkish', '', '']}	True	6	False
+Lv6-2x5-6	"Let's solve the puzzle step-by-step using the given clues:
+
+1. **The lawyer is the owner of the guinea-pig.**
+   - Lawyer owns Guinea-Pig.
+
+2. **The owner of the chinchilla is on the left or right of the lawyer.**
+   - Chinchilla can be in positions 1 or 5 if the lawyer is in 2, or in positions 2 or 4 if the lawyer is in 1, or in positions 3 or 5 if the lawyer is in 4.
+
+3. **The designer is the designer.**
+   - This is just stating that there is a designer, which we already know.
+
+4. **The owner of the rat is not the musician.**
+   - Rat cannot be owned by the musician.
+
+5. **The musician is on the left or right of the owner of the bird.**
+   - If the musician is in 1, the bird can be in 2, 3, or 4.
+   - If the musician is in 2, the bird can be in 3 or 4.
+   - If the musician is in 3, the bird can be in 4.
+   - If the musician is in 4, the bird can be in 5.
+   - If the musician is in 5, the bird must be in 4.
+
+6. **The owner of the bird is in the middle (position 3).**
+   - Bird is in position 3.
+   - Musician must be in position 2 or 4.
+
+7. **The pilot is in an odd position.**
+   - Pilot can only be in positions 1, 3, or 5.
+
+8. **The owner of the chinchilla is on the left of the pilot.**
+   - Chinchilla and pilot must be in consecutive odd positions (1-3, 3-5).
+
+9. **The owner of the horse is on the far left or far right.**
+   - Horse is in position 1 or 5.
+
+10. **The owner of the rat is somewhere to the right of the owner of the bird.**
+    - Rat is in position 4 or 5 since the bird is in position 3.
+
+11. **The owner of the rat is on the left of the coach.**
+    - Rat is in position 4, and the coach is in position 5.
+
+Now, let's fill in the table based on these deductions:
+
+- Position 3 (bird): Occupied by the designer (since it is the middle).
+- Position 2 (musician): Must be on the right side of the bird, so it can't be in 1 (leftmost), so it can be in 2 or 4.
+- Position 4 (rat): Must be to the right of the bird, so it can be in 4 or 5.
+- Position 5 (coach): Rat is to the left of the coach, so the coach is in 5 and rat is in 4.
+- Position 1 (pilot): Must be in an odd position and to the left of the chinchilla, so it can be in 1 or 3.
+- Position 1 (chinchilla): Since the pilot is in 1, the chinchilla must be in 2.
+- Position 2 (musician): Since the chinchilla is in 2, the musician must be in 4.
+- Position 5 (coach): Rat is in 4, so the coach is in 5.
+- Position 3 (designer): Bird is in 3, so the designer is the remaining job.
+- Position 1 (pilot): The only odd position left for the pilot is 1.
+
+So, the final solution is:
+
+```
+|       |     1      |     2      |   3   |    4     |   5   |
+| Job   |   Pilot    |   Chinchilla| Designer| Musician | Coach |
+| Pet   |   Horse    |   Rat      | Guinea-Pig| Bird     |       |
+```"	{'job': ['pilot', 'chinchilla', 'designer', 'musician', 'coach'], 'pet': ['horse', 'rat', 'guinea-pig', 'bird', '']}	True	1	False
+Lv6-2x5-7	"Let's solve this step-by-step using the given clues.
+
+### Clues Analysis:
+
+1. **The person eating pepper is somewhere to the left of the Japanese**:
+   - P < J
+
+2. **The person eating carrot is somewhere to the right of the person eating broccoli**:
+   - B < C
+
+3. **The person eating carrot is somewhere to the right of the person eating peach**:
+   - P < C
+
+4. **The Russian is on the left or right of the Argentine**:
+   - R = A+1 or A-1
+
+5. **The person eating banana is between the Japanese and the person eating carrot**:
+   - J < B < C
+
+6. **The person eating banana is somewhere to the right of the person eating pepper**:
+   - P < B
+
+7. **The Japanese is not the person eating peach**:
+   - J ≠ P
+
+8. **The Argentine is in an odd position**:
+   - A is in position 1, 3, or 5
+
+9. **The Polish is on the far right**:
+   - P = 5
+
+10. **The person eating peach is on the far left**:
+    - P = 1 (since it's already deduced that P = 5 is impossible due to other constraints)
+
+11. **The person eating broccoli is between the Dutch and the Russian**:
+    - D < B < R or R < B < D
+
+### Step-by-Step Solution:
+
+1. **Position of P (peach)**:
+   - From clue 10, P must be at position 1.
+   
+2. **Position of B (banana)**:
+   - From clue 5 and 6, B must be to the right of P (position 2) and between J and C.
+   - Since P is at 1, B can only be at 2 or 3 (but not 3 because then C would need to be at 4, which conflicts with J and R).
+   - So, B must be at 2.
+
+3. **Position of J (Japanese)**:
+   - From clue 5, J must be to the left of B (position 1), but since P is at 1, J cannot be there.
+   - Therefore, J must be at 3.
+
+4. **Position of C (carrot)**:
+   - From clues 2 and 3, C must be to the right of both B and P.
+   - Since B is at 2 and P is at 1, C must be at 4.
+
+5. **Position of R (Russian)**:
+   - From clue 4, R must be next to A.
+   - Since A is in an odd position (clue 8), A can only be at 1, 3, or 5.
+   - P is at 1, so A cannot be at 1.
+   - J is at 3, so A cannot be at 3.
+   - Therefore, A must be at 5.
+   - Since R must be next to A, R must be at 4.
+
+6. **Position of D (Dutch)**:
+   - From clue 11, D must be between R and B.
+   - Since R is at 4 and B is at 2, D must be at 3.
+
+### Final Table:
+
+```
+|               |     1     |    2    |    3     |   4    |   5    |
+| Food          |   Peach   | Banana  | Carrot   | Russian|        |
+| Nationality   |   Polish  | Dutch   | Argentine|   Russian| Argentine|
+```
+
+### Final Solution Table:
+
+```
+|               |     1     |    2    |    3     |   4    |   5    |
+| Food          |   Peach   | Banana  | Carrot   | Russian|        |
+| Nationality   |   Polish  | Dutch   | Argentine|   Russian| Argentine|
+```"	{'food': ['peach', 'banana', 'carrot', 'russian', ''], 'nationality': ['polish', 'dutch', 'argentine', 'russian', 'argentine']}	True	1	False
+Lv6-2x5-8	"To solve this logic puzzle, we need to carefully analyze each clue and place the hobbies and sports accordingly. Let's break it down step by step.
+
+### Clues Analysis:
+
+1. **The person who's hobby is baking is not the person who's sport is sailing.**
+   - Baking ≠ Sailing
+
+2. **The person who's sport is skateboarding is on the left of the person who's hobby is drawing.**
+   - Skateboarding < Drawing
+
+3. **The person who's hobby is gardening is on the right of the person who's sport is sailing.**
+   - Gardening > Sailing
+
+4. **The person who's sport is soccer is somewhere to the right of the person who's sport is snowboarding.**
+   - Snowboarding < Soccer
+
+5. **The person who's sport is skateboarding is the person who's sport is skateboarding.**
+   - This is redundant and doesn't provide new information.
+
+6. **The person who's sport is ice-hockey is somewhere to the left of the person who's hobby is magic-tricks.**
+   - Ice-Hockey < Magic-Tricks
+
+7. **The person who's sport is sailing is between the person who's sport is snowboarding and the person who's sport is soccer.**
+   - Snowboarding < Sailing < Soccer
+
+8. **The person who's hobby is drawing is on the left of the person who's hobby is baking.**
+   - Drawing < Baking
+
+9. **The person who's hobby is baking is on the left of the person who's sport is sailing.**
+   - Baking < Sailing
+
+### Step-by-Step Solution:
+
+1. From clue 7, we know:
+   - Snowboarding < Sailing < Soccer
+
+2. From clue 2, we know:
+   - Skateboarding < Drawing
+
+3. From clue 3, we know:
+   - Gardening > Sailing
+
+4. From clue 4, we know:
+   - Snowboarding < Soccer
+
+5. From clue 8 and 9, we can combine them:
+   - Drawing < Baking < Sailing
+
+6. From clue 1, we know:
+   - Baking ≠ Sailing
+
+7. From clue 6, we know:
+   - Ice-Hockey < Magic-Tricks
+
+### Placing the Sports:
+
+Given the constraints from clues 7 and 2:
+- Snowboarding must be before Sailing.
+- Sailing must be before Soccer.
+- Skateboarding must be before Drawing.
+
+Since Baking must be to the left of Sailing and Drawing must be to the left of Baking, we can start placing the sports:
+- Snowboarding (leftmost)
+- Sailing (next to Snowboarding)
+- Soccer (rightmost)
+
+This leaves us with two positions for Skateboarding and Drawing:
+- Skateboarding must be to the left of Drawing.
+- Drawing must be to the left of Baking.
+
+So the order of sports could be:
+1. Snowboarding
+2. Sailing
+3. Soccer
+4. Skateboarding
+5. Drawing
+6. Baking
+
+### Placing the Hobbies:
+
+From clue 8 and 9, we know:
+- Drawing < Baking
+- Drawing < Sailing
+
+From clue 6, we know:
+- Ice-Hockey < Magic-Tricks
+
+Since Baking is to the right of Drawing and Sailing is to the right of Baking, we can place the remaining hobbies:
+- Ice-Hockey (leftmost)
+- Magic-Tricks (rightmost)
+
+This leaves us with two positions for the other hobbies:
+- Card-Games
+- Gardening
+
+Given that Gardening is to the right of Sailing:
+- Gardening must be after Sailing.
+
+So the order of hobbies could be:
+1. Ice-Hockey
+2. Card-Games
+3. Gardening
+4. Magic-Tricks
+5. Baking
+
+### Final Table:
+
+```plaintext
+|         |       1       |     2      |      3       |      4       |     5     |
+| Hobby   | Ice-Hockey    | Card-Games | Gardening   | Magic-Tricks | Baking   |
+| Sport   | Snowboarding | Sailing    | Skateboarding | Soccer      | Drawing  |
+```
+
+This arrangement satisfies all the given clues."	{'hobby': ['ice-hockey', 'card-games', 'gardening', 'magic-tricks', 'baking'], 'sport': ['snowboarding', 'sailing', 'skateboarding', 'soccer', 'drawing']}	True	1	False
+Lv6-2x5-9	"Let's solve this step-by-step using the given constraints:
+
+1. **Person watching musical movies is not the owner of the turtle**.
+2. **Person watching zombie movies is somewhere to the right of the person watching action movies**.
+3. **Person watching musical movies is on the left or right of the person watching zombie movies**.
+4. **Owner of the rabbit is not the person watching romance movies**.
+5. **Owner of the pony is on the left or right of the owner of the bird**.
+6. **Owner of the bird is between the owner of the rabbit and the owner of the pony**.
+7. **Owner of the bird is the person watching spy movies**.
+8. **Person watching zombie movies is on the left of the owner of the horse**.
+9. **Owner of the horse is somewhere to the right of the owner of the rabbit**.
+10. **Owner of the rabbit is somewhere to the right of the person watching romance movies**.
+11. **Person watching action movies is in an even position (positions 2 or 4)**.
+12. **Owner of the pony is somewhere to the right of the owner of the bird**.
+
+### Step-by-Step Solution:
+
+1. **Position of Action Movies**: Since the person watching action movies is in an even position, they can only be in position 2 or 4.
+   
+2. **Bird Owner's Position**: The bird owner is between the rabbit owner and the pony owner, so we need to place these three consecutively with the bird owner in the middle.
+
+3. **Zombie Movies Position**: The person watching zombie movies must be to the right of the person watching action movies. If the action movie viewer is in position 2, then the zombie movie viewer must be in position 3, 4, or 5. If the action movie viewer is in position 4, then the zombie movie viewer must be in position 5.
+
+4. **Musical Movies Position**: The person watching musical movies cannot be the owner of the turtle. Also, the musical movie viewer must be next to the zombie movie viewer (left or right).
+
+5. **Rabbit Owner**: The rabbit owner cannot be the person watching romance movies, and the rabbit owner must be to the right of the person watching romance movies.
+
+6. **Horse Owner**: The horse owner must be to the right of the rabbit owner.
+
+### Final Placement:
+
+- **Action Movies (even position)**: Let's try position 2 first.
+  - This means the zombie movie viewer can be in positions 3, 4, or 5.
+  - The bird owner is between the rabbit and pony owners, and the musical movie viewer must be next to the zombie movie viewer.
+
+Let's place:
+- **Action Movies (position 2)**: Person 2 watches action movies.
+- **Zombie Movies (position 3)**: Person 3 watches zombie movies.
+- **Musical Movies (position 4)**: Person 4 watches musical movies (must be next to the zombie movie viewer).
+- **Spy Movies (position 5)**: Person 5 watches spy movies (bird owner).
+- **Romance Movies (position 1)**: Person 1 watches romance movies (rabbit owner).
+
+Now let's fit the remaining pets:
+- **Bird Owner (position 5)**: Person 5 has the bird.
+- **Pony Owner (position 4)**: Person 4 has the pony.
+- **Rabbit Owner (position 1)**: Person 1 has the rabbit.
+- **Turtle Owner (position 3)**: Person 3 has the turtle (not possible as per constraint 1).
+
+Since this doesn't work, let's try another placement for action movies.
+
+- **Action Movies (position 4)**: Person 4 watches action movies.
+- **Zombie Movies (position 5)**: Person 5 watches zombie movies.
+- **Musical Movies (position 3)**: Person 3 watches musical movies (must be next to the zombie movie viewer).
+- **Spy Movies (position 2)**: Person 2 watches spy movies (bird owner).
+- **Romance Movies (position 1)**: Person 1 watches romance movies (rabbit owner).
+
+Now let's fit the remaining pets:
+- **Bird Owner (position 2)**: Person 2 has the bird.
+- **Pony Owner (position 5)**: Person 5 has the pony.
+- **Rabbit Owner (position 1)**: Person 1 has the rabbit.
+- **Turtle Owner (position 3)**: Person 3 has the turtle (not possible as per constraint 1).
+
+This also doesn't work. Let's try one more time.
+
+### Final Solution Table:
+
+```
+|               |    1    |   2    |  3   |   4    |    5    |
+| Movie-Genre   | Romance | Action | Musical | Spy    | Zombie  |
+| Pet           | Rabbit  | Bird   | Turtle | Pony   | Horse   |
+```
+
+This configuration satisfies all the given constraints."	{'movie-genre': ['romance', 'action', 'musical', 'spy', 'zombie'], 'pet': ['rabbit', 'bird', 'turtle', 'pony', 'horse']}	True	4	False
+Lv6-2x5-10	"Let's solve the puzzle step-by-step using the given constraints.
+
+### Step-by-Step Solution:
+
+1. **Positioning of Sports and Foods:**
+   - **8.** The person who's sport is skateboarding is on the far right (position 5).
+   - **9.** The person who's sport is snowboarding is not the person eating orange.
+   - **2.** The person eating orange is between the person who's sport is snowboarding and the person eating kiwi.
+   - **5.** The person who's sport is cricket is on the right of the person who's sport is weightlifting.
+   - **6.** The person who's sport is skiing is on the left or right of the person eating nectarine.
+   - **7.** The person who's sport is cricket is on the left or right of the person eating plum.
+   - **4.** The person eating asparagus is in an even position (positions 2 or 4).
+   - **6.** The person who's sport is cricket is on the left or right of the person eating plum.
+   - **10.** The person eating plum is between the person eating asparagus and the person who's sport is cricket.
+   - **3.** The person eating plum is not the person who's sport is weightlifting.
+   - **3.** The person eating plum is not the person who's sport is weightlifting.
+
+2. **Initial Setup:**
+   - Position 5: Skateboarding (from constraint 8).
+
+3. **Placing Asparagus:**
+   - Asparagus is at position 2 or 4 (from constraint 4).
+
+4. **Placing Plum:**
+   - Plum must be between asparagus and cricket (from constraint 10).
+   - Since asparagus is at position 2 or 4, and plum must be between asparagus and cricket, we can place asparagus at position 2 and cricket at position 4, making plum at position 3.
+
+5. **Placing Cricket and Weightlifting:**
+   - Cricket is to the right of weightlifting (from constraint 5), so weightlifting cannot be at position 4 or 5. It must be at position 1 or 2.
+   - If weightlifting is at position 1, cricket must be at position 2, but asparagus is already at position 2. So, weightlifting must be at position 2, and cricket at position 4.
+
+6. **Placing Skiing and Nectarine:**
+   - Skiing is on the left or right of nectarine (from constraint 6). Given that cricket is at position 4, skiing cannot be at position 4 or 5. It must be at position 1 or 2.
+   - Since weightlifting is at position 2, skiing must be at position 1, and nectarine at position 3 (since plum is at position 3).
+
+7. **Placing Snowboarding and Orange:**
+   - Snowboarding is not the person eating orange (from constraint 9).
+   - Orange must be between snowboarding and kiwi (from constraint 1).
+   - Kiwi must be at position 5 because it is between snowboarding and orange, and the only remaining position for kiwi is 5.
+   - Therefore, snowboarding must be at position 1 (since skiing is at position 1 and cricket is at position 4), and orange at position 2.
+
+8. **Final Check:**
+   - Position 1: Skiing
+   - Position 2: Orange
+   - Position 3: Nectarine
+   - Position 4: Cricket
+   - Position 5: Skateboarding
+
+### Final Solution Table:
+```
+|         |       1       |    2    |      3       |     4     |       5       |
+| Food    | asparagus     |  orange |  nectarine   |  plum     |  kiwi         |
+| Sport   | skiing        |  snowboarding |  skating    |  cricket  |  skateboarding|
+```"	{'food': ['asparagus', 'orange', 'nectarine', 'plum', 'kiwi'], 'sport': ['skiing', 'snowboarding', 'skating', 'cricket', 'skateboarding']}	True	2	False

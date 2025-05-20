@@ -1,0 +1,452 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-2x3-1	"Sure, let's solve the puzzle step-by-step based on the given clues.
+
+1. **Clue 1:** The fan of folk is the person drinking lemonade.
+   - This means that the person who drinks lemonade prefers folk music.
+
+2. **Clue 2:** The person drinking soy-milk is between the fan of pop and the person drinking lemonade.
+   - Since the person drinking lemonade (folk) is to the right of the person drinking soy-milk, the person drinking soy-milk must be the fan of pop.
+
+3. **Clue 3:** The person drinking juice is on the right of the fan of disco.
+   - This means the person drinking juice cannot be the fan of disco, and they must be to the right of the fan of disco.
+
+Let's summarize what we know:
+- Lemonade = Folk
+- Soy-milk = Pop
+- Juice is on the right of Disco
+
+Now, let's fill in the table:
+
+|               |    1     |    2     |   3   |
+|---------------|----------|----------|-------|
+| Beverage      | Juice    | Soy-milk | Lemonade |
+| Music-Genre   | Disco    | Pop      | Folk   |
+
+Explanation:
+- In position 1, the person is drinking juice and listening to disco.
+- In position 2, the person is drinking soy-milk and listening to pop.
+- In position 3, the person is drinking lemonade and listening to folk.
+
+So, the final solution table is:
+
+```
+|               |    1     |    2     |   3   |
+|---------------|----------|----------|-------|
+| Beverage      | Juice    | Soy-milk | Lemonade |
+| Music-Genre   | Disco    | Pop      | Folk   |
+```"	{'beverage': ['juice', 'soy-milk', 'lemonade'], 'music-genre': ['disco', 'pop', 'folk']}	True	1	False
+Lv2-2x3-2	"Certainly! Let's break down the clues step by step to determine the correct arrangement.
+
+### Clues:
+1. The person who's hobby is drawing is on the left of the person who's hobby is sudoku.
+2. The social-worker is between the coach and the person who's hobby is drawing.
+
+### Analysis:
+
+#### Clue 1:
+- Drawing (D) is on the left of Sudoku (S).
+
+This means if we place D and S in the same row, D must be to the left of S.
+
+#### Clue 2:
+- The social-worker (SW) is between the coach (C) and the person who's hobby is drawing (D).
+
+This means the order must be C - SW - D or D - SW - C. However, since D must be to the left of S, the only valid order is C - SW - D.
+
+### Combining the Clues:
+
+Given the above analysis, the only possible arrangement for the first row (Hobby) is:
+- Coach (C)
+- Social-worker (SW)
+- Drawing (D)
+
+Since there are three different hobbies and three different jobs, and the social-worker is already assigned, the remaining hobbies (rock-climbing and sudoku) must be assigned to the remaining positions.
+
+The second row (Job) must then be:
+- Coach (C) - Dressmaker (DM) - Social-worker (SW)
+
+But this conflicts with clue 2 because the social-worker cannot be the job of the person whose hobby is drawing. Therefore, we need to reassess the placement of the hobbies and jobs.
+
+Let's try again with the correct interpretation:
+
+1. **Hobby Row:**
+   - The person with the hobby of drawing (D) is on the left of the person with the hobby of Sudoku (S).
+   - The social-worker (SW) is between the coach (C) and the person with the hobby of drawing (D).
+
+Given these constraints, the correct arrangement must be:
+- Coach (C)
+- Social-worker (SW)
+- Drawing (D)
+
+And the remaining hobbies (rock-climbing and Sudoku) must fit the remaining slots.
+
+Thus, the correct arrangement is:
+- Hobby: Rock-climbing (R), Drawing (D), Sudoku (S)
+- Job: Coach (C), Social-worker (SW), Dressmaker (DM)
+
+### Final Solution Table:
+
+```
+|         |     1      |       2       |       3       |
+| Hobby   | Rock-climbing | Drawing | Sudoku    |
+| Job     | Coach        | Social-worker | Dressmaker  |
+```"	{'hobby': ['rock-climbing', 'drawing', 'sudoku'], 'job': ['coach', 'social-worker', 'dressmaker']}	True	1	False
+Lv2-2x3-3	"Certainly! Let's solve the puzzle step by step.
+
+We have:
+- 3 beverages: cola, mirinda, tea
+- 3 pets: dog, ferret, goldfish
+
+The given clues are:
+1. The owner of the dog is on the right of the person drinking cola.
+2. The person drinking cola is between the owner of the ferret and the person drinking tea.
+
+Let's denote:
+- \( B_1 \), \( B_2 \), \( B_3 \) for the beverages (cola, mirinda, tea)
+- \( P_1 \), \( P_2 \), \( P_3 \) for the pets (dog, ferret, goldfish)
+
+From clue 1, we can infer that if the person drinking cola is at position 2, then the owner of the dog must be at position 3. This gives us the partial arrangement:
+- \( B_2 = \text{cola} \)
+- \( P_3 = \text{dog} \)
+
+From clue 2, we know that the person drinking cola (cola) is between the owner of the ferret and the person drinking tea. Therefore, the person drinking tea must be either at position 1 or 3, and the owner of the ferret must be at the other position between them. Since \( P_3 = \text{dog} \), the only positions left for the ferret and tea are 1 and 2. Given \( B_2 = \text{cola} \), the person drinking tea cannot be at position 2 because it would not fit the ""between"" condition. Thus, the person drinking tea must be at position 1, and the owner of the ferret must be at position 2.
+
+So, we have:
+- \( B_1 = \text{tea} \)
+- \( B_2 = \text{cola} \)
+- \( B_3 = \text{mirinda} \)
+- \( P_1 = \text{ferret} \)
+- \( P_2 = \text{owner of the ferret} \)
+- \( P_3 = \text{dog} \)
+
+Putting this into the table:
+
+```
+|            |    1    |    2     |  3  |
+| Beverage   | tea     | cola     | mirinda |
+| Pet        | ferret  | owner of the ferret | dog   |
+```
+
+Here is the final solution:
+
+```
+|            |    1    |    2     |  3  |
+| Beverage   | tea     | cola     | mirinda |
+| Pet        | ferret  | owner of the ferret | dog   |
+```"	{'beverage': ['tea', 'cola', 'mirinda'], 'pet': ['ferret', 'owner of the ferret', 'dog']}	True	3	False
+Lv2-2x3-4	"Sure, let's solve the puzzle step by step.
+
+Given:
+1. The people prefer 3 different music-genres: funk, r&b, soul.
+2. 3 different pets are kept: bird, fish, goldfish.
+3. The fan of funk is the owner of the bird.
+4. The fan of soul is between the owner of the fish and the owner of the bird.
+5. The owner of the goldfish is on the left of the owner of the bird.
+
+Let's denote the positions as follows:
+- Position 1: ?
+- Position 2: gold (goldfish)
+- Position 3: ?
+
+From clue 3, we know that the fan of funk (who owns the bird) must be in position 1 because the owner of the goldfish (position 2) is on the left of the owner of the bird (position 3).
+
+So, we have:
+- Position 1: funk (owner of the bird)
+- Position 2: gold (goldfish)
+- Position 3: ?
+
+Now, from clue 4, the fan of soul is between the owner of the fish and the owner of the bird. Since the owner of the bird is in position 3, the fan of soul must be in position 2, but we already have the goldfish in position 2. This means the owner of the fish must be in position 1, and the fan of soul must be in position 3.
+
+So, we have:
+- Position 1: r&b (owner of the fish)
+- Position 2: gold (goldfish)
+- Position 3: soul (owner of the bird)
+
+Therefore, the final solution table is:
+
+```
+|               |  1   |    2     |  3   |
+| Music-Genre   | r&b  |          | soul |
+| Pet           | bird | goldfish |      |
+```"	{'music-genre': ['r&b', '', 'soul'], 'pet': ['bird', 'goldfish', '']}	True	2	False
+Lv2-2x3-5	"Sure, let's solve this step-by-step.
+
+We need to determine the arrangement of hobbies and pets based on the given clues:
+
+1. The person who's hobby is sudoku is on the left of the person who's hobby is cooking.
+2. The person who's hobby is sudoku is on the right of the owner of the goat.
+3. The owner of the chinchilla is between the owner of the goat and the owner of the fish.
+
+Let's denote:
+- Sudoku as S
+- Cooking as C
+- Reading as R
+- Chinchilla as Ch
+- Fish as F
+- Goat as G
+
+From clue 1:
+- S is to the left of C.
+- This means S cannot be in position 3, and C cannot be in position 1.
+
+From clue 2:
+- S is to the right of G.
+- This means G cannot be in position 3, and S cannot be in position 1.
+
+From clue 3:
+- Ch is between G and F.
+- This means G, Ch, and F must occupy consecutive positions.
+
+Now let's consider the possible placements:
+
+### Step-by-Step Analysis:
+
+1. **Positioning G, Ch, and F**:
+   - Since G, Ch, and F must be consecutive, they can only fit into positions (1, 2, 3) or (2, 3, 1). However, since S must be to the right of G, the only possible order for G, Ch, and F is (2, 3, 1).
+
+2. **Assigning Hobbies**:
+   - Since G is in position 2, S must be in position 3 (because S is to the right of G).
+   - Therefore, C must be in position 1 (since S is to the left of C).
+
+So, we have:
+- Position 1: C (Cooking)
+- Position 2: G (Goat)
+- Position 3: S (Sudoku)
+
+3. **Assigning Pets**:
+   - Since G is in position 2, G (Goat) is there.
+   - Since S is in position 3, S (Sudoku) is there.
+   - Therefore, C (Cooking) must be in position 1, which leaves R (Reading) for position 3.
+
+So, we have:
+- Position 1: C (Cooking) with R (Reading)
+- Position 2: G (Goat)
+- Position 3: S (Sudoku) with F (Fish)
+
+### Final Solution Table:
+
+```
+|         |    1    |     2      |    3    |
+| Hobby   | Cooking | Reading    | Sudoku  |
+| Pet     | Fish    | Goat       | Chinchilla |
+```
+
+```plaintext
+|         |    1    |     2      |    3    |
+| Hobby   | Cooking | Reading    | Sudoku  |
+| Pet     | Fish    | Goat       | Chinchilla |
+```"	{'hobby': ['cooking', 'reading', 'sudoku'], 'pet': ['fish', 'goat', 'chinchilla']}	True	0	False
+Lv2-2x3-6	"Sure, let's solve this step-by-step.
+
+We have three nationalities: Dutch, Egyptian, Indian.
+We also have three sports: Basketball, Rowing, Weightlifting.
+
+Given clues:
+1. The person who's sport is basketball is between the Indian and the Dutch.
+2. The Dutch is the person who's sport is rowing.
+3. The Egyptian is on the right of the Dutch.
+
+Let's start with clue 2:
+- The Dutch person's sport is rowing.
+
+Now, let's use clue 3:
+- The Egyptian is on the right of the Dutch.
+This means the order must be either Dutch-Egyptian or Dutch-Indian-Egyptian.
+
+Since clue 1 states that the person who's sport is basketball is between the Indian and the Dutch, we can infer the following:
+
+If the Dutch person is rowing (clue 2), then the person with basketball cannot be Dutch. Therefore, the person with basketball must be either Indian or Egyptian. Given that the Egyptian is on the right of the Dutch (clue 3), the only way to satisfy all conditions is if the Indian is on the left of the Dutch and the Egyptian is on the right of the Dutch.
+
+So, the order must be:
+- Indian
+- Dutch (rowing)
+- Egyptian
+
+Now, we need to assign the sports:
+- The Indian is not rowing (Dutch) and not basketball (since it's between the Indian and the Dutch). Thus, the Indian must be weightlifting.
+- The Dutch is rowing.
+- The Egyptian is basketball.
+
+Thus, the final arrangement is:
+- Indian: weightlifting
+- Dutch: rowing
+- Egyptian: basketball
+
+Here's the final solution table:
+
+```
+|               |   1    |     2      |       3       |
+| Nationality   | Indian | Dutch      | Egyptian      |
+| Sport         | Weightlifting | Rowing   | Basketball    |
+```"	{'nationality': ['indian', 'dutch', 'egyptian'], 'sport': ['weightlifting', 'rowing', 'basketball']}	True	0	False
+Lv2-2x3-7	"Certainly! Let's break down the information given and solve the puzzle step-by-step.
+
+### Given Information:
+1. There are three types of food: broccoli, carrot, and pineapple.
+2. There are three nationalities: Brazilian, Chinese, and Dutch.
+3. The person eating pineapple is to the right of the person eating broccoli.
+4. The Brazilian is between the person eating pineapple and the person eating broccoli.
+
+### Step-by-Step Solution:
+
+1. **Identify the positions based on the given clues:**
+   - Clue 3 tells us that the Brazilian is between the person eating pineapple and the person eating broccoli.
+   - Therefore, the sequence must be: Broccoli -> Brazilian -> Pineapple or Pineapple -> Brazilian -> Broccoli.
+
+2. **Determine the correct sequence using Clue 1:**
+   - Clue 1 states that the person eating pineapple is to the right of the person eating broccoli.
+   - This means the sequence must be: Broccoli -> Brazilian -> Pineapple.
+
+3. **Assign the nationalities:**
+   - Since the Brazilian is between the other two, we can assign the nationalities as follows:
+     - The person eating Broccoli is not Brazilian.
+     - The person eating Pineapple is not Brazilian.
+   - Therefore, the person eating Carrot must be Brazilian (since the Brazilian is between the other two).
+
+4. **Final arrangement:**
+   - Broccoli -> Dutch (not Brazilian)
+   - Carrot -> Brazilian (between the others)
+   - Pineapple -> Chinese (not Brazilian)
+
+### Final Solution Table:
+
+```
+|               |    1    |     2     |     3     |
+| Food          | Broccoli| Carrot    | Pineapple |
+| Nationality   | Dutch   | Brazilian | Chinese   |
+```
+
+### Final Solution Table:
+
+```
+|               |    1    |     2     |     3     |
+| Food          | Broccoli| Carrot    | Pineapple |
+| Nationality   | Dutch   | Brazilian | Chinese   |
+```"	{'food': ['broccoli', 'carrot', 'pineapple'], 'nationality': ['dutch', 'brazilian', 'chinese']}	True	2	False
+Lv2-2x3-8	"To solve this logic puzzle, let's break down the clues step-by-step:
+
+### Clue Analysis:
+1. **The person watching satire movies is the Mexican.**
+   - This means the Mexican watches satire.
+
+2. **The British is between the person watching satire movies and the person watching western movies.**
+   - This implies that the order must be: Satire -> British -> Western or Western -> British -> Satire.
+
+3. **The person watching satire movies is on the right of the person watching comedy movies.**
+   - This means Comedy -> Satire.
+
+### Deduction:
+From clue 3, we know that the person watching comedy is to the left of the person watching satire. From clue 1, we know that the Mexican watches satire. Therefore, the Mexican cannot watch comedy (since the Mexican is on the right of the person watching comedy).
+
+Given clue 2, the British must be between the person watching satire and the person watching western. Since the Mexican is the one watching satire, the British must be next to the Mexican. The only way to fit this into the order from clue 3 is if the British is watching comedy and the Mexican is watching satire, leaving the western for the remaining nationality, which is Brazilian.
+
+So, the order is:
+- Comedy -> British
+- Satire -> Mexican
+- Western -> Brazilian
+
+### Final Solution Table:
+```
+|               |     1     |    2    |    3    |
+| Movie-Genre   | Comedy    | Satire  | Western |
+| Nationality   | British   | Mexican | Brazilian |
+```"	{'movie-genre': ['comedy', 'satire', 'western'], 'nationality': ['british', 'mexican', 'brazilian']}	True	0	False
+Lv2-2x3-9	"To solve this logic puzzle, let's break down the information provided and systematically deduce the correct arrangement.
+
+### Given Information:
+1. Three sports: ice-hockey, swimming, weightlifting.
+2. Three modes of transport: bus, quad-bike, snowmobile.
+3. The person driving the bus is on the left of the person whose sport is swimming.
+4. The person driving the bus is between the person whose sport is weightlifting and the person driving the quad-bike.
+
+### Step-by-Step Deduction:
+
+1. **Identify the position of the person driving the bus:**
+   - From clue 1: The person driving the bus is on the left of the person who's sport is swimming.
+   - From clue 2: The person driving the bus is between the person who's sport is weightlifting and the person driving the quad-bike.
+   
+   This means that the person driving the bus cannot be in position 3 (the far right), as there would be no one to their right for clue 1 to hold true. Therefore, the person driving the bus must be in position 1 or 2.
+
+2. **Determine the positions based on clues:**
+   - If the person driving the bus is in position 1, then the person with swimming must be in position 2 (from clue 1).
+   - This would mean the person with weightlifting must be in position 3 (since the person with the bus is between the person with weightlifting and the person with the quad-bike).
+
+   Let's check if this arrangement fits all clues:
+   - Position 1: Bus (person driving the bus)
+   - Position 2: Swimming
+   - Position 3: Weightlifting
+
+   This arrangement satisfies both clues:
+   - Clue 1: The person driving the bus (position 1) is on the left of the person who's sport is swimming (position 2).
+   - Clue 2: The person driving the bus (position 1) is between the person who's sport is weightlifting (position 3) and the person driving the quad-bike (position 2).
+
+3. **Assign the remaining sports and transport:**
+   - Since we have three sports and three modes of transport, the remaining sport must be ice-hockey.
+   - The remaining mode of transport must be the quad-bike.
+
+Thus, the final arrangement is:
+- Position 1: Bus (person driving the bus)
+- Position 2: Swimming
+- Position 3: Weightlifting
+
+So, the final solution table is:
+
+```
+|             |       1       |     2      |     3     |
+| Sport       |   Weightlifting  |   Swimming  | Ice-hockey |
+| Transport   |    Bus         | Quad-bike   | Snowmobile |
+```"	{'sport': ['weightlifting', 'swimming', 'ice-hockey'], 'transport': ['bus', 'quad-bike', 'snowmobile']}	True	1	False
+Lv2-2x3-10	"To solve this logic puzzle, let's break down the clues and deduce the correct assignments step by step.
+
+### Clues:
+1. The person driving the car is on the right of the social-worker.
+2. The lawyer is between the person driving the quad-bike and the fisherman.
+
+### Let's assign positions and roles:
+
+#### Step 1: Assigning the social-worker based on clue 1
+- If the social-worker is in position 1, the person driving the car must be in position 2 or 3.
+- If the social-worker is in position 2, the person driving the car must be in position 3.
+- If the social-worker is in position 3, there is no one to the right of them for the car driver.
+
+Let's assume the social-worker is in position 2 (we can check other positions later if needed).
+
+#### Step 2: Using clue 2 with the assumption
+- The lawyer is between the person driving the quad-bike and the fisherman.
+- If the social-worker is in position 2, the only way to fit everyone in the remaining positions is:
+  - Position 1: Fisherman
+  - Position 2: Social-worker
+  - Position 3: Lawyer
+
+Now, we need to determine who drives which vehicle:
+- The lawyer cannot drive the car because they are not next to the social-worker (clue 1).
+- The fisherman cannot drive the car either since the social-worker is to their left (clue 1).
+
+So, the person driving the car must be the lawyer (since the lawyer is between the quad-bike and fisherman).
+
+#### Step 3: Confirming the assignments
+- Position 1: Fisherman (drives the motorbike)
+- Position 2: Social-worker (drives the car)
+- Position 3: Lawyer (drives the quad-bike)
+
+This fits all the given clues:
+1. The person driving the car (social-worker) is on the right of the social-worker (true, but redundant here as it’s the same person).
+2. The lawyer is between the person driving the quad-bike (lawyer) and the fisherman (true).
+
+### Final Solution Table:
+
+```
+|             |       1       |   2    |     3     |
+| Job         |               |        |           |
+| Transport   | Motorbike     | Car    | Quad-bike |
+```
+
+Fisherman: Position 1, Motorbike
+Social-worker: Position 2, Car
+Lawyer: Position 3, Quad-bike
+
+```plaintext
+|             |       1       |   2    |     3     |
+| Job         | Fisherman     | Social-worker | Lawyer    |
+| Transport   | Motorbike     | Car    | Quad-bike |
+```"	{'job': ['fisherman', 'social-worker', 'lawyer'], 'transport': ['motorbike', 'car', 'quad-bike']}	True	1	False

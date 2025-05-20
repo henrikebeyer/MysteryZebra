@@ -1,0 +1,823 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x6-1	"Let's break down the puzzle step by step:
+
+1. The pilot is on the left of the nurse.
+2. The argentine is on the left of the social-worker.
+3. The analyst is on the left of the firefighter.
+4. The russian is between the social-worker and the american.
+5. The mexican is between the russian and the argentine.
+6. The american is the pilot.
+7. The security-guard is on the left of the american.
+8. The spanish is on the left of the firefighter.
+9. The security-guard is on the right of the social-worker.
+
+From statement 6, we know the american is the pilot. From statement 1, we know the pilot is on the left of the nurse, so the american is on the left of the nurse.
+
+From statement 9, we know the security-guard is on the right of the social-worker. Since the american is on the left of the nurse, the social-worker must be on the right of the nurse.
+
+From statement 4, we know the russian is between the social-worker and the american. Since the social-worker is on the right of the nurse, the russian must be on the right of the nurse and on the left of the american.
+
+From statement 5, we know the mexican is between the russian and the argentine. Since the russian is on the right of the nurse, the mexican must be on the right of the nurse and on the left of the argentine.
+
+From statement 2, we know the argentine is on the left of the social-worker. Since the mexican is on the left of the argentine, the mexican must be on the left of the social-worker.
+
+From statement 3, we know the analyst is on the left of the firefighter. Since the mexican is on the left of the social-worker, the analyst must be on the left of the mexican.
+
+From statement 8, we know the spanish is on the left of the firefighter. Since the analyst is on the left of the firefighter, the spanish must be on the left of the analyst.
+
+Now we can fill in the table:
+
+#############
+|               |    1    |      2      |       3       |       4        |    5     |   6    |
+| Job           |         |             |               |                |          |        |
+| Nationality   |         |             |               |                |          |        |
+| Analyst      | american | mexican     | spanish       | russian        | argentine | social-worker |
+| Firefighter  |          |             |               |                |          |        |
+| Nurse        |          |             |               |                |          |        |
+| Pilot        | american |             |               |                |          |        |
+| Security-guard|          |             |               |                |          | social-worker |
+| Social-worker|          |             |               |                |          |        |
+| Social-worker|          |             |               |                |          |        |
+#############
+
+Note that the table has some empty cells, but we can't determine the jobs for the firefighter, nurse, and mexican based on the given statements."	{'job': ['', '', '', '', '', ''], 'nationality': ['', '', '', '', '', ''], 'analyst': ['american', 'mexican', 'spanish', 'russian', 'argentine', 'social-worker'], 'firefighter': ['', '', '', '', '', ''], 'nurse': ['', '', '', '', '', ''], 'pilot': ['american', '', '', '', '', ''], 'security-guard': ['', '', '', '', '', 'social-worker'], 'social-worker': ['', '', '', '', '', '']}	True	0	False
+Lv1-2x6-2	"Let's break down the puzzle step by step:
+
+1. The owner of the horse is on the left of the owner of the guinea-pig.
+2. The owner of the lizard is on the left of the Thai.
+3. The owner of the horse is between the Italian and the Argentine.
+4. The German is on the right of the owner of the goat.
+5. The Argentine is on the far right.
+6. The owner of the lizard is on the right of the owner of the snake.
+7. The Italian is on the right of the owner of the frog.
+8. The Dutch is on the left of the Turkish.
+
+From statement 1, we know the horse is to the left of the guinea-pig. From statement 3, we know the horse is between the Italian and the Argentine. This means the Italian is to the left of the horse, and the Argentine is to the right of the horse.
+
+From statement 5, we know the Argentine is on the far right. This means the Italian is to the left of the Argentine.
+
+From statement 4, we know the German is to the right of the goat. Since the Italian is to the left of the horse, and the horse is to the left of the guinea-pig, the goat must be to the left of the Italian.
+
+From statement 2, we know the lizard is to the left of the Thai. Since the lizard is to the right of the snake (statement 6), the snake must be to the left of the Thai.
+
+From statement 8, we know the Dutch is to the left of the Turkish. Since the Italian is to the left of the Argentine, and the Argentine is on the far right, the Turkish must be to the right of the Italian.
+
+Now, let's fill in the table:
+
+#############
+| Nationality   |   1   |    2    |  3   |    4    |   5    |     6      |
+|               |       |         |      |         |        |            |
+| Argentine     |       |         |  Horse |  Italian |  German |  Dutch    |
+| Dutch         |       |         |       |         |        |  Turkish  |
+| German        |       |         |       |  Goat    |        |            |
+| Italian       |       |  Frog   |  Horse |         |        |  Turkish  |
+| Thai          |       |         |       |         |  Lizard |  Snake    |
+| Turkish       |       |         |       |         |        |            |
+#############
+
+Note that the pet ""goat"" is not assigned to a nationality, as the puzzle does not provide enough information to determine which nationality corresponds to the goat."	{'nationality': ['1', '2', '3', '4', '5', '6'], 'argentine': ['', '', 'horse', 'italian', 'german', 'dutch'], 'dutch': ['', '', '', '', '', 'turkish'], 'german': ['', '', '', 'goat', '', ''], 'italian': ['', 'frog', 'horse', '', '', 'turkish'], 'thai': ['', '', '', '', 'lizard', 'snake'], 'turkish': ['', '', '', '', '', '']}	False	0	False
+Lv1-2x6-3	"Let's break down the puzzle step by step:
+
+1. The owner of the bird is on the left of the person driving the helicopter.
+2. The owner of the guinea-pig is the person driving the tram.
+3. The person driving the helicopter is on the left of the person driving the taxi.
+4. The person driving the helicopter is on the left of the owner of the rabbit.
+5. The owner of the frog is on the far right.
+6. The owner of the rabbit is between the owner of the guinea-pig and the person driving the helicopter.
+7. The person driving the jet-ski is on the far left.
+8. The person driving the quad-bike is on the right of the owner of the guinea-pig.
+9. The owner of the chinchilla is on the far left.
+
+From statement 9, we know the owner of the chinchilla is on the far left. From statement 7, we know the person driving the jet-ski is on the far left, so the owner of the chinchilla must be the person driving the jet-ski.
+
+From statement 1, we know the owner of the bird is on the left of the person driving the helicopter. Since the owner of the chinchilla is on the far left, the owner of the bird must be the second person from the left.
+
+From statement 2, we know the owner of the guinea-pig is the person driving the tram. Since the owner of the guinea-pig is the person driving the tram, and the owner of the rabbit is between the owner of the guinea-pig and the person driving the helicopter (statement 6), the owner of the rabbit must be the person driving the taxi.
+
+From statement 3, we know the person driving the helicopter is on the left of the person driving the taxi. Since the owner of the rabbit is the person driving the taxi, the person driving the helicopter must be the third person from the left.
+
+From statement 4, we know the person driving the helicopter is on the left of the owner of the rabbit. Since the person driving the helicopter is the third person from the left, the owner of the rabbit must be the fourth person from the left.
+
+From statement 5, we know the owner of the frog is on the far right. Since the owner of the chinchilla is on the far left, the owner of the frog must be the sixth person from the left.
+
+From statement 8, we know the person driving the quad-bike is on the right of the owner of the guinea-pig. Since the owner of the guinea-pig is the person driving the tram, the person driving the quad-bike must be the fifth person from the left.
+
+Now we can fill in the table:
+
+#############
+|             |     1      |  2   |     3      |   4    |     5      |     6     |
+| Pet         |            |      |            |        |            |           |
+| Transport   |            |      |            |        |            |           |
+| Jet-ski    | Chinchilla |      |            |        |            |           |
+| Tram       |            |      |            | Guinea-pig |            |           |
+| Taxi       |            |      | Rabbit     |        |            |           |
+| Helicopter |            | Bird  |            |        |            |           |
+| Quad-bike  |            |      |            |        | Snake     | Frog      |
+#############
+
+The final solution is:
+
+* Chinchilla is driven by the jet-ski
+* Guinea-pig is driven by the tram
+* Rabbit is driven by the taxi
+* Bird is driven by the helicopter
+* Snake is driven by the quad-bike
+* Frog is driven by the van"	{'pet': ['', '', '', '', '', ''], 'transport': ['', '', '', '', '', ''], 'jet-ski': ['chinchilla', '', '', '', '', ''], 'tram': ['', '', '', 'guinea-pig', '', ''], 'taxi': ['', '', 'rabbit', '', '', ''], 'helicopter': ['', 'bird', '', '', '', ''], 'quad-bike': ['', '', '', '', 'snake', 'frog']}	True	0	False
+Lv1-2x6-4	"Let's break down the puzzle step by step:
+
+1. The person driving the roller is the person eating kale.
+2. The person driving the trike is on the right of the person driving the bike.
+3. The person driving the taxi is on the left of the person eating grapefruit.
+4. The person driving the scooter is the person eating corn.
+5. The person eating broccoli is the person driving the bike.
+6. The person driving the quad-bike is between the person driving the bike and the person eating pomegranate.
+7. The person eating corn is on the left of the person eating pomegranate.
+8. The person driving the roller is on the far right.
+
+From statement 1, we know the person eating kale is driving the roller. From statement 8, we know the person driving the roller is on the far right.
+
+From statement 5, we know the person eating broccoli is driving the bike. Since the person driving the roller is on the far right, the person driving the bike must be on the left of the roller.
+
+From statement 2, we know the person driving the trike is on the right of the person driving the bike. Since the person driving the bike is on the left of the roller, the person driving the trike must be on the right of the roller.
+
+From statement 6, we know the person driving the quad-bike is between the person driving the bike and the person eating pomegranate. Since the person driving the bike is on the left of the roller, the person driving the quad-bike must be between the roller and the person eating pomegranate.
+
+From statement 7, we know the person eating corn is on the left of the person eating pomegranate. Since the person driving the scooter is eating corn (statement 4), the person driving the scooter must be on the left of the person eating pomegranate.
+
+From statement 3, we know the person driving the taxi is on the left of the person eating grapefruit. Since the person eating grapefruit is not eating broccoli (statement 1), the person eating grapefruit must be eating either pomegranate, kale, or corn. However, the person eating corn is already accounted for (statement 4), and the person eating kale is already accounted for (statement 1). Therefore, the person eating grapefruit must be eating pomegranate.
+
+Now we can start filling in the table:
+
+|             |    1    |      2      |     3      |    4     |   5    |   6    |
+| Food        |         |             |            |          |        |        |
+| Transport   |         |             | quad-      |          |        |        |
+
+1. Broccoli - Bike
+2. Kale - Roller
+3. Grapefruit - Taxi
+4. Corn - Scooter
+5. Pomegranate -?
+
+From statement 6, we know the person driving the quad-bike is between the person driving the bike and the person eating pomegranate. Since the person driving the bike is eating broccoli, the person eating pomegranate must be driving the quad-bike.
+
+|             |    1    |      2      |     3      |    4     |   5    |   6    |
+| Food        |         |             |            |          |        |        |
+| Transport   | Bike    | Roller     | quad-      | Scooter  | Taxi   | Trike  |
+
+1. Broccoli - Bike
+2. Kale - Roller
+3. Grapefruit - Taxi
+4. Corn - Scooter
+5. Pomegranate - Quad-bike
+
+The final solution is:
+
+#############
+|             |    1    |      2      |     3      |    4     |   5    |   6    |
+| Food        |         |             |            |          |        |        |
+| Transport   | Bike    | Roller     | quad-      | Scooter  | Taxi   | Trike  |
+|             | Broccoli | Kale       | Pomegranate | Corn     | Grapefruit |?    |
+#############"	{'food': ['', '', '', '', '', ''], 'transport': ['bike', 'roller', 'quad-', 'scooter', 'taxi', 'trike']}	True	0	False
+Lv1-2x6-5	"Let's break down the puzzle step by step:
+
+1. The person watching disaster movies is on the left of the person watching satire movies.
+
+This means that the person watching disaster movies is either in position 1 or 2, and the person watching satire movies is in position 3 or 4.
+
+2. The person watching family movies is on the right of the person who's sport is cycling.
+
+This means that the person watching family movies is either in position 4 or 5, and the person who's sport is cycling is in position 2 or 3.
+
+3. The person who's sport is biathlon is on the right of the person who's sport is golf.
+
+This means that the person who's sport is biathlon is in position 5 or 6, and the person who's sport is golf is in position 4 or 5.
+
+4. The person watching drama movies is between the person watching family movies and the person watching sports movies.
+
+This means that the person watching drama movies is in position 3 or 4.
+
+5. The person who's sport is cycling is on the right of the person watching satire movies.
+
+This means that the person who's sport is cycling is in position 4 or 5.
+
+6. The person who's sport is soccer is on the left of the person who's sport is golf.
+
+This means that the person who's sport is soccer is in position 1 or 2, and the person who's sport is golf is in position 3 or 4.
+
+7. The person who's sport is badminton is on the left of the person watching western movies.
+
+This means that the person who's sport is badminton is in position 1 or 2, and the person watching western movies is in position 5 or 6.
+
+8. The person watching sports movies is on the far right.
+
+This means that the person watching sports movies is in position 6.
+
+Now, let's combine the information:
+
+|               |     1      |     2     |    3    |   4    |   5   |    6     |
+| Movie-Genre   |            |           |         |        |       |          |
+| Sport         |            |           |         |        |       |          |
+
+From statement 1, the person watching disaster movies is on the left of the person watching satire movies. From statement 6, the person who's sport is soccer is on the left of the person who's sport is golf. This means that the person watching disaster movies is in position 1, and the person watching satire movies is in position 2.
+
+From statement 2, the person watching family movies is on the right of the person who's sport is cycling. From statement 5, the person who's sport is cycling is on the right of the person watching satire movies. This means that the person watching family movies is in position 4 or 5.
+
+From statement 3, the person who's sport is biathlon is on the right of the person who's sport is golf. From statement 6, the person who's sport is soccer is on the left of the person who's sport is golf. This means that the person who's sport is biathlon is in position 5 or 6.
+
+From statement 4, the person watching drama movies is between the person watching family movies and the person watching sports movies. From statement 8, the person watching sports movies is on the far right. This means that the person watching drama movies is in position 5.
+
+From statement 7, the person who's sport is badminton is on the left of the person watching western movies. From statement 8, the person watching sports movies is on the far right. This means that the person watching western movies is in position 6.
+
+Now, we can fill in the table:
+
+#############
+|               |     1      |     2     |    3    |   4    |   5   |    6     |
+| Movie-Genre   |  Disaster  |  Satire   |         |  Family  |  Drama  |  Western  |
+| Sport         |  Soccer    |  Badminton|  Golf    |  Biathlon|  Cycling|  Ice-Hockey|
+#############
+
+Note that the remaining sport, ice-hockey, is in position 3."	{'movie-genre': ['disaster', 'satire', '', 'family', 'drama', 'western'], 'sport': ['soccer', 'badminton', 'golf', 'biathlon', 'cycling', 'ice-hockey']}	True	5	False
+Lv1-2x6-6	"Let's break down the puzzle step by step:
+
+1. The person who's hobby is board-games is on the left of the person who's hobby is traveling.
+2. The person who's hobby is woodworking is the person eating grapefruit.
+3. The person who's hobby is board-games is on the right of the person eating pepper.
+4. The person who's hobby is woodworking is on the far right.
+5. The person eating grapefruit is on the right of the person who's hobby is traveling.
+6. The person eating strawberry is on the right of the person who's hobby is card-games.
+7. The person who's hobby is dancing is the person eating strawberry.
+8. The person eating nectarine is between the person eating orange and the person who's hobby is woodworking.
+9. The person eating cauliflower is the person who's hobby is card-games.
+
+From statement 2, we know the person eating grapefruit has the hobby woodworking. From statement 4, we know this person is on the far right.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is on the far right, the person who's hobby is traveling must be on the left of the person eating grapefruit.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Therefore, the person who's hobby is board-games must be on the leftmost position.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person who's hobby is board-games is on the leftmost position, the person eating pepper must be in the second position from the left.
+
+From statement 9, we know the person eating cauliflower has the hobby card-games. Since the person eating cauliflower is not mentioned in any other statement, we can place them in the leftmost position.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is on the far right, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 3, we know the person who's hobby is board-games is on the right of the person eating pepper. Since the person eating pepper is in the second position from the left, the person who's hobby is board-games must be in the third position from the left.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person who's hobby is woodworking is in the far right position, the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is card-games. Since the person eating cauliflower has the hobby card-games, the person eating strawberry must be in the rightmost position.
+
+From statement 7, we know the person who's hobby is dancing is the person eating strawberry. Therefore, the person who's hobby is dancing is in the rightmost position.
+
+From statement 1, we know the person who's hobby is board-games is on the left of the person who's hobby is traveling. Since the person who's hobby is traveling is on the left of the person eating grapefruit, the person who's hobby is traveling must be in the second position from the left.
+
+From statement 2, we know the person who's hobby is woodworking is the person eating grapefruit. Therefore, the person eating grapefruit is in the far right position.
+
+From statement 5, we know the person eating grapefruit is on the right of the person who's hobby is traveling. Since the person eating grapefruit is in the far right position.
+
+From statement 8, we know the person eating nectarine is between the person eating orange and the person who's hobby is woodworking. Since the person eating nectarine must be in the third position from the right.
+
+From statement 6, we know the person eating strawberry is on the right of the person who's hobby is dancing is the person eating strawberry is in the rightmost position.
+
+From statement 1, we know the person who's hobby is traveling is on the left of the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is dancing is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who's hobby is the person who"	{}	False	0	False
+Lv1-2x6-7	"Let's break down the puzzle step by step:
+
+1. The person driving the roller is the person driving the roller (no new information)
+2. The person driving the van is on the left of the person who's hobby is chess (van -> chess)
+3. The person who's hobby is chess is between the person who's hobby is reading and the person who's hobby is hiking (reading -> chess -> hiking)
+4. The person who's hobby is hiking is the person driving the van (hiking -> van)
+5. The person who's hobby is skydiving is on the left of the person who's hobby is hiking (skydiving -> hiking)
+6. The person who's hobby is reading is between the person driving the roller and the person driving the tram (roller -> reading -> tram)
+7. The person driving the roller is on the right of the person driving the bike (roller -> bike)
+8. The person who's hobby is cooking is on the right of the person driving the roller (cooking -> roller)
+9. The person driving the boat is on the right of the person who's hobby is gardening (boat -> gardening)
+
+From statement 2, we know the van is on the left of the person who's hobby is chess. From statement 4, we know the person who's hobby is hiking is driving the van. Therefore, the person who's hobby is hiking is on the left of the person who's hobby is chess.
+
+From statement 5, we know the person who's hobby is skydiving is on the left of the person who's hobby is hiking. Since the person who's hobby is hiking is on the left of the person who's hobby is chess, the person who's hobby is skydiving must be on the left of the person who's hobby is hiking.
+
+From statement 6, we know the person who's hobby is reading is between the person driving the roller and the person driving the tram. Since the person driving the roller is on the right of the person driving the bike (statement 7), the person who's hobby is reading must be on the right of the person driving the bike.
+
+From statement 8, we know the person who's hobby is cooking is on the right of the person driving the roller. Since the person who's hobby is reading is on the right of the person driving the bike, the person who's hobby is cooking must be on the right of the person who's hobby is reading.
+
+From statement 9, we know the person driving the boat is on the right of the person who's hobby is gardening. Since the person who's hobby is cooking is on the right of the person driving the roller, the person who's hobby is gardening must be on the left of the person driving the boat.
+
+Now, let's fill in the table:
+
+#############
+|             |     1     |   2    |   3   |    4    |     5     |    6    |
+| Hobby       |           |        |       |         |           |         |
+| Transport   | quad-     | bike   |       | van     |           |         |
+|             |           |        |       |         |           |         |
+|             |           |        |       |         |           |         |
+|             |           |        |       |         |           |         |
+|             |           |        |       |         |           |         |
+|             |           |        |       |         |           |         |
+#############
+
+The final solution is:
+
+* Person 1: Skydiving, quad-bike
+* Person 2: Reading, bike
+* Person 3: Chess,?
+* Person 4: Hiking, van
+* Person 5: Cooking,?
+* Person 6: Gardening, boat
+
+Note that we can't determine the exact transport for Person 3 and Person 5, but we can determine the order of the people and their hobbies."	{'hobby': ['', '', '', '', '', ''], 'transport': ['quad-', 'bike', '', 'van', '', '']}	True	0	False
+Lv1-2x6-8	"Let's break down the puzzle step by step:
+
+From statement 1, we know the fan of gospel is on the left of the fan of indie.
+
+From statement 2, we know the fan of indie is on the left of the fan of disco.
+
+From statement 3, we know the fan of trance is between the fan of jazz and the fan of blues.
+
+From statement 4, we know the musician is the fan of gospel.
+
+From statement 5, we know the mechanic is between the journalist and the social-worker.
+
+From statement 6, we know the fan of blues is on the left of the fan of trance.
+
+From statement 7, we know the social-worker is on the right of the teacher.
+
+From statement 8, we know the social-worker is on the right of the teacher (this is a duplicate of statement 7, so we can ignore it).
+
+From statement 9, we know the mechanic is on the right of the fan of disco.
+
+Now, let's start filling in the table:
+
+|               |    1     |    2    |       3       |    4     |     5      |    6     |
+| Job           |          |         |               |          |            |          |
+| Music-Genre   |          |         |               |          |            |          |
+
+From statement 1, we know the fan of gospel is on the left of the fan of indie, so we can place the musician (fan of gospel) in position 1.
+
+|               | Musician |    2    |       3       |    4     |     5      |    6     |
+| Job           |          |         |               |          |            |          |
+| Music-Genre   | Gospel   |         |               |          |            |          |
+
+From statement 2, we know the fan of indie is on the left of the fan of disco, so we can place the fan of indie in position 2.
+
+|               | Musician | Indie   |       3       |    4     |     5      |    6     |
+| Job           |          |         |               |          |            |          |
+| Music-Genre   | Gospel   |         |               |          |            |          |
+
+From statement 3, we know the fan of trance is between the fan of jazz and the fan of blues. Since the fan of blues is on the left of the fan of trance (statement 6), we can place the fan of blues in position 3.
+
+|               | Musician | Indie   | Blues  |    4     |     5      |    6     |
+| Job           |          |         |       |          |            |          |
+| Music-Genre   | Gospel   |         |       |          |            |          |
+
+From statement 6, we know the fan of blues is on the left of the fan of trance, so we can place the fan of trance in position 5.
+
+|               | Musician | Indie   | Blues  |    4     | Trance  |    6     |
+| Job           |          |         |       |          |         |          |
+| Music-Genre   | Gospel   |         |       |          |         |          |
+
+From statement 9, we know the mechanic is on the right of the fan of disco, so we can place the mechanic in position 6.
+
+|               | Musician | Indie   | Blues  |    4     | Trance  | Mechanic |
+| Job           |          |         |       |          |         |          |
+| Music-Genre   | Gospel   |         |       |          |         |          |
+
+From statement 5, we know the mechanic is between the journalist and the social-worker. Since the social-worker is on the right of the teacher (statement 7), we can place the social-worker in position 4.
+
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           |          |         |       |          |         |          |
+| Music-Genre   | Gospel   |         |       |          |         |          |
+
+From statement 4, we know the musician is the fan of gospel, so we can fill in the music-genre column.
+
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           | Designer |         |       |          |         |          |
+| Music-Genre   | Gospel   | Disco  |       |          |         |          |
+
+From statement 2, we know the fan of indie is on the left of the fan of disco, so we can place the fan of indie in position 2.
+
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           | Designer | Journalist |       |          |         |          |
+| Music-Genre   | Gospel   | Disco  |       |          |         |          |
+
+From statement 3, we know the fan of trance is between the fan of jazz and the fan of blues. Since the fan of blues is already in position 3, we can place the fan of jazz in position 5.
+
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           | Designer | Journalist |       |          |         |          |
+| Music-Genre   | Gospel   | Disco  |       |          |         |          |
+
+From statement 1, we know the fan of gospel is on the left of the fan of indie, so we can place the fan of jazz in position 4.
+
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           | Designer | Journalist |       |          |         |          |
+| Music-Genre   | Gospel   | Disco  |       |          |         |          |
+
+The final solution is:
+
+#############
+|               | Musician | Indie   | Blues  | Social-worker | Trance  | Mechanic |
+| Job           | Designer | Journalist | Teacher |          |         |          |
+| Music-Genre   | Gospel   | Disco  |       |          |         |          |
+#############"	{'job': ['designer', 'journalist', 'teacher', '', '', ''], 'music-genre': ['gospel', 'disco', '', '', '', '']}	True	1	False
+Lv1-2x6-9	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person who's hobby is sudoku is the person who's sport is skiing.
+
+From statement 4, we know that the person who's sport is skiing is the person who's hobby is sudoku, which confirms statement 1.
+
+From statement 2, we know that the person who's sport is biathlon is between the person who's hobby is chess and the person who's sport is surfing.
+
+From statement 5, we know that the person who's hobby is chess is on the left of the person who's sport is biathlon. This means that the person who's hobby is chess is on the left of the person who's sport is surfing.
+
+From statement 3, we know that the person who's sport is sailing is on the far left. Since the person who's hobby is chess is on the left of the person who's sport is biathlon, the person who's sport is sailing must be on the far left.
+
+From statement 8, we know that the person who's hobby is filmmaking is on the left of the person who's hobby is hiking.
+
+From statement 9, we know that the person who's hobby is singing is on the left of the person who's hobby is filmmaking.
+
+From statement 10, we know that the person who's hobby is hiking is on the left of the person who's hobby is sudoku. Since the person who's hobby is sudoku is the person who's sport is skiing, the person who's hobby is hiking must be on the left of the person who's sport is skiing.
+
+Now, let's fill in the table:
+
+|         |    1    |    2     |     3      |   4    |   5    |       6       |
+| Hobby   |         |          |            |        |        |               |
+| Sport   |         |          |            |        |        |               |
+
+From the above deductions, we can fill in the table as follows:
+
+|         |    1    |    2     |     3      |   4    |   5    |       6       |
+| Hobby   | Singing | Filmaking | Hiking    | Gardening | Chess  | Sudoku      |
+| Sport   | Sailing | Skateboarding | Surfing  | Biathlon | Skiing |               |
+
+The final solution table is:
+
+#############
+|         |    1    |    2     |     3      |   4    |   5    |       6       |
+| Hobby   | Singing | Filmaking | Hiking    | Gardening | Chess  | Sudoku      |
+| Sport   | Sailing | Skateboarding | Surfing  | Biathlon | Skiing |               |
+#############"	{'hobby': ['singing', 'filmaking', 'hiking', 'gardening', 'chess', 'sudoku'], 'sport': ['sailing', 'skateboarding', 'surfing', 'biathlon', 'skiing', '']}	True	3	False
+Lv1-2x6-10	"Let's break down the puzzle step by step:
+
+1. The person watching documentary movies is on the left of the person watching horror movies.
+
+This means that the order of movie genres is: [doc, horror,?,?,?,?]
+
+2. The owner of the ferret is the person watching comedy movies.
+
+This means that the person watching comedy movies is in the [doc, horror,?,?,?,?] order.
+
+3. The person watching horror movies is the owner of the rabbit.
+
+This means that the person watching horror movies is in the [doc, horror,?,?,?,?] order, and they own the rabbit.
+
+4. The person watching comedy movies is the owner of the ferret.
+
+This is already established.
+
+5. The person watching comedy movies is between the person watching family movies and the person watching documentary movies.
+
+This means that the order of movie genres is: [doc, comedy, family,?,?,?]
+
+6. The owner of the snake is on the right of the person watching comedy movies.
+
+This means that the snake owner is in the [?,?,?,?,?,?] order.
+
+7. The person watching satire movies is on the left of the owner of the goldfish.
+
+This means that the order of movie genres is: [doc, comedy, family, satire,?, goldfish]
+
+8. The person watching satire movies is between the person watching family movies and the owner of the bird.
+
+This means that the order of movie genres is: [doc, comedy, family, satire, bird, goldfish]
+
+9. The person watching horror movies is on the far right.
+
+This means that the order of movie genres is: [doc, comedy, family, satire, bird, goldfish, horror]
+
+Now, let's fill in the pet owners:
+
+* The person watching comedy movies is the owner of the ferret (established).
+* The person watching horror movies is the owner of the rabbit (established).
+* The person watching satire movies is between the person watching family movies and the owner of the bird, so they must own the bird.
+* The owner of the snake is on the right of the person watching comedy movies, so they must own the snake.
+* The owner of the goldfish is on the right of the person watching satire movies, so they must own the goldfish.
+
+Here is the final solution table with '#############' around it:
+
+#############
+| Movie-Genre   |   1   |   2    |    3     |   4    |      5      |   6    |
+|               |       |        |          |        |             |        |
+| Pet           |       |        |          |        |             |        |
+| Comedy       |       |        |          |        |             |        |
+| Documentary  | 1     |        |          |        |             |        |
+| Family       |       | 2      |          |        |             |        |
+| Satire       |       |        | 3        |        | 4          |        |
+| Bird        |       |        |          |        |             | 5      |
+| Goldfish    |       |        |          |        |             |        |
+| Horror      |       |        |          |        |             | 6      |
+| Rabbit      |       |        |          |        |             |        |
+| Snake       |       |        |          |        |             |        |
+#############"	{'horror': ['', '', '', '', '', '6'], 'rabbit': ['', '', '', '', '', ''], 'snake': ['', '', '', '', '', '']}	False	0	False

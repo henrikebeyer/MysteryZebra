@@ -1,0 +1,673 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv5-5x2-1	"To solve this puzzle, let's analyze each clue step by step:
+
+
+1. The software-developer is on the left or right of the person drinking lemonade.
+2. The software-developer is on the right of the person who's hobby is skydiving.
+3. The owner of the dog is somewhere to the right of the person who's sport is skateboarding.
+
+
+From clue 2, we know the software-developer must be in column 2 because they have to be to the right of the skydiving enthusiast. Therefore, the skydiving enthusiast must be in column 1.
+
+
+Given this setup:
+
+
+|            |       1       |         2          |
+| Beverage   |               |                    |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |                    |
+| Sport      |               |                    |
+
+
+Now, let's incorporate clue 1. Since the software-developer is in column 2 and must be next to the person drinking lemonade, lemonade must be in column 1.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |                    |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |                    |
+| Sport      |               |                    |
+
+
+For the beverage in column 2, since lemonade is already assigned to column 1, and there are only two beverages (lemonade and water), water must be in column 2.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |                    |
+| Sport      |               |                    |
+
+
+Clue 3 tells us the owner of the dog is to the right of the person whose sport is skateboarding. Since the software-developer (and thus water drinker) is in column 2, and given that there are only two sports (rugby and skateboarding), if skateboarding were in column 2, it would violate clue 3 because there's no one to the right of column 2. Thus, skateboarding must be in column 1.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |                    |
+| Sport      |  Skateboarding|                    |
+
+
+Given this setup, rugby must be in column 2 because it's the only sport left.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |                    |
+| Sport      |  Skateboarding|  Rugby            |
+
+
+Now, since the dog owner is to the right of the skateboarding enthusiast (column 1), and the only position to the right is column 2, the dog must be in column 2.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |               |  Dog              |
+| Sport      |  Skateboarding|  Rugby            |
+
+
+This leaves the hedgehog for column 1.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |                    |
+| Job        |               |  Software-developer|
+| Pet        |  Hedgehog    |  Dog              |
+| Sport      |  Skateboarding|  Rugby            |
+
+
+Finally, the only hobby left (hiking) must be in column 2.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |  Hiking           |
+| Job        |               |  Software-developer|
+| Pet        |  Hedgehog    |  Dog              |
+| Sport      |  Skateboarding|  Rugby            |
+
+
+And the last job left (analyst) must be in column 1.
+
+
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |  Hiking           |
+| Job        |  Analyst     |  Software-developer|
+| Pet        |  Hedgehog    |  Dog              |
+| Sport      |  Skateboarding|  Rugby            |
+
+
+The final solution table is:
+
+
+#############
+|            |       1       |         2          |
+| Beverage   |  Lemonade    |  Water            |
+| Hobby      |  Skydiving    |  Hiking           |
+| Job        |  Analyst     |  Software-developer|
+| Pet        |  Hedgehog    |  Dog              |
+| Sport      |  Skateboarding|  Rugby            |
+#############"	{'beverage': ['lemonade', 'water'], 'hobby': ['skydiving', 'hiking'], 'job': ['analyst', 'software-developer'], 'pet': ['hedgehog', 'dog'], 'sport': ['skateboarding', 'rugby']}	True	10	True
+Lv5-5x2-2	"To solve this puzzle, let's analyze the clues given:
+
+
+1. The person whose sport is cycling is in an odd position.
+2. The person drinking lemonade is somewhere to the right of the owner of the hedgehog.
+3. The fisherman is on the right of the scientist.
+4. The person eating potato is somewhere to the left of the person drinking lemonade.
+
+
+From clue 1, since there are only two positions (1 and 2), and an odd position means position 1, the person whose sport is cycling must be in position 1.
+
+
+|            |     1     |       2       |
+| Beverage   |           |               |
+| Food       |           |               |
+| Job        |           |               |
+| Pet        |           |               |
+| Sport      | Cycling   |               |
+
+
+From clue 3, the fisherman must be in position 2 because the fisherman is to the right of the scientist.
+
+
+|            |     1     |       2       |
+| Beverage   |           |               |
+| Food       |           |               |
+| Job        | Scientist | Fisherman     |
+| Pet        |           |               |
+| Sport      | Cycling   |               |
+
+
+Now, from clue 4 and clue 2 together, the person eating potato must be in position 1 (because they are to the left of the person drinking lemonade), and since the person drinking lemonade is to the right of the hedgehog owner, and considering the fisherman is already in position 2, the hedgehog must be with the scientist, and lemonade with the fisherman.
+
+
+|            |     1     |       2       |
+| Beverage   | Water     | Lemonade     |
+| Food       | Potato    | Apricot      |
+| Job        | Scientist | Fisherman     |
+| Pet        | Hedgehog  | Turtle       |
+| Sport      | Cycling   | Skateboarding|
+
+
+Given the constraints and clues, this arrangement satisfies all conditions.
+
+
+#############
+|            |     1     |       2       |
+| Beverage   | Water     | Lemonade     |
+| Food       | Potato    | Apricot      |
+| Job        | Scientist | Fisherman     |
+| Pet        | Hedgehog  | Turtle       |
+| Sport      | Cycling   | Skateboarding|
+#############"	{'beverage': ['water', 'lemonade'], 'food': ['potato', 'apricot'], 'job': ['scientist', 'fisherman'], 'pet': ['hedgehog', 'turtle'], 'sport': ['cycling', 'skateboarding']}	True	10	True
+Lv5-5x2-3	"To solve this puzzle, we'll break down the clues step by step.
+
+1. **The person drinking sprite is on the left of the Chinese.**
+   - This means the person who drinks Sprite cannot be Chinese because they are to the left of the Chinese person.
+   - It also implies that the Chinese person must drink 7up since there are only two beverages and the Sprite drinker is specifically mentioned as being to the left of the Chinese person.
+
+2. **The person driving the quad-bike is somewhere to the right of the person who's sport is skiing.**
+   - This clue tells us about the relative positions of the quad-bike user and the skier but does not give us direct information about their beverage, movie genre, or nationality.
+
+3. **The person driving the quad-bike is the person watching mystery movies.**
+   - This links the mode of transport (quad-bike) directly with a preference for mystery movies.
+
+Given these clues, let's try to construct the table:
+
+- From clue 1, we know the Sprite drinker is on the left and must be next to the Chinese person who drinks 7up.
+- Clue 2 tells us the quad-bike user is to the right of the skier but doesn't specify which column each is in directly. However, since there are only two columns, if the quad-bike user is to the right of the skier, it means the skier must be in column 1 and the quad-bike user in column 2.
+- Clue 3 links the quad-bike user with mystery movies.
+
+So, we have:
+- Column 1 (left): Sprite drinker
+- Column 2 (right): 7up drinker (Chinese)
+
+And from clue 2 and 3:
+- Skier must be in column 1.
+- Quad-bike user (who watches mystery movies) is in column 2.
+
+Now, let's try to fill in the blanks based on these deductions:
+
+|               |     1      |     2     |
+| Beverage      | Sprite    | 7up       |
+| Movie-Genre   | Scientific| Mystery   |
+| Nationality   | ?         | Chinese   |
+| Sport         | Skiing    | Rugby     |
+| Transport     | Train     | Quad-bike |
+
+We've filled in the blanks based on our deductions:
+- The Sprite drinker is on the left (Column 1).
+- The 7up drinker, who is Chinese, is on the right (Column 2).
+- Since the quad-bike user is to the right of the skier and watches mystery movies, they must be in Column 2.
+- Skiing must then be in Column 1 because it's to the left of the quad-bike user.
+
+Given that we have filled all the required fields based on our deductions, here's the solution table:
+
+#############
+|               |     1      |     2     |
+| Beverage      | Sprite    | 7up       |
+| Movie-Genre   | Scientific| Mystery   |
+| Nationality   | Russian   | Chinese   |
+| Sport         | Skiing    | Rugby     |
+| Transport     | Train     | Quad-bike |
+#############
+
+This solution fits all the given clues:
+1. The Sprite drinker is on the left of the Chinese person.
+2. The quad-bike user (who watches mystery movies) is to the right of the skier.
+3. The person driving the quad-bike watches mystery movies.
+
+Each clue has been considered, and the table has been filled accordingly."	{'beverage': ['sprite', '7up'], 'movie-genre': ['scientific', 'mystery'], 'nationality': ['russian', 'chinese'], 'sport': ['skiing', 'rugby'], 'transport': ['train', 'quad-bike']}	True	10	True
+Lv5-5x2-4	"To solve this puzzle, let's break down the information given:
+
+1. The person who's hobby is filmmaking is on the left of the person who's hobby is reading.
+2. The Thai is somewhere to the right of the fan of house.
+3. The person driving the subway is somewhere to the left of the person drinking lemonade.
+
+Given these clues, we can start filling in the table based on the information provided:
+
+- From clue 1, since filmmaking must be to the left of reading, and given there are only two columns (1 and 2), filmmaking goes in column 1, and reading goes in column 2.
+  
+- Clue 3 tells us that subway is to the left of lemonade. Since lemonade can't be in column 1 (because then subway would have to be to its left, which isn't possible given there are no columns to the left of column 1), lemonade must be in column 2. This means subway must be in column 1.
+
+- Clue 2 tells us that Thai is to the right of house. Since we've already determined reading and lemonade (thus also implying the beverage associated with each hobby) are in column 2, and given the constraints around hobbies and beverages/transports, house cannot be in column 2 if it's going to be to the left of Thai (because there would be no space for Thai to its right within the confines of our two-column setup). This means house must be associated with filmmaking (and thus in column 1), making folk the genre for reading (in column 2).
+
+- Given that Thai is to the right of house, and knowing house is in column 1, this creates a seeming contradiction unless we interpret ""to the right"" as not necessarily directly adjacent but rather in a position that is relatively to the right in the overall arrangement. However, given our strict two-column setup, it means Thai must be in column 2 because there's no further right to place someone.
+
+- Since house is with filmmaking (column 1) and we've established that the person associated with house (and thus also filmmaking) cannot drink lemonade (because subway, which is with filmmaking/house, is to the left of lemonade), this means cola must be in column 1, and lemonade in column 2.
+
+- With these placements:
+  - Column 1 has filmmaking, house, subway, cola.
+  - Column 2 has reading, folk, bus (since it's the only transport left), lemonade, and American nationality (as Thai is the only other option, and it must be with column 2 based on our earlier deduction about relative positioning).
+
+However, there seems to have been an oversight in directly applying all clues without considering the full implications of each step as we solved. Let's rectify this by ensuring all conditions are met correctly:
+
+1. **Hobby**: Filmmaking (Column 1), Reading (Column 2)
+2. **Music-Genre**: House (Column 1, because it has to be to the left of Thai, and considering our earlier deductions), Folk (Column 2)
+3. **Nationality**: Since Thai must be to the right of house and given house is in Column 1, Thai goes into Column 2. American then goes into Column 1.
+4. **Transport**: Subway (Column 1, as it's to the left of lemonade), Bus (Column 2)
+5. **Beverage**: Given subway is to the left of lemonade and must be in Column 1, and considering our deductions about house and filmmaking being in Column 1, cola goes with Column 1, leaving lemonade for Column 2.
+
+So, rectifying any misunderstanding from the clues:
+
+- The person who likes filmmaking (Column 1) is to the left of the person who likes reading (Column 2).
+- Thai (Column 2) is to the right of the fan of house (Column 1).
+- The person using the subway (Column 1) is to the left of the person drinking lemonade (Column 2).
+
+Thus, aligning all information correctly and ensuring each clue fits without contradiction:
+
+#############
+|               |     1      |    2     |
+| Beverage      |   Cola    | Lemonade |
+| Hobby         | Filmmaking| Reading  |
+| Music-Genre   |   House   |   Folk   |
+| Nationality   |  American |   Thai   |
+| Transport     |   Subway  |    Bus   |
+#############"	{'beverage': ['cola', 'lemonade'], 'hobby': ['filmmaking', 'reading'], 'music-genre': ['house', 'folk'], 'nationality': ['american', 'thai'], 'transport': ['subway', 'bus']}	True	10	True
+Lv5-5x2-5	"To solve this puzzle, we will use the given clues step by step.
+
+
+## Step 1: Analyze the first clue
+The librarian is somewhere to the left of the person driving the skateboard. This means the skateboard cannot be in the first column if the librarian is in the second column, but since we don't know the exact positions yet, we'll keep this in mind for now.
+
+
+## Step 2: Analyze the second clue
+The Spanish person is somewhere to the left of the person who's sport is ice-hockey. This implies that ice-hockey cannot be in the first column if the Spanish nationality is in the second column, but again, exact positions are not clear yet.
+
+
+## Step 3: Analyze the third clue
+The person drinking cola is on the left of the person drinking fanta. This gives us a direct relationship between two items: cola must be in the first column, and fanta must be in the second column.
+
+
+Given these clues, let's try to fill out the table with the information we have:
+
+
+|               |     1     |     2      |
+| Beverage      |   Cola    |   Fanta    |
+| Job           |           |            |
+| Nationality   |           |            |
+| Sport         |           |            |
+| Transport     |           |            |
+
+
+## Step 4: Combine clues for further deduction
+From clue 1, since the librarian must be to the left of the skateboard, and we have already placed cola (and thus fanta) in their respective columns based on clue 3, we can start making some educated guesses about job placements.
+
+
+## Step 5: Further deductions with nationality and sport
+Clue 2 tells us the Spanish person is to the left of ice-hockey. Since cola is already on the left, this means the Spanish person must be associated with cola (as it's the only beverage on the left), which in turn implies that ice-hockey cannot be on the left.
+
+
+## Step 6: Finalizing placements
+Given all clues:
+- Cola is on the left, fanta on the right.
+- The librarian is to the left of the skateboard.
+- The Spanish person is to the left of ice-hockey.
+
+We can make some final deductions:
+- Since cola is on the left and must be associated with the Spanish nationality (because it's to the left of ice-hockey), we place Spanish under Nationality in column 1.
+- Ice-hockey then must be in column 2, as it's to the right of the Spanish person.
+- The skateboard, being to the right of the librarian, means the librarian cannot be in column 2 (because there would be nothing to the right of them), so the librarian is in column 1 under Job.
+- This leaves freelancer for column 2 under Job.
+- Under Transport, since the librarian is to the left of the skateboard, and we've placed the librarian in column 1, the skateboard must be in column 2. Thus, tram goes in column 1.
+
+
+## Step 7: Placing handball
+Given ice-hockey is in column 2 under Sport, handball must then go in column 1 under Sport to satisfy the condition of having two different sports and fulfilling all other conditions.
+
+
+The final answer is: 
+#############
+|               |     1     |     2      |
+| Beverage      |   Cola    |   Fanta    |
+| Job           | Librarian | Freelancer|
+| Nationality   | Japanese  | Spanish    |
+| Sport         | Handball  | Ice-hockey |
+| Transport     | Tram      | Skateboard |
+#############"	{'beverage': ['cola', 'fanta'], 'job': ['librarian', 'freelancer'], 'nationality': ['japanese', 'spanish'], 'sport': ['handball', 'ice-hockey'], 'transport': ['tram', 'skateboard']}	True	8	False
+Lv5-5x2-6	"To solve this puzzle, let's break down the clues step by step.
+
+
+1. The person whose hobby is board-games is somewhere to the right of the person whose hobby is reading.
+2. The mechanic is on the left of the person drinking iced-tea.
+3. The police-officer is on the left or right of the owner of the pony.
+4. The person drinking Fanta is the person watching time-travel movies.
+
+
+From clue 4, we know one combination: Fanta and time-travel movies are associated with each other.
+
+
+Given clue 2, since the mechanic must be to the left of the person drinking iced-tea, and considering there are only two columns (1 and 2), this means the mechanic cannot be in column 2 if the iced-tea drinker is also in column 2. Therefore, if we assume the iced-tea drinker is in column 2, the mechanic must be in column 1.
+
+
+Clue 3 states the police-officer is on the left or right of the pony owner. Since there are only two positions (left and right being relative to the two columns), this means either the police officer or the pony owner could be in column 1 or column 2, but they must be adjacent.
+
+
+Let's start filling in what we can with certainty:
+
+
+- The mechanic is in column 1 because they have to be to the left of the iced-tea drinker (clue 2).
+- The Fanta drinker watches time-travel movies (clue 4).
+
+
+Given that there are only two jobs, and if the mechanic is in column 1, then the police officer must be in column 2.
+
+
+For hobbies:
+- Board-games are to the right of reading (clue 1), so reading must be in column 1, and board-games in column 2.
+
+
+Now, let's try to place the pets and movie genres:
+
+
+Since the police officer is next to the pony owner (clue 3), and if we've placed the police officer in column 2, then the pony could either be in column 1 or column 2. However, because the mechanic is already in column 1 and can't be the police officer, and given that reading is in column 1, it suggests the cat (the only pet left) should be paired with reading to avoid conflict with other clues.
+
+
+This leaves us trying to figure out how to place the remaining elements without violating any rules:
+
+
+- The person who likes time-travel movies drinks Fanta (clue 4), and since board-games are in column 2, it suggests that time-travel movies should be associated with board-games because the other combinations would conflict with established clues.
+
+
+Given this logic, here is a possible arrangement:
+
+
+#############
+|               |      1      |       2        |
+| Beverage      |  Fanta     |  Iced-Tea      |
+| Hobby         | Reading    | Board-Games   |
+| Job           | Mechanic   | Police-Officer|
+| Movie-Genre   | Superhero  | Time-Travel   |
+| Pet           | Cat        | Pony          |
+#############
+
+
+However, we need to double-check this arrangement against all the clues:
+
+
+1. Board-games are indeed to the right of reading.
+2. The mechanic is to the left of the iced-tea drinker.
+3. The police officer is next to the pony owner (in this case, directly to the left).
+4. The person drinking Fanta watches time-travel movies.
+
+
+It appears there was a mistake in deducing that time-travel movies should be with board-games based on previous steps without considering the direct implications of clue 4 and other clues properly. Let's correct this by strictly following the clues again, especially focusing on the beverage and movie genre connection as per clue 4:
+
+
+Given that Fanta is associated with time-travel (clue 4), and assuming a strict adherence to all clues including the misinterpreted placement of hobbies and jobs relative to each other and pets:
+
+
+Re-evaluating strictly based on given clues without assumptions beyond them, we actually have more flexibility than initially accounted for. However, one crucial point missed in initial deductions was directly linking Fanta with time-travel movies and ensuring all other elements fit around this core connection without violating any rules.
+
+
+Let's correctly place the elements according to the clues:
+
+
+- Since the mechanic is on the left of the iced-tea drinker (clue 2), and if we assume the iced-tea drinker could be in column 2, the mechanic must indeed be in column 1.
+- The person whose hobby is board-games is to the right of the person whose hobby is reading (clue 1).
+- Given Fanta is with time-travel movies (clue 4), and without loss of generality placing this combination in column 1 or column 2, we must ensure other clues fit.
+
+
+Correcting for oversight and ensuring adherence to all clues:
+
+
+The final arrangement considering all clues correctly should look like this:
+
+
+#############
+|               |      1      |       2        |
+| Beverage      |  Iced-Tea  |  Fanta         |
+| Hobby         | Reading    | Board-Games   |
+| Job           | Mechanic   | Police-Officer|
+| Movie-Genre   | Superhero  | Time-Travel   |
+| Pet           | Pony       | Cat           |
+#############
+
+
+Or, alternatively, considering the constraints again and the flexibility within them:
+
+
+Given that we might have made an incorrect assumption about the fixed positions of certain elements without fully exploring all possible combinations that satisfy all clues:
+
+
+Let's reconsider with strict adherence to given conditions and explore if there was an error in deduction regarding the placement of hobbies, jobs, pets, and preferences.
+
+
+Upon reevaluation for accuracy and adherence to provided instructions and logic puzzle constraints:
+
+
+The key insight lies in correctly applying each clue without overassuming the placements. Given this, a more careful approach would reconsider how each element (beverage, hobby, job, movie genre, pet) interacts with the clues provided, ensuring that no rule is violated.
+
+
+Given the misstep identified in not strictly following through all possible combinations that adhere to the given conditions without assuming specific placements prematurely:
+
+
+A corrected version, ensuring alignment with clue 4 (Fanta and time-travel movies), clue 1 (board-games to the right of reading), clue 2 (mechanic to the left of iced-tea), clue 3 (police officer next to pony owner), and correctly placing all elements without overstepping the bounds of given information, is necessary for an accurate solution.
+
+
+Therefore, considering a strict reinterpretation of clues and avoiding premature assumptions about placements:
+
+
+The corrected table reflecting accurate deductions based on provided clues should indeed ensure that each clue is satisfied without contradiction. Given this, let's finalize with the proper arrangement that fits all conditions accurately.
+
+
+Given the constraints and reevaluating for a precise fit to all given clues without misinterpretation:
+
+
+#############
+|               |      1      |       2        |
+| Beverage      |  Iced-Tea  |  Fanta         |
+| Hobby         | Reading    | Board-Games   |
+| Job           | Mechanic   | Police-Officer|
+| Movie-Genre   | Superhero  | Time-Travel   |
+| Pet           | Cat        | Pony          |
+#############
+
+
+This solution correctly places the elements according to the clues provided, ensuring that no rule is violated and each condition is met accurately."	{'beverage': ['iced-tea', 'fanta'], 'hobby': ['reading', 'board-games'], 'job': ['mechanic', 'police-officer'], 'movie-genre': ['superhero', 'time-travel'], 'pet': ['cat', 'pony']}	True	4	False
+Lv5-5x2-7	"To solve this puzzle, let's analyze each clue step by step and fill in the table accordingly.
+
+
+## Step 1: Analyzing Clue 1
+The person eating carrot is somewhere to the right of the person eating cherry. This means the person who eats cherry must be in column 1, and the person who eats carrot must be in column 2.
+
+
+## Step 2: Analyzing Clue 2
+The person driving the skateboard is somewhere to the left of the security-guard. This implies that the skateboard user is in column 1, and the security-guard is in column 2.
+
+
+## Step 3: Analyzing Clue 3
+The person whose hobby is cooking is on the right of the person whose sport is biathlon. Since we've established from Clue 1 that carrot (and thus its associated preferences) must be to the right, and knowing that the security-guard (from Clue 2) is also in column 2, it suggests that biathlon cannot be in column 2 because cooking needs to be to the right of biathlon.
+
+
+## Step 4: Combining Information
+Given these clues:
+- Cherry is in column 1.
+- Carrot is in column 2.
+- Skateboard is in column 1.
+- Security-guard is in column 2.
+- Biathlon must be in column 1 because cooking (which has to be on the right of biathlon) can only fit in column 2 if biathlon is in column 1.
+
+
+## Step 5: Finalizing the Placement
+Since biathlon and skateboard are both in column 1, and cherry's food matches with the skateboard's transport (as per the implication from Clue 2 that skateboard is to the left of security-guard), we can deduce:
+- Column 1 has cherry (food), skateboard (transport), biathlon (sport), and by process of elimination for hobbies and jobs not yet placed, it likely includes drawing (hobby) and firefighter (job) because cooking must be in column 2.
+- Column 2 has carrot (food), security-guard (job), and thus cooking (hobby) fits here as per Clue 3. The sport that remains is golf.
+
+
+## Step 6: Final Placement
+Given the deductions, we can fill out the table:
+- Column 1: Cherry, Skateboard, Biathlon, Drawing, Firefighter.
+- Column 2: Carrot, Security-guard, Golf, Cooking.
+
+The final answer is: 
+#############
+|             |      1      |       2        |
+| Food        |  Cherry    |   Carrot      |
+| Hobby       |  Drawing   |   Cooking     |
+| Job         | Firefighter| Security-guard|
+| Sport       |  Biathlon  |    Golf       |
+| Transport   | Skateboard |  Quad-bike    |
+#############"	{'food': ['cherry', 'carrot'], 'hobby': ['drawing', 'cooking'], 'job': ['firefighter', 'security-guard'], 'sport': ['biathlon', 'golf'], 'transport': ['skateboard', 'quad-bike']}	True	10	True
+Lv5-5x2-8	"To solve this puzzle, we'll follow the clues step by step.
+
+
+From clue 2, we know:
+- The designer drives the boat.
+
+From clue 1, we understand:
+- The person driving the train is to the right of the person whose sport is tennis.
+
+Clue 3 tells us:
+- The Indian is to the right of the fan of funk.
+
+Let's start filling in the table based on these clues:
+
+
+Given that there are only two options for each category and considering clue 2, we can start by placing the designer and their mode of transport (boat) in one of the columns. Let's place the designer in column 1 for now, as we don't have enough information to definitively place them yet.
+
+
+|               |    1     |       2        |
+| Job           | Designer| Police-Officer |
+| Music-Genre   |          |                |
+| Nationality   |          |                |
+| Sport         |          |                |
+| Transport     | Boat     | Train          |
+
+Now, considering clue 1 and knowing the designer (who drives the boat) is in column 1, we can deduce:
+- The person who likes tennis must be in column 1 because the train driver (column 2) needs to be to their right.
+
+
+Let's update our table with this new information:
+
+
+|               |    1     |       2        |
+| Job           | Designer| Police-Officer |
+| Music-Genre   |          |                |
+| Nationality   |          |                |
+| Sport         | Tennis   | Snowboarding   |
+| Transport     | Boat     | Train          |
+
+Next, using clue 3:
+- The Indian must be to the right of the fan of funk.
+
+
+Since we have the sports filled in and know the transport methods, let's address the music genres and nationalities. Given that the Indian is to the right of the funk fan (clue 3) and considering our current setup:
+
+
+|               |    1     |       2        |
+| Job           | Designer| Police-Officer |
+| Music-Genre   | Funk     | Soul           |
+| Nationality   | German   | Indian         |
+| Sport         | Tennis   | Snowboarding   |
+| Transport     | Boat     | Train          |
+
+This setup satisfies all conditions:
+1. The train driver is to the right of the tennis player.
+2. The designer drives the boat.
+3. The Indian is to the right of the funk fan.
+
+
+Therefore, the solution table, surrounded by '#############"", is:
+
+
+#############
+|               |    1     |       2        |
+| Job           | Designer| Police-Officer |
+| Music-Genre   | Funk     | Soul           |
+| Nationality   | German   | Indian         |
+| Sport         | Tennis   | Snowboarding   |
+| Transport     | Boat     | Train          |
+#############"	{'job': ['designer', 'police-officer'], 'music-genre': ['funk', 'soul'], 'nationality': ['german', 'indian'], 'sport': ['tennis', 'snowboarding'], 'transport': ['boat', 'train']}	True	10	True
+Lv5-5x2-9	"To solve this puzzle, let's analyze the given statements:
+
+1. The Egyptian is somewhere to the left of the software-developer.
+2. The person watching spy movies is on the left of the person eating pepper.
+3. The Egyptian is a fan of house music.
+
+From statement 3, we know the Egyptian likes house music. 
+
+Given the constraints and the information provided:
+
+- Since there are only two options for each category and given that the Egyptian likes house music (statement 3), the other person must like country music.
+
+- From statement 1, we understand the Egyptian cannot be a software-developer because they have to be to the left of the software-developer. Thus, the Egyptian must be a firefighter since there are only two jobs available.
+
+- Statement 2 tells us that the spy movie watcher is to the left of the pepper eater. If the Egyptian (who is to the left of the software-developer) likes spy movies, then they cannot eat pepper because the pepper eater has to be to the right of the spy movie fan. This means the Egyptian must eat eggplant.
+
+- Given that the Egyptian eats eggplant and likes house music, and considering statement 2, if the Egyptian watches spy movies, then the person eating pepper (who is also the software-developer based on the left-right arrangement) must watch mystery movies.
+
+So, we have:
+- The Egyptian is a firefighter who eats eggplant, watches spy movies, and listens to house music.
+- The other person (Polish, by elimination) is a software-developer who eats pepper, watches mystery movies, and listens to country music.
+
+Therefore, the solution table looks like this:
+
+#############
+|               |      1      |         2          |
+| Food          | eggplant   | pepper             |
+| Job           | firefighter| software-developer|
+| Movie-Genre   | spy        | mystery            |
+| Music-Genre   | house      | country            |
+| Nationality   | egyptian   | polish             |
+#############"	{'food': ['eggplant', 'pepper'], 'job': ['firefighter', 'software-developer'], 'movie-genre': ['spy', 'mystery'], 'music-genre': ['house', 'country'], 'nationality': ['egyptian', 'polish']}	True	10	True
+Lv5-5x2-10	"Let's analyze the clues:
+
+1. The person drinking tea is somewhere to the left of the person driving the motorbike.
+2. The person eating peas is on the left or right of the owner of the hamster.
+3. The person watching zombie movies is somewhere to the left of the person eating potato.
+
+From clue 1, we know that the person drinking tea cannot be in column 2 if the person driving the motorbike is in column 2. So, the person drinking tea must be in column 1.
+
+From clue 3, we know that the person watching zombie movies is somewhere to the left of the person eating potato. This means that the person watching zombie movies must be in column 1, and the person eating potato must be in column 2.
+
+Now, let's try to fill in the table:
+
+|               |     1      |     2     |
+| Beverage      | tea        | milk      |
+| Food          |            | potato    |
+| Movie-Genre   | zombie     | family    |
+| Pet           |            |           |
+| Transport     |            | motorbike |
+
+From clue 2, we know that the person eating peas is on the left or right of the owner of the hamster. Since the person eating potato is in column 2, the person eating peas must be in column 1.
+
+|               |     1      |     2     |
+| Beverage      | tea        | milk      |
+| Food          | peas       | potato    |
+| Movie-Genre   | zombie     | family    |
+| Pet           |            |           |
+| Transport     |            | motorbike |
+
+Now, we can fill in the remaining blanks:
+
+|               |     1      |     2     |
+| Beverage      | tea        | milk      |
+| Food          | peas       | potato    |
+| Movie-Genre   | zombie     | family    |
+| Pet           | hamster    | guinea-pig|
+| Transport     | trike      | motorbike |
+
+So, the final solution table is:
+
+#############
+|               |     1      |     2     |
+| Beverage      | tea        | milk      |
+| Food          | peas       | potato    |
+| Movie-Genre   | zombie     | family    |
+| Pet           | hamster    | guinea-pig|
+| Transport     | trike      | motorbike |
+#############"	{'beverage': ['tea', 'milk'], 'food': ['peas', 'potato'], 'movie-genre': ['zombie', 'family'], 'pet': ['hamster', 'guinea-pig'], 'transport': ['trike', 'motorbike']}	True	8	False

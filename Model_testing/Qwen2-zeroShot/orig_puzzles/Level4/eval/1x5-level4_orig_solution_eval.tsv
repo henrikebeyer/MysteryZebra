@@ -1,0 +1,450 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv4-1x5-1	"Sure, let's solve this step-by-step based on the given clues.
+
+1. **The fan of house is in the middle**:
+   - This means the fan of house is in position 3.
+   
+2. **The fan of disco is on the left of the fan of pop**:
+   - This means the fan of disco and pop cannot be in positions 4 or 5 (since they need to be adjacent and one must be to the left of the other).
+
+3. **The fan of hip-hop is in an odd position**:
+   - The odd positions available are 1, 3, and 5.
+   - Since position 3 is already taken by the fan of house, the fan of hip-hop can only be in position 1 or 5.
+
+4. **The fan of hip-hop is on the left of the fan of d&b**:
+   - If the fan of hip-hop is in position 1, then the fan of d&b must be in position 2, 3, or 4.
+   - However, since the fan of house is in position 3, the fan of d&b cannot be in position 3. Therefore, if the fan of hip-hop is in position 1, the fan of d&b can only be in position 2 or 4.
+   - If the fan of hip-hop is in position 5, then the fan of d&b must be in position 4.
+
+Now, let's place these constraints together:
+
+- Position 3 is taken by the fan of house.
+- Hip-hop is in an odd position and must be on the left of d&b.
+
+Let's test both possibilities for hip-hop:
+
+### Case 1: Hip-hop in position 1
+- Hip-hop in position 1.
+- D&b must be in position 2, 3, or 4.
+- But house is in position 3, so d&b can only be in position 2 or 4.
+- Disco and pop must be in positions 2 and 4 (since they need to be adjacent and one must be to the left of the other).
+
+This leaves no room for both conditions to be satisfied simultaneously.
+
+### Case 2: Hip-hop in position 5
+- Hip-hop in position 5.
+- D&b must be in position 4.
+- Disco and pop must be in positions 2 and 3 (since they need to be adjacent and one must be to the left of the other).
+
+Since house is in position 3, the only remaining positions for disco and pop are 2 and 4, with disco on the left of pop.
+
+So, we have:
+- Position 1: Hip-hop
+- Position 2: Disco
+- Position 3: House
+- Position 4: Pop
+- Position 5: D&B
+
+Final solution:
+
+```
+|               |    1    |  2  |   3   |   4   |  5  |
+| Music-Genre   | Hip-hop | Disco| House | Pop   | D&B |
+```"	{'music-genre': ['hip-hop', 'disco', 'house', 'pop', 'd&b']}	True	2	False
+Lv4-1x5-2	"Let's solve this step by step using the given clues:
+
+1. The person driving the motorbike is on the left or right of the person driving the skateboard.
+2. The person driving the train is on the far left.
+3. The person driving the quad-bike is in an odd position.
+4. The person driving the skateboard is on the far right.
+5. The person driving the quad-bike is in the middle.
+
+Given these clues, let's deduce the positions:
+
+- From clue 2, the person driving the train must be in position 1 (far left).
+- From clue 4, the person driving the skateboard must be in position 5 (far right).
+- From clue 5, the person driving the quad-bike must be in position 3 (middle, since it's an odd position).
+
+Now we have:
+```
+|             |   1   |  2  |     3     |     4     |     5      |
+| Transport   | Train |     | Quad-bike  |           | Skateboard |
+```
+
+- From clue 1, the person driving the motorbike must be either to the left or right of the person driving the skateboard. Since the skateboard is in position 5, the motorbike must be in position 2 or 4.
+- From clue 3, the person driving the quad-bike is in the middle, which we already placed in position 3.
+
+So, the only remaining positions for the motorbike are 2 and 4. Since the quad-bike is in position 3, the motorbike can't be next to it (position 2 would be to the left and position 4 would be to the right). Therefore, the motorbike must be in position 2.
+
+This leaves position 4 for the van.
+
+Final arrangement:
+```
+|             |   1   |  2  |     3     |     4     |     5      |
+| Transport   | Train | Motorbike | Quad-bike  | Van       | Skateboard |
+```"	{'transport': ['train', 'motorbike', 'quad-bike', 'van', 'skateboard']}	True	3	False
+Lv4-1x5-3	"To solve this logic puzzle, we need to carefully analyze each clue and place the means of transport accordingly. Let's go through the clues step by step:
+
+1. **Clue 1:** The person driving the helicopter is in an odd position (1 or 3 or 5).
+2. **Clue 2:** The person driving the skateboard is on the left or right of the person driving the bike.
+3. **Clue 3:** The person driving the bike is in an odd position (1 or 3 or 5).
+4. **Clue 4:** The person driving the train is on the far right (position 5).
+5. **Clue 5:** The person driving the bike is on the right of the person driving the jet-ski.
+
+Let's start placing the information:
+
+- From Clue 4, we know that the train is in position 5.
+- From Clue 3, the bike must be in an odd position. Since position 5 is taken by the train, the bike can only be in positions 1 or 3.
+- From Clue 1, the helicopter must also be in an odd position (1 or 3). However, since the bike can only be in positions 1 or 3, and the bike cannot be in the same position as the helicopter, the bike must be in position 1 and the helicopter must be in position 3.
+- Now, from Clue 5, the bike is on the right of the jet-ski. Since the bike is in position 1, the jet-ski must be in position 2.
+- From Clue 2, the skateboard must be either to the left or right of the bike. Since the bike is in position 1 and the jet-ski is in position 2, the skateboard must be in position 4.
+
+Now, we have:
+- Position 1: Bike
+- Position 2: Jet-ski
+- Position 3: Helicopter
+- Position 4: Skateboard
+- Position 5: Train
+
+We now fill in the final solution table:
+
+```
+|             |     1      |    2    |  3   |     4      |   5   |
+| Transport   | Bike       | Jet-ski | Helicopter | Skateboard | Train |
+```
+
+So, the final solution is:
+
+```
+|             |     1      |    2    |  3   |     4      |   5   |
+| Transport   | Bike       | Jet-ski | Helicopter | Skateboard | Train |
+```"	{'transport': ['bike', 'jet-ski', 'helicopter', 'skateboard', 'train']}	True	3	False
+Lv4-1x5-4	"Let's solve the puzzle step by step using the given clues.
+
+### Clues Recap:
+1. The architect is in an odd position.
+2. The police-officer is on the right of the bartender.
+3. The social-worker is on the far left.
+4. The bartender is on the left or right of the social-worker.
+
+### Step-by-Step Solution:
+
+1. **Clue 3**: The social-worker is on the far left (position 1).
+   ```
+   | Social-worker |       1       |     2     |       3        |   4    |     5     |
+   ```
+
+2. **Clue 1**: The architect is in an odd position.
+   - Since the social-worker is already in position 1, the architect can be in positions 3 or 5.
+
+3. **Clue 4**: The bartender is on the left or right of the social-worker.
+   - Since the social-worker is in position 1, the bartender can be in positions 2, 3, 4, or 5.
+
+4. **Clue 2**: The police-officer is on the right of the bartender.
+   - This means if the bartender is in position 2, the police-officer must be in position 3, 4, or 5.
+   - If the bartender is in position 3, the police-officer must be in position 4 or 5.
+   - If the bartender is in position 4, the police-officer must be in position 5.
+   - If the bartender is in position 5, there is no valid position for the police-officer to be on the right.
+
+5. **Combining Clues**:
+   - If the bartender is in position 2, the police-officer can be in positions 3, 4, or 5.
+   - If the bartender is in position 3, the police-officer can be in positions 4 or 5.
+   - If the bartender is in position 4, the police-officer must be in position 5.
+   - The architect must be in positions 3 or 5, but we need to check which fits with the other clues.
+
+6. **Checking Possible Positions**:
+   - If the bartender is in position 2 and the police-officer is in position 3, the architect cannot be in position 3 because the architect is in an odd position (positions 1, 3, or 5). So, the architect must be in position 5, leaving position 4 for the writer.
+   - This configuration works: Social-worker (1), Bartender (2), Police-officer (3), Writer (4), Architect (5).
+
+### Final Solution Table:
+```
+| Social-worker |       1       |     Bartender |     Police-officer |     Writer |     Architect |
+```"	{}	False	0	False
+Lv4-1x5-5	"To solve this logic puzzle, let's analyze the given clues step by step:
+
+1. **The person driving the taxi is in an even position (Clue 1).**
+   - The even positions are 2 and 4.
+   - Therefore, the taxi can only be in position 2 or 4.
+
+2. **The person driving the taxi is on the left of the person driving the quad-bike (Clue 2).**
+   - If the taxi is in position 2, the quad-bike must be in position 3, 4, or 5.
+   - If the taxi is in position 4, the quad-bike must be in position 5.
+
+3. **The person driving the jet-ski is on the right of the person driving the motorbike (Clue 3).**
+   - This means the motorbike cannot be in the last position (5), and the jet-ski cannot be in the first position (1).
+
+4. **The person driving the motorbike is on the right of the person driving the quad-bike (Clue 4).**
+   - This means the quad-bike cannot be in the last position (5), and the motorbike must be to the right of the quad-bike.
+
+Let's consider the possible positions for each vehicle based on these clues:
+
+- **Position 1:** Cannot be taxi (Clue 1).
+- **Position 2:** Can be taxi (Clue 1).
+- **Position 3:** Can be quad-bike if taxi is in position 2 (Clue 2).
+- **Position 4:** Can be taxi (Clue 1) or quad-bike if taxi is in position 2 (Clue 2).
+- **Position 5:** Can be quad-bike if taxi is in position 2 (Clue 2) or taxi if taxi is in position 4 (Clue 1).
+
+Given that the taxi is in an even position (2 or 4), let's test both scenarios:
+
+### Scenario 1: Taxi in Position 2
+- **Position 2:** Taxi
+- **Position 3:** Quad-bike (Clue 2)
+- **Position 4:** Motorbike (Clue 4, as it needs to be right of the quad-bike)
+- **Position 5:** Jet-ski (Clue 3, as it needs to be right of the motorbike)
+
+This leaves position 1 for the scooter:
+- **Position 1:** Scooter
+
+So the arrangement would be:
+1. Scooter
+2. Taxi
+3. Quad-bike
+4. Motorbike
+5. Jet-ski
+
+### Scenario 2: Taxi in Position 4
+- **Position 4:** Taxi
+- **Position 5:** Quad-bike (Clue 2, as it needs to be right of the taxi)
+- **Position 3:** Motorbike (Clue 4, as it needs to be right of the quad-bike)
+- **Position 2:** Jet-ski (Clue 3, as it needs to be right of the motorbike)
+
+This leaves position 1 for the scooter:
+- **Position 1:** Scooter
+
+So the arrangement would be:
+1. Scooter
+2. Jet-ski
+3. Motorbike
+4. Taxi
+5. Quad-bike
+
+Since both scenarios fit the given clues, we need to choose one. Let's choose the first scenario as it fits all the clues without contradiction.
+
+Final solution:
+
+```
+|             |    1    |  2   |     3     |     4     |    5    |
+| Transport   | Scooter | Taxi | Quad-bike | Motorbike | Jet-ski |
+```"	{'transport': ['scooter', 'taxi', 'quad-bike', 'motorbike', 'jet-ski']}	True	5	True
+Lv4-1x5-6	"To solve this logic puzzle, let's break down each clue and determine the correct positions for each nationality.
+
+1. **The Egyptian is on the right of the Russian.**
+   - This means if the Russian is in position \( x \), the Egyptian must be in position \( x+1 \).
+
+2. **The Canadian is in an odd position.**
+   - The possible positions for the Canadian are 1 or 3 or 5.
+
+3. **The Russian is on the right of the German.**
+   - This means if the German is in position \( y \), the Russian must be in position \( y+1 \).
+
+4. **The German is between the Canadian and the Russian.**
+   - This means the German must be immediately to the left of the Russian, and the Canadian must be to the left of the German.
+
+Let's start by placing the Canadian in an odd position and see where it leads us:
+
+### Step-by-Step Solution:
+
+1. **Place the Canadian in position 1:**
+   - If the Canadian is in position 1, then the German must be in position 2 (since he is between the Canadian and the Russian).
+   - The Russian must be in position 3 (since he is to the right of the German).
+   - The Egyptian must be in position 4 (since he is to the right of the Russian).
+   - The Thai must be in position 5.
+   
+   This gives us:
+   - Position 1: Canadian
+   - Position 2: German
+   - Position 3: Russian
+   - Position 4: Egyptian
+   - Position 5: Thai
+
+   Let's verify this against all clues:
+   - Clue 1: The Egyptian (4) is on the right of the Russian (3). ✔️
+   - Clue 2: The Canadian (1) is in an odd position. ✔️
+   - Clue 3: The Russian (3) is on the right of the German (2). ✔️
+   - Clue 4: The German (2) is between the Canadian (1) and the Russian (3). ✔️
+
+Since all clues are satisfied, the final solution is:
+
+```
+|               |    1     |   2    |    3    |    4     |  5   |
+| Nationality   | Canadian | German | Russian | Egyptian | Thai |
+```"	{'nationality': ['canadian', 'german', 'russian', 'egyptian', 'thai']}	True	5	True
+Lv4-1x5-7	"Certainly! Let's solve the puzzle step-by-step based on the given clues.
+
+### Clues Recap:
+1. The owner of the guinea-pig is between the owner of the fish and the owner of the horse.
+2. The owner of the goldfish is in an even position (positions 2 or 4).
+3. The owner of the fish is on the far left (position 1).
+
+### Step-by-Step Solution:
+
+1. **Position of the Fish**: According to clue 3, the fish is in position 1.
+   ```
+   | Pet  |  1   |     2      |   3   |    4     |    5    |
+   |      | fish |            |       | gold     |         |
+   ```
+
+2. **Position of the Goldfish**: According to clue 2, the goldfish is in an even position (2 or 4). Since position 4 is already occupied by ""gold,"" the goldfish must be in position 2.
+   ```
+   | Pet  |  1   |     2      |   3   |    4     |    5    |
+   |      | fish | goldfish   |       | gold     |         |
+   ```
+
+3. **Position of the Guinea-Pig**: According to clue 1, the guinea-pig is between the fish and the horse. Since the fish is in position 1 and the horse cannot be in position 1 or 2 (as the goldfish is there), the horse must be in position 5, and the guinea-pig must be in position 3.
+   ```
+   | Pet  |  1   |     2      |   3   |    4     |    5    |
+   |      | fish | goldfish   | guinea-pig | gold     | horse   |
+   ```
+
+4. **Verification**:
+   - The owner of the guinea-pig is between the owner of the fish and the owner of the horse (clue 1 is satisfied).
+   - The owner of the goldfish is in an even position (clue 2 is satisfied).
+   - The owner of the fish is on the far left (clue 3 is satisfied).
+
+### Final Solution Table:
+
+```
+| Pet  |  1   |     2      |   3   |    4     |    5    |
+|      | fish | goldfish   | guinea-pig | gold     | horse   |
+```"	{'pet': ['1', '2', '3', '4', '5']}	True	0	False
+Lv4-1x5-8	"Let's solve the puzzle step-by-step using the given clues.
+
+1. The fan of classical is on the left or right of the fan of country.
+2. The fan of soul is on the right of the fan of rock.
+3. The fan of soul is on the left of the fan of classical.
+4. The fan of classical is in an even position.
+
+### Step-by-Step Solution:
+
+**Clue 4:** The fan of classical is in an even position. This means the fan of classical can be in positions 2 or 4.
+
+**Clue 3:** The fan of soul is on the left of the fan of classical. Since the fan of classical is in an even position, and the fan of soul must be to the left of the fan of classical, the possible positions for the fan of classical are:
+- Position 2 (soul must be in position 1)
+- Position 4 (soul must be in position 3)
+
+Let's test these possibilities:
+
+#### Case 1: Classical in position 2
+- Soul must be in position 1.
+- This leaves positions 3, 4, and 5 for country, rock, and salsa.
+
+From Clue 2: The fan of soul is on the right of the fan of rock.
+- This means rock cannot be in position 1 or 2 (since soul is in position 1), so rock must be in position 3.
+- This leaves country and salsa for positions 4 and 5.
+
+However, from Clue 1: The fan of classical is on the left or right of the fan of country.
+- If classical is in position 2, country cannot be in position 1 (because soul is there) and must be in position 4 or 5.
+- If country is in position 4, then salsa must be in position 5.
+- But this does not satisfy Clue 1 because the fan of classical (in position 2) is not on the right of the fan of country (in position 4).
+
+So, this case does not work.
+
+#### Case 2: Classical in position 4
+- Soul must be in position 3.
+- This leaves positions 1, 2, and 5 for country, rock, and salsa.
+
+From Clue 2: The fan of soul is on the right of the fan of rock.
+- This means rock cannot be in position 3 (since soul is there), so rock must be in position 1.
+- This leaves country and salsa for positions 2 and 5.
+
+From Clue 1: The fan of classical is on the left or right of the fan of country.
+- If classical is in position 4, country cannot be in position 5 (because classical is to the left of it).
+- Therefore, country must be in position 2 and salsa in position 5.
+
+This satisfies all the clues:
+- The fan of classical (rock) is in position 4.
+- The fan of soul (salsa) is in position 3.
+- The fan of rock (classical) is on the left of the fan of country (salsa).
+- The fan of soul (salsa) is on the left of the fan of classical (rock).
+- The fan of classical (rock) is in an even position (4).
+
+### Final Solution Table:
+
+```
+|               |   1   |  2   |  3   |     4     |    5    |
+| Music-Genre   | salsa | rock | salsa | classical | country |
+```"	{'music-genre': ['salsa', 'rock', 'salsa', 'classical', 'country']}	True	4	False
+Lv4-1x5-9	"Let's solve the puzzle step by step using the given clues:
+
+1. **Clue 1**: The person eating kiwi is on the left or right of the person eating watermelon.
+2. **Clue 2**: The person eating zucchini is on the far left or far right.
+3. **Clue 3**: The person eating lemon is on the right of the person eating peach.
+4. **Clue 4**: The person eating kiwi is in an even position.
+5. **Clue 5**: The person eating lemon is on the left or right of the person eating peach (redundant with Clue 3).
+6. **Clue 6**: The person eating kiwi is in an even position.
+
+### Step-by-Step Analysis
+
+**Step 1**: From Clue 2, zucchini must be either in position 1 or 5.
+
+**Step 2**: From Clue 4, the person eating kiwi must be in an even position (i.e., positions 2 or 4).
+
+**Step 3**: From Clue 1 and Clue 4, since the person eating kiwi is in an even position, the person eating watermelon cannot be in position 2 because there would be no space to the left. Therefore, the person eating watermelon must be in position 1, and the person eating kiwi must be in position 4.
+
+**Step 4**: From Clue 3 and Clue 5, the person eating lemon must be on the right of the person eating peach. Since we have positions 1, 2, 3, 4, and 5, and the person eating kiwi is in position 4, the only possible positions for lemon and peach are 2 and 3 (since 1 is occupied by watermelon and 4 by kiwi).
+
+Since the person eating lemon is on the right of the person eating peach, the only arrangement that fits is:
+- Peach in position 2
+- Lemon in position 3
+
+**Step 5**: With the positions filled as follows:
+- Position 1: Watermelon
+- Position 2: Peach
+- Position 3: Lemon
+- Position 4: Kiwi
+- Position 5: Zucchini
+
+We need to check if all conditions are satisfied:
+1. The person eating kiwi (position 4) is on the right of the person eating watermelon (position 1) - True.
+2. The person eating zucchini (position 5) is on the far right - True.
+3. The person eating lemon (position 3) is on the right of the person eating peach (position 2) - True.
+4. The person eating kiwi (position 4) is in an even position - True.
+5. The person eating lemon (position 3) is on the right of the person eating peach (position 2) - True.
+
+All conditions are satisfied. Thus, the final arrangement is:
+
+```
+|        |    1     |   2   |   3   |  4   |     5      |
+| Food   | Watermelon| Peach | Lemon | Kiwi | Zucchini   |
+```"	{'food': ['watermelon', 'peach', 'lemon', 'kiwi', 'zucchini']}	True	3	False
+Lv4-1x5-10	"Certainly! Let's solve the puzzle step-by-step using the given clues:
+
+1. **The fan of pop is in an even position (Clue 1):**
+   - Possible positions for pop are 2 or 4.
+
+2. **The fan of jazz is in the middle (Clue 2):**
+   - The middle position is 3.
+
+3. **The fan of classical is on the right of the fan of hip-hop (Clue 3):**
+   - This means if the fan of hip-hop is in position \(x\), then the fan of classical must be in position \(x+1\).
+
+4. **The fan of classical is on the far right (Clue 4):**
+   - This means the fan of classical is in position 5.
+
+Given Clue 4, we know:
+- The fan of classical is in position 5.
+- Therefore, the fan of hip-hop must be in position 4 (since classical is to the right of hip-hop and classical is at position 5).
+
+Given this information:
+- Hip-hop is in position 4 and classical is in position 5.
+
+Now let's use Clue 1:
+- Since pop is in an even position and we already have positions 4 and 5 taken, pop must be in position 2.
+
+Finally, using Clue 2:
+- Jazz is in the middle, so it is in position 3.
+
+We now have:
+- Pop in position 2
+- Jazz in position 3
+- Hip-hop in position 4
+- Classical in position 5
+
+This leaves only one position, 1, which must be for gospel.
+
+So, the final solution is:
+
+```
+|               |   1    |  2  |  3   |    4    |     5     |
+| Music-Genre   | Gospel | Pop | Jazz | Hip-hop | Classical |
+```"	{'music-genre': ['gospel', 'pop', 'jazz', 'hip-hop', 'classical']}	True	5	True

@@ -1,0 +1,902 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv8-3x5-1	"Let's solve the puzzle step by step using the given clues.
+
+### Clues Analysis:
+
+1. **Clue 1:** The person watching crime movies is on the left of the person watching documentary movies.
+2. **Clue 2:** The person driving the jet-ski is on the left of the Brazilian.
+3. **Clue 3:** The person watching crime movies is not to the right of the person watching documentary movies (redundant with Clue 1).
+4. **Clue 4:** The person driving the car is somewhere between the German and the person driving the airplane.
+5. **Clue 5:** The person watching time-travel movies is on the left of the Argentine.
+6. **Clue 6:** The Russian is the person driving the jet-ski.
+7. **Clue 7:** The person watching disaster movies is on the right of the Argentine.
+8. **Clue 8:** The person driving the helicopter is on the left of the person driving the car.
+9. **Clue 9:** The Brazilian is not to the left of the person driving the quad-bike.
+10. **Clue 10:** The person watching documentary movies is not to the right of the Brazilian.
+11. **Clue 11:** The person driving the helicopter is somewhere to the right of the Brazilian.
+12. **Clue 12:** The person driving the quad-bike is not to the left of the person driving the jet-ski.
+
+### Step-by-Step Solution:
+
+1. **Clue 6:** The Russian is the person driving the jet-ski.
+   - Russian -> Jet-ski
+
+2. **Clue 2:** The person driving the jet-ski is on the left of the Brazilian.
+   - Russian -> Jet-ski
+   - Brazilian -> Right of Russian
+
+3. **Clue 9:** The Brazilian is not to the left of the person driving the quad-bike.
+   - Brazilian -> Right of Quad-bike
+
+4. **Clue 12:** The person driving the quad-bike is not to the left of the person driving the jet-ski.
+   - Quad-bike -> Right of Jet-ski
+   - Quad-bike -> Right of Russian
+
+5. **Clue 11:** The person driving the helicopter is somewhere to the right of the Brazilian.
+   - Helicopter -> Right of Brazilian
+
+6. **Clue 8:** The person driving the helicopter is on the left of the person driving the car.
+   - Helicopter -> Left of Car
+
+7. **Clue 4:** The person driving the car is somewhere between the German and the person driving the airplane.
+   - Car -> Between German and Airplane
+
+8. **Clue 10:** The person watching documentary movies is not to the right of the Brazilian.
+   - Documentary -> Not Right of Brazilian
+
+9. **Clue 1:** The person watching crime movies is on the left of the person watching documentary movies.
+   - Crime -> Left of Documentary
+
+10. **Clue 7:** The person watching disaster movies is on the right of the Argentine.
+    - Disaster -> Right of Argentine
+
+11. **Clue 5:** The person watching time-travel movies is on the left of the Argentine.
+    - Time-travel -> Left of Argentine
+
+12. **Clue 3:** The person watching crime movies is not to the right of the person watching documentary movies (redundant with Clue 1).
+
+### Final Placement:
+
+1. **Crime** -> 1st position (leftmost)
+2. **Disaster** -> 4th position (right of Argentine)
+3. **Documentary** -> 2nd position (right of Crime)
+4. **Time-travel** -> 3rd position (left of Argentine)
+5. **Argentine** -> 5th position (right of Time-travel)
+
+Now we need to assign the nationalities and transportation methods:
+
+- **Russian** -> Jet-ski (Clue 6)
+- **Brazilian** -> Helicopter (Clue 2, 11)
+- **Argentine** -> Car (Clue 7, 10, 4)
+- **German** -> Airplane (Clue 4)
+- **Quad-bike** -> Not assigned yet (Clue 9, 12)
+
+Since the quad-bike cannot be to the left of the jet-ski and must be to the right of the Brazilian, it must be in the 4th or 5th position. However, the car is already in the 5th position, so the quad-bike must be in the 4th position.
+
+Thus, the final arrangement is:
+
+1. **Crime**
+2. **Disaster**
+3. **Documentary**
+4. **Time-travel** -> Quad-bike
+5. **Argentine** -> Car
+
+### Final Table:
+
+```
+|               |    1    |      2      |      3      |     4     |    5     |
+| Movie-Genre   |  Crime  |  Disaster   |  Documentary| Time-travel| Argentine|
+| Nationality   |  Russian|  Brazilian  |  Argentine  |  Quad-bike |  German  |
+| Transport     |  Jet-ski|  Helicopter |  Car        |  Airplane  |  Airplane |
+```
+
+```###############
+|               |    1    |      2      |      3      |     4     |    5     |
+| Movie-Genre   |  Crime  |  Disaster   |  Documentary| Time-travel| Argentine|
+| Nationality   |  Russian|  Brazilian  |  Argentine  |  Quad-bike |  German  |
+| Transport     |  Jet-ski|  Helicopter |  Car        |  Airplane  |  Airplane |
+```"	{'movie-genre': ['crime', 'disaster', 'documentary', 'time-travel', 'argentine'], 'nationality': ['russian', 'brazilian', 'argentine', 'quad-bike', 'german'], 'transport': ['jet-ski', 'helicopter', 'car', 'airplane', 'airplane']}	True	5	False
+Lv8-3x5-2	"To solve this logic puzzle, we need to carefully analyze each clue and place the appropriate items in the correct positions. Let's break down the clues step-by-step:
+
+### Clues Analysis:
+1. **Clue 1**: The fan of classical is not to the left of the person eating cauliflower.
+2. **Clue 2**: The person eating cucumber is not the fan of house.
+3. **Clue 3**: The person eating cauliflower is somewhere to the right of the owner of the hedgehog.
+4. **Clue 4**: The owner of the turtle is somewhere to the left of the owner of the bird.
+5. **Clue 5**: The owner of the pony is somewhere between the fan of house and the person eating cauliflower.
+6. **Clue 6**: The owner of the hedgehog is on the left of the person eating grapes.
+7. **Clue 7**: The person eating pepper is the fan of house.
+8. **Clue 8**: The fan of electronic is on the left or right of the fan of house.
+9. **Clue 9**: The person eating pepper is on the left or right of the person eating blueberry.
+10. **Clue 10**: The person eating cucumber is not to the right of the fan of house.
+11. **Clue 11**: The person eating blueberry is not to the right of the owner of the hedgehog.
+12. **Clue 12**: The owner of the bird is on the left of the owner of the hedgehog.
+13. **Clue 13**: The owner of the turtle is on the left of the fan of indie.
+
+### Step-by-Step Solution:
+1. From **Clue 7**, the person eating pepper is the fan of house.
+2. From **Clue 2** and **Clue 10**, the person eating cucumber cannot be the fan of house. Therefore, the fan of house must be eating pepper.
+3. From **Clue 1**, the fan of classical cannot be to the left of the person eating cauliflower.
+4. From **Clue 5**, the owner of the pony is between the fan of house (pepper) and the person eating cauliflower.
+5. Since the fan of house (pepper) is at position 4, the owner of the pony must be at either position 2 or 3.
+6. From **Clue 5**, the person eating cauliflower cannot be at position 1 or 2 (since the owner of the pony would have to be to the left).
+7. From **Clue 3**, the person eating cauliflower must be to the right of the owner of the hedgehog.
+8. From **Clue 6**, the owner of the hedgehog is on the left of the person eating grapes.
+9. From **Clue 11**, the person eating blueberry cannot be to the right of the owner of the hedgehog.
+10. From **Clue 12**, the owner of the bird is on the left of the owner of the hedgehog.
+11. From **Clue 8**, the fan of electronic is on the left or right of the fan of house (pepper), so it could be at position 1, 2, or 3.
+12. From **Clue 9**, the person eating pepper (house fan) is on the left or right of the person eating blueberry. Since the fan of house is at 4, the person eating blueberry can only be at 1, 2, or 3.
+13. From **Clue 13**, the owner of the turtle is on the left of the fan of indie. So the fan of indie must be at 5, and the owner of the turtle must be at 1, 2, or 3.
+
+### Final Placement:
+- **Position 1**: Owner of turtle (fan of indie)
+- **Position 2**: Owner of bird (classical fan, since the owner of the hedgehog must be to the right)
+- **Position 3**: Owner of hedgehog (grapes eater, since the owner of the bird is to the left)
+- **Position 4**: Fan of house (pepper eater)
+- **Position 5**: Owner of pony (between the fan of house and the person eating cauliflower)
+
+Now let's fill in the details for food, music genre, and pet:
+
+- **Owner of Turtle (Indie)**: Grapes
+- **Owner of Bird (Classical)**: Cucumber
+- **Owner of Hedgehog (Grapes)**: Cauliflower
+- **Fan of House (Pepper)**: Blueberry
+- **Owner of Pony (Electronic)**: Pepper
+
+### Final Solution Table:
+```
+|               |    1     |     2     |    3     |     4      |      5      |
+| Food          |  Grapes  |  Cucumber |  Cauliflower |  Blueberry |  Pepper    |
+| Music-Genre   |  Indie   |  Classical|  Grapes    |  House     |  Electronic|
+| Pet           |  Turtle  |  Bird     |  Hedgehog  |  -         |  Pony      |
+```
+
+```plaintext
+|               |    1     |     2     |    3     |     4      |      5      |
+| Food          |  Grapes  |  Cucumber |  Cauliflower |  Blueberry |  Pepper    |
+| Music-Genre   |  Indie   |  Classical|  Grapes    |  House     |  Electronic|
+| Pet           |  Turtle  |  Bird     |  Hedgehog  |  -         |  Pony      |
+```"	{'food': ['grapes', 'cucumber', 'cauliflower', 'blueberry', 'pepper'], 'music-genre': ['indie', 'classical', 'grapes', 'house', 'electronic'], 'pet': ['turtle', 'bird', 'hedgehog', '-', 'pony']}	True	3	False
+Lv8-3x5-3	"To solve this logic puzzle, we need to carefully analyze each clue and place the items in the correct positions. Let's break down the clues step-by-step:
+
+### Clues Analysis:
+1. The person eating eggplant is somewhere to the right of the person eating garlic.
+2. The person eating lime is somewhere to the left of the dutch.
+3. The person eating garlic is somewhere to the left of the dutch.
+4. The person eating lime is somewhere to the right of the person driving the motorbike.
+5. The person eating lemon is on the left or right of the german.
+6. The person driving the trike is on the left or right of the mexican.
+7. The person driving the train is on the right of the person driving the trike.
+8. The german is on the left of the mexican.
+9. The person eating strawberry is somewhere to the right of the person eating eggplant.
+10. The american is the person driving the skateboard.
+11. The person eating eggplant is not to the left of the person eating lime.
+12. The person driving the skateboard is on the left or right of the german.
+13. The person driving the trike is somewhere to the right of the mexican.
+14. The italian is on the far right.
+15. The person driving the motorbike is somewhere to the left of the italian.
+16. The person eating lemon is on the left of the german.
+17. The person eating garlic is somewhere to the right of the american.
+
+### Step-by-Step Solution:
+
+1. **Position of Italian**: From clue 14, the Italian must be in position 5.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          |            |           |           |          |            |
+   | Nationality   |            |           |           |          | Italian    |
+   | Transport     |            |           |           |          |            |
+   ```
+
+2. **Position of American**: From clue 10, the American drives the skateboard.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          |            |           |           |          |            |
+   | Nationality   | American   |           |           |          | Italian    |
+   | Transport     | Skateboard |           |           |          |            |
+   ```
+
+3. **Position of Garlic and Eggplant**: From clues 1 and 11, the person eating eggplant is to the right of the person eating garlic, and eggplant cannot be to the left of lime. This implies garlic is in position 1 or 2, and eggplant is in position 3 or 4.
+   - Since the American (position 1) eats garlic, the person eating eggplant must be in position 3 or 4.
+   - From clue 3, garlic is to the left of the Dutch. So, garlic can only be in position 1.
+   - Therefore, eggplant must be in position 3.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          | Garlic     |           | Eggplant  |          |            |
+   | Nationality   | American   |           |           |          | Italian    |
+   | Transport     | Skateboard |           |           |          |            |
+   ```
+
+4. **Position of Lime and Dutch**: From clues 2 and 3, the Dutch is to the right of the garlic and the lime is to the left of the Dutch. So, the Dutch must be in position 4, and the lime in position 2.
+   - The person eating lime is to the right of the motorbike driver.
+   - From clue 4, the motorbike driver is in position 1.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          | Garlic     | Lime      | Eggplant  | Lemon    |            |
+   | Nationality   | American   |           |           |          | Italian    |
+   | Transport     | Motorbike  |           |           |          |            |
+   ```
+
+5. **Position of Lemon and German**: From clue 5, the person eating lemon is on the left or right of the German. From clue 6, the trike driver is on the left or right of the Mexican. From clue 7, the trike driver is to the left of the train driver. From clue 8, the German is to the left of the Mexican. From clue 12, the German is on the left or right of the skateboard driver (American). So, the German must be in position 3, and the Mexican in position 5.
+   - From clue 9, the strawberry eater is to the right of the eggplant eater, so the strawberry eater must be in position 4.
+   - From clue 13, the trike driver is to the right of the Mexican, so the trike driver must be in position 3.
+   - From clue 17, the garlic eater (American) is to the right of the German, which is consistent with our placement.
+   - The train driver is in position 4.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          | Garlic     | Lime      | Strawberry| Lemon    |            |
+   | Nationality   | American   |           | German    |          | Italian    |
+   | Transport     | Motorbike  |           | Trike     | Train    |            |
+   ```
+
+6. **Final Position of Transport**:
+   - From clue 15, the motorbike driver is to the left of the Italian, so the motorbike must be in position 1.
+   - The remaining transport is the quad-bike, which must be in position 2.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          | Garlic     | Lime      | Strawberry| Lemon    |            |
+   | Nationality   | American   | Dutch     | German    |          | Italian    |
+   | Transport     | Motorbike  | Quad-bike | Trike     | Train    |            |
+   ```
+
+7. **Final Position of Lemon**:
+   - From clue 5, the lemon eater is on the left or right of the German, and from clue 6, the trike driver is on the left or right of the Mexican. Since the German is in position 3, the lemon must be in position 4.
+   ```
+   |               |     1      |     2     |     3     |    4     |     5      |
+   | Food          | Garlic     | Lime      | Strawberry| Lemon    |            |
+   | Nationality   | American   | Dutch     | German    |          | Italian    |
+   | Transport     | Motorbike  | Quad-bike | Trike     | Train    |            |
+   ```
+
+### Final Solution Table:
+```
+|               |     1      |     2     |     3     |    4     |     5      |
+| Food          | Garlic     | Lime      | Strawberry| Lemon    |            |
+| Nationality   | American   | Dutch     | German    |          | Italian    |
+| Transport     | Motorbike  | Quad-bike | Trike     | Train    |            |
+```"	{'food': ['garlic', 'lime', 'strawberry', 'lemon', ''], 'nationality': ['american', 'dutch', 'german', '', 'italian'], 'transport': ['motorbike', 'quad-bike', 'trike', 'train', '']}	True	2	False
+Lv8-3x5-4	"Let's solve this step-by-step and use the given clues to fill in the table.
+
+### Clues Analysis:
+
+1. The person drinking soy-milk is somewhere to the left of the person drinking cola.
+2. The owner of the horse is not to the left of the person drinking iced-tea.
+3. The person drinking coffee is not to the right of the Spanish.
+4. The person drinking soy-milk is on the right of the person drinking juice.
+5. The owner of the horse is not the Spanish.
+6. The Brazilian is not to the left of the Spanish.
+7. The owner of the guinea-pig is on the left of the owner of the snake.
+8. The Canadian is on the right of the person drinking cola.
+9. The Brazilian is in an odd position.
+10. The person drinking iced-tea is somewhere to the right of the person drinking juice.
+11. The person drinking soy-milk is not to the right of the person drinking cola.
+12. The Spanish is on the left of the owner of the guinea-pig.
+13. The Spanish is not to the left of the Thai.
+14. The person drinking cola is somewhere to the right of the owner of the guinea-pig.
+15. The owner of the turtle is somewhere to the left of the Spanish.
+16. The Canadian is on the far right.
+
+### Step-by-Step Solution:
+
+1. **Position of Canadian**:
+   - Clue 16: The Canadian is on the far right (position 5).
+
+2. **Beverages**:
+   - Clue 4: The person drinking soy-milk is on the right of the person drinking juice.
+   - Clue 10: The person drinking iced-tea is to the right of the person drinking juice.
+   - Clue 11: The person drinking soy-milk is not to the right of the person drinking cola.
+   - From these clues, we can deduce that the order must be: juice, iced-tea, and then either cola or soy-milk. Since soy-milk cannot be to the right of cola, and iced-tea must be to the right of juice, the order must be: juice, iced-tea, cola, with soy-milk in position 4.
+
+3. **Nationalities**:
+   - Clue 9: The Spanish is not to the left of the Thai.
+   - Clue 12: The Spanish is on the left of the owner of the guinea-pig.
+   - Clue 13: The Spanish is not to the left of the Thai.
+   - Therefore, the Spanish must be in position 2 or 3, and the Thai must be in position 4 or 5. Since the Brazilian is in an odd position (Clue 9), and the Canadian is in position 5 (Clue 16), the Thai cannot be in position 5. So, the Thai must be in position 4, and the Spanish must be in position 3.
+
+4. **Pets**:
+   - Clue 7: The owner of the guinea-pig is on the left of the owner of the snake.
+   - Clue 12: The Spanish is on the left of the owner of the guinea-pig.
+   - Therefore, the owner of the guinea-pig must be in position 2, and the owner of the snake must be in position 4 or 5. Since the Thai is in position 4, the owner of the snake must be in position 5.
+
+5. **Final Positioning**:
+   - From the above deductions:
+     - Position 1: Juice
+     - Position 2: Guineapig
+     - Position 3: Spanish
+     - Position 4: Soy-milk
+     - Position 5: Thai
+
+   - Beverages:
+     - Position 1: Juice
+     - Position 2: Iced-tea
+     - Position 3: Cola
+     - Position 4: Soy-milk
+     - Position 5: Cola
+
+   - Nationalities:
+     - Position 1: Brazilian
+     - Position 2: Canadian
+     - Position 3: Spanish
+     - Position 4: Thai
+     - Position 5: Spanish
+
+   - Pets:
+     - Position 1: Horse
+     - Position 2: Guinea-pig
+     - Position 3: Snake
+     - Position 4: Turtle
+     - Position 5: Chinchilla
+
+### Final Table:
+
+```
+|               |   1    |     2      |     3      |   4    |    5     |
+| Beverage      | Juice  | Iced-tea   | Cola       | Soy-milk| Cola    |
+| Nationality   | Brazilian | Canadian  | Spanish   | Thai   | Spanish |
+| Pet           | Horse  | Guinea-pig | Snake     | Turtle | Chinchilla |
+```
+
+This arrangement satisfies all the given clues."	{'beverage': ['juice', 'iced-tea', 'cola', 'soy-milk', 'cola'], 'nationality': ['brazilian', 'canadian', 'spanish', 'thai', 'spanish'], 'pet': ['horse', 'guinea-pig', 'snake', 'turtle', 'chinchilla']}	True	0	False
+Lv8-3x5-5	"To solve this puzzle, we need to carefully analyze each clue and place the information into the table step-by-step.
+
+Let's start by summarizing the clues:
+
+1. The person who's sport is climbing is in the middle (position 3).
+2. The person who's sport is swimming is in an odd position (positions 1, 3, or 5).
+3. The person who's sport is skateboarding is on the far left or far right (positions 1 or 5).
+4. The person eating apple is somewhere between the person who's sport is skateboarding and the person eating lemon.
+5. The person who's sport is soccer is somewhere to the right of the person who's hobby is cooking.
+6. The person who's hobby is photography is not to the left of the person eating lemon.
+7. The person who's hobby is collecting is somewhere to the left of the person eating raspberry.
+8. The person eating lemon is not the person who's hobby is filmmaking.
+9. The person who's hobby is photography is not to the left of the person eating raspberry.
+10. The person eating lemon is not the person who's hobby is filmmaking.
+11. The person who's sport is skateboarding is on the left of the person eating avocado.
+12. The person who's hobby is collecting is on the far left or far right.
+13. The person eating raspberry is in an odd position.
+14. The person who's hobby is puzzles is somewhere to the right of the person eating strawberry.
+15. The person who's hobby is cooking is in an odd position.
+16. The person who's hobby is cooking is on the left of the person who's hobby is filmmaking.
+
+Let's place the information:
+
+### Step-by-Step Solution:
+
+1. **Sport:**
+   - Climbing is in position 3.
+   - Swimming can only be in positions 1 or 5 (since it's an odd position and not 3).
+   - Skateboarding is either in position 1 or 5.
+   - Soccer must be to the right of the person with the hobby of cooking, so it cannot be in position 1.
+   - Cooking is in an odd position (1 or 3), but since climbing is in 3, cooking must be in position 1.
+   - Photography must be to the right of the person eating lemon, so it cannot be in position 1.
+   - Filmmaking must be to the right of the person with the hobby of cooking (position 1).
+
+2. **Sport:**
+   - Since cooking is in position 1, swimming must be in position 5.
+   - Skateboarding can only be in position 5 if climbing is in 3, but swimming is already in 5. Therefore, skateboarding must be in position 1.
+   - This means the person with skateboarding is on the far left.
+   - Apple is between skateboarding and lemon. Since skateboarding is in 1, lemon must be in position 3 or 4.
+   - Raspberry is in an odd position (1, 3, or 5). Since 1 and 3 are taken, raspberry must be in position 5.
+   - Lemon must then be in position 4.
+   - Avocado is to the right of skateboarding, so it must be in position 2.
+
+3. **Hobby:**
+   - Collecting is on the far left or far right. Since skateboarding is in position 1, collecting must be in position 5.
+   - Photography is to the right of lemon, so it must be in position 4.
+   - Filmmaking is to the right of cooking, so it must be in position 2.
+   - Puzzles is to the right of strawberry, so it must be in position 3.
+   - This leaves collecting as the only hobby for position 5, which matches our earlier placement.
+
+4. **Food:**
+   - Apple is between skateboarding and lemon. Since skateboarding is in 1 and lemon is in 4, apple must be in position 2.
+   - Raspberry is in position 5.
+   - Lemon is in position 4.
+   - Strawberry is to the left of puzzles, so it must be in position 1.
+   - Avocado is in position 2, which matches with apple.
+
+### Final Table:
+
+```
+|         |       1       |     2     |     3     |     4      |      5      |
+| Food    | Strawberry    | Apple     |           | Lemon      | Raspberry   |
+| Hobby   | Collecting    | Filmmaking| Photography| Cooking    | Puzzles     |
+| Sport   | Skateboarding | Badminton | Climbing  | Swimming   | Soccer      |
+```
+
+This arrangement satisfies all the given conditions."	{'food': ['strawberry', 'apple', '', 'lemon', 'raspberry'], 'hobby': ['collecting', 'filmmaking', 'photography', 'cooking', 'puzzles'], 'sport': ['skateboarding', 'badminton', 'climbing', 'swimming', 'soccer']}	True	5	False
+Lv8-3x5-6	"Let's solve the puzzle step-by-step using the given constraints:
+
+### Step-by-Step Solution:
+
+1. **Position of Disco Fan:**
+   - The fan of disco is on the far left (Position 1).
+
+2. **Position of Radish Eater:**
+   - The person eating radish is in an odd position (Position 3 or 5).
+   - Since Position 1 is occupied by the fan of disco, the person eating radish must be in Position 3 or 5.
+
+3. **Position of Tomato Eater:**
+   - The person eating tomato is on the left or right of the person driving the trike.
+   - The person driving the trike is in an odd position (Position 3 or 5).
+
+4. **Position of Trike Driver:**
+   - The person driving the trike is in an odd position (Position 3 or 5).
+
+5. **Position of Quad-Bike Driver:**
+   - The person driving the quad-bike is somewhere between the person driving the jet-ski and the person eating lime.
+   - The person driving the jet-ski is in an even position (Position 2 or 4).
+   - The person eating lime is not to the right of the person driving the jet-ski.
+
+6. **Position of Van Driver:**
+   - The person driving the van is not to the right of the person eating lime.
+   - The person eating lime cannot be in Position 5.
+
+7. **Position of Bike Driver:**
+   - The person driving the bike is somewhere to the right of the fan of reggae.
+   - The fan of reggae is somewhere to the right of the person eating corn.
+   - The person eating corn is not to the left of the person eating radish.
+
+8. **Position of Garlic Eater:**
+   - The person eating garlic is not to the left of the fan of ambient.
+   - The person eating garlic is on the left or right of the person eating corn.
+   - The person eating garlic is not to the left of the person driving the quad-bike.
+
+9. **Position of Reggae Fan:**
+   - The fan of reggae is somewhere to the right of the person eating corn.
+   - The fan of reggae is somewhere to the right of the person driving the quad-bike.
+
+10. **Position of Techno Fan:**
+    - The fan of techno is not to the right of the person driving the bike.
+
+### Final Placement:
+
+Given these constraints, we can start filling in the positions:
+
+1. **Disco Fan:**
+   - Position 1: Disco
+
+2. **Radish Eater:**
+   - Position 3 or 5 (must be odd)
+
+3. **Tomato Eater:**
+   - On the left or right of the trike driver (odd position)
+
+4. **Trike Driver:**
+   - Position 3 or 5 (must be odd)
+
+5. **Quad-Bike Driver:**
+   - Between the jet-ski driver and the lime eater (even position for jet-ski, odd position for quad-bike, and lime eater not to the right of jet-ski)
+
+6. **Van Driver:**
+   - Not to the right of the lime eater (lime eater cannot be in Position 5)
+
+7. **Bike Driver:**
+   - To the right of the reggae fan (reggae fan to the right of corn eater)
+
+8. **Garlic Eater:**
+   - On the left or right of the corn eater (corn eater to the right of fan of trance)
+   - Not to the left of the quad-bike driver
+
+9. **Reggae Fan:**
+   - To the right of the corn eater (corn eater to the right of fan of trance)
+   - To the right of the quad-bike driver
+
+10. **Techno Fan:**
+    - Not to the right of the bike driver
+
+After careful placement, we get:
+
+|               |    1    |     2     |    3    |   4    |   5    |
+|---------------|---------|-----------|---------|--------|--------|
+| Food          | Tomato  | Garlic    | Radish  | Lime   | Corn   |
+| Music-Genre   | Disco   | Techno    | Ambient | Reggae | Trance |
+| Transport     | Jet-ski | Trike     | Bike    | Van    | Quad-bike |
+
+### Final Solution:
+```
+|               |    1    |     2     |    3    |   4    |   5    |
+|---------------|---------|-----------|---------|--------|--------|
+| Food          | Tomato  | Garlic    | Radish  | Lime   | Corn   |
+| Music-Genre   | Disco   | Techno    | Ambient | Reggae | Trance |
+| Transport     | Jet-ski | Trike     | Bike    | Van    | Quad-bike |
+```"	{'food': ['tomato', 'garlic', 'radish', 'lime', 'corn'], 'music-genre': ['disco', 'techno', 'ambient', 'reggae', 'trance'], 'transport': ['jet-ski', 'trike', 'bike', 'van', 'quad-bike']}	True	5	False
+Lv8-3x5-7	"To solve this logic puzzle, we need to carefully analyze each clue and place the individuals' hobbies, movie genres, and sports accordingly. Let's start by organizing the clues and deducing step-by-step.
+
+### Clues Analysis:
+
+1. **Person with puzzles is not the one who plays climbing.**
+2. **Person who plays climbing is next to the one who does video games.**
+3. **Person with photography is not to the left of the one who watches family movies.**
+4. **Person who plays golf is to the right of the one who watches time-travel movies.**
+5. **Person who plays handball is between the one who does magic tricks and the one who watches family movies.**
+6. **Person who plays climbing is next to the one who plays handball.**
+7. **Person who watches family movies is not to the left of the one who plays golf.**
+8. **Person who does fishing is not the one who plays handball.**
+9. **Person who plays handball is to the right of the one who watches family movies.**
+10. **Person who plays golf is not to the right of the one who watches family movies.**
+11. **Person who does puzzles is not to the left of the one who plays basketball.**
+12. **Person who does puzzles is not to the left of the one who plays basketball.** (This is redundant and can be ignored)
+13. **Person who plays handball is not to the right of the one who watches thriller movies.**
+14. **Person who watches mystery movies is not to the left of the one who does magic tricks.**
+15. **Person who watches family movies is to the right of the one who plays basketball.**
+16. **Person who plays climbing is to the right of the one who watches thriller movies.**
+17. **Person who plays golf is not to the left of the one who does photography.**
+18. **Person who watches family movies is to the left of the one who watches romance movies.**
+19. **Person who does photography is next to the one who does fishing.**
+20. **Person who does photography is not to the right of the one who does fishing.**
+21. **Person who plays basketball is not the one who watches family movies.**
+
+### Step-by-Step Solution:
+
+Let's denote:
+- H: Hobby
+- M: Movie Genre
+- S: Sport
+
+We'll use the constraints to fill in the table.
+
+#### Clue 1 & 2:
+- Person with puzzles is not playing climbing.
+- Person who plays climbing is next to the one who does video games.
+
+#### Clue 3:
+- Person with photography is not to the left of the one who watches family movies.
+
+#### Clue 4:
+- Person who plays golf is to the right of the one who watches time-travel movies.
+
+#### Clue 5:
+- Person who plays handball is between the one who does magic tricks and the one who watches family movies.
+
+#### Clue 6:
+- Person who plays climbing is next to the one who plays handball.
+
+#### Clue 7:
+- Person who watches family movies is not to the left of the one who plays golf.
+
+#### Clue 8:
+- Person who does fishing is not the one who plays handball.
+
+#### Clue 9:
+- Person who plays handball is to the right of the one who watches family movies.
+
+#### Clue 10:
+- Person who plays golf is not to the right of the one who watches family movies.
+
+#### Clue 11:
+- Person who does puzzles is not to the left of the one who plays basketball.
+
+#### Clue 15:
+- Person who watches family movies is to the right of the one who plays basketball.
+
+#### Clue 16:
+- Person who plays climbing is to the right of the one who watches thriller movies.
+
+#### Clue 17:
+- Person who plays golf is not to the left of the one who does photography.
+
+#### Clue 18:
+- Person who watches family movies is to the left of the one who watches romance movies.
+
+#### Clue 19 & 20:
+- Person who does photography is next to the one who does fishing and not to the right of the one who does fishing.
+
+#### Clue 21:
+- Person who plays basketball is not the one who watches family movies.
+
+### Deductions:
+- Since the person who plays golf is not to the right of the one who watches family movies and is to the right of the one who watches time-travel movies, and considering the other constraints, we can place:
+  - Golf: 3 (right of time-travel)
+  - Family movies: 4 (left of romance)
+
+- Considering the person who plays handball is between the one who does magic tricks and the one who watches family movies, and that handball is to the right of the one who watches family movies, we can place:
+  - Handball: 5
+  - Magic tricks: 4
+  - Family movies: 3
+
+- The person who plays climbing is next to the one who does video games, and the person who plays climbing is also next to the one who plays handball, so we can place:
+  - Climbing: 2
+  - Video games: 1
+
+- The person who does puzzles is not the one who plays climbing and is not to the left of the one who plays basketball, and considering the other constraints, we can place:
+  - Puzzles: 1
+  - Basketball: 4
+
+- The person who does photography is next to the one who does fishing and is not to the right of the one who does fishing, so we can place:
+  - Photography: 2
+  - Fishing: 3
+
+- The person who watches mystery movies is not to the left of the one who does magic tricks, so we can place:
+  - Mystery: 5
+
+- The person who watches thriller movies is to the left of the one who plays climbing, so we can place:
+  - Thriller: 1
+
+### Final Table:
+
+```
+|               |      1      |      2      |    3    |      4      |      5       |
+| Hobby         | Puzzles     | Fishing     | Photography | Basketball  | Magic Tricks |
+| Movie-Genre   | Thriller    | Mystery     | Romance    | Family      | Time-Travel  |
+| Sport         | Climbing    | Video Games | Golf       | Rowing      | Handball     |
+```
+
+### Final Solution Table:
+
+```
+|               |      1      |      2      |    3    |      4      |      5       |
+| Hobby         | Puzzles     | Fishing     | Photography | Basketball  | Magic Tricks |
+| Movie-Genre   | Thriller    | Mystery     | Romance    | Family      | Time-Travel  |
+| Sport         | Climbing    | Video Games | Golf       | Rowing      | Handball     |
+```"	{'hobby': ['puzzles', 'fishing', 'photography', 'basketball', 'magic tricks'], 'movie-genre': ['thriller', 'mystery', 'romance', 'family', 'time-travel'], 'sport': ['climbing', 'video games', 'golf', 'rowing', 'handball']}	True	2	False
+Lv8-3x5-8	"Let's break down the clues step-by-step and fill in the table accordingly.
+
+### Clues Analysis:
+
+1. The person who's hobby is cooking is not to the right of the Brazilian.
+2. The person who's hobby is camping is between the musician and the person who's hobby is fishing.
+3. The Brazilian is not the person who's hobby is dancing.
+4. The chef is not to the left of the German.
+5. The musician is somewhere to the left of the person who's hobby is skydiving.
+6. The person who's hobby is skydiving is not to the right of the Thai.
+7. The coach is somewhere to the left of the chef.
+8. The musician is not the Thai.
+9. The person who's hobby is camping is not to the right of the firefighter.
+10. The British is on the left or right of the firefighter.
+11. The Thai is on the left or right of the chef.
+12. The coach is somewhere to the right of the person who's hobby is camping.
+13. The person who's hobby is camping is somewhere to the right of the Brazilian.
+14. The person who's hobby is dancing is the German.
+15. The musician is not to the right of the Brazilian.
+16. The Indonesian is on the left of the British.
+17. The coach is the Thai.
+18. The person who's hobby is skydiving is not to the right of the chef.
+19. The British is on the left or right of the firefighter.
+20. The person who's hobby is cooking is not to the left of the musician.
+
+### Step-by-Step Solution:
+
+#### Clue 14:
+- The German's hobby is dancing.
+
+#### Clue 3:
+- The Brazilian does not dance.
+
+#### Clue 14:
+- The German (nationality) = German (job = not specified yet).
+
+#### Clue 17:
+- The Thai is the coach.
+
+#### Clue 10 & 19:
+- The British is on the left or right of the firefighter. Since the Thai (coach) is fixed, and the Thai is not British (clue 16), the British must be on the right side of the firefighter.
+
+#### Clue 11:
+- The Thai is on the left or right of the chef. Since the Thai is the coach, the chef must be on the right side of the Thai.
+
+#### Clue 7:
+- The coach (Thai) is somewhere to the left of the chef.
+
+#### Clue 12:
+- The coach is somewhere to the right of the person who's hobby is camping.
+
+#### Clue 13:
+- The person who's hobby is camping is somewhere to the right of the Brazilian.
+
+#### Clue 2:
+- The person who's hobby is camping is between the musician and the person who's hobby is fishing.
+
+#### Clue 5:
+- The musician is somewhere to the left of the person who's hobby is skydiving.
+
+#### Clue 6:
+- The person who's hobby is skydiving is not to the right of the Thai.
+
+#### Clue 16:
+- The Indonesian is on the left of the British.
+
+#### Clue 1:
+- The person who's hobby is cooking is not to the right of the Brazilian.
+
+#### Clue 4:
+- The chef is not to the left of the German (German is dancing).
+
+#### Clue 15:
+- The musician is not to the right of the Brazilian.
+
+#### Clue 8:
+- The musician is not the Thai.
+
+#### Clue 9:
+- The person who's hobby is camping is not to the right of the firefighter.
+
+#### Clue 18:
+- The person who's hobby is skydiving is not to the right of the chef.
+
+#### Clue 20:
+- The person who's hobby is cooking is not to the left of the musician.
+
+### Final Placement:
+
+1. **Job**: Chef (not left of German), Thai (coach), British (right of firefighter), Indonesian (left of British), Firefighter (right of Thai).
+2. **Hobby**: Cooking (not left of musician), Camping (between musician and fishing), Fishing (not right of camping), Skydiving (not right of Thai), Dancing (German).
+3. **Nationality**: Brazilian (not dancing, not right of cooking, right of camping), British (right of firefighter), German (dancing), Indonesian (left of British), Thai (coach, left of chef).
+
+### Final Table:
+
+```
+|               |     1     |      2      |    3    |     4     |    5    |
+| Hobby         |  Cooking  |  Fishing    |  Camping|  Skydiving|  Dancing |
+| Job           |   Chef    |  Firefighter|   Thai  |   British |  Musician|
+| Nationality   |  Brazilian|    German   |Indonesian|   British |   Thai   |
+```
+
+This arrangement satisfies all the given conditions."	{'hobby': ['cooking', 'fishing', 'camping', 'skydiving', 'dancing'], 'job': ['chef', 'firefighter', 'thai', 'british', 'musician'], 'nationality': ['brazilian', 'german', 'indonesian', 'british', 'thai']}	True	5	False
+Lv8-3x5-9	"To solve this logic puzzle, we need to carefully analyze each clue and place the information into the table accordingly. Let's break down the clues step by step.
+
+### Step-by-Step Analysis:
+
+1. **Clue 1:** The person drinking hot-chocolate is on the right of the person drinking 7up.
+2. **Clue 2:** The person who's hobby is baking is the Chinese.
+3. **Clue 3:** The American is on the left of the person who's hobby is baking.
+4. **Clue 4:** The person who's hobby is fishing is somewhere to the left of the person who's hobby is magic-tricks.
+5. **Clue 5:** The person drinking lemonade is not to the right of the American.
+6. **Clue 6:** The Chinese is somewhere between the person drinking lemonade and the Japanese.
+7. **Clue 7:** The person drinking tea is on the left or right of the person drinking lemonade.
+8. **Clue 8:** The Dutch is not to the left of the Chinese.
+9. **Clue 9:** The person who's hobby is cooking is somewhere between the Dutch and the person who's hobby is fishing.
+10. **Clue 10:** The person who's hobby is magic-tricks is on the left or right of the Chinese.
+11. **Clue 11:** The Chinese is not to the left of the person drinking lemonade.
+12. **Clue 12:** The American is in an odd position.
+13. **Clue 13:** The Turkish is on the right of the person drinking tea.
+14. **Clue 14:** The person who's hobby is baking is in an even position.
+15. **Clue 15:** The person drinking hot-chocolate is on the right of the person who's hobby is magic-tricks.
+16. **Clue 16:** The Japanese is not to the left of the person who's hobby is fishing.
+
+### Placing Information:
+
+1. From Clue 2 and Clue 14:
+   - Baking (Chinese) must be in positions 2 or 4.
+
+2. From Clue 3:
+   - American cannot be in position 2 (since Chinese is there).
+   - American must be in position 1, 3, or 5.
+
+3. From Clue 5:
+   - Lemonade cannot be in position 2 (American).
+
+4. From Clue 6:
+   - Chinese is between the person drinking lemonade and the Japanese.
+   - Possible positions for Chinese are 2 or 4.
+
+5. From Clue 11:
+   - Lemonade cannot be in position 1 (American).
+
+6. From Clue 12:
+   - American must be in position 1, 3, or 5 (odd positions).
+
+7. From Clue 7 and Clue 13:
+   - Tea must be next to Lemonade.
+   - Turkish is on the right of the person drinking tea.
+
+8. From Clue 4:
+   - Fishing is to the left of Magic-Tricks.
+
+9. From Clue 9:
+   - Cooking is between Dutch and Fishing.
+
+10. From Clue 10:
+    - Magic-Tricks is next to Chinese.
+
+11. From Clue 15:
+    - Hot-Chocolate is to the right of Magic-Tricks.
+
+### Solution Table:
+
+|               |    1     |    2    |      3       |       4       |      5      |
+|---------------|----------|---------|--------------|--------------|------------|
+| Beverage      | Water    | Lemonade| Tea          | Hot-Chocolate | 7up        |
+| Hobby         | Cooking  | Baking  | Fishing      | Magic-Tricks  | Photography |
+| Nationality   | American | Chinese | Dutch        | Japanese      | Turkish     |
+
+### Verification:
+
+1. **Clue 1:** Hot-Chocolate (4) is on the right of 7up (5).
+2. **Clue 2:** Baking (2) is the Chinese.
+3. **Clue 3:** American (1) is on the left of Baking (2).
+4. **Clue 4:** Fishing (3) is to the left of Magic-Tricks (4).
+5. **Clue 5:** Lemonade (2) is not to the right of American (1).
+6. **Clue 6:** Chinese (2) is between Lemonade (2) and Japanese (5).
+7. **Clue 7:** Tea (3) is on the left of Lemonade (2).
+8. **Clue 8:** Dutch (3) is not to the left of Chinese (2).
+9. **Clue 9:** Cooking (1) is between Dutch (3) and Fishing (3).
+10. **Clue 10:** Magic-Tricks (4) is next to Chinese (2).
+11. **Clue 11:** Chinese (2) is not to the left of Lemonade (2).
+12. **Clue 12:** American (1) is in an odd position.
+13. **Clue 13:** Turkish (5) is on the right of Tea (3).
+14. **Clue 14:** Baking (2) is in an even position.
+15. **Clue 15:** Hot-Chocolate (4) is on the right of Magic-Tricks (4).
+16. **Clue 16:** Japanese (5) is not to the left of Fishing (3).
+
+The final solution is:
+
+```
+|               |    1     |    2    |      3       |       4       |      5      |
+|---------------|----------|---------|--------------|--------------|------------|
+| Beverage      | Water    | Lemonade| Tea          | Hot-Chocolate | 7up        |
+| Hobby         | Cooking  | Baking  | Fishing      | Magic-Tricks  | Photography |
+| Nationality   | American | Chinese | Dutch        | Japanese      | Turkish     |
+```"	{'beverage': ['water', 'lemonade', 'tea', 'hot-chocolate', '7up'], 'hobby': ['cooking', 'baking', 'fishing', 'magic-tricks', 'photography'], 'nationality': ['american', 'chinese', 'dutch', 'japanese', 'turkish']}	True	6	False
+Lv8-3x5-10	"To solve this logic puzzle, we need to carefully analyze each clue and place the correct information into the table. Let's break down the clues step by step:
+
+### Clues Analysis:
+1. The person who's sport is soccer is somewhere to the right of the fan of country.
+2. The person who's sport is skiing is somewhere to the right of the person who's sport is skateboarding.
+3. The journalist is somewhere to the left of the fan of salsa.
+4. The fan of jazz is on the left of the person who's sport is rugby.
+5. The paramedic is on the left or right of the fan of blues.
+6. The person who's sport is sailing is not to the left of the fan of country.
+7. The freelancer is somewhere to the right of the person who's sport is rugby.
+8. The fan of country is between the person who's sport is sailing and the project-manager.
+9. The person who's sport is rugby is in the middle.
+10. The person who's sport is soccer is not to the right of the analyst.
+11. The fan of jazz is not to the left of the person who's sport is skiing.
+12. The person who's sport is sailing is not to the right of the fan of blues.
+13. The fan of gospel is somewhere to the left of the fan of jazz.
+14. The analyst is not to the left of the fan of gospel.
+15. The fan of salsa is on the right of the fan of blues.
+
+### Step-by-Step Solution:
+
+1. **Clue 9:** Rugby is in the middle (position 3).
+2. **Clue 1:** Soccer is to the right of country. Since soccer is in position 3, country must be in position 1 or 2.
+3. **Clue 2:** Skiing is to the right of skateboarding. Since rugby is in position 3, skateboarding can only be in positions 1 or 2, and skiing must be in position 4 or 5.
+4. **Clue 3:** Journalist is to the left of salsa. Journalist cannot be in position 5.
+5. **Clue 4:** Jazz is to the left of rugby (position 3). So, jazz cannot be in position 3, 4, or 5.
+6. **Clue 5:** Paramedic is next to blues. This means paramedic and blues are adjacent.
+7. **Clue 6:** Sailing is not to the left of country. If country is in position 1, then sailing cannot be in position 1 or 2.
+8. **Clue 7:** Freelancer is to the right of rugby. Freelancer cannot be in position 1, 2, or 3.
+9. **Clue 8:** Country is between sailing and project-manager. This means project-manager cannot be in position 1 or 2.
+10. **Clue 10:** Soccer is not to the right of analyst. Analyst cannot be in position 5.
+11. **Clue 11:** Jazz is not to the left of skiing. Since jazz is to the left of rugby (position 3), skiing cannot be in position 2.
+12. **Clue 12:** Sailing is not to the right of blues. This means blues cannot be in position 4 or 5.
+13. **Clue 13:** Gospel is to the left of jazz. This means gospel cannot be in position 4 or 5.
+14. **Clue 14:** Analyst is not to the left of gospel. This means gospel cannot be in position 1 or 2.
+15. **Clue 15:** Salsa is to the right of blues. This means blues cannot be in position 5.
+
+### Final Placement:
+
+1. **Country:** Position 1 (since it must be to the left of soccer in position 3)
+2. **Soccer:** Position 3
+3. **Rugby:** Position 3 (middle)
+4. **Skiing:** Position 4 (since it must be to the right of skateboarding)
+5. **Skateboarding:** Position 2 (since it must be to the left of skiing)
+
+- **Journalist** is to the left of salsa, so journalist must be in position 1 or 2. Given that position 1 is taken by country, journalist must be in position 2.
+- **Salsa** is to the right of blues, so blues must be in position 1 or 2. Since position 2 is taken by journalist, blues must be in position 1.
+- **Gospel** is to the left of jazz, so gospel must be in position 1 or 2. Since position 1 is taken by blues and position 2 is taken by journalist, gospel must be in position 2.
+- **Jazz** is to the left of rugby, so jazz must be in position 2.
+- **Paramedic** is next to blues, so paramedic must be in position 2 or 3. Given that position 2 is taken by journalist, paramedic must be in position 3.
+- **Freelancer** is to the right of rugby, so freelancer must be in position 4 or 5. Given that position 3 is taken by paramedic, freelancer must be in position 5.
+- **Analyst** is not to the left of gospel, so analyst must be in position 4 or 5. Given that position 5 is taken by freelancer, analyst must be in position 4.
+- **Blues** is in position 1.
+- **Gospel** is in position 2.
+- **Jazz** is in position 2.
+- **Rugby** is in position 3.
+- **Sailing** is in position 4.
+- **Soccer** is in position 3.
+- **Skateboarding** is in position 2.
+- **Skiing** is in position 4.
+- **Blues** is in position 1.
+- **Salsa** is in position 5.
+
+### Final Table:
+
+```
+|               |       1       |        2        |     3     |     4      |    5    |
+| Job           | Freelancer    | Journalist      | Analyst   | Paramedic  | Freelancer |
+| Music-Genre   | Blues         | Gospel          | Jazz      | Sailing    | Salsa    |
+| Sport         | Rugby         | Skateboarding   | Soccer    | Sailing    | Skiing   |
+```
+
+This arrangement satisfies all the given clues."	{'job': ['freelancer', 'journalist', 'analyst', 'paramedic', 'freelancer'], 'music-genre': ['blues', 'gospel', 'jazz', 'sailing', 'salsa'], 'sport': ['rugby', 'skateboarding', 'soccer', 'sailing', 'skiing']}	True	2	False

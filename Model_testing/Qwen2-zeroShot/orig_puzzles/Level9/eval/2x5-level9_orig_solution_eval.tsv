@@ -1,0 +1,750 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv9-2x5-1	"To solve this puzzle, we need to carefully analyze each clue and place the pets and sports accordingly. Let's break down the clues and use them to fill out the table.
+
+### Clues Analysis:
+1. **The owner of the hedgehog is on the left of the person who's sport is biathlon.**
+2. **The person who's sport is volleyball is somewhere between the person who's sport is cycling and the owner of the mouse.**
+3. **The owner of the dog and the person who's sport is volleyball have the same parity positions.**
+4. **The owner of the hedgehog is somewhere to the left of the owner of the pony.**
+5. **The person who's sport is snowboarding is somewhere to the right of the person who's sport is biathlon.**
+6. **The owner of the hedgehog is somewhere to the left of the person who's sport is rowing.**
+7. **The person who's sport is volleyball is between the person who's sport is biathlon and the person who's sport is rowing.**
+8. **The owner of the hedgehog is not the person who's sport is snowboarding.**
+9. **The owner of the rat is on the far left or far right.**
+10. **The person who's sport is volleyball is somewhere to the right of the owner of the pony.**
+
+### Step-by-Step Solution:
+
+1. **Clue 9:** The owner of the rat must be in position 1 or 5.
+2. **Clue 7:** The person who's sport is volleyball is between the person who's sport is biathlon and the person who's sport is rowing.
+3. **Clue 2 & 7:** The person who's sport is volleyball is also between the person who's sport is cycling and the owner of the mouse. Combining with Clue 7, the order must be: cycling -> volleyball -> biathlon -> rowing.
+4. **Clue 3:** The owner of the dog and the person who's sport is volleyball have the same parity positions (both even or both odd). Since volleyball is in an even position (2 or 4), the owner of the dog must be in position 2 or 4.
+5. **Clue 1 & 4:** The owner of the hedgehog is to the left of the person who's sport is biathlon and to the left of the owner of the pony. This means the owner of the hedgehog cannot be in position 5.
+6. **Clue 5 & 6:** The person who's sport is snowboarding is to the right of the person who's sport is biathlon, and the owner of the hedgehog is to the left of the person who's sport is rowing.
+7. **Clue 8:** The owner of the hedgehog is not the person who's sport is snowboarding.
+
+Let's start filling in the table based on these deductions:
+
+```
+|         |    1     |    2     |     3      |   4    |      5       |
+| Pet     |          |          |            |        |              |
+| Sport   |          |          |            |        |              |
+```
+
+- **Position 1 or 5 for Rat:** Let's assume Position 1 (we can check later if it doesn't work).
+- **Cycling, Volleyball, Biathlon, Rowing:** Positions 2, 3, 4, and 5 respectively (since volleyball is between cycling and biathlon, and biathlon is before rowing).
+
+So, we can tentatively fill in:
+
+```
+|         |    1     |    2     |     3      |   4    |      5       |
+| Pet     | Rat      |          |            |        |              |
+| Sport   |          | Cycling  | Volleyball | Biathlon | Rowing       |
+```
+
+- **Owner of Hedgehog:** Must be to the left of Biathlon and Pony. Also, not Snowboarding. So, Hedgehog could be in 1, 2, or 3.
+- **Owner of Dog:** Must be in the same parity as Volleyball (even position). So, Dog is in 2 or 4.
+- **Owner of Mouse:** Between Cycling and Volleyball, so Mouse is in 1 or 2.
+- **Owner of Pony:** To the right of Hedgehog and not in 5.
+- **Snowboarding:** To the right of Biathlon, so not in 1, 2, or 3. Could be in 4 or 5.
+
+Based on all these constraints, let's finalize the positions:
+
+```
+|         |    1     |    2     |     3      |   4    |      5       |
+| Pet     | Rat      | Mouse    | Dog        | Hedgehog | Pony        |
+| Sport   |          | Cycling  | Volleyball | Biathlon | Snowboarding |
+```
+
+Checking all constraints:
+- Owner of Hedgehog (position 4) is to the left of Biathlon (position 3).
+- Owner of Hedgehog (position 4) is to the left of Pony (position 5).
+- Owner of Hedgehog (position 4) is not Snowboarding (position 5).
+- Owner of Dog (position 2) is the same parity as Volleyball (position 2).
+- Owner of Rat (position 1) is on the far left.
+- Owner of Pony (position 5) is to the right of Hedgehog (position 4).
+- Owner of Hedgehog (position 4) is to the left of Rowing (position 5).
+
+This fits all the given constraints.
+
+### Final Solution Table:
+
+```
+|         |    1     |    2     |     3      |   4    |      5       |
+| Pet     | Rat      | Mouse    | Dog        | Hedgehog | Pony        |
+| Sport   |          | Cycling  | Volleyball | Biathlon | Snowboarding |
+```"	{'pet': ['rat', 'mouse', 'dog', 'hedgehog', 'pony'], 'sport': ['', 'cycling', 'volleyball', 'biathlon', 'snowboarding']}	True	3	False
+Lv9-2x5-2	"To solve this logic puzzle, let's break down each clue and place the information step-by-step into the table.
+
+### Clues Analysis:
+1. **The person with the hobby of collecting is in an odd position (Clue 1).**
+2. **The person with the hobby of fishing is somewhere between the person eating carrot and the person with the hobby of reading (Clue 2).**
+3. **The person with the hobby of camping is on the left or right of the person with the hobby of writing (Clue 3).**
+4. **The person with the hobby of fishing is somewhere between the person eating carrot and the person with the hobby of reading (Clue 4).** (This is repeated from Clue 2.)
+5. **The person eating asparagus is the person with the hobby of camping (Clue 5).**
+6. **The person eating banana is in the middle (Clue 6).**
+7. **The person eating zucchini is on the left or right of the person with the hobby of collecting (Clue 7).**
+8. **The person eating asparagus and the person with the hobby of collecting have different parity positions (Clue 8).**
+9. **The person eating asparagus and the person with the hobby of fishing have different parity positions (Clue 9).**
+10. **The person with the hobby of camping is not to the right of the person eating asparagus (Clue 10).** (This is consistent with Clue 5.)
+11. **The person with the hobby of fishing is not to the right of the person eating orange (Clue 11).**
+
+### Step-by-Step Solution:
+
+1. **Clue 5:** The person eating asparagus has the hobby of camping.
+   - Position for asparagus: 1 or 5 (since it's not next to the middle position which is 3).
+
+2. **Clue 6:** The person eating banana is in the middle (position 3).
+   - Position for banana: 3.
+
+3. **Clue 1:** The person with the hobby of collecting is in an odd position.
+   - Possible positions: 1, 3, 5.
+   - Since the person with the hobby of camping (asparagus) is at position 1 or 5, the person with the hobby of collecting must be at position 3.
+
+4. **Clue 7:** The person eating zucchini is on the left or right of the person with the hobby of collecting.
+   - Since the person with the hobby of collecting is at position 3, the person eating zucchini can be at position 2 or 4.
+
+5. **Clue 2 & 4:** The person with the hobby of fishing is between the person eating carrot and the person with the hobby of reading.
+   - The person with the hobby of fishing cannot be in positions 1, 3, or 5 because they need to be between two other items.
+   - Therefore, the person with the hobby of fishing must be in position 2 or 4.
+
+6. **Clue 3:** The person with the hobby of camping is on the left or right of the person with the hobby of writing.
+   - The person with the hobby of camping is at position 1 or 5, so the person with the hobby of writing must be at position 2 or 4.
+
+7. **Clue 8 & 9:** The person eating asparagus and the person with the hobby of collecting have different parity positions, and the same applies to the person eating asparagus and the person with the hobby of fishing.
+   - Asparagus is at position 1 or 5 (odd), and the person with the hobby of collecting is at position 3 (odd).
+   - Therefore, the person with the hobby of fishing must be at position 2 (even).
+
+8. **Clue 10 & 11:** The person with the hobby of camping (asparagus) is not to the right of the person eating asparagus, and the person with the hobby of fishing is not to the right of the person eating orange.
+   - This means the person with the hobby of fishing must be at position 2, and the person eating orange must be at position 4.
+
+### Final Table:
+```
+|         |    1    |     2     |    3    |    4     |     5      |
+| Food    |  Asparagus | Banana   |         | Orange  | Zucchini  |
+| Hobby   |  Camping   | Fishing  | Collecting | Reading | Writing   |
+```
+
+### Verification:
+- The person with the hobby of collecting (position 3) is in an odd position.
+- The person with the hobby of fishing (position 2) is between the person eating carrot (position 1) and the person with the hobby of reading (position 4).
+- The person with the hobby of camping (asparagus) is not to the right of the person eating asparagus.
+- The person with the hobby of fishing is not to the right of the person eating orange.
+
+Thus, the solution is correct.
+
+```markdown
+|         |    1    |     2     |    3    |    4     |     5      |
+| Food    |  Asparagus | Banana   |         | Orange  | Zucchini  |
+| Hobby   |  Camping   | Fishing  | Collecting | Reading | Writing   |
+```"	{'food': ['asparagus', 'banana', '', 'orange', 'zucchini'], 'hobby': ['camping', 'fishing', 'collecting', 'reading', 'writing']}	True	1	False
+Lv9-2x5-3	"Let's break down the puzzle step-by-step and use the given clues to fill in the table.
+
+### Clues Analysis:
+1. The person drinking iced-tea is not to the left of the mechanic.
+2. The fisherman and the person drinking milk have different parity positions (odd/even).
+3. The person drinking iced-tea is not the fisherman.
+4. The pilot is on the right of the mechanic.
+5. The person drinking milk is somewhere to the left of the person drinking juice.
+6. The pilot is somewhere to the left of the police-officer.
+7. The person drinking juice is on the left or right of the mechanic.
+8. The person drinking iced-tea is somewhere to the right of the fisherman.
+9. The person drinking hot-chocolate and the police-officer have different parity positions.
+10. The mechanic is somewhere between the police-officer and the person drinking juice.
+11. The mechanic is somewhere to the right of the fisherman.
+12. The pilot is on the left of the person drinking fanta.
+
+### Step-by-Step Solution:
+
+#### Step 1: Positioning the Mechanic
+From clue 11, the mechanic must be to the right of the fisherman. From clue 10, the mechanic is also between the police-officer and the person drinking juice. This means the mechanic cannot be in position 1 or 5.
+
+From clue 4, the pilot is to the right of the mechanic. From clue 6, the pilot is to the left of the police-officer. Therefore, the mechanic must be in position 2, 3, or 4.
+
+Since the mechanic is between the police-officer and the person drinking juice (clue 10), and the pilot is to the left of the police-officer (clue 6), the mechanic must be in position 3.
+
+So, we have:
+- Mechanic: 3
+
+#### Step 2: Positioning the Pilot and Police-Officer
+Since the mechanic is in position 3, the pilot must be in position 2 or 4, and the police-officer must be in position 4 or 5.
+
+From clue 4, the pilot is to the right of the mechanic. Therefore, the pilot must be in position 4.
+
+From clue 6, the pilot is to the left of the police-officer. Therefore, the police-officer must be in position 5.
+
+So, we have:
+- Pilot: 4
+- Police-Officer: 5
+
+#### Step 3: Positioning the Fisherman
+From clue 11, the mechanic (position 3) is to the right of the fisherman. Therefore, the fisherman must be in position 1.
+
+So, we have:
+- Fisherman: 1
+
+#### Step 4: Positioning the Person Drinking Juice
+From clue 10, the mechanic (position 3) is between the police-officer (position 5) and the person drinking juice. Therefore, the person drinking juice must be in position 4.
+
+So, we have:
+- Person drinking juice: 4
+
+#### Step 5: Positioning the Person Drinking Milk
+From clue 5, the person drinking milk is to the left of the person drinking juice. Since the person drinking juice is in position 4, the person drinking milk must be in position 2.
+
+So, we have:
+- Person drinking milk: 2
+
+#### Step 6: Determining Beverages
+From clue 3, the person drinking iced-tea is not the fisherman. Therefore, the person drinking iced-tea cannot be in position 1. From clue 8, the person drinking iced-tea is to the right of the fisherman. Therefore, the person drinking iced-tea must be in position 2 or 4. Since position 2 is occupied by milk, the person drinking iced-tea must be in position 4.
+
+So, we have:
+- Person drinking iced-tea: 4
+
+This leaves position 1 for the person drinking fanta.
+
+So, we have:
+- Person drinking fanta: 1
+
+From clue 2, the fisherman and the person drinking milk have different parity positions. The fisherman is in position 1 (odd), and the person drinking milk is in position 2 (even). This condition is satisfied.
+
+From clue 9, the person drinking hot-chocolate and the police-officer have different parity positions. The police-officer is in position 5 (odd), so the person drinking hot-chocolate must be in position 2 (even).
+
+So, we have:
+- Person drinking hot-chocolate: 2
+
+From clue 7, the person drinking juice is on the left or right of the mechanic. We already know the person drinking juice is in position 4, and the mechanic is in position 3, so this condition is satisfied.
+
+From clue 5, the person drinking milk is somewhere to the left of the person drinking juice. We already placed milk in position 2 and juice in position 4, so this condition is satisfied.
+
+From clue 6, the pilot is somewhere to the left of the police-officer. We already placed the pilot in position 4 and the police-officer in position 5, so this condition is satisfied.
+
+From clue 12, the pilot is on the left of the person drinking fanta. We already placed the pilot in position 4 and the person drinking fanta in position 1, so this condition is satisfied.
+
+### Final Solution Table:
+
+```
+|            |    1     |     2     |    3     |       4       |       5        |
+| Beverage   |  fanta   |  hot-chocolate |  iced-tea |      juice    |     milk      |
+| Job        | fisherman|  police-officer |  mechanic |     pilot     |    musician   |
+```"	{'beverage': ['fanta', 'hot-chocolate', 'iced-tea', 'juice', 'milk'], 'job': ['fisherman', 'police-officer', 'mechanic', 'pilot', 'musician']}	True	3	False
+Lv9-2x5-4	"To solve this logic puzzle, we need to carefully analyze each clue and place the beverages and pets in their respective positions. Let's go through the clues step-by-step.
+
+### Clues Analysis:
+
+1. **The person drinking iced-tea is not to the left of the owner of the bird.**
+2. **The owner of the snake is not to the left of the person drinking iced-tea.**
+3. **The person drinking tea is somewhere to the right of the person drinking iced-tea.**
+4. **The person drinking tea is somewhere between the person drinking soy-milk and the owner of the goldfish.**
+5. **The owner of the bird and the person drinking juice have different parity positions (one is odd, one is even).**
+6. **The owner of the chinchilla is not to the left of the person drinking tea.**
+7. **The owner of the bird is somewhere to the right of the owner of the goldfish.**
+8. **The person drinking 7up is not to the left of the person drinking juice.**
+9. **The person drinking iced-tea is in the middle.**
+10. **The owner of the rat is not to the left of the person drinking soy-milk.**
+11. **The person drinking 7up is not to the left of the owner of the bird.**
+12. **The person drinking iced-tea is in the middle.**
+13. **The owner of the snake is in the middle.**
+14. **The person drinking juice is somewhere to the left of the owner of the bird.**
+
+Given that the person drinking iced-tea is in the middle (position 3) and the owner of the snake is in the middle (position 3), we can start by placing these:
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   |          |      |  Iced-tea |            |          |
+| Pet        |          |      |  Snake   |            |          |
+
+From clue 3, the person drinking tea must be to the right of the person drinking iced-tea. Therefore, the person drinking tea can only be in position 4 or 5.
+
+From clue 4, the person drinking tea is between the person drinking soy-milk and the owner of the goldfish. This means the person drinking soy-milk must be to the left of the person drinking tea, and the owner of the goldfish must be to the right of the person drinking tea. Given the positions, the only possible arrangement is:
+- Soy-milk in position 1 or 2
+- Tea in position 4
+- Goldfish in position 5
+
+Let's place them accordingly:
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Soy-milk |      |  Iced-tea |  Tea       |          |
+| Pet        |          |      |  Snake   |            | Goldfish |
+
+From clue 7, the owner of the bird is to the right of the owner of the goldfish. So, the owner of the bird must be in position 4 or 5. But since position 4 is taken by the person drinking tea, the owner of the bird must be in position 5.
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Soy-milk |      |  Iced-tea |  Tea       |          |
+| Pet        |          |      |  Snake   |            | Bird     |
+
+From clue 14, the person drinking juice is to the left of the owner of the bird. So, the person drinking juice must be in position 1 or 2.
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    |      |  Iced-tea |  Tea       |          |
+| Pet        |          |      |  Snake   |            | Bird     |
+
+From clue 1, the person drinking iced-tea is not to the left of the owner of the bird, which is consistent with our placement.
+
+From clue 2, the owner of the snake is not to the left of the person drinking iced-tea, which is also consistent.
+
+From clue 6, the owner of the chinchilla is not to the left of the person drinking tea. The owner of the chinchilla must be in position 4 or 5. Since position 4 is taken by the person drinking tea, the owner of the chinchilla must be in position 5, but the owner of the bird is already there. So, the owner of the chinchilla must be in position 4.
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    |      |  Iced-tea |  Tea       |          |
+| Pet        |          |      |  Snake   | Chinchilla | Bird     |
+
+From clue 8, the person drinking 7up is not to the left of the person drinking juice. So, the person drinking 7up must be in position 4 or 5. But position 5 is taken by the owner of the bird, so the person drinking 7up must be in position 4.
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    |      |  Iced-tea |  7up       |          |
+| Pet        |          |      |  Snake   | Chinchilla | Bird     |
+
+From clue 9, the person drinking iced-tea is in the middle, which is consistent.
+
+From clue 10, the owner of the rat is not to the left of the person drinking soy-milk. The owner of the rat must be in position 4 or 5. But position 4 is taken by the person drinking 7up, so the owner of the rat must be in position 5.
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    |      |  Iced-tea |  7up       | Rat      |
+| Pet        |          |      |  Snake   | Chinchilla | Bird     |
+
+From clue 11, the person drinking 7up is not to the left of the owner of the bird, which is consistent.
+
+From clue 5, the owner of the bird and the person drinking juice have different parity positions. The person drinking juice is in an odd position (1), and the owner of the bird is in an even position (5).
+
+From clue 12, the person drinking iced-tea is in the middle, which is consistent.
+
+From clue 13, the owner of the snake is in the middle, which is consistent.
+
+Finally, we need to fill in the remaining positions for the beverages and pets:
+
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    | Tea  |  Iced-tea |  7up       | Rat      |
+| Pet        | Chinchilla| Bird |  Snake   | Goldfish   | Rat      |
+
+Thus, the final solution is:
+
+```
+|            |    1     |  2   |    3     |     4      |    5     |
+| Beverage   | Juice    | Tea  |  Iced-tea |  7up       | Rat      |
+| Pet        | Chinchilla| Bird |  Snake   | Goldfish   | Rat      |
+```"	{'beverage': ['juice', 'tea', 'iced-tea', '7up', 'rat'], 'pet': ['chinchilla', 'bird', 'snake', 'goldfish', 'rat']}	True	5	False
+Lv9-2x5-5	"To solve this logic puzzle, we need to place the beverages and modes of transport in the correct order based on the given clues. Let's break down the clues and deduce the positions step-by-step.
+
+### Clues Analysis:
+
+1. The person driving the ship is somewhere to the left of the person driving the train.
+2. The person drinking milk is not the person driving the ship.
+3. The person driving the ship and the person drinking almond-milk have different parity positions (one is odd, one is even).
+4. The person drinking lemonade is in the middle.
+5. The person drinking almond-milk is on the left of the person driving the bus.
+6. The person drinking milk is on the left of the person driving the ship.
+7. The person drinking water is on the left or right of the person drinking almond-milk.
+8. The person drinking almond-milk is somewhere to the right of the person driving the ship.
+9. The person driving the bus is not the person drinking almond-milk.
+10. The person drinking milk is on the left or right of the person driving the ship.
+11. The person driving the roller is in an even position.
+
+### Step-by-Step Deduction:
+
+1. **Clue 4**: Lemonade is in the middle (position 3).
+   ```
+   |             |   1    |   2    |    3     |      4      |   5   |
+   | Beverage    |  L     |        |          |             |       |
+   | Transport   |        |        |          |             |       |
+   ```
+
+2. **Clue 11**: Roller is in an even position (positions 2 or 4).
+   - Since lemonade is in position 3, roller must be in position 2 or 4.
+   - Let's try position 2 first.
+   
+3. **Clue 1**: Ship is to the left of Train.
+   - If roller is in position 2, then ship and train must be in positions 1 and 5 or 1 and 4.
+   - If roller is in position 4, then ship and train must be in positions 1 and 2 or 1 and 3.
+
+4. **Clue 6**: Milk is on the left of the person driving the ship.
+   - This means milk must be in position 1, 2, or 3, and ship must be in position 2, 3, or 4.
+
+5. **Clue 2**: Milk is not the person driving the ship.
+   - So, if milk is in position 1, ship can only be in position 3, 4, or 5.
+   - If milk is in position 2, ship can only be in position 3 or 4.
+   - If milk is in position 3, ship cannot be in position 2 or 3, so it must be in position 4 or 5.
+
+6. **Clue 8**: Almond-milk is to the right of the person driving the ship.
+   - If ship is in position 3, almond-milk must be in position 4 or 5.
+   - If ship is in position 4, almond-milk must be in position 5.
+
+7. **Clue 5**: Almond-milk is on the left of the person driving the bus.
+   - This means bus must be in position 3, 4, or 5.
+   - If bus is in position 3, almond-milk must be in position 2 or 4.
+   - If bus is in position 4, almond-milk must be in position 3 or 5.
+   - If bus is in position 5, almond-milk must be in position 4.
+
+8. **Clue 3**: Ship and almond-milk have different parity positions.
+   - If ship is in position 1 (odd), almond-milk must be in position 2, 4, or 5 (even).
+   - If ship is in position 3 (odd), almond-milk must be in position 2 or 4 (even).
+
+9. **Clue 9**: Almond-milk is to the right of the person driving the ship.
+   - If ship is in position 1, almond-milk must be in position 2, 3, 4, or 5.
+   - If ship is in position 3, almond-milk must be in position 4 or 5.
+   - If ship is in position 4, almond-milk must be in position 5.
+
+10. **Clue 7**: Water is on the left or right of almond-milk.
+    - If almond-milk is in position 2, water can be in position 1 or 3.
+    - If almond-milk is in position 3, water can be in position 2 or 4.
+    - If almond-milk is in position 4, water can be in position 3 or 5.
+    - If almond-milk is in position 5, water can be in position 4.
+
+11. **Clue 10**: Milk is on the left or right of the person driving the ship.
+    - If ship is in position 1, milk can be in position 2, 3, 4, or 5.
+    - If ship is in position 3, milk can be in position 2 or 4.
+    - If ship is in position 4, milk can be in position 3 or 5.
+    - If ship is in position 5, milk can be in position 4.
+
+### Final Solution:
+
+Let's assume:
+- Ship is in position 1 (leftmost)
+- Almond-milk is in position 2 (right of ship, even)
+- Bus is in position 4 (right of almond-milk, even)
+- Milk is in position 3 (middle, left of ship)
+
+Then:
+- Roller is in position 4 (even, but already occupied by bus)
+- Water is in position 5 (right of almond-milk)
+
+So, the final arrangement is:
+
+```
+|             |   1    |   2    |    3     |      4      |   5   |
+| Beverage    |  Fanta | Almond-milk | Lemonade | Milk | Water |
+| Transport   |  Ship  | Roller   | Subway  | Bus  | Train |
+```
+
+This satisfies all the given conditions."	{'beverage': ['fanta', 'almond-milk', 'lemonade', 'milk', 'water'], 'transport': ['ship', 'roller', 'subway', 'bus', 'train']}	True	4	False
+Lv9-2x5-6	"Let's break down the clues step-by-step to solve this puzzle.
+
+1. **Clue 2:** The person watching superhero movies is the Indian.
+2. **Clue 7:** The Spanish is in the middle (position 3).
+3. **Clue 8:** The Canadian is not the person watching sports movies.
+4. **Clue 10:** The person watching sports movies is on the left or right of the Spanish (position 3).
+
+Since the Spanish is in position 3, the sports watcher must be either in position 2 or 4.
+
+5. **Clue 1:** The Mexican is somewhere to the right of the person watching sports movies. This means the Mexican cannot be in position 1 if the sports watcher is in position 2, and the Mexican cannot be in position 4 if the sports watcher is in position 3.
+6. **Clue 4:** The person watching epic movies is on the left or right of the Spanish (position 3). So, the epic watcher can be in positions 2 or 4.
+7. **Clue 6:** The person watching epic movies and the Mexican have the same parity positions. This means if the epic watcher is in an odd position (1 or 3), the Mexican must also be in an odd position, and if the epic watcher is in an even position (2 or 4), the Mexican must also be in an even position.
+8. **Clue 5:** The person watching disaster movies is somewhere to the left of the person watching drama movies.
+9. **Clue 9:** The Indian is on the right of the person watching epic movies.
+
+Now let's piece it together:
+
+- Since the Spanish is in position 3, the sports watcher can only be in position 2 or 4.
+- If the sports watcher is in position 2, then the Mexican must be in position 4 or 5.
+- If the sports watcher is in position 4, then the Mexican must be in position 5.
+
+Let's assume the sports watcher is in position 2 (this will help us deduce the rest):
+
+- The Mexican would then be in position 4 or 5.
+- The epic watcher must be in position 1 or 4 (since it's on the left or right of the Spanish).
+- If the epic watcher is in position 4, then the Mexican would be in position 5, which contradicts the same parity rule (both would be in even positions). So, the epic watcher must be in position 1.
+- Now, the Mexican must be in position 4 (to maintain the same parity with the epic watcher being in position 1).
+- The disaster watcher must be to the left of the drama watcher. Since the sports watcher is in position 2, the disaster watcher can only be in position 1 (but that's already taken by the epic watcher), so the disaster watcher must be in position 1 (which is a contradiction unless we adjust our assumption).
+
+Let's try the other assumption where the sports watcher is in position 4:
+
+- Then the Mexican must be in position 5 (to satisfy clue 1).
+- The epic watcher must be in position 1 or 3.
+- If the epic watcher is in position 1, then the disaster watcher must be in position 2 (since it's to the left of the drama watcher) and the drama watcher in position 3 (Spanish), leaving the superhero watcher in position 4 (Indian).
+
+So, we have:
+- Position 1: Epic (Spanish)
+- Position 2: Disaster (Canadian)
+- Position 3: Drama (Spanish)
+- Position 4: Sports (Mexican)
+- Position 5: Superhero (Indian)
+
+This fits all the given clues.
+
+Here is the final solution table:
+
+```
+|               |    1     |     2     |    3    |    4    |     5     |
+| Movie-Genre   | Epic    | Disaster  | Drama   | Sports  | Superhero |
+| Nationality   | Spanish | Canadian  | Spanish | Mexican | Indian    |
+```"	{'movie-genre': ['epic', 'disaster', 'drama', 'sports', 'superhero'], 'nationality': ['spanish', 'canadian', 'spanish', 'mexican', 'indian']}	True	5	False
+Lv9-2x5-7	"To solve this logic puzzle, we need to carefully analyze each clue and place the nationalities and sports accordingly. Let's go through the clues step-by-step:
+
+### Clues Analysis:
+1. **Water-polo and Indian have different parity positions.**
+2. **Volleyball is to the left of Water-polo.**
+3. **Badminton is not to the left of Volleyball.**
+4. **Water-polo is to the left of British.**
+5. **Colombian is to the right of Thai.**
+6. **Thai is to the left or right of Handball.**
+7. **Colombian is not to the left of Handball.**
+8. **Badminton and British have the same parity positions.**
+9. **Indian is to the left of British.**
+10. **Water-polo is in an odd position.**
+11. **Handball is between Thai and Colombian.**
+12. **Colombian and Handball have different parity positions.**
+
+### Step-by-Step Solution:
+
+#### Step 1: Positioning Water-Polo and Indian
+- Water-polo must be in an odd position (1, 3, or 5).
+- Since Water-polo and Indian have different parity positions, if Water-polo is in position 1 (odd), Indian must be in an even position (2, 4).
+- If Water-polo is in position 3 (odd), Indian must be in an even position (2, 4).
+- If Water-polo is in position 5 (odd), Indian must be in an even position (2, 4).
+
+#### Step 2: Positioning Volleyball and Water-Polo
+- Volleyball must be to the left of Water-polo.
+- If Water-polo is in position 1, Volleyball can only be in position 1 (which contradicts the rule that they have different parity positions).
+- If Water-polo is in position 3, Volleyball can be in position 1 or 2.
+- If Water-polo is in position 5, Volleyball can be in position 1, 2, or 4.
+
+#### Step 3: Positioning Badminton and Volleyball
+- Badminton is not to the left of Volleyball.
+- If Volleyball is in position 1, Badminton cannot be in position 1.
+- If Volleyball is in position 2, Badminton cannot be in position 1.
+- If Volleyball is in position 4, Badminton cannot be in position 1, 2, or 3.
+
+#### Step 4: Positioning Water-Polo and British
+- Water-polo is to the left of British.
+- If Water-polo is in position 1, British can be in position 2, 3, 4, or 5.
+- If Water-polo is in position 3, British can be in position 4 or 5.
+- If Water-polo is in position 5, British can be in position 5.
+
+#### Step 5: Positioning Thai and Colombian
+- Colombian is to the right of Thai.
+- Thai is to the left or right of Handball.
+- Handball is between Thai and Colombian.
+- Colombian and Handball have different parity positions.
+
+#### Step 6: Final Placement
+Let's test the positions:
+
+- **Water-polo in position 3** (since it allows more flexibility):
+  - Volleyball must be in position 1 (leftmost).
+  - Badminton must be in position 2 (right of Volleyball but not to its left).
+  - British must be in position 4 (right of Water-polo).
+  - Thai must be in position 2 (since Handball is between Thai and Colombian).
+  - Colombian must be in position 4 (right of Thai).
+
+So, the positions are:
+- Position 1: Volleyball
+- Position 2: Thai
+- Position 3: Water-polo
+- Position 4: British
+- Position 5: Handball
+
+Now, we assign the sports and nationalities:
+- **Position 1 (Volleyball): Italian**
+- **Position 2 (Thai): Colombian**
+- **Position 3 (Water-polo): Indian**
+- **Position 4 (British): Badminton**
+- **Position 5 (Handball): Thai**
+
+### Final Solution Table:
+```
+|               |     1      |    2     |     3      |    4     |     5     |
+| Nationality   | Italian    | Colombian| Indian     | Badminton| Thai      |
+| Sport         | Volleyball | Handball | Water-polo | Badminton| Handball  |
+```"	{'nationality': ['italian', 'colombian', 'indian', 'badminton', 'thai'], 'sport': ['volleyball', 'handball', 'water-polo', 'badminton', 'handball']}	True	3	False
+Lv9-2x5-8	"Let's solve the puzzle step-by-step based on the given clues.
+
+### Clues Recap:
+1. The person who's sport is snowboarding is in the middle (position 3).
+2. The person who's sport is rowing and the firefighter have different parity positions.
+3. The person who's sport is weightlifting is not to the right of the person who's sport is golf.
+4. The chef is on the far left or far right.
+5. The photographer is on the left of the person who's sport is snowboarding.
+6. The chef and the person who's sport is golf have different parity positions.
+7. The person who's sport is weightlifting is the chef.
+8. The nurse is on the left of the person who's sport is rowing.
+9. The firefighter is on the far left or far right.
+10. The person who's sport is weightlifting is in an odd position.
+
+### Step-by-Step Solution:
+
+#### Step 1: Position of Snowboarding
+- Snowboarding is in position 3.
+
+#### Step 2: Position of Chef (Weightlifting)
+- The chef (who does weightlifting) must be in an odd position because of clue 10.
+- The chef cannot be in position 3 (middle) due to clue 1.
+- Therefore, the chef must be in either position 1 or 5.
+- Since the chef is also on the far left or right (clue 4), the chef must be in position 1.
+
+#### Step 3: Position of Firefighter
+- The firefighter is on the far left or far right (clue 9).
+- Since the chef is already in position 1, the firefighter must be in position 5.
+
+#### Step 4: Position of Rowing and Parity
+- The person who's sport is rowing and the firefighter have different parity positions (clue 2).
+- The firefighter is in position 5 (odd), so the person who's sport is rowing must be in an even position (2 or 4).
+
+#### Step 5: Position of Nurse and Rowing
+- The nurse is on the left of the person who's sport is rowing (clue 8).
+- Therefore, the nurse must be in position 1, but the chef is already there. So, the nurse must be in position 2 or 4.
+- Since the person who's sport is rowing is in an even position, the nurse must be in position 2.
+
+#### Step 6: Position of Photographer
+- The photographer is on the left of the person who's sport is snowboarding (clue 5).
+- The person who's sport is snowboarding is in position 3.
+- Therefore, the photographer must be in position 2, but the nurse is already there. This means the photographer must be in position 1, which conflicts with the chef being in position 1. So, the photographer must be in position 4.
+
+#### Step 7: Position of Golf and Chef
+- The chef and the person who's sport is golf have different parity positions (clue 6).
+- The chef is in position 1 (odd), so the person who's sport is golf must be in an even position (2 or 4).
+- The photographer is in position 4, so the person who's sport is golf must be in position 2.
+
+#### Step 8: Confirming Positions
+- The person who's sport is weightlifting is the chef (clue 7).
+- The person who's sport is weightlifting is in position 1.
+- The person who's sport is golf is in position 2.
+- The person who's sport is snowboarding is in position 3.
+- The person who's sport is rowing is in position 4.
+- The person who's sport is skatesboarding is in position 5.
+
+### Final Table:
+```plaintext
+|         |       1       |      2       |      3       |       4       |       5       |
+| Job     |    Chef       |   Photographer |    Nurse     |    Golfer     | Firefighter   |
+| Sport   | Weightlifting |      Golf     | Snowboarding | Skateboarding |    Rowing     |
+```
+
+### Final Solution Table:
+```plaintext
+|         |       1       |      2       |      3       |       4       |       5       |
+| Job     |    Chef       |   Photographer |    Nurse     |    Golfer     | Firefighter   |
+| Sport   | Weightlifting |      Golf     | Snowboarding | Skateboarding |    Rowing     |
+```"	{'job': ['chef', 'photographer', 'nurse', 'golfer', 'firefighter'], 'sport': ['weightlifting', 'golf', 'snowboarding', 'skateboarding', 'rowing']}	True	7	False
+Lv9-2x5-9	"Let's solve the puzzle step by step using the given clues.
+
+### Clues Analysis:
+
+1. **Clue 1**: The person driving the taxi is on the left of the person watching scientific movies.
+2. **Clue 2**: The person watching satire movies and the person driving the skateboard have the same parity positions.
+3. **Clue 3**: The person watching scientific movies is somewhere to the right of the person driving the taxi.
+4. **Clue 4**: The person watching scientific movies is somewhere to the left of the person watching fantasy movies.
+5. **Clue 5**: The person watching fantasy movies is somewhere between the person watching time-travel movies and the person driving the roller.
+6. **Clue 6**: The person driving the skateboard and the person watching adventure movies have different parity positions.
+7. **Clue 7**: The person watching scientific movies is not to the left of the person watching adventure movies.
+8. **Clue 8**: The person watching fantasy movies is not the person driving the taxi.
+9. **Clue 9**: The person watching adventure movies is not to the right of the person driving the roller.
+10. **Clue 10**: The person watching fantasy movies and the person driving the skateboard have different parity positions.
+11. **Clue 11**: The person driving the skateboard is not to the right of the person watching time-travel movies.
+12. **Clue 12**: The person watching adventure movies is on the far left.
+13. **Clue 13**: The person driving the airplane is somewhere to the left of the person driving the skateboard.
+
+### Step-by-Step Solution:
+
+1. **Clue 12**: The person watching adventure movies is on the far left (Position 1).
+2. **Clue 13**: The person driving the airplane must be in Position 2 or 3 because it must be to the left of the person driving the skateboard.
+3. **Clue 2 and 10**: The person watching satire movies and the person driving the skateboard have different parity positions, and the person watching fantasy movies and the person driving the skateboard have different parity positions. This implies that the person watching satire movies and the person watching fantasy movies cannot be in the same position as the person driving the skateboard.
+4. **Clue 3 and 4**: The person watching scientific movies is to the right of the person driving the taxi and to the left of the person watching fantasy movies. This places the person watching scientific movies in Position 3 or 4.
+5. **Clue 5**: The person watching fantasy movies is between the person watching time-travel movies and the person driving the roller. This places the person watching fantasy movies in Position 4 or 5, and the person watching time-travel movies and the person driving the roller in Positions 2 and 3 or 3 and 2.
+6. **Clue 7**: The person watching scientific movies is not to the left of the person watching adventure movies (which is in Position 1). So, the person watching scientific movies must be in Position 3 or 4.
+7. **Clue 8**: The person watching fantasy movies is not the person driving the taxi. Therefore, the person watching fantasy movies cannot be in Position 2 if the person driving the taxi is in Position 1.
+8. **Clue 9**: The person watching adventure movies is not to the right of the person driving the roller. Since the person watching adventure movies is in Position 1, the person driving the roller must be in Position 3 or 4.
+9. **Clue 11**: The person driving the skateboard is not to the right of the person watching time-travel movies. This means the person driving the skateboard cannot be in Position 5 if the person watching time-travel movies is in Position 2 or 3.
+
+From these deductions, we can start filling the table:
+
+|               |     1     |     2      |    3     |     4      |      5      |
+| Movie-Genre   | Adventure | Time-Travel |          | Fantasy    |             |
+| Transport     | Airplane  | Helicopter  | Roller   | Skateboard | Taxi        |
+
+### Final Table:
+```plaintext
+###############
+|               |     1     |     2      |    3     |     4      |      5      |
+| Movie-Genre   | Adventure | Time-Travel | Satire   | Fantasy    | Scientific  |
+| Transport     | Airplane  | Helicopter  | Roller   | Skateboard | Taxi        |
+###############
+```
+
+This arrangement satisfies all the given clues."	{'movie-genre': ['adventure', 'time-travel', 'satire', 'fantasy', 'scientific'], 'transport': ['airplane', 'helicopter', 'roller', 'skateboard', 'taxi']}	True	2	False
+Lv9-2x5-10	"To solve this puzzle, we need to carefully analyze each clue and place the foods and pets accordingly. Let's start by summarizing and organizing the clues:
+
+1. The owner of the frog is somewhere to the right of the person eating plum.
+2. The person eating cabbage is somewhere to the left of the owner of the turtle.
+3. The person eating lemon is somewhere to the left of the person eating cabbage.
+4. The person eating cabbage is not the owner of the mouse.
+5. The person eating cabbage is somewhere between the owner of the mouse and the person eating pepper.
+6. The person eating cabbage and the owner of the cat have the same parity positions.
+7. The person eating cabbage is between the person eating pepper and the person eating lemon.
+8. The owner of the turtle is on the left or right of the owner of the goldfish.
+9. The person eating lemon is not the owner of the frog.
+10. The owner of the frog and the person eating potato have the same parity positions.
+11. The owner of the cat is on the right of the person eating pepper.
+12. The owner of the mouse is somewhere to the left of the owner of the turtle.
+
+Let's denote the positions as follows:
+- Position 1: (F1, P1)
+- Position 2: (F2, P2)
+- Position 3: (F3, P3)
+- Position 4: (F4, P4)
+- Position 5: (F5, P5)
+
+### Step-by-Step Solution:
+
+1. **Clue 7**: The person eating cabbage is between the person eating pepper and the person eating lemon.
+   - This means the order for these three is: Pepper, Cabbage, Lemon or Lemon, Cabbage, Pepper.
+
+2. **Clue 3**: The person eating lemon is somewhere to the left of the person eating cabbage.
+   - Combining with Clue 7, the only possible order is: Pepper, Cabbage, Lemon.
+
+3. **Clue 6**: The person eating cabbage and the owner of the cat have the same parity positions.
+   - This means if Cabbage is in an odd position, Cat must be in an odd position, and vice versa.
+
+4. **Clue 5**: The person eating cabbage is somewhere between the owner of the mouse and the person eating pepper.
+   - Since Cabbage is in position 2 (from Clue 7), the only possible positions for Mouse and Pepper are 1 and 3, respectively.
+
+5. **Clue 2**: The person eating cabbage is somewhere to the left of the owner of the turtle.
+   - Since Cabbage is in position 2, Turtle can be in position 3, 4, or 5.
+
+6. **Clue 4**: The person eating cabbage is not the owner of the mouse.
+   - So, Mouse cannot be in position 2.
+
+7. **Clue 10**: The owner of the frog and the person eating potato have the same parity positions.
+   - This means if Frog is in an even position, Potato must be in an even position, and vice versa.
+
+8. **Clue 11**: The owner of the cat is on the right of the person eating pepper.
+   - Since Pepper is in position 3, Cat must be in position 4 or 5.
+
+9. **Clue 12**: The owner of the mouse is somewhere to the left of the owner of the turtle.
+   - This means Turtle must be in position 4 or 5, and Mouse must be in position 1, 2, or 3.
+
+10. **Clue 9**: The person eating lemon is not the owner of the frog.
+    - Since Lemon is in position 3, Frog cannot be in position 3.
+
+11. **Clue 8**: The owner of the turtle is on the left or right of the owner of the goldfish.
+    - This means Turtle and Goldfish must be adjacent.
+
+Given these constraints, let's place the items step-by-step:
+
+- **Position 1**: (F1, P1) - Mouse (since it's to the left of Turtle)
+- **Position 2**: (F2, P2) - Cabbage
+- **Position 3**: (F3, P3) - Lemon
+- **Position 4**: (F4, P4) - Pepper (since Cabbage is between Pepper and Lemon)
+- **Position 5**: (F5, P5) - Turtle (since Cabbage is to the left of Turtle and Turtle is not adjacent to Goldfish)
+
+Now, we need to fill in the remaining foods and pets:
+
+- **Food 1**: Plum (since Cabbage is not Plum and it's to the left of Turtle)
+- **Food 2**: Potato (since Cabbage is between Potato and Lemon)
+- **Food 3**: Pepper (already placed)
+- **Food 4**: Lemon (already placed)
+- **Food 5**: Cabbage (already placed)
+
+- **Pet 1**: Frog (since Frog is to the right of Plum)
+- **Pet 2**: Cat (since Cat is to the right of Pepper and has the same parity as Cabbage, which is even)
+- **Pet 3**: Goldfish (since Turtle is adjacent to Goldfish)
+- **Pet 4**: Mouse (already placed)
+- **Pet 5**: Turtle (already placed)
+
+### Final Solution Table:
+
+```
+|        |   1   |    2     |   3    |  4   |   5    |
+| Food   |  Plum |  Cabbage |  Lemon | Pepper|  Potato|
+| Pet    |  Frog |   Cat    | Goldfish|  Mouse|  Turtle|
+```
+
+This arrangement satisfies all the given clues."	{'food': ['plum', 'cabbage', 'lemon', 'pepper', 'potato'], 'pet': ['frog', 'cat', 'goldfish', 'mouse', 'turtle']}	True	2	False

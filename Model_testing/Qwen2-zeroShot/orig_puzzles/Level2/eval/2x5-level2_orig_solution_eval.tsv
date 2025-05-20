@@ -1,0 +1,704 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-2x5-1	"Let's solve this step-by-step using the given clues:
+
+1. **Clue 1:** The architect is on the far left.
+2. **Clue 2:** The architect is on the left of the person who's sport is swimming.
+3. **Clue 3:** The lawyer is on the left of the electrician.
+4. **Clue 4:** The person who's sport is handball is between the electrician and the person who's sport is basketball.
+5. **Clue 5:** The lawyer is on the right of the software-developer.
+6. **Clue 6:** The person who's sport is cricket is on the left of the firefighter.
+
+We can start by placing the architect (Job 1) on the far left:
+
+```
+| Job    | 1 (Architect) | 2       | 3               | 4         | 5         |
+| Sport  |               |         |                 |           |           |
+```
+
+From Clue 2, the architect (Job 1) is on the left of the person who prefers swimming. Therefore, the person who prefers swimming must be in position 2 or 3. Let's explore both possibilities:
+
+- If the person who prefers swimming is in position 2:
+  - Position 1: Architect
+  - Position 2: Swimming
+  - Position 3: (Unknown)
+  - Position 4: (Unknown)
+  - Position 5: (Unknown)
+
+- If the person who prefers swimming is in position 3:
+  - Position 1: Architect
+  - Position 2: (Unknown)
+  - Position 3: Swimming
+  - Position 4: (Unknown)
+  - Position 5: (Unknown)
+
+Let's use Clue 3 to further narrow it down. The lawyer is on the left of the electrician. This means the lawyer cannot be in position 5. Also, the lawyer must be to the left of the electrician. Let's place the lawyer and electrician accordingly.
+
+If we place the lawyer in position 2 and the electrician in position 4, we can fit these into our grid:
+
+- Position 1: Architect
+- Position 2: Lawyer
+- Position 3: (Unknown)
+- Position 4: Electrician
+- Position 5: (Unknown)
+
+Now, let's consider Clue 4. The person who prefers handball is between the electrician and the person who prefers basketball. This means the person who prefers handball must be in position 3, and the person who prefers basketball must be in position 5:
+
+- Position 1: Architect
+- Position 2: Lawyer
+- Position 3: Handball
+- Position 4: Electrician
+- Position 5: Basketball
+
+Finally, let's use Clue 5 and Clue 6:
+
+- Clue 5 states that the lawyer is on the right of the software-developer. Since the lawyer is in position 2, the software-developer must be in position 1, which contradicts Clue 1 where the architect is in position 1. Therefore, the lawyer must be in position 4, and the software-developer in position 3:
+
+- Position 1: Software-Developer
+- Position 2: Lawyer
+- Position 3: Handball
+- Position 4: Electrician
+- Position 5: Basketball
+
+- Clue 6 states that the person who prefers cricket is on the left of the firefighter. Since the only remaining positions for cricket and firefighter are 1 and 2, but the software-developer is in position 1, the only option is:
+
+- Position 1: Cricket
+- Position 2: Firefighter
+
+Thus, the final solution is:
+
+```
+| Job    | 1 (Cricket)   | 2 (Firefighter) | 3 (Software-Developer) | 4 (Lawyer) | 5 (Electrician) |
+| Sport  | Handball      | Basketball      | Swimming               | Ice-Hockey | Cricket        |
+```"	{'job': ['1 (cricket)', '2 (firefighter)', '3 (software-developer)', '4 (lawyer)', '5 (electrician)'], 'sport': ['handball', 'basketball', 'swimming', 'ice-hockey', 'cricket']}	True	0	False
+Lv2-2x5-2	"Let's solve this step-by-step using the given clues:
+
+1. **Clue 1:** The fan of salsa is the person eating lemon.
+   - Lemon -> Salsa
+
+2. **Clue 2:** The person eating grapefruit is on the left of the fan of techno.
+   - Grapefruit -> ? (left of Techno)
+
+3. **Clue 3:** The fan of electronic is in the middle.
+   - Electronic -> 3
+
+4. **Clue 4:** The fan of jazz is the person eating plum.
+   - Plum -> Jazz
+
+5. **Clue 5:** The person eating apricot is on the right of the fan of house.
+   - House -> ? (left of Apricot)
+
+6. **Clue 6:** The person eating plum is between the person eating lemon and the person eating radish.
+   - Plum -> Middle (between Lemon and Radish)
+   - Since Lemon is already placed, Plum must be between Lemon and Radish.
+
+7. **Clue 7:** The fan of jazz is on the left of the person eating radish.
+   - Jazz -> Left of Radish
+
+Given these clues, let's fill in the table:
+
+|               |   1   |  2   |     3      |     4      |    5    |
+|---------------|-------|------|------------|------------|---------|
+| Food          |       |      |            |            |         |
+| Music-Genre   |       |      | Electronic |            |         |
+
+From Clue 1:
+- Lemon -> Salsa
+- Salsa is in position 2 (since it's the only place for Salsa now).
+
+From Clue 4:
+- Plum -> Jazz
+- Jazz is in position 4 (since Plum is between Lemon and Radish, and Salsa is in 2).
+
+From Clue 6:
+- Plum (Jazz) is between Lemon (Salsa) and Radish.
+- Therefore, Radish must be in position 5.
+- Lemon (Salsa) is in position 2.
+- Plum (Jazz) is in position 4.
+- So, Radish must be in position 5.
+
+From Clue 2:
+- Grapefruit is on the left of Techno.
+- Since positions 2 and 4 are taken, Grapefruit can only be in position 1 and Techno in position 3.
+
+From Clue 5:
+- Apricot is on the right of House.
+- Since House must be in position 1 (as Grapefruit is to its left), Apricot must be in position 5 (but we already have Radish there, so this clue needs re-evaluation with current placements).
+
+Re-evaluating:
+- House must be in position 2 (as Grapefruit is to its left).
+- Apricot must be in position 4 (as it’s on the right of House).
+
+Final placements:
+- Position 1: Grapefruit
+- Position 2: House
+- Position 3: Electronic
+- Position 4: Jazz (Plum)
+- Position 5: Radish
+
+Now, let's fill in the food and music genres:
+
+|               |   1   |  2   |     3      |     4      |    5    |
+|---------------|-------|------|------------|------------|---------|
+| Food          | Grapefruit | House | Lemon      | Plum       | Radish  |
+| Music-Genre   | Techno   | Salsa | Electronic | Jazz       |         |
+
+Since the person eating radish does not have a specified genre and we need to fit all genres, we'll assume the remaining genre (techno) for the last position.
+
+|               |   1   |  2   |     3      |     4      |    5    |
+|---------------|-------|------|------------|------------|---------|
+| Food          | Grapefruit | House | Lemon      | Plum       | Radish  |
+| Music-Genre   | Techno   | Salsa | Electronic | Jazz       | Techno  |
+
+Thus, the final solution is:
+
+```
+|               |   1   |  2   |     3      |     4      |    5    |
+|---------------|-------|------|------------|------------|---------|
+| Food          | Grapefruit | House | Lemon      | Plum       | Radish  |
+| Music-Genre   | Techno   | Salsa | Electronic | Jazz       | Techno  |
+```"	{'food': ['grapefruit', 'house', 'lemon', 'plum', 'radish'], 'music-genre': ['techno', 'salsa', 'electronic', 'jazz', 'techno']}	True	2	False
+Lv2-2x5-3	"Let's break down the puzzle step by step to find the correct arrangement.
+
+### Given Information:
+1. The person eating nectarine is between the person eating onion and the person eating banana.
+2. The fisherman is on the left of the engineer.
+3. The person eating onion is on the far right.
+4. The person eating cucumber is on the right of the pilot.
+5. The person eating banana is between the engineer and the entrepreneur.
+
+### Step-by-Step Solution:
+
+1. **Position of Onion**:
+   - From clue 3, the person eating onion is on the far right (position 5).
+
+2. **Position of Nectarine and Banana**:
+   - From clue 1, the person eating nectarine is between the person eating onion and the person eating banana.
+   - Since onion is in position 5, the person eating nectarine must be in position 4, and the person eating banana must be in position 3.
+
+3. **Position of Cucumber and Pilot**:
+   - From clue 4, the person eating cucumber is on the right of the pilot.
+   - Since positions 3, 4, and 5 are already occupied, the only remaining positions for cucumber and pilot are 1 and 2.
+   - Therefore, the person eating cucumber must be in position 2, and the person eating pilot must be in position 1.
+
+4. **Position of Fisherman and Engineer**:
+   - From clue 2, the fisherman is on the left of the engineer.
+   - Since positions 1 and 2 are already occupied by the pilot and cucumber, the fisherman must be in position 1 and the engineer must be in position 2.
+
+5. **Position of Remaining Jobs and Foods**:
+   - The only remaining job is the software developer.
+   - The only remaining food is the pepper.
+   - From clue 5, the person eating banana is between the engineer and the entrepreneur.
+   - Since the engineer is in position 2 and the banana is in position 3, the entrepreneur must be in position 4.
+
+So, we can now fill in the table:
+
+|        |   1    |      2       |     3     |     4     |         5          |
+|--------|--------|--------------|-----------|-----------|--------------------|
+| Food   | Pepper | Cucumber     | Banana    | Onion     | Nectarine          |
+| Job    | Fisherman | Engineer | Pilot | Entrepreneur | Software Developer |
+
+### Final Solution Table:
+```
+|        |   1    |      2       |     3     |     4     |         5          |
+|--------|--------|--------------|-----------|-----------|--------------------|
+| Food   | Pepper | Cucumber     | Banana    | Onion     | Nectarine          |
+| Job    | Fisherman | Engineer | Pilot | Entrepreneur | Software Developer |
+```"	{'food': ['pepper', 'cucumber', 'banana', 'onion', 'nectarine'], 'job': ['fisherman', 'engineer', 'pilot', 'entrepreneur', 'software developer']}	True	3	False
+Lv2-2x5-4	"Let's solve this step-by-step using the given clues.
+
+### Clues Analysis:
+1. The Chinese is on the left of the Argentine.
+2. The person eating spinach is the person eating spinach (redundant information).
+3. The Chinese is the Chinese (redundant information).
+4. The person eating spinach is on the left of the person eating radish.
+5. The Argentine is between the person eating artichoke and the Australian.
+6. The Italian is on the left of the Malaysian.
+7. The person eating cucumber is in the middle.
+
+### Step-by-Step Solution:
+
+#### Step 1: Determine the positions of the people based on Clue 1 and Clue 5.
+- Clue 1: Chinese is on the left of the Argentine.
+- Clue 5: Argentine is between the person eating artichoke and the Australian.
+
+This means the order for these three must be: Chinese, Argentine, Artichoke, or Chinese, Argentine, Australian.
+
+#### Step 2: Use Clue 7 to place the person eating cucumber.
+- Clue 7: The person eating cucumber is in the middle (position 3).
+
+So, we have:
+- Position 1: Chinese
+- Position 2: Argentine
+- Position 3: Cucumber
+- Position 4: Artichoke
+- Position 5: Australian
+
+#### Step 3: Use Clue 4 to place the spinach and radish.
+- Clue 4: The person eating spinach is on the left of the person eating radish.
+
+Given our current setup:
+- Positions 1, 2, and 3 are taken by Chinese, Argentine, and Cucumber respectively.
+- Therefore, spinach and radish must be in positions 4 and 5.
+
+Since spinach must be on the left of radish:
+- Spinach must be in position 4 and radish in position 5.
+
+So, we have:
+- Position 1: Chinese
+- Position 2: Argentine
+- Position 3: Cucumber
+- Position 4: Spinach
+- Position 5: Radish
+
+#### Step 4: Use Clue 6 to place the Italian and Malaysian.
+- Clue 6: The Italian is on the left of the Malaysian.
+
+Given our current setup:
+- Positions 1, 2, 3, 4, and 5 are taken by Chinese, Argentine, Cucumber, Spinach, and Radish respectively.
+- Therefore, Italian and Malaysian must be in positions 1 and 2.
+
+Since the Italian is on the left of the Malaysian:
+- Italian must be in position 1 and Malaysian in position 2.
+
+So, we have:
+- Position 1: Italian
+- Position 2: Malaysian
+- Position 3: Cucumber
+- Position 4: Spinach
+- Position 5: Radish
+
+#### Step 5: Place the remaining nationalities.
+- We now need to place the remaining nationalities (Argentine and Chinese) in their correct positions.
+
+From Clue 1: Chinese is on the left of the Argentine.
+- This means the Chinese must be in position 2 and the Argentine in position 3.
+
+So, we have:
+- Position 1: Italian
+- Position 2: Chinese
+- Position 3: Argentine
+- Position 4: Cucumber
+- Position 5: Spinach
+
+And finally:
+- Position 1: Italian
+- Position 2: Chinese
+- Position 3: Argentine
+- Position 4: Cucumber
+- Position 5: Spinach
+
+### Final Solution Table:
+```
+|               |     1     |     2     |     3      |    4    |     5     |
+| Food          |   Italian |   Chinese |   Argentine| Cucumber|   Spinach |
+| Nationality   |   Malaysian|  Chinese  |   Argentine| Cucumber|   Spinach |
+```"	{'food': ['italian', 'chinese', 'argentine', 'cucumber', 'spinach'], 'nationality': ['malaysian', 'chinese', 'argentine', 'cucumber', 'spinach']}	True	0	False
+Lv2-2x5-5	"To solve this logic puzzle, let's break down each clue step-by-step and fill in the table accordingly.
+
+### Clues Breakdown:
+
+1. **The person who's hobby is photography is on the left of the person driving the ship.**
+2. **The person driving the roller is on the right of the person who's hobby is puzzles.**
+3. **The person who's hobby is gardening is on the left of the person who's hobby is photography.**
+4. **The person driving the bus is on the far left.**
+5. **The person driving the van is between the person driving the bus and the person who's hobby is rock-climbing.**
+
+### Step-by-Step Solution:
+
+#### Step 1: Positioning the Bus Driver
+- From clue 4, the person driving the bus is on the far left.
+- So, we place ""bus"" in position 1 and mark it as the bus driver.
+
+```
+| Hobby       | Photography | Puzzles    | Gardening  | Rock-climbing | Van     |
+| Transport   | Bus         |            |            |               |         |
+```
+
+#### Step 2: Positioning the Van Driver
+- From clue 5, the person driving the van is between the person driving the bus and the person who's hobby is rock-climbing.
+- Since the bus is at position 1, the van must be at position 3 (because there's only one space between them).
+- The person with the hobby of rock-climbing must be at position 4.
+
+```
+| Hobby       | Photography | Puzzles    | Gardening  | Rock-climbing | Van     |
+| Transport   | Bus         |            |            |               | Van     |
+```
+
+#### Step 3: Positioning the Roller Driver
+- From clue 2, the person driving the roller is on the right of the person who's hobby is puzzles.
+- The only positions left for puzzles and roller are 2 and 3.
+- Since the roller driver cannot be at position 3 (as the van is already there), the puzzles must be at position 2 and the roller at position 3.
+
+```
+| Hobby       | Photography | Puzzles    | Roller     | Rock-climbing | Van     |
+| Transport   | Bus         |            |            |               | Van     |
+```
+
+#### Step 4: Positioning the Photography and Gardening Hobbies
+- From clue 3, the person who's hobby is gardening is on the left of the person who's hobby is photography.
+- The only positions left for gardening and photography are 4 and 5.
+- Since the rock-climbing is at position 4, the gardening must be at position 4 and the photography at position 5.
+
+```
+| Hobby       | Photography | Puzzles    | Roller     | Gardening    | Van     |
+| Transport   | Bus         |            |            | Rock-climbing| Van     |
+```
+
+#### Step 5: Confirming the Transport for Photography and Roller
+- From clue 1, the person who's hobby is photography is on the left of the person driving the ship.
+- The only position left for the ship is position 2.
+- The person driving the roller is on the right of the person who's hobby is puzzles, which matches our current arrangement.
+
+```
+| Hobby       | Photography | Puzzles    | Roller     | Gardening    | Van     |
+| Transport   | Bus         | Ship       | Roller     | Rock-climbing| Van     |
+```
+
+### Final Solution Table:
+```
+| Hobby       | Photography | Puzzles    | Roller     | Gardening    | Van     |
+| Transport   | Bus         | Ship       | Roller     | Rock-climbing| Van     |
+```"	{'hobby': ['photography', 'puzzles', 'roller', 'gardening', 'van'], 'transport': ['bus', 'ship', 'roller', 'rock-climbing', 'van']}	True	1	False
+Lv2-2x5-6	"Let's break down the clues step-by-step to find the solution.
+
+### Clues Recap:
+1. The videographer is on the left of the photographer.
+2. The person eating onion is on the left of the entrepreneur.
+3. The entrepreneur is on the left of the person eating avocado.
+4. The videographer is the person eating orange.
+5. The person eating avocado is between the person eating orange and the entrepreneur.
+6. The videographer is between the musician and the person eating potato.
+
+### Step-by-Step Analysis:
+
+#### Clue 4:
+- **Videographer = Orange**
+
+So, we can place ""Orange"" under the videographer in column 1 (since it's the leftmost position).
+
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         |              |          |              |              |
+| Job    |                |              |          |              |              |
+
+#### Clue 2:
+- The person eating onion is on the left of the entrepreneur.
+- Since the videographer is already placed, the person eating onion must be in column 2 or earlier.
+
+#### Clue 3:
+- The entrepreneur is on the left of the person eating avocado.
+- The person eating avocado must be in column 4 or later since the entrepreneur is on its left.
+
+#### Clue 5:
+- The person eating avocado is between the person eating orange (videographer) and the entrepreneur.
+- Given that the videographer is in column 1, the person eating avocado must be in column 3, and the entrepreneur in column 4.
+
+So, we have:
+- **Avocado** in column 3
+- **Entrepreneur** in column 4
+
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         |              | Avocado  |            |              |
+| Job    |                |              |          | Entrepreneur|              |
+
+#### Clue 6:
+- The videographer is between the musician and the person eating potato.
+- We know the videographer is in column 1, so the musician must be in column 2, and the person eating potato must be in column 5.
+
+So, we have:
+- **Musician** in column 2
+- **Potato** in column 5
+
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         | Musician     | Avocado  |            | Potato       |
+| Job    |                |              |          | Entrepreneur|              |
+
+#### Clue 1:
+- The videographer is on the left of the photographer.
+- Since the videographer is in column 1, the photographer must be in column 2 (but musician is already there), so the photographer must be in column 3, which is occupied by the person eating avocado. This means the photographer must be in column 4.
+
+So, we have:
+- **Photographer** in column 4
+
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         | Musician     | Avocado  | Photographer | Potato       |
+| Job    |                |              |          | Entrepreneur|              |
+
+Now, the only job left is the security guard, which must be in column 5.
+
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         | Musician     | Avocado  | Photographer | Potato       |
+| Job    | Security Guard |              |          | Entrepreneur |             |
+
+### Final Solution Table:
+```
+|        |       1        |      2       |    3     |      4       |      5       |
+| Food   | Orange         | Musician     | Avocado  | Photographer | Potato       |
+| Job    | Security Guard |              |          | Entrepreneur |             |
+```"	{'food': ['orange', 'musician', 'avocado', 'photographer', 'potato'], 'job': ['security guard', '', '', 'entrepreneur', '']}	True	2	False
+Lv2-2x5-7	"Let's solve this step by step based on the given clues:
+
+1. **The person watching epic movies is on the far right (Position 5).**
+   - This means the job at position 5 is not the one watching epic movies.
+   
+2. **The person watching zombie movies is between the person watching comedy movies and the paramedic.**
+   - This means there are three positions involved here.
+
+3. **The engineer is on the left of the person watching comedy movies.**
+   - This means the engineer cannot be in position 4 or 5, and the person watching comedy movies must be to the right of the engineer.
+
+4. **The paramedic is the person watching animation movies.**
+   - This means the job at position 2 is the paramedic, and the paramedic watches animation movies.
+
+5. **The chef is in the middle (position 3).**
+   - The chef is in position 3.
+
+6. **The person watching epic movies is on the right of the paramedic.**
+   - Since the paramedic is in position 2 and the person watching epic movies is in position 5, the person watching zombie movies must be in position 4.
+
+7. **The architect is on the right of the person watching documentary movies.**
+   - This means the architect is in position 4 or 5, and the person watching documentary movies must be to the left of the architect.
+
+8. **The scientist is on the right of the person watching animation movies.**
+   - Since the paramedic (job 2) is the person watching animation movies, the scientist must be in position 5, but we already know that position 5 is for the person watching epic movies.
+
+Now let's place everything:
+
+- From clue 4, the paramedic (job 2) is watching animation.
+- From clue 1, the person watching epic movies is in position 5.
+- From clue 6, the person watching epic movies is to the right of the paramedic, so the person watching zombie movies must be in position 4.
+- From clue 2, the person watching zombie movies is between the person watching comedy and the paramedic. So, the person watching comedy must be in position 3.
+- From clue 5, the chef is in position 3.
+- From clue 3, the engineer must be to the left of the person watching comedy. So, the engineer must be in position 1.
+- From clue 7, the architect is on the right of the person watching documentary movies. Since the only remaining position for the architect is 4, the person watching documentary movies must be in position 3, which conflicts with the chef being in position 3. Therefore, the architect must be in position 4, and the person watching documentary movies must be in position 1.
+- From clue 8, the scientist is on the right of the person watching animation movies, which means the scientist is in position 5.
+
+So, the final arrangement is:
+- Position 1: Architect
+- Position 2: Paramedic (watching animation)
+- Position 3: Chef (watching comedy)
+- Position 4: Scientist (watching documentary)
+- Position 5: Scientist (watching epic)
+
+The final solution table is:
+
+```
+|               |      1      |     2     |   3    |     4     |     5     |
+| Job           | Architect   | Paramedic | Chef   | Scientist | Scientist |
+| Movie-Genre   | Documentary | Animation | Comedy | Documentary| Epic      |
+```"	{'job': ['architect', 'paramedic', 'chef', 'scientist', 'scientist'], 'movie-genre': ['documentary', 'animation', 'comedy', 'documentary', 'epic']}	True	4	False
+Lv2-2x5-8	"Let's solve this step-by-step using the given clues:
+
+### Clue Analysis:
+1. **Clue 1**: The person driving the tram is between the firefighter and the person driving the quad-bike.
+2. **Clue 2**: The person driving the scooter is the firefighter.
+3. **Clue 3**: The designer is on the right of the person driving the skateboard.
+4. **Clue 4**: The firefighter is on the left of the doctor.
+5. **Clue 5**: The accountant is between the person driving the scooter and the designer.
+6. **Clue 6**: The person driving the bike is on the far right.
+7. **Clue 7**: The accountant is on the left of the person driving the scooter.
+
+### Step-by-Step Solution:
+
+1. **From Clue 2**: The firefighter (F) drives the scooter (S).
+   
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   |            | quad-     |            |             | bike   |
+
+2. **From Clue 4**: The firefighter (F) is on the left of the doctor (D).
+
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   | F          | quad-     |            |             | bike   |
+
+3. **From Clue 6**: The person driving the bike (B) is on the far right.
+
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   | F          | quad-     |            |             | B      |
+
+4. **From Clue 1**: The person driving the tram (T) is between the firefighter (F) and the person driving the quad-bike (Q).
+
+   Since F is at position 1 and B is at position 5, T must be at position 3 or 4. However, since D must be to the right of F, T cannot be at position 4 because there would be no room for D. Therefore, T must be at position 3.
+
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   | F          | quad-     | T          |             | B      |
+
+5. **From Clue 5**: The accountant (A) is between the person driving the scooter (S) and the designer (Des).
+
+   Since S is at position 2 and Des must be to the right of S, A must be at position 1 or 3. But position 1 is already occupied by F, so A must be at position 3, which conflicts with T being there. Thus, A must be at position 4.
+
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   | F          | quad-     | T          | A           | B      |
+
+6. **From Clue 3**: The designer (Des) is on the right of the person driving the skateboard (Sk).
+
+   Since A is at position 4, Des must be at position 5.
+
+   | Job         |     1      |     2     |     3      |      4      |   5    |
+   |-------------|------------|-----------|------------|-------------|--------|
+   | Transport   | F          | quad-     | T          | A           | Sk     |
+
+7. **From Clue 7**: The accountant (A) is on the left of the person driving the scooter (S).
+
+   This is already satisfied as A is at position 4 and S is at position 2.
+
+8. **Assigning Jobs**:
+   - Position 1: Accountant (A)
+   - Position 2: Designer (Des)
+   - Position 3: Transporter (T)
+   - Position 4: Firefighter (F)
+   - Position 5: Doctor (D)
+
+### Final Solution Table:
+
+```
+###############
+| Job         |     1      |     2     |     3      |      4      |   5    |
+|-------------|------------|-----------|------------|-------------|--------|
+| Transport   | F          | quad-     | T          | A           | Sk     |
+###############
+```"	{'job': ['1', '2', '3', '4', '5'], 'transport': ['f', 'quad-', 't', 'a', 'sk']}	True	0	False
+Lv2-2x5-9	"Let's solve the puzzle step by step based on the given clues:
+
+1. **The person drinking sprite is on the left of the fan of salsa.**
+2. **The person drinking hot-chocolate is on the left of the person drinking milk.**
+3. **The fan of rock is on the left of the fan of salsa.**
+4. **The person drinking mirinda is between the fan of hip-hop and the fan of funk.**
+5. **The fan of hip-hop is on the far right.**
+6. **The person drinking sprite is on the left of the person drinking hot-chocolate.**
+
+### Step-by-Step Analysis
+
+**Clue 5**: The fan of hip-hop is on the far right.
+So, we have:
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   |        |               |      |         | hip-hop  |
+```
+
+**Clue 4**: The person drinking mirinda is between the fan of hip-hop and the fan of funk.
+Since hip-hop is at position 5, funk must be at position 3.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   |        |               | funk |         | hip-hop  |
+```
+This means mirinda is at position 4.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   |        |               | funk | mirinda | hip-hop  |
+```
+
+**Clue 3**: The fan of rock is on the left of the fan of salsa.
+Since hip-hop is at position 5, rock must be at position 3 or 4 (but 3 is already taken by funk), so rock must be at position 2.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   |        | rock           | funk | mirinda | hip-hop  |
+```
+Salsa must then be at position 1.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   | salsa  | rock           | funk | mirinda | hip-hop  |
+```
+
+**Clue 6**: The person drinking sprite is on the left of the person drinking hot-chocolate.
+Since salsa is at position 1, sprite must be at position 2 and hot-chocolate at position 3.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   | salsa  | sprite         | funk | mirinda | hip-hop  |
+```
+However, this contradicts Clue 3 because rock (at position 2) is not on the left of salsa (at position 1). Therefore, hot-chocolate must be at position 4 and sprite at position 3.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   | salsa  | sprite         | rock | hot-chocolate | hip-hop  |
+```
+
+**Clue 1**: The person drinking sprite is on the left of the fan of salsa.
+This is satisfied as sprite is at position 2 and salsa at position 1.
+
+**Clue 2**: The person drinking hot-chocolate is on the left of the person drinking milk.
+Since hot-chocolate is at position 4, milk must be at position 5.
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Music-Genre   | salsa  | sprite         | rock | hot-chocolate | milk  |
+```
+
+**Clue 4**: The person drinking mirinda is between the fan of hip-hop and the fan of funk.
+This is already satisfied as mirinda is at position 4, between funk (position 3) and hip-hop (position 5).
+
+### Final Solution Table
+
+```
+|               |   1    |       2       |  3   |    4    |    5     |
+| Beverage      | salsa  | sprite         | rock | hot-chocolate | milk  |
+| Music-Genre   | salsa  | sprite         | rock | hot-chocolate | hip-hop  |
+```
+
+```plaintext
+|               |   1    |       2       |  3   |    4    |    5     |
+| Beverage      | salsa  | sprite         | rock | hot-chocolate | milk  |
+| Music-Genre   | salsa  | sprite         | rock | hot-chocolate | hip-hop  |
+```"	{'beverage': ['salsa', 'sprite', 'rock', 'hot-chocolate', 'milk'], 'music-genre': ['salsa', 'sprite', 'rock', 'hot-chocolate', 'hip-hop']}	True	1	False
+Lv2-2x5-10	"Let's solve this step-by-step using the given clues:
+
+1. **The person who's sport is ice-hockey is in the middle (position 3).**
+2. **The person who's sport is cricket is on the right of the person who's sport is ice-hockey.** Therefore, cricket must be in position 4.
+3. **The person who's sport is cricket is the engineer.** So, the engineer is in position 4 with cricket.
+4. **The person who's sport is swimming is on the left of the project-manager.** This means swimming cannot be in positions 3 or 4, and it must be to the left of the project-manager.
+5. **The person who's sport is rowing is between the nurse and the coach.** This means the nurse, rowing, and coach must be consecutive, and rowing is in the middle.
+6. **The nurse is on the left of the engineer.** Since the engineer is in position 4, the nurse must be in position 1 or 2.
+
+Now let's place the elements based on these clues:
+
+- Position 3: Ice-hockey (from clue 1)
+- Position 4: Cricket (from clue 2 and 3)
+- Position 1 or 2: Nurse (from clue 6)
+- Position 2 or 3: Rowing (from clue 5, must be between nurse and coach)
+- Position 4: Engineer (from clue 3)
+
+Since the nurse is on the left of the engineer, and the engineer is in position 4, the nurse can only be in position 1 or 2. Let's try position 2 for the nurse:
+
+- Position 1: Nurse
+- Position 2: Rowing
+- Position 3: Ice-hockey
+- Position 4: Cricket (Engineer)
+- Position 5: Coach
+
+Now we need to fit the remaining job (project-manager) and sport (swimming):
+
+- Position 1: Nurse
+- Position 2: Rowing
+- Position 3: Ice-hockey
+- Position 4: Cricket (Engineer)
+- Position 5: Coach
+
+We know from clue 4 that swimming is to the left of the project-manager. The only remaining positions for swimming and the project-manager are positions 1 and 2, but since position 2 is already occupied by rowing, swimming must be in position 1 and the project-manager in position 5.
+
+So the final arrangement is:
+
+- Position 1: Swimming
+- Position 2: Rowing
+- Position 3: Ice-hockey
+- Position 4: Cricket (Engineer)
+- Position 5: Project-Manager
+
+And the corresponding jobs:
+
+- Position 1: Writer (since the nurse is in position 2 and the project-manager is in position 5, the remaining job is writer)
+- Position 2: Nurse
+- Position 3: ?
+- Position 4: Engineer
+- Position 5: Project-Manager
+
+Since the remaining job is nurse, and the only job left is the writer, the final solution is:
+
+|         |    1     |        2        |     3      |    4     |   5    |
+| Job     | Writer   | Nurse           |            | Engineer | Project-Manager |
+| Sport   | Swimming | Rowing          | Ice-hockey | Cricket  | Skiing    |
+
+#############
+|         |    1     |        2        |     3      |    4     |   5    |
+| Job     | Writer   | Nurse           |            | Engineer | Project-Manager |
+| Sport   | Swimming | Rowing          | Ice-hockey | Cricket  | Skiing    |"	{'job': ['writer', 'nurse', '', 'engineer', 'project-manager']}	False	0	False

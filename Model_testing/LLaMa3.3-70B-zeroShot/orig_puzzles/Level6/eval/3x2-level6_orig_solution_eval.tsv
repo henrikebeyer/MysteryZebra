@@ -1,0 +1,480 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv6-3x2-1	"To solve this puzzle, let's break down the information given and apply it step by step to the table.
+
+
+Given:
+- Jobs: project-manager, teacher
+- Movie-Genres: crime, musical
+- Pets: bird, ferret
+
+
+From clue 1: ""the project-manager is not the person watching musical movies""
+This means the project-manager must watch crime movies since there are only two genres and the project-manager can't watch musicals.
+
+
+From clue 2: ""the person watching musical movies is on the right of the owner of the ferret""
+This implies that the ferret's owner cannot be watching musical movies (since the musical fan is to their right), so the ferret's owner must watch crime movies. Also, since there are only two people and the musical fan is to the right of the ferret owner, this means the ferret owner is on the left.
+
+
+Given these clues:
+- The project-manager watches crime movies (from clue 1).
+- The ferret owner also watches crime movies (inferred from clue 2 because the musical watcher is to their right).
+
+
+So, we have a conflict if we try to place the project-manager as watching crime and owning a pet without considering the position. However, clue 2 gives us the positional information relative to the movie preference and pet ownership.
+
+
+Let's place the ferret owner on the left since the musical fan must be to their right (clue 2). If the ferret owner watches crime movies, then they cannot be the project-manager based on our initial interpretation of clue 1. However, this was an incorrect assumption in reasoning; what it actually means is that the person who watches musicals is on the right, and since there are only two options for jobs, genres, and pets, we should directly apply the clues to possible arrangements.
+
+
+Correcting the approach:
+- The project-manager cannot watch musicals (clue 1), so they must watch crime.
+- The ferret owner's movie preference isn't directly stated, but from clue 2, we know the person who watches musicals is on their right. This means the ferret owner could potentially be the project-manager if we arrange it correctly.
+
+
+Let's correct our understanding and apply it properly:
+
+
+1. Project-manager cannot watch musicals.
+2. The person watching musicals is to the right of the ferret owner.
+
+
+So, a possible arrangement considering all clues:
+
+
+|               |        1        |    2    |
+| Job           | project-manager| teacher |
+| Movie-Genre   | crime          | musical|
+| Pet           | ferret         | bird   |
+
+
+This fits:
+- The project-manager does not watch musicals.
+- The person watching musicals (the teacher) is to the right of the ferret owner (the project-manager).
+
+
+Therefore, the final solution table is:
+
+
+#############
+|               |        1        |    2    |
+| Job           | project-manager| teacher |
+| Movie-Genre   | crime          | musical|
+| Pet           | ferret         | bird   |
+#############"	{'job': ['project-manager', 'teacher'], 'movie-genre': ['crime', 'musical'], 'pet': ['ferret', 'bird']}	True	6	True
+Lv6-3x2-2	"To solve this puzzle, let's analyze the given clues step by step:
+
+
+1. The person whose hobby is baking is not the person eating pumpkin.
+2. The person whose hobby is baking is somewhere to the left of the person watching disaster movies.
+
+
+Given information:
+- Foods: pepper, pumpkin
+- Hobbies: baking, card-games
+- Movie Genres: disaster, musical
+
+
+From clue 2, since there are only two columns (1 and 2), the person who enjoys baking must be in column 1 because they have to be to the left of the person watching disaster movies. This implies that the person watching disaster movies must be in column 2.
+
+
+Now, let's fill in what we know:
+
+
+|               |    1    |     2      |
+| Food          |         |            |
+| Hobby         | Baking  |            |
+| Movie-Genre   |         | Disaster  |
+
+
+From clue 1, the person whose hobby is baking (in column 1) cannot be eating pumpkin. Therefore, they must be eating pepper.
+
+
+|               |    1    |     2      |
+| Food          | Pepper |            |
+| Hobby         | Baking |            |
+| Movie-Genre   |         | Disaster  |
+
+
+Now, we know the person in column 2 watches disaster movies and cannot have baking as their hobby (since that's already assigned to column 1), so their hobby must be card-games.
+
+
+Also, since the person in column 1 eats pepper, the person in column 2 must eat pumpkin (as those are the only two food options).
+
+
+Lastly, we need to assign a movie genre to the person in column 1. Since disaster movies are already assigned to column 2, the person in column 1 must watch musicals.
+
+
+Here's the completed table:
+
+
+#############
+|               |    1    |     2      |
+| Food          | Pepper | Pumpkin   |
+| Hobby         | Baking | Card-games|
+| Movie-Genre   | Musical| Disaster  |
+#############"	{'food': ['pepper', 'pumpkin'], 'hobby': ['baking', 'card-games'], 'movie-genre': ['musical', 'disaster']}	True	6	True
+Lv6-3x2-3	"To solve this puzzle, let's analyze the given clues step by step:
+
+
+1. The person driving the van is not the person drinking water.
+2. The social-worker is somewhere to the left of the person drinking cola.
+
+
+Given information:
+- Beverages: cola, water
+- Jobs: journalist, social-worker
+- Transport: motorbike, van
+
+
+From clue 2, we know the social-worker must be to the left of the person drinking cola. This means if the social-worker drinks cola, they could only be in position 1 (since there's no one to their left), but this contradicts the requirement that they are to the left of someone drinking cola. Thus, the social-worker cannot drink cola; they must drink water.
+
+
+Now, let's assign based on clue 2 and our deduction:
+- Social-worker drinks water (since they can't drink cola and be to its left).
+- The person who drinks cola cannot be in position 1 because then there would be no one to their left, contradicting clue 2 indirectly by not allowing for the social-worker's placement relative to cola.
+
+
+Given this, we have two possible setups before considering the transport:
+
+
+|             |       1       |     2      |
+| Beverage    | water        | cola       |
+| Job         | social-worker| journalist |
+| Transport   |              |            |
+
+
+Now, applying clue 1:
+- The person driving the van is not the person drinking water.
+
+
+This means the van cannot be in position 1 (because that's where water is), so it must be in position 2. Therefore, the motorbike must be in position 1.
+
+
+Final setup:
+
+
+|             |       1       |     2      |
+| Beverage    | water        | cola       |
+| Job         | social-worker| journalist |
+| Transport   | motorbike    | van        |
+
+
+Thus, the solution table is:
+
+
+#############
+|             |       1       |     2      |
+| Beverage    | water        | cola       |
+| Job         | social-worker| journalist |
+| Transport   | motorbike    | van        |
+#############"	{'beverage': ['water', 'cola'], 'job': ['social-worker', 'journalist'], 'transport': ['motorbike', 'van']}	True	6	True
+Lv6-3x2-4	"To solve this puzzle, let's break down the information given:
+
+1. The person whose hobby is gardening does not own the hamster.
+2. The owner of the hamster is to the right of the scientist.
+
+Given the hobbies are board-games and gardening, jobs are dressmaker and scientist, and pets are hamster and mouse, we can start filling in the table based on the clues:
+
+- From clue 1, we know the gardener does not own a hamster. This means the gardener must own a mouse.
+- From clue 2, since the owner of the hamster is to the right of the scientist, this implies the scientist cannot be on the right side (column 2) because there would be no one to their right.
+
+Let's fill in the table based on these deductions:
+
+Given that the scientist must be on the left (to allow someone to be to their right), we start with the job placement:
+
+|         |     1     |      2      |
+| Hobby   |           |             |
+| Job     | Scientist | Dressmaker |
+| Pet     |           |             |
+
+Now, since the owner of the hamster must be to the right of the scientist, and the scientist is in column 1, the hamster's owner must be in column 2. Thus:
+
+|         |     1     |      2      |
+| Hobby   |           |             |
+| Job     | Scientist | Dressmaker |
+| Pet     | Mouse     | Hamster    |
+
+Given that the gardener does not own a hamster (from clue 1), and assuming gardening is one of the hobbies, if the scientist were also the gardener, this would leave board-games for the dressmaker. But we need to ensure the gardener (who owns a mouse) is placed correctly based on the job and pet distribution:
+
+|         |     1     |      2      |
+| Hobby   | Gardening| Board-games|
+| Job     | Scientist | Dressmaker |
+| Pet     | Mouse     | Hamster    |
+
+This setup respects both clues: the gardener (whose hobby is gardening) does not own a hamster, and the owner of the hamster (the dressmaker in this case) is to the right of the scientist.
+
+Therefore, the final solution table, surrounded by '#############', is:
+
+
+#############
+|         |     1     |      2      |
+| Hobby   | Gardening| Board-games|
+| Job     | Scientist | Dressmaker |
+| Pet     | Mouse     | Hamster    |
+#############"	{'hobby': ['gardening', 'board-games'], 'job': ['scientist', 'dressmaker'], 'pet': ['mouse', 'hamster']}	True	6	True
+Lv6-3x2-5	"Let's analyze the given information and clues:
+
+
+## Step 1: Analyze the first clue
+The person watching horror movies is somewhere to the left of the person who's sport is rowing. This means that if we consider the two columns (1 and 2) from left to right, the person who watches horror movies must be in column 1 because there's no one to their left in column 2.
+
+
+## Step 2: Apply the second clue
+The person eating pomegranate is not the person who's sport is rowing. This clue does not directly tell us which food or sport goes with which movie genre but indicates that the combination of pomegranate and rowing cannot occur together for any single person.
+
+
+## Step 3: Combine clues to fill in the table
+Given the clues, we start by placing horror movies in column 1 since it must be to the left of the person whose sport is rowing. The only other movie genre is superhero, which then goes into column 2.
+
+For sports, since rowing must be to the right of horror (which we've placed in column 1), rowing goes into column 2. This leaves basketball for column 1.
+
+Lastly, considering foods and applying the second clue: since pomegranate cannot go with rowing, and if we assume pumpkin could potentially go with any sport or movie genre without direct restriction from the clues provided, we can place pomegranate in column 1 (with horror and basketball) because it's not paired with rowing. This leaves pumpkin for column 2.
+
+
+The final answer is: 
+#############
+|               |      1      |     2     |
+| Food          | Pomegranate | Pumpkin  |
+| Movie-Genre   | Horror      | Superhero|
+| Sport         | Basketball  | Rowing   |
+#############"	{'food': ['pomegranate', 'pumpkin'], 'movie-genre': ['horror', 'superhero'], 'sport': ['basketball', 'rowing']}	True	6	True
+Lv6-3x2-6	"To solve this puzzle, we need to carefully apply the given conditions.
+
+
+From condition 1, we know ""the brazilian is on the right of the person driving the ship."" This implies that the person driving the ship cannot be Brazilian and must be on the left (position 1), while the Brazilian is on the right (position 2).
+
+
+Condition 2 states ""the fan funk is not the person driving the trike."" This means the person who likes funk music does not drive a trike, but it does not specify which transport method they use.
+
+
+Given these conditions and the options:
+
+
+- Music Genres: Funk, Indie
+- Nationalities: Brazilian, Nigerian
+- Transports: Ship, Trike
+
+
+We start by placing the ship on the left since the Brazilian must be on the right of the person driving the ship (condition 1). This gives us a starting point:
+
+
+|               |     1      |     2      |
+| Music-Genre   |          |           |
+| Nationality   | Nigerian | Brazilian |
+| Transport     | Ship     |           |
+
+
+Now, we need to fill in the music genres and the transport for the second person. Since the Brazilian is on the right of the ship driver (a Nigerian), and we don't know what music the Nigerian likes yet, let's consider condition 2: ""the fan funk is not the person driving the trike.""
+
+
+If the Nigerian drives a ship, they could like either funk or indie. However, since the funk fan cannot drive a trike (condition 2), if the Nigerian liked funk, it would mean the Brazilian must drive a trike and like indie to fulfill all conditions (since one music genre per person and two different genres are required).
+
+
+So, let's assign the music genres based on condition 2:
+
+
+- If the Nigerian likes funk (and thus cannot drive a trike but drives a ship), then:
+  - The Brazilian must like indie.
+  
+- Given this setup, the transport for the Brazilian must be a trike to fulfill all given conditions.
+
+
+This gives us the completed table:
+
+
+#############
+|               |     1      |     2      |
+| Music-Genre   | Funk    | Indie    |
+| Nationality   | Nigerian | Brazilian |
+| Transport     | Ship     | Trike     |
+#############
+
+
+Therefore, the solution to the puzzle is as shown above."	{'music-genre': ['funk', 'indie'], 'nationality': ['nigerian', 'brazilian'], 'transport': ['ship', 'trike']}	True	6	True
+Lv6-3x2-7	"To solve this puzzle, we need to analyze the given clues and fill in the table accordingly.
+
+
+From clue 1: ""the person driving the scooter is not the person eating broccoli"", we know that the person eating broccoli must be using the jet-ski since there are only two means of transport.
+
+
+From clue 2: ""the person driving the scooter is somewhere to the left of the australian"", this implies that the Australian cannot be in column 1 because then there would be no one to the left of them, given the table structure. Therefore, the Australian must be in column 2.
+
+
+Given these deductions:
+
+
+- Since the Australian is in column 2 and the scooter driver is to the left of the Australian (thus in column 1), we can start filling in the table.
+
+
+|               |    1    |     2      |
+| Food          |         |            |
+| Nationality   |         |            |
+| Transport     | Scooter | Jet-ski    |
+
+
+- The person driving the scooter cannot eat broccoli (from clue 1), so they must eat lemon. Therefore, broccoli must be eaten by the jet-ski user.
+
+
+|               |    1    |     2      |
+| Food          | Lemon   | Broccoli  |
+| Nationality   |         |            |
+| Transport     | Scooter | Jet-ski    |
+
+
+- The Australian is in column 2, as deduced earlier. This leaves the Polish nationality for column 1.
+
+
+|               |    1    |     2      |
+| Food          | Lemon   | Broccoli  |
+| Nationality   | Polish  | Australian|
+| Transport     | Scooter | Jet-ski    |
+
+
+Therefore, the final solution table is:
+
+
+#############
+|               |    1    |     2      |
+| Food          | Lemon   | Broccoli  |
+| Nationality   | Polish  | Australian|
+| Transport     | Scooter | Jet-ski    |
+#############"	{'food': ['lemon', 'broccoli'], 'nationality': ['polish', 'australian'], 'transport': ['scooter', 'jet-ski']}	True	6	True
+Lv6-3x2-8	"To solve this puzzle, we'll follow the clues given:
+
+
+1. The person drinking iced-tea is not a fan of rock.
+2. The fan of rock is somewhere to the left of the person whose sport is lacrosse.
+
+
+Given:
+- Beverages: cola, iced-tea
+- Music Genres: electronic, rock
+- Sports: baseball, lacrosse
+
+
+From clue 1, since the iced-tea drinker is not a fan of rock, they must be a fan of electronic music. 
+
+
+From clue 2, the rock fan must be to the left of the lacrosse player. This implies that if we number the positions from left to right as 1 and 2, the rock fan cannot be in position 2 because there would be no one to their right for the lacrosse player to be (since we're considering ""left"" in terms of position, not direction). Therefore, the rock fan must be in position 1.
+
+
+Since the rock fan is in position 1 and the iced-tea drinker is an electronic music fan, this means the iced-tea drinker cannot be in position 1 (because they're not a rock fan), so they must be in position 2. 
+
+
+Now we have:
+- Position 1: Rock fan
+- Position 2: Iced-tea, Electronic fan
+
+
+For sports and beverages:
+- The lacrosse player must be in position 2 because the rock fan is to their left (clue 2), which means they are also the iced-tea drinker.
+- This leaves baseball for position 1, which also means cola must be paired with rock music since iced-tea is taken by the electronic music and lacrosse combination.
+
+
+Therefore, the solution table looks like this:
+
+
+#############
+|               |    1     |     2      |
+| Beverage      |  Cola   | Iced-Tea  |
+| Music-Genre   |  Rock   | Electronic|
+| Sport         | Baseball| Lacrosse  |
+#############"	{'beverage': ['cola', 'iced-tea'], 'music-genre': ['rock', 'electronic'], 'sport': ['baseball', 'lacrosse']}	True	6	True
+Lv6-3x2-9	"To solve this puzzle, let's break down the information given:
+
+1. Two different favourite beverages: Fanta and Water.
+2. Two different types of food: Avocado and Zucchini.
+3. Two different means of transport: Motorbike and Roller.
+4. The person eating zucchini is on the right of the person drinking water.
+5. The person eating zucchini is not the person driving the roller.
+
+Given that there are only two columns (1 and 2) for each category, we can deduce as follows:
+
+- From clue 4, since the person eating zucchini must be to the right of the person drinking water, this means Water must be in column 1, and Zucchini (the food associated with it) must be in column 2.
+
+So, initially:
+```
+|             |    1    |     2     |
+| Beverage    | Water  |           |
+| Food        |         | Zucchini  |
+| Transport   |         |           |
+```
+
+- Since the person eating zucchini is not driving the roller (clue 5), and given that there are only two means of transport, this means the roller must be associated with column 1 (because if it were in column 2, it would contradict clue 5).
+
+Now:
+```
+|             |    1    |     2     |
+| Beverage    | Water  |           |
+| Food        |         | Zucchini  |
+| Transport   | Roller | Motorbike |
+```
+
+- With water placed and zucchini placed, the only beverage left for column 2 is Fanta.
+
+And:
+```
+|             |    1    |     2     |
+| Beverage    | Water  | Fanta    |
+| Food        |         | Zucchini  |
+| Transport   | Roller | Motorbike |
+```
+
+- The last piece of information to place is Avocado. Since zucchini is already placed in column 2, avocado must go in column 1.
+
+Final solution:
+```
+|             |    1    |     2     |
+| Beverage    | Water  | Fanta    |
+| Food        | Avocado| Zucchini  |
+| Transport   | Roller | Motorbike |
+```
+
+So, the final table wrapped with '###########' is:
+
+#############
+|             |    1    |     2     |
+| Beverage    | Water  | Fanta    |
+| Food        | Avocado| Zucchini  |
+| Transport   | Roller | Motorbike |
+#############"	{'beverage': ['water', 'fanta'], 'food': ['avocado', 'zucchini'], 'transport': ['roller', 'motorbike']}	True	6	True
+Lv6-3x2-10	"To solve this puzzle, let's analyze the given clues:
+
+1. The owner of the rabbit is not a fan of R&B.
+2. The person whose sport is cricket is somewhere to the right of the owner of the rabbit.
+
+Given information:
+- Music genres: R&B, Rock
+- Pets: Rabbit, Snake
+- Sports: Climbing, Cricket
+
+Let's start by placing the rabbit's owner based on clue 1 and then use clue 2 to figure out the positions.
+
+From clue 1, we know the rabbit's owner cannot like R&B. This doesn't directly tell us where the rabbit's owner is but gives us a starting point for considering music preferences.
+
+Clue 2 tells us that the cricket player is to the right of the rabbit owner. Since there are only two positions (1 and 2), this means the rabbit owner must be in position 1, and the cricket player must be in position 2.
+
+Now, let's fill in the information:
+
+- The rabbit owner is in position 1.
+- The cricket player is in position 2.
+
+Given that the rabbit owner cannot like R&B (from clue 1), and assuming each person has a unique preference for music, pet, and sport, we can start filling in the blanks with the given options.
+
+If the rabbit owner (in position 1) doesn't like R&B, they must like Rock. The only other music genre left is R&B, which must belong to the person in position 2.
+
+For pets, since one person has a rabbit (position 1), the other must have a snake (position 2).
+
+For sports, we know the person in position 2 plays cricket. Therefore, the person in position 1 must enjoy climbing.
+
+So, the filled table looks like this:
+
+#############
+|               |    1     |    2    |
+| Music-Genre   |  Rock    |  R&B    |
+| Pet           |  Rabbit  |  Snake  |
+| Sport         | Climbing | Cricket |
+#############
+
+This solution respects all given conditions: the rabbit's owner is not an R&B fan, and the cricket player is to the right of the rabbit's owner."	{'music-genre': ['rock', 'r&b'], 'pet': ['rabbit', 'snake'], 'sport': ['climbing', 'cricket']}	True	6	True

@@ -1,0 +1,216 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Zebra_orig_1	"```markdown
+|  | 1     | 2     | 3     | 4     | 5     |
+|-------|-------|-------|-------|-------|-------|
+| Color |      | blue  |       |       | japanese |
+| Nationality | norwegian |       |       |       | japanese |
+| Beverage | milk  |       |       |       |       |
+| Cigar |      | chesterfield | olg-gold |       | parliament |
+| Pet |      | fox   |       | horse |       |
+```
+
+### Explanation:
+
+1. House 1:
+   - The Norwegian lives in the first house (Fact 10).
+   - The Norwegian lives next to the blue house (Fact 15), so the second house is blue.
+   - The Norwegian cannot own the dog or have the fox, as those pets are owned by others (Facts 3 and 11).
+
+2. House 2:
+   - The second house is blue (from above).
+   - Coffee is drunk in the green house (Fact 4), and the green house is immediately to the right of the ivory house (Fact 6). Therefore, the third house must be green and the fourth house must be ivory.
+   - The Ukrainian drinks tea (Fact 5), so the Ukrainian lives in the green house.
+   - The Spaniard owns the dog (Fact 3), so the Spaniard lives in the ivory house.
+
+3. House 3:
+   - The third house is green (from above).
+   - Milk is drunk in the middle house (Fact 9), so the middle house (third house) drinks milk.
+   - The Lucky Strike smoker drinks orange juice (Fact 13), so the Lucky Strike smoker lives in the third house.
+   - The Old Gold smoker owns snails (Fact 7), so the Old Gold smoker lives in the third house.
+   - The Japanese smokes Parliaments (Fact 14), so the Japanese lives in the fifth house.
+
+4. House 4:
+   - The fourth house is ivory (from above).
+   - The man who smokes Chesterfields lives in the house next to the man with the fox (Fact 11). Since the Spaniard owns the fox, the Chesterfield smoker must live in the fourth house.
+   - Kools are smoked in a house next to the house where the horse is kept (Fact 12). Since the fourth house is ivory, the horse must be in the fifth house.
+   - The Kools smoker lives in the yellow house (Fact 8), so the fifth house is yellow.
+
+5. House 5:
+   - The fifth house is yellow (from above).
+   - The Japanese smokes Parliaments (Fact 14) and lives in the fifth house.
+   - The Norwegian lives next to the blue house (Fact 15), so the Norwegian lives in the first house.
+
+This arrangement satisfies all the given facts."	{'color': ['', 'blue', '', '', 'japanese'], 'nationality': ['norwegian', '', '', '', 'japanese'], 'beverage': ['milk', '', '', '', ''], 'cigar': ['', 'chesterfield', 'olg-gold', '', 'parliament'], 'pet': ['', 'fox', '', 'horse', '']}	True	4	False
+Zebra_orig_2	"Sure, let's solve this step-by-step using the given facts and constraints.
+
+First, let's organize the information we have:
+
+|  | 1 | 2 | 3 | 4 | 5 |
+|-------|---|---|---|---|---|
+| Nationality | Norwegian | Spanish | Ukrainian | English | Japanese |
+| Color | Yellow | ? | Ivory | Red | Blue |
+| Beverage | ? | ? | ? | ? | ? |
+| Cigar | Kools | Chesterfield | Old Gold | Lucky Strike | Parliament |
+| Pet | Horse | Dog | Fox | ? | Snails |
+
+Now, let's use the clues to fill in the blanks:
+
+1. The Norwegian lives in the first house (House 1).
+2. The Norwegian lives next to the blue house (House 5). Therefore, the blue house must be House 2 or House 4. Since the Norwegian is in House 1, the blue house must be House 4.
+3. The green house is immediately to the right of the ivory house (House 2 must be green and House 3 must be ivory).
+
+So, the colors are:
+- House 1: Yellow
+- House 2: Green
+- House 3: Ivory
+- House 4: Red
+- House 5: Blue
+
+4. The Englishman lives in the red house (House 4).
+5. The Spaniard owns the dog (House 2).
+6. Coffee is drunk in the green house (House 2).
+7. The Ukrainian drinks tea (House 3).
+8. The Old Gold smoker owns snails (House 3).
+9. Kools are smoked in the yellow house (House 1).
+10. Milk is drunk in the middle house (House 3).
+
+So, the beverages are:
+- House 1: Water (since it's not milk, coffee, or orange juice)
+- House 2: Coffee
+- House 3: Tea
+- House 4: Orange juice (Lucky Strike smoker drinks orange juice)
+- House 5: Milk
+
+11. The man who smokes Chesterfields lives in the house next to the man with the fox (House 2 and House 3 have Chesterfield and fox).
+12. Kools are smoked in a house next to the house where the horse is kept (House 1 and House 2 have Kools and horse).
+
+So, the pets are:
+- House 1: Horse
+- House 2: Dog
+- House 3: Fox
+- House 4: Zebra
+- House 5: Snails
+
+13. The Lucky Strike smoker drinks orange juice (House 4).
+14. The Japanese smokes Parliaments (House 5).
+
+So, the cigars are:
+- House 1: Kools
+- House 2: Chesterfield
+- House 3: Old Gold
+- House 4: Lucky Strike
+- House 5: Parliament
+
+### Final Solution Table
+
+```
+|  | 1        | 2         | 3         | 4        | 5         |
+|-------|----------|-----------|-----------|----------|-----------|
+| Nationality | Norwegian | Spanish   | Ukrainian | English  | Japanese  |
+| Color | Yellow   | Green     | Ivory     | Red      | Blue      |
+| Beverage | Water    | Coffee    | Tea       | Orange Juice | Milk     |
+| Cigar | Kools    | Chesterfield | Old Gold | Lucky Strike | Parliament |
+| Pet | Horse    | Dog       | Fox       | Zebra    | Snails    |
+```
+
+This completes the puzzle!"	{'nationality': ['norwegian', 'spanish', 'ukrainian', 'english', 'japanese'], 'color': ['yellow', 'green', 'ivory', 'red', 'blue'], 'beverage': ['water', 'coffee', 'tea', 'orange-juice', 'milk'], 'cigar': ['kools', 'chesterfield', 'old-gold', 'lucky-strike', 'parliament'], 'pet': ['horse', 'dog', 'fox', 'zebra', 'snails']}	True	9	False
+Zebra_orig_3	"Let's solve the puzzle step by step using the given clues and information.
+
+First, we'll set up the initial table based on the given facts:
+
+```
+|        | 1     | 2     | 3     | 4     | 5     |
+|--------|-------|-------|-------|-------|-------|
+| Nationality | Norwegian |       |       |       | Japanese |
+| Color   | Yellow | Blue  | Ivory | Red   |       |
+| Beverage|       |       |       | Coffee|       |
+| Cigar   | Kools  | Chesterfield | Olg-Gold |       | Parliament |
+| Pet     | Fox    | Dog   |       | Horse |       |
+```
+
+Now, let's use the clues to fill in the rest of the table:
+
+1. Clue 10: The Norwegian lives in the first house.
+   - This confirms that the Norwegian is in house 1.
+   
+2. Clue 6: The green house is immediately to the right of the ivory house.
+   - Since the Norwegian is in the first house, the second house must be either green or ivory.
+   - If the second house were green, then the third house would be ivory, but this would contradict clue 15.
+   - Therefore, the second house must be ivory, and the third house must be green.
+   - The Norwegian lives in the first house, so the color of the first house is yellow (from Clue 10).
+
+3. Clue 15: The Norwegian lives next to the blue house.
+   - Since the Norwegian is in house 1, the blue house must be in house 2 or 5.
+   - But since house 2 is ivory, the blue house must be in house 5.
+   - So, the colors are:
+     - House 1: Yellow
+     - House 2: Ivory
+     - House 3: Green
+     - House 4: ?
+     - House 5: Blue
+
+4. Clue 2: The Englishman lives in the red house.
+   - The red house cannot be house 1, 2, or 5, so it must be house 4.
+   - The Englishman lives in house 4, so the nationality of house 4 is English.
+
+5. Clue 3: The Spaniard owns the dog.
+   - The dog must be in house 2 (since the Spaniard can't own the fox which is in house 1).
+   - The nationality of house 2 is Spanish.
+
+6. Clue 4: Coffee is drunk in the green house.
+   - The green house is house 3, so coffee is in house 3.
+
+7. Clue 5: The Ukrainian drinks tea.
+   - The Ukrainian must be in house 3 (since house 3 is green and coffee is there).
+   - The nationality of house 3 is Ukrainian.
+
+8. Clue 7: The Old Gold smoker owns snails.
+   - The Old Gold smoker must be in house 4 (since house 4 is red and the Englishman lives there).
+   - The nationality of house 4 is English, and the pet of house 4 is snails.
+
+9. Clue 8: Kools are smoked in the yellow house.
+   - This is already confirmed by Clue 10.
+
+10. Clue 9: Milk is drunk in the middle house.
+    - The middle house is house 3, and it already has coffee, so milk must be in house 4.
+    - The nationality of house 4 is English, and the beverage of house 4 is milk.
+
+11. Clue 11: The man who smokes Chesterfields lives in the house next to the man with the fox.
+    - The fox is in house 1, so the Chesterfields smoker must be in house 2.
+    - The nationality of house 2 is Spanish, and the cigar of house 2 is Chesterfields.
+
+12. Clue 12: Kools are smoked in a house next to the house where the horse is kept.
+    - The horse is in house 4, so Kools must be in house 3.
+    - The nationality of house 3 is Ukrainian, and the cigar of house 3 is Kools.
+
+13. Clue 13: The Lucky Strike smoker drinks orange juice.
+    - The Lucky Strike smoker must be in house 5 (since house 5 is blue and the Norwegian lives there).
+    - The nationality of house 5 is Norwegian, and the beverage of house 5 is orange juice.
+
+14. Clue 14: The Japanese smokes Parliaments.
+    - The Japanese must be in house 5 (since house 5 is blue and the Norwegian lives there).
+    - The nationality of house 5 is Japanese, and the cigar of house 5 is Parliament.
+
+Now, we can fill in the final table:
+
+```
+|        | 1     | 2     | 3     | 4     | 5     |
+|--------|-------|-------|-------|-------|-------|
+| Nationality | Norwegian | Spanish | Ukrainian | English | Japanese |
+| Color   | Yellow | Ivory  | Green  | Red   | Blue  |
+| Beverage| Water  |        | Milk   | Coffee| Orange Juice |
+| Cigar   | Kools  | Chesterfield | Kools  | Lucky Strike | Parliament |
+| Pet     | Fox    | Dog    | Horse  | Snails | Zebra  |
+```
+
+The final solution is:
+
+```
+|        | 1     | 2     | 3     | 4     | 5     |
+|--------|-------|-------|-------|-------|-------|
+| Nationality | Norwegian | Spanish | Ukrainian | English | Japanese |
+| Color   | Yellow | Ivory  | Green  | Red   | Blue  |
+| Beverage| Water  |        | Milk   | Coffee| Orange Juice |
+| Cigar   | Kools  | Chesterfield | Kools  | Lucky Strike | Parliament |
+| Pet     | Fox    | Dog    | Horse  | Snails | Zebra  |
+```"	{'nationality': ['norwegian', 'spanish', 'ukrainian', 'english', 'japanese'], 'color': ['yellow', 'ivory', 'green', 'red', 'blue'], 'beverage': ['water', '', 'milk', 'coffee', 'orange-juice'], 'cigar': ['kools', 'chesterfield', 'kools', 'lucky-strike', 'parliament'], 'pet': ['fox', 'dog', 'horse', 'snails', 'zebra']}	True	11	False

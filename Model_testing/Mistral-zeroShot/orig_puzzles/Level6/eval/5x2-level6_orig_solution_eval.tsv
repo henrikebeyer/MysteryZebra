@@ -1,0 +1,585 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv6-5x2-1	"Let's solve this step by step:
+
+1. We know that there are 2 different beverages, 2 different hobbies, 2 different jobs, 2 different nationalities, and 2 different means of transport. So, we can fill in the first row and column with 'Beverage', 'Hobby', 'Job', 'Nationality', and 'Transport' respectively.
+
+|               | Beverage | Hobby   | Job     | Nationality | Transport |
+|---------------|---------|--------|---------|------------|-----------|
+
+2. We know that there are 2 different beverages, so we can fill in the first cell of the 'Beverage' column with one of the beverages (let's say 'lemonade'). Since there are 2 different beverages, the second cell must contain the other beverage (soy-milk).
+
+|               | lemonade | soy-milk |     |           |           |
+|---------------|---------|---------|-----|------------|-----------|
+
+3. We know that there are 2 different hobbies, so we can fill in the first cell of the 'Hobby' column with one of the hobbies (let's say 'puzzles'). Since there are 2 different hobbies, the second cell must contain the other hobby (skydiving).
+
+|               | lemonade | soy-milk | puzzles |           |           |
+|---------------|---------|---------|---------|------------|-----------|
+
+4. We know that there are 2 different jobs, so we can fill in the first cell of the 'Job' column with one of the jobs (let's say 'nurse'). Since there are 2 different jobs, the second cell must contain the other job (photographer).
+
+|               | lemonade | soy-milk | puzzles | nurse     |           |
+|---------------|---------|---------|---------|------------|-----------|
+
+5. We know that the nurse is the person driving the bike. Since there are 2 different means of transport, the first cell of the 'Transport' column must contain one of the means of transport (let's say 'bike'). The second cell can then contain the other means of transport (van).
+
+|               | lemonade | soy-milk | puzzles | nurse     | bike      |
+|---------------|---------|---------|---------|------------|-----------|
+
+6. We know that the nurse is on the left or right of the person who's hobby is skydiving. Since the nurse is in the first row, and skydiving is in the third row, the nurse cannot be in the first column (as that would mean she is on the left of the person with the hobby of puzzles). Therefore, the nurse must be in the second column.
+
+|               | lemonade | soy-milk | puzzles | nurse (bike) |           |
+|---------------|---------|---------|---------|---------------|-----------|
+
+7. We know that the person drinking soy-milk is not the chinese. Since there are 2 different nationalities, the first cell of the 'Nationality' column must contain one of the nationalities (let's say 'chinese'). The second cell can then contain the other nationality (pakistani).
+
+|               | lemonade | soy-milk | puzzles | nurse (bike) | chinese   |
+|---------------|---------|---------|---------|---------------|-----------|
+
+8. We know that the photographer is on the right of the chinese. Since the chinese is in the fifth column, the photographer must be in the sixth column.
+
+|               | lemonade | soy-milk | puzzles | nurse (bike) | chinese   | photographer |
+|---------------|---------|---------|---------|---------------|-----------|-------------|
+
+So, the final solution table is:
+
+#############
+|               | lemonade | soy-milk | puzzles | nurse (bike) | chinese   | photographer |
+|---------------|---------|---------|---------|---------------|-----------|-------------|
+#############"	{}	False	0	False
+Lv6-5x2-2	"Let's solve this step by step:
+
+1. Since there are only two people, we can label them A and B. Let's assume A is the person on the left and B is on the right.
+
+2. From rule 1, the soul music fan cannot be on the left (A) because the person driving the bike is to the left of the soul music fan. So, the soul music fan is B.
+
+3. From rule 2, the owner of the fish cannot be the person who does biathlon (B), so the biathlon participant is A.
+
+4. Since there are only two music genres (jazz and soul), the other person (A) must like jazz.
+
+5. Now we know A likes jazz, does biathlon, and is not the owner of the fish. So, A's pet must be the mouse.
+
+6. Since there are only two sports (biathlon and ice-hockey), the other person (B) must do ice-hockey.
+
+7. Since there are only two hobbies (camping and skydiving), the other person (B) must have skydiving as a hobby.
+
+8. Since there are only two means of transport (bike and motor), the person driving the bike (A) must use the motor.
+
+Here is the final solution table:
+
+  |               |      A      |     B     |
+| Hobby         |   skydiving  |   camping  |
+| Music-Genre   |      jazz    |     soul   |
+| Pet           |     mouse    |     fish   |
+| Sport         |   biathlon   |  ice-hockey|
+| Transport     |   motor      |     bike   |
+
+#############
+|               |      A      |     B     |
+| Hobby         |   skydiving  |   camping  |
+| Music-Genre   |      jazz    |     soul   |
+| Pet           |     mouse    |     fish   |
+| Sport         |   biathlon   |  ice-hockey|
+| Transport     |   motor      |     bike   |
+#############"	{'hobby': ['skydiving', 'camping'], 'music-genre': ['jazz', 'soul'], 'pet': ['mouse', 'fish'], 'sport': ['biathlon', 'ice-hockey'], 'transport': ['motor', 'bike']}	True	3	False
+Lv6-5x2-3	"Let's solve this step by step:
+
+1. Since there are 2 different hobbies (baking, chess), we can place one in row 1 and the other in row 2. Let's place baking in row 1 and chess in row 2.
+
+2. Similarly, since there are 2 different music-genres (dubstep, rock), we can place one in column 1 and the other in column 2. Let's place rock in column 1 and dubstep in column 2.
+
+3. Since there are 2 different nationalities (argentine, nigerian), we can place one in row 1 and the other in row 2. Let's place argentine in row 1 and nigerian in row 2.
+
+4. Since 2 different pets are kept (hedgehog, rat), we can place one in row 1 and the other in row 2. The owner of the rat is the fan of rock (from point 1), so let's place the rat in row 2. Therefore, the hedgehog must be in row 1.
+
+5. The person who's sport is tennis is on the right of the person who's hobby is baking. Since baking is in row 1, tennis must be in column 2.
+
+6. The fan of dubstep is somewhere to the left of the owner of the rat. Since the rat is in row 2, the fan of dubstep must be in row 1.
+
+7. The nigerian is not the person who's sport is rowing. Since we've placed tennis in row 2 (column 2), and we've placed the nigerian in row 2 (column 1), the only sport left for the nigerian is rowing. But rowing is already taken by the argentine (from point 3), so the nigerian cannot be in row 2. Therefore, the nigerian must be in row 1.
+
+8. Now we know that the nigerian is in row 1 (column 1), the fan of dubstep is in row 1 (column 2), and the hedgehog is in row 1. The only hobby left for row 1 is chess. So, the final table is:
+
+   |               |     1     |    2     |
+   | Hobby         | Chess     | Baking   |
+   | Music-Genre   | Dubstep   | Rock    |
+   | Nationality   | Nigerian  | Argentine|
+   | Pet           | Hedgehog  | Rat     |
+   | Sport         | ##########| Tennis  |
+
+   The final solution table is:
+
+   |               |     1     |    2     |
+   | Hobby         | Chess     | Baking   |
+   | Music-Genre   | Dubstep   | Rock    |
+   | Nationality   | Nigerian  | Argentine|
+   | Pet           | Hedgehog  | Rat     |
+   | Sport         | Rowing    | Tennis  |
+
+   (The exact sport for the first person is not specified in the puzzle, so I filled it with Rowing as a placeholder.)"	{}	False	0	False
+Lv6-5x2-4	"Let's break this down step by step:
+
+1. Since there are 2 types of food, 2 hobbies, 2 jobs, 2 movie-genres, and 2 nationalities, we can arrange them in a 5x5 grid with one empty cell. Let's fill the food, hobby, job, movie-genre, and nationality in the first row from left to right.
+
+   |   | Food 1 | Food 2 | Hobby 1 | Hobby 2 | Job 1 | Job 2 | Movie-Genre 1 | Movie-Genre 2 | Nationality 1 | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 |   |   |   |   |   |   |   |   |   |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+2. From rule 1.1, the person eating carrot is somewhere to the left of the person who's hobby is card-games. This means that either Food 1 is carrot and Hobby 1 is card-games, or Food 2 is carrot and Hobby 2 is card-games. Let's assume Food 1 is carrot and Hobby 1 is card-games for now.
+
+   |   | Food 1 (Carrot) | Food 2 | Hobby 1 (Card-games) | Hobby 2 | Job 1 | Job 2 | Movie-Genre 1 | Movie-Genre 2 | Nationality 1 | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot |   | Card-games |   |   |   |   |   |   |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+3. From rule 2, the entrepreneur is on the far right. Since there are only 2 jobs, the entrepreneur must be in the last column, Job 2.
+
+   |   | Food 1 (Carrot) | Food 2 | Hobby 1 (Card-games) | Hobby 2 | Job 1 | Job 2 (Entrepreneur) | Movie-Genre 1 | Movie-Genre 2 | Nationality 1 | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot |   | Card-games |   |   | Entrepreneur |   |   |   |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+4. From rule 3, the argentine is not the firefighter. Since there are only 2 nationalities, the argentine must be in the first column, Nationality 1.
+
+   |   | Food 1 (Carrot) | Food 2 | Hobby 1 (Card-games) | Hobby 2 | Job 1 | Job 2 (Entrepreneur) | Movie-Genre 1 | Movie-Genre 2 | Nationality 1 (Argentine) | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot |   | Card-games |   |   | Entrepreneur |   |   | Argentine |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+5. From rule 4, the person watching animation movies is somewhere to the left of the person who's hobby is card-games. Since we already placed the card-games hobby to the right of the argentine, the animation movie-genre must be in the first column, Movie-Genre 1.
+
+   |   | Food 1 (Carrot) | Food 2 | Hobby 1 (Card-games) | Hobby 2 | Job 1 | Job 2 (Entrepreneur) | Movie-Genre 1 (Animation) | Movie-Genre 2 | Nationality 1 (Argentine) | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot |   | Card-games |   |   | Entrepreneur | Animation |   | Argentine |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+6. Now we have only one empty cell left. Since there are 2 food types left, the remaining food must be grapes. Let's place it in the second row, Food 2.
+
+   |   | Food 1 (Carrot) | Food 2 (Grapes) | Hobby 1 (Card-games) | Hobby 2 | Job 1 | Job 2 (Entrepreneur) | Movie-Genre 1 (Animation) | Movie-Genre 2 | Nationality 1 (Argentine) | Nationality 2 |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot | Grapes | Card-games |   |   | Entrepreneur | Animation |   | Argentine |   |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+7. The remaining hobby, job, movie-genre, and nationality can be filled in any order. Let's fill the remaining hobby as skydiving, the remaining job as firefighter, the remaining movie-genre as satire, and the remaining nationality as indonesian.
+
+   |   | Food 1 (Carrot) | Food 2 (Grapes) | Hobby 1 (Card-games) | Hobby 2 (Skydiving) | Job 1 (Firefighter) | Job 2 (Entrepreneur) | Movie-Genre 1 (Animation) | Movie-Genre 2 (Satire) | Nationality 1 (Argentine) | Nationality 2 (Indonesian) |
+   |---|---|---|---|---|---|---|---|---|---|
+   | 1 | Carrot | Grapes | Card-games | Skydiving | Firefighter | Entrepreneur | Animation | Satire | Argentine | Indonesian |
+   | 2 |   |   |   |   |   |   |   |   |   |   |
+
+8. Since we have filled all the cells, we can now arrange the rows and columns to get the final solution table.
+
+   |               |      1      |      2       |
+   | Food          | Argentine  | Indonesian  |
+   | Hobby         | Firefighter | Skydiving   |
+   | Job           | Entrepreneur| Firefighter |
+   | Movie-Genre   | Animation  | Satire     |
+   | Nationality   | Argentine  | Indonesian  |
+
+   | Food          | Carrot     | Grapes     |
+   | Hobby         | Card-games | Skydiving  |
+   | Job           | Firefighter | Entrepreneur|
+   | Movie-Genre   | Animation  | Satire     |
+   | Nationality   | Argentine  | Indonesian  |
+
+#############
+|               |      1      |      2       |
+| Food          | Argentine  | Indonesian  |
+| Hobby         | Firefighter | Skydiving   |
+| Job           | Entrepreneur| Firefighter |
+| Movie-Genre   | Animation  | Satire     |
+| Nationality   | Argentine  | Indonesian  |
+
+| Food          | Carrot     | Grapes     |
+| Hobby         | Card-games | Skydiving  |
+| Job           | Firefighter | Entrepreneur|
+| Movie-Genre   | Animation  | Satire     |
+| Nationality   | Argentine  | Indonesian  |
+#############"	{'food': ['carrot', 'grapes'], 'hobby': ['card-games', 'skydiving'], 'job': ['firefighter', 'entrepreneur'], 'movie-genre': ['animation', 'satire'], 'nationality': ['argentine', 'indonesian']}	True	6	False
+Lv6-5x2-5	"Let's solve this step by step:
+
+1. We know that there are two different beverages, two different foods, two different hobbies, two different music-genres, and two different means of transport. Let's assign them numbers from 1 to 2 for each category.
+
+2. From rule 1, we know that the beverages are Fanta (1) and Water (2). Let's place them in the first column:
+
+   |               | Fanta (1) | Water (2) |
+   | Beverage      |           |           |
+   | Food          |           |           |
+   | Hobby         |           |           |
+   | Music-Genre   |           |           |
+   | Transport     |           |           |
+
+3. From rule 2, we know that the person who's hobby is woodworking is not the fan of electronic music. Since there are two hobbies (chess and woodworking), the electronic music fan must be the chess player. Let's place chess in the hobby column and electronic in the music-genre column:
+
+   |               | Fanta (1) | Water (2) |
+   | Beverage      |           |           |
+   | Food          |           |           |
+   | Hobby         | Chess (1) | Woodworking (2) |
+   | Music-Genre   | Electronic (1) | Reggae (2) |
+   | Transport     |           |           |
+
+4. From rule 3, we know that the person drinking Fanta is not the one eating plum. Since there are two foods (plum and potato), the person drinking Fanta must be eating potato. Let's place potato in the food column:
+
+   |               | Fanta (1) | Water (2) |
+   | Beverage      | Potato (1) | Water (2) |
+   | Food          | Potato (1) |           |
+   | Hobby         | Chess (1) | Woodworking (2) |
+   | Music-Genre   | Electronic (1) | Reggae (2) |
+   | Transport     |           |           |
+
+5. From rule 4, we know that the person who's hobby is chess is on the left of the person driving the train. Since there are two means of transport (bus and train), the person driving the train must be on the right. Let's place bus in the first row and train in the second row:
+
+   |               | Fanta (1) | Water (2) |
+   | Bus           | Potato (1) |           |
+   | Train         |           |           |
+   | Hobby         | Chess (1) | Woodworking (2) |
+   | Music-Genre   | Electronic (1) | Reggae (2) |
+   | Transport     | Bus (1)    | Train (2)  |
+
+6. Now, from rule 2, we know that the fan of electronic music is on the left or right of the person drinking Fanta. Since the electronic music fan is the chess player, and the chess player is on the left of the train, the train driver cannot be the electronic music fan. Therefore, the bus driver must be the electronic music fan. So, we can place the electronic music fan in the first row and the reggae fan in the second row:
+
+   |               | Fanta (1) | Water (2) |
+   | Bus           | Electronic (1) |           |
+   | Train         |           | Reggae (2) |
+   | Hobby         | Chess (1) | Woodworking (2) |
+   | Music-Genre   | Electronic (1) | Reggae (2) |
+   | Transport     | Bus (1)    | Train (2)  |
+
+7. Finally, we can fill in the remaining food and beverage:
+
+   |               | Fanta (1) | Water (2) |
+   | Bus           | Electronic (1) | Potato (1) |
+   | Train         |           | Water (2) |
+   | Hobby         | Chess (1) | Woodworking (2) |
+   | Music-Genre   | Electronic (1) | Reggae (2) |
+   | Transport     | Bus (1)    | Train (2)  |
+
+So, the final solution table is:
+
+#############
+|               | Fanta (1) | Water (2) |
+| Bus           | Electronic (1) | Potato (1) |
+| Train         |           | Water (2) |
+| Hobby         | Chess (1) | Woodworking (2) |
+| Music-Genre   | Electronic (1) | Reggae (2) |
+| Transport     | Bus (1)    | Train (2)  |
+#############"	{'bus': ['electronic (1)', 'potato (1)'], 'train': ['', 'water (2)'], 'hobby': ['chess (1)', 'woodworking (2)'], 'music-genre': ['electronic (1)', 'reggae (2)'], 'transport': ['bus (1)', 'train (2)']}	False	0	False
+Lv6-5x2-6	"Let's solve this step by step:
+
+1. Since there are two different hobbies (gardening and traveling), we can place one hobby in each row. Let's place gardening in the first row and traveling in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      |           |             |
+   | Food          |           |             |
+   | Hobby         | Gardening | Traveling   |
+   | Movie-Genre   |           |             |
+   | Music-Genre   |           |             |
+
+2. From point 1.3, we know that the person drinking sprite is not the fan of d&b. Since there are two different music genres (d&b and soul), we can place one genre in each row. Let's place d&b in the first row and soul in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   |             |
+   | Food          |           |             |
+   | Hobby         | Gardening | Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+3. From point 1.1, we know that there are two different beverages (almond-milk and sprite). Since we already placed sprite in the first row, almond-milk must be in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   | Almond-milk |
+   | Food          |           |             |
+   | Hobby         | Gardening | Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+4. From point 2.2, we know that the fan of d&b is on the left of the person eating lettuce. Since we already placed the fan of d&b in the first row, the person eating lettuce must be in the second row. So, let's place lettuce in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   | Almond-milk |
+   | Food          | Lettuce  |             |
+   | Hobby         | Gardening | Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+5. From point 1.2, we know that the person drinking sprite is on the left or right of the person who's hobby is gardening. Since gardening is in the first row, the person drinking sprite must be in the first row as well. But we already placed sprite in the first row, so it must be on the left of gardening.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   | Almond-milk |
+   | Food          | Lettuce  |             |
+   | Hobby         | Gardening| Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+6. From point 4, we know that the person watching horror movies is somewhere to the left of the person watching scientific movies. Since horror is in the first row and scientific is in the second row, the person watching horror movies must be in the first row, and the person watching scientific movies must be in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   | Almond-milk |
+   | Food          | Lettuce  |             |
+   | Hobby         | Gardening| Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+Now, the only remaining item is the food for the second row. Since there are two different types of food (lettuce and spinach), and we already placed lettuce in the first row, spinach must be in the second row.
+
+   |               |     1     |      2      |
+   | Beverage      | Sprite   | Almond-milk |
+   | Food          | Lettuce  | Spinach    |
+   | Hobby         | Gardening| Traveling   |
+   | Movie-Genre   | Horror   | Scientific  |
+   | Music-Genre   | D&B      | Soul        |
+
+So, the final solution table is:
+
+#############
+|               |     1     |      2      |
+| Beverage      | Sprite   | Almond-milk |
+| Food          | Lettuce  | Spinach    |
+| Hobby         | Gardening| Traveling   |
+| Movie-Genre   | Horror   | Scientific  |
+| Music-Genre   | D&B      | Soul        |
+#############"	{'beverage': ['sprite', 'almond-milk'], 'food': ['lettuce', 'spinach'], 'hobby': ['gardening', 'traveling'], 'movie-genre': ['horror', 'scientific'], 'music-genre': ['d&b', 'soul']}	True	6	False
+Lv6-5x2-7	"Let's solve this step by step:
+
+1. Since the person who's hobby is photography is not the person who's sport is basketball, we can place the photography hobby in a cell where the sport is not basketball. Let's place photography in the first row (Hobby 1) for now.
+
+2. The fan of house music is on the left of the person who's hobby is collecting. Since we placed photography in the first row, we can place house music in the second row (Hobby 2).
+
+3. The person who's hobby is collecting is not the person watching adventure movies. Since we placed photography in the first row, the only remaining hobby for the second row is collecting. So, the second row (Hobby 2) is collecting.
+
+4. The person watching adventure movies is the owner of the ferret. Since we placed collecting in the second row (Hobby 2), the first row (Hobby 1) must be the person watching adventure movies. So, the first row (Hobby 1) is adventure movies.
+
+5. The remaining hobbies are photography and the other movie genre. Since we placed adventure movies in the first row (Hobby 1), the other movie genre must be in the second row (Hobby 2). So, the second row (Hobby 2) is thriller movies.
+
+6. The remaining music genres are salsa and the other sport. Since we placed house music in the second row (Hobby 2), the other music genre must be salsa. Since we placed basketball in the first row (Hobby 1), the other sport must be snowboarding.
+
+7. The last remaining pet is snake. Since the person watching adventure movies is the owner of the ferret, the other pet must be the snake.
+
+Here is the final solution table:
+
+  |               |      1       |     2      |
+| Hobby         | Adventure    | Collecting |
+| Movie-Genre   |              | Thriller   |
+| Music-Genre   | House        | Salsa      |
+| Pet           |              |            |
+| Sport         |              | Snowboarding|
+
+  |               |      1       |     2      |
+| Pet           | Ferret      | Snake      |
+
+#############
+|               |      1       |     2      |
+| Hobby         | Adventure    | Collecting |
+| Movie-Genre   |              | Thriller   |
+| Music-Genre   | House        | Salsa      |
+| Pet           | Ferret      | Snake      |
+| Sport         |              | Snowboarding|
+#############"	{'hobby': ['adventure', 'collecting'], 'movie-genre': ['', 'thriller'], 'music-genre': ['house', 'salsa'], 'pet': ['ferret', 'snake'], 'sport': ['', 'snowboarding']}	True	6	False
+Lv6-5x2-8	"Let's solve this step by step:
+
+1. Since there are only two different beverages, the person in row 1 must drink almond-milk, and the person in row 2 must drink sprite. Let's denote A for almond-milk and S for sprite. So, we have:
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+
+2. Since there are only two different jobs, the person in row 1 must have one of the jobs (coach or writer), and the person in row 2 must have the other job. Let's denote C for coach and W for writer.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   C/W     |   C/W      |
+
+3. Since there are only two different nationalities, the person in row 1 must be Dutch, and the person in row 2 must be Spanish. Let's denote D for Dutch and S for Spanish.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   C/W     |   C/W      |
+   | Nationality   |   D       |     S      |
+
+4. Since there are only two different sports, the person in row 1 must prefer one of the sports (soccer or water-polo), and the person in row 2 must prefer the other sport. Let's denote S for soccer and WP for water-polo.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   C/W     |   C/W      |
+   | Nationality   |   D       |     S      |
+   | Sport         |   S/WP    |   S/WP     |
+
+5. From clue 3, the Spanish is to the left of the coach. Since the nationalities are already in the correct order, the job of the person in row 1 (coach or writer) must be in row 1. So, the person in row 2 must be the coach, and the person in row 1 must be the writer.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   W       |   C        |
+   | Nationality   |   D       |     S      |
+   | Sport         |   S/WP    |   S/WP     |
+
+6. From clue 1, the person drinking sprite is not the person driving the train. Since there are only two means of transport, the person in row 1 must drive the snowmobile, and the person in row 2 must drive the train.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   W       |   C        |
+   | Nationality   |   D       |     S      |
+   | Sport         |   S/WP    |   S/WP     |
+   | Transport     |   SM     |   T        |
+
+7. From clue 4, the person drinking almond-milk is to the right of the person who's sport is water-polo. Since the sports are already in the correct order, the beverage of the person in row 1 (almond-milk) must be in row 1. So, the beverage of the person in row 2 must be sprite.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   W       |   C        |
+   | Nationality   |   D       |     S      |
+   | Sport         |   S/WP    |   S/WP     |
+   | Transport     |   SM     |   T        |
+
+8. Now we know that the person in row 1 drinks almond-milk and is a writer, the person in row 2 drinks sprite and is a coach. The nationalities and sports are already in the correct order. The means of transport are also in the correct order because the person drinking sprite cannot drive the train, so the person driving the snowmobile must be the one drinking almond-milk.
+
+   |               |     1      |      2      |
+   | Beverage      |   A       |     S      |
+   | Job           |   W       |   C        |
+   | Nationality   |   D       |     S      |
+   | Sport         |   S/WP    |   S/WP     |
+   | Transport     |   SM     |   T        |
+
+So, the final solution table is:
+
+#############
+|               |     1      |      2      |
+| Beverage      |   A       |     S      |
+| Job           |   W       |   C        |
+| Nationality   |   D       |     S      |
+| Sport         |   S/WP    |   S/WP     |
+| Transport     |   SM     |   T        |
+#############"	{'beverage': ['a', 's'], 'job': ['w', 'c'], 'nationality': ['d', 's'], 'sport': ['s/wp', 's/wp'], 'transport': ['sm', 't']}	True	0	False
+Lv6-5x2-9	"Let's solve this step by step:
+
+1. We know that there are two different hobbies, jobs, nationalities, sports, and means of transport. So, we can fill in the first row of the table with the hobbies:
+
+   |               |     1      |     2      |
+   | Hobby         | Camping   | Gardening  |
+   | Job           |           |           |
+   | Nationality   |           |           |
+   | Sport         |           |           |
+   | Transport     |           |           |
+
+2. We know that there are two different jobs, so we can fill in the second row:
+
+   |               |     1      |     2      |
+   | Hobby         | Camping   | Gardening  |
+   | Job           | Freelancer| Journalist |
+   | Nationality   |           |           |
+   | Sport         |           |           |
+   | Transport     |           |           |
+
+3. Since the Thai is not the person who's hobby is camping, the Thai must be in the second column. Let's fill in the Nationality row:
+
+   |               |     1      |     2      |
+   | Hobby         | Camping   | Gardening  |
+   | Job           | Freelancer| Journalist |
+   | Nationality   | British   | Thai       |
+   | Sport         |           |           |
+   | Transport     |           |           |
+
+4. We know that the person driving the bus is on the right of the person who's sport is volleyball. Since we don't know the sport yet, let's assign Volleyball to the sport of the person on the left of the bus driver for now:
+
+   |               |     1      |     2      |
+   | Hobby         | Camping   | Gardening  |
+   | Job           | Freelancer| Journalist |
+   | Nationality   | British   | Thai       |
+   | Sport         | Volleyball|           |
+   | Transport     | Bus       |           |
+
+5. Now, the person who's hobby is gardening is on the left of the freelancer. So, the gardener must be in the first column:
+
+   |               |     1      |     2      |
+   | Hobby         | Gardening  | Camping   |
+   | Job           | Freelancer| Journalist |
+   | Nationality   | British   | Thai       |
+   | Sport         | Volleyball|           |
+   | Transport     | Bus       |           |
+
+6. We know that there are two different sports, so we can fill in the last sport:
+
+   |               |     1      |     2      |
+   | Hobby         | Gardening  | Camping   |
+   | Job           | Freelancer| Journalist |
+   | Nationality   | British   | Thai       |
+   | Sport         | Volleyball| Water-polo |
+   | Transport     | Bus       | Scooter    |
+
+7. Since the people use 2 different means of transport, we have filled in the last row correctly.
+
+The final solution table is:
+
+  #############
+  |               |     1      |     2      |
+  | Hobby         | Gardening  | Camping   |
+  | Job           | Freelancer| Journalist |
+  | Nationality   | British   | Thai       |
+  | Sport         | Volleyball| Water-polo |
+  | Transport     | Bus       | Scooter    |
+ #############"	{}	False	0	False
+Lv6-5x2-10	"Let's solve this step by step:
+
+1. Since the person with the hobby of card-games is on the far left, we can place it in the first column under the hobby section. Let's assume it's card-games in the first row.
+
+|               | Card-games |
+| Food          |            |
+| Hobby         | card-games |
+| Nationality   |            |
+| Pet           |            |
+| Transport     |            |
+
+2. Since there are 2 different nationalities, the American must be in the second row. So, let's place 'American' in the second row under the nationality section.
+
+|               | Card-games |
+| Food          |            |
+| Hobby         | card-games |
+| Nationality   | American   |
+| Pet           |            |
+| Transport     |            |
+
+3. Since the American is in an even position, the person in the first row must be Australian. So, let's place 'Australian' in the first row under the nationality section.
+
+|               | Card-games |
+| Food          |            |
+| Hobby         | card-games |
+| Nationality   | Australian |
+| Pet           |            |
+| Transport     |            |
+
+4. Since there are 2 different pets, the person with the pet fish must be in one of the rows. However, we know that the person driving the car is not the owner of the fish. Since there are only 2 types of transport, the person driving the car must be in the other row. So, let's place 'car' in the second row under the transport section and 'fish' in the first row under the pet section.
+
+|               | Card-games |
+| Food          |            |
+| Hobby         | card-games |
+| Nationality   | Australian |
+| Pet           | fish      |
+| Transport     | car       |
+
+5. Now, we know that the person eating carrot is somewhere to the right of the owner of the fish. Since the fish is in the first row, the carrot eater must be in the second row. Since there are only 2 types of food, the person eating pumpkin must be in the first row. So, let's place 'pumpkin' in the first row under the food section and 'carrot' in the second row under the food section.
+
+|               | Card-games |
+| Food          | pumpkin   |
+| Hobby         | card-games |
+| Nationality   | Australian |
+| Pet           | fish      |
+| Transport     | car       |
+
+6. Lastly, we have the hobby of rock-climbing left. Since there are 2 different hobbies, the person with the hobby of rock-climbing must be in the other row. So, let's place 'rock-climbing' in the second row under the hobby section.
+
+|               | Card-games |
+| Food          | pumpkin   |
+| Hobby         | rock-climbing |
+| Nationality   | Australian |
+| Pet           | fish      |
+| Transport     | car       |
+
+The final solution table is:
+
+#############
+|               | Card-games |
+| Food          | pumpkin   |
+| Hobby         | rock-climbing |
+| Nationality   | Australian |
+| Pet           | fish      |
+| Transport     | car       |
+#############"	{'food': ['pumpkin'], 'hobby': ['rock-climbing'], 'nationality': ['australian'], 'pet': ['fish'], 'transport': ['car']}	True	3	False

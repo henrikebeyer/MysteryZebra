@@ -1,0 +1,586 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv8-5x2-1	"Let's solve this step by step:
+
+1. We know there are two types of food, two hobbies, two jobs, two pets, and two sports. So, we can fill in the first row with the different types of food, second row with the hobbies, third row with the jobs, fourth row with the pets, and the last row with the sports.
+
+2. From rule 1, we know the person who's sport is lacrosse is on the far right. Let's place 'Lacrosse' in the rightmost cell of the last row.
+
+3. From rule 2, the paramedic is on the left or right of the owner of the horse. Since the paramedic can't be on the far right (because of rule 1), the paramedic must be on the left. Let's place 'Paramedic' in the leftmost cell of the third row.
+
+4. From rule 3, the person eating cucumber is on the left or right of the person eating banana. Since the paramedic (who eats banana according to rule 5) is on the left, the cucumber eater must be on the right. Let's place 'Cucumber' in the second cell of the first row.
+
+5. From rule 4, the person who's sport is volleyball is not to the right of the person who's sport is lacrosse. Since we placed 'Lacrosse' on the far right, 'Volleyball' must be in the leftmost cell of the last row.
+
+6. From rule 6, the person who's hobby is puzzles is on the far left. Since we placed 'Volleyball' in the leftmost cell of the last row, 'Puzzles' must be in the leftmost cell of the second row.
+
+7. Now we know the hobby, job, sport, and food of the people. The only remaining thing is the pet. From rule 3, the person eating banana is on the right of the paramedic. Since we placed 'Banana' in the second cell of the first row and the paramedic in the first cell of the third row, the pet that the person eating banana keeps must be in the second cell of the fourth row. So, let's place 'Horse' in the second cell of the fourth row.
+
+8. The only pet left is 'Hedgehog'. Since the person eating cucumber is on the right of the person eating banana, and the person eating banana keeps a horse, the person eating cucumber must keep a hedgehog. So, let's place 'Hedgehog' in the first cell of the fourth row.
+
+The final solution table is:
+
+  |         |      Cucumber      |        Banana       |
+  | Food    |                    |                      |
+  | Hobby   | Puzzles            |                      |
+  | Job     | Paramedic          | Analyst             |
+  | Pet     | Hedgehog           | Horse               |
+  | Sport   | Volleyball         | Lacrosse            |
+
+#############
+|         |      Cucumber      |        Banana       |
+| Food    | Hedgehog           | Horse               |
+| Hobby   | Puzzles            |                      |
+| Job     | Paramedic          | Analyst             |
+| Pet     |                    |                      |
+| Sport   | Volleyball         | Lacrosse            |
+#############"	{'food': ['hedgehog', 'horse'], 'hobby': ['puzzles', ''], 'job': ['paramedic', 'analyst'], 'pet': ['', ''], 'sport': ['volleyball', 'lacrosse']}	True	5	False
+Lv8-5x2-2	"Let's solve this step by step:
+
+1. Since the people have 2 different hobbies, we can write them down:
+   - Hobby 1: Baking
+   - Hobby 2: Filmmaking
+
+2. Similarly, for movie-genres:
+   - Movie-Genre 1: Family
+   - Movie-Genre 2: Romance
+
+3. For music-genres:
+   - Music-Genre 1: Dubstep
+   - Music-Genre 2: Pop
+
+4. For pets:
+   - Pet 1: Goat
+   - Pet 2: Pony
+
+5. For sports:
+   - Sport 1: Climbing
+   - Sport 2: Soccer
+
+6. Now let's apply the conditions:
+
+   - The person who's hobby is baking is on the left of the person who's hobby is filmmaking. So, Baking -> Left, Filmmaking -> Right.
+
+   - The fan of pop is on the far right. Since we already placed Filmmaking on the right, Pop must be on the far right as well.
+
+   - The fan of pop is not to the right of the owner of the pony. This means Pop cannot be on the same row as Pony. So, Pop cannot be in the right column.
+
+   - The person watching romance movies is on the left of the person who's sport is soccer. Since we already placed Baking on the left, Romance must be on the left as well.
+
+7. Now we have some possible arrangements:
+
+   - If we place Romance and Soccer in the first row, then Pop and Pony must be in the second row. But this would mean Pop is to the right of Pony, which is not allowed.
+
+   - If we place Romance and Soccer in the second row, then Pop and Pony must be in the first row. This arrangement is possible.
+
+8. So, the final solution table is:
+
+   |               |    1     |     2      |
+   | Hobby         | Baking   | Filmmaking |
+   | Movie-Genre   | Romance  | Family     |
+   | Music-Genre   | Pop     | Dubstep    |
+   | Pet           | Pony    | Goat       |
+   | Sport         | Soccer   | Climbing   |
+
+   #####
+   | Baking   | Romance | Pop       | Pony      | Soccer |
+   |---------|--------|-----------|----------|--------|
+   | Filmmaking | Family | Dubstep   | Goat     | Climbing |
+   #####
+
+This is the final solution table that satisfies all the given conditions."	{}	False	0	False
+Lv8-5x2-3	"Let's solve this step by step:
+
+1. Since there are two different hobbies (cooking and woodworking), we can fill the first row with either Cooking or Woodworking. Let's assume the first row is Woodworking.
+
+2. Since there are two different movie-genres (animation and thriller), we can fill the second row with either Animation or Thriller. Let's assume the second row is Animation.
+
+3. Since there are two different music-genres (ambient and blues), we can fill the third row with either Ambient or Blues. Let's assume the third row is Ambient.
+
+4. Now we know that the person who likes woodworking is somewhere to the right of the fan of blues. Since the third row is Ambient (not Blues), the person who likes woodworking must be in the second column (column 2). So, the first row should be Cooking.
+
+5. The Italian is not to the right of the person watching animation movies. Since the second row is Animation, the Italian cannot be in the second column (column 2). So, the Italian must be in the first column (column 1).
+
+6. The Italian is on the left or right of the owner of the turtle. Since the Italian is in the first column (column 1), the turtle owner must be in the second column (column 2). So, the nationality in the first row (column 1) must be Japanese.
+
+7. The owner of the rabbit is the fan of ambient. Since the third row is Ambient, the owner of the rabbit must be in the first row (column 1) or the second row (column 2). But we already know that the Italian is in the first row (column 1), so the owner of the rabbit must be in the second row (column 2). So, the nationality in the second row (column 2) must be Italian.
+
+8. Now we know that the second row (column 2) is Italian, and the second row (column 2) is also the owner of the rabbit and the fan of Ambient music. The only movie genre left is Thriller, so the second row (column 2) must be Thriller.
+
+9. Finally, the only pet left is the turtle. Since the turtle owner is in the second row (column 2), the pet in the first row (column 1) must be the turtle.
+
+Here is the final solution table:
+
+|               |    1     |      2      |
+| Hobby         | Cooking  | Woodworking |
+| Movie-Genre   |          |   Thriller  |
+| Music-Genre   | Ambient  |          |
+| Nationality   | Japanese |   Italian  |
+| Pet           | Turtle   |          |
+
+#############
+|               |    1     |      2      |
+| Hobby         | Cooking  | Woodworking |
+| Movie-Genre   |          |   Thriller  |
+| Music-Genre   | Ambient  |          |
+| Nationality   | Japanese |   Italian  |
+| Pet           | Turtle   |          |
+#############"	{'hobby': ['cooking', 'woodworking'], 'movie-genre': ['', 'thriller'], 'music-genre': ['ambient', ''], 'nationality': ['japanese', 'italian'], 'pet': ['turtle', '']}	True	5	False
+Lv8-5x2-4	"Let's solve this step by step:
+
+1. Since there are 2 different favorite beverages, we can fill the first column with either Almond-Milk or Hot-Chocolate. Let's assume Hot-Chocolate is in the first row (row 1, column 1).
+
+2. Since there are 2 different movie-genres, we can fill the second column with either Musical or Sports. Let's assume Musical is in the first row (row 1, column 2).
+
+3. Since there are 2 different music-genres, we can fill the third column with either R&B or Soul. Let's assume R&B is in the second row (row 2, column 3).
+
+4. Now, we have a conflict with the third rule (the person who's sport is skiing is somewhere to the right of the person watching musical movies). Since there are only two sports and the Polish is to the right of the person drinking hot-chocolate (rule 1), the only possible arrangement for the fourth column (Sport) is:
+   - If the first row (Hot-Chocolate, Musical) is the Polish, then the second row (Almond-Milk, Sports) must have Volleyball, which would mean the first row (Hot-Chocolate, Musical) must have Skiing, but that violates rule 3.
+   - If the second row (Almond-Milk, Musical) is the Polish, then the first row (Hot-Chocolate, Sports) must have Volleyball, which is fine. So, the arrangement for the fourth column (Sport) is:
+     - First row: Hot-Chocolate, Sports, Volleyball
+     - Second row: Almond-Milk, Musical, Soul
+
+5. Now, we have a conflict with the second rule (the person watching sports movies is not to the right of the fan of soul). Since the only possible arrangement for the second row (Almond-Milk, Musical, Soul) is correct, the first row (Hot-Chocolate, Sports, Volleyball) must be rearranged. The only possible arrangement that satisfies all rules is:
+   - First row: Hot-Chocolate, Sports, Volleyball
+   - Second row: Almond-Milk, Musical, R&B
+
+6. Finally, we can fill the fifth column (Nationality) based on the nationalities given (Mexican, Polish). Since the Polish is to the right of the person drinking hot-chocolate (rule 1), the arrangement for the fifth column (Nationality) is:
+   - First row: Hot-Chocolate, Sports, Volleyball, Polish
+   - Second row: Almond-Milk, Musical, R&B, Mexican
+
+The final solution table is:
+
+```
+#############
+| Beverage   | Hot-Chocolate | Almond-Milk |
+| Movie-Genre| Sports        | Musical     |
+| Music-Genre| R&B          | Soul        |
+| Nationality| Polish        | Mexican     |
+| Sport      | Volleyball    | Skiing      |
+#############
+```"	{'beverage': ['hot-chocolate', 'almond-milk'], 'movie-genre': ['sports', 'musical'], 'music-genre': ['r&b', 'soul'], 'nationality': ['polish', 'mexican'], 'sport': ['volleyball', 'skiing']}	True	6	False
+Lv8-5x2-5	"Let's solve this step by step:
+
+1. Since there are 2 different sports (cricket and snowboarding), the person watching cricket cannot be on the far left (position 1). So, the person watching snowboarding must be on the far left (position 1).
+
+   |               |      1       |     2      |
+   | Beverage      |              |            |
+   | Movie-Genre   | Snowboarding |            |
+   | Music-Genre   |              |            |
+   | Nationality   |              |            |
+   | Sport         | Snowboarding |            |
+
+2. The person drinking coffee is not to the left of the person watching western movies. Since we know the person watching snowboarding is on the far left, the person watching western movies must be on the right (position 2).
+
+   |               |      1       |     2      |
+   | Beverage      |              |            |
+   | Movie-Genre   | Snowboarding | Western    |
+   | Music-Genre   |              |            |
+   | Nationality   |              |            |
+   | Sport         | Snowboarding | Western    |
+
+3. The fan of folk is on the left of the indonesian. Since we know the person watching snowboarding is on the far left, the person listening to folk must be on the far left (position 1).
+
+   |               |      1       |     2      |
+   | Beverage      | Folk        | Western    |
+   | Movie-Genre   | Snowboarding |           |
+   | Music-Genre   | Folk        |           |
+   | Nationality   | Indonesian  |           |
+   | Sport         | Snowboarding | Western    |
+
+4. There are 2 different nationalities (colombian, indonesian), so the person who is colombian must be on the right (position 2).
+
+   |               |      1       |     2      |
+   | Beverage      | Folk        | Colombian  |
+   | Movie-Genre   | Snowboarding | Western    |
+   | Music-Genre   | Folk        |           |
+   | Nationality   | Indonesian  | Colombian  |
+   | Sport         | Snowboarding | Western    |
+
+5. There are 2 different favourite beverages (coffee, soy-milk), so the person drinking coffee must be on the left (position 1).
+
+   |               |      1       |     2      |
+   | Beverage      | Coffee      | Colombian  |
+   | Movie-Genre   | Snowboarding | Western    |
+   | Music-Genre   | Folk        |           |
+   | Nationality   | Indonesian  | Colombian  |
+   | Sport         | Snowboarding | Western    |
+
+6. The person watching thriller movies is not the person who's sport is cricket. Since we know the person watching snowboarding is not the person watching cricket, the person watching thriller movies must be on the right (position 2).
+
+   |               |      1       |     2      |
+   | Beverage      | Coffee      | Thriller   |
+   | Movie-Genre   | Snowboarding | Western    |
+   | Music-Genre   | Folk        |           |
+   | Nationality   | Indonesian  | Colombian  |
+   | Sport         | Snowboarding | Western    |
+
+7. The remaining genre is western, so it must be the genre of the person watching the movie.
+
+   |               |      1       |     2      |
+   | Beverage      | Coffee      | Thriller   |
+   | Movie-Genre   | Western     | Western    |
+   | Music-Genre   | Folk        |           |
+   | Nationality   | Indonesian  | Colombian  |
+   | Sport         | Snowboarding | Western    |
+
+8. The remaining genre for music is folk, so it must be the genre of the person listening to music.
+
+   |               |      1       |     2      |
+   | Beverage      | Coffee      | Thriller   |
+   | Movie-Genre   | Western     | Western    |
+   | Music-Genre   | Folk        | Folk       |
+   | Nationality   | Indonesian  | Colombian  |
+   | Sport         | Snowboarding | Western    |
+
+So, the final solution table is:
+
+#############
+|               |      1       |     2      |
+| Beverage      | Coffee      | Thriller   |
+| Movie-Genre   | Western     | Western    |
+| Music-Genre   | Folk        | Folk       |
+| Nationality   | Indonesian  | Colombian  |
+| Sport         | Snowboarding | Western    |
+#############"	{'beverage': ['coffee', 'thriller'], 'movie-genre': ['western', 'western'], 'music-genre': ['folk', 'folk'], 'nationality': ['indonesian', 'colombian'], 'sport': ['snowboarding', 'western']}	True	3	False
+Lv8-5x2-6	"Let's solve this step by step:
+
+1. Since there are 2 different nationalities and the one on the far right is occupied by the hedgehog owner, the Egyptian cannot be on the far right (as there's only one pet left). So, the Egyptian must be on the left, and the Spanish is on the right.
+
+2. The fan of blues is to the right of the person who's hobby is hiking. Since the Spanish is not to the right of the fan of electronic, the hiker cannot be the Spanish. So, the hiker must be the Egyptian, and the hobby of the Spanish is hiking. This means the hobby of the person on the left is video-games.
+
+3. The person eating lemon is in an odd position. Since the Egyptian (hiker) and the Spanish (hiker's right) are already placed, the only odd position left is the first one. So, the person eating lemon is on the left.
+
+4. Now, we know the food, hobby, and nationality of the two people. The remaining items are music-genre and pet. Since there are 2 different music-genres (blues and electronic), and the fan of blues is to the right of the hiker (Egyptian), the person on the right must be a fan of blues. So, the person on the left is a fan of electronic.
+
+5. The last item is the pet. Since the hedgehog is on the far right, it must be the pet of the Spanish (on the right). The only pet left is the cat, so the cat must be the pet of the person on the left.
+
+The final solution table is:
+
+|               |     1      |      2      |
+| Food          |  Lemon     |   Avocado  |
+| Hobby         | Video-games|   Hiking   |
+| Music-Genre   | Electronic |    Blues    |
+| Nationality   |  Egyptian  |   Spanish   |
+| Pet           |    Cat     | Hedgehog   |
+
+#############
+|               |     1      |      2      |
+| Food          |  Lemon     |   Avocado  |
+| Hobby         | Video-games|   Hiking   |
+| Music-Genre   | Electronic |    Blues    |
+| Nationality   |  Egyptian  |   Spanish   |
+| Pet           |    Cat     | Hedgehog   |
+#############"	{'food': ['lemon', 'avocado'], 'hobby': ['video-games', 'hiking'], 'music-genre': ['electronic', 'blues'], 'nationality': ['egyptian', 'spanish'], 'pet': ['cat', 'hedgehog']}	True	6	False
+Lv8-5x2-7	"Let's solve this step by step:
+
+1. Since there are 2 nationalities, the American cannot be in the rightmost column. Let's place the American in the first column (Column 1) for now.
+
+2. Since the American is not watching western movies, the western movie-genre must be in the second column (Column 2). Let's place it there for now.
+
+3. Now, we know that the person eating banana is to the left of the person watching western movies. Since the American is in Column 1 and the western movie is in Column 2, the banana must be in Column 1. So, the table looks like this:
+
+   |               |      Banana   |      Western   |
+   | Food          |               |               |
+   | Job           |               |               |
+   | Movie-Genre   |               |               |
+   | Music-Genre   |               |               |
+   | Nationality   |   American    |               |
+
+4. The freelancer is on the left of the fan of gospel. Since the banana is in the first column, the freelancer must be in the first row. So, the table looks like this:
+
+   |               |      Banana   |      Western   |
+   | Food          |   Freelancer  |               |
+   | Job           |               |               |
+   | Movie-Genre   |               |               |
+   | Music-Genre   |               |               |
+   | Nationality   |   American    |               |
+
+5. The person eating blueberry is not to the right of the scientist. Since the American and the freelancer are already placed, the blueberry must be in the second row. So, the table looks like this:
+
+   |               |      Banana   |      Western   |
+   | Food          |   Freelancer  |               |
+   | Job           |               |   Scientist    |
+   | Movie-Genre   |               |               |
+   | Music-Genre   |               |               |
+   | Nationality   |   American    |               |
+
+6. Now, we have 2 jobs (freelancer, scientist) and only 1 job is placed. The scientist must be in the first row. So, the table looks like this:
+
+   |               |      Banana   |      Western   |
+   | Food          |   Freelancer  |               |
+   | Job           |   Scientist   |   Scientist    |
+   | Movie-Genre   |               |               |
+   | Music-Genre   |               |               |
+   | Nationality   |   American    |               |
+
+7. Since there are 2 music-genres (gospel, trance), one of them must be in the first row and the other in the second row. Let's place gospel in the first row since the scientist is there. So, the table looks like this:
+
+   |               |      Banana   |      Western   |
+   | Food          |   Freelancer  |               |
+   | Job           |   Scientist   |   Scientist    |
+   | Movie-Genre   |   Gospel      |               |
+   | Music-Genre   |   Gospel      |               |
+   | Nationality   |   American    |               |
+
+8. The only music-genre left is trance, so it must be in the second row. The only food left is blueberry, so it must be in the second row as well. The only job left is freelancer, so it must be in the first row. The only movie-genre left is western, so it must be in the second row. The table is now complete:
+
+   |               |      Banana   |      Western   |
+   | Food          |   Freelancer  |   Scientist    |
+   | Job           |   Scientist   |   Freelancer   |
+   | Movie-Genre   |   Gospel      |   Western      |
+   | Music-Genre   |   Gospel      |   Trance       |
+   | Nationality   |   American    |   British      |
+
+So, the final solution table is:
+
+#############
+|               |      Banana   |      Western   |
+| Food          |   Freelancer  |   Scientist    |
+| Job           |   Scientist   |   Freelancer   |
+| Movie-Genre   |   Gospel      |   Western      |
+| Music-Genre   |   Gospel      |   Trance       |
+| Nationality   |   American    |   British      |
+#############"	{'food': ['freelancer', 'scientist'], 'job': ['scientist', 'freelancer'], 'movie-genre': ['gospel', 'western'], 'music-genre': ['gospel', 'trance'], 'nationality': ['american', 'british']}	True	3	False
+Lv8-5x2-8	"Let's solve this step by step:
+
+1. We know that there are two different nationalities, so we can place one in each column. Let's place Russian in column 1 and Egyptian in column 2.
+
+   |               |      1      |      2       |
+   | Beverage      |             |              |
+   | Job           |             |              |
+   | Movie-Genre   |             |              |
+   | Music-Genre   |             |              |
+   | Nationality   | Russian     | Egyptian     |
+
+2. We know that there are two different jobs, so we can place one in each row. Let's place Electrician in row 1 and Videographer in row 2.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   |             |              |
+   | Music-Genre   |             |              |
+   | Nationality   | Russian     | Egyptian     |
+
+3. The person drinking milk is on the right of the Russian, so the person in row 2, column 2 must be drinking milk.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   |             |              |
+   | Music-Genre   |             |              |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+
+4. The fan of punk is not to the right of the Egyptian, so the person in row 1, column 2 cannot be a fan of punk. Since there are only two music genres, the person in row 2, column 1 must be a fan of punk.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   |             | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+
+5. The person watching thriller movies is the Russian, so the person in row 2, column 1 must be watching thriller movies.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Movie-Genre   | Disaster   | Thriller    |
+
+6. The person watching disaster movies is the videographer, so the person in row 2, column 2 must be watching disaster movies.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Job           | Electrician| Videographer|
+
+7. The person watching disaster movies is not to the left of the fan of rock, so the person in row 2, column 1 cannot watch disaster movies. This means the person in row 1, column 2 must be watching disaster movies.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Beverage      | Cola       | Milk        |
+
+8. Now we can fill in the remaining cell: the person in row 1, column 2 must be watching disaster movies.
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Beverage      | Cola       | Disaster    |
+
+The final solution table is:
+
+   |               |      1      |      2       |
+   | Beverage      | Cola       | Milk        |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+   | Beverage      | Cola       | Disaster    |
+   | Job           | Electrician| Videographer|
+   | Movie-Genre   | Disaster   | Thriller    |
+   | Music-Genre   | Punk       | Rock        |
+   | Nationality   | Russian     | Egyptian     |
+
+#############
+|               |      1      |      2       |
+| Beverage      | Cola       | Milk        |
+| Job           | Electrician| Videographer|
+| Movie-Genre   | Disaster   | Thriller    |
+| Music-Genre   | Punk       | Rock        |
+| Nationality   | Russian     | Egyptian     |
+| Beverage      | Cola       | Disaster    |
+| Job           | Electrician| Videographer|
+| Movie-Genre   | Disaster   | Thriller    |
+| Music-Genre   | Punk       | Rock        |
+| Nationality   | Russian     | Egyptian     |
+#############"	{'music-genre': ['punk', 'rock'], 'nationality': ['russian', 'egyptian']}	False	0	False
+Lv8-5x2-9	"Let's solve this step by step:
+
+1. We know that there are two different favorite beverages, so we can write them down:
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          |             |             |
+   | Job           |             |             |
+   | Movie-Genre   |             |             |
+   | Music-Genre   |             |             |
+
+2. We know that there are two different types of food, so we can write them down:
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          | Cherry      | Cranberry   |
+   | Job           |             |             |
+   | Movie-Genre   |             |             |
+   | Music-Genre   |             |             |
+
+3. We know that there are two different jobs, so we can write them down:
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          | Cherry      | Cranberry   |
+   | Job           | Dancer      | Software-developer |
+   | Movie-Genre   |             |             |
+   | Music-Genre   |             |             |
+
+4. Now let's use the information that the person drinking juice is on the left of the person watching musical movies. Since there are only two people, the person drinking almond-milk must be watching musical movies, and the person drinking juice must be watching action movies (since musical and action are the only two movie genres).
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          | Cherry      | Cranberry   |
+   | Job           | Dancer      | Software-developer |
+   | Movie-Genre   | Musical     | Action       |
+   | Music-Genre   |             |             |
+
+5. The person watching musical movies is not to the right of the person eating cherry. Since the person drinking almond-milk (musical) is not to the right of the person eating cherry (Cherry), the person eating cherry must be the software-developer, and the person eating cranberry must be the dancer.
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          | Cherry      | Cranberry   |
+   | Job           | Dancer      | Software-developer |
+   | Movie-Genre   | Musical     | Action       |
+   | Music-Genre   |             |             |
+
+6. The fan of electronic is somewhere to the right of the software-developer. Since the software-developer is eating cherry (Cherry), the person eating cranberry (Dancer) must be a fan of electronic music, and the person eating cherry (Software-developer) must be a fan of house music.
+   |               | Almond-milk | Juice       |
+   | Beverage      |             |             |
+   | Food          | Cherry      | Cranberry   |
+   | Job           | Dancer      | Software-developer |
+   | Movie-Genre   | Musical     | Action       |
+   | Music-Genre   | House       | Electronic   |
+
+The final solution table is:
+
+#############
+|               | Almond-milk | Juice       |
+| Beverage      | Musical     | Action       |
+| Food          | Cherry      | Cranberry   |
+| Job           | Dancer      | Software-developer |
+| Movie-Genre   |             |             |
+| Music-Genre   | House       | Electronic   |
+#############"	{'beverage': ['musical', 'action'], 'food': ['cherry', 'cranberry'], 'job': ['dancer', 'software-developer'], 'movie-genre': ['', ''], 'music-genre': ['house', 'electronic']}	True	2	False
+Lv8-5x2-10	"Let's solve this step by step:
+
+1. We know there are two types of food, two hobbies, two movie genres, two music genres, and two types of transport. Let's assign them numbers from 1 to 2 for each category.
+
+2. From point 1, we can fill in the first row (Food) as follows:
+   | Food          | Broccoli | Pineapple |
+
+3. From point 2, we know that the fan of soul is the person eating pineapple, so we can fill in the second row (Hobby) as follows:
+   | Hobby         | Card-games | Gardening |
+   | Food          | Broccoli | Pineapple |
+
+4. From point 3, we know that the person driving the van is on the left or right of the person who's hobby is card-games. Since there are only two people, the van driver must be on the same side as the card-games person. Let's assume the card-games person is on the left (for now). Then, the van driver is on the right, and the helicopter driver is on the left.
+   | Transport     | Helicopter | Van |
+   | Hobby         | Card-games | Gardening |
+   | Food          | Broccoli | Pineapple |
+
+5. From point 4, we know that the fan of soul is not to the left of the person driving the van. This means the soul person cannot be the card-games person (since they are on the left of the van driver). So, the soul person must be the gardening person.
+   | Music-Genre   | Reggae | Soul |
+   | Transport     | Helicopter | Van |
+   | Hobby         | Card-games | Gardening (Soul) |
+   | Food          | Broccoli | Pineapple |
+
+6. From point 2, we know that the fan of reggae is on the right of the person watching action movies. Since the soul person (gardening) is on the right of the van driver, the action movie person must be on the left of the van driver. But the only person left on the left is the card-games person. So, the action movie person is the card-games person.
+   | Movie-Genre   | Action | Sports |
+   | Music-Genre   | Reggae | Soul |
+   | Transport     | Helicopter | Van |
+   | Hobby         | Card-games (Action) | Gardening (Soul) |
+   | Food          | Broccoli | Pineapple |
+
+7. Now we have filled all the categories, and we can check the conditions again to make sure they are satisfied. All conditions are satisfied, so the final solution table is:
+
+   |               |     1     |     2      |
+   | Food          | Broccoli | Pineapple |
+   | Hobby         | Card-games (Action) | Gardening (Soul) |
+   | Movie-Genre   | Action | Sports |
+   | Music-Genre   | Reggae | Soul |
+   | Transport     | Helicopter | Van |
+
+   #####
+   |               |     1     |     2      |
+   | Food          | Broccoli | Pineapple |
+   | Hobby         | Card-games (Action) | Gardening (Soul) |
+   | Movie-Genre   | Action | Sports |
+   | Music-Genre   | Reggae | Soul |
+   | Transport     | Helicopter | Van |"	{}	False	0	False

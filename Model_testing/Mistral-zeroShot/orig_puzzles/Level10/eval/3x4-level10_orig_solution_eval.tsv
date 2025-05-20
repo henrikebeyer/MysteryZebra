@@ -1,0 +1,474 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv10-3x4-1	"Let's solve this step by step:
+
+1. We know that the person drinking almond-milk is the person who's hobby is drawing. Let's place them in the first column and first row (1,1).
+
+2. The person drinking coffee is not to the left of the person drinking fanta. Since we already placed the almond-milk drinker in the first position, the coffee drinker cannot be in the first or second position. So, let's place the coffee drinker in the third position (3,1).
+
+3. The person drinking fanta is on the left or right of the fan pop. Since we placed the almond-milk drinker (drawing) in the first position and the coffee drinker in the third position, the fanta drinker cannot be in the first or third position. So, let's place the fanta drinker in the second position (2,2).
+
+4. The person who's hobby is singing is not the fan blues. Since we have already placed the almond-milk drinker (drawing), coffee drinker, and fanta drinker, the singer cannot be in the first three positions. Let's place the singer in the fourth position (4,1).
+
+5. The person who's hobby is singing is the person drinking fanta or the person who's hobby is singing is the fan indie, but not both. Since we have already placed the singer in the fourth position and the fanta drinker in the second position, the indie fan cannot be in the second position. Let's place the indie fan in the third position (3,3).
+
+6. The person drinking fanta and the fan ambient have the same parity positions. Since we have already placed the fanta drinker in the second position and the indie fan in the third position, the ambient fan must be in an even position. Let's place the ambient fan in the fourth position (4,3).
+
+7. The person drinking fanta is on the left or right of the fan indie. Since we have already placed the fanta drinker in the second position and the indie fan in the third position, the fanta drinker cannot be in the fourth position. So, the fanta drinker is to the right of the indie fan.
+
+8. The person drinking almond-milk is somewhere to the left of the fan pop. Since we have already placed the almond-milk drinker in the first position and the fanta drinker in the second position, the pop fan must be in the third or fourth position. But the pop fan cannot be in the fourth position because the ambient fan is already there. So, the pop fan is in the third position (3,4).
+
+9. The person who's hobby is photography is between the person drinking coffee and the fan ambient. Since we have already placed the coffee drinker in the third position and the ambient fan in the fourth position, the photography hobbyist must be in the fourth position (4,2).
+
+10. The person drinking sprite is the remaining beverage. Since we have already placed all other beverages, the sprite drinker must be in the first position (1,4).
+
+Here is the final solution table:
+
+```
+#############
+|   Almond-Milk   |   Sprite   |   Fantas   |   Coffee   |
+|   Drawing       |   Pop      |   Singing  |   Photography |
+|   Ambient      |   Indie    |   Blues    |   Skydiving  |
+#############
+```
+
+This table satisfies all the given conditions."	{'almond-milk': ['sprite', 'fantas', 'coffee'], 'drawing': ['pop', 'singing', 'photography'], 'ambient': ['indie', 'blues', 'skydiving']}	False	0	False
+Lv10-3x4-2	"Let's solve this step by step:
+
+1. From rule 1, we know that the Egyptian cannot be both the raspberry eater and the snake owner. Let's assume the Egyptian is the raspberry eater (E1). Then, the snake owner cannot be Egyptian (S1).
+
+2. From rule 2, the Italian is to the left of the fish owner. Let's assume the Italian is in position 1 (I1).
+
+3. From rule 3, the Egyptian is on the left or right of the raspberry eater. Since the Egyptian is already assumed to be the raspberry eater (E1), the Egyptian must be in position 2 or 4 (E2 or E4).
+
+4. From rule 4, the horse owner and the Egyptian have different parity positions. Since the Egyptian is either in position 2 or 4, the horse owner must be in position 1, 3, or 5 (H1, H3, or H5).
+
+5. From rule 5, the snake owner is on the right of the horse owner. Since the horse owner is in position 1, the snake owner must be in position 2, 3, 4, or 6 (S2, S3, S4, or S6).
+
+6. From rule 6, the snake owner is on the left or right of the fish owner. Since the fish owner is not to the right of the frog owner (rule 10), the fish owner must be in position 1, 2, or 3 (F1, F2, or F3). If the snake owner is in position 2, then the fish owner must be in position 1 (F1), which contradicts rule 6 (since S2 is on the right of F1). So, the snake owner must be in position 3 (S3), and the fish owner must be in position 2 (F2).
+
+7. From rule 7, the snake owner is on the left or right of the Italian. Since the snake owner is in position 3 (S3), the Italian must be in position 1 (I1).
+
+8. From rule 8, the person eating lettuce is on the left or right of the person eating peas. Since the Italian is eating peas (I1), the person eating lettuce must be in position 2, 3, 4, or 6 (L2, L3, L4, or L6).
+
+9. From rule 9, the person eating lettuce is not to the right of the person eating peach. Since the person eating peas is in position 1 (I1), the person eating peach must be in position 2 or 4 (P2 or P4).
+
+10. From rule 11, the Spanish is in an even position. Since the Italian is in position 1 (I1), the Spanish must be in position 2, 4, or 6 (S2, S4, or S6).
+
+11. From rule 12, the Egyptian is the person eating lettuce or the Egyptian is the owner of the snake, but not both. Since the Egyptian is already assumed to be the raspberry eater (E1), the Egyptian cannot be the snake owner (S3). So, the Egyptian must be the person eating lettuce (E2).
+
+12. From rule 13, the person eating lettuce is not to the right of the person eating peas. Since the person eating lettuce is in position 2 (E2), the person eating peas must be in position 1 (I1).
+
+Now, let's fill in the table:
+
+|               |     1     |    2     |    3    |    4    |
+| Food          | Peach    | Lettuce | Peas   | Raspberry|
+| Nationality   | Italian  | Egyptian | Spanish| French  |
+| Pet           | Fish    | Horse   | Snake  | Frog    |
+
+So, the final solution table is:
+
+#############
+|               |     1     |    2     |    3    |    4    |
+| Food          | Peach    | Lettuce | Peas   | Raspberry|
+| Nationality   | Italian  | Egyptian| Spanish| French  |
+| Pet           | Fish    | Horse   | Snake  | Frog    |
+#############"	{'food': ['peach', 'lettuce', 'peas', 'raspberry'], 'nationality': ['italian', 'egyptian', 'spanish', 'french'], 'pet': ['fish', 'horse', 'snake', 'frog']}	True	3	False
+Lv10-3x4-3	"Let's solve this step by step:
+
+1. From rule 6, we know that the Japanese is between the person eating cauliflower and the Italian. So, the possible positions for the nationalities are:
+   - Nationality 1: Japanese
+   - Nationality 2: Italian (to the right of Japanese)
+   - Nationality 3: Cauliflower eater (to the left of Japanese)
+   - Nationality 4: Remaining nationality (Thai or Spanish)
+
+2. From rule 2, we know that the person eating lime is on the far right. Since the Italian is already on the right of the Japanese (rule 6), the lime eater must be the Thai (Nationality 4).
+
+3. Now we know that the Thai is eating lime. From rule 1, the Italian is eating onion. So, the positions for the food are:
+   - Food 1: Cauliflower (Nationality 3)
+   - Food 2: Grapefruit (remaining food, not lime or onion)
+   - Food 3: Onion (Italian)
+   - Food 4: Sprite or Tea (remaining beverage, not hot-chocolate or coffee)
+
+4. From rule 3, the person eating onion is the Thai or the person drinking hot-chocolate, but not both. Since we already know the Thai is eating onion, the person drinking hot-chocolate must be in another position.
+
+5. From rule 4, the person eating lime is not to the right of the person drinking coffee. Since the lime eater is the Thai (Nationality 4), the coffee drinker must be in one of the first three positions.
+
+6. From rule 5, the Spanish is somewhere to the left of the person drinking sprite. Since the coffee drinker is in the first three positions, the Spanish cannot be in the first three positions. So, the Spanish must be in the fourth position, and the sprite drinker must be in one of the first three positions.
+
+7. Now we have only one beverage left, tea. Since the coffee drinker is in the first three positions, the tea drinker must be in the remaining positions. However, the tea drinker cannot be in the fourth position because the Spanish is there (rule 5). So, the tea drinker must be in the second position, and the sprite drinker must be in the third position.
+
+The final solution table is:
+
+|               |      1      |     2      |       3       |   4    |
+| Beverage      | tea        |   sprite   |   hot-chocolate| coffee |
+| Food          | cauliflower| grapefruit | onion         | lime    |
+| Nationality   | spanish    | japanese   | italian       | thai    |
+
+#############
+|               |      1      |     2      |       3       |   4    |
+| Beverage      | tea        |   sprite   |   hot-chocolate| coffee |
+| Food          | cauliflower| grapefruit | onion         | lime    |
+| Nationality   | spanish    | japanese   | italian       | thai    |
+#############"	{'beverage': ['tea', 'sprite', 'hot-chocolate', 'coffee'], 'food': ['cauliflower', 'grapefruit', 'onion', 'lime'], 'nationality': ['spanish', 'japanese', 'italian', 'thai']}	True	12	True
+Lv10-3x4-4	"Let's solve this step by step:
+
+1. Since the baking hobby is on the far left, it can only be in column 1. Let's place it in row 1 (as we don't have any other information about it yet). So, the first row is [Baking].
+
+2. The Australian cannot be in the right of the person eating grapes, so the Australian cannot be in rows 2, 3, or 4. Since the baking hobby is in row 1, the Australian cannot be in row 1 either. So, the Australian must be in row 4.
+
+3. Now we know the Australian is in row 4, so the person eating grapes cannot be in row 4 (because the Australian is not to the right of the person eating grapes). The person eating grapes can only be in rows 1, 2, or 3.
+
+4. The cooking hobby is to the right of the Canadian, so the Canadian cannot be in rows 1 or 3. The Canadian can only be in row 2 or 4. Since the Australian is in row 4, the Canadian must be in row 2.
+
+5. Now we know the Canadian is in row 2, so the person eating grapes cannot be in row 2 (because the cooking hobby is to the right of the Canadian). The person eating grapes can only be in rows 1 or 3.
+
+6. The chinese is somewhere to the left of the person eating cabbage, so the person eating cabbage cannot be in rows 3 or 4. The person eating cabbage can only be in rows 1 or 2.
+
+7. The polish is between the person who's hobby is fishing and the person eating grapes, and the polish is on the right of the person eating banana. Since the Australian is in row 4, the polish cannot be in row 4 either. So, the polish can only be in rows 1, 2, or 3.
+
+8. The polish is on the right of the person eating banana, so the person eating banana cannot be in rows 1 or 3 (because the polish is between the person who's hobby is fishing and the person eating grapes, and the polish is on the right of the person eating banana). The person eating banana can only be in row 2.
+
+9. Now we know the person eating banana is in row 2, so the polish cannot be in row 2 (because the polish is between the person who's hobby is fishing and the person eating grapes, and the person eating banana is in row 2). The polish can only be in rows 1 or 3.
+
+10. The polish is on the right of the person eating banana, so the person eating banana cannot be in column 1 (because the polish is on the right of the person eating banana). The person eating banana must be in column 2, 3, or 4.
+
+11. The person who's hobby is writing is on the right of the polish, so the polish cannot be in column 4 (because the person who's hobby is writing is on the right of the polish). The polish can only be in columns 1, 2, or 3.
+
+12. The person who's hobby is writing is the chinese or the person who's hobby is writing is the person eating cabbage, but not both0. Since we already placed the chinese in a position, the person who's hobby is writing must be the person eating cabbage. So, the person eating cabbage is in column 1 or 2.
+
+13. The person eating cabbage is in column 1 or 2, but the polish is on the right of the person eating banana, so the person eating cabbage cannot be in column 1 (because the person eating banana is in column 2). The person eating cabbage must be in column 2.
+
+14. Now we know the person eating cabbage is in column 2, so the chinese is in column 1.
+
+15. The person who's hobby is writing is the chinese, so the person who's hobby is writing is in column 1.
+
+16. The person who's hobby is baking is in row 1, the person who's hobby is cooking is in row 2 (to the right of the Canadian), the person who's hobby is writing is the chinese (in column 1), the person eating cabbage is the person who's hobby is writing (in column 2), the person eating banana is in column 2, the person eating grapes is in row 1, 2, or 3 but not row 4 (because the Australian is in row 4), and the polish is between the person who's hobby is fishing and the person eating grapes, and the polish is on the right of the person eating banana.
+
+17. Since the person who's hobby is fishing cannot be in row 4 (because the Australian is in row 4), the person who's hobby is fishing can only be in rows 1, 2, or 3. Since the person eating grapes is not in row 4, the person who's hobby is fishing cannot be in row 3 (because the person who's hobby is fishing is between the person eating grapes and the polish, and the person eating grapes is not in row 4). So, the person who's hobby is fishing can only be in rows 1 or 2.
+
+18. The person who's hobby is fishing is not the Australian (because the Australian is in row 4), so the person who's hobby is fishing can only be in row 1.
+
+19. The person eating grapes is not in row 4 (because the Australian is in row 4), and the person eating grapes is not in row 1 (because the person who's hobby is fishing is in row 1). So, the person eating grapes can only be in row 2 or 3.
+
+20. The person eating grapes is not to the right of the cooking hobby (because the cooking hobby is the Canadian), so the person eating grapes cannot be in column 4. The person eating grapes can only be in columns 1, 2, or 3.
+
+21. The polish is on the right of the person eating banana, so the person eating banana cannot be in column 4 (because the person eating banana is in column 2). The person eating banana can only be in columns 1, 2, or 3.
+
+22. The polish is between the person who's hobby is fishing and the person eating grapes, and the polish is on the right of the person eating banana. Since the person who's hobby is fishing is in row 1 and the person eating banana is in column 2, the person eating grapes cannot be in row 1 (because the polish is between the person who's hobby is fishing and the person eating grapes). So, the person eating grapes can only be in row 2 or 3.
+
+23. The person eating grapes is not to the right of the cooking hobby (because the cooking hobby is the Canadian), so the person eating grapes cannot be in column 4. The person eating grapes can only be in columns 1, 2, or 3.
+
+24. The person eating grapes is not in row 4 (because the Australian is in row 4), and the person eating grapes is not in row 1 (because the person who's hobby is fishing is in row 1). So, the person eating grapes can only be in row 3.
+
+25. Now we know the person eating grapes is in row 3, so the polish cannot be in row 3 (because the polish is between the person who's hobby is fishing and the person eating grapes). The polish can only be in rows 1 or 2.
+
+26. The polish is on the right of the person eating banana, so the person eating banana cannot be in column 1 (because the polish is on the right of the person eating banana). The person eating banana can only be in columns 2 or 4.
+
+27. The polish is between the person who's hobby is fishing and the person eating grapes, and the polish is on the right of the person eating banana. Since the person who's hobby is fishing is in row 1 and the person eating grapes is in row 3, the person eating banana cannot be in row 1 (because the polish is between the person who's hobby is fishing and the person eating banana). So, the person eating banana can only be in row 2 or 4.
+
+28. The person eating banana is not to the right of the cooking hobby (because the cooking hobby is the Canadian), so the person eating banana cannot be in column 4. The person eating banana can only be in column 2.
+
+29. Now we know the person eating banana is in column 2, so the polish cannot be in column 2 (because the polish is on the right of the person eating banana). The polish can only be in column 1 or 4.
+
+30. The polish is on the right of the person eating banana, so the person eating banana cannot be in column 4 (because the person eating banana is in column 2). The polish can only be in column 1.
+
+31. Now we have placed all the hobbies and nationalities, so we can place the foods. Since the person eating banana is in column 2, the person eating banana must be eating bananas. Since the person eating grapes is in row 3, the person eating grapes must be eating grapes. Since the person eating cabbage is the person who's hobby is writing (in column 1), the person eating cabbage must be eating cabbage. Since the person who's hobby is baking is in row 1, the person who's hobby is baking must be baking something (we don't have enough information to determine what they are baking). Since the Canadian is in row 2, the Canadian can be eating anything (we don't have enough information to determine what they are eating).
+
+Here is the final solution table:
+
+```
+#############
+|   Baking   |   Cooking  |   Canadian |   Cabbage  |
+#############
+|   Bananas |   -       |   -       |   Cabbage  |
+#############
+|   -       |   -       |   Writing |   Grapes   |
+#############
+|   -       |   Australian|   -       |   -       |
+#############
+```
+
+The table is not complete because we don't have enough information to determine what the person who's hobby is baking is baking and what the Australian is eating."	{}	False	0	False
+Lv10-3x4-5	"Let's solve this step by step:
+
+1. Since the positions are odd for iced-tea, it can only be in positions 1, 3, or 5.
+2. The owner of the cat is not watching crime movies, so they can't be in positions 2 or 4.
+3. The owner of the hedgehog is between horror and action. Since positions are odd, the hedgehog owner can't be in position 1 or 3. So, the possible positions for hedgehog are 3, 5, or 7.
+4. The person drinking iced-tea is not watching musical movies, so they can't be in position 4.
+5. The person drinking cola is either the owner of the cat or the person watching action movies, but not both. Since the cat can't be in position 4, the person drinking cola can't be in position 4 either. So, cola can't be in positions 1, 3, or 5.
+6. The person drinking juice is to the right of the person drinking cola, so juice can't be in positions 1, 3, or 5 either.
+7. The person watching musical movies is on the far right, so it must be in position 4.
+8. The owner of the mouse is to the right of the person watching crime movies, so mouse can't be in positions 1, 3, or 5.
+9. The person drinking juice is to the right of the person drinking soy-milk, so soy-milk can't be in position 4.
+10. The owner of the mouse is between the person drinking juice and the person drinking soy-milk, so mouse can't be in position 1.
+
+Now we have the following restrictions:
+- Iced-tea can't be in position 4.
+- Cola can't be in positions 1, 3, or 5.
+- Juice can't be in positions 1, 3, or 5.
+- Soy-milk can't be in position 4.
+- Mouse can't be in position 1.
+
+Since there are only 4 positions left (2, 3, 5, and 6), we can start filling in the table:
+
+| Beverage      |   1    |    2     |    3     |    4    |
+| Movie-Genre   |        |          |          |         |
+| Pet           |        |          |          |         |
+
+1. Since iced-tea can't be in position 4, it must be in position 1, 3, or 5. But it can't be in position 1 because juice and cola can't be there. So, iced-tea is in position 3.
+2. Since the owner of the cat can't be in position 4 (because the person drinking iced-tea is there), the cat owner must be in position 1, 2, or 5. But since the person drinking cola can't be in position 1, the cat owner must be in position 2. So, cola is in position 1.
+3. Since the owner of the hedgehog is between horror and action, and the person watching horror is in position 2 (since the cat owner is there), the hedgehog owner must be in position 4. So, horror is in position 2.
+4. Since the person drinking juice is to the right of the person drinking cola, and cola is in position 1, juice must be in position 2 or 4. But since the person watching musical movies is in position 4, juice must be in position 2.
+5. Since the person drinking soy-milk is to the left of the person drinking juice, soy-milk must be in position 1.
+6. Since the owner of the mouse is between the person drinking juice and the person drinking soy-milk, and juice is in position 2, the mouse owner must be in position 3. So, crime is in position 3.
+7. Since the person watching action movies is either the person drinking cola or the owner of the cat, and cola is in position 1 and the cat is in position 2, the person watching action movies must be in position 1. So, action is in position 1.
+
+So, the final solution table is:
+
+#############
+| Beverage      | Cola  | Juice | Soy-milk | Iced-tea |
+| Movie-Genre   | Action| Musical| Crime    | Horror   |
+| Pet           | Cat   |       | Mouse    | Hedgehog |
+#############
+
+This table satisfies all the given conditions."	{'beverage': ['cola', 'juice', 'soy-milk', 'iced-tea'], 'movie-genre': ['action', 'musical', 'crime', 'horror'], 'pet': ['cat', '', 'mouse', 'hedgehog']}	True	3	False
+Lv10-3x4-6	"Let's solve this step by step:
+
+1. We know that the person who's hobby is puzzles is somewhere to the left of the person who's hobby is singing. Let's place the puzzles hobby on the far left.
+
+| Hobby   | Puzzles |   |   |   |
+|--------|--------|---|---|---|
+| Nationality|       |   |   |   |
+| Transport|       |   |   |   |
+
+2. The American cannot be the person who's hobby is camping and the American cannot be the person driving the trike. Since the American cannot be the first person, let's place the American in the second position. Since the American cannot drive the trike, the trike must be in the fourth position.
+
+| Hobby   | Puzzles | Camping | Trike |   |
+|--------|--------|--------|-------|---|
+| Nationality|       | American|       |   |
+| Transport|       |       |       |   |
+
+3. The person who's hobby is singing is not to the left of the person who's hobby is puzzles. So, the singing hobby cannot be in the first or second position.
+
+4. The person driving the ship and the nigerian have different parity positions. Since the American and the trike are already placed, the ship cannot be in the first, second, or fourth position. Let's place the ship in the third position.
+
+| Hobby   | Puzzles | Camping | Trike | Ship |
+|--------|--------|--------|-------|------|
+| Nationality|       | American|       | Nigerian|
+| Transport|       |       |       |       |
+
+5. The person who's hobby is card-games is on the left of the person who's hobby is puzzles. So, the card-games hobby must be in the first position.
+
+| Hobby   | Card-games| Puzzles | Camping | Trike | Ship |
+|--------|----------|--------|--------|-------|------|
+| Nationality| American |       |       |       | Nigerian|
+| Transport|       |       |       |       |       |
+
+6. The nigerian is not to the left of the person driving the ship. So, the nigerian cannot be in the second position.
+
+7. The chinese is on the far right. Since the nigerian and the American are already placed, the chinese must be in the third position.
+
+| Hobby   | Card-games| Puzzles | Camping | Chinese | Trike | Ship |
+|--------|----------|--------|--------|--------|-------|------|
+| Nationality| American |       | Chinese|       |       | Nigerian|
+| Transport|       |       |       |       |       |       |
+
+8. The dutch is somewhere between the person who's hobby is puzzles and the American. Since the American is in the second position, the dutch must be in the first or second position. However, the dutch cannot be in the first position because the person who's hobby is card-games is already there. So, the dutch is in the second position.
+
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Trike | Ship |
+|--------|----------|-------|--------|--------|-------|------|
+| Nationality| American | Dutch |       | Chinese|       | Nigerian|
+| Transport|       |       |       |       |       |       |
+
+9. The person who's hobby is singing is on the right of the person driving the trike. Since the trike is in the fourth position, the singing hobby must be in the fifth position.
+
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Singing | Trike | Ship |
+|--------|----------|-------|--------|--------|---------|-------|------|
+| Nationality| American | Dutch |       | Chinese|       |       | Nigerian|
+| Transport|       |       |       |       |       |       |       |
+
+10. The nigerian is between the person driving the train and the dutch. Since the dutch is in the second position, the nigerian must be in the third position.
+
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Singing | Trike | Ship |
+|--------|----------|-------|--------|--------|---------|-------|------|
+| Nationality| American | Dutch |       | Chinese|       |       | Nigerian|
+| Transport|       |       |       |       |       |       | Train |
+
+Now, let's fill in the transport:
+
+11. Since the American cannot drive the trike, the American must be driving the train.
+
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Singing | Trike | Ship | Train |
+|--------|----------|-------|--------|--------|---------|-------|------|-------|
+| Nationality| American | Dutch |       | Chinese|       |       | Nigerian|       |
+| Transport| Train    |       |       |       |       | Trike  | Ship  |       |
+
+12. The only remaining transport is the ship. Since the nigerian is driving the ship, the nationality is nigerian.
+
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Singing | Trike | Ship | Train |
+|--------|----------|-------|--------|--------|---------|-------|------|-------|
+| Nationality| American | Dutch |       | Chinese|       |       | Nigerian| American|
+| Transport| Train    |       |       |       |       | Trike  | Ship  |       |
+
+So, the final solution table is:
+
+#############
+| Hobby   | Card-games| Dutch  | Puzzles | Chinese | Singing | Trike | Ship | Train |
+|--------|----------|-------|--------|--------|---------|-------|------|-------|
+| Nationality| American | Dutch |       | Chinese|       |       | Nigerian| American|
+| Transport| Train    |       |       |       |       | Trike  | Ship  |       |
+#############"	{'hobby': ['card-games', 'dutch', 'puzzles', 'chinese', 'singing', 'trike', 'ship', 'train'], 'transport': ['train', '', '', '', '', 'trike', 'ship', '']}	False	0	False
+Lv10-3x4-7	"Let's solve this step by step:
+
+1. We can start by placing the people eating the food. Since the person eating potato can't be to the left of the person eating orange, the person eating potato must be in positions 2, 3, or 4. Let's place the person eating potato in position 4 for now.
+
+2. The analyst is between the owner of the bird and the person eating potato. Since the analyst can't be in position 1 (because the bird owner can't be in position 1), the analyst can only be in positions 2 or 3. Let's place the analyst in position 2 for now.
+
+3. The owner of the dog is on the left or right of the teacher. Since the teacher can't be in position 1, the teacher must be in position 2, 3, or 4. If the teacher is in position 1, the dog owner would have to be in position 4, but that would mean the person eating potato is in position 1, which we've ruled out. So, the teacher can't be in position 1. If the teacher is in position 2, the dog owner must be in position 4. If the teacher is in position 3, the dog owner can be in any position. Let's place the teacher in position 3 for now.
+
+4. The person eating potato is somewhere between the person eating grapefruit and the owner of the chinchilla. Since the person eating potato is in position 4, the person eating grapefruit must be in position 1, 2, or 3. Let's place the person eating grapefruit in position 1 for now. The owner of the chinchilla can't be in position 1 (because the bird owner can't be in position 1), so the owner of the chinchilla must be in position 2, 3, or 4. Let's place the owner of the chinchilla in position 2 for now.
+
+5. The owner of the chinchilla and the person eating garlic have the same parity positions. Since the owner of the chinchilla is in position 2 and the person eating garlic can't be in position 1 (because the bird owner can't be in position 1), the person eating garlic must be in position 4.
+
+6. The owner of the bird is the analyst or the owner of the bird is the person eating orange, but not both. Since the analyst is in position 2 and the person eating orange can't be in position 1 (because the bird owner can't be in position 1), the owner of the bird must be in position 1.
+
+7. The librarian is on the left of the owner of the chinchilla. Since the librarian can't be in position 1 (because the owner of the bird is in position 1), the librarian must be in position 2.
+
+8. The security-guard is on the left or right of the owner of the goldfish. Since the teacher is in position 3 and the dog owner is in position 4, the security-guard can't be in position 2 (because the librarian is there). So, the security-guard can be in position 1 or 4. Let's place the security-guard in position 1 for now.
+
+9. The owner of the goldfish can't be in position 1 (because the security-guard is there), so the owner of the goldfish must be in position 4.
+
+10. The owner of the bird and the librarian have the same parity positions. Since the owner of the bird is in position 1 and the librarian is in position 2, they have different parities, which contradicts the given condition. This means our initial placement of the analyst in position 2 was incorrect. Let's try placing the analyst in position 3 instead.
+
+With the analyst in position 3, the rest of the placements work:
+- The owner of the bird is in position 1
+- The librarian is in position 2
+- The security-guard is in position 1
+- The teacher is in position 3
+- The person eating potato is in position 4
+- The person eating grapefruit is in position 1
+- The owner of the chinchilla is in position 2
+- The person eating garlic is in position 4
+- The owner of the dog is in position 4 (left of the person eating grapefruit)
+- The owner of the goldfish is in position 4 (right of the security-guard)
+
+So, the final solution table is:
+
+|        |     1     |     2      |       3        |     4      |
+| Food   | orange    |   bird     |   teacher     |   potato   |
+| Job    | analyst   |   librarian|   security-guard| teacher    |
+| Pet    | bird      |   chinchilla|   dog         |   goldfish  |
+
+#############
+| orange   |   bird   |   librarian|   security-guard| teacher    |
+|---------|---------|-----------|----------------|-----------|
+| potato   |   chinchilla|   analyst  |   dog          |   goldfish  |
+#############"	{'orange': ['bird', 'librarian', 'security-guard', 'teacher'], 'potato': ['chinchilla', 'analyst', 'dog', 'goldfish']}	False	0	False
+Lv10-3x4-8	"Let's break this down step by step:
+
+1. We know there are 4 people, so we can represent them as A, B, C, and D from left to right.
+
+2. From rule 3, the person who's hobby is drawing is on the far left or far right. Since there are only two positions left for drawing (A or D), let's assume drawing is hobby A.
+
+3. From rule 7, the person who's hobby is video-games is on the left of the person watching thriller movies. Since we know drawing is A, and A can't be video-games (rule 3), the only option left for video-games is C.
+
+4. From rule 9, the person eating pumpkin is not to the left of the person who's hobby is video-games. So, pumpkin can't be A or B. Therefore, pumpkin is either C or D.
+
+5. From rule 11, the person eating pumpkin is on the left or right of the person watching thriller movies. Since we know video-games is C, and C is watching thriller movies, pumpkin can't be D (as that would violate rule 11). So, pumpkin is C.
+
+6. From rule 8, the person watching romance movies is somewhere to the left of the person eating grapes. Since we know pumpkin is C (eating pumpkin), and C can't be romance (as that would violate rule 8), the only option left for romance is A.
+
+7. From rule 5, the person watching romance movies is somewhere to the left of the person watching musical movies. Since A is watching romance, the only option left for musical is B.
+
+8. From rule 6, the person watching romance movies is somewhere to the right of the person watching thriller movies. Since A is watching romance, B must be watching thriller.
+
+9. From rule 2, the person who's hobby is puzzles is not to the right of the person watching romance movies. Since A is watching romance, puzzles can't be B or D. Therefore, puzzles is C.
+
+10. From rule 4, the person who's hobby is puzzles is in an even position. Since we know puzzles is C, this condition is satisfied.
+
+11. From rule 10, the person watching romance movies is the person who's hobby is puzzles or the person who's hobby is puzzles is the person eating plum, but not both. Since we know A is watching romance (puzzles), plum can't be A. Therefore, plum is D.
+
+12. Now, we are left with grapes. Since we know pumpkin is C, grapes can't be C or B (as that would violate rule 8). Therefore, grapes is D.
+
+Final solution table:
+
+|               |       A      |     B     |     C    |     D    |
+| Food          |   Drawing    |   Thriller|   Pumpkin|   Grapes |
+| Hobby         |   Drawing    |   Video-games| Puzzles  |   Plum   |
+| Movie-Genre   |   Musical    |   Romance  |   Thriller|   Sports  |"	{'food': ['drawing', 'thriller', 'pumpkin', 'grapes'], 'hobby': ['drawing', 'video-games', 'puzzles', 'plum']}	False	0	False
+Lv10-3x4-9	"Let's solve this step by step:
+
+1. Since all jobs, movie-genres, and transport methods are different, we can assign them numbers from 1 to 4 without repetition. Let's start by assigning the jobs:
+   - Job 1: nurse
+   - Job 2: pilot
+   - Job 3: social-worker
+   - Job 4: teacher
+
+2. Now let's assign the movie-genres. Since the person watching satire movies is not to the left of the person driving the bus (rule 3), the satire can't be in position 1 or 2. So, let's assign:
+   - Movie-Genre 1: crime
+   - Movie-Genre 2: satire
+   - Movie-Genre 3: scientific
+   - Movie-Genre 4: thriller
+
+3. Now let's assign the transport methods. Since the person driving the train and the person watching crime movies have different parity positions (rule 1), the train can't be in position 1. Also, the teacher is between the social-worker and the nurse (rule 6), so the teacher can't be in position 4. So, let's assign:
+   - Transport 1: bus
+   - Transport 2: car
+   - Transport 3: train
+   - Transport 4: tram
+
+4. Now let's check the remaining rules:
+   - The person driving the train is not the nurse (rule 5), so it must be in position 2 (pilot), 3 (social-worker), or 4 (teacher). But the teacher is already assigned, so it must be the social-worker or the pilot. Since the pilot and the person driving the bus have different parity positions (rule 7), the pilot can't be in position 1 (bus). So, the driver of the train is the social-worker (position 3).
+   - The person driving the tram is somewhere to the right of the person watching thriller movies (rule 8), so it can't be in position 1 (bus), 2 (train), or 3 (social-worker). So, it must be in position 4 (teacher).
+   - The person watching scientific movies is the person driving the bus or the person watching scientific movies is the teacher, but not both (rule 9). Since the bus is already assigned, the person watching scientific movies must be the teacher (position 4).
+   - The person driving the train and the person watching scientific movies have the same parity positions (rule 10). Since the train is in position 3 (social-worker) and the scientific movies are in position 4 (teacher), they have the same parity positions (both are even).
+
+So, the final solution table is:
+
+  |               |    1     |   2    |     3      |       4       |
+  | Job           | nurse    | pilot  | social-worker| teacher   |
+  | Movie-Genre   | crime    |       |            | scientific |
+  | Transport     | bus     | train  | tram        | car        |
+
+#############
+|               |    1     |   2    |     3      |       4       |
+| Job           | nurse    | pilot  | social-worker| teacher   |
+| Movie-Genre   | crime    |       |            | scientific |
+| Transport     | bus     | train  | tram        | car        |
+#############"	{'job': ['nurse', 'pilot', 'social-worker', 'teacher'], 'movie-genre': ['crime', '', '', 'scientific'], 'transport': ['bus', 'train', 'tram', 'car']}	True	2	False
+Lv10-3x4-10	"Let's solve this step by step:
+
+1. Since the positions are odd and even, and there are 4 people, the odd positions are 1 and 3, and the even positions are 2 and 4.
+
+2. The hobby of photography must be in position 1 (odd position) or 3 (odd position). Let's assume it's in position 1 for now.
+
+3. Since camping is in an even position and not to the left of chess, it can only be in position 2 or 4. Let's assume it's in position 2 for now.
+
+4. Now, the hobby in position 1 is photography, and the hobby in position 2 is camping. The only hobby left for position 3 is chess, and for position 4, it can be any of the remaining hobbies (cooking, photography, or chess).
+
+5. The owner of the guinea-pig is to the right of the owner of the ferret, so the ferret must be in position 1 or 3, and the guinea-pig must be in position 2 or 4. Since the guinea-pig can't be in position 1 (because photography is there), it must be in position 4. This means the ferret is in position 1.
+
+6. The owner of the horse is to the left of the person who's hobby is chess, so the horse must be in position 1 or 3. Since the horse can't be in position 1 (because the ferret is there), it must be in position 3. This means the person who's hobby is chess is in position 2.
+
+7. The person driving the jet-ski is to the right of the owner of the horse, so the jet-ski must be in position 2 or 4. Since the jet-ski can't be in position 4 (because the guinea-pig owner is there), it must be in position 2. This means the person driving the tram is in position 4.
+
+8. The person driving the trike can't be the owner of the guinea-pig (because the guinea-pig owner is in position 4), so the person driving the trike must be the person who's hobby is cooking.
+
+9. The person driving the taxi can't be the person who's hobby is camping (because the camping hobby is in position 2), so the person driving the taxi must be the person who's hobby is chess (because the chess hobby is in position 2).
+
+10. The only remaining hobby for position 3 is photography. So, the final arrangement is:
+
+| Hobby       | 1    |    2     |      3      |     4      |
+|------------|------|----------|------------|-----------|
+| Pet        |     F |         G |           H |     P     |
+| Transport  |  J   |     T    |     T      |    C      |
+
+Where F is ferret, G is guinea-pig, H is horse, J is jet-ski, T is tram, and C is trike.
+
+So, the final solution table is:
+
+#############
+| Hobby       | 1    |    2     |      3      |     4      |
+|------------|------|----------|------------|-----------|
+| Pet        |     F |         G |           H |     P     |
+| Transport  |  J   |     T    |     T      |    C      |
+#############"	{'hobby': ['1', '2', '3', '4'], 'pet': ['f', 'g', 'h', 'p'], 'transport': ['j', 't', 't', 'c']}	True	0	False

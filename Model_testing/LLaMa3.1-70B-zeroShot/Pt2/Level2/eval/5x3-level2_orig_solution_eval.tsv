@@ -1,0 +1,681 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-5x3-1	"After analyzing the clues, I came up with a solution:
+
+
+|               |    1    |      2       |      3       |
+| Food          |  kiwi   |     pear     |     peas     |
+| Job           | analyst | photographer | videographer |
+| Music-Genre   | rock    | electronic  | salsa        |
+| Pet           | dog     | bird        | horse        |
+| Transport     | van     | trike       | boat         |
+
+ Wait, no! This is not the correct solution. Let me re-examine the clues.
+
+
+From clue 2, we know that the person driving the van is on the far left.
+From clue 8, we know that the fan of salsa is the person driving the van.
+From clue 3, we know that the person eating pear is in the middle.
+
+Combining these clues, we can deduce:
+
+
+|               |    1    |      2       |      3       |
+| Food          |         |     pear     |              |
+| Job           |         |              |              |
+| Music-Genre   | salsa   |              |              |
+| Pet           |         |              |              |
+| Transport     | van     |              |              |
+
+From clue 4, we know that the person driving the trike is on the right of the fan of salsa.
+From clue 5, we know that the videographer is on the right of the owner of the horse.
+
+Combining these clues with the previous deductions, we can further deduce:
+
+
+|               |    1    |      2       |      3       |
+| Food          |         |     pear     |              |
+| Job           |         |              | videographer|
+| Music-Genre   | salsa   |              |              |
+| Pet           |         |              | horse        |
+| Transport     | van     |              | trike        |
+
+From clue 1, we know that the photographer is between the owner of the bird and the person driving the van.
+Since the person driving the van is on the far left, the photographer must be in the middle.
+
+Combining this clue with the previous deductions, we can further deduce:
+
+
+|               |    1    |      2       |      3       |
+| Food          |         |     pear     |              |
+| Job           |         | photographer| videographer|
+| Music-Genre   | salsa   |              |              |
+| Pet           | bird    |              | horse        |
+| Transport     | van     |              | trike        |
+
+From clue 6, we know that the fan of rock is on the left of the fan of electronic.
+Since the fan of salsa is already in column 1, and the photographer is in column 2, the fan of rock must be in column 2.
+
+Combining this clue with the previous deductions, we can further deduce:
+
+
+|               |    1    |      2       |      3       |
+| Food          |         |     pear     |              |
+| Job           |         | photographer| videographer|
+| Music-Genre   | salsa   | rock        | electronic  |
+| Pet           | bird    |              | horse        |
+| Transport     | van     |              | trike        |
+
+From clue 7, we know that the fan of salsa is the person eating peas.
+We already knew this from clue 8.
+
+
+Now, let's complete the table:
+
+
+|               |    1    |      2       |      3       |
+| Food          | kiwi    |     pear     |     peas     |
+| Job           | analyst | photographer| videographer|
+| Music-Genre   | salsa   | rock        | electronic  |
+| Pet           | bird    | dog         | horse        |
+| Transport     | van     | trike       | boat         |
+
+Finally!
+
+
+#############
+|               |    1    |      2       |      3       |
+| Food          | kiwi    |     pear     |     peas     |
+| Job           | analyst | photographer| videographer|
+| Music-Genre   | salsa   | rock        | electronic  |
+| Pet           | bird    | dog         | horse        |
+| Transport     | van     | trike       | boat         |
+#############"	{'food': ['kiwi', 'pear', 'peas'], 'job': ['analyst', 'photographer', 'videographer'], 'music-genre': ['salsa', 'rock', 'electronic'], 'pet': ['bird', 'dog', 'horse'], 'transport': ['van', 'trike', 'boat']}	True	10	False
+Lv2-5x3-2	"After analyzing the clues, I came up with a possible solution:
+
+
+|            |      1       |      2       |      3      |
+| Beverage   |              |              |             |
+| Food       | papaya      | mango        | plum        |
+| Hobby      | magic-tricks| puzzles      | reading     |
+| Job        | firefighter | photographer | scientist   |
+| Sport      | surfing     | parkour      | rugby       |
+
+Here's how I deduced the solution:
+
+
+From clue 6, we know papaya is on the left of mango. From clue 3 and 4, we know magic-tricks and surfing are both on the left of mango.
+
+
+From clue 2, we know rugby is on the left of firefighter, but since rugby can't be on the right (due to clue 3 and 4), it must be in column 3.
+
+
+Clue 1 tells us milk is with scientist. Clue 5 places 7up between magic-tricks and puzzles.
+
+
+Now let's assemble the pieces:
+
+
+ Column 1: papaya, magic-tricks, surfing, firefighter
+ Column 2: mango, puzzles, parkour, photographer
+ Column 3: plum, reading, rugby, scientist
+
+
+And finally, we place milk with scientist (clue 1), so:
+
+
+Column 1: papaya, magic-tricks, surfing, firefighter -> juice (only option left)
+Column 2: mango, puzzles, parkour, photographer -> 7up
+Column 3: plum, reading, rugby, scientist -> milk
+
+
+Final solution:
+
+
+#############
+|            |      1       |      2       |      3      |
+| Beverage   | juice        | 7up          | milk        |
+| Food       | papaya      | mango        | plum        |
+| Hobby      | magic-tricks| puzzles      | reading     |
+| Job        | firefighter | photographer | scientist   |
+| Sport      | surfing     | parkour      | rugby       |
+#############"	{'beverage': ['juice', '7up', 'milk'], 'food': ['papaya', 'mango', 'plum'], 'hobby': ['magic-tricks', 'puzzles', 'reading'], 'job': ['firefighter', 'photographer', 'scientist'], 'sport': ['surfing', 'parkour', 'rugby']}	True	7	False
+Lv2-5x3-3	"After analyzing the clues, I came up with the following solution:
+
+
+#############
+|               |        1        |    2    |    3     |
+| Job           | Project-Manager | Designer | Chef      |
+| Movie-Genre   | Documentary     | Western  | Comedy    |
+| Music-Genre   | Indie           | R&B      | D&B       |
+| Nationality   | Russian         | German   | Egyptian  |
+| Pet           | Horse           | Cat      | Turtle    |
+#############
+
+
+Here's a brief explanation of how I arrived at this solution:
+
+* From clue 5, the German is between the Egyptian and the Russian. Since there are only three columns, the Russian must be on the left, and the Egyptian must be on the right.
+* From clue 8, the owner of the turtle (D&B fan) is on the right of the Russian. This means the D&B fan must be in column 3, and the Russian must be in column 1.
+* From clue 4, the fan of D&B is the owner of the turtle. This confirms that the person in column 3 prefers D&B music.
+* From clue 2, the person watching Western movies is on the right of the person watching documentary movies. Since the person watching Western movies cannot be in column 1 (Russian), they must be in column 2, and the person watching documentary movies must be in column 1.
+* From clue 7, the fan of Indie music is the project-manager. This means the project-manager is in column 1, which fits with the Russian nationality.
+* From clue 6, the chef is on the left of the fan of R&B. Since the chef cannot be in column 3 (Egyptian), they must be in column 2 or 3. But if they were in column 3, there would be no space for the designer (since the project-manager is already in column 1). Therefore, the chef must be in column 3, and the fan of R&B must be in column 2.
+* From clue 1, the owner of the cat is the person watching comedy movies. This means the person watching comedy movies is in column 2 or 3 (since the Russian already has a pet). But since the Egyptian is on the right, and the cat cannot be owned by the Russian (column 1), it must be owned by the German (column 2).
+* The only remaining job is the designer, which must be in column 2.
+* Finally, from clue 3, the fan of D&B is on the left of the person watching comedy movies. This means the D&B fan (in column 3) is indeed on the right of the person watching documentary movies (column 1), and the person watching Western movies (column 2) is between them.
+
+This solution satisfies all the clues, and I hope it's correct!"	{'job': ['project-manager', 'designer', 'chef'], 'movie-genre': ['documentary', 'western', 'comedy'], 'music-genre': ['indie', 'r&b', 'd&b'], 'nationality': ['russian', 'german', 'egyptian'], 'pet': ['horse', 'cat', 'turtle']}	True	9	False
+Lv2-5x3-4	"Here's my attempt to solve the logic puzzle:
+
+
+|               |     1      |     2      |     3      |
+| Movie-Genre   |            |            |            |
+| Nationality   |            |            |            |
+| Pet           |            |            |            |
+| Sport         |            |            |            |
+| Transport     | motor      |            |            |
+
+From clue 1, the owner of the goat is the person who's sport is ice-hockey.
+
+From clue 5, the person driving the motorbike is on the left of the person watching drama movies. Since ""motor"" is already filled in column 1, it means that column 1 must be the one with the motorbike.
+
+From clue 4, the person watching drama movies is on the left of the australian. This implies that the australian cannot be in column 1 (since column 1 has the motorbike and is on the left of the drama movie watcher).
+
+From clue 6, the person driving the bike is between the owner of the lizard and the australian##2.
+
+Considering all these clues together, here's my proposed solution:
+
+
+#############
+|               |     1      |     2      |     3      |
+| Movie-Genre   | horror     | drama      | fantasy    |
+| Nationality   | brazilian  | argentine  | australian |
+| Pet           | lizard     | goat       | hamster    |
+| Sport         | basketball | ice-hockey | surfing    |
+| Transport     | motorbike  | bike       | van        |
+#############
+
+Let me know if this solution is correct!"	{'movie-genre': ['horror', 'drama', 'fantasy'], 'nationality': ['brazilian', 'argentine', 'australian'], 'pet': ['lizard', 'goat', 'hamster'], 'sport': ['basketball', 'ice-hockey', 'surfing'], 'transport': ['motorbike', 'bike', 'van']}	True	15	True
+Lv2-5x3-5	"After analyzing the clues, I've come up with a solution:
+
+
+#############
+|               |     1      |    2     |     3      |
+| Beverage      | Lemonade   | Sprite   | 7up        |
+| Food          | Radish     | Mango    | Spinach    |
+| Job           | Chef       | Accountant | Journalist|
+| Movie-Genre   | Thriller   | Spy       | Epic       |
+| Pet           | Turtle     | Goat      | Dog        |
+#############
+
+
+Here's how I derived the solution:
+
+From clue 1, we know lemonade is to the left of the accountant.
+
+From clue 4, we know sprite is associated with epic movies.
+
+Combining clues 2 and 5, we can deduce that the goat owner (in the middle) must be between the turtle owner (left) and the journalist (right), and also between the person eating mango (right) and lemonade drinker (left). This places the goat in position 2 and the turtle in position 1.
+
+Clue 6 tells us radish is to the left of mango, so radish must be in position 1, food column.
+
+Since the spy movie watcher is in the middle (clue 3), it must be associated with sprite (in position 2).
+
+From clue 1 and the above deductions, we can place lemonade in position 1, beverage column.
+
+The remaining options fit nicely into their respective columns.
+
+
+Please let me know if this solution meets your expectations!"	{'beverage': ['lemonade', 'sprite', '7up'], 'food': ['radish', 'mango', 'spinach'], 'job': ['chef', 'accountant', 'journalist'], 'movie-genre': ['thriller', 'spy', 'epic'], 'pet': ['turtle', 'goat', 'dog']}	True	3	False
+Lv2-5x3-6	"After analyzing the clues, I've filled in the table with the correct information. Here is the final solution:
+
+
+|               |   1    |     2      |     3      |
+| Hobby         |        |            |            |
+| Job           |        |            |            |
+| Music-Genre   |        |            |            |
+| Nationality   |        |            |            |
+| Sport         |        |            |            |
+
+
+#############
+|               |   1    |     2      |     3      |
+| Hobby         | Hiking | Singing   | Card-games|
+| Job           | Freelancer | Dancer | Dressmaker |
+| Music-Genre   | Punk     | Soul     | Folk       |
+| Nationality   | Thai     | Malaysian| Italian    |
+| Sport         | Lacrosse | Cricket  | Golf       |
+#############"	{'hobby': ['hiking', 'singing', 'card-games'], 'job': ['freelancer', 'dancer', 'dressmaker'], 'music-genre': ['punk', 'soul', 'folk'], 'nationality': ['thai', 'malaysian', 'italian'], 'sport': ['lacrosse', 'cricket', 'golf']}	True	8	False
+Lv2-5x3-7	"After analyzing the clues, I came up with the following solution:
+
+
+|            |      1      |     2      |   3    |
+| Beverage   |             |            |        |
+| Food       |             |            |        |
+| Hobby      |             |            |        |
+| Job        |             |            |        |
+| Sport      |             |            |        |
+
+Here's the filled-in table:
+
+
+#############
+|            |      1      |     2      |   3    |
+| Beverage   | lemonade    | tea        | water  |
+| Food       | avocado     | cauliflower| orange  |
+| Hobby      | collecting  | filmmaking | chess   |
+| Job        | firefighter | coach      | pilot   |
+| Sport      | soccer      | surfing    | ice-hockey|
+#############"	{'beverage': ['lemonade', 'tea', 'water'], 'food': ['avocado', 'cauliflower', 'orange'], 'hobby': ['collecting', 'filmmaking', 'chess'], 'job': ['firefighter', 'coach', 'pilot'], 'sport': ['soccer', 'surfing', 'ice-hockey']}	True	6	False
+Lv2-5x3-8	"After analyzing the clues, I came up with a possible solution:
+
+
+|               |       1       |    2    |      3       |
+| Hobby         | magic-tricks  | chess   | hiking       |
+| Movie-Genre   | horror        | romance | martial-arts |
+| Pet           | goat          | dog     | goldfish     |
+| Sport         | cycling       | weightlifting | sailing      |
+| Transport     | airplane      | boat     | jet-ski      |
+
+Here's how I arrived at the solution:
+
+From clue 7, we know that the person with the hobby ""magic-tricks"" is driving the jet-ski. Since the person watching horror movies is on the left of the person driving the jet-ski (clue 2), and the person who's sport is weightlifting is on the left of the person watching horror movies (clue 1), we can deduce that the order for columns 1-3 is: weightlifting, horror, jet-ski.
+
+From clue 6, we know that the owner of the goldfish is the person who's sport is sailing. Since sailing is not on the leftmost column, it must be in either column 2 or 3. If it were in column 2, then the person watching horror movies would be to the right of the person driving the airplane (clue 3), which contradicts clue 1. Therefore, sailing must be in column 3.
+
+From clue 4, we know that the person who's hobby is chess is on the right of the person watching martial-arts movies. Since the person watching horror movies is already in column 2, martial-arts must be in column 1 or 2. If it were in column 1, then the person with the hobby ""chess"" would be to the left of the person driving the airplane (clue 3), which contradicts clue 4. Therefore, martial-arts must be in column 2.
+
+From clue 8, we know that the owner of the dog is between the person watching romance movies and the owner of the goat. Since the person watching horror movies is already in column 2, and the person driving the airplane is on the left of the person driving the boat (clue 3), the only possible arrangement for columns 1-3 is: goat, dog, goldfish.
+
+From clue 5, we know that the person driving the jet-ski is on the right of the person who's sport is cycling. Since the person with the hobby ""magic-tricks"" is driving the jet-ski (clue 7), and the person watching horror movies is already in column 2, cycling must be in either column 1 or 2. If it were in column 2, then the person who's sport is weightlifting would be to the right of the person driving the airplane (clue 3), which contradicts clue 1. Therefore, cycling must be in column 1.
+
+The final solution table is:
+
+
+|               |       1       |    2    |      3       |
+| Hobby         | magic-tricks  | chess   | hiking       |
+| Movie-Genre   | horror        | romance | martial-arts |
+| Pet           | goat          | dog     | goldfish     |
+| Sport         | cycling       | weightlifting | sailing      |
+| Transport     | airplane      | boat     | jet-ski      |
+
+## final solution table ##"	{'hobby': ['magic-tricks', 'chess', 'hiking'], 'movie-genre': ['horror', 'romance', 'martial-arts'], 'pet': ['goat', 'dog', 'goldfish'], 'sport': ['cycling', 'weightlifting', 'sailing'], 'transport': ['airplane', 'boat', 'jet-ski']}	True	8	False
+Lv2-5x3-9	"Let's solve the puzzle step by step.
+
+
+From clue 3, we know that the person who likes disco is on the far left. From clue 5, we also know that this person's sport is badminton.
+
+
+From clue 1, we know that the person watching crime movies is to the left of the person watching western movies.
+
+
+Now, let's use clue 4: ""the person watching crime movies is between the person who's sport is skateboarding and the fisherman"". Since the person on the far left has badminton as their sport (from clue 5), this means that the person with skateboarding as their sport must be in the middle.
+
+
+Here's what we have so far:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            |               |
+| Job           |               |            |               |
+| Movie-Genre   | crime         | western    |               |
+| Music-Genre   | disco         |            |               |
+| Sport         | badminton     | skateboarding |               |
+
+From clue 2, we know that the person whose hobby is card-games is the doctor.
+
+
+From clue 6, we know that the person whose hobby is rock-climbing is the fisherman. From clue 4, we also know that the person with crime movies as their preference is between the skateboarder and the fisherman (rock-climber). This means that the rock-climber must be on the right.
+
+
+From clue 7, we know that the paramedic is to the right of the fan of hip-hop. Since the doctor is already taken by the card-games hobbyist, this means that the paramedic's music preference cannot be disco (which belongs to person 1). The only option left for the paramedic's music preference is funk.
+
+
+Here's what we have so far:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            | rock-climbing |
+| Job           |               |            | fisherman    |
+| Movie-Genre   | crime         | western    | zombie        |
+| Music-Genre   | disco         |            | funk          |
+| Sport         | badminton     | skateboarding |               |
+
+The only music genre left is hip-hop, which must belong to person 2.
+
+
+Now we need to determine the hobbies for persons 1 and 2. The only hobby left for person 1 is card-games (since rock-climbing belongs to person 3), but this would mean that person 1 is also a doctor (from clue 2). However, person 1's job cannot be determined yet.
+
+
+The only hobby left for person 2 is puzzles.
+
+
+Person 1's job must be either the paramedic or none of the above. But since the paramedic is to the right of the fan of hip-hop (person 2), this means that person 1 cannot be a paramedic.
+
+
+Person 1's job must be either the doctor, but we already know that person 1 likes disco music and their sport is badminton, so they can't be a doctor because from clue 2 ""the person who's hobby is card-games is the doctor"".
+
+
+Let's re-check all the clues:
+
+
+Person 3 has rock-climbing as his hobby (from clue 6), so he must be the fisherman.
+
+
+Person 1 likes disco and badminton, but we don't know their job yet. Person 2 likes hip-hop and skateboarding.
+
+
+The only job left for person 1 is the paramedic's rival: doctor is taken by ""card-games"" hobbyist (from clue 2), so this card-game hobbyist cannot be on position one since his sport isn't badminton, then it must be the fisherman that isn't a ""card-games"" hobbyist since rock-climbing is taken.
+
+
+Then person two job must be the doctor and his hobby puzzles.
+
+
+The remaining job for person 1 must be the paramedic.
+
+
+Here's the complete solution:
+
+
+#############
+|               |       1       |     2      |       3       |
+| Hobby         | card-games    | puzzles    | rock-climbing |
+| Job           | no            | doctor     | fisherman    |
+ Wait this isn't correct
+
+
+re-check all clues and see which ones we can use.
+
+
+""the person watching crime movies is on the left of the person watching western movies""
+
+
+""the person who's hobby is card-games is the doctor""
+
+
+""the fan of disco is on the far left""
+
+
+""the person watching crime movies is between the person who's sport is skateboarding and the fisherman""
+
+
+""the fan of disco is the person who's sport is badminton""
+
+
+""the person who's hobby is rock-climbing is the fisherman""
+
+
+""the paramedic is on the right of the fan of hip-hop""
+
+
+We must correct previous mistakes
+
+
+Here's what we have:
+
+
+From clue 2, ""the person who's hobby is card-games is the doctor""
+
+
+Then this person cannot be in column one because they do not like badminton.
+
+
+We can use clues 4 and 5 to position the crime movies viewer.
+
+
+""the person watching crime movies is between the person who's sport is skateboarding and the fisherman""
+
+
+Since we know from clue 6 that ""the person who's hobby is rock-climbing is the fisherman"", then this means that column three belongs to the fisherman (rock-climber) or the skateboarder, since they are on either side of the crime movies viewer.
+
+
+From clue 5 ""the fan of disco is the person who's sport is badminton"" we know this person is in column one
+
+
+Also from clue 3, this disco and badminton person is at far left (1)
+
+
+Then crime movie watcher must be in column two since they are on the left of western movies viewer that belongs to fisherman or skateboarder.
+
+
+Now using clue 4 again:
+
+
+""the person watching crime movies is between the person who's sport is skateboarding and the fisherman""
+
+
+This means that ""column three has a sport, either skateboarding or fisherman (rock-climbing)""
+
+
+Fisherman (from clue six) cannot be on column one since they are not on far left.
+
+
+Also from clue 4 this fisherman must be to the right of crime movies viewer or to the left.
+
+
+If we use the right side it won't work because there isn't any other person to put skateboarder at their right, so fisherman must be at the left
+
+
+That means that column three is taken by skateboarding
+
+
+Then we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            |               |
+| Job           |               |            |               |
+| Movie-Genre   |               | crime      | western        |
+| Music-Genre   | disco         |            |                |
+| Sport         | badminton     |            | skateboarding  |
+
+Now from clue one:
+
+
+""the person watching crime movies is on the left of the person watching western movies""
+
+
+Then column two has the sport to the right of western movie viewer and that means, fisherman (rock-climbing) belongs to column two since he can't be in first column.
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            |               |
+| Job           |               |            |               |
+| Movie-Genre   |               | crime      | western        |
+| Music-Genre   | disco         |            |                |
+| Sport         | badminton     | rock-climbing | skateboarding  |
+
+Now we can position card-game hobbyist since they are the doctor (from clue two)
+
+
+Since column one is taken by badminton, this means that column one cannot be a doctor because their sport isn't on column two or three.
+
+
+From clues two and six:
+
+
+""the person who's hobby is rock-climbing is the fisherman""
+
+
+and
+
+
+""the person who's hobby is card-games is the doctor""
+
+
+We can now use clue seven to position paramedic since they are at right of hip-hop fan (column 2)
+
+
+Since column three has western movies we can't use that, so it must be in column two where crime movie viewer was and move them one position to left:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            |               |
+| Job           |               |            |               |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         |            |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+Also from clue six and two:
+
+
+""the person who's hobby is card-games is the doctor""
+
+
+and
+
+
+""the person who's hobby is rock-climbing is the fisherman""
+
+
+We can position column three job as a paramedic because their rival (fisherman) is on column two.
+
+
+Then we have left only doctor for column one and since they cannot be in first column this means that ""column one cannot hold a card-game hobbyist"" so ""card-games"" must belong to second or third column but fisherman already holds rock-climbing which belongs to them (second column) then, card-game hobbyist must be on column three.
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            | card-games    |
+| Job           |               |            | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         |            |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+From clue seven and two:
+
+
+""the paramedic is on the right of the fan of hip-hop""
+
+
+and
+
+
+""the person who's hobby is card-games is the doctor""
+
+
+We can now position the last remaining job: ""paramedic"" to column one since they cannot be at right (third column) and also because column two already has a job for rock-climber (fisherman).
+
+
+Then we have left only western movie viewer job which must belong to fisherman since this is their only sport available.
+
+
+Also using clue 6:
+
+
+""the person who's hobby is rock-climbing is the fisherman""
+
+
+We can now position fisherman to column two and also from clue seven ""paramedic"" must be at right of hip-hop fan which is in second column, so we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            | card-games    |
+| Job           | paramedic     | fisherman  | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         | hip-hop    |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+From clue one and two:
+
+
+""the person watching crime movies is on the left of the person watching western movies""
+
+
+and
+
+
+""the person who's hobby is card-games is the doctor""
+
+
+We have all information needed to fill out remaining fields.
+
+
+Now using clues five, six and three we can now position puzzles hobbyist because their sport isn't rock-climbing or badminton since they aren't on column one or two.
+
+
+Also from clue 5:
+
+
+""the fan of disco is the person who's sport is badminton""
+
+
+We can now fill out column one hobby with no available hobbies since ""card-games"" is taken by third column job: ""doctor"", and also because first column sport belongs to second column movie viewer (western), but it isn't their sport so we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               |            | card-games    |
+| Job           | paramedic     | fisherman  | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         | hip-hop    |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+From clue seven:
+
+
+""the paramedic is on the right of the fan of hip-hop""
+
+
+We can now position ""puzzles"" to column two since their job isn't a doctor (card-games) and also they aren't on first column because their sport doesn't belong to them, so we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               | puzzles    | card-games    |
+| Job           | paramedic     | fisherman  | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         | hip-hop    |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+From clue one and five:
+
+
+""the person watching crime movies is on the left of the person watching western movies""
+
+
+and
+
+
+""the fan of disco is the person who's sport is badminton""
+
+
+We have all information needed to fill out remaining fields.
+
+
+Also using clue six we can now position third column hobby with ""card-games"" which belongs to their job (doctor) and also because their sport belongs to them but it isn't available for other columns since they are already taken, so we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         |               | puzzles    | card-games    |
+| Job           | paramedic     | fisherman  | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         | hip-hop    |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+Also using clue six we can now position first column hobby with ""no available hobbies"" which belongs to their job (paramedic) and also because their sport doesn't belong to them but it belongs to second column movie viewer, so we have:
+
+
+|               |       1       |     2      |       3       |
+| Hobby         | no hobby      | puzzles    | card-games    |
+| Job           | paramedic     | fisherman  | doctor        |
+| Movie-Genre   | crime         | western    |                |
+| Music-Genre   | disco         | hip-hop    |                |
+| Sport         | badminton     | skateboarding | rock-climbing  |
+
+The final answer is:
+
+
+paramedic - no hobby - crime movies - disco music - badminton
+fisherman - puzzles - western movies - hip hop music - skateboarding
+doctor - card games - (no movies) - (no music genre) - rock climbing"	{'hobby': ['no hobby', 'puzzles', 'card-games'], 'job': ['paramedic', 'fisherman', 'doctor'], 'movie-genre': ['crime', 'western', ''], 'music-genre': ['disco', 'hip-hop', ''], 'sport': ['badminton', 'skateboarding', 'rock-climbing']}	True	3	False
+Lv2-5x3-10	"After solving the puzzle, I came up with the following solution:
+
+
+#############
+
+|               |    1    |    2     |     3     |
+| Beverage      | sprite  | coffee   | 7up        |
+| Food          | blueberry| cucumber | orange     |
+| Hobby         | drawing  | writing  | traveling  |
+| Nationality   | canadian | polish   | british    |
+| Pet           | lizard   | snake    | goat       |
+
+#############"	{'beverage': ['sprite', 'coffee', '7up'], 'food': ['blueberry', 'cucumber', 'orange'], 'hobby': ['drawing', 'writing', 'traveling'], 'nationality': ['canadian', 'polish', 'british'], 'pet': ['lizard', 'snake', 'goat']}	True	6	False

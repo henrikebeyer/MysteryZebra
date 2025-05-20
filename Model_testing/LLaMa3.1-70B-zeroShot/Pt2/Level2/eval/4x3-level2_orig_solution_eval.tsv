@@ -1,0 +1,534 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-4x3-1	"Let's analyze the clues:
+
+
+From clue 1, we know that the person driving the bus is to the right of the fan of trance.
+
+
+From clue 2, we know that the fan of blues is to the left of the person driving the motorbike.
+
+
+From clue 3, we know that the person who bakes (baking hobby) is between the person watching spy movies and the person watching superhero movies.
+
+
+From clue 4, we know that the person driving the bus is to the right of the person who dances (dancing hobby).
+
+
+From clue 5, we know that the fan of trance is the person watching spy movies.
+
+
+Now, let's combine these clues:
+
+
+We can start by placing the fan of trance, who watches spy movies:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         |         |          |           |
+| Movie-Genre   | Spy     |          |           |
+| Music-Genre   | Trance  |          |           |
+| Transport     |         |          |           |
+
+
+From clue 1, we know that the person driving the bus is to the right of the fan of trance:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         |         |          |           |
+| Movie-Genre   | Spy     |          |           |
+| Music-Genre   | Trance  |          |           |
+| Transport     |         | Bus      |           |
+
+
+From clue 4, we know that the person driving the bus is to the right of the person who dances:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         | Dance   |          |           |
+| Movie-Genre   | Spy     |          |           |
+| Music-Genre   | Trance  |          |           |
+| Transport     |         | Bus      |           |
+
+
+From clue 3, we know that the person who bakes is between the person watching spy movies and the person watching superhero movies:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         | Dance   | Bake     |           |
+| Movie-Genre   | Spy     |          | Superhero  |
+| Music-Genre   | Trance  |          |           |
+| Transport     |         | Bus      |           |
+
+
+From clue 5, we know that the fan of trance watches spy movies (already placed). From clue 2, we can place the fan of blues:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         | Dance   | Bake     |           |
+| Movie-Genre   | Spy     |          | Superhero  |
+| Music-Genre   | Trance  | Blues    |           |
+| Transport     |         | Bus      | Motorbike |
+
+
+Finally, we can place the person reading:
+
+
+|               |    1    |    2     |     3     |
+| Hobby         | Dance   | Bake     | Read      |
+| Movie-Genre   | Spy     |          | Superhero  |
+| Music-Genre   | Trance  | Blues    |           |
+| Transport     |         | Bus      | Motorbike |
+
+
+And the last person must be watching disaster movies and listening to folk music, driving a car:
+
+
+#############
+|               |    1    |    2     |     3     |
+| Hobby         | Dance   | Bake     | Read      |
+| Movie-Genre   | Spy     | Disaster | Superhero  |
+| Music-Genre   | Trance  | Blues    | Folk       |
+| Transport     | Car     | Bus      | Motorbike |
+#############"	{'hobby': ['dance', 'bake', 'read'], 'movie-genre': ['spy', 'disaster', 'superhero'], 'music-genre': ['trance', 'blues', 'folk'], 'transport': ['car', 'bus', 'motorbike']}	True	9	False
+Lv2-4x3-2	"After analyzing the clues, I came up with the following solution:
+
+
+#############
+|               |     1      |    2     |     3      |
+| Food          | raspberry | kale    | tomato    |
+| Music-Genre   | gospel     | blues   | soul       |
+| Nationality   | pakistani  | japanese | australian |
+| Pet           | guinea-pig | frog    | goat       |
+#############
+
+
+Here's how I arrived at the solution:
+
+From clue 3, we know the Pakistani eats raspberry, so that goes in column 1.
+
+From clue 4, we know the Japanese eats kale, so that goes in column 2.
+
+From clue 6, we know the person eating tomato is the owner of the goat. Since the Pakistani and Japanese are already assigned to columns 1 and 2, the Australian must be in column 3, eating tomato and owning a goat.
+
+From clue 2, we know the Pakistani (column 1) is on the left of the fan of soul (which means soul must be in column 3).
+
+From clue 5, we know the owner of the frog is between the fan of gospel and the person eating tomato. Since the Australian is eating tomato, the frog's owner must be in column 2.
+
+Now, let's assign music genres:
+
+* Column 1 (Pakistani) can't be soul (already assigned to column 3), so it must be gospel.
+* Column 2 (Japanese) has a frog, which isn't next to soul (column 3), so it must be blues.
+* Column 3 is already assigned to soul.
+
+Finally, let's assign pets:
+
+* The Pakistani (column 1) doesn't have the goat or frog (both already assigned), so they must own a guinea-pig.
+* The Japanese (column 2) owns a frog.
+* The Australian (column 3) owns a goat."	{'food': ['raspberry', 'kale', 'tomato'], 'music-genre': ['gospel', 'blues', 'soul'], 'nationality': ['pakistani', 'japanese', 'australian'], 'pet': ['guinea-pig', 'frog', 'goat']}	True	10	False
+Lv2-4x3-3	"Let's break down the clues and fill in the table step by step:
+
+
+From clue 3, we know that the person eating eggplant is on the far left.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant |            |          |
+| Job           |           |            |          |
+| Movie-Genre   |           |            |          |
+| Pet           |           |            |          |
+
+From clue 4, we know that the owner of the goldfish is the person eating kale.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       |          |
+| Job           |           |            |          |
+| Movie-Genre   |           |            |          |
+| Pet           |           | Goldfish   |          |
+
+From clue 5, we know that the owner of the chinchilla is the person watching mystery movies.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       |          |
+| Job           |           |            |          |
+| Movie-Genre   |           | Mystery    |          |
+| Pet           |           | Goldfish   | Chinchilla |
+
+From clue 1, we know that the bartender is on the left of the person watching thriller movies. Since the mystery movie watcher is already in column 2, the bartender must be in column 1.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       |          |
+| Job           | Bartender|            |          |
+| Movie-Genre   |           | Mystery    |          |
+| Pet           |           | Goldfish   | Chinchilla |
+
+From clue 2, we know that the owner of the chinchilla is between the paramedic and the person watching thriller movies. Since the mystery movie watcher (who owns the chinchilla) is already in column 2, the paramedic must be in column 3.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       |          |
+| Job           | Bartender|            | Paramedic|
+| Movie-Genre   |           | Mystery    |          |
+| Pet           |           | Goldfish   | Chinchilla |
+
+The only remaining job is the doctor, which must be in column 2.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       |          |
+| Job           | Bartender| Doctor     | Paramedic|
+| Movie-Genre   |           | Mystery    |          |
+| Pet           |           | Goldfish   | Chinchilla |
+
+The only remaining food is orange, which must be in column 3.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       | Orange    |
+| Job           | Bartender| Doctor     | Paramedic|
+| Movie-Genre   |           | Mystery    |          |
+| Pet           |           | Goldfish   | Chinchilla |
+
+The only remaining movie-genre is disaster and thriller. The person watching thriller movies must be in column 3, since the bartender (in column 1) is on their left.
+
+
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       | Orange    |
+| Job           | Bartender| Doctor     | Paramedic|
+| Movie-Genre   | Disaster | Mystery    | Thriller  |
+| Pet           |           | Goldfish   | Chinchilla |
+
+The only remaining pet is snake, which must be in column 1.
+
+
+#############
+|               |     1     |     2      |    3     |
+| Food          | Eggplant | Kale       | Orange    |
+| Job           | Bartender| Doctor     | Paramedic|
+| Movie-Genre   | Disaster | Mystery    | Thriller  |
+| Pet           | Snake     | Goldfish   | Chinchilla |
+#############"	{'food': ['eggplant', 'kale', 'orange'], 'job': ['bartender', 'doctor', 'paramedic'], 'movie-genre': ['disaster', 'mystery', 'thriller'], 'pet': ['snake', 'goldfish', 'chinchilla']}	True	5	False
+Lv2-4x3-4	"Let's break down the clues:
+
+
+From clue 1, we know that the rowing enthusiast is to the right of the chinchilla owner.
+
+From clue 2, we know that the cucumber eater is to the right of the scientist.
+
+From clue 3, we know that the raspberry eater is between the paramedic and the cat owner. Since there are only three positions, this means the paramedic must be on one end (either column 1 or column 3), the cat owner is next to them, and the raspberry eater is in the middle (column 2).
+
+From clue 4, we know that the cucumber eater's sport is rugby.
+
+
+Now, let's start filling in the table:
+
+
+|         |      1       |     2      |     3      |
+| Food    |              |            |            |
+| Job     |              |            |            |
+| Pet     |              |            |            |
+| Sport   |              |            |            |
+
+We know the paramedic is on one end, so let's place them in column 1.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              |            |            |
+| Job     | Paramedic  |            |            |
+| Pet     | Cat        |            |            |
+| Sport   |            |            |            |
+
+Now, the raspberry eater must be in column 2.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry |            |
+| Job     | Paramedic  |            |            |
+| Pet     | Cat        |            |            |
+| Sport   |            |            |            |
+
+The scientist must be in column 1 or column 3. Since the cucumber eater is to their right, they can't be in column 3 (there's no one to their right). So, the scientist must be in column 1.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry |            |
+| Job     | Scientist  | Paramedic|            |
+| Pet     | Cat        |            |            |
+| Sport   |            |            |            |
+
+Now, we know the cucumber eater's sport is rugby, and they're to the right of the scientist. So, they must be in column 3.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic|            |
+| Pet     | Cat        |            |            |
+| Sport   |            |            | Rugby    |
+
+The rowing enthusiast is to the right of the chinchilla owner. Since the chinchilla owner can't be in column 3 (the cucumber eater is already there), they must be in column 1 or column 2. But if they're in column 2, the rowing enthusiast would have to be in a non-existent column 4! So, the chinchilla owner must be in column 1.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic|            |
+| Pet     | Chinchilla| Cat        |            |
+| Sport   |            |            | Rugby    |
+
+The rowing enthusiast is to the right of the chinchilla owner, so they must be in column 2.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic|            |
+| Pet     | Chinchilla| Cat        |            |
+| Sport   |            | Rowing    | Rugby    |
+
+The only pet left is the guinea-pig, which must be in column 3.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic|            |
+| Pet     | Chinchilla| Cat        | Guinea-pig|
+| Sport   |            | Rowing    | Rugby    |
+
+The journalist is the only job left, which must be in column 3.
+
+
+|         |      1       |     2      |     3      |
+| Food    |              | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic| Journalist|
+| Pet     | Chinchilla| Cat        | Guinea-pig|
+| Sport   |            | Rowing    | Rugby    |
+
+The cherry is the only food left, which must be in column 1.
+
+
+|         |      1       |     2      |     3      |
+| Food    | Cherry     | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic| Journalist|
+| Pet     | Chinchilla| Cat        | Guinea-pig|
+| Sport   |            | Rowing    | Rugby    |
+
+The only sport left is snowboarding, which must be in column 1.
+
+
+|         |      1       |     2      |     3      |
+| Food    | Cherry     | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic| Journalist|
+| Pet     | Chinchilla| Cat        | Guinea-pig|
+| Sport   | Snowboarding| Rowing    | Rugby    |
+
+The final solution is:
+
+
+#############
+|         |      1       |     2      |     3      |
+| Food    | Cherry     | Raspberry | Cucumber|
+| Job     | Scientist  | Paramedic| Journalist|
+| Pet     | Chinchilla| Cat        | Guinea-pig|
+| Sport   | Snowboarding| Rowing    | Rugby    |
+#############"	{'food': ['cherry', 'raspberry', 'cucumber'], 'job': ['scientist', 'paramedic', 'journalist'], 'pet': ['chinchilla', 'cat', 'guinea-pig'], 'sport': ['snowboarding', 'rowing', 'rugby']}	True	8	False
+Lv2-4x3-5	"After analyzing the clues, I came up with the following solution:
+
+
+|               |    1    |     2      |      3      |
+| Food          | plum    | cherry    | carrot     |
+| Hobby         | filmmaking | photography | cooking      |
+| Music-Genre   | gospel   | disco     | funk        |
+| Pet           | hamster  | bird      | dog         |
+
+This solution satisfies all the given conditions:
+
+1. The fan of gospel (person 1) is on the left of the fan of funk (person 3).
+2. The owner of the bird (person 2) is between the fan of gospel (person 1) and the person whose hobby is photography (person 2).
+3. The person whose hobby is cooking (person 3) is the owner of the dog.
+4. The person eating carrot (person 3) is on the right of the person eating plum (person 1).
+5. The owner of the bird (person 2) is on the left of the person eating cherry (person 2).
+
+Here is the final solution table with '#############' around it:
+
+
+#############
+|               |    1    |     2      |      3      |
+| Food          | plum    | cherry    | carrot     |
+| Hobby         | filmmaking | photography | cooking      |
+| Music-Genre   | gospel   | disco     | funk        |
+| Pet           | hamster  | bird      | dog         |
+#############"	{'food': ['plum', 'cherry', 'carrot'], 'hobby': ['filmmaking', 'photography', 'cooking'], 'music-genre': ['gospel', 'disco', 'funk'], 'pet': ['hamster', 'bird', 'dog']}	True	3	False
+Lv2-4x3-6	"After analyzing the clues, I came up with the following solution:
+
+
+|               |     1     |      2      |     3      |
+| Food          | Pineapple | Pumpkin    | Cauliflower|
+| Hobby         | Sudoku    | Filmmaking | Skydiving  |
+| Music-Genre   | Ambient   | Country    | d&b        |
+| Pet           | Mouse     | Horse      | Fish       |
+
+Here's how I deduced the solution:
+
+From clue 4, we know that the fan of d&b is on the far right, so music-genre column 3 must be d&b.
+
+Clue 2 tells us that the person eating pumpkin is the one whose hobby is filmmaking. This means food column 2 and hobby column 2 are related to each other.
+
+From clue 5, we know that the person eating cauliflower is on the right of the owner of the fish. Since cauliflower can only be in columns 1 or 3 (due to pumpkin being in column 2), and fish cannot be on the far right (because d&b fan is there), this implies that cauliflower must be in column 3, and fish must be in either column 1 or 2.
+
+Clue 3 states that the fan of country music is between pineapple and horse. This means country music can only be in column 2. Now we have:
+
+|               |     1     |      2      |     3      |
+| Food          |           | Pineapple  |            |
+| Hobby         |           | Filmmaking |            |
+| Music-Genre   |           | Country    | d&b        |
+| Pet           |           | Horse      | Fish       |
+
+From clue 1, we know that the owner of the horse is on the right of the person whose hobby is sudoku. This means that the hobby column for sudoku must be in column 1 or 2 (since horse can only be in columns 1 or 2), and since filmmaking is already in column 2, sudoku must be in column 1.
+
+Now we have:
+
+
+|               |     1     |      2      |     3      |
+| Food          |           | Pineapple  |            |
+| Hobby         | Sudoku    | Filmmaking |            |
+| Music-Genre   |           | Country    | d&b        |
+| Pet           |           | Horse      | Fish       |
+
+We still need to place cauliflower, mouse, and ambient music. Clue 5 tells us that the person eating cauliflower is on the right of the owner of the fish. Since cauliflower can only be in column 3 (because pumpkin is in column 2), and fish cannot be on the far right (because d&b fan is there), this implies that fish must be in either column 1 or 2, but not both. We already have horse in column 2, so fish must be in column 1.
+
+|               |     1     |      2      |     3      |
+| Food          |           | Pineapple  | Cauliflower|
+| Hobby         | Sudoku    | Filmmaking |            |
+| Music-Genre   |           | Country    | d&b        |
+| Pet           | Fish      | Horse      | Mouse       |
+
+Now we just need to fill in the remaining blanks. We know that ambient music must be in column 1, and since pineapple is already paired with country music, this means that cauliflower must be paired with skydiving.
+
+
+Here is the final solution:
+
+
+#################
+|               |     1     |      2      |     3      |
+| Food          | Pineapple | Pumpkin    | Cauliflower|
+| Hobby         | Sudoku    | Filmmaking | Skydiving  |
+| Music-Genre   | Ambient   | Country    | d&b        |
+| Pet           | Mouse     | Horse      | Fish       |
+#################"	{'food': ['pineapple', 'pumpkin', 'cauliflower'], 'hobby': ['sudoku', 'filmmaking', 'skydiving'], 'music-genre': ['ambient', 'country', 'd&b'], 'pet': ['mouse', 'horse', 'fish']}	True	4	False
+Lv2-4x3-7	"After analyzing the clues, I came up with the following solution:
+
+
+#############
+|               |      1      |    2    |     3     |
+| Food          | Artichoke   | Peach   | Radish   |
+| Hobby         | Skydiving   | Fishing  | Board-games|
+| Movie-Genre   | Fantasy     | Western  | Comedy    |
+| Transport     | Van         | Roller   | Car      |
+#############
+
+
+Here's a step-by-step explanation of how I arrived at this solution:
+
+From clue 4, we know the person driving the car is on the far right, so the transport for column 3 is ""Car"".
+
+From clue 2 and 5, we know the person who's hobby is fishing is between the person eating radish and the person driving the car, and also between the person who's hobby is skydiving and the person watching comedy movies. This means the person eating radish must be on the left of the person with the hobby fishing, so the food for column 3 is ""Radish"".
+
+From clue 1, we know the person driving the roller is on the right of the person watching comedy movies. Since the person driving the car is on the far right (clue 4), the person driving the roller must be in column 2. Therefore, the transport for column 2 is ""Roller"".
+
+From clue 3, we know the person watching fantasy movies is on the right of the person eating peach. This means the movie-genre for column 1 is not comedy (because it's on the left of the roller), so it must be fantasy.
+
+Now that we have the movie-genre for column 1, we can determine the hobby for column 1. From clue 5, we know the person who's hobby is fishing is between the person who's hobby is skydiving and the person watching comedy movies. Since the person watching fantasy movies is on the right of the person eating peach (clue 3), the person watching comedy movies must be in column 3. Therefore, the hobby for column 1 is not fishing, so it must be skydiving.
+
+The only food left is ""Artichoke"", which must go to column 1.
+
+Finally, we can determine the remaining movie-genre and transport. The movie-genre for column 2 is not fantasy (because it's on the right of peach), so it must be western. The movie-genre for column 3 is comedy. The transport for column 1 is van (the only one left)."	{'food': ['artichoke', 'peach', 'radish'], 'hobby': ['skydiving', 'fishing', 'board-games'], 'movie-genre': ['fantasy', 'western', 'comedy'], 'transport': ['van', 'roller', 'car']}	True	6	False
+Lv2-4x3-8	"After analyzing the clues, I've come up with a solution for the puzzle. Here is the completed table:
+
+
+|               |     1      |       2       |     3      |
+| Beverage      |            |               |            |
+| Hobby         |            |               |            |
+| Job           |            |               |            |
+| Music-Genre   |            |               |            |
+
+#############
+
+|               |     Journalist|    Architect |  Dressmaker|
+| Beverage      |   Cola        |   Water       | Soy-milk    |
+| Hobby         | Cooking       | Rock-climbing| Chess       |
+| Job           |               |               |             |
+| Music-Genre   | Gospel        | Folk          | Rock        |
+
+#############
+
+Here's a brief explanation of how I arrived at this solution:
+
+* From clue 1, the journalist is on the far left.
+* From clue 2, the person drinking soy-milk (rock fan) is on the right of the gospel fan. This means the gospel fan must be in position 1 or 2. Since the journalist is already in position 1, the gospel fan must be in position 2. The rock fan (soy-milk drinker) is then in position 3.
+* From clue 4, the architect is between the person who's hobby is cooking and the person drinking water. This means the architect can't be in position 1 or 3, so they must be in position 2.
+* From clue 3, the person drinking soy-milk (rock fan) is on the left of the person who's hobby is chess. Since the rock fan is already in position 3, the chess player must also be in position 3. However, this contradicts the fact that the architect is between the cooking and water-drinking persons. Therefore, the chess player must be in position 2 (architect), and the person drinking soy-milk (rock fan) must have rock-climbing as their hobby.
+* From clue 5, we already know the soy-milk drinker is a fan of rock.
+
+Putting it all together, we get the solution above."	{'beverage': ['cola', 'water', 'soy-milk'], 'hobby': ['cooking', 'rock-climbing', 'chess'], 'job': ['', '', ''], 'music-genre': ['gospel', 'folk', 'rock']}	True	5	False
+Lv2-4x3-9	"Based on the given clues, here is the solved puzzle:
+
+
+#############
+
+|               |    1     |      2      |    3     |
+| Beverage      | 7up       | almond-milk | cola     |
+| Food          | papaya    | carrot      | peas     |
+| Nationality   | russian   | indian      | nigerian |
+| Transport     | airplane  | bike        | taxi     |
+
+#############
+
+
+Let's go through the steps:
+
+* From clue 3, the person drinking 7up is on the far left. So, the beverage for column 1 is 7up.
+* From clue 4, the person eating papaya is on the far left. So, the food for column 1 is papaya.
+* From clue 5, the indian is on the left of the person driving the bike. Since there are only three nationalities, and the indian cannot be in column 3 (because of clue 6), the indian must be in column 2.
+* From clue 6, the person driving the bike is the nigerian. So, the nationality for column 3 is nigerian, and the transport for column 2 is bike.
+* From clue 1, the person driving the taxi is between the nigerian and the russian. Since the nigerian is in column 3, the person driving the taxi must be in column 2 (but we already know that's not true) or column 1. However, if it were column 1, then there would be no space for the indian on the left of the bike (clue 5). So, this clue actually tells us that the russian is in column 1.
+* From clue 2, the person eating peas is on the right of the person drinking almond-milk. The only place left for almond-milk is column 2, so the food in column 3 must be peas.
+* Finally, by elimination, cola goes to column 3 and airplane goes to column 1.
+
+And that's the solution!"	{'beverage': ['7up', 'almond-milk', 'cola'], 'food': ['papaya', 'carrot', 'peas'], 'nationality': ['russian', 'indian', 'nigerian'], 'transport': ['airplane', 'bike', 'taxi']}	True	10	False
+Lv2-4x3-10	"After analyzing the clues, I came up with the following solution:
+
+
+|             |       1       |        2        |    3     |
+| Hobby       | Traveling     | Drawing         | Chess    |
+| Job         | Social-worker | Project-manager | Engineer |
+| Sport       | Sailing       | Lacrosse        | Handball |
+| Transport   | Taxi          | Roller          | Scooter  |
+
+Here's how I arrived at the solution:
+
+From clue 1, we know that the person who likes chess is to the right of the person who likes traveling. So, traveling must be in column 1.
+
+From clue 3, we know that the person who likes sailing also likes traveling, so sailing and traveling are in the same column (column 1).
+
+From clue 4, we know that lacrosse is associated with the social-worker. From clue 6, we know that lacrosse is also associated with roller transport.
+
+From clue 2, we know that the project-manager is between the engineer and the person who likes drawing. Since the social-worker (lacrosse) is already in column 1, the project-manager must be in column 2.
+
+Now we can fill in the job for column 2: Project-manager.
+
+The only remaining hobby is chess, which goes to column 3 (right of traveling).
+
+From clue 5, we know that the taxi driver is to the left of the engineer. Since the social-worker (lacrosse) is already in column 1 and has a roller, the taxi must be in column 1.
+
+The only remaining sport is handball, which goes to column 3.
+
+Finally, the only remaining transport is scooter, which goes to column 3.
+
+
+############# 
+|             |       1       |        2        |    3     |
+| Hobby       | Traveling     | Drawing         | Chess    |
+| Job         | Social-worker | Project-manager | Engineer |
+| Sport       | Sailing       | Lacrosse        | Handball |
+| Transport   | Taxi          | Roller          | Scooter  |
+#############"	{'hobby': ['traveling', 'drawing', 'chess'], 'job': ['social-worker', 'project-manager', 'engineer'], 'sport': ['sailing', 'lacrosse', 'handball'], 'transport': ['taxi', 'roller', 'scooter']}	True	6	False

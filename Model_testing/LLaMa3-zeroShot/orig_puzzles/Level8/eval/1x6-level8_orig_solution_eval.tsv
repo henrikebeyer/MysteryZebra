@@ -1,0 +1,445 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-1x6-1	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person watching crime movies is the person watching crime movies (no new information).
+
+From statement 2, we know that the person watching drama movies is on the left or right of the person watching action movies. Let's assume the person watching drama movies is on the left of the person watching action movies (we can try the other way later).
+
+From statement 3, we know that the person watching crime movies is somewhere to the right of the person watching sports movies. Since we don't know the exact position of the person watching sports movies yet, we'll come back to this statement later.
+
+From statement 4, we know that the person watching action movies is not to the left of the person watching time-travel movies. This means that the person watching action movies must be to the right of the person watching time-travel movies.
+
+From statement 5, we know that the person watching drama movies is on the far left or far right. Since we already assumed they're on the left of the person watching action movies, they must be on the far left.
+
+From statement 6, we know that the person watching action movies is on the right of the person watching martial-arts movies. This means that the person watching martial-arts movies must be to the left of the person watching action movies.
+
+From statement 7, we know that the person watching martial-arts movies is between the person watching action movies and the person watching time-travel movies. This means that the person watching martial-arts movies is on the left of the person watching action movies and to the right of the person watching time-travel movies.
+
+From statement 8, we know that the person watching crime movies is on the left or right of the person watching time-travel movies. Since we already know the person watching crime movies is to the right of the person watching sports movies (statement 3), they must be on the right of the person watching time-travel movies.
+
+Now, let's try to fit the people into the table:
+
+| Movie-Genre   |   1    |   2   |      3      |      4       |   5    |   6   |
+|               |        |       |             |              |        |       |
+| Drama        | 1      |        |             |              |        |       |
+| Action       |        | 2      |             |              |        |       |
+| Martial-Arts |        |        | 3          |              |        |       |
+| Time-Travel  |        |        |            | 4          |        |       |
+| Sports       |        |        |            |            | 5      |       |
+| Crime        |        |        |            |            |        | 6      |
+
+The final solution table is:
+
+#############
+| Movie-Genre   |   1    |   2   |      3      |      4       |   5    |   6   |
+|               |        |       |             |              |        |       |
+| Drama        | 1      |        |             |              |        |       |
+| Action       |        | 2      |             |              |        |       |
+| Martial-Arts |        |        | 3          |              |        |       |
+| Time-Travel  |        |        |            | 4          |        |       |
+| Sports       |        |        |            |            | 5      |       |
+| Crime        |        |        |            |            |        | 6      |
+#############"	{'movie-genre': ['1', '2', '3', '4', '5', '6'], 'drama': ['1', '', '', '', '', ''], 'action': ['', '2', '', '', '', ''], 'martial-arts': ['', '', '3', '', '', ''], 'time-travel': ['', '', '', '4', '', ''], 'sports': ['', '', '', '', '5', ''], 'crime': ['', '', '', '', '', '6']}	True	0	False
+Lv1-1x6-2	"Let's break down the puzzle step by step:
+
+From statement 4, we know the person drinking water is on the far right.
+
+From statement 8, we know the person drinking water is on the right of the person drinking sprite. This means sprite cannot be on the far right, so it must be in one of the leftmost positions.
+
+From statement 7, we know the person drinking iced-tea is on the left or right of the person drinking sprite. Since sprite is not on the far right, iced-tea must be on the far right.
+
+From statement 1, we know the person drinking cola is somewhere to the left of the person drinking iced-tea. Since iced-tea is on the far right, cola must be in the second-to-last position.
+
+From statement 2, we know the person drinking mirinda is somewhere to the left of the person drinking cola. Since cola is in the second-to-last position, mirinda must be in the third position from the left.
+
+From statement 5, we know the person drinking almond-milk is somewhere to the left of the person drinking mirinda. Since mirinda is in the third position, almond-milk must be in the second position from the left.
+
+From statement 3, we know the person drinking almond-milk is on the left or right of the person drinking mirinda. Since almond-milk is in the second position, mirinda must be in the third position, and they are adjacent.
+
+The only remaining beverage is sprite, which must be in the first position.
+
+Here is the final solution table with '#############' around it:
+
+#############
+|            |      1      |    2    |  3   |    4     |   5    |   6   |
+| Beverage   |  Sprite    | Almond-milk | Mirinda | Cola    | Iced-tea | Water  |
+|            |             |         |      |          |        |       |
+#############"	{'beverage': ['sprite', 'almond-milk', 'mirinda', 'cola', 'iced-tea', 'water']}	True	1	False
+Lv1-1x6-3	"Let's break down the clues and solve the puzzle step by step:
+
+1. The owner of the guinea-pig is not to the right of the owner of the rat.
+This means the guinea-pig owner cannot be on the right side of the rat owner.
+
+2. The owner of the rat is on the left or right of the owner of the guinea-pig.
+This means the rat owner is either to the left or right of the guinea-pig owner.
+
+3. The owner of the mouse is somewhere to the right of the owner of the turtle.
+This means the mouse owner is to the right of the turtle owner.
+
+4. The owner of the rabbit is on the left of the owner of the turtle.
+This means the rabbit owner is to the left of the turtle owner.
+
+5. The owner of the mouse is on the left of the owner of the guinea-pig.
+This means the mouse owner is to the left of the guinea-pig owner.
+
+6. The owner of the rat is somewhere to the left of the owner of the lizard.
+This means the rat owner is to the left of the lizard owner.
+
+Now, let's combine the clues and start filling in the table:
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |        |        |       |            |     |        |
+
+From clue 1, we know the guinea-pig owner is not to the right of the rat owner. Let's place the rat owner on the left side.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |        |       |            |     |        |
+
+From clue 2, we know the rat owner is on the left or right of the guinea-pig owner. Since we've already placed the rat owner on the left, the guinea-pig owner must be on the right.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |        |  Guinea-pig  |            |     |        |
+
+From clue 3, we know the mouse owner is to the right of the turtle owner. Let's place the turtle owner on the left side.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |  Turtle  |  Guinea-pig  |            |     |        |
+
+From clue 4, we know the rabbit owner is to the left of the turtle owner. Let's place the rabbit owner on the left side.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |  Rabbit  |  Turtle  |  Guinea-pig  |     |        |
+
+From clue 5, we know the mouse owner is to the left of the guinea-pig owner. Let's place the mouse owner on the left side.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |  Mouse  |  Rabbit  |  Turtle  |  Guinea-pig  |        |
+
+From clue 6, we know the rat owner is to the left of the lizard owner. Let's place the lizard owner on the right side.
+
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |  Mouse  |  Rabbit  |  Turtle  |  Guinea-pig  |  Lizard  |
+
+The final solution is:
+
+#############
+|       |   1    |   2    |   3   |     4      |  5  |   6    |
+| Pet   |  Rat  |  Mouse  |  Rabbit  |  Turtle  |  Guinea-pig  |  Lizard  |
+#############"	{'pet': ['rat', 'mouse', 'rabbit', 'turtle', 'guinea-pig', 'lizard']}	True	1	False
+Lv1-1x6-4	"Let's break down the puzzle step by step:
+
+1. The person who's sport is rowing is somewhere to the left of the person who's sport is parkour.
+This means that rowing cannot be in position 5, as parkour would be to the right of rowing. So, rowing must be in position 1, 2, or 3.
+
+2. The person who's sport is weightlifting is not to the left of the person who's sport is rowing.
+This means that weightlifting cannot be in position 1 or 2, as rowing would be to the left. So, weightlifting must be in position 3, 4, or 5.
+
+3. The person who's sport is weightlifting is not to the right of the person who's sport is biathlon.
+This means that biathlon cannot be in position 5, as weightlifting would be to the right. So, biathlon must be in position 1, 2, or 4.
+
+4. The person who's sport is water-polo is on the right of the person who's sport is surfing.
+This means that surfing must be in position 1, 2, or 3, and water-polo must be in position 4 or 5.
+
+5. The person who's sport is parkour is on the left of the person who's sport is surfing.
+This means that surfing cannot be in position 1, as parkour would be to the right. So, surfing must be in position 2 or 3.
+
+6. The person who's sport is water-polo is on the left or right of the person who's sport is weightlifting.
+This means that weightlifting cannot be in position 1 or 2, as water-polo would be to the left. So, weightlifting must be in position 3, 4, or 5.
+
+Now, let's combine the information:
+
+* Rowing is in position 1, 2, or 3.
+* Weightlifting is in position 3, 4, or 5.
+* Biathlon is in position 1, 2, or 4.
+* Surfing is in position 2 or 3.
+* Water-polo is in position 4 or 5.
+* Parkour is in position 1 or 2.
+
+The only possible solution is:
+
+#############
+|         |   1    |    2    |    3    |     4      |       5       |    6     |
+| Sport   |  Rowing |  Parkour | Weightlifting | Water-polo | Surfing | Biathlon |
+#############
+
+This solution satisfies all the given conditions."	{'sport': ['rowing', 'parkour', 'weightlifting', 'water-polo', 'surfing', 'biathlon']}	True	4	False
+Lv1-1x6-5	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person who's sport is rugby is in an odd position, so they can be in positions 1, 3, or 5.
+
+From statement 2, we know the person who's sport is rugby is not to the left of the person who's sport is parkour. This means the person who's sport is parkour must be in an even position (2, 4, or 6).
+
+From statement 3, we know the person who's sport is snowboarding is in an odd position. Since the person who's sport is rugby is in an odd position, the person who's sport is snowboarding cannot be in position 1 or 3. Therefore, they must be in position 5.
+
+From statement 4, we know the person who's sport is snowboarding is somewhere to the left of the person who's sport is skateboarding. Since the person who's sport is snowboarding is in position 5, the person who's sport is skateboarding must be in position 6.
+
+From statement 5, we know the person who's sport is skateboarding is somewhere to the right of the person who's sport is parkour. Since the person who's sport is skateboarding is in position 6, the person who's sport is parkour must be in position 4.
+
+From statement 6, we know the person who's sport is climbing is between the person who's sport is parkour and the person who's sport is rugby. Since the person who's sport is parkour is in position 4, the person who's sport is climbing must be in position 3.
+
+From statement 7, we know the person who's sport is climbing is somewhere between the person who's sport is parkour and the person who's sport is rugby. This statement is redundant, but it confirms that the person who's sport is climbing is in position 3.
+
+From statement 8, we know the person who's sport is parkour is somewhere to the right of the person who's sport is biathlon. Since the person who's sport is parkour is in position 4, the person who's sport is biathlon must be in position 2.
+
+From statement 9, we know the person who's sport is rugby is not to the right of the person who's sport is rugby. This statement is redundant, but it confirms that the person who's sport is rugby is in an odd position.
+
+From statement 10, we know the person who's sport is skateboarding is on the left or right of the person who's sport is rugby. Since the person who's sport is skateboarding is in position 6, the person who's sport is rugby must be in position 1.
+
+Now we can fill in the table:
+
+#############
+|         |      1       |    2     |    3    |    4     |   5   |       6       |
+| Sport   |              |          |         |          |       |               |
+| Biathlon|              |  Rugby  |  Climbing|  Parkour|  Snowboarding|  Skateboarding|
+#############
+
+The final solution is:
+
+Biathlon is in position 2
+Rugby is in position 1
+Climbing is in position 3
+Parkour is in position 4
+Snowboarding is in position 5
+Skateboarding is in position 6"	{'sport': ['', '', '', '', '', ''], 'biathlon': ['', 'rugby', 'climbing', 'parkour', 'snowboarding', 'skateboarding']}	True	0	False
+Lv1-1x6-6	"Let's break down the puzzle step by step:
+
+1. The owner of the chinchilla is somewhere between the owner of the lizard and the owner of the goldfish.
+
+This means the chinchilla owner is either to the left of the lizard owner or to the right of the goldfish owner.
+
+2. The owner of the snake is not to the right of the owner of the goldfish.
+
+This means the snake owner is either to the left of the goldfish owner or in the same position.
+
+3. The owner of the lizard is on the left or right of the owner of the rabbit.
+
+This means the lizard owner is either immediately before or after the rabbit owner.
+
+4. The owner of the rabbit is in an odd position.
+
+This means the rabbit owner is either in position 1, 3, or 5.
+
+5. The owner of the goldfish is on the left of the owner of the rat.
+
+This means the goldfish owner is either in position 1 or 2, and the rat owner is in position 3 or 4.
+
+6. The owner of the snake is somewhere to the left of the owner of the rabbit.
+
+This means the snake owner is either in position 1 or 2.
+
+7. The owner of the goldfish is somewhere to the right of the owner of the lizard.
+
+This means the goldfish owner is either in position 3 or 4.
+
+8. The owner of the rabbit is somewhere between the owner of the lizard and the owner of the chinchilla.
+
+This means the rabbit owner is either in position 2 or 4.
+
+Now, let's combine the information:
+
+* The snake owner is in position 1 or 2 (from 6).
+* The goldfish owner is in position 3 or 4 (from 7).
+* The rabbit owner is in position 2 or 4 (from 8).
+* The lizard owner is either immediately before or after the rabbit owner (from 3).
+* The chinchilla owner is between the lizard and goldfish owners (from 1).
+
+Considering all the constraints, the most likely solution is:
+
+#############
+|       | Snake | Lizard | Rabbit | Goldfish | Rat | Chinchilla |
+| Pet   | 1     | 2     | 4     | 3     | 5     | 6     |
+#############
+
+This solution satisfies all the given conditions:
+
+* The chinchilla owner is between the lizard and goldfish owners.
+* The snake owner is not to the right of the goldfish owner.
+* The lizard owner is on the left or right of the rabbit owner.
+* The rabbit owner is in an odd position.
+* The goldfish owner is on the left of the rat.
+* The snake owner is somewhere to the left of the rabbit owner.
+* The goldfish owner is somewhere to the right of the lizard owner.
+* The rabbit owner is somewhere between the lizard and chinchilla owners."	{'pet': ['1', '2', '4', '3', '5', '6']}	True	0	False
+Lv1-1x6-7	"Let's break down the puzzle step by step:
+
+1. The person who's sport is cricket is somewhere to the left of the person who's sport is baseball.
+2. The person who's sport is biathlon is on the left of the person who's sport is weightlifting.
+3. The person who's sport is baseball is somewhere to the right of the person who's sport is lacrosse.
+4. The person who's sport is cricket is not to the right of the person who's sport is sailing.
+5. The person who's sport is lacrosse is not to the right of the person who's sport is biathlon.
+6. The person who's sport is sailing is between the person who's sport is cricket and the person who's sport is baseball.
+7. The person who's sport is baseball is not to the left of the person who's sport is lacrosse.
+8. The person who's sport is weightlifting is on the far right.
+9. The person who's sport is baseball is somewhere to the right of the person who's sport is sailing.
+
+From statement 1, we know cricket is to the left of baseball. From statement 6, we know sailing is between cricket and baseball. From statement 9, we know baseball is to the right of sailing.
+
+So, the order of cricket, sailing, and baseball is: cricket, sailing, baseball.
+
+From statement 2, we know biathlon is to the left of weightlifting. From statement 5, we know lacrosse is not to the right of biathlon. Since lacrosse is not to the right of biathlon, it must be to the left of biathlon.
+
+So, the order of lacrosse, biathlon, and weightlifting is: lacrosse, biathlon, weightlifting.
+
+Now we can fill in the table:
+
+#############
+|         |    1     |    2    |    3    |    4     |    5     |       6       |
+| Sport   |          |         |         |          |          |               |
+| Cricket |          |          |          |          |          |               |
+| Sailing |          |          |          |          |          |               |
+| Baseball|          |          |          |          |          |               |
+| Lacrosse|          |          |          |          |          |               |
+| Biathlon|          |          |          |          |          |               |
+| Weightlifting|          |          |          |          |          |               |
+#############
+
+The final solution is:
+
+Cricket, Sailing, Baseball, Lacrosse, Biathlon, Weightlifting"	{'sport': ['', '', '', '', '', ''], 'cricket': ['', '', '', '', '', ''], 'sailing': ['', '', '', '', '', ''], 'baseball': ['', '', '', '', '', ''], 'lacrosse': ['', '', '', '', '', ''], 'biathlon': ['', '', '', '', '', ''], 'weightlifting': ['', '', '', '', '', '']}	True	0	False
+Lv1-1x6-8	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person who's sport is skiing is on the left or right of the person who's sport is water-polo. Since statement 3 says that the person who's sport is skiing is on the left of the person who's sport is water-polo, we can conclude that the person who's sport is skiing is to the left of the person who's sport is water-polo.
+
+From statement 4, we know that the person who's sport is skiing is not to the left of the person who's sport is baseball. This means that the person who's sport is skiing must be to the right of the person who's sport is baseball.
+
+From statement 5, we know that the person who's sport is baseball is not to the left of the person who's sport is sailing. This means that the person who's sport is baseball must be to the right of the person who's sport is sailing.
+
+From statement 6, we know that the person who's sport is baseball is on the right of the person who's sport is cycling. This means that the person who's sport is cycling must be to the left of the person who's sport is baseball.
+
+From statement 7, we know that the person who's sport is swimming is between the person who's sport is cycling and the person who's sport is sailing. This means that the person who's sport is swimming must be to the right of the person who's sport is cycling and to the left of the person who's sport is sailing.
+
+From statement 8, we know that the person who's sport is sailing is somewhere to the left of the person who's sport is baseball. This means that the person who's sport is sailing must be to the left of the person who's sport is baseball.
+
+Now, let's put all the information together:
+
+1. The person who's sport is skiing is to the left of the person who's sport is water-polo.
+2. The person who's sport is skiing is to the right of the person who's sport is baseball.
+3. The person who's sport is baseball is to the right of the person who's sport is sailing.
+4. The person who's sport is sailing is to the left of the person who's sport is baseball.
+5. The person who's sport is cycling is to the left of the person who's sport is baseball.
+6. The person who's sport is swimming is between the person who's sport is cycling and the person who's sport is sailing.
+
+The final solution table is:
+
+#############
+|         |    1    |    2     |    3    |    4     |   5    |     6      |
+| Sport   |         |          |         |          |        |            |
+| Cycling |         |          |         |          |        |            |
+| Swimming|         |          |         |          |        |            |
+| Sailing |         |          |         |          |        |            |
+| Baseball|         |          |         |          |        |            |
+| Skiing  |         |          |         |          |        |            |
+| Water-polo|         |          |         |          |        |            |
+#############"	{'sport': ['', '', '', '', '', ''], 'cycling': ['', '', '', '', '', ''], 'swimming': ['', '', '', '', '', ''], 'sailing': ['', '', '', '', '', ''], 'baseball': ['', '', '', '', '', ''], 'skiing': ['', '', '', '', '', ''], 'water-polo': ['', '', '', '', '', '']}	True	0	False
+Lv1-1x6-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The architect is on the right of the videographer
+This means the videographer is on the left of the architect.
+
+2. The mechanic is on the far left or far right
+This means the mechanic is either on the leftmost position or the rightmost position.
+
+3. The mechanic is on the right of the analyst
+This means the analyst is on the left of the mechanic.
+
+4. The manager is on the left of the videographer
+This means the manager is on the left of the architect (since the videographer is on the left of the architect).
+
+5. The architect is not to the right of the project-manager
+This means the project-manager is either on the left of the architect or on the right of the architect.
+
+6. The analyst is somewhere to the right of the videographer
+This means the analyst is either on the right of the videographer or on the right of the architect (since the videographer is on the left of the architect).
+
+Now, let's combine the information:
+
+* The videographer is on the left of the architect.
+* The mechanic is either on the leftmost position or the rightmost position.
+* The analyst is on the left of the mechanic.
+* The manager is on the left of the architect.
+* The project-manager is either on the left of the architect or on the right of the architect.
+
+With these constraints, we can start filling in the table:
+
+|       |    1    |      2       |     3     |        4        |    5    |    6     |
+| Job   |         |              |           | project-        |         |          |
+
+From clue 2, we know the mechanic is either on the leftmost position or the rightmost position. Let's assume the mechanic is on the leftmost position for now.
+
+|       |    1    |      2       |     3     |        4        |    5    |    6     |
+| Job   | Mechanic|              |           | project-        |         |          |
+
+From clue 3, we know the analyst is on the left of the mechanic.
+
+|       |    1    |      2       |     3     |        4        |    5    |    6     |
+| Job   | Mechanic| Analyst    |           | project-        |         |          |
+
+From clue 1, we know the architect is on the right of the videographer. Since the videographer is on the left of the architect, the architect must be in position 5 or 6.
+
+|       |    1    |      2       |     3     |        4        |    5    |    6     |
+| Job   | Mechanic| Analyst    |           | project-        | Architect| Videographer|
+
+From clue 4, we know the manager is on the left of the videographer. Since the videographer is on the left of the architect, the manager must be in position 1 or 2.
+
+|       |    1    |      2       |     3     |        4        |    5    |    6     |
+| Job   | Mechanic| Manager    |           | project-        | Architect| Videographer|
+
+From clue 5, we know the project-manager is either on the left of the architect or on the right of the architect. Since the architect is in position 5 or 6, the project-manager must be in position 4.
+
+|       |    1    |      2       |     3     | project-manager| Architect| Videographer|
+
+Finally, from clue 6, we know the analyst is somewhere to the right of the videographer. Since the videographer is on the left of the architect, the analyst must be in position 3.
+
+|       |    1    |      2       | Analyst  | project-manager| Architect| Videographer|
+
+Now we have the final solution:
+
+#############
+|       |    1    |      2       | Analyst  | project-manager| Architect| Videographer|
+| Job   | Mechanic| Manager    |          |                |          |          |
+#############
+
+The final solution is:
+
+Mechanic (1)
+Manager (2)
+Analyst (3)
+project-manager (4)
+Architect (5)
+Videographer (6)"	{'job': ['mechanic', 'manager', '', '', '', '']}	True	0	False
+Lv1-1x6-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The Nigerian is on the left of the American.
+This means the order is: Nigerian, American,???
+
+2. The American is somewhere to the left of the Egyptian.
+This means the order is: Nigerian, American, Egyptian,???
+
+3. The Italian is somewhere between the Polish and the American.
+This means the order is: Nigerian, American, Egyptian, Polish, Italian,???
+
+4. The Canadian is on the right of the Italian.
+This means the order is: Nigerian, American, Egyptian, Polish, Italian, Canadian
+
+5. The Polish is on the left of the Italian.
+This means the order is: Nigerian, American, Egyptian, Polish, Italian, Canadian
+
+6. The Canadian is not to the left of the Canadian.
+This is a redundant clue, as it's impossible for the Canadian to be to the left of itself.
+
+Now that we have all the clues, we can fill in the table:
+
+#############
+| Nationality   |   1    |    2    |    3     |    4     |    5     |    6     |
+|               |        |         |          |          |          |          |
+| Nigerian      |        |         |          |          |          |          |
+| American      |        |         |          |          |          |          |
+| Egyptian      |        |         |          |          |          |          |
+| Polish        |        |         |          |          |          |          |
+| Italian       |        |         |          |          |          |          |
+| Canadian      |        |         |          |          |          |          |
+#############
+
+The final solution is:
+
+Nigerian, American, Egyptian, Polish, Italian, Canadian"	{'nationality': ['1', '2', '3', '4', '5', '6'], 'nigerian': ['', '', '', '', '', ''], 'american': ['', '', '', '', '', ''], 'egyptian': ['', '', '', '', '', ''], 'polish': ['', '', '', '', '', ''], 'italian': ['', '', '', '', '', ''], 'canadian': ['', '', '', '', '', '']}	True	0	False

@@ -1,0 +1,888 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-4x4-1	"Let's solve this step-by-step using the given clues:
+
+### Clues:
+1. The photographer is the person who's hobby is board-games.
+2. The fan of trance is on the left of the owner of the fish.
+3. The fan of r&b is the designer.
+4. The person who's hobby is fishing is on the right of the photographer.
+5. The scientist is on the right of the person who's hobby is camping.
+6. The fan of country is on the left of the fan of house.
+7. The photographer is the owner of the cat.
+8. The fan of house is on the right of the owner of the frog.
+9. The person who's hobby is fishing is on the left of the owner of the frog.
+
+### Step-by-Step Solution:
+
+#### Step 1: Determine the Photographer and their Hobby
+From Clue 1, the Photographer's Hobby is Board-Games.
+
+#### Step 2: Determine the Fan of Trance
+From Clue 2, the Fan of Trance is on the left of the owner of the fish. This means the owner of the fish cannot be the first position (since there would be no one to the left).
+
+#### Step 3: Determine the Fan of R&B
+From Clue 3, the Fan of R&B is the Designer.
+
+#### Step 4: Determine the Person with Fishing as Hobby
+From Clue 4, the person with fishing as a hobby is on the right of the Photographer. Since the Photographer is in position 1, the person with fishing as a hobby must be in position 2.
+
+#### Step 5: Determine the Scientist and Camping Hobby
+From Clue 5, the Scientist is on the right of the person with camping as a hobby. Since the person with fishing as a hobby is in position 2, the person with camping as a hobby must be in position 1 or 3. But since position 1 is occupied by the Photographer, the person with camping as a hobby must be in position 3, and the Scientist must be in position 4.
+
+#### Step 6: Determine the Fan of Country and House
+From Clue 6, the Fan of Country is on the left of the Fan of House. So, if we assume the Fan of Country is in position 1, then the Fan of House must be in position 2, but that conflicts with the Photographer being in position 1. Therefore, the Fan of Country must be in position 2, and the Fan of House must be in position 3.
+
+#### Step 7: Determine the Remaining Hobbies and Pets
+Since the Fan of Country is in position 2 and the Fan of House is in position 3, and the person with camping as a hobby is in position 3, the Fan of House cannot have camping as a hobby. Also, the person with fishing as a hobby is in position 2, so the Fan of Country must have fishing as a hobby. The Fan of House must have camping as a hobby. The remaining hobbies for positions 1 and 4 are card-games and board-games, respectively.
+
+From Clue 7, the Photographer is the owner of the cat. Since the Photographer is in position 1, the cat is in position 1.
+
+From Clue 8, the Fan of House is on the right of the owner of the frog. Since the Fan of House is in position 3, the owner of the frog must be in position 2.
+
+From Clue 9, the person with fishing as a hobby is on the left of the owner of the frog. Since the person with fishing as a hobby is in position 2, and the owner of the frog is in position 3, this is consistent.
+
+### Final Table:
+
+```plaintext
+#############
+| Hobby      | Job         | Music-Genre | Pet       |
+|------------|-------------|-------------|-----------|
+| Card-Games | Designer    | R&B         | Cat       |
+| Fishing    | Photographer| Trance      | Frog      |
+| Camping    | Scientist   | House       | Fish      |
+| Board-Games| Fan of House| Country     | Rabbit    |
+#############
+```
+
+This table satisfies all the given clues."	{'hobby': ['job', 'music-genre', 'pet'], 'card-games': ['designer', 'r&b', 'cat'], 'fishing': ['photographer', 'trance', 'frog'], 'camping': ['scientist', 'house', 'fish'], 'board-games': ['fan of house', 'country', 'rabbit']}	False	0	False
+Lv1-4x4-2	"Let's solve this step-by-step using the given clues:
+
+### Clues Analysis:
+1. The person eating broccoli is on the far right (Position 4).
+2. The fan of soul is the person who's sport is baseball.
+3. The person eating orange is on the right of the person drinking cola.
+4. The person whose sport is volleyball is on the left of the person eating kiwi.
+5. The fan of soul is on the left of the fan of dubstep.
+6. The person drinking sprite is the fan of indie.
+7. The fan of folk is on the left of the person drinking iced-tea.
+8. The person whose sport is volleyball is on the left of the person drinking cola.
+9. The person whose sport is baseball is on the right of the person whose sport is water-polo.
+
+### Step-by-Step Solution:
+
+1. **Clue 1**: Broccoli is at position 4.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      |            |            |          |            |
+   | Food          |            |            |          | broccoli  |
+   | Music-Genre   |            |            |          |            |
+   | Sport         |            |            |          |            |
+   ```
+
+2. **Clue 2**: Soul is for baseball.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      |            |            |          |            |
+   | Food          |            |            |          | broccoli  |
+   | Music-Genre   |            |            |          | soul       |
+   | Sport         |            |            |          | baseball   |
+   ```
+
+3. **Clue 3**: Orange is to the right of cola.
+   - This means cola can't be at position 4 (since broccoli is there), and orange can only be at positions 3 or 4. Since broccoli is at 4, orange must be at 3.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      |            |            | cola     |            |
+   | Food          |            |            | orange   | broccoli  |
+   | Music-Genre   |            |            |          | soul       |
+   | Sport         |            |            |          | baseball   |
+   ```
+
+4. **Clue 4**: Volleyball is to the left of kiwi.
+   - Volleyball must be at position 1 or 2, and kiwi must be at position 2 or 3. Since orange is at 3, kiwi must be at 2.
+   - Volleyball must then be at 1.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      |            |            | cola     |            |
+   | Food          |            | kiwi       | orange   | broccoli  |
+   | Music-Genre   |            |            |          | soul       |
+   | Sport         | volleyball | baseball   |          |            |
+   ```
+
+5. **Clue 5**: Soul is to the left of dubstep.
+   - Since soul is at 4, dubstep must be at 3.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      |            |            | cola     |            |
+   | Food          |            | kiwi       | orange   | broccoli  |
+   | Music-Genre   |            |            | dubstep  | soul       |
+   | Sport         | volleyball | baseball   |          |            |
+   ```
+
+6. **Clue 6**: Sprite is indie.
+   - Sprite can only be at position 2 since cola is at 1, orange is at 3, and broccoli is at 4.
+   - Therefore, indie must be at 2.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      | cola       | indie      | cola     |            |
+   | Food          |            | kiwi       | orange   | broccoli  |
+   | Music-Genre   |            |            | dubstep  | soul       |
+   | Sport         | volleyball | baseball   |          |            |
+   ```
+
+7. **Clue 7**: Folk is to the left of iced-tea.
+   - Folk can only be at position 1.
+   - Iced-tea must be at 2.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      | folk       | iced-tea   | cola     |            |
+   | Food          |            | kiwi       | orange   | broccoli  |
+   | Music-Genre   |            |            | dubstep  | soul       |
+   | Sport         | volleyball | baseball   |          |            |
+   ```
+
+8. **Clue 8**: Volleyball is to the left of cola.
+   - Volleyball is already at 1, and cola is at 3, so this clue is satisfied.
+
+9. **Clue 9**: Baseball is to the right of water-polo.
+   - Water-polo must be at 1, but volleyball is already there. This contradiction means we need to re-evaluate.
+   - Correcting the placement based on all clues:
+   - Water-polo is at 1, and baseball is at 2.
+   ```
+   |               |     1      |     2      |    3     |     4      |
+   | Beverage      | water-polo | iced-tea   | cola     | sprite     |
+   | Food          |            | kiwi       | orange   | broccoli  |
+   | Music-Genre   |            |            | indie    | soul       |
+   | Sport         | volleyball | baseball   | folk     | iced-tea   |
+   ```
+
+### Final Solution Table:
+```
+|               |     1      |     2      |    3     |     4      |
+| Beverage      | water-polo | iced-tea   | cola     | sprite     |
+| Food          |            | kiwi       | orange   | broccoli  |
+| Music-Genre   |            |            | indie    | soul       |
+| Sport         | volleyball | baseball   | folk     | iced-tea   |
+```"	{'beverage': ['water-polo', 'iced-tea', 'cola', 'sprite'], 'food': ['', 'kiwi', 'orange', 'broccoli'], 'music-genre': ['', '', 'indie', 'soul'], 'sport': ['volleyball', 'baseball', 'folk', 'iced-tea']}	True	4	False
+Lv1-4x4-3	"To solve this logic puzzle, we will use the given clues to fill in the table step-by-step.
+
+Let's start with the given information and clues:
+
+1. The person drinking tea is the owner of the pony.
+2. The person drinking mirinda is on the far right (position 4).
+3. The person watching musical movies is on the far right (position 4).
+4. The owner of the mouse is on the left of the owner of the hedgehog.
+5. The person drinking 7up is on the right of the person watching adventure movies.
+6. The person watching adventure movies is on the left of the person watching horror movies.
+7. The person watching horror movies is on the right of the electrician.
+8. The person drinking mirinda is on the right of the designer.
+9. The person drinking 7up is on the left of the owner of the pony.
+10. The person drinking mirinda is the security-guard.
+
+### Step-by-Step Solution:
+
+#### Clue 2 & Clue 3:
+- The person drinking mirinda is on the far right (position 4).
+- The person watching musical movies is also on the far right (position 4).
+
+Since both can't be the same, one of these must be incorrect or misinterpreted. Let's assume the person drinking mirinda is the security-guard from clue 10.
+
+So, we have:
+- Position 4: Security-guard, drinking mirinda.
+
+#### Clue 1:
+- The person drinking tea is the owner of the pony.
+- Therefore, position 4 (Security-guard) is not drinking tea. So, the person drinking tea must be in position 1, 2, or 3.
+
+#### Clue 8:
+- The person drinking mirinda is on the right of the designer.
+- Since position 4 is the security-guard, the designer must be in position 1, 2, or 3.
+
+#### Clue 10:
+- The person drinking mirinda is the security-guard.
+
+Now, let's place the mirinda drinker (security-guard) in position 4:
+|               |       1       |     2     |     3      |       4        |
+| Beverage      |              7up |           |            |    mirinda     |
+| Job           |               |           |            |    security-guard |
+| Movie-Genre   |              adventure |           |            |    musical     |
+| Pet           |               |           |            |    pony        |
+
+#### Clue 5:
+- The person drinking 7up is on the right of the person watching adventure movies.
+- The person watching adventure movies is on the left of the person watching horror movies.
+- The person watching horror movies is on the right of the electrician.
+
+From this, we can deduce:
+- Adventure movies must be in position 1.
+- Horror movies must be in position 3.
+- Electrician must be in position 2.
+
+So, we update the table:
+|               |       1       |     2     |     3      |       4        |
+| Beverage      |              7up |           |            |    mirinda     |
+| Job           |         designer | electrician | librarian  |    security-guard |
+| Movie-Genre   |             adventure |          horror |    musical     |
+| Pet           |               |           |            |    pony        |
+
+#### Clue 9:
+- The person drinking 7up is on the left of the owner of the pony.
+- This confirms that the designer is drinking 7up and the security-guard is the owner of the pony.
+
+So, the table remains consistent:
+|               |       1       |     2     |     3      |       4        |
+| Beverage      |              7up |           |            |    mirinda     |
+| Job           |         designer | electrician | librarian  |    security-guard |
+| Movie-Genre   |             adventure |          horror |    musical     |
+| Pet           |               |           |            |    pony        |
+
+#### Clue 4:
+- The owner of the mouse is on the left of the owner of the hedgehog.
+- The librarian (position 3) must be the owner of the mouse, and the electrician (position 2) must be the owner of the hedgehog.
+
+So, the final table is:
+|               |       1       |     2     |     3      |       4        |
+| Beverage      |              7up |           |            |    mirinda     |
+| Job           |         designer | electrician | librarian  |    security-guard |
+| Movie-Genre   |             adventure |          horror |    musical     |
+| Pet           |               | hedgehog  | mouse      |    pony        |
+
+### Final Solution Table:
+```
+|               |       1       |     2     |     3      |       4        |
+| Beverage      |              7up |           |            |    mirinda     |
+| Job           |         designer | electrician | librarian  |    security-guard |
+| Movie-Genre   |             adventure |          horror |    musical     |
+| Pet           |               | hedgehog  | mouse      |    pony        |
+```"	{'beverage': ['7up', '', '', 'mirinda'], 'job': ['designer', 'electrician', 'librarian', 'security-guard'], 'movie-genre': ['adventure', 'horror', 'musical'], 'pet': ['', 'hedgehog', 'mouse', 'pony']}	True	5	False
+Lv1-4x4-4	"```markdown
+|               |     1      |     2      |     3     |      4      |
+| Job           | firefighter| engineer   | scientist | bartender   |
+| Music-Genre   | d&b        | ambient    | funk      | electronic  |
+| Nationality   | dutch      | australian | turkish   | thai        |
+| Pet           | guinea-pig | cat        | horse     | ferret      |
+```
+
+Here's the step-by-step reasoning to arrive at this solution:
+
+1. **From clue 8:** The Australian is on the far right (position 4).
+   - Position 4: Nationality = Australian.
+
+2. **From clue 9:** The owner of the guinea-pig is the Turkish.
+   - Position 4: Pet = guinea-pig, Nationality = Turkish.
+
+3. **From clue 7:** The scientist is on the right of the bartender.
+   - Positions 3 and 4: Job = [scientist, bartender].
+
+4. **From clue 1:** The Thai is on the left of the bartender.
+   - Position 1: Nationality = Thai.
+   - Position 4: Job = bartender (from clue 7).
+
+5. **From clue 3:** The fan of ambient is on the far right.
+   - Position 4: Music-Genre = electronic (from clue 6, since the engineer is on the far right).
+
+6. **From clue 4:** The scientist is on the left of the owner of the cat.
+   - Positions 3 and 4: Job = [scientist, bartender], so Position 3 must be the scientist.
+   - Position 3: Job = scientist.
+   - Position 1: Job = bartender (since the Thai is on the left of the bartender).
+
+7. **From clue 2:** The firefighter is on the right of the owner of the horse.
+   - Positions 2 and 3: Job = [engineer, scientist].
+   - Position 3: Job = scientist.
+   - Position 2: Job = engineer.
+   - Position 2: Pet = horse (since the scientist is on the left of the owner of the cat).
+
+8. **From clue 5:** The fan of ambient is on the right of the fan of d&b.
+   - Position 4: Music-Genre = electronic (from clue 6).
+   - Position 3: Music-Genre = funk (since the engineer is on the far right with funk).
+   - Position 2: Music-Genre = ambient (since the scientist is on the right of the bartender and the fan of ambient is on the right of the fan of d&b).
+
+9. **From clue 6:** The fan of funk is on the right of the engineer.
+   - Position 3: Music-Genre = funk.
+   - Position 2: Music-Genre = ambient.
+
+10. **From clue 1:** The Thai is on the left of the bartender.
+    - Position 1: Nationality = Thai.
+    - Position 4: Nationality = Australian.
+
+11. **From clue 9:** The owner of the guinea-pig is the Turkish.
+    - Position 4: Pet = guinea-pig.
+    - Position 3: Pet = horse.
+    - Position 2: Pet = cat.
+    - Position 1: Pet = ferret.
+
+Thus, the final solution is as follows:
+```markdown
+|               |     1      |     2      |     3     |      4      |
+| Job           | firefighter| engineer   | scientist | bartender   |
+| Music-Genre   | d&b        | ambient    | funk      | electronic  |
+| Nationality   | dutch      | australian | turkish   | thai        |
+| Pet           | guinea-pig | cat        | horse     | ferret      |
+```"	{'job': ['firefighter', 'engineer', 'scientist', 'bartender'], 'music-genre': ['d&b', 'ambient', 'funk', 'electronic'], 'nationality': ['dutch', 'australian', 'turkish', 'thai'], 'pet': ['guinea-pig', 'cat', 'horse', 'ferret']}	True	2	False
+Lv1-4x4-5	"To solve this logic puzzle, let's break down each clue and place the information into the table step-by-step.
+
+1. **The person watching spy movies is on the far left.**
+   - Spy movies go in column 1.
+
+2. **The person whose sport is basketball is on the right of the analyst.**
+   - The analyst cannot be in column 4 (since there's no space to the right), so the analyst must be in column 1 or 2.
+   - If the analyst is in column 1, then basketball would be in column 2.
+   - If the analyst is in column 2, then basketball would be in column 3.
+
+3. **The person whose sport is biathlon is on the far left.**
+   - Biathlon also goes in column 1, but we already have something there from clue 1 (spy movies). Therefore, the person with biathlon as their sport must be in column 3.
+
+4. **The Indian is on the left of the French.**
+   - This means the Indian must be in a column to the left of the French.
+
+5. **The Turkish is on the right of the person whose sport is handball.**
+   - Handball is the sport of the Thai (clue 6), so the Turkish must be in the column immediately to the right of the Thai.
+
+6. **The Thai is the person whose sport is handball.**
+   - Handball goes in column 4.
+
+7. **The French is on the left of the person watching drama movies.**
+   - Drama movies cannot be in column 1 (spy movies) or column 4 (handball), so it can only be in columns 2 or 3.
+
+8. **The social-worker is on the right of the person watching romance movies.**
+   - Romance movies cannot be in column 1 (spy movies) or column 4 (handball), so it can only be in columns 2 or 3.
+
+9. **The person watching drama movies is on the right of the teacher.**
+   - Drama movies and the teacher cannot be in column 1 (spy movies) or column 4 (handball), so they can only be in columns 2 or 3.
+
+Let's start placing the clues:
+
+- Column 1: Spy movies (from Clue 1)
+- Column 3: Biathlon (from Clue 3)
+
+Now, since the person whose sport is basketball is on the right of the analyst, and the person whose sport is handball (Thai) is in column 4, the analyst must be in column 1 (since basketball cannot be in column 1).
+
+So, we have:
+- Column 1: Analyst (Spy movies)
+- Column 3: Biathlon
+
+Since the person whose sport is basketball is on the right of the analyst, basketball must be in column 2. And the person whose sport is handball (Thai) is in column 4.
+
+- Column 2: Basketball
+- Column 4: Handball (Thai)
+
+Now, the Turkish is on the right of the person whose sport is handball, so the Turkish is in column 4.
+
+- Column 4: Handball (Thai, Turkish)
+
+The Indian is on the left of the French, and the French is on the left of the person watching drama movies, and the person watching drama movies is on the right of the teacher. Let's place these:
+
+- Since the Indian is on the left of the French, the Indian must be in column 1 or 2.
+- Since the French is on the left of the person watching drama movies, and the person watching drama movies is on the right of the teacher, the French cannot be in column 1 (because the Indian is on the left of the French).
+- So, the French must be in column 2 or 3.
+
+Given that the person watching drama movies is on the right of the teacher, and the French is on the left of the person watching drama movies, the teacher must be in column 1, and the person watching drama movies must be in column 2.
+
+- Column 1: Teacher (Indian)
+- Column 2: French (Romance movies)
+- Column 3: Social-worker (Drama movies)
+- Column 4: Handball (Thai, Turkish)
+
+Finally, the person whose sport is basketball is on the right of the analyst, which means the analyst must be in column 1, and the person whose sport is basketball is in column 2.
+
+So, we have:
+
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         |                    |                 |                 |
+| French          | Romance            | French          |                 |
+| Social-worker   | Drama              | Thai            | Handball        |
+
+We need to fill in the remaining jobs and genres. Since the analyst is in column 1 and does not watch spy movies, the remaining job is videographer. The genre for the Thai (in column 4) is superhero.
+
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         |                    |                 |                 |
+| French          | Romance            | French          |                 |
+| Social-worker   | Drama              | Thai            | Handball        |
+
+The remaining job for the analyst is videographer, and the remaining genre for the Thai is superhero.
+
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         | Videographer       |                 |                 |
+| French          | Romance            | French          |                 |
+| Social-worker   | Drama              | Thai            | Handball        |
+
+The remaining genre for the analyst is superhero, and the remaining genre for the French is spy.
+
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         | Videographer       | Thai            |                 |
+| French          | Spy                | French          |                 |
+| Social-worker   | Drama              | Thai            | Handball        |
+
+Finally, the remaining genre for the French is romance, and the remaining genre for the analyst is superhero.
+
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         | Videographer       | Thai            | Superhero       |
+| French          | Romance            | French          | Spy             |
+| Social-worker   | Drama              | Thai            | Handball        |
+
+### Final Solution Table:
+```
+| Job             | Movie-Genre        | Nationality     | Sport           |
+|-----------------|--------------------|-----------------|-----------------|
+| Teacher (Indian)| Spy                | Indian          | Basketball      |
+| Analyst         | Videographer       | Thai            | Superhero       |
+| French          | Romance            | French          | Spy             |
+| Social-worker   | Drama              | Thai            | Handball        |
+```"	{'job': ['movie-genre', 'nationality', 'sport'], 'teacher (indian)': ['spy', 'indian', 'basketball'], 'analyst': ['videographer', 'thai', 'superhero'], 'french': ['romance', 'french', 'spy'], 'social-worker': ['drama', 'thai', 'handball']}	False	0	False
+Lv1-4x4-6	"Let's solve this step-by-step using the given clues.
+
+### Step-by-Step Solution:
+
+1. **Clue 3:** The accountant is the person watching fantasy movies.
+2. **Clue 1:** The person eating orange is the person watching fantasy movies.
+   - Therefore, the accountant is also the one eating orange.
+
+3. **Clue 6:** The person eating orange is on the left of the person eating blueberry.
+   - This means the person eating orange (accountant) is in position 1 or 2.
+
+4. **Clue 9:** The doctor is on the far left.
+   - Therefore, the doctor must be in position 1.
+
+5. **Clue 3 and Clue 6:** Since the accountant (eating orange) is on the left of the person eating blueberry, and the accountant is in position 1, the person eating blueberry must be in position 2.
+
+6. **Clue 4:** The owner of the horse is the person eating banana.
+   - The person eating banana cannot be the accountant (who is eating orange), so the owner of the horse must be in position 2 or 3.
+
+7. **Clue 4:** The owner of the horse is the person eating banana.
+   - Since the person in position 2 is eating banana, the owner of the horse is in position 2.
+
+8. **Clue 10:** The owner of the fish is on the left of the person eating blueberry.
+   - The person eating blueberry is in position 2, so the owner of the fish must be in position 1 or 2. But since position 1 is the doctor and position 2 is the owner of the horse, the owner of the fish must be in position 1, which contradicts the previous conclusion. Let's re-evaluate:
+   - The owner of the fish must be in position 1, which is the doctor. So, the doctor is the owner of the fish.
+
+9. **Clue 2:** The person eating banana is the person watching mystery movies.
+   - The person eating banana (horse owner) is in position 2 and watching mystery movies.
+
+10. **Clue 5:** The person watching scientific movies is the writer.
+    - The writer is in position 4.
+
+11. **Clue 8:** The person watching fantasy movies is on the right of the person watching scientific movies.
+    - The accountant (fantasy movies) is in position 1, and the writer (scientific movies) is in position 4, so the accountant is to the left of the writer.
+
+12. **Clue 7:** The doctor is on the left of the owner of the mouse.
+    - The doctor (position 1) is to the left of the owner of the mouse, who must be in position 3.
+
+13. **Remaining positions and foods:**
+    - Position 1: Doctor (fish owner)
+    - Position 2: Horse owner (banana eater, mystery movie watcher)
+    - Position 3: Mouse owner (orange eater)
+    - Position 4: Writer (scientific movie watcher)
+
+14. **Filling in the foods:**
+    - Position 1: Fish (doctor)
+    - Position 2: Banana (mystery movie watcher)
+    - Position 3: Orange (fantasy movie watcher, accountant)
+    - Position 4: Blueberry (thriller movie watcher, writer)
+
+### Final Table:
+
+```
+|               |    1    |      2      |     3      |     4     |
+| Food          | Fish    | Banana      | Orange     | Blueberry |
+| Job           | Doctor  | Horse Owner | Accountant | Writer    |
+| Movie-Genre   | Fantasy | Mystery     | Fantasy    | Scientific|
+| Pet           | Fish    | Horse       | Mouse      | Mouse     |
+```
+
+This is the final solution based on the given clues."	{'food': ['fish', 'banana', 'orange', 'blueberry'], 'job': ['doctor', 'horse owner', 'accountant', 'writer'], 'movie-genre': ['fantasy', 'mystery', 'fantasy', 'scientific'], 'pet': ['fish', 'horse', 'mouse', 'mouse']}	True	5	False
+Lv1-4x4-7	"Let's solve the puzzle step-by-step using the given clues:
+
+1. **Clue 8:** The person drinking coffee is on the far left.
+2. **Clue 9:** The person drinking coffee is on the left of the person drinking fanta.
+3. **Clue 10:** The person driving the airplane is on the left of the person driving the scooter.
+
+From Clue 8 and Clue 9, we can place coffee and fanta:
+```
+| Beverage    | Coffee | Fanta   |        |         |
+| Hobby       |        |         |        |         |
+| Pet         |        |         |        |         |
+| Transport   | Airplane | Scooter |        |         |
+```
+
+From Clue 10, since the person driving the airplane is on the left of the person driving the scooter, we already have that arrangement.
+
+4. **Clue 1:** The owner of the bird is the person whose hobby is cooking.
+5. **Clue 7:** The owner of the bird is the person driving the scooter.
+   
+From Clues 1 and 7, the person driving the scooter (who drinks fanta) has a bird as a pet and their hobby is cooking:
+```
+| Beverage    | Coffee | Fanta   |        |         |
+| Hobby       |        | Cooking |        |         |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter |        |         |
+```
+
+6. **Clue 4:** The owner of the frog is on the left of the person whose hobby is sudoku.
+7. **Clue 5:** The person whose hobby is cooking is on the right of the owner of the pony.
+8. **Clue 3:** The person drinking iced-tea is on the right of the person whose hobby is sudoku.
+9. **Clue 6:** The person whose hobby is sudoku is on the left of the person whose hobby is woodworking.
+
+From Clue 5, the owner of the pony is on the left of the person whose hobby is cooking (cooking is 2nd):
+```
+| Beverage    | Coffee | Fanta   |        |         |
+| Hobby       |        | Cooking |        | Woodworking |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter |        |         |
+```
+
+From Clue 4, the owner of the frog is on the left of the person whose hobby is sudoku:
+```
+| Beverage    | Coffee | Fanta   | Iced-tea |         |
+| Hobby       |        | Cooking | Sudoku  | Woodworking |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter |         |         |
+```
+
+From Clue 3, the person drinking iced-tea is on the right of the person whose hobby is sudoku:
+```
+| Beverage    | Coffee | Fanta   | Iced-tea | Mirinda |
+| Hobby       |        | Cooking | Sudoku  | Woodworking |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter | Taxi    |         |
+```
+
+From Clue 2, the person driving the taxi is on the left of the person drinking fanta:
+```
+| Beverage    | Coffee | Fanta   | Iced-tea | Mirinda |
+| Hobby       |        | Cooking | Sudoku  | Woodworking |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter | Taxi    | Quad-bike |
+```
+
+Now, we need to fill in the remaining beverage and transport slots:
+- The person drinking coffee is on the far left.
+- The person drinking fanta is second from the left.
+- The person drinking iced-tea is third from the left.
+- The person drinking mirinda is on the far right.
+
+So the final solution is:
+
+```
+| Beverage    | Coffee | Fanta   | Iced-tea | Mirinda |
+| Hobby       | Baking | Cooking | Sudoku  | Woodworking |
+| Pet         | Bird   | Frog    | Hedgehog | Pony    |
+| Transport   | Airplane | Scooter | Taxi    | Quad-bike |
+```"	{'beverage': ['coffee', 'fanta', 'iced-tea', 'mirinda'], 'hobby': ['baking', 'cooking', 'sudoku', 'woodworking'], 'pet': ['bird', 'frog', 'hedgehog', 'pony'], 'transport': ['airplane', 'scooter', 'taxi', 'quad-bike']}	True	5	False
+Lv1-4x4-8	"To solve this logic puzzle, we will use the given clues to determine the correct assignments for each category (Beverage, Job, Movie-Genre, and Transport). Let's go through the clues step by step:
+
+1. **Clue 1:** The journalist is on the left of the person watching zombie movies.
+2. **Clue 2:** The person drinking water is the person watching western movies.
+3. **Clue 3:** The person watching musical movies is on the left of the person watching time-travel movies.
+4. **Clue 4:** The electrician is on the left of the person driving the jet-ski.
+5. **Clue 5:** The person watching western movies is on the left of the person drinking 7up.
+6. **Clue 6:** The person watching musical movies is on the right of the person driving the bus.
+7. **Clue 7:** The freelancer is the person driving the bus.
+8. **Clue 8:** The person driving the scooter is the person drinking 7up.
+9. **Clue 9:** The person driving the skateboard is the person drinking juice.
+
+Let's start filling in the table based on these clues:
+
+### Step-by-Step Solution:
+
+**Step 1:**
+- From Clue 7, the freelancer drives the bus.
+- From Clue 8, the person driving the scooter drinks 7up.
+- From Clue 9, the person driving the skateboard drinks juice.
+
+So, we can fill in:
+```
+|               |     1      |      2      |      3      |     4      |
+| Beverage      |            |             |             |            |
+| Job           |            |             |             | Freelancer |
+| Movie-Genre   |            |             |             |            |
+| Transport     | Bus        |             |             | Skateboard |
+```
+
+**Step 2:**
+- From Clue 2, the person drinking water watches western movies.
+- Since the person drinking juice is the one driving the skateboard (Clue 9), the person drinking water must be the one in position 1 or 2.
+
+Since the person drinking juice is in position 4, the person drinking water must be in position 1 or 2. Also, from Clue 5, the person watching western movies (who drinks water) is on the left of the person drinking 7up (who drives the scooter).
+
+So, the person drinking water must be in position 1, and the person drinking 7up must be in position 2.
+
+```
+|               |     1      |      2      |      3      |     4      |
+| Beverage      | Water      | 7up         |             |            |
+| Job           |            |             |             | Freelancer |
+| Movie-Genre   | Western    | Time-travel |             |            |
+| Transport     | Bus        | Scooter     |             | Skateboard |
+```
+
+**Step 3:**
+- From Clue 3, the person watching musical movies is on the left of the person watching time-travel movies.
+- From Clue 6, the person watching musical movies is on the right of the person driving the bus (freelancer).
+- Therefore, the person driving the bus (freelancer) must be in position 3.
+
+```
+|               |     1      |      2      |      3      |     4      |
+| Beverage      | Water      | 7up         |             |            |
+| Job           | Freelancer |             | Journalist  | Paramedic  |
+| Movie-Genre   | Western    | Time-travel | Musical     | Zombie     |
+| Transport     | Bus        | Scooter     | Jet-ski     | Skateboard |
+```
+
+**Step 4:**
+- From Clue 4, the electrician is on the left of the person driving the jet-ski.
+- From Clue 1, the journalist is on the left of the person watching zombie movies.
+- So, the electrician must be in position 1 and the journalist must be in position 2.
+
+```
+|               |     1      |      2      |      3      |     4      |
+| Beverage      | Water      | 7up         |             |            |
+| Job           | Electrician| Journalist  | Freelancer  | Paramedic  |
+| Movie-Genre   | Western    | Time-travel | Musical     | Zombie     |
+| Transport     | Bus        | Scooter     | Jet-ski     | Skateboard |
+```
+
+**Step 5:**
+- From Clue 6, the person watching western movies is on the left of the person drinking 7up.
+- This is already satisfied as the person watching western movies (position 1) is to the left of the person drinking 7up (position 2).
+
+**Final Table:**
+
+```
+|               |     1      |      2      |      3      |     4      |
+| Beverage      | Water      | 7up         |             |            |
+| Job           | Electrician| Journalist  | Freelancer  | Paramedic  |
+| Movie-Genre   | Western    | Time-travel | Musical     | Zombie     |
+| Transport     | Bus        | Scooter     | Jet-ski     | Skateboard |
+```"	{'beverage': ['water', '7up', '', ''], 'job': ['electrician', 'journalist', 'freelancer', 'paramedic'], 'movie-genre': ['western', 'time-travel', 'musical', 'zombie'], 'transport': ['bus', 'scooter', 'jet-ski', 'skateboard']}	True	9	False
+Lv1-4x4-9	"Let's solve this step-by-step using the given clues:
+
+1. **The owner of the pony is on the far left (position 1).**
+2. **The person driving the quad-bike is on the right of the owner of the hedgehog.**
+3. **The fan of classical is on the right of the person who's hobby is video-games.**
+4. **The person driving the snowmobile is on the right of the owner of the mouse.**
+5. **The person driving the quad-bike is on the left of the person who's hobby is baking.**
+6. **The person driving the tram is the person who's hobby is woodworking.**
+7. **The person driving the snowmobile is the owner of the frog.**
+8. **The fan of disco is on the far left (position 1).**
+9. **The fan of metal is the person who's hobby is woodworking.**
+
+From clue 1 and clue 8:
+- The owner of the pony is in position 1.
+- The fan of disco is in position 1.
+
+Since both positions 1 are taken by the same person (disco fan), we can conclude that the owner of the pony is also the fan of disco.
+
+From clue 6:
+- The person driving the snowmobile is the owner of the frog.
+
+From clue 9:
+- The fan of metal is the person who's hobby is woodworking.
+
+From clue 6:
+- The person driving the tram is the person who's hobby is woodworking.
+
+So, the person who's hobby is woodworking is in position 4 (driving the tram).
+
+Now let's place the remaining elements based on other clues:
+
+From clue 7:
+- The person driving the snowmobile is the owner of the frog.
+
+From clue 4:
+- The person driving the snowmobile is on the right of the owner of the mouse.
+
+This means the owner of the mouse must be in position 2 or 3, and the person driving the snowmobile must be in position 3 or 4. Since the woodworking hobby is in position 4, the person driving the snowmobile cannot be in position 4. Therefore, the owner of the mouse must be in position 2, and the person driving the snowmobile must be in position 3.
+
+From clue 2:
+- The person driving the quad-bike is on the right of the owner of the hedgehog.
+
+This means the owner of the hedgehog must be in position 1 or 2. Since the owner of the pony (and thus the fan of disco) is in position 1, the owner of the hedgehog must be in position 2.
+
+From clue 3:
+- The fan of classical is on the right of the person who's hobby is video-games.
+
+This means the person with the video-game hobby must be in position 1, 2, or 3, and the fan of classical must be in position 2, 3, or 4. Since the owner of the pony (fan of disco) is in position 1, the video-game hobbyist must be in position 2, and the fan of classical must be in position 3.
+
+Summarizing the positions:
+- Position 1: Owner of the pony (fan of disco)
+- Position 2: Owner of the hedgehog
+- Position 3: Fan of classical
+- Position 4: Person with woodworking hobby (driving the tram)
+
+We still need to assign the remaining hobbies and music genres to these positions. We know:
+- The fan of metal is the person with woodworking hobby.
+- The fan of classical is on the right of the person with video-game hobby.
+- The person driving the quad-bike is on the right of the owner of the hedgehog.
+
+Thus, the remaining assignments are:
+- Position 1: Owner of the pony (fan of disco)
+- Position 2: Owner of the hedgehog
+- Position 3: Fan of classical
+- Position 4: Person with woodworking hobby (driving the tram)
+
+To fit the music genres and hobbies, we assign:
+- Position 1: Owner of the pony (fan of disco)
+- Position 2: Owner of the hedgehog (music genre: blues)
+- Position 3: Fan of classical
+- Position 4: Person with woodworking hobby (driving the tram, music genre: metal)
+
+And the remaining hobbies:
+- Position 1: Owner of the pony (fan of disco, hobby: woodworking)
+- Position 2: Owner of the hedgehog (hobby: drawing)
+- Position 3: Fan of classical (hobby: video-games)
+- Position 4: Person with woodworking hobby (hobby: woodworking, driving the tram, music genre: metal)
+
+Final solution table:
+
+```
+|               |    1    |      2      |      3      |     4      |
+| Hobby         | woodworking | drawing | video-games | woodworking |
+| Music-Genre   | disco     | blues    | classical  | metal      |
+| Pet           | pony      | hedgehog |            |            |
+| Transport     | tram      | quad-bike|            | snowmobile |
+```"	{'hobby': ['woodworking', 'drawing', 'video-games', 'woodworking'], 'music-genre': ['disco', 'blues', 'classical', 'metal'], 'pet': ['pony', 'hedgehog', '', ''], 'transport': ['tram', 'quad-bike', '', 'snowmobile']}	True	5	False
+Lv1-4x4-10	"To solve this logic puzzle, we need to carefully analyze and apply each clue step-by-step. Let's start by organizing the information and clues:
+
+### Initial Setup:
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** |          |         |         |         |
+| **H** |          |         |         |         |
+| **N** |          |         |         |         |
+| **S** |          |         |         |         |
+
+### Clues Analysis:
+1. The person whose hobby is video-games is on the right of the person drinking juice.
+2. The person whose sport is badminton is on the left of the person whose hobby is drawing.
+3. The person drinking coffee is on the far left.
+4. The person drinking lemonade is the person whose hobby is video-games.
+5. The person drinking tea is on the left of the Egyptian.
+6. The person whose hobby is rock-climbing is on the left of the person whose sport is biathlon.
+7. The Malaysian is on the right of the person whose hobby is drawing.
+8. The person whose hobby is rock-climbing is the person drinking tea.
+9. The Argentine is on the right of the person whose sport is volleyball.
+
+### Step-by-Step Solution:
+
+#### Step 1: Apply Clue 3 (Coffee is on the far left)
+- **B1 = Coffee**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   |         |         |         |
+| **H** |          |         |         |         |
+| **N** |          |         |         |         |
+| **S** |          |         |         |         |
+
+#### Step 2: Apply Clue 4 (Lemonade is the hobby of Video-Games)
+- **H4 = Video-Games**
+- **B4 = Lemonade**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   |         |         | Lemonade|
+| **H** |          |         |         | Video-Games|
+| **N** |          |         |         |         |
+| **S** |          |         |         |         |
+
+#### Step 3: Apply Clue 1 (Video-Games is right of Juice)
+- **B2 = Juice**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   |         | Lemonade|
+| **H** |          | Video-Games|         | Video-Games|
+| **N** |          |         |         |         |
+| **S** |          |         |         |         |
+
+#### Step 4: Apply Clue 8 (Rock-Climbing is the hobby of Tea)
+- **B3 = Tea**
+- **H3 = Rock-Climbing**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** |          |         |         |         |
+| **S** |          |         |         |         |
+
+#### Step 5: Apply Clue 6 (Rock-Climbing is on the left of Biathlon)
+- **S2 = Biathlon**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** |          |         |         |         |
+| **S** |          | Biathlon|         |         |
+
+#### Step 6: Apply Clue 2 (Badminton is on the left of Drawing)
+- **S1 = Badminton**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** |          |         |         |         |
+| **S** | Badminton| Biathlon|         |         |
+
+#### Step 7: Apply Clue 7 (Malaysian is on the right of Drawing)
+- **N4 = Malaysian**
+- **N3 = Drawing**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** |          |         | Drawing| Malaysian|
+| **S** | Badminton| Biathlon|         |         |
+
+#### Step 8: Apply Clue 9 (Argentine is on the right of Volleyball)
+- **N1 = Argentine**
+- **S4 = Volleyball**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** | Argentine|         | Drawing| Malaysian|
+| **S** | Badminton| Biathlon|         | Volleyball|
+
+#### Step 9: Apply Clue 5 (Tea is on the left of Egyptian)
+- **N2 = Egyptian**
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** |          | Video-Games| Rock-Climbing| Video-Games|
+| **N** | Argentine| Egyptian| Drawing| Malaysian|
+| **S** | Badminton| Biathlon|         | Volleyball|
+
+Now, let's fill in the remaining sports and hobbies based on the clues:
+
+- **H1 = Sailing** (since Badminton is on the left of Drawing, and Sailing is the only remaining sport)
+
+|       | 1        | 2       | 3       | 4       |
+|-------|----------|---------|---------|---------|
+| **B** | Coffee   | Juice   | Tea     | Lemonade|
+| **H** | Sailing  | Video-Games| Rock-Climbing| Video-Games|
+| **N** | Argentine| Egyptian| Drawing| Malaysian|
+| **S** | Badminton| Biathlon| Sailing | Volleyball|
+
+### Final Solution Table:
+```
+|               |     1      |       2       |    3     |      4      |
+| Beverage      | Coffee     | Juice         | Tea      | Lemonade    |
+| Hobby         | Sailing    | Video-Games   | Rock-Climbing| Video-Games|
+| Nationality   | Argentine  | Egyptian      | Drawing  | Malaysian   |
+| Sport         | Badminton  | Biathlon     | Sailing  | Volleyball  |
+```"	{'beverage': ['coffee', 'juice', 'tea', 'lemonade'], 'hobby': ['sailing', 'video-games', 'rock-climbing', 'video-games'], 'nationality': ['argentine', 'egyptian', 'drawing', 'malaysian'], 'sport': ['badminton', 'biathlon', 'sailing', 'volleyball']}	True	4	False

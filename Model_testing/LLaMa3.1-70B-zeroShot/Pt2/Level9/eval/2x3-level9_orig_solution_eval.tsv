@@ -1,0 +1,454 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv9-2x3-1	"After analyzing the clues, I came up with the following solution:
+
+
+|               |   1    |    2    |    3     |
+| Nationality   | Mexican| Egyptian| German   |
+| Pet           | Horse  | Rabbit  | Hamster  |
+
+Here's how I deduced the solution:
+
+From clue 6, we know the owner of the rabbit is to the left of the Egyptian.
+
+From clue 3, we know the owner of the rabbit is somewhere to the right of the owner of the horse. Combining this with clue 6, we can conclude that the order must be: Horse - Rabbit - Egyptian (since the rabbit's owner is both to the right of the horse and to the left of the Egyptian).
+
+From clue 2, we know the Mexican is not to the left of the German.
+
+From clue 4, we know the owner of the hamster and the German have the same parity positions. Since there are three columns, this means they must be in either columns 1 and 3 or columns 2 (not possible since there's only one column 2).
+
+Given that the Mexican is not to the left of the German, we can conclude that the Mexican must be in column 1.
+
+Since the owner of the horse is in column 1, and the owner of the hamster is in a parity position with the German (column 3), the only pet left for the Egyptian in column 2 is the rabbit.
+
+The final solution is:
+
+
+|               |   1    |    2    |    3     |
+| Nationality   | Mexican| Egyptian| German   |
+| Pet           | Horse  | Rabbit  | Hamster  |
+
+#############"	{'nationality': ['mexican', 'egyptian', 'german'], 'pet': ['horse', 'rabbit', 'hamster']}	True	3	False
+Lv9-2x3-2	"Let's analyze the clues:
+
+From clue 1, we know that the person who's hobby is cooking is in the middle, so they must be in position 2.
+
+|             |    1    |    2     |     3     |
+| Hobby       |         | Cooking  |           |
+| Transport   |         |          |           |
+
+From clue 4, we know that the person driving the airplane is between the person driving the quad-bike and the person driving the ship. This means that the person driving the airplane must be in position 2, but we already know that the person who's hobby is cooking is in position 2. Therefore, the person driving the airplane must have a hobby other than cooking.
+
+Since the person who's hobby is hiking has different parity positions from the person driving the airplane (clue 2), and the person driving the airplane is in an even position (2), the person who's hobby is hiking must be in an odd position, which means they are in position 1 or 3. But if they were in position 3, then the person driving the quad-bike would have to be in position 1 (because of clue 3), and the person driving the airplane would not be between them. Therefore, the person who's hobby is hiking must be in position 1.
+
+|             |    1    |    2     |     3     |
+| Hobby       | Hiking  | Cooking  |           |
+| Transport   |         |          |           |
+
+From clue 3, we know that the person who's hobby is dancing is somewhere to the left of the person driving the quad-bike. Since the person who's hobby is hiking is in position 1, and the person who's hobby is cooking is in position 2, the person who's hobby is dancing must be in position 1 or 2. But if they were in position 1, then they would not be to the left of the person driving the quad-bike (because there would be no one to their right). Therefore, the person who's hobby is dancing must be in position 3.
+
+|             |    1    |    2     |     3     |
+| Hobby       | Hiking  | Cooking  | Dancing  |
+| Transport   |         |          |           |
+
+Now we can fill in the transports. From clue 4, we know that the person driving the airplane is between the person driving the quad-bike and the person driving the ship. Since the person who's hobby is hiking is in position 1, they cannot be driving the airplane (because there is no one to their left). Therefore, the person who's hobby is cooking must be driving the airplane.
+
+|             |    1    |    2     |     3     |
+| Hobby       | Hiking  | Cooking  | Dancing  |
+| Transport   | Ship    | Airplane| Quad-bike|
+
+The final answer is:
+
+#############
+|             |    1    |    2     |     3     |
+| Hobby       | Hiking  | Cooking  | Dancing  |
+| Transport   | Ship    | Airplane| Quad-bike|
+#############"	{'hobby': ['hiking', 'cooking', 'dancing'], 'transport': ['ship', 'airplane', 'quad-bike']}	True	4	False
+Lv9-2x3-3	"Let's break down the clues:
+
+From clue 4, we know that the person eating carrot owns a guinea-pig.
+
+From clue 5, we know that the person eating carrot and the owner of the fish have the same parity positions (i.e., both are in even-numbered or odd-numbered positions). Since there are only three positions, this means that either:
+
+* The person eating carrot is in position 1 and the owner of the fish is in position 3 (both odd).
+* The person eating carrot is in position 2 and the owner of the fish is in position 2 (not possible, since they can't be in the same position).
+* The person eating carrot is in position 3 and the owner of the fish is in position 1 (both odd).
+
+From clue 2, we know that the person eating cucumber is between the owner of the fish and the person eating carrot. This means that the person eating carrot cannot be in position 1 (since there would be no one to their left). Therefore, the person eating carrot must be in position 3.
+
+Now, from clue 5, we know that the owner of the fish is in an odd-numbered position, which means they are in position 1.
+
+From clue 2, we know that the person eating cucumber is between the owner of the fish and the person eating carrot. Since the owner of the fish is in position 1 and the person eating carrot is in position 3, this means that the person eating cucumber must be in position 2.
+
+Now, let's look at clue 1: ""the person eating cucumber is not to the left of the owner of the horse"". This means that the owner of the horse cannot be in position 3 (since the person eating cucumber would be to their left). Therefore, the owner of the horse must be in position 2 or 1. But we already know that position 2 is occupied by the person eating cucumber, so the owner of the horse must be in position 1... no, wait! We already established that the owner of the fish is in position 1.
+
+This means that our initial assumption about the positions of the people was incorrect. Let's re-examine the clues...
+
+Ah-ha!
+
+Here is the corrected solution:
+
+
+#############
+|        |     1     |    2     |     3      |
+| Food   | Blueberry| Cucumber| Carrot    |
+| Pet    | Fish     | Horse   | Guinea-pig|
+#############"	{'food': ['blueberry', 'cucumber', 'carrot'], 'pet': ['fish', 'horse', 'guinea-pig']}	True	6	True
+Lv9-2x3-4	"Let's analyze the clues:
+
+From clue 3, the person watching documentary movies is either on position 1 or position 3.
+
+From clue 2, the person watching documentary movies is to the right of the owner of the frog. This means the owner of the frog cannot be in position 3 (since there is no one to their right). The owner of the frog must be in position 1 or 2.
+
+Now, consider clue 4: the person watching documentary movies and the owner of the lizard have the same parity positions. Since the person watching documentary movies is on position 1 or 3, the owner of the lizard must also be on a position with the same parity (i.e., either an odd-numbered position like 1 or 3).
+
+However, clue 1 states that the owner of the lizard is to the left of the person watching romance movies. This means the owner of the lizard cannot be in position 3 (since there is no one to their right). Therefore, the owner of the lizard must be in position 1.
+
+Since the owner of the lizard is in position 1, and the owner of the frog is to the left of the person watching documentary movies, we can deduce that:
+
+* Position 1: Owner of the lizard (and also watching romance movies)
+* Position 3: Person watching documentary movies
+* Position 2: Owner of the frog
+
+Now, let's fill in the remaining information. The only pet left is the mouse, which must be owned by the person watching western movies (in position 2). However, this contradicts our earlier conclusion that the owner of the frog is in position 2.
+
+Re-examining the clues, we realize that there was an oversight. Let's revise our approach:
+
+* Position 1: Owner of the lizard
+* Position 3: Person watching documentary movies
+
+From clue 1, the person watching romance movies must be to the right of the owner of the lizard, which means they are in position 2.
+
+Now we can fill in the remaining information:
+
+|               |    1    |    2    |      3      |
+| Movie-Genre   |         |         |             |
+| Pet           | Lizard  | Romance | Documentary |
+
+From clue 2, the owner of the frog is to the left of the person watching documentary movies. Since the person watching documentary movies is in position 3, the owner of the frog must be in position 2 or have a pet other than frog.
+
+Considering the options:
+
+* Position 1: Owner of the lizard
+* Position 2: Person watching romance movies
+* Position 3: Person watching documentary movies
+
+We can conclude that the owner of the frog is actually not in any of these positions, but rather, the person watching western movies must own the frog (in position 2), and the person watching romance movies owns the mouse.
+
+Final solution:
+
+#############
+|               |    1    |    2    |      3      |
+| Movie-Genre   | Western | Romance | Documentary |
+| Pet           | Lizard  | Mouse   | Frog        |
+#############"	{'movie-genre': ['western', 'romance', 'documentary'], 'pet': ['lizard', 'mouse', 'frog']}	True	4	False
+Lv9-2x3-5	"Let's analyze the clues:
+
+From clue 1, we know that the person drinking water is indeed the person drinking water.
+
+From clue 2, we know that the person drinking tea is to the right of the person drinking cola.
+
+From clue 3, we know that the person drinking water and the fan of country music have the same parity positions. Since there are only three positions, this means that they must be in either positions 1 and 3 (both odd) or not together at all. But since we don't have enough information to confirm the latter, let's assume they are in positions 1 and 3.
+
+From clue 4, we know that the person drinking water is to the left of the fan of metal music. This means that the person drinking water must be in position 1 or 2.
+
+Combining clues 3 and 4, we can conclude that the person drinking water is in position 1, and the fan of country music is in position 3.
+
+From clue 5, we know that the fan of hip-hop music is to the right of the person drinking water. This means that the fan of hip-hop music must be in position 2 or 3. But since the fan of country music is already in position 3, the fan of hip-hop music must be in position 2.
+
+Now we can start filling in the table:
+
+|               |    1    |   2   |    3    |
+| Beverage      | water  |       |         |
+| Music-Genre   | country|       |         |
+
+The person drinking cola must be to the left of the person drinking tea (clue 2). Since the person drinking water is already in position 1, the person drinking cola must also be in position 1 or... no, wait! The person drinking cola can't be in position 1 because that's taken by the person drinking water. So the person drinking cola must be in position 2, but that's taken by the fan of hip-hop music. Therefore, the person drinking cola must be in position 3.
+
+But wait, we already have the fan of country music in position 3! This means that our initial assumption about the parity positions was incorrect. Let's re-examine clue 3.
+
+ Ah-ha! Clue 3 says that the person drinking water and the fan of country music have the same parity positions, but it doesn't say they can't be together. In fact, if we put the fan of country music in position 2, and the person drinking water in position 1, we satisfy clue 4 as well!
+
+Now we can fill in the rest of the table:
+
+|               |    1    |   2   |    3    |
+| Beverage      | water  | cola  | tea     |
+| Music-Genre   | country| hip-hop| metal   |
+
+And finally, we put '#############' around it:
+
+
+#############
+|               |    1    |   2   |    3    |
+| Beverage      | water  | cola  | tea     |
+| Music-Genre   | country| hip-hop| metal   |
+#############"	{'beverage': ['water', 'cola', 'tea'], 'music-genre': ['country', 'hip-hop', 'metal']}	True	4	False
+Lv9-2x3-6	"Let's break down the clues:
+
+
+From clue 1, we know the Chinese person is to the left of the Nigerian.
+
+
+From clue 2, we know the order for sports is: Skateboarding, Surfing, French ( nationality is not necessarily in this order)
+
+
+From clue 3, we know the Chinese person and Parkour are not in the same parity position. Since there are only three positions, this means the Chinese person must be in an odd-numbered position (1 or 3), and Parkour must be in an even-numbered position (2).
+
+
+From clue 4, we know the Surfing person is not to the left of the Skateboarding person. This is already satisfied by clue 2.
+
+
+Now let's combine the information:
+
+
+Since the Chinese person is to the left of the Nigerian (clue 1), and the Chinese person must be in an odd-numbered position (clue 3), the Chinese person must be in position 1. The Nigerian person must be in position 3.
+
+
+The order for sports is: Skateboarding, Surfing, ? (clue 2). Since Parkour is not with the Chinese person (clue 3), Parkour must be with the French person (in position 2 or 3). But we already know the Nigerian person is in position 3, so Parkour must be with the French person in position 2.
+
+
+The final table is:
+
+
+#############
+|               |    1    |    2    |       3       |
+| Nationality   | Chinese | French  | Nigerian      |
+| Sport         | Skateboarding| Parkour| Surfing|
+#############"	{'nationality': ['chinese', 'french', 'nigerian'], 'sport': ['skateboarding', 'parkour', 'surfing']}	True	1	False
+Lv9-2x3-7	"Let's break down the clues and solve the puzzle step by step.
+
+
+From clue 4, we know the pilot is either in position 1 or 3.
+
+
+From clue 2, we know the pilot cannot be to the left of the Brazilian.
+
+
+From clue 5, we know the Brazilian is on the left or right of the Pakistani.
+
+
+Since there are only three positions, the Pakistani must be in position 2 (otherwise, the Brazilian and Pakistani would not fit with the pilot in either position 1 or 3).
+
+
+Now, let's analyze the possibilities:
+
+
+If the pilot is in position 1, then from clue 2, the Brazilian cannot be in position 2 (because the pilot would be to their left), so the Brazilian must be in position 3. However, this contradicts clue 5, which says the Brazilian is on the left or right of the Pakistani.
+
+
+Therefore, the pilot must be in position 3.
+
+
+Now we have:
+
+
+|               |    1     |      2       |     3     |
+| Job           |          |  Pakistani  | Pilot     |
+| Nationality   |          |              |           |
+
+From clue 5, the Brazilian is on the left or right of the Pakistani. Since the pilot is in position 3, the Brazilian must be in position 1.
+
+
+Now we have:
+
+
+|               |    1     |      2       |     3     |
+| Job           |          |  Pakistani  | Pilot     |
+| Nationality   |  Brazilian|              |           |
+
+From clue 1, the Japanese is on the left of the entrepreneur. Since the pilot is in position 3 and cannot be an entrepreneur (because there are three different jobs), the entrepreneur must be in either position 2 or not exist (which would mean the Pakistani or Brazilian is the entrepreneur). If the entrepreneur were in position 1, then the Japanese would have to be to their left, but that's impossible since there is no one to the left of position 1. Therefore, the entrepreneur must be in position 2.
+
+
+Now we have:
+
+
+|               |    1     |      2       |     3     |
+| Job           |          | Entrepreneur| Pilot     |
+| Nationality   |  Brazilian|              |           |
+
+But wait! We already established that position 2 belongs to the Pakistani!
+
+
+So, the entrepreneur must be in position 1.
+
+
+Now we have:
+
+
+|               |    1     |      2       |     3     |
+| Job           |          |  Pakistani  | Pilot     |
+| Nationality   |  Brazilian|              |           |
+
+Since the Japanese is on the left of the entrepreneur, and there's no one to the left of position 1, it means that ""the Japanese"" refers to a nationality, not a job.
+
+
+Now we have:
+
+
+|               |    1     |      2       |     3     |
+| Job           |          |  Pakistani  | Pilot     |
+| Nationality   | Brazilian |              | Japanese |
+
+Clue 3 says the pilot and the Brazilian have different parity positions (one is odd, one is even). Since position 1 is odd and position 3 is also odd, this clue doesn't help us directly.
+
+
+But from all previous deductions, we can conclude that:
+
+
+The engineer must be in position 2 because there are only three jobs, and we already know the pilot's job.
+
+
+So, the final table looks like this:
+
+
+#############
+|               |    1     |      2       |     3     |
+| Job           | Engineer | Entrepreneur| Pilot     |
+| Nationality   | Brazilian | Pakistani  | Japanese |
+
+#############"	{'job': ['engineer', 'entrepreneur', 'pilot'], 'nationality': ['brazilian', 'pakistani', 'japanese']}	True	3	False
+Lv9-2x3-8	"Based on the given clues, let's solve the puzzle step by step.
+
+
+From clue 1, we know that the person eating lemon is the journalist.
+
+Clue 2 states that the journalist is not to the right of the dancer. This means the journalist must be either in position 1 or 2.
+
+Clue 3 and Clue 6 are identical, stating that the dancer and the person eating kale have the same parity positions. This means they must be in positions 1 and 3 (both odd) or positions 2 and None/Out of scope (only two even positions exist), which is not possible given the three people.
+
+
+Clue 4 states that the person eating kale is somewhere to the right of the designer. Since there are only three positions, this means the person eating kale can't be in position 1.
+
+
+From Clue 5, we know that the person eating pear is between the journalist and the dancer. Given Clue 2, the order must be: dancer - pear - journalist or dancer - journalist - pear (with pear not being possible on the left of dancer). But if the journalist were in position 1, there would be no room for the dancer on the left, given that the person eating pear is between them.
+
+
+So we know the order of three positions from right to left must include the journalist. Given clue 2, it cannot be: 
+Journalist - Pear - Dancer
+
+
+Given this and Clue 4, a potential solution could involve the designer being in position 1 (so kale can't be) or Position 3 doesn't have a parity mate for dancer.
+
+
+
+Putting these pieces together we get:
+
+
+#############
+|        |     1      |    2     |   3    |
+| Food   | Designer - Pear | Lemon - Journalist | Kale - Dancer|
+| Job    |            |          |        |
+#############"	{'food': ['designer - pear', 'lemon - journalist', 'kale - dancer'], 'job': ['', '', '']}	True	0	False
+Lv9-2x3-9	"Let's break down the clues:
+
+
+1. The fisherman is not to the left of the doctor.
+This means the doctor can be in position 1 or 2, and the fisherman must be in a position to the right of the doctor.
+
+
+2. The person drinking sprite and the fisherman have different parity positions.
+Since there are only 3 positions (odd-1, even-2, odd-3), this means that if one is in an odd position, the other must be in an even position.
+
+
+3. The doctor is between the fisherman and the person drinking milk.
+
+Let's try to combine these clues:
+
+
+From clue 3, we know the order of some jobs: fisherman - doctor - milk drinker (or vice versa)
+But from clue 1, we know the fisherman can't be before the doctor. So the correct order is:
+milk drinker - doctor - fisherman
+
+
+Now let's look at clue 2 and apply it to our solution:
+
+
+If the fisherman is in position 3 (an odd number), then sprite must be in an even position, which means it's in position 2.
+But we already have the doctor in position 2, so this doesn't work.
+
+
+So the fisherman must be in position 1 or 2 (even numbers). Let's try both:
+
+
+Fisherman in position 2:
+This would mean the sprite drinker is in an odd number, but that leaves no space for milk, since the milk drinker is between the doctor and the fisherman.
+So this doesn't work.
+
+
+Fisherman in position 1 doesn't work because it contradicts clue 1 (the fisherman can't be before the doctor).
+
+
+Therefore, our only possible solution is:
+
+
+ Fisherman in position 3, and sprite drinker in an even number. This means the milk drinker must be in position 1.
+Now we have:
+
+
+ tea - ? - ?
+ chef - ? - ?
+ 
+tea (milk) doesn't fit with any of the remaining jobs, so it's probably not tea.
+Let's try to assign a beverage to each person:
+tea and sprite are both out for positions 2 and 3. Since fisherman is in position 3, let's try assigning milk to position 1:
+
+
+milk - ? - ?
+ 
+Since doctor is between the milk drinker and the fisherman (clue 3), we know the order of jobs is:
+milk drinker - doctor - fisherman
+ chef doesn't fit anywhere here, so it must be with sprite.
+
+
+Now let's put everything together!
+
+
+Here is our solution:
+
+
+|            |  1   |   2    |     3     |
+| Beverage   | milk | sprite | tea       |
+| Job        | chef | doctor | fisherman |
+
+ 
+So the final table looks like this:
+
+#############
+|            |  1   |   2    |     3     |
+| Beverage   | milk | sprite | tea       |
+| Job        | chef | doctor | fisherman |
+#############"	{'beverage': ['milk', 'sprite', 'tea'], 'job': ['chef', 'doctor', 'fisherman']}	True	6	True
+Lv9-2x3-10	"Let's break down the clues and fill in the table.
+
+
+From clue 3, we know the paramedic is the fan of punk music.
+
+
+From clue 1, we know the fan of punk is on the left of the fan of soul. Since there are only three positions, the fan of punk must be in position 1 or 2. But from clue 5, we know the paramedic (fan of punk) is to the left of the coach, and since the coach can't be in position 1 (because of clue 2), the paramedic must be in position 1.
+
+
+From clue 4, we know the fan of indie is on the right of the fan of soul. This means the fan of soul must be in position 2.
+
+
+Now, let's look at clue 2: ""the fan indie and the coach have the same parity positions"". Since there are only three positions (1, 2, and 3), this means that if one is in an odd position, the other must also be in an odd position. The only way for both to be in odd positions is if the fan of indie is in position 3.
+
+
+We've now filled in the music-genre column:
+
+
+|               |     1     |   2    |   3   |
+| Job           |           |        |       |
+| Music-Genre   | punk      | soul   | indie |
+
+From clue 5, we know the paramedic is to the left of the coach. Since the paramedic is in position 1, the coach must be in either position 2 or 3. But from clue 2, we know the fan of indie and the coach have the same parity positions, so the coach must be in an odd position, which means position 3.
+
+
+The only job left for position 2 is writer.
+
+
+Here's the final solution:
+
+
+#############
+|               |     1     |   2    |   3   |
+| Job           | paramedic | writer | coach |
+| Music-Genre   | punk      | soul   | indie |
+#############"	{'job': ['paramedic', 'writer', 'coach'], 'music-genre': ['punk', 'soul', 'indie']}	True	6	True

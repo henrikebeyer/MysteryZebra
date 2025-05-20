@@ -1,0 +1,1371 @@
+setup	output	predicted_grid	formatting	score	correct
+R1-Zebra-orig-1	"Okay, let's try to solve this logic puzzle. It seems like a classic Einstein puzzle, often known as the Zebra Puzzle. The goal is to figure out who owns which pet, drinks what beverage, smokes which cigar, etc., based on the given clues. Let me start by breaking down the information and see how to approach this step by step.
+
+First, let's list out all the categories and the possible options for each. The houses are numbered 1 to 5. The categories are Color, Nationality, Pet, Beverage, and Cigar. Each of these has five distinct options. The challenge is to match each house (1-5) with the correct attributes in each category.
+
+The given clues are numbered 1 to 15. Let's go through them one by one and see what information we can extract.
+
+1. There are five houses. Well, that's already stated, so maybe just a confirmation.
+
+2. The Englishman lives in the red house. So wherever the Englishman is, that house is red. So Nationality: English → Color: Red.
+
+3. The Spaniard owns the dog. Nationality: Spanish → Pet: Dog.
+
+4. Coffee is drunk in the green house. Beverage: Coffee → Color: Green.
+
+5. The Ukrainian drinks tea. Nationality: Ukrainian → Beverage: Tea.
+
+6. The green house is immediately to the right of the ivory house. So the ivory house is next to the green, and green is on its right. Since the houses are numbered 1-5, this means that ivory must be in a position n, and green in n+1. So possible positions for ivory and green could be (1,2), (2,3), (3,4), (4,5). But since green is to the right of ivory, that's the order.
+
+7. The Old Gold smoker owns snails. Cigar: Old Gold → Pet: Snails.
+
+8. Kools are smoked in the yellow house. Cigar: Kools → Color: Yellow.
+
+9. Milk is drunk in the middle house. So House 3 has Beverage: Milk.
+
+10. The Norwegian lives in the first house. So Nationality: Norwegian → House 1.
+
+11. The man who smokes Chesterfields lives in a house next to the man with the fox. So Cigar: Chesterfields is adjacent to Pet: Fox.
+
+12. Kools are smoked in a house next to the house where the horse is kept. Since Kools are in the yellow house (from clue 8), the house next to yellow must have the horse. So if yellow is in position x, then horse is in x-1 or x+1.
+
+13. The Lucky Strike smoker drinks orange juice. Cigar: Lucky Strike → Beverage: Orange Juice.
+
+14. The Japanese smokes Parliaments. Nationality: Japanese → Cigar: Parliaments.
+
+15. The Norwegian lives next to the blue house. Norwegian is in House 1 (clue 10), so House 2 must be blue.
+
+Let me start by filling in the known information step by step.
+
+From clue 10: Norwegian is in House 1.
+
+From clue 15: House 2 is blue.
+
+So the color of House 1 is not blue. Let's note the colors. The possible colors are red, green, ivory, yellow, blue. House 2 is blue. So Color 2 is blue.
+
+Clue 8 says Kools are in the yellow house. So Cigar: Kools → Color: Yellow. So which house is yellow? Since House 2 is blue, yellow must be another house. Let's note that.
+
+Clue 6: Green is immediately to the right of ivory. So Ivory and Green are consecutive, with Green on the right. So possible pairs are (1,2), (2,3), (3,4), (4,5). But House 2 is blue, so Ivory can't be in 2 (since then Green would be in 3, but House 2 is blue). So possible Ivory/Green pairs: (1,2) can't be because House 2 is blue. So possible (2,3) but House 2 is blue, so no. Next, (3,4): Ivory in 3, Green in 4. Or (4,5): Ivory in 4, Green in 5.
+
+Clue 4: Coffee is in green house. So wherever green is, that house drinks coffee.
+
+Clue 9: Milk is in House 3. So Beverage 3 is Milk.
+
+Clue 5: Ukrainian drinks tea. So Nationality: Ukrainian → Beverage: Tea.
+
+Clue 13: Lucky Strike → Orange Juice.
+
+Clue 14: Japanese → Parliaments.
+
+Clue 7: Old Gold → Snails.
+
+Clue 12: Kools (yellow house) is next to horse. So if Kools are in yellow, which is in some house, the adjacent houses must have horse.
+
+Clue 11: Chesterfields next to fox.
+
+Clue 2: Englishman in red house.
+
+Clue 3: Spaniard has dog.
+
+Let me start by assigning the Norwegian to House 1. So Nationality 1: Norwegian. Then, House 2 is blue (clue 15). So Color 2: blue.
+
+Now, let's think about the colors. The possible colors are red, green, ivory, yellow, blue. We have blue in House 2, so remaining colors are red, green, ivory, yellow.
+
+From clue 6: Ivory and Green are consecutive, Green to the right. Let's consider possibilities.
+
+If Ivory is in House 3, then Green would be in 4. Then, Coffee (clue 4) would be in 4. But House 3 has Milk (clue 9). Then, House 4's beverage is coffee.
+
+Alternatively, if Ivory is in House 4, Green in 5. Then, Coffee would be in 5.
+
+But let's check if other clues can help.
+
+Also, from clue 8: Kools are smoked in the yellow house. So we need to find where yellow is. Let's see.
+
+Possible color assignments:
+
+House 1: Norwegian. What color? Since House 2 is blue, House 1's color could be yellow, red, ivory, or green. But if Ivory and Green are adjacent, let's see.
+
+If House 1 is yellow, then Kools would be there. But then, from clue 12, the house next to yellow (House 2) would have the horse. House 2 is blue. But House 2's pet would be horse. Let's hold that thought.
+
+But if House 1 is yellow, then Color 1: yellow. Then, Kools are in House 1. Then, House 2 (blue) must have horse (clue 12). So Pet 2: horse. Then, the Norwegian (House 1) owns the horse? Wait, but the Norwegian is in House 1, and if House 1's pet is horse, then okay. But let's check other clues.
+
+But let's see, if House 1 is yellow, then from clue 8, Kools are there, which is possible. Then, the adjacent House 2 (blue) has horse. Then, that's okay.
+
+But then, where is Ivory and Green? If House 1 is yellow, then the Ivory and Green must be in positions (3,4) or (4,5). Let's see. Let's consider Ivory in 3, Green in 4. Then, Green (4) drinks coffee (clue 4). Then House 4's beverage is coffee. House 3's beverage is milk (clue 9). That works.
+
+Alternatively, Ivory in 4, Green in 5. Then, Green (5) drinks coffee. Then House 5's beverage is coffee. But then, we have to check if other beverages fit.
+
+Let's proceed step by step.
+
+Option 1: House 1 is yellow (color), so Kools in House 1 (clue 8). Then, House 2 is blue (color). House 1's nationality is Norwegian (clue 10). So:
+
+House 1: Color=yellow, Nationality=Norwegian, Cigar=Kools, Pet=?
+
+From clue 12: Kools are next to horse. So House 1 is Kools, so House 2 must have horse. So Pet 2=horse.
+
+Then, House 2: Color=blue, Pet=horse.
+
+Then, where is Ivory and Green? Let's see. Possible Ivory in 3, Green in 4. Then House 3: ivory, House 4: green. Then, House 4's beverage is coffee (clue 4).
+
+House 3's beverage is milk (clue 9). So that's okay.
+
+Now, check clue 2: Englishman in red house. So Nationality=English → Color=red. So we need to assign red to one of the remaining houses (3,4,5). Let's see:
+
+If House 3 is ivory, House 4 is green, House 5 is remaining color (red or... wait, colors are yellow (1), blue (2), ivory (3), green (4), so the fifth color would be red. So House 5 must be red. Then, House 5: color=red. So Nationality=English (clue 2) → House 5: Nationality=English.
+
+But wait, Nationalities are English, Spanish, Ukrainian, Norwegian, Japanese. Norwegian is in 1, so English would be in 5. Then, the others: Spanish, Ukrainian, Japanese left in houses 2,3,4.
+
+But House 2 is blue, Nationality: not determined yet. Let's see.
+
+House 5: color=red, nationality=English.
+
+Then, House 4 is green, color=green, beverage=coffee (clue 4). So House 4: beverage=coffee.
+
+House 3: ivory, beverage=milk.
+
+House 1: yellow, beverage=?
+
+House 2: blue, beverage=?
+
+House 5: red, beverage=?
+
+Beverages are coffee, tea, milk, orange-juice, water. So House 3 has milk. House 4 has coffee. So remaining beverages: tea, orange-juice, water. These are for Houses 1,2,5.
+
+Clue 5: Ukrainian drinks tea. So Ukrainian's house has beverage=tea. So where is the Ukrainian? Let's see. The nationalities left are Spanish, Ukrainian, Japanese in houses 2,3,4. House 5 is English. House 1 is Norwegian.
+
+If House 2's nationality is Spanish, then according to clue 3, Spaniard owns the dog. So Pet 2 would be dog, but earlier we thought Pet 2 is horse. Wait, conflict here. Because if House 2's pet is horse (from clue 12), then if the Spaniard is in House 2, his pet should be dog. So that's a problem. Therefore, our initial assumption that House 1 is yellow might be wrong. Let's backtrack.
+
+Alternative approach: Maybe House 1 is not yellow. Let's try another possibility.
+
+Let's consider that House 5 is green, and House 4 is ivory. But clue 6 says green is to the right of ivory, so House 5 green would require House 4 ivory. That's possible. Let's see.
+
+House 2 is blue. So colors so far: House 2=blue, House4=ivory, House5=green. Then House 5 (green) drinks coffee (clue4). House 3's beverage is milk (clue9).
+
+But then, House1 and House3 need colors. The remaining colors are red, yellow. So House1 could be yellow, then House3 red. Or House1 red and House3 yellow.
+
+But clue 8 says Kools are in yellow. So if House1 is yellow, Kools are there. Then, according to clue12, the adjacent house (House2) would have the horse. So Pet2=horse. Then, House2's nationality is... not yet known. Let's proceed.
+
+But let's see if this setup works.
+
+Colors:
+
+1: yellow (Kools here), 2: blue, 3: red, 4: ivory, 5: green.
+
+But wait, ivory is in 4, green in5. That satisfies clue6. Then, House5 (green) drinks coffee. House3 has milk. Now, clue2: Englishman in red house (House3). So Nationality3=English. Then, House3's nationality is English. But then, the Englishman is in the red house, which is correct. That works.
+
+Now, Nationalities: Norwegian in 1 (clue10), English in3, leaving Spanish, Ukrainian, Japanese for 2,4,5.
+
+Clue5: Ukrainian drinks tea. So we need to find which house has tea. Beverages assigned so far: House3=milk, House5=coffee. So remaining beverages: tea, orange-juice, water for Houses1,2,4.
+
+If Ukrainian is in House4, then House4's beverage=tea. House4 is ivory. So that's possible. Let's try that.
+
+House4: Nationality=Ukrainian, Beverage=tea.
+
+Then, House5's nationality could be Japanese or Spanish. Let's see. Clue14: Japanese smokes Parliaments. So House with Japanese has Parliaments. Clue3: Spaniard owns dog. So whichever house has Spaniard must have dog.
+
+So let's see. House5: if Nationality is Japanese, then Cigar=Parliaments (clue14). Then, House5's cigar=Parliaments. Then, what's left? Let's track cigars: Kools (House1), Parliaments (House5). Remaining cigars: Old Gold, Chesterfields, Lucky Strike.
+
+Clue13: Lucky Strike smoker drinks orange juice. So need to find a house where Lucky Strike is smoked and beverage is orange juice.
+
+Clue7: Old Gold smoker has snails. So Old Gold → Pet=snails.
+
+Clue11: Chesterfields next to fox.
+
+Clue12: Kools (House1) next to horse (House2). So Pet2=horse.
+
+Clue3: Spaniard owns dog. So if the Spaniard is in House2, then Pet2=dog. But earlier, from clue12, Pet2=horse. So conflict. Therefore, Spaniard cannot be in House2. Therefore, Spaniard must be in House4 or5. Wait, House4 is Ukrainian (if we assigned that way). So House5 could be Spaniard. But House5's nationality: if not Japanese, then maybe Spanish. Wait, but Nationalities left are Spanish, Japanese. Let's see.
+
+If House4 is Ukrainian (tea), then House2 and House5 are left with Spanish and Japanese. Let's consider House2's nationality. If House2 is Spanish, then Pet2=dog. But from clue12, Pet2=horse. So conflict. Therefore, House2 can't be Spanish. Therefore, Spanish must be in House5. So House5: Nationality=Spanish, then Pet5=dog. But House5 is green, and Nationality=Spanish. Then, according to clue3, Spaniard owns dog. So Pet5=dog. But then, what about the horse? Pet2=horse (from clue12). That's okay. So:
+
+House2: Nationality=?, Pet=horse.
+
+But Nationalities available for House2: Japanese or Spanish. If Spanish is in House5, then House2's nationality is Japanese? But clue14 says Japanese smoke Parliaments. But House5's nationality is Spanish, so Japanese must be in House2. But then House2's cigar would be Parliaments. But House5's nationality would be Spanish. Let me check:
+
+House5: Nationality=Spanish → Pet=dog. Then, House5's pet is dog. But House2's pet is horse. Then, remaining pets: fox, zebra, snails. Wait, original pets are dog, fox, zebra, horse, snails. So House1's pet? House3's pet? House4's pet?
+
+Clue7: Old Gold smoker has snails. So whoever smokes Old Gold has snails as pet.
+
+Clue11: Chesterfields next to fox.
+
+Let's try to proceed.
+
+House1: Nationality=Norwegian, Color=yellow, Cigar=Kools, Beverage=?, Pet=?
+
+House2: Color=blue, Nationality=Japanese, Cigar=Parliaments, Beverage=?, Pet=horse.
+
+Wait, no. If House5 is Spanish, then House2's nationality would be Japanese. But clue14 says Japanese smoke Parliaments. So House2's Cigar=Parliaments. Then, House5's Cigar would be... but Parliaments is already taken by House2. But House5's nationality is Spanish, which isn't linked to a specific cigar. Wait, no. Clue14 says Japanese smoke Parliaments, so only Japanese is linked to Parliaments. So if House2's nationality is Japanese, then House2's Cigar=Parliaments. But House5's nationality is Spanish, so no conflict.
+
+But then, House5's Cigar would be one of the remaining: Old Gold, Chesterfields, Lucky Strike.
+
+Let me map out the cigars:
+
+House1: Kools
+
+House2: Parliaments
+
+House3: ?
+
+House4: ?
+
+House5: ?
+
+Left cigars: Old Gold, Chesterfields, Lucky Strike.
+
+Clue13: Lucky Strike smoker drinks orange juice. So wherever Lucky Strike is, that house drinks orange juice.
+
+Clue7: Old Gold smoker has snails.
+
+Clue11: Chesterfields next to fox.
+
+Now, let's check beverages. Beverages assigned:
+
+House3: milk
+
+House4: tea (if Ukrainian is here)
+
+House5: coffee
+
+So remaining beverages for House1 and House2: orange juice and water.
+
+Clue13: Lucky Strike → orange juice. So the house with Lucky Strike must have orange juice. Let's see, House1 and House2's beverages are either orange juice or water. If House1's beverage is orange juice, then House1's cigar would be Lucky Strike, but House1's cigar is Kools. So no. Therefore, House2's beverage could be orange juice. Then, House2's cigar would be Lucky Strike. But House2's cigar is Parliaments (since Nationality=Japanese). That's a conflict. Therefore, this path might not be correct. Let me re-examine.
+
+Wait, I think there's a mistake here. Earlier, I assumed that House2's nationality is Japanese because Spanish is in House5, but that may not be the case. Let's backtrack.
+
+Alternative approach:
+
+If House5's color is green (as per clue6: ivory in 4, green in5), then House5's beverage is coffee (clue4). House3 has milk. The remaining beverages are tea, orange juice, water for Houses1,2,4.
+
+Clue5: Ukrainian drinks tea. So Ukrainian's house must have tea. Let's assign Ukrainian to House4 (since House4 is ivory). Then House4's beverage is tea.
+
+Now, Nationalities left are Spanish and Japanese for Houses2 and5.
+
+If House5 is green, Nationality could be Spanish or Japanese. If Spanish is in House5, then Pet5=dog (clue3). House5's pet is dog. Then, House2's nationality would be Japanese. So House2: Nationality=Japanese → Cigar=Parliaments (clue14). So Cigar2=Parliaments.
+
+Then, Cigars left: Old Gold, Chesterfields, Lucky Strike for Houses3,4,5.
+
+Clue13: Lucky Strike → orange juice. So need to find a house with Lucky Strike and orange juice.
+
+Available beverages: House1: ?, House2: ?, House4: tea, House5: coffee. So House1 and House2 have water and orange juice.
+
+If House5's beverage is coffee, then House1 and House2's beverages are water and orange juice. Let's say House2's beverage is orange juice. Then House2's cigar would be Lucky Strike. But House2's cigar is Parliaments (from Japanese nationality), which is a conflict. So this can't be.
+
+Alternatively, House1's beverage could be orange juice. Then, House1's cigar would be Lucky Strike. But House1's cigar is Kools (since color yellow is House1 and Kools are in yellow). Therefore, conflict again.
+
+Hmm, maybe there's a mistake in the color assignments. Let me re-examine.
+
+Alternative color assignments:
+
+Perhaps House1 is not yellow. Let's try another possibility. Maybe the yellow house is House3. Let's see.
+
+If House3 is yellow, then Kools are there (clue8). Then, from clue12, the adjacent houses (2 or4) must have horse. But House3 is in the middle (3), so adjacent to 2 and4. So either House2 or4 has horse.
+
+But let's see if this works. House3 is yellow, Kools there. House2 is blue (clue15). House1's color could be red, green, ivory.
+
+Clue6: green is to the right of ivory. Let's say ivory is in 1, green in2. But House2 is blue. So that can't be. Next option: ivory in3, green in4? No, House3 is yellow. Then ivory in4, green in5. So Color4=ivory, Color5=green. Then, Coffee is in House5 (clue4). House3 (yellow) has Kools (clue8). Then, clue12: Kools (House3) next to horse. So House2 or4 must have horse.
+
+House2 is blue, so maybe Pet2=horse. Then, the house with Kools (3) is adjacent to house with horse (2 or4). Let's say Pet4=horse.
+
+Then, House4: ivory color, Pet=horse. But let's check other clues.
+
+House5: green, beverage=coffee.
+
+House3: yellow, Kools, beverage=milk (clue9 says milk is in middle house, which is 3). Wait, no. clue9 says milk is in the middle house, which is House3. So House3's beverage is milk. But if House3 is yellow, then Kools are there. Then, beverage is milk. That's okay.
+
+Now, Nationalities:
+
+House1: Norwegian (clue10). Color of House1: not blue (House2 is blue), not yellow (House3), not ivory (House4), not green (House5). So remaining color is red. So House1 is red. Then, from clue2, Englishman lives in red house. So House1's nationality is English. But wait, House1's nationality is Norwegian (clue10). Contradiction. So this approach is invalid.
+
+Thus, House1 cannot be red. So there's a problem here. Therefore, the color assignments must be different.
+
+Let me try another approach. Maybe the Norwegian is in House1 (as per clue10), House2 is blue (clue15). Then, the colors for Houses1-5: House1: ?, House2: blue, House3: ?, House4: ?, House5: ?. The colors are red, green, ivory, yellow, blue.
+
+Clue6: green is immediately to the right of ivory. Let's consider that House3 is ivory, House4 is green. Then, House4's beverage is coffee (clue4). House3's beverage is milk (clue9). That works.
+
+Then, the remaining colors are red and yellow for Houses1 and5. From clue2: Englishman lives in red. So wherever red is, that's English. House1 or5.
+
+If House1 is red, then Nationality1=English. But clue10 says Nationality1=Norwegian. Contradiction. Therefore, House5 must be red. So House5: red, Nationality=English. Then, House1's color must be yellow. So House1: yellow. Then, Kools are in House1 (clue8). So Cigar1=Kools.
+
+Now, Nationalities:
+
+House1: Norwegian (clue10), Color=yellow.
+
+House5: English (clue2), Color=red.
+
+Remaining nationalities: Spanish, Ukrainian, Japanese for Houses2,3,4.
+
+Colors:
+
+House1: yellow
+
+House2: blue
+
+House3: ivory
+
+House4: green
+
+House5: red
+
+Beverages:
+
+House3: milk
+
+House4: coffee (clue4)
+
+House5: ?
+
+Clue5: Ukrainian drinks tea. So need to find a house where beverage=tea.
+
+Beverages assigned: milk (3), coffee (4). Remaining: tea, orange-juice, water for 1,2,5.
+
+House5's beverage: ?
+
+If Ukrainian is in House2, then beverage2=tea. House2's nationality=Ukrainian.
+
+House2: Nationality=Ukrainian, Beverage=tea.
+
+Then, Nationalities left: Spanish and Japanese for Houses3 and4.
+
+Clue3: Spaniard owns dog. So whichever house has Spanish nationality must have dog as pet.
+
+Clue14: Japanese smokes Parliaments.
+
+Clue7: Old Gold smoker has snails.
+
+Clue13: Lucky Strike smoker drinks orange juice.
+
+Clue11: Chesterfields next to fox.
+
+Clue12: Kools (House1) is next to horse. So House1 (Kools) is adjacent to House2. So House2's pet should be horse. So Pet2=horse.
+
+But from clue3: Spaniard owns dog. If House3 or4 is Spanish, then their pet is dog.
+
+Now, let's assign Nationalities:
+
+House2: Ukrainian (tea), Pet=horse.
+
+House3: Nationality? If House3 is Spanish, then Pet3=dog. House4: Japanese.
+
+House4: Japanese → Cigar=Parliaments (clue14). So Cigar4=Parliaments.
+
+Then, Cigars left: Old Gold, Chesterfields, Lucky Strike for Houses3,5.
+
+Beverages left for House1,5: orange juice and water.
+
+Clue13: Lucky Strike → orange juice. So if House5 has orange juice, then Cigar5=Lucky Strike.
+
+But House5's nationality is English. Let's see.
+
+House5: Beverage=?, Cigar=?
+
+If House5's beverage is orange juice, then Cigar5=Lucky Strike. Then, remaining beverage is water for House1.
+
+So House1: Beverage=water.
+
+Now, Cigars:
+
+House1: Kools
+
+House4: Parliaments
+
+House5: Lucky Strike
+
+Remaining cigars: Old Gold and Chesterfields for Houses2 and3.
+
+But House2: Ukrainian. Cigar=?
+
+House3: Spanish. Cigar=?
+
+Clue7: Old Gold → snails. So if House3 has Old Gold, then Pet3=snails. But House3 is Spanish, so according to clue3, Pet3=dog. Contradiction. Therefore, House3 cannot have Old Gold. Therefore, House2 must have Old Gold, and House3 has Chesterfields.
+
+So:
+
+House2: Cigar=Old Gold → Pet=snails (clue7). But House2's pet is already assigned as horse. Contradiction. So this can't be.
+
+Conflict here. Therefore, there must be a mistake in assignments.
+
+Let me check again. If House2 has Old Gold, then Pet2=snails, but earlier we thought Pet2=horse (from clue12). Therefore, this is a problem.
+
+Wait, clue12: Kools are smoked next to the house where the horse is kept. Kools are in House1, so adjacent house (House2) should have horse. Therefore, Pet2=horse. So House2's pet is horse, which can't be snails. Therefore, House2's cigar cannot be Old Gold, as that would require snails. So House2's cigar must be something else.
+
+Thus, the remaining cigars for Houses2 and3 are Chesterfields and Old Gold.
+
+If House3 is Spanish (Pet=dog), then House3's cigar can't be Old Gold (as that would require snails). So House3 must have Chesterfields. Then, House2's cigar is Old Gold. But House2's pet is horse, which is okay (Old Gold requires snails, which is not the case here). Wait, no: clue7 says Old Gold smoker owns snails. So if House2 smokes Old Gold, then Pet2=snails. But we have Pet2=horse. Conflict. Therefore, this is impossible.
+
+Thus, there's a contradiction, meaning our earlier assumption must be wrong. Let's backtrack.
+
+Alternative approach: Let's consider that House3 is not ivory. Maybe the green and ivory are in positions 4 and5. So House4: ivory, House5: green. Then, clue6 is satisfied. House5's beverage is coffee (clue4). House3's beverage is milk (clue9).
+
+House2 is blue (clue15). House1's color: remaining options are red, yellow. House5 is green, House4 is ivory, House2 is blue, so House1 and3's colors are red and yellow.
+
+Clue2: Englishman in red house. So if House1 is red, then Nationality1=English, but House1's nationality is Norwegian (clue10). Contradiction. Therefore, House3 must be red. So House3: red, Nationality=English.
+
+Then, House1's color is yellow. So House1: yellow, Kools (clue8). Then, clue12: Kools (House1) is next to horse. So House2's pet is horse.
+
+House2: Pet=horse.
+
+Now, Nationalities:
+
+House1: Norwegian
+
+House3: English
+
+House5: ?
+
+House2 and4 left with Spanish, Ukrainian, Japanese.
+
+Clue5: Ukrainian drinks tea. So we need to find a house with tea.
+
+Beverages:
+
+House3: milk
+
+House5: coffee (green house)
+
+Remaining beverages: tea, orange juice, water for Houses1,2,4.
+
+Clue13: Lucky Strike → orange juice.
+
+Clue7: Old Gold → snails.
+
+Clue11: Chesterfields next to fox.
+
+Clue14: Japanese → Parliaments.
+
+Let's proceed.
+
+House1: Nationality=Norwegian, Color=yellow, Cigar=Kools, Beverage=?
+
+House2: Color=blue, Pet=horse, Nationality=?
+
+House3: Color=red, Nationality=English, Beverage=milk.
+
+House4: Color=ivory, Nationality=?, Beverage=?
+
+House5: Color=green, Nationality=?, Beverage=coffee.
+
+Nationalities left: Spanish, Ukrainian, Japanese for Houses2,4,5.
+
+Let's assign Ukrainian to House4 (since their beverage is tea). House4: Nationality=Ukrainian, Beverage=tea.
+
+Then, House5's nationality is either Spanish or Japanese.
+
+Clue3: Spaniard owns dog. So if House5 is Spanish, then Pet5=dog.
+
+Clue14: Japanese smokes Parliaments. So if House5 is Japanese, Cigar5=Parliaments.
+
+Let's consider House5 as Japanese. Then:
+
+House5: Nationality=Japanese, Cigar=Parliaments.
+
+Then, House2 and4's nationalities are Spanish and Ukrainian. But House4 is already Ukrainian. So House2 must be Spanish. But House2's pet is horse (from clue12), which would conflict with clue3 (Spaniard owns dog). Therefore, House2 cannot be Spanish. Hence, House5 must be Spanish, and House2 is Japanese.
+
+Wait, Nationalities left: Ukrainian (House4), then Spanish and Japanese for Houses2 and5. If House5 is Spanish, then Pet5=dog. House5's pet=dog. Then, House2's nationality is Japanese, Cigar=Parliaments (clue14). House2: Nationality=Japanese, Cigar=Parliaments, Pet=horse (from clue12).
+
+This works. Then:
+
+House5: Nationality=Spanish, Pet=dog.
+
+Now, let's assign pets. Pets so far: House2=horse, House5=dog. Remaining pets: fox, zebra, snails.
+
+House1,3,4's pets: Norwegian (House1), English (House3), Ukrainian (House4). So their pets are among fox, zebra, snails.
+
+Clue7: Old Gold → snails. So whoever smokes Old Gold has snails.
+
+Clue11: Chesterfields next to fox.
+
+Clue13: Lucky Strike → orange juice.
+
+Now, Cigars:
+
+House1: Kools
+
+House2: Parliaments
+
+House5: ?
+
+House3 and4 have cigars: Old Gold, Chesterfields, Lucky Strike.
+
+Beverages:
+
+House3: milk
+
+House4: tea
+
+House5: coffee
+
+House1 and2 have beverages: water and orange juice.
+
+Clue13: Lucky Strike → orange juice. So the house with Lucky Strike must have orange juice. Since House2's beverage is not determined yet, let's see.
+
+House1's beverage: water or orange juice.
+
+House2's beverage: water or orange juice.
+
+If House2's beverage is orange juice, then Cigar2=Lucky Strike. But House2's cigar is Parliaments (Japanese). Contradiction. Therefore, House1's beverage must be orange juice, which would mean Cigar1=Lucky Strike. But House1's cigar is Kools. Contradiction. Therefore, this path is invalid.
+
+Thus, there's a mistake in the assignments. Let's try a different approach.
+
+Alternative assignment: House5 is Japanese, so Cigar5=Parliaments. Then, House5's beverage is coffee (from clue4). Beverages assigned: coffee (5), milk (3), tea (4). Remaining: water and orange juice for Houses1 and2.
+
+Clue13: Lucky Strike → orange juice. So either House1 or2 must have Lucky Strike and orange juice.
+
+If House1's beverage is orange juice, then Cigar1=Lucky Strike. But House1's cigar is Kools. Conflict.
+
+If House2's beverage is orange juice, then Cigar2=Lucky Strike. But House2's cigar is Parliaments (if Japanese). So no. Therefore, this is impossible. Hence, our current assignment is wrong.
+
+Alternative idea: Maybe House5 is not green. Let's revisit the color assignments.
+
+Wait, earlier we considered that House4 is ivory and House5 is green. But perhaps the green and ivory are in different positions. Let's try House3=ivory and House4=green.
+
+House1: Norwegian, color?
+
+House2: blue.
+
+House3: ivory.
+
+House4: green.
+
+House5: ?
+
+Colors left: red, yellow.
+
+Clue2: Englishman in red. So red could be in House5. Then House5: red, English.
+
+House1: then color would be yellow (remaining color). So House1: yellow, Kools (clue8). Then, clue12: Kools (House1) next to horse. So House2's pet=horse.
+
+Now, House5's beverage is not yet assigned. House4's beverage is coffee (green). House3's beverage is milk (middle). Beverages left: tea, orange juice, water for Houses1,2,5.
+
+Clue5: Ukrainian drinks tea. So one of these houses has tea.
+
+Let's assign Ukrainian to House2. Then House2's beverage=tea. House2's nationality=Ukrainian.
+
+Then Nationalities left: Spanish and Japanese for Houses4 and5.
+
+House4: green, nationality=Spanish or Japanese.
+
+Clue3: Spaniard owns dog. So if House4 is Spanish, then Pet4=dog.
+
+Clue14: Japanese smokes Parliaments. So if House5 is Japanese, Cigar5=Parliaments.
+
+Let's try House4=Spanish, Pet4=dog. House5=Japanese, Cigar5=Parliaments.
+
+Now, Cigars:
+
+House1: Kools
+
+House5: Parliaments
+
+Remaining cigars: Old Gold, Chesterfields, Lucky Strike for Houses2,3,4.
+
+Beverages:
+
+House1: water or orange juice
+
+House2: tea
+
+House5: coffee
+
+House3: milk
+
+House4: ?
+
+Clue13: Lucky Strike → orange juice. So if House1's beverage is orange juice, Cigar1=Lucky Strike, but House1's cigar is Kools. So no. House4's beverage could be orange juice. Then Cigar4=Lucky Strike. So House4: Beverage=orange juice, Cigar=Lucky Strike. Then, House4's nationality=Spanish.
+
+That works. Then:
+
+House4: Beverage=orange juice, Cigar=Lucky Strike, Nationality=Spanish, Pet=dog.
+
+Now, Cigars left: Old Gold and Chesterfields for Houses2 and3.
+
+Clue7: Old Gold → snails. So if House2 or3 smokes Old Gold, their pet is snails.
+
+Clue11: Chesterfields next to fox.
+
+Now, Pets assigned:
+
+House2: horse
+
+House4: dog
+
+House5: ?
+
+Remaining pets: fox, zebra, snails for Houses1,3,5.
+
+House5's pet: Japanese nationality, so no clue directly, but possible pets left: fox, zebra, snails.
+
+Clue7: Old Gold → snails. Let's see.
+
+If House3's cigar is Old Gold, then Pet3=snails. House3's nationality is not yet assigned. Wait, Nationalities left: House3's nationality? Nationalities are Norwegian (1), Ukrainian (2), English (5), Spanish (4), Japanese (5). Wait, House5 is Japanese. So Nationalities are all assigned. House3's nationality is English. Wait, no. House3's color is ivory, but Nationality=English was in House5? Wait, no, earlier we assigned House5 as Japanese. Clue2 says Englishman in red. House5 is red (color), so Nationality5=English. But previously, we thought House5 is Japanese. Contradiction. Wait, I'm getting confused here. Let me clarify.
+
+Wait, in this scenario, House5's color is red (from clue2: Englishman in red), so Nationality5=English. But we were also assigning House5's nationality as Japanese. That's a mistake. So, correction:
+
+House5: Color=red, Nationality=English (clue2). Then, Nationalities left are Spanish and Japanese for Houses4 and possibly others.
+
+Wait, this is getting too complicated. Let me try to organize the information systematically.
+
+Alternative approach: Let's create a grid for each category and fill in step by step.
+
+House | 1 | 2 | 3 | 4 | 5
+
+Color | ? | blue | ? | ? | ?
+
+Nationality | Norwegian | ? | ? | ? | ?
+
+Pet | ? | ? | ? | ? | ?
+
+Beverage | ? | ? | milk | ? | ?
+
+Cigar | ? | ? | ? | ? | ?
+
+Given clue6: green is immediately to the right of ivory. So possible pairs: (ivory, green) in (1,2), (2,3), (3,4), (4,5). But House2 is blue, so (1,2) and (2,3) are invalid. Possible (3,4) or (4,5).
+
+Clue4: Coffee in green.
+
+Clue9: milk in 3.
+
+Clue2: English in red.
+
+Clue8: Kools in yellow.
+
+Clue10: Norwegian in 1.
+
+Clue15: Norwegian next to blue (House2).
+
+Let's try (ivory, green) in (3,4). So House3=ivory, House4=green. Then, House4's beverage=coffee.
+
+House5's color would be red (since remaining colors are red and yellow).
+
+Then, House1's color must be yellow. So:
+
+Color:
+
+1: yellow
+
+2: blue
+
+3: ivory
+
+4: green
+
+5: red
+
+Nationality:
+
+1: Norwegian
+
+5: English (clue2)
+
+Left nationalities: Spanish, Ukrainian, Japanese for 2,3,4.
+
+Beverages:
+
+3: milk
+
+4: coffee
+
+Left beverages: tea, orange juice, water for 1,2,5.
+
+Clue5: Ukrainian drinks tea. So Ukrainian must be in a house with tea. Possible houses 2,3,4.
+
+If Ukrainian is in House2: Nationality2=Ukrainian, beverage2=tea.
+
+Then Nationalities left: Spanish, Japanese for 3,4.
+
+Clue3: Spaniard owns dog. So if House3 or4 is Spanish, their pet is dog.
+
+Clue14: Japanese smokes Parliaments.
+
+Cigars:
+
+House1: Kools (clue8, yellow)
+
+Left cigars: Old Gold, Chesterfields, Lucky Strike, Parliaments (if Japanese in 4 or3).
+
+House5: English, no specific cigar.
+
+Clue12: Kools (1) next to horse. So House2's pet=horse.
+
+So Pet2=horse.
+
+Pets:
+
+1: ?
+
+2: horse
+
+3: ?
+
+4: ?
+
+5: ?
+
+Left pets: dog, fox, zebra, snails.
+
+Clue3: Spaniard owns dog. So if House3 or4 is Spanish, their pet=dog.
+
+Clue7: Old Gold → snails.
+
+Clue11: Chesterfields next to fox.
+
+Clue13: Lucky Strike → orange juice.
+
+Let's proceed.
+
+House2: Nationality=Ukrainian, Beverage=tea.
+
+House4: Nationality=Japanese (since Parliaments are their cigar), Cigar=Parliaments.
+
+Then, House3: Nationality=Spanish, Pet=dog.
+
+Now, Pets:
+
+3: dog
+
+2: horse
+
+Left pets for 1,4,5: fox, zebra, snails.
+
+Clue7: Old Gold → snails. So if any house has Old Gold, their pet is snails.
+
+Clue13: Lucky Strike → orange juice. So find a house with Lucky Strike and orange juice.
+
+Beverages left: orange juice and water for Houses1 and5.
+
+If House5's beverage is orange juice, then Cigar5=Lucky Strike.
+
+House5's nationality is English. No conflict.
+
+So House5: Beverage=orange juice, Cigar=Lucky Strike.
+
+Then, House1's beverage=water.
+
+Cigars left: Old Gold and Chesterfields for Houses3 and4.
+
+House3's cigar: Spanish, no specific clue. But House4's cigar=Parliaments.
+
+So House3's cigar could be Old Gold or Chesterfields.
+
+If House3's cigar=Old Gold, then Pet3=snails. But Pet3=dog (clue3). Conflict. Therefore, House3's cigar must be Chesterfields. Then, House4's cigar=Parliaments (Japanese). Remaining cigar for House4 is already assigned. So House3's cigar=Chesterfields, and House4's cigar=Parliaments. Then, Old Gold must be in House5? But House5's cigar is Lucky Strike. No. Wait, leftover cigars: House1=Kools, House2=?, House3=Chesterfields, House4=Parliaments, House5=Lucky Strike. So House2's cigar is Old Gold. Because remaining cigars are Old Gold and ... no. Let me list:
+
+Cigars: Kools (1), Old Gold, Chesterfields, Lucky Strike (5), Parliaments (4). So House2's cigar=Old Gold.
+
+Then, House2's cigar=Old Gold → Pet2=snails (clue7). But House2's pet is horse (from clue12). Contradiction. Therefore, this is impossible.
+
+Thus, this path is invalid. Let's try a different assignment.
+
+Alternative assignment: House4 is Japanese, Nationality=Japanese → Cigar=Parliaments.
+
+Then House3: Nationality=Spanish, Pet=dog.
+
+House2: Nationality=Ukrainian, Beverage=tea.
+
+Beverages left: House1 and5 have water and orange juice.
+
+Clue13: Lucky Strike → orange juice. So House5's beverage=orange juice, Cigar5=Lucky Strike.
+
+House5: Beverage=orange juice, Cigar=Lucky Strike.
+
+Then House1's beverage=water.
+
+Cigars:
+
+House1: Kools
+
+House2: ?
+
+House3: ?
+
+House4: Parliaments
+
+House5: Lucky Strike
+
+Left cigars: Old Gold and Chesterfields.
+
+House2's cigar=Old Gold or Chesterfields.
+
+Clue7: Old Gold → snails. If House2 smokes Old Gold, then Pet2=snails. But House2's pet is horse (from clue12). Conflict. Therefore, House2 must smoke Chesterfields. Then, House3 smokes Old Gold.
+
+House3: Cigar=Old Gold → Pet3=snails. But House3's pet is dog (Spaniard). Conflict. Therefore, invalid.
+
+Thus, this path is invalid. Therefore, there must be an error in the initial color assignment. Let's try another possibility.
+
+Alternative color assignment: (ivory, green) in (4,5). So House4=ivory, House5=green.
+
+Then, House5's beverage=coffee (clue4).
+
+House3's beverage=milk (clue9).
+
+Colors:
+
+1: ?
+
+2: blue
+
+3: ?
+
+4: ivory
+
+5: green
+
+Remaining colors: red and yellow for Houses1 and3.
+
+Clue2: English in red. So if House3 is red, then Nationality3=English.
+
+House1's color would be yellow (remaining color).
+
+So:
+
+House1: yellow, Nationality=Norwegian.
+
+House3: red, Nationality=English.
+
+House5: green, beverage=coffee.
+
+House4: ivory.
+
+Now, Nationalities:
+
+1: Norwegian
+
+3: English
+
+Left: Spanish, Ukrainian, Japanese for 2,4,5.
+
+Beverages:
+
+3: milk
+
+5: coffee
+
+Left beverages: tea, orange juice, water for 1,2,4.
+
+Clue5: Ukrainian drinks tea. So Ukrainian must be in a house with tea. Possible Houses2,4.
+
+Clue12: Kools (House1) next to horse. So House2's pet=horse.
+
+Clue8: Kools in yellow (House1), so adjacent House2's pet=horse.
+
+House2's pet=horse.
+
+Now, let's assign Nationalities:
+
+House2: Nationality=Ukrainian, Beverage=tea.
+
+Then, Nationalities left: Spanish and Japanese for Houses4 and5.
+
+Clue3: Spaniard owns dog. If House4 is Spanish, Pet4=dog. House5's nationality=Japanese → Cigar=Parliaments.
+
+Then:
+
+House4: Nationality=Spanish, Pet=dog.
+
+House5: Nationality=Japanese, Cigar=Parliaments.
+
+Now, Cigars:
+
+House1: Kools
+
+House5: Parliaments
+
+Left cigars: Old Gold, Chesterfields, Lucky Strike.
+
+Beverages:
+
+House2: tea
+
+House3: milk
+
+House5: coffee
+
+Left: water and orange juice for Houses1 and4.
+
+Clue13: Lucky Strike → orange juice. So whichever house has Lucky Strike must have orange juice.
+
+If House4's beverage=orange juice, then Cigar4=Lucky Strike.
+
+House4's beverage=orange juice.
+
+Then House1's beverage=water.
+
+Now, Cigars:
+
+House4: Cigar=Lucky Strike.
+
+Left cigars: Old Gold and Chesterfields for House3 and possibly others.
+
+House3: Nationality=English, no specific cigar.
+
+Clue7: Old Gold → snails. So if any house has Old Gold, their pet is snails.
+
+Pets assigned:
+
+House2: horse
+
+House4: dog
+
+Left pets: fox, zebra, snails for Houses1,3,5.
+
+Clue11: Chesterfields next to fox. So whoever smokes Chesterfields is adjacent to fox.
+
+Clue7: Old Gold → snails.
+
+If House3 smokes Chesterfields, then House3's pet is... but House3's nationality=English, no pet clue. Let's assign pets:
+
+House5: Nationality=Japanese. Possible pets: fox, zebra, snails.
+
+If House5's pet=zebra, then... but let's see.
+
+Clue7: Old Gold → snails. If House3 smokes Old Gold, then Pet3=snails.
+
+But House3's pet would be snails. Let's check if possible.
+
+Alternatively, House1's pet=snails (if House1 smokes Old Gold), but House1's cigar=Kools. So no.
+
+House5's pet=snails if House5 smokes Old Gold, but House5's cigar=Parliaments. So no.
+
+House4's cigar=Lucky Strike, so no.
+
+House2's cigar=?
+
+Wait, House2's cigar hasn't been assigned yet. Cigars left: Old Gold and Chesterfields.
+
+House2: Nationality=Ukrainian, Beverage=tea, Cigar=Old Gold or Chesterfields.
+
+If House2's cigar=Old Gold → Pet2=snails, but Pet2=horse. Conflict. So House2 must smoke Chesterfields.
+
+Then, House2's cigar=Chesterfields.
+
+Clue11: Chesterfields next to fox. So House2 (Chesterfields) is adjacent to a house with fox. House2 is adjacent to 1 and3. So either House1 or3 has fox.
+
+If House3 has fox, then Pet3=fox.
+
+House3's pet could be fox or zebra or snails.
+
+But if House3's pet is fox, then that's adjacent to Chesterfields (House2), which satisfies clue11.
+
+Now, House1's pet: remaining are zebra and snails.
+
+Clue7: Old Gold → snails. So if House1 smokes Old Gold, Pet1=snails. But House1's cigar=Kools. So no. Therefore, House3's cigar could be Old Gold. But House3's cigar is unassigned.
+
+Wait, Cigars left after assigning House2=Chesterfields and House4=Lucky Strike are Old Gold for House3.
+
+House3's cigar=Old Gold → Pet3=snails.
+
+But House3's pet would be snails. Then, remaining pets:
+
+House1: zebra
+
+House5: fox
+
+But then, clue11: Chesterfields (House2) is next to fox. So House1 or3 must have fox. If House3's pet is snails, then House1's pet=zebra, House5's pet=fox. But House5 is adjacent to House4. House4's pet=dog. So House5's pet=fox. Then, House2 (Chesterfields) is adjacent to House3 (snails) and House1 (zebra). No fox adjacent to House2. So this doesn't satisfy clue11.
+
+Therefore, this is invalid. Hence, there's a mistake.
+
+Alternative approach: If House5's pet=fox, then House5 (Japanese) has fox. House5 is adjacent to House4 (dog). Not helpful. House2 (Chesterfields) is adjacent to House3 and House1. If House1's pet=fox, then clue11 is satisfied.
+
+So let's try:
+
+House1's pet=fox.
+
+Then, House1: pet=fox.
+
+Then, remaining pets: zebra and snails for Houses3 and5.
+
+If House3's pet=snails (smokes Old Gold), then House3's cigar=Old Gold.
+
+But House3's nationality=English, no conflict.
+
+House3: Cigar=Old Gold, Pet=snails.
+
+House5's pet=zebra.
+
+Now, check clue11: Chesterfields (House2) is next to fox (House1). Yes, that works.
+
+Now, check clue7: Old Gold (House3) → snails. Correct.
+
+Clue13: Lucky Strike (House4) → orange juice. Correct.
+
+Beverages:
+
+House1: water
+
+House2: tea
+
+House3: milk
+
+House4: orange juice
+
+House5: coffee
+
+Cigars:
+
+House1: Kools
+
+House2: Chesterfields
+
+House3: Old Gold
+
+House4: Lucky Strike
+
+House5: Parliaments
+
+Pets:
+
+House1: fox
+
+House2: horse
+
+House3: snails
+
+House4: dog
+
+House5: zebra
+
+Nationalities:
+
+House1: Norwegian
+
+House2: Ukrainian
+
+House3: English
+
+House4: Spanish
+
+House5: Japanese
+
+Colors:
+
+House1: yellow
+
+House2: blue
+
+House3: red
+
+House4: ivory
+
+House5: green
+
+This seems to satisfy all clues. Let's verify each clue:
+
+1. Five houses. Yes.
+
+2. Englishman in red. House3: English, red. Correct.
+
+3. Spaniard owns dog. House4: Spanish, dog. Correct.
+
+4. Coffee in green. House5: green, coffee. Correct.
+
+5. Ukrainian drinks tea. House2: Ukrainian, tea. Correct.
+
+6. Green (5) is immediately to the right of ivory (4). Correct.
+
+7. Old Gold smoker has snails. House3: Old Gold, snails. Correct.
+
+8. Kools in yellow. House1: Kools, yellow. Correct.
+
+9. Milk in middle (3). Correct.
+
+10. Norwegian in first. Correct.
+
+11. Chesterfields (House2) next to fox (House1). Correct.
+
+12. Kools (House1) next to horse (House2). Correct.
+
+13. Lucky Strike (House4) drinks orange juice. Correct.
+
+14. Japanese smokes Parliaments. House5: Japanese, Parliaments. Correct.
+
+15. Norwegian (House1) next to blue (House2). Correct.
+
+All clues are satisfied. Therefore, this is the correct solution.
+
+#############
+|        | 1       | 2        | 3      | 4       | 5       |
+| Color  | yellow  | blue     | red    | ivory   | green   |
+| Nationality | Norwegian | Ukrainian | English | Spanish | Japanese |
+| Pet    | fox     | horse    | snails | dog     | zebra   |
+| Beverage | water   | tea      | milk   | orange-juice | coffee  |
+| Cigar  | Kools   | Chesterfields | Old Gold | Lucky Strike | Parliaments |
+#############"	{'color': ['yellow', 'blue', 'red', 'ivory', 'green'], 'nationality': ['norwegian', 'ukrainian', 'english', 'spanish', 'japanese'], 'pet': ['fox', 'horse', 'snails', 'dog', 'zebra'], 'beverage': ['water', 'tea', 'milk', 'orange-juice', 'coffee'], 'cigar': ['kools', 'chesterfield', 'old-gold', 'lucky-strike', 'parliament']}	True	23	False
+R1-Zebra-orig-2	"Okay, let's tackle this logic puzzle. I remember it's similar to the classic Einstein puzzle. Let me start by listing all the clues and then try to place each item step by step.
+
+First, let's outline the categories: Color, Nationality, Pet, Beverage, and Cigar. Each of these has five unique values, and each house (numbered 1 to 5) will have one of each. The clues will help us cross-reference these.
+
+Starting with the given facts:
+
+1. There are five houses. (That's just confirming the setup.)
+
+2. Englishman in the red house.
+
+3. Spaniard owns the dog.
+
+4. Coffee in the green house.
+
+5. Ukrainian drinks tea.
+
+6. Green is immediately to the right of ivory. So, ivory must be next to green, and green is one position higher. Since the houses are numbered 1 to 5, if ivory is in n, green is in n+1. So possible pairs could be (ivory=4, green=5) or (ivory=3, green=4), etc., but we need to check other constraints.
+
+7. Old Gold smoker has snails.
+
+8. Kools in the yellow house.
+
+9. Milk in the middle (house 3).
+
+10. Norwegian in house 1.
+
+11. Chesterfields next to fox.
+
+12. Kools next to horse.
+
+13. Lucky Strike drinks orange juice.
+
+14. Japanese smokes Parliaments.
+
+15. Norwegian (house 1) next to blue house. So house 2 must be blue.
+
+Let's start placing the knowns. From clue 10: Norwegian in house 1. Clue 15 says Norwegian is next to blue, so house 2 is blue.
+
+So Nationality row, house 1: Norwegian. Color row, house 2: blue.
+
+Clue 6: Green is immediately right of ivory. So possible positions for ivory and green. Since house 2 is blue, the colors left are red, green, ivory, yellow. Let's see. Also, clue 2: Englishman in red. So red must be one of the colors assigned to a house, and that house's nationality is English.
+
+Clue 8: Kools in yellow. So color yellow is in a house where cigar is Kools. Let's see, from clue 8 and 12: Kools are next to horse. So the house with Kools (yellow) must be adjacent to the house with the horse.
+
+Clue 9: Milk in house 3.
+
+Clue 4: Coffee in green. So green house's drink is coffee.
+
+Clue 5: Ukrainian drinks tea. So find where Ukrainian is, and their drink is tea.
+
+Clue 14: Japanese smokes Parliaments. So in the Japanese row, cigar is Parliaments.
+
+Clue 13: Lucky Strike smoker drinks orange juice. So wherever Lucky Strike is, that house's drink is orange juice.
+
+Clue 7: Old Gold smoker has snails as a pet.
+
+Clue 3: Spaniard owns the dog. So the Spanish nationality is in the house with the dog.
+
+Clue 11: Chesterfields next to fox. So the Chesterfield smoker's house is adjacent to the fox's house.
+
+Clue 12: Kools (yellow house) next to horse. So the horse must be in house adjacent to yellow. Since Kools are in yellow house (clue 8), which is color yellow. Let's see possible positions.
+
+Let's start building the table step by step.
+
+First, Nationality: House 1 is Norwegian. House 2's color is blue. So the colors for houses 1, 2, 3,4,5 are yellow, blue, ?, ?, ?. Wait, clue 8 says Kools are in yellow house. So color yellow must be in some house. Let's see. Since house 2 is blue, and Norwegian is in house 1, and Norwegian's house is next to blue (house 2), that's correct.
+
+Possible color arrangement. We have colors: red, green, ivory, yellow, blue. Blue is in house 2. So remaining colors for houses 1,3,4,5: red, green, ivory, yellow. But clue 8 says Kools are in yellow house. So the yellow house is somewhere, and that's where Kools are smoked.
+
+Let me try to place the colors considering clue 6 (ivory and green adjacent). Let's see. If ivory is in 4, then green is in 5. Alternatively, ivory in 3, green in 4. Let's check possibilities.
+
+But also, clue 2: Englishman in red. So red must be a color assigned to some house, and that house's nationality is English.
+
+Clue 4: Green house has coffee. Clue 9: Milk is in house 3.
+
+Let's consider the color positions. Let's try possible positions for ivory and green.
+
+Option 1: Ivory in 4, green in 5. Then house 5 is green, drinks coffee (clue 4). House 4 is ivory. Then other colors: house 1 could be yellow (since Kools are in yellow, and house 1 is Norwegian. Let's check if that works. If house 1 is yellow, then Kools are there (clue 8). Then clue 12 says Kools are next to horse. So horse would be in house 2. House 2 is blue, nationality? Not sure yet. Then, house 1: yellow, Kools, Norwegian. Then house 2: blue. House 3: needs to have milk (clue 9). House 5: green, coffee. House 4: ivory. That leaves red to be in house 3. Because the remaining colors are red. Wait, colors are red, green, ivory, yellow, blue. If house 1 is yellow, 2 is blue, 4 is ivory, 5 is green, then house 3 must be red. But clue 2 says Englishman is in red house. So house 3: red, English, and drink? Milk is in house 3, so drink is milk. But clue 2: Englishman in red house. So house 3: Nationality is English, color red, beverage milk. That works. Then let's check other clues.
+
+Clue 5: Ukrainian drinks tea. So we need to find where Ukrainian is. Nationalities left are Spanish, Ukrainian, Japanese. Since house 1 is Norwegian, house 3 is English, so houses 2,4,5: Spanish, Ukrainian, Japanese. Let's see. House 2: blue, nationality? Let's say maybe Ukrainian. Then drink would be tea (clue 5). So house 2: Ukrainian, tea. Then beverage for house 2 is tea. That fits clue 5.
+
+House 4: ivory, nationality could be Spanish (since clue 3 says Spaniard owns the dog). So if house 4 is Spanish, then pet is dog. House 5: Japanese (since clue 14 says Japanese smokes Parliaments). So house 5: Japanese, Parliaments.
+
+Now, let's check pets. House 3 (English) has which pet? The pets are dog, fox, zebra, horse, snails. House 4 (Spanish) has dog. House 2: if horse is in house 2 (since Kools in house 1, clue 12 says Kools next to horse), then house 2's pet is horse. Wait, house 2's pet would be horse. Then house 2: horse. Then house 1: Kools (yellow), Norwegian. Then clue 12 is satisfied (Kools next to horse). That works.
+
+Then house 3's pet? Let's see. The pets used so far: horse (2), dog (4). Remaining: fox, zebra, snails. House 3: English, red, milk. The pet could be... Let's see clue 7: Old Gold smoker has snails. So whoever has Old Gold cigars, their pet is snails. Let's see which cigars are left. Cigars: Old Gold, Chesterfields, Lucky Strike, Parliaments, Kools. House 1: Kools. House 5: Parliaments. So remaining cigars for 2,3,4: Old Gold, Chesterfields, Lucky Strike.
+
+Clue 13: Lucky Strike smoker drinks orange juice. So wherever Lucky Strike is, that house's drink is orange juice. House 3's drink is milk, so not there. House 4's drink? Let's see. House 1: Norwegian, drink? Not specified yet. House 2: tea. House 3: milk. House 4: ? House 5: coffee. The remaining drinks are water and orange juice. So house 1 and 4 need to have water and orange juice. Clue 13: Lucky Strike is in the house that drinks orange juice. So if house 4 has Lucky Strike, then drink would be orange juice. Then house 1 would have water. Let's try that. House 4: Lucky Strike, orange juice. Then house 1's drink is water.
+
+Then, house 4: Spanish (nationality), owns dog (clue 3), drink orange juice (from Lucky Strike clue 13). Wait, but clue 13 says Lucky Strike smoker drinks orange juice. So if house 4 smokes Lucky Strike, then drink is orange juice. That fits. Then house 4's cigar is Lucky Strike. Then remaining cigars for house 3: Old Gold or Chesterfields.
+
+Clue 7: Old Gold smoker has snails. So if house 3 smokes Old Gold, then pet is snails. Let's check. House 3's pet would be snails. Then remaining pets: fox and zebra. House 5's pet would be zebra? Let's see. House 5: Japanese, Parliaments, green, coffee. Pet could be zebra. Then house 1's pet would be fox. But wait, house 1 is Norwegian, pet fox. Then clue 11: Chesterfields next to fox. So Chesterfields smoker is next to fox (house 1). So Chesterfields would be in house 2. Let's check. House 2: cigar? If house 2 has Chesterfields, then that would be adjacent to house 1 (fox). Then house 2's cigar is Chesterfields. Then house 3's cigar would be Old Gold (since 4 is Lucky Strike, 5 is Parliaments, 1 is Kools, 2 is Chesterfields). So house 3: Old Gold, pet snails. That fits clue 7.
+
+Then pets:
+
+House 1: fox
+
+House 2: horse
+
+House 3: snails
+
+House 4: dog
+
+House 5: zebra
+
+Does that cover all? Yes: fox, horse, snails, dog, zebra.
+
+Now, let's check clue 11: Chesterfields (house 2) next to fox (house 1). Yes, adjacent. Good.
+
+Clue 12: Kools (house 1) next to horse (house 2). Correct.
+
+Clue 13: Lucky Strike (house 4) drinks orange juice. Correct.
+
+Clue 14: Japanese (house 5) smokes Parliaments. Correct.
+
+Clue 7: Old Gold (house 3) owns snails. Correct.
+
+Clue 3: Spaniard (house 4) owns dog. Correct.
+
+Clue 5: Ukrainian (house 2) drinks tea. Correct.
+
+Clue 4: Coffee in green house (house 5). Correct.
+
+Clue 2: Englishman in red (house 3). Correct.
+
+Clue 6: Green (5) is right of ivory (4). Yes.
+
+Clue 15: Norwegian (1) next to blue (2). Correct.
+
+All clues seem to fit. Let me double-check:
+
+Beverages: house1=water, 2=tea, 3=milk, 4=orange juice, 5=coffee. All unique.
+
+Cigars: 1=Kools, 2=Chesterfields, 3=Old Gold,4=Lucky,5=Parliaments. All unique.
+
+Colors: 1=yellow, 2=blue,3=red,4=ivory,5=green. Correct.
+
+Nationalities:1=Norwegian,2=Ukrainian,3=English,4=Spanish,5=Japanese. Correct.
+
+Pets:1=fox,2=horse,3=snails,4=dog,5=zebra. All there.
+
+Yes, this seems to satisfy all the clues.
+#############
+|        | 1       | 2        | 3      | 4       | 5       |
+| Color  | yellow  | blue     | red    | ivory   | green   |
+| Nationality | Norwegian | Ukrainian | English | Spanish | Japanese |
+| Pet    | fox     | horse    | snails | dog     | zebra   |
+| Beverage | water   | tea      | milk   | orange-juice | coffee  |
+| Cigar  | Kools   | Chesterfields | Old Gold | Lucky Strike | Parliaments |
+#############"	{'color': ['yellow', 'blue', 'red', 'ivory', 'green'], 'nationality': ['norwegian', 'ukrainian', 'english', 'spanish', 'japanese'], 'pet': ['fox', 'horse', 'snails', 'dog', 'zebra'], 'beverage': ['water', 'tea', 'milk', 'orange-juice', 'coffee'], 'cigar': ['kools', 'chesterfield', 'old-gold', 'lucky-strike', 'parliament']}	True	23	False
+R1-Zebra-orig-3	"Alright, let's tackle this logic puzzle step by step. First, I'll list out all the clues and see how they connect. The goal is to fill in the table correctly by assigning each category (color, nationality, pet, beverage, cigar) to the right house number from 1 to 5.
+
+Starting with the given facts:
+
+1. Five houses. (Just confirming there are five, which the table already shows.)
+
+2. Englishman in the red house.
+
+3. Spaniard owns the dog.
+
+4. Coffee in the green house.
+
+5. Ukrainian drinks tea.
+
+6. Green is immediately to the right of ivory.
+
+7. Old Gold smoker has snails.
+
+8. Kools in the yellow house.
+
+9. Milk in the middle house (house 3).
+
+10. Norwegian in house 1.
+
+11. Chesterfields smoker next to fox owner.
+
+12. Kools smoker next to horse owner.
+
+13. Lucky Strike smoker drinks orange juice.
+
+14. Japanese smokes Parliaments.
+
+15. Norwegian (house 1) next to blue house.
+
+Let's start with the fixed positions. From clue 10, Norwegian is in house 1. Clue 15 says Norwegian is next to blue, so house 2 must be blue. Then, clue 6 says green is to the right of ivory, meaning ivory must be before green. Since there are five houses, possible positions for ivory and green could be 4 and 5 (since 5 is the last). But let's check other clues.
+
+Clue 4 says coffee in green house. Clue 9 says milk is in house 3. So, green can't be house 3. If green is house 5, then ivory is house 4. Let's tentatively assign: ivory=4, green=5. That fits clue 6. So colors so far:
+
+1: ?
+
+2: blue
+
+3: ?
+
+4: ivory
+
+5: green
+
+Now, remaining colors are red and yellow. Clue 2 says Englishman in red. Clue 8 says Kools in yellow. So, we need to place red and yellow. Let's see. Norwegian is in house 1. If house 1 is yellow, then Kools are there (clue 8). But clue 15 says Norwegian is next to blue (house 2), which is already set. So, house 1's color must be yellow (since remaining colors are red and yellow). Wait, if house 1 is yellow, then Kools are there (clue 8). Then, house 2 is blue, which is next to Norwegian (house 1). That works. Then red must be in house 3 or 5. But house 5 is green. So red must be in house 3. So:
+
+1: yellow (Kools)
+
+2: blue
+
+3: red (Englishman)
+
+4: ivory
+
+5: green (coffee)
+
+That sets the colors. Now nationalities. House 1 is Norwegian (clue 10), house 3 is English (clue 2). House 5 is green, and from clue 4, coffee is there. Then, Ukrainian drinks tea (clue 5). So where is Ukrainian? Let's see. The remaining nationalities are Spanish, Ukrainian, and Japanese. House 4 and 5 are left. From clue 3, Spaniard owns the dog. So Spaniard must be in a house where the pet is dog. Let's see. House 3 is English, so Spaniard must be in 2, 4, or 5. House 2 is blue; let's tentatively assign Ukrainian to house 2 (since clue 5 says Ukrainian drinks tea). Then house 2's beverage is tea. That fits. So:
+
+Nationalities:
+
+1: Norwegian
+
+2: Ukrainian
+
+3: English
+
+4: Spanish
+
+5: Japanese
+
+Checking clue 14: Japanese smokes Parliaments. So house 5's cigar is Parliaments.
+
+Now, beverages. House 3 has milk (clue 9). House 5 has coffee. House 2 has tea (Ukrainian). Remaining beverages: orange juice and water. Clue 13: Lucky Strike smoker drinks orange juice. So someone with Lucky Strike must be in a house with orange juice. Let's see. House 4 is Spanish, clue 3 says Spaniard owns dog. So house 4's pet is dog. Now, pets left: fox, zebra, horse, snails. Let's check clue 7: Old Gold smoker has snails. Clue 12: Kools (house 1) next to horse. House 1 is Kools, so house 2 must have horse (since they're adjacent). So house 2's pet is horse. Then, house 1's pet? Remaining are fox, zebra, snails. But clue 11: Chesterfields next to fox. Let's see. If house 2 has horse, then Kools (house 1) is next to horse, which fits clue 12. Then, house 3's pet? Since house 4 is dog, house 5's pet is left with zebra or snails. Clue 7: Old Gold smoker has snails. So if house 3 has snails, then their cigar is Old Gold. Let's check. House 3's nationality is English, beverage is milk. So if house 3 has Old Gold, then their pet is snails. That works. Then house 1's pet would be fox or zebra. Clue 11: Chesterfields next to fox. If house 1 has fox, then Chesterfields would be in house 2. But house 2's nationality is Ukrainian, and their pet is horse. Let's check cigars. House 1: Kools. House 2: ? If Chesterfields are in house 2, then the fox would be in house 1. That fits. So:
+
+Pets:
+
+1: fox
+
+2: horse
+
+3: snails
+
+4: dog
+
+5: zebra
+
+Cigars:
+
+1: Kools
+
+2: Chesterfields
+
+3: Old Gold
+
+4: Lucky Strike (since they drink orange juice, clue 13)
+
+5: Parliaments (clue 14)
+
+Beverages:
+
+1: water (remaining)
+
+2: tea
+
+3: milk
+
+4: orange juice (Lucky Strike)
+
+5: coffee
+
+That leaves house 1's beverage as water. Now check all clues:
+
+- Clue 11: Chesterfields (house 2) next to fox (house 1) – yes.
+
+- Clue 7: Old Gold (house 3) has snails – yes.
+
+- Clue 13: Lucky Strike (house 4) drinks orange juice – yes.
+
+- All others seem to fit.
+
+So the final table should be as above.
+#############
+|        | 1       | 2        | 3      | 4       | 5       |
+| Color  | yellow  | blue     | red    | ivory   | green   |
+| Nationality | Norwegian | Ukrainian | English | Spanish | Japanese |
+| Pet    | fox     | horse    | snails | dog     | zebra   |
+| Beverage | water   | tea      | milk   | orange-juice | coffee  |
+| Cigar  | Kools   | Chesterfields | Old Gold | Lucky Strike | Parliaments |
+#############"	{'color': ['yellow', 'blue', 'red', 'ivory', 'green'], 'nationality': ['norwegian', 'ukrainian', 'english', 'spanish', 'japanese'], 'pet': ['fox', 'horse', 'snails', 'dog', 'zebra'], 'beverage': ['water', 'tea', 'milk', 'orange-juice', 'coffee'], 'cigar': ['kools', 'chesterfield', 'old-gold', 'lucky-strike', 'parliament']}	True	23	False

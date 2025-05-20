@@ -1,0 +1,616 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-4x3-1	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person eating asparagus is driving the car.
+
+From statement 2, we know the person drinking hot-chocolate is driving the jet-ski.
+
+From statement 3, we know the person eating grapefruit is driving the roller.
+
+From statement 4, we know the person who's sport is volleyball is not the person eating asparagus.
+
+From statement 5, we know the person eating lemon is between the person who's sport is cricket and the person who's sport is volleyball.
+
+From statement 6, we know the person drinking 7up is somewhere to the left of the person drinking fanta.
+
+From statement 7, we know the person who's sport is cricket is somewhere to the left of the person who's sport is badminton.
+
+Now, let's start filling in the table:
+
+|             |     1     |       2       |     3      |
+| Beverage    |           |               |            |
+| Food        |           |               |            |
+| Sport       |           |               |            |
+| Transport   |           |               |            |
+
+From statement 1, we know the person eating asparagus is driving the car. Let's put the person eating asparagus in column 1, row 2, and the car in column 4, row 1.
+
+|             |     1     |       2       |     3      |
+| Beverage    |           |               |            |
+| Food        | Asparagus |               |            |
+| Sport       |           |               |            |
+| Transport   | Car       |               |            |
+
+From statement 2, we know the person drinking hot-chocolate is driving the jet-ski. Let's put the person drinking hot-chocolate in column 2, row 3, and the jet-ski in column 4, row 2.
+
+|             |     1     |       2       |     3      |
+| Beverage    |           | Hot-chocolate |            |
+| Food        | Asparagus |               |            |
+| Sport       |           |               |            |
+| Transport   | Car       | Jet-ski      |            |
+
+From statement 3, we know the person eating grapefruit is driving the roller. Let's put the person eating grapefruit in column 3, row 2, and the roller in column 4, row 3.
+
+|             |     1     |       2       |     3      |
+| Beverage    |           | Hot-chocolate |            |
+| Food        | Asparagus | Grapefruit   |            |
+| Sport       |           |               |            |
+| Transport   | Car       | Jet-ski      | Roller     |
+
+From statement 4, we know the person who's sport is volleyball is not the person eating asparagus. Let's put the person who's sport is volleyball in column 3, row 1.
+
+|             |     1     |       2       |     3      |
+| Beverage    |           | Hot-chocolate |            |
+| Food        | Asparagus | Grapefruit   |            |
+| Sport       | Volleyball|               |            |
+| Transport   | Car       | Jet-ski      | Roller     |
+
+From statement 5, we know the person eating lemon is between the person who's sport is cricket and the person who's sport is volleyball. Let's put the person eating lemon in column 2, row 1.
+
+|             |     1     |       2       |     3      |
+| Beverage    |           | Hot-chocolate |            |
+| Food        | Asparagus | Lemon        | Grapefruit   |
+| Sport       | Volleyball| Cricket      |               |
+| Transport   | Car       | Jet-ski      | Roller     |
+
+From statement 6, we know the person drinking 7up is somewhere to the left of the person drinking fanta. Since the person drinking hot-chocolate is already in column 2, let's put the person drinking 7up in column 1, row 3.
+
+|             |     1     |       2       |     3      |
+| Beverage    | 7up       | Hot-chocolate | Fanta      |
+| Food        | Asparagus | Lemon        | Grapefruit   |
+| Sport       | Volleyball| Cricket      |               |
+| Transport   | Car       | Jet-ski      | Roller     |
+
+From statement 7, we know the person who's sport is cricket is somewhere to the left of the person who's sport is badminton. Since the person who's sport is volleyball is already in column 3, row 1, let's put the person who's sport is cricket in column 2, row 1.
+
+|             |     1     |       2       |     3      |
+| Beverage    | 7up       | Hot-chocolate | Fanta      |
+| Food        | Asparagus | Lemon        | Grapefruit   |
+| Sport       | Cricket   | Volleyball  | Badminton  |
+| Transport   | Car       | Jet-ski      | Roller     |
+
+Now we have the complete solution:
+
+#############
+|             |     1     |       2       |     3      |
+| Beverage    | 7up       | Hot-chocolate | Fanta      |
+| Food        | Asparagus | Lemon        | Grapefruit   |
+| Sport       | Cricket   | Volleyball  | Badminton  |
+| Transport   | Car       | Jet-ski      | Roller     |
+#############"	{'beverage': ['7up', 'hot-chocolate', 'fanta'], 'food': ['asparagus', 'lemon', 'grapefruit'], 'sport': ['cricket', 'volleyball', 'badminton'], 'transport': ['car', 'jet-ski', 'roller']}	True	10	False
+Lv1-4x3-2	"Let's break down the puzzle step by step:
+
+1. The person driving the motorbike is on the left or right of the Spanish person.
+2. The person eating onion is somewhere to the left of the person eating cauliflower.
+3. The doctor is not the American.
+4. The doctor is somewhere to the right of the dressmaker.
+5. The Japanese is the person eating cauliflower.
+6. The doctor is not the person driving the skateboard.
+7. The Japanese is between the person driving the skateboard and the Spanish person.
+8. The American is not the person eating onion.
+
+From statement 5, we know the Japanese is eating cauliflower. From statement 7, we know the Japanese is between the person driving the skateboard and the Spanish person. This means the Japanese is not driving the skateboard, so the Japanese must be eating cauliflower and driving the car (since they're not on the skateboard or motorbike).
+
+From statement 2, we know the person eating onion is to the left of the person eating cauliflower. Since the Japanese is eating cauliflower, the person eating onion must be to the left of the Japanese.
+
+From statement 8, we know the American is not eating onion. Since the person eating onion is to the left of the Japanese, the American must be eating nectarine (since they're not eating onion).
+
+From statement 3, we know the doctor is not the American. Since the American is eating nectarine, the doctor must be eating onion.
+
+From statement 4, we know the doctor is to the right of the dressmaker. Since the doctor is eating onion, the dressmaker must be eating nectarine.
+
+Now we can fill in the table:
+
+#############
+|               |     1      |      2      |     3      |
+| Food          |            |             |            |
+| Japanese     | Cauliflower |            | Car       |
+| American     | Nectarine   |            |            |
+| Doctor       | Onion      |            |            |
+| Dressmaker   | Nectarine   |            |            |
+| Transport     |            |             |            |
+| Job           |            |             |            |
+| Nationality   |            |             |            |
+#############
+
+The Japanese is eating cauliflower and driving the car. The American is eating nectarine. The doctor is eating onion. The dressmaker is eating nectarine. The person driving the motorbike is to the left or right of the Spanish person, but we can't determine which one without more information."	{'food': ['', '', ''], 'japanese': ['cauliflower', '', 'car'], 'american': ['nectarine', '', ''], 'doctor': ['onion', '', ''], 'dressmaker': ['nectarine', '', ''], 'transport': ['', '', ''], 'job': ['', '', ''], 'nationality': ['', '', '']}	True	0	False
+Lv1-4x3-3	"Let's break down the puzzle step by step:
+
+1. The fan punk is somewhere to the right of the scientist.
+This means the scientist is not the fan punk.
+
+2. The fan country is between the owner of the frog and the fan electronic.
+This means the owner of the frog is to the left of the fan country, and the fan electronic is to the right of the fan country.
+
+3. The person who's hobby is rock-climbing is not the security-guard.
+This means the security-guard has a different hobby.
+
+4. The fan country is somewhere to the left of the security-guard.
+This means the fan country is to the left of the security-guard, and the fan punk is to the right of the scientist.
+
+5. The person who's hobby is writing is not the fan country.
+This means the fan country has a different hobby.
+
+6. The person who's hobby is rock-climbing is on the right of the person who's hobby is fishing.
+This means the person who's hobby is fishing is to the left of the person who's hobby is rock-climbing.
+
+7. The mechanic is on the left or right of the security-guard.
+This means the mechanic is adjacent to the security-guard.
+
+8. The owner of the chinchilla is on the left or right of the security-guard.
+This means the owner of the chinchilla is adjacent to the security-guard.
+
+Now, let's start filling in the table:
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            |               |                |
+| Music-Genre   |            |               |                |
+| Pet           |            |               |                |
+
+From step 1, we know the scientist is not the fan punk. Let's assume the scientist is the fan electronic (we'll come back to this later).
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            | scientist |                |
+| Music-Genre   |            | electronic |                |
+| Pet           |            |               |                |
+
+From step 2, we know the fan country is between the owner of the frog and the fan electronic. Since the scientist is the fan electronic, the fan country must be between the owner of the frog and the scientist.
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            | scientist |                |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 3, we know the person who's hobby is rock-climbing is not the security-guard. Let's assume the security-guard has the hobby of writing (we'll come back to this later).
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 4, we know the fan country is to the left of the security-guard. Since the security-guard has the hobby of writing, the fan country must be to the left of the security-guard.
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 5, we know the person who's hobby is writing is not the fan country. Since the security-guard has the hobby of writing, the fan country cannot be the security-guard.
+
+|               |     1      |       2       |       3        |
+| Hobby         |            |               |                |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 6, we know the person who's hobby is rock-climbing is on the right of the person who's hobby is fishing. Since the security-guard has the hobby of writing, the person who's hobby is fishing must be to the left of the security-guard.
+
+|               |     1      |       2       |       3        |
+| Hobby         | fishing    |               | rock-climbing |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 7, we know the mechanic is on the left or right of the security-guard. Since the security-guard has the hobby of writing, the mechanic must be adjacent to the security-guard.
+
+|               |     1      |       2       |       3        |
+| Hobby         | fishing    | mechanic   | rock-climbing |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        |               |                |
+
+From step 8, we know the owner of the chinchilla is on the left or right of the security-guard. Since the security-guard has the hobby of writing, the owner of the chinchilla must be adjacent to the security-guard.
+
+|               |     1      |       2       |       3        |
+| Hobby         | fishing    | mechanic   | rock-climbing |
+| Job           |            | scientist | security-guard |
+| Music-Genre   | fan country | electronic |                |
+| Pet           | frog        | chinchilla | snake         |
+
+Now, let's fill in the remaining gaps:
+
+|               |     1      |       2       |       3        |
+| Hobby         | fishing    | mechanic   | rock-climbing |
+| Job           | mechanic   | scientist | security-guard |
+| Music-Genre   | fan country | electronic | punk          |
+| Pet           | frog        | chinchilla | snake         |
+
+The final solution is:
+
+#############
+|               |     1      |       2       |       3        |
+| Hobby         | fishing    | mechanic   | rock-climbing |
+| Job           | mechanic   | scientist | security-guard |
+| Music-Genre   | fan country | electronic | punk          |
+| Pet           | frog        | chinchilla | snake         |
+#############"	{'hobby': ['fishing', 'mechanic', 'rock-climbing'], 'job': ['mechanic', 'scientist', 'security-guard'], 'music-genre': ['fan country', 'electronic', 'punk'], 'pet': ['frog', 'chinchilla', 'snake']}	True	4	False
+Lv1-4x3-4	"Let's break down the puzzle step by step:
+
+From statement 1, we know the musician is between the Canadian and the fan of hip-hop.
+
+From statement 2, we know the French is on the left of the Mexican.
+
+From statement 3, we know the fan of House is the French.
+
+From statement 4, we know the fan of hip-hop is somewhere to the right of the French.
+
+From statement 5, we know the musician is not the person who's hobby is puzzles.
+
+From statement 6, we know the person who's hobby is reading is on the right of the person who's hobby is puzzles.
+
+From statement 7, we know the bartender is on the left of the person who's hobby is reading.
+
+Now, let's start filling in the table:
+
+|               |     1     |    2     |     3     |
+| Hobby         |           |          |           |
+| Job           |           |          |           |
+| Music-Genre   |           |          |           |
+| Nationality   |           |          |           |
+
+From statement 2, we know the French is on the left of the Mexican, so the French must be in position 1. From statement 3, we know the fan of House is the French, so the French's music genre is House.
+
+|               |     1     |    2     |     3     |
+| Hobby         |           |          |           |
+| Job           |           |          |           |
+| Music-Genre   | House    |          |           |
+| Nationality   | French   |          |           |
+
+From statement 1, we know the musician is between the Canadian and the fan of hip-hop. Since the French is already in position 1, the Canadian must be in position 2. The fan of hip-hop must be in position 3.
+
+|               |     1     |    2     |     3     |
+| Hobby         |           |          |           |
+| Job           |           |          |           |
+| Music-Genre   | House    |          |           |
+| Nationality   | French   | Canadian |           |
+
+From statement 4, we know the fan of hip-hop is somewhere to the right of the French. Since the fan of hip-hop is already in position 3, the French must be in position 2.
+
+|               |     1     |    2     |     3     |
+| Hobby         |           |          |           |
+| Job           |           |          |           |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian |           |
+
+From statement 5, we know the musician is not the person who's hobby is puzzles. Since the musician is already in position 2, the person who's hobby is puzzles must be in position 1.
+
+|               |     1     |    2     |     3     |
+| Hobby         | Puzzles  |          |           |
+| Job           |          | Musician |           |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian |           |
+
+From statement 6, we know the person who's hobby is reading is on the right of the person who's hobby is puzzles. Since the person who's hobby is puzzles is already in position 1, the person who's hobby is reading must be in position 3.
+
+|               |     1     |    2     |     3     |
+| Hobby         | Puzzles  |          | Reading  |
+| Job           |          | Musician |           |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian |           |
+
+From statement 7, we know the bartender is on the left of the person who's hobby is reading. Since the person who's hobby is reading is already in position 3, the bartender must be in position 2.
+
+|               |     1     |    2     |     3     |
+| Hobby         | Puzzles  | Bartender | Reading  |
+| Job           |          | Musician |           |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian |           |
+
+Now, let's fill in the remaining jobs:
+
+* The bartender is already in position 2, so the person in position 1 must be the pilot.
+* The musician is already in position 2, so the person in position 3 must be the fan of hip-hop.
+
+|               |     1     |    2     |     3     |
+| Hobby         | Puzzles  | Bartender | Reading  |
+| Job           | Pilot   | Musician | Fan of Hip-hop |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian | Mexican    |
+
+The final solution is:
+
+#############
+|               |     1     |    2     |     3     |
+| Hobby         | Puzzles  | Bartender | Reading  |
+| Job           | Pilot   | Musician | Fan of Hip-hop |
+| Music-Genre   | House    | Hip-hop  |           |
+| Nationality   | French   | Canadian | Mexican    |
+#############"	{'hobby': ['puzzles', 'bartender', 'reading'], 'job': ['pilot', 'musician', 'fan of hip-hop'], 'music-genre': ['house', 'hip-hop', ''], 'nationality': ['french', 'canadian', 'mexican']}	True	3	False
+Lv1-4x3-5	"Let's break down the puzzle step by step:
+
+1. The owner of the chinchilla is somewhere to the left of the lawyer.
+This means the chinchilla owner is either the first or second person from the left.
+
+2. The person eating spinach is between the videographer and the fan of techno.
+This means the spinach eater is either the second or third person from the left, and the fan of techno is either the third or fourth person from the left.
+
+3. The owner of the horse is on the left or right of the person eating spinach.
+This means the horse owner is either the first or second person from the left, or the second or third person from the right.
+
+4. The fan of dubstep is not the person eating apple.
+This means the fan of dubstep is either the person eating spinach or the person eating grapes.
+
+5. The person eating apple is on the left or right of the lawyer.
+This means the apple eater is either the first or second person from the left, or the second or third person from the right.
+
+6. The fan of blues is somewhere to the right of the videographer.
+This means the fan of blues is either the third or fourth person from the left.
+
+Now, let's combine the information:
+
+|               |      1       |    2    |      3       |      4       |      5       |
+| Food          |              |         |              |              |              |
+| Job           |              |         |              |              |              |
+| Music-Genre   |              |         |              |              |              |
+| Pet           |              |         |              |              |              |
+
+From (1), the chinchilla owner is either the first or second person from the left. Let's assume it's the first person.
+
+From (2), the spinach eater is between the videographer and the fan of techno. Let's assume the spinach eater is the second person from the left.
+
+From (3), the horse owner is on the left or right of the spinach eater. Let's assume the horse owner is the third person from the left.
+
+From (4), the fan of dubstep is not the person eating apple. Let's assume the fan of dubstep is the person eating spinach.
+
+From (5), the person eating apple is on the left or right of the lawyer. Let's assume the apple eater is the second person from the right.
+
+From (6), the fan of blues is somewhere to the right of the videographer. Let's assume the fan of blues is the fourth person from the left.
+
+Now, let's fill in the table:
+
+#############
+| Food          |      Apple    | Spinach | Grapes     |
+| Job           |  Videographer |  Lawyer  |  Entrepreneur |
+| Music-Genre   |  Techno      |  Dubstep |  Blues     |
+| Pet           |  Horse      |  Chinchilla |  Goat     |
+#############
+
+The solution is:
+
+* The person eating apple is the entrepreneur, who is the second person from the right.
+* The person eating spinach is the lawyer, who is the second person from the left.
+* The fan of dubstep is the lawyer, who is eating spinach.
+* The fan of techno is the videographer, who is eating grapes.
+* The fan of blues is the fourth person from the left, which is the goat owner.
+* The horse owner is the third person from the left, which is the person eating spinach (the lawyer)."	{'food': ['apple', 'spinach', 'grapes'], 'job': ['videographer', 'lawyer', 'entrepreneur'], 'music-genre': ['techno', 'dubstep', 'blues'], 'pet': ['horse', 'chinchilla', 'goat']}	True	4	False
+Lv1-4x3-6	"Let's break down the puzzle step by step:
+
+1. The person who's sport is biathlon is the person eating garlic.
+This means the biathlon row must be paired with the garlic column.
+
+2. The fan country is the person driving the motorbike.
+This means the country row must be paired with the motorbike column.
+
+3. The person driving the van is not the person who's sport is baseball.
+This means the van column cannot be paired with the baseball row.
+
+4. The person who's sport is rugby is somewhere to the left of the person driving the van.
+This means the rugby row must be paired with a column to the left of the van column.
+
+5. The person who's sport is baseball is on the far right.
+This means the baseball row must be paired with the far right column.
+
+6. The fan soul is somewhere to the right of the person who's sport is rugby.
+This means the soul row must be paired with a column to the right of the rugby row.
+
+7. The person driving the motorbike is somewhere to the right of the fan soul.
+This means the motorbike column must be paired with a column to the right of the soul row.
+
+8. The person eating corn is somewhere to the left of the person driving the van.
+This means the corn row must be paired with a column to the left of the van column.
+
+Now, let's fill in the table:
+
+|               |   1    |    2     |      3      |
+| Food          |        |          |             |
+| Music-Genre   |        |          |             |
+| Sport         |        |          |             |
+| Transport     |        |          |             |
+
+From step 1, we know the biathlon row must be paired with the garlic column. From step 5, we know the baseball row must be paired with the far right column. From step 8, we know the corn row must be paired with a column to the left of the van column.
+
+|               |   1    |    2     |      3      |
+| Food          | Corn   | Garlic  | Pomegranate|
+| Music-Genre   |        |          |             |
+| Sport         |        |          |             |
+| Transport     |        |          |             |
+
+From step 2, we know the country row must be paired with the motorbike column. From step 7, we know the motorbike column must be paired with a column to the right of the soul row. From step 6, we know the soul row must be paired with a column to the right of the rugby row.
+
+|               |   1    |    2     |      3      |
+| Food          | Corn   | Garlic  | Pomegranate|
+| Music-Genre   |        | Soul    | Country  |
+| Sport         |        |          |             |
+| Transport     |        |          | Motorbike |
+
+From step 4, we know the rugby row must be paired with a column to the left of the van column. From step 3, we know the van column cannot be paired with the baseball row. Therefore, the van column must be paired with the pomegranate row.
+
+|               |   1    |    2     |      3      |
+| Food          | Corn   | Garlic  | Pomegranate|
+| Music-Genre   |        | Soul    | Country  |
+| Sport         | Rugby  | Biathlon| Baseball  |
+| Transport     |        |          | Motorbike |
+
+The final solution table is:
+
+#############
+|               |   1    |    2     |      3      |
+| Food          | Corn   | Garlic  | Pomegranate|
+| Music-Genre   |        | Soul    | Country  |
+| Sport         | Rugby  | Biathlon| Baseball  |
+| Transport     |        |          | Motorbike |
+#############"	{'food': ['corn', 'garlic', 'pomegranate'], 'music-genre': ['', 'soul', 'country'], 'sport': ['rugby', 'biathlon', 'baseball'], 'transport': ['', '', 'motorbike']}	True	9	False
+Lv1-4x3-7	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person driving the tram is eating apple.
+
+From statement 2, we know the person eating apple is on the far left or far right. Since the person driving the tram is eating apple, we can conclude that the person eating apple is on the far left.
+
+From statement 3, we know the fan of reggae is the person eating apple. Since the person eating apple is on the far left, we can conclude that the fan of reggae is on the far left.
+
+From statement 4, we know the owner of the turtle is somewhere to the right of the person eating potato. Since the person eating apple is on the far left, the person eating potato must be in the middle.
+
+From statement 5, we know the fan of house is on the left or right of the owner of the chinchilla. Since the fan of reggae is on the far left, the fan of house must be on the right of the owner of the chinchilla.
+
+From statement 6, we know the fan of d&b is in the middle. Since the person eating potato is in the middle, the fan of d&b must be the person eating potato.
+
+From statement 7, we know the fan of d&b is not the person driving the ship. Since the fan of d&b is the person eating potato, and the person eating apple is driving the tram, the person driving the ship must be the fan of house.
+
+From statement 8, we know the person eating apple is on the left or right of the person eating banana. Since the person eating apple is on the far left, the person eating banana must be in the middle.
+
+Now, let's fill in the table:
+
+#############
+|               |   1    |     2      |   3    |
+| Food          | Apple  | Banana   | Potato |
+| Music-Genre   | Reggae | House    | D&B    |
+| Pet           | Chinchilla | Dog     | Turtle |
+| Transport     | Tram   | Ship    | Subway |
+#############
+
+The final solution is:
+
+* The person eating apple is on the far left, driving the tram.
+* The fan of reggae is on the far left, eating apple.
+* The person eating potato is in the middle, fan of d&b.
+* The person eating banana is in the middle.
+* The fan of house is on the right, driving the ship.
+* The owner of the turtle is to the right of the person eating potato.
+* The owner of the chinchilla is on the left of the fan of house."	{'food': ['apple', 'banana', 'potato'], 'music-genre': ['reggae', 'house', 'd&b'], 'pet': ['chinchilla', 'dog', 'turtle'], 'transport': ['tram', 'ship', 'subway']}	True	2	False
+Lv1-4x3-8	"Let's break down the puzzle step by step:
+
+1. The person driving the taxi is somewhere to the right of the person watching documentary movies.
+2. The person who's sport is golf is on the left or right of the person driving the boat.
+3. The person who's sport is climbing is not the person watching fantasy movies.
+4. The person who's sport is cricket is somewhere to the left of the person driving the boat.
+5. The fan of funk is the person watching fantasy movies.
+6. The person watching family movies is somewhere to the right of the fan of blues.
+7. The person watching family movies is somewhere to the left of the person watching fantasy movies.
+
+From statement 1, we know the taxi driver is to the right of the documentary movie watcher. Let's call the documentary movie watcher ""D"".
+
+From statement 2, we know the golf player is either to the left or right of the boat driver. Let's call the boat driver ""B"". If the golf player is to the left of B, then the golf player is to the left of D (since D is to the right of the taxi driver). If the golf player is to the right of B, then the golf player is to the right of D.
+
+From statement 3, we know the climbing player is not the fantasy movie watcher. Since the fantasy movie watcher is the fan of funk (statement 5), let's call the fantasy movie watcher ""F"". The climbing player is not F.
+
+From statement 4, we know the cricket player is to the left of the boat driver. Since the boat driver is B, the cricket player is to the left of B.
+
+From statement 6, we know the fan of blues is to the left of the person watching family movies. Let's call the fan of blues ""Bl"". The person watching family movies is to the right of Bl.
+
+From statement 7, we know the person watching family movies is to the left of the person watching fantasy movies. Since the person watching fantasy movies is F, the person watching family movies is to the left of F.
+
+Now, let's combine the information:
+
+* D is to the right of the taxi driver (statement 1)
+* B is the boat driver (statement 2)
+* F is the fantasy movie watcher (statement 5)
+* Bl is the fan of blues (statement 6)
+* The person watching family movies is to the left of F (statement 7)
+* The person watching family movies is to the right of Bl (statement 6)
+* The cricket player is to the left of B (statement 4)
+
+Here's the final solution table with '#############' around it:
+
+#############
+|               |      1      |    2     |    3    |
+| Movie-Genre   |             |          |         |
+| Music-Genre   |             |          |         |
+| Sport         |             |          |         |
+| Transport     |             |          |         |
+#############
+| Movie-Genre   | Family     | Documentary | Fantasy  |
+| Music-Genre   | Blues      | Country    | Funk     |
+| Sport         | Cricket    | Climbing   | Golf     |
+| Transport     | Taxi      | Boat      | Roller   |
+#############
+
+Note that the solution is not unique, as there are multiple ways to arrange the people and their preferences. However, this is one possible solution that satisfies all the given statements."	{'movie-genre': ['family', 'documentary', 'fantasy'], 'music-genre': ['blues', 'country', 'funk'], 'sport': ['cricket', 'climbing', 'golf'], 'transport': ['taxi', 'boat', 'roller']}	True	8	False
+Lv1-4x3-9	"Let's break down the puzzle step by step:
+
+From statement 1, we know that each person prefers 3 different movie-genres, music-genres, nationalities, and pets.
+
+From statement 2, we know that the Italian is on the left or right of the person watching comedy movies. Let's assume the Italian is on the left for now.
+
+From statement 3, we know that the person watching martial-arts movies is not the owner of the mouse. This means the mouse owner is either the Italian or the Argentine.
+
+From statement 4, we know that the person watching adventure movies is between the owner of the cat and the person watching martial-arts movies. This means the cat owner is either the Italian or the Argentine.
+
+From statement 5, we know that the Argentine is on the left or right of the fan dubstep. Let's assume the Argentine is on the left for now.
+
+From statement 6, we know that the Argentine is somewhere to the right of the fan punk. This means the fan punk is either the Italian or the person watching comedy movies.
+
+From statement 7, we know that the person watching martial-arts movies is somewhere to the left of the person watching comedy movies. This means the person watching comedy movies is either the Italian or the Argentine.
+
+Now, let's combine the information:
+
+* The Italian is on the left or right of the person watching comedy movies (statement 2).
+* The Italian is not the fan of rock (statement 1).
+* The Italian is not the owner of the mouse (statement 3).
+* The Italian is not the fan punk (statement 6).
+* The Italian is not the cat owner (statement 4).
+
+This means the Italian is the fan of dubstep, and the person watching comedy movies is either the Argentine or the Italian.
+
+* The Argentine is on the left or right of the fan dubstep (statement 5).
+* The Argentine is somewhere to the right of the fan punk (statement 6).
+* The Argentine is not the fan of rock (statement 1).
+* The Argentine is not the owner of the cat (statement 4).
+
+This means the Argentine is the fan of punk, and the person watching comedy movies is either the Argentine or the Italian.
+
+Now, let's fill in the table:
+
+#############
+| Movie-Genre   | Music-Genre   | Nationality   | Pet           |
+|---------------|---------------|--------------|---------------|
+| Adventure    | Dubstep       | Italian      | Cat           |
+| Comedy       | Punk          | Argentine    | Guinea-pig    |
+| Martial-arts | Rock          | Egyptian     | Mouse         |
+#############
+
+Note that this solution satisfies all the given statements."	{'movie-genre': ['music-genre', 'nationality', 'pet'], 'adventure': ['dubstep', 'italian', 'cat'], 'comedy': ['punk', 'argentine', 'guinea-pig'], 'martial-arts': ['rock', 'egyptian', 'mouse']}	False	0	False
+Lv1-4x3-10	"Let's break down the puzzle step by step:
+
+1. The person driving the airplane is somewhere to the right of the person watching horror movies.
+2. The person who's sport is rowing is the person watching drama movies.
+3. The person who's sport is ice-hockey is somewhere to the right of the person eating zucchini.
+4. The person driving the skateboard is not the person watching horror movies.
+5. The person driving the airplane is somewhere to the right of the person driving the skateboard.
+6. The person who's sport is rowing is somewhere to the left of the person eating nectarine.
+7. The person who's sport is ice-hockey is in an even position.
+8. The person eating banana is on the far right.
+
+From statement 2, we know the person who's sport is rowing is watching drama movies. From statement 6, we know this person is to the left of the person eating nectarine. Since the person eating banana is on the far right (statement 8), the person eating nectarine must be in the middle.
+
+From statement 3, we know the person who's sport is ice-hockey is to the right of the person eating zucchini. Since the person who's sport is ice-hockey is in an even position (statement 7), they must be in the middle, which means the person eating zucchini is to the left of the person eating nectarine.
+
+From statement 1, we know the person driving the airplane is to the right of the person watching horror movies. From statement 5, we know the person driving the airplane is to the right of the person driving the skateboard. Since the person eating banana is on the far right, the person driving the skateboard must be in the second position from the right.
+
+From statement 4, we know the person driving the skateboard is not the person watching horror movies. Since the person driving the airplane is to the right of the person watching horror movies, the person driving the skateboard must be watching drama movies (since the person watching drama movies is rowing, and the person watching horror movies is not driving the skateboard).
+
+Now we can fill in the table:
+
+#############
+|               |     1      |     2      |     3     |
+| Food          |  Banana   | Nectarine | Zucchini |
+| Movie-Genre   |  Drama    | Horror   | Superhero|
+| Sport         |  Rowing   | Ice-Hockey| Parkour  |
+| Transport     | Skateboard| Airplane | Car      |
+#############
+
+Note that the person watching superhero movies is not mentioned in the puzzle, so we can't determine their sport or food preference."	{'food': ['banana', 'nectarine', 'zucchini'], 'movie-genre': ['drama', 'horror', 'superhero'], 'sport': ['rowing', 'ice-hockey', 'parkour'], 'transport': ['skateboard', 'airplane', 'car']}	True	8	False

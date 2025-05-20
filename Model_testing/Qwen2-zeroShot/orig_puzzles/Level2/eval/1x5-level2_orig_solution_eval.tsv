@@ -1,0 +1,380 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-1x5-1	"Sure, let's solve the logic puzzle step by step based on the given clues.
+
+### Clues Recap:
+1. The person who's sport is soccer is in the middle.
+2. The person who's sport is cricket is on the right of the person who's sport is weightlifting.
+3. The person who's sport is cricket is on the left of the person who's sport is soccer.
+4. The person who's sport is skiing is between the person who's sport is soccer and the person who's sport is badminton.
+
+### Step-by-Step Solution:
+
+#### Clue 1: Soccer is in the middle.
+- This means soccer is in position 3.
+  
+  |         |       1       |    2    |   3    (Soccer) |   4    |     5     |
+
+#### Clue 2: Cricket is on the right of weightlifting.
+- This means weightlifting must be to the left of cricket.
+
+#### Clue 3: Cricket is on the left of soccer.
+- Since soccer is in position 3, cricket must be in position 2.
+
+  |         |       1       |   2 (Cricket) |   3 (Soccer) |   4    |     5     |
+
+From Clue 2, weightlifting must be in position 1.
+
+  | Weightlifting |   2 (Cricket) |   3 (Soccer) |   4    |     5     |
+
+#### Clue 4: Skiing is between soccer and badminton.
+- This means skiing must be either in position 4 or 5, and badminton must be in the other position.
+- Since soccer is in position 3, skiing must be in position 4 and badminton in position 5.
+
+  | Weightlifting |   2 (Cricket) |   3 (Soccer) |   4 (Skiing) |   5 (Badminton) |
+
+This satisfies all the given clues.
+
+### Final Solution Table:
+```
+|         |       1       |    2    |   3    |   4    |     5     |
+| Weightlifting |   Cricket   |   Soccer |   Skiing | Badminton |
+```"	{'weightlifting': ['cricket', 'soccer', 'skiing', 'badminton']}	False	0	False
+Lv2-1x5-2	"Certainly! Let's solve this step-by-step using the given clues.
+
+1. **Clue 1**: The person driving the trike is on the left of the person driving the van.
+2. **Clue 2**: The person driving the airplane is between the person driving the skateboard and the person driving the quad-bike.
+3. **Clue 3**: The person driving the skateboard is on the far left.
+
+Given the positions (1, 2, 3, 4, 5) and the five modes of transport (airplane, quad-bike, skateboard, trike, van), we can deduce the following:
+
+- From Clue 3, the skateboard must be in position 1.
+- From Clue 1, the trike must be to the right of the van. So, if the van is in position 5, the trike must be in position 4.
+- From Clue 2, the airplane must be between the skateboard and the quad-bike. Since the skateboard is in position 1, the quad-bike cannot be in position 2 (because it would not allow room for the airplane). Therefore, the quad-bike must be in position 3, and the airplane must be in position 2.
+
+So, we have:
+- Position 1: Skateboard
+- Position 2: Airplane
+- Position 3: Quad-bike
+- Position 4: Trike
+- Position 5: Van
+
+Let's put this into a table format:
+
+```
+|             |     1      |    2     |     3     |   4   |  5  |
+| Transport   | Skateboard | Airplane | Quad-bike | Trike | Van |
+```
+
+This arrangement satisfies all the given clues. Here is the final solution:
+
+```
+|             |     1      |    2     |     3     |   4   |  5  |
+| Transport   | Skateboard | Airplane | Quad-bike | Trike | Van |
+```"	{'transport': ['skateboard', 'airplane', 'quad-bike', 'trike', 'van']}	True	5	True
+Lv2-1x5-3	"Let's analyze the given clues step-by-step to determine the correct order of the beverages:
+
+1. **Clue 1:** The person drinking fanta is between the person drinking iced-tea and the person drinking sprite.
+   - This means the order must be either (1) iced-tea, fanta, sprite or (2) sprite, fanta, iced-tea.
+
+2. **Clue 2:** The person drinking sprite is between the person drinking fanta and the person drinking mirinda.
+   - This means the order must be fanta, sprite, mirinda.
+
+3. **Clue 3:** The person drinking mirinda is on the left of the person drinking sprite.
+   - This reaffirms that the order must be fanta, sprite, mirinda.
+
+4. **Clue 4:** The person drinking iced-tea is on the left of the person drinking 7up.
+   - This means the order for iced-tea and 7up can only be iced-tea, 7up.
+
+Combining all these clues, we need to fit everything together:
+
+- From Clue 1 and Clue 2, we have the sequence fanta, sprite, mirinda.
+- From Clue 4, we know iced-tea must come before 7up.
+
+Thus, the only possible arrangement that fits all the clues is:
+- iced-tea, fanta, sprite, mirinda, 7up
+
+So, the final solution table is:
+
+```
+|            |    1    |   2    |   3   |    4     |  5  |
+| Beverage   | iced-tea|  fanta | sprite| mirinda | 7up |
+```"	{'beverage': ['iced-tea', 'fanta', 'sprite', 'mirinda', '7up']}	True	1	False
+Lv2-1x5-4	"Sure, let's solve this step by step.
+
+We have the following constraints:
+1. The British is on the right of the Nigerian.
+2. The Australian is on the right of the Indian.
+3. The Australian is between the Indian and the American.
+4. The Nigerian is on the right of the American.
+
+Let's denote the positions as 1 through 5 from left to right. We need to find a sequence that satisfies all these conditions.
+
+From constraint 3, we know:
+- The Australian (A) is between the Indian (I) and the American (Am).
+
+This means the order must be I - A - Am or Am - A - I.
+
+From constraint 4, we know:
+- The Nigerian (N) is on the right of the American (Am).
+
+So, if we have Am - A - I, then N must be in position 5 because N is on the right of Am.
+
+Now, let's consider the remaining positions for the British (Br) and the Indian (I):
+- From constraint 1, Br must be to the right of N.
+- From constraint 2, I must be to the right of the Indian (which is already placed).
+
+Given these, let's try placing the Indian first:
+1. Indian (I)
+2. Australian (A)
+3. American (Am)
+4. British (Br)
+5. Nigerian (N)
+
+This sequence satisfies all the given constraints:
+- The British is on the right of the Nigerian.
+- The Australian is on the right of the Indian.
+- The Australian is between the Indian and the American.
+- The Nigerian is on the right of the American.
+
+Thus, the final arrangement is:
+
+|               |   1    |     2      |    3     |    4     |    5    |
+| Nationality   | Indian | Australian | American | British | Nigerian |
+
+#############
+|               |   1    |     2      |    3     |    4     |    5    |
+| Nationality   | Indian | Australian | American | British | Nigerian |
+#############"	{'nationality': ['indian', 'australian', 'american', 'british', 'nigerian']}	True	3	False
+Lv2-1x5-5	"Certainly! Let's solve this step-by-step using the given clues:
+
+1. **Clue 1**: The owner of the frog is on the right of the owner of the cat.
+   - This means the order must be: Cat (left) -> Frog (right).
+
+2. **Clue 2**: The owner of the frog is on the left of the owner of the ferret.
+   - Combining Clues 1 and 2, we get: Cat (left) -> Frog (middle) -> Ferret (right).
+
+3. **Clue 3**: The owner of the turtle is between the owner of the ferret and the owner of the chinchilla.
+   - This places the turtle between the ferret and the chinchilla.
+
+4. **Clue 4**: The owner of the turtle is on the right of the owner of the ferret.
+   - This confirms that the order must be: Cat (left) -> Frog (middle) -> Ferret (middle) -> Turtle (right) -> Chinchilla (rightmost).
+
+Now, let's place these pets in the correct positions:
+
+```
+|       |  1  |  2   |   3    |   4    |     5      |
+| Pet   | Cat | Frog | Ferret | Turtle | Chinchilla |
+```
+
+So, the final solution is:
+
+```
+|       |  1  |  2   |   3    |   4    |     5      |
+| Pet   | Cat | Frog | Ferret | Turtle | Chinchilla |
+```"	{'pet': ['cat', 'frog', 'ferret', 'turtle', 'chinchilla']}	True	5	True
+Lv2-1x5-6	"Certainly! Let's solve the puzzle step by step based on the given clues:
+
+1. The musician is on the far left.
+2. The lawyer is between the musician and the chef.
+3. The teacher is on the right of the designer.
+
+Given these clues, let's determine the positions:
+
+- From clue 1, the musician must be in position 1.
+- From clue 2, the lawyer must be between the musician and the chef. Since the musician is in position 1, the lawyer and chef must occupy positions 2 and 4 or 4 and 2 (but not 3 because it would leave no space for the teacher and designer).
+- From clue 3, the teacher must be to the right of the designer.
+
+Let's test the possible configurations:
+
+- If the lawyer is in position 2 and the chef is in position 4:
+  - This leaves positions 3 and 5 for the designer and teacher. Since the teacher must be to the right of the designer, the designer must be in position 3 and the teacher in position 5.
+
+So, the configuration would be:
+- Position 1: Musician
+- Position 2: Lawyer
+- Position 3: Designer
+- Position 4: Chef
+- Position 5: Teacher
+
+Now, let's place the jobs in the correct positions:
+
+|       |    1     |   2    |  3   |    4     |    5    |
+|-------|----------|--------|------|----------|---------|
+| Job   | Musician | Lawyer | Designer | Chef | Teacher |
+
+The final solution table is:
+
+```
+|       |    1     |   2    |  3   |    4     |    5    |
+|-------|----------|--------|------|----------|---------|
+| Job   | Musician | Lawyer | Designer | Chef | Teacher |
+```"	{'job': ['musician', 'lawyer', 'designer', 'chef', 'teacher']}	True	3	False
+Lv2-1x5-7	"Based on the given clues, let's deduce the positions of each job:
+
+1. The firefighter is between the coach and the police-officer.
+2. The firefighter is in the middle (position 3).
+3. The teacher is on the right of the police-officer.
+
+From clue 2, we know that the firefighter must be in position 3. Therefore, the sequence around the firefighter should be:
+- Position 1: Coach or Social Worker
+- Position 2: Coach or Social Worker
+- Position 3: Firefighter
+- Position 4: Police Officer
+- Position 5: Teacher
+
+Now, using clue 3, we know the teacher is to the right of the police officer. This means the police officer cannot be in position 5 (since there would be no space to the right). Thus, the police officer must be in position 4, and the teacher in position 5.
+
+So, the only remaining positions for the coach and social worker are 1 and 2. Since the firefighter is in the middle and the police officer is to the left of the teacher, the coach and social worker can be placed in any order in positions 1 and 2.
+
+Let's assume the coach is in position 1 and the social worker is in position 2 (the reverse arrangement would also work but let's use this for clarity):
+
+|       |       1       |   2   |      3      |       4        |    5    |
+|-------|--------------|-------|-------------|----------------|---------|
+| Job   |     Coach     | Social Worker | Firefighter | Police Officer | Teacher |
+
+This arrangement satisfies all the given conditions:
+- The firefighter is between the coach and the police-officer.
+- The firefighter is in the middle.
+- The teacher is on the right of the police-officer.
+
+Thus, the final solution is:
+
+```
+|       |       1       |   2   |      3      |       4        |    5    |
+| Job   |     Coach     | Social Worker | Firefighter | Police Officer | Teacher |
+```"	{'job': ['coach', 'social worker', 'firefighter', 'police officer', 'teacher']}	True	2	False
+Lv2-1x5-8	"Certainly! Let's solve the puzzle step by step based on the given clues.
+
+1. The person watching adventure movies is on the far right.
+   - This means the person watching adventure movies is in position 5.
+
+2. The person watching horror movies is on the left of the person watching adventure movies.
+   - Since the person watching adventure movies is in position 5, the person watching horror movies must be in position 4.
+
+3. The person watching western movies is on the left of the person watching action movies.
+   - This means the person watching western movies is to the left of the person watching action movies, but we need more information to determine their exact positions.
+
+4. The person watching mystery movies is between the person watching horror movies and the person watching action movies.
+   - Since the person watching horror movies is in position 4 and the person watching action movies is to the right of the person watching western movies, the person watching mystery movies must be in position 3.
+
+Given these steps, let's place the genres in the correct positions:
+
+- Position 5: Adventure
+- Position 4: Horror
+- Position 3: Mystery
+- Position 2: Western (since it must be to the left of Action)
+- Position 1: Action (the only remaining genre)
+
+So, the final arrangement is:
+
+|               |    1    |   2    |    3    |   4    |     5     |
+| Movie-Genre   | Action  | Western| Mystery | Horror | Adventure |
+
+Here is the final solution table:
+
+```
+|               |    1    |   2    |    3    |   4    |     5     |
+| Movie-Genre   | Action  | Western| Mystery | Horror | Adventure |
+```"	{'movie-genre': ['action', 'western', 'mystery', 'horror', 'adventure']}	True	3	False
+Lv2-1x5-9	"Let's solve the puzzle step by step using the given clues:
+
+1. The person driving the bus is on the far left.
+2. The person driving the bike is on the right of the person driving the roller.
+3. The person driving the snowmobile is between the person driving the bus and the person driving the boat.
+
+From clue 1, we know:
+```
+| Bus |     |     |     |     |
+```
+
+From clue 3, we know that the person driving the snowmobile is between the person driving the bus and the person driving the boat. This means the person driving the boat must be to the right of the person driving the snowmobile, which can only fit if the boat is in position 2 or 4 (since position 1 is taken by the bus).
+
+Let's consider the possible positions for the boat and snowmobile:
+
+- If the boat is in position 2, then the snowmobile must be in position 3 (since it has to be between the bus and the boat):
+```
+| Bus | Boat | Snowmobile |     |     |
+```
+
+- If the boat is in position 4, then the snowmobile must be in position 3 (since it has to be between the bus and the boat):
+```
+| Bus |     |     | Snowmobile | Boat |
+```
+
+Now, from clue 2, the person driving the bike is on the right of the person driving the roller. Let's test both scenarios:
+
+### Scenario 1: Boat in position 2
+```
+| Bus | Boat | Snowmobile | Roller | Bike |
+```
+This satisfies all the clues:
+- The person driving the bus is on the far left.
+- The person driving the bike (Bike) is on the right of the person driving the roller (Roller).
+- The person driving the snowmobile (Snowmobile) is between the person driving the bus (Bus) and the person driving the boat (Boat).
+
+### Scenario 2: Boat in position 4
+```
+| Bus |     |     | Snowmobile | Boat |
+```
+This does not work because there would be no space for the bike and roller to satisfy clue 2.
+
+Therefore, the correct arrangement is:
+
+```
+| Bus | Boat | Snowmobile | Roller | Bike |
+```
+
+So, the final solution table is:
+
+```
+| Bus | Boat | Snowmobile | Roller | Bike |
+```"	{}	False	0	False
+Lv2-1x5-10	"Certainly! Let's solve the puzzle step-by-step based on the given clues.
+
+### Clues:
+1. The person eating plum is between the person eating pineapple and the person eating apricot.
+2. The person eating strawberry is on the far right.
+3. The person eating pineapple is on the left of the person eating papaya.
+4. The person eating apricot is on the far left.
+
+### Step-by-Step Solution:
+
+1. **Clue 4**: The person eating apricot is on the far left (position 1).
+   ```
+   | Apricot |    |    |    |    | Strawberry |
+   ```
+
+2. **Clue 2**: The person eating strawberry is on the far right (position 5).
+   ```
+   | Apricot |    |    |    | Papaya | Strawberry |
+   ```
+
+3. **Clue 3**: The person eating pineapple is on the left of the person eating papaya.
+   - This means pineapple must be in position 2 or 3, and papaya must be to its right in position 3 or 4.
+   - However, since apricot is already in position 1, pineapple can only be in position 2 and papaya in position 3.
+   ```
+   | Apricot | Pineapple | Papaya |    | Strawberry |
+   ```
+
+4. **Clue 1**: The person eating plum is between the person eating pineapple and the person eating apricot.
+   - Since apricot is in position 1 and pineapple is in position 2, plum must be in position 3.
+   - But position 3 is already taken by papaya. Therefore, pineapple cannot be in position 2 and papaya in position 3.
+   - Re-evaluate the positions for pineapple and papaya:
+     - Pineapple must be in position 3 and papaya in position 4.
+   ```
+   | Apricot | Pineapple | Papaya | Plum | Strawberry |
+   ```
+
+5. **Confirming positions**:
+   - Apricot is in position 1.
+   - Pineapple is in position 3.
+   - Papaya is in position 4.
+   - Plum is in position 2.
+   - Strawberry is in position 5.
+
+### Final Solution Table:
+
+```
+|        |    1    |  2   |     3     |   4    |     5      |
+| Food   | Apricot | Plum | Pineapple | Papaya | Strawberry |
+```"	{'food': ['apricot', 'plum', 'pineapple', 'papaya', 'strawberry']}	True	5	True

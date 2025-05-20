@@ -1,0 +1,1333 @@
+id	target	step	pred	solution	pred_item	format	correct
+Einstein_orig_blue-1	blue	2	"Let's solve this step by step.
+
+### Step 1: Set up the table  
+We have 5 houses in a row, each with different attributes. We will organize the information accordingly.
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|-------|----------|-------|-----|
+| 1       | Norwegian  |       |          |       |     |
+| 2       |            |       |          |       |     |
+| 3       |            |       | Milk     |       |     |
+| 4       |            |       |          |       |     |
+| 5       |            |       |          |       |     |
+
+### Step 2: Assign Colors
+- (9) The Norwegian is in House 1.
+- (14) The Norwegian is next to the person who likes blue → **House 2 is blue**.
+- (4) The green house is to the left of the white house.
+- (5) The green house drinks coffee.
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  |        |          |       |     |
+| 2       |            | **Blue**  |          |       |     |
+| 3       |            |        | **Milk**     |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |          |       |     |
+
+### Step 3: Assign Nationalities
+- (1) The British likes red → **House 3 is Red and British**.
+- (13) The German smokes Prince → The remaining spot must be **House 4 (German)**.
+- (3) The Danish drinks tea → **House 2 (Danish)**.
+- The only remaining nationality is **Swedish**, so House 5 is **Swedish**.
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet  |
+|---------|------------|--------|----------|-------|------|
+| 1       | Norwegian  |        |          |       |      |
+| 2       | Danish     | **Blue**  | **Tea**     |       |      |
+| 3       | British    | **Red**   | **Milk**     |       |      |
+| 4       | German     | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | Swedish    | **White**  |          |       |      |
+
+### Step 4: Assign Cigars
+- (7) The Dunhill smoker likes yellow → The only color left is yellow for **House 1**.
+- (12) The Bluemaster smoker drinks beer.
+- (10,15) Blend is next to the cat owner and next to the water drinker.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** |          | **Dunhill**  |      |
+| 2       | Danish     | **Blue**  | **Tea**     | **Blend**  |      |
+| 3       | British    | **Red**   | **Milk**     | **Pall Mall** | **Bird** |
+| 4       | German     | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | Swedish    | **White**  | **Beer**  | **Bluemaster**  | **Dog** |
+
+### Step 5: Assign Beverages
+- (15) Blend smoker is next to the water drinker → **House 1 drinks water**.
+- The only beverage left is **House 5 (Beer)**.
+
+| House # | Nationality | Color  | Beverage  | Cigar  | Pet  |
+|---------|------------|--------|-----------|--------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill**  | **Cat**  |
+| 2       | Danish     | **Blue**  | **Tea**     | **Blend**  | **Horse**  |
+| 3       | British    | **Red**   | **Milk**     | **Pall Mall** | **Bird**  |
+| 4       | German     | **Green** | **Coffee**  | **Prince**  | **Fish**  |
+| 5       | Swedish    | **White**  | **Beer**  | **Bluemaster**  | **Dog**  |
+
+### Answer:
+**blue:2**"	blue:2	blue:2	True	True
+Einstein_orig_green-1	green	3	"We will solve this logic puzzle step by step.
+
+---
+
+### **Step 1: Set Up the Table**
+We have 5 houses in a row. Each house has:
+- A **Nationality**
+- A **Color**
+- A **Beverage**
+- A **Cigar Brand**
+- A **Pet**
+
+---
+
+### **Step 2: Place Given Hints**
+We start with direct clues:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|-------|----------|-------|-----|
+| 1       | Norwegian  |       |          |       |     |
+| 2       |            |       |          |       |     |
+| 3       |            |       | **Milk**  |       |     |
+| 4       |            |       |          |       |     |
+| 5       |            |       |          |       |     |
+
+- **(9) The Norwegian is in the first house.**
+- **(8) The person drinking milk is in the middle (House 3).**
+- **(14) The Norwegian lives next to the blue house → So, House 2 is Blue.**
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  |        |          |       |     |
+| 2       |            | **Blue** |          |       |     |
+| 3       |            |        | **Milk**  |       |     |
+| 4       |            |        |          |       |     |
+| 5       |            |        |          |       |     |
+
+- **(4) The Green house is to the left of the White house.**
+- **(5) The Green house drinks coffee.**
+- That means House 4 is Green and drinks Coffee, and House 5 is White.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       |            | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(1) The British lives in the Red house.**
+- That means House 3 is **Red** and the British lives there.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(13) The German smokes Prince.**  
+  Since **House 4 is Green**, it must belong to the **German**.
+
+| House # | Nationality | Color  | Beverage  | Cigar  | Pet |
+|---------|------------|--------|-----------|--------|-----|
+| 1       | Norwegian  |        |           |        |     |
+| 2       |            | **Blue**  |           |        |     |
+| 3       | **British** | **Red**  | **Milk**   |        |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |        |     |
+
+- **(3) The Danish drinks Tea → So House 2 is Danish.**
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       | **Danish**  | **Blue**  | **Tea**      |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |       |     |
+
+- The only nationality left is **Swedish**, so House 5 is **Swedish**.
+- **(2) The Swedish owns a dog** → House 5 has a **dog**.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet  |
+|---------|------------|--------|-----------|--------|------|
+| 1       | Norwegian  |        |           |        |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      |        |      |
+| 3       | **British** | **Red**  | **Milk**   |        |      |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | **Swedish** | **White**  |           |        | **Dog**  |
+
+- **(7) The person who likes Yellow smokes Dunhill** → House 1 must be Yellow and smokes Dunhill.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** |          | **Dunhill** |      |
+| 2       | **Danish**  | **Blue**  | **Tea**  |        |      |
+| 3       | **British** | **Red**   | **Milk** |        | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(6) The Pall Mall smoker owns the bird** → House 3 must smoke Pall Mall.
+
+| House # | Nationality | Color  | Beverage  | Cigar       | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** |           | **Dunhill**  |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(15) Blend is next to the Water drinker** → House 1 drinks **Water**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill** | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**  | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**   | **Milk** | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+---
+
+### **Final Answer**
+**green:4**"	green:4	green:4	True	True
+Einstein_orig_red-1	red	4	"From solving the logic puzzle step by step, we determine the house positions as follows:
+
+| House # | Nationality | Color  | Beverage  | Cigar        | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill**  | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+Thus, the **Red** house is in position **3**.
+
+**Answer: red:3**."	red:3	red:3	True	True
+Einstein_orig_white-1	white	3	"We will solve this logic puzzle step by step.
+
+---
+
+### **Step 1: Setting up the grid**
+There are 5 houses, so we represent them as a table:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | ?          | ?      | ?        | ?     | ?   |
+| 2       | ?          | ?      | ?        | ?     | ?   |
+| 3       | ?          | ?      | ?        | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 2: Placing direct clues**
+From **Clue 9**, the **Norwegian** lives in **House 1**.  
+From **Clue 14**, the **Norwegian** lives next to the **blue** house → **House 2 is Blue**.  
+From **Clue 8**, **Milk is drunk in the middle house** → **House 3 has Milk**.  
+From **Clue 1**, **The British lives in the Red house** → **House 3 is Red**.
+
+Now, the table looks like this:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | ?      | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 3: Using the color clues**
+From **Clue 4**, **Green is to the left of White** → Green is either **House 4 or House 2**.  
+From **Clue 5**, **Green drinks Coffee**.  
+Since House 2 (Blue) is not Green, Green must be **House 4**, and White must be **House 5**.
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | Yellow | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | Green  | Coffee   | ?     | ?   |
+| 5       | ?          | White  | ?        | ?     | ?   |
+
+Thus, the **White house is House 5**.
+
+### **Final Answer**
+**white:5**"	white:5	white:5	True	True
+Einstein_orig_yellow-1	yellow	4	"We will solve this step by step.  
+
+---
+
+### **Step 1: Setting up the grid**
+We have 5 houses with different characteristics.  
+
+| House # | Nationality | Color | Beverage | Cigar | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | ?          | ?      | ?        | ?      | ?    |
+| 2       | ?          | ?      | ?        | ?      | ?    |
+| 3       | ?          | ?      | ?        | ?      | ?    |
+| 4       | ?          | ?      | ?        | ?      | ?    |
+| 5       | ?          | ?      | ?        | ?      | ?    |
+
+---
+
+### **Step 2: Placing direct clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **blue** house → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+- **Clue 4**: **Green is to the left of White**.
+- **Clue 5**: **Green drinks Coffee**.
+- Since **House 2 is Blue**, **House 4 must be Green**, and **House 5 must be White**.
+- **Clue 7**: **The person who likes Yellow smokes Dunhill**. Since we only have one remaining house color, **House 1 is Yellow**.
+
+Thus, our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill | ?    |
+| 2       | ?          | Blue   | ?        | ?       | ?    |
+| 3       | British    | Red    | Milk     | ?       | ?    |
+| 4       | ?          | Green  | Coffee   | ?       | ?    |
+| 5       | ?          | White  | ?        | ?       | ?    |
+
+---
+
+### **Final Answer**
+**yellow:1**"	yellow:1	yellow:1	True	True
+Einstein_orig_british-1	british	4	"We will solve the puzzle step by step to determine where the **British** person lives.
+
+---
+
+### **Step 1: Organizing the Houses**
+We have **five houses** and need to assign each **nationality, color, beverage, cigar, and pet**.
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | ?          | ?      | ?        | ?       | ?    |
+| 2       | ?          | ?      | ?        | ?       | ?    |
+| 3       | ?          | ?      | ?        | ?       | ?    |
+| 4       | ?          | ?      | ?        | ?       | ?    |
+| 5       | ?          | ?      | ?        | ?       | ?    |
+
+---
+
+### **Step 2: Placing Direct Clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **Blue house** → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+
+Our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | Norwegian  | ?      | ?        | ?       | ?    |
+| 2       | ?          | Blue   | ?        | ?       | ?    |
+| 3       | British    | Red    | Milk     | ?       | ?    |
+| 4       | ?          | ?      | ?        | ?       | ?    |
+| 5       | ?          | ?      | ?        | ?       | ?    |
+
+---
+
+### **Final Answer**
+**british:3**"	british:3	british:3	True	True
+Einstein_orig_danish-1	danish	6	"From the logical deductions, we determined that the **Danish** person lives in **House 2**.
+
+### **Final Answer:**
+**danish:2**"	danish:2	danish:2	True	True
+Einstein_orig_german-1	german	7	"From solving the logic puzzle, the **German** person is in **House 4**.
+
+### **Final Answer:**
+**german:4**"	german:4	german:4	True	True
+Einstein_orig_norwegian-1	norwegian	1	"The **Norwegian** is in **House 1**.
+
+### **Final Answer:**  
+**norwegian:1**"	norwegian:1	norwegian:1	True	True
+Einstein_orig_swedish-1	swedish	7	"The **Swedish** is in **House 5**.
+
+### **Final Answer:**  
+**swedish:5**"	swedish:5	swedish:5	True	True
+Einstein_orig_beer-1	beer	6	"The **person drinking beer** is in **House 4**.  
+
+### **Final Answer:**  
+**beer:4**"	beer:5	beer:4	True	False
+Einstein_orig_coffee-1	coffee	3	"The **person drinking coffee** is in **House 4**.  
+
+### **Final Answer:**  
+**coffee:4**"	coffee:4	coffee:4	True	True
+Einstein_orig_milk-1	milk	1	"The **person drinking milk** is in **House 3**.  
+
+### **Final Answer:**  
+**milk:3**"	milk:3	milk:3	True	True
+Einstein_orig_tea-1	tea	6	"The **person drinking tea** is in **House 2**.  
+
+### **Final Answer:**  
+**tea:2**"	tea:2	tea:2	True	True
+Einstein_orig_water-1	water	6	"The **person drinking water** is in **House 5**.  
+
+### **Final Answer:**  
+**water:5**"	water:1	water:5	True	False
+Einstein_orig_bluemaster-1	bluemaster	6	"The **Bluemaster smoker** is in **House 4**.  
+
+### **Final Answer:**  
+**bluemaster:4**"	bluemaster:5	bluemaster:4	True	False
+Einstein_orig_dunhill-1	dunhill	5	"The **Dunhill smoker** is in **House 1**.  
+
+### **Final Answer:**  
+**dunhill:1**"	dunhill:1	dunhill:1	True	True
+Einstein_orig_pall-mall-1	pall-mall	8	"The **Pall Mall smoker** is in **House 3**.  
+
+### **Final Answer:**  
+**pall-mall:3**"	pall-mall:3	pall-mall:3	True	True
+Einstein_orig_prince-1	prince	7	"The **Prince smoker** is in **House 4**.  
+
+### **Final Answer:**  
+**prince:4**"	prince:4	prince:4	True	True
+Einstein_orig_blend-1	blend	6	"The **Blend smoker** is in **House 2**.  
+
+### **Final Answer:**  
+**blend:2**"	blend:2	blend:2	True	True
+Einstein_orig_cat-1	cat	6	"The **owner of the cat** is in **House 3**.  
+
+### **Final Answer:**  
+**cat:3**"	cat:1	cat:3	True	False
+Einstein_orig_bird-1	bird	8	"The **owner of the bird** is in **House 3**.  
+
+### **Final Answer:**  
+**bird:3**"	bird:3	bird:3	True	True
+Einstein_orig_dog-1	dog	7	"The **owner of the dog** is in **House 5**.  
+
+### **Final Answer:**  
+**dog:5**"	dog:5	dog:5	True	True
+Einstein_orig_fish-1	fish	9	"The **owner of the fish** is in **House 4**.  
+
+### **Final Answer:**  
+**fish:4**"	fish:4	fish:4	True	True
+Einstein_orig_horse-1	horse	5	"The **owner of the horse** is in **House 2**.  
+
+### **Final Answer:**  
+**horse:2**"	horse:2	horse:2	True	True
+Einstein_orig_blue-2	blue	2	"Let's solve the puzzle step by step.
+
+---
+
+### **Step 1: Structure the Problem**
+We have 5 houses in a row. Each house has:
+- A **Nationality**
+- A **Color**
+- A **Beverage**
+- A **Cigar Brand**
+- A **Pet**
+
+We'll create a table to organize our data.
+
+---
+
+### **Step 2: Place Given Hints**
+We start with direct clues:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|-------|----------|-------|-----|
+| 1       | Norwegian  |       |          |       |     |
+| 2       |            |       |          |       |     |
+| 3       |            |       | **Milk**  |       |     |
+| 4       |            |       |          |       |     |
+| 5       |            |       |          |       |     |
+
+- **(9) The Norwegian is in the first house.**
+- **(8) The person drinking milk is in the middle (House 3).**
+- **(14) The Norwegian lives next to the blue house → So, House 2 is Blue.**
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  |        |          |       |     |
+| 2       |            | **Blue** |          |       |     |
+| 3       |            |        | **Milk**  |       |     |
+| 4       |            |        |          |       |     |
+| 5       |            |        |          |       |     |
+
+- **(4) The Green house is to the left of the White house.**
+- **(5) The Green house drinks coffee.**
+- That means House 4 is Green and drinks Coffee, and House 5 is White.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       |            |        | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(1) The British lives in the Red house.**
+- That means House 3 is **Red** and the British lives there.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(13) The German smokes Prince.**  
+  Since **House 4 is Green**, it must belong to the **German**.
+
+| House # | Nationality | Color  | Beverage  | Cigar  | Pet |
+|---------|------------|--------|-----------|--------|-----|
+| 1       | Norwegian  |        |           |        |     |
+| 2       |            | **Blue**  |           |        |     |
+| 3       | **British** | **Red**  | **Milk**   |        |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |        |     |
+
+- **(3) The Danish drinks Tea → So House 2 is Danish.**
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       | **Danish**  | **Blue**  | **Tea**      |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |       |     |
+
+- The only nationality left is **Swedish**, so House 5 is **Swedish**.
+- **(2) The Swedish owns a dog** → House 5 has a **dog**.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet  |
+|---------|------------|--------|-----------|--------|------|
+| 1       | Norwegian  |        |           |        |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      |        |      |
+| 3       | **British** | **Red**  | **Milk**   |        |      |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | **Swedish** | **White**  |           |        | **Dog**  |
+
+- **(7) The person who likes Yellow smokes Dunhill** → House 1 must be Yellow and smokes Dunhill.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** |          | **Dunhill** |      |
+| 2       | **Danish**  | **Blue**  | **Tea**  |        |      |
+| 3       | **British** | **Red**   | **Milk** |        | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(6) The Pall Mall smoker owns the bird** → House 3 must smoke Pall Mall.
+
+| House # | Nationality | Color  | Beverage  | Cigar       | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** |           | **Dunhill**  |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(15) Blend is next to the Water drinker** → House 1 drinks **Water**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill** | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**  | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**   | **Milk** | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+---
+
+### **Final Answer**
+**blue:2**"	blue:2	blue:2	True	True
+Einstein_orig_green-2	green	3	"We will solve this logic puzzle step by step.
+
+---
+
+### **Step 1: Set Up the Table**
+We have 5 houses in a row. Each house has:
+- A **Nationality**
+- A **Color**
+- A **Beverage**
+- A **Cigar Brand**
+- A **Pet**
+
+---
+
+### **Step 2: Place Given Hints**
+We start with direct clues:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|-------|----------|-------|-----|
+| 1       | Norwegian  |       |          |       |     |
+| 2       |            |       |          |       |     |
+| 3       |            |       | **Milk**  |       |     |
+| 4       |            |       |          |       |     |
+| 5       |            |       |          |       |     |
+
+- **(9) The Norwegian is in the first house.**
+- **(8) The person drinking milk is in the middle (House 3).**
+- **(14) The Norwegian lives next to the blue house → So, House 2 is Blue.**
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  |        |          |       |     |
+| 2       |            | **Blue** |          |       |     |
+| 3       |            |        | **Milk**  |       |     |
+| 4       |            |        |          |       |     |
+| 5       |            |        |          |       |     |
+
+- **(4) The Green house is to the left of the White house.**
+- **(5) The Green house drinks coffee.**
+- That means House 4 is Green and drinks Coffee, and House 5 is White.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       |            | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(1) The British lives in the Red house.**
+- That means House 3 is **Red** and the British lives there.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(13) The German smokes Prince.**  
+  Since **House 4 is Green**, it must belong to the **German**.
+
+| House # | Nationality | Color  | Beverage  | Cigar  | Pet |
+|---------|------------|--------|-----------|--------|-----|
+| 1       | Norwegian  |        |           |        |     |
+| 2       |            | **Blue**  |           |        |     |
+| 3       | **British** | **Red**  | **Milk**   |        |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |        |     |
+
+- **(3) The Danish drinks Tea → So House 2 is Danish.**
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       | **Danish**  | **Blue**  | **Tea**      |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |       |     |
+
+- The only nationality left is **Swedish**, so House 5 is **Swedish**.
+- **(2) The Swedish owns a dog** → House 5 has a **dog**.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet  |
+|---------|------------|--------|-----------|--------|------|
+| 1       | Norwegian  |        |           |        |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      |        |      |
+| 3       | **British** | **Red**  | **Milk**   |        |      |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | **Swedish** | **White**  |           |        | **Dog**  |
+
+- **(7) The person who likes Yellow smokes Dunhill** → House 1 must be Yellow and smokes Dunhill.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** |          | **Dunhill** |      |
+| 2       | **Danish**  | **Blue**  | **Tea**  |        |      |
+| 3       | **British** | **Red**   | **Milk** |        | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(6) The Pall Mall smoker owns the bird** → House 3 must smoke Pall Mall.
+
+| House # | Nationality | Color  | Beverage  | Cigar       | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** |           | **Dunhill**  |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(15) Blend is next to the Water drinker** → House 1 drinks **Water**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill** | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**  | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**   | **Milk** | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+---
+
+### **Final Answer**
+**green:4**"	green:4	green:4	True	True
+Einstein_orig_red-2	red	4	"Let's solve the puzzle step by step.
+
+---
+
+### Step 1: Organizing the Clues
+We have 5 houses with unique attributes:
+- **Colors**: Blue, Green, Red, White, Yellow
+- **Nationalities**: British, Danish, German, Norwegian, Swedish
+- **Beverages**: Beer, Coffee, Milk, Tea, Water
+- **Cigars**: Bluemaster, Dunhill, Pall Mall, Prince, Blend
+- **Pets**: Cat, Bird, Dog, Fish, Horse
+
+---
+
+### Step 2: Initial Placements from Clues
+1. **The Norwegian is in the first house** → (Clue 9)
+2. **The Norwegian lives next to the blue house** → (Clue 14)  
+   - So, **House 2 is Blue**.
+3. **Milk is drunk in the middle house (House 3)** → (Clue 8)
+4. **The green house is on the left of the white house** → (Clue 4)  
+   - So, Green is **before** White.
+5. **The British lives in the red house** → (Clue 1)
+
+---
+
+### Step 3: Arranging Colors  
+Since **House 2 is Blue**, let's assign the colors logically:
+
+| House # | Color  |  
+|---------|--------|  
+| 1       | Yellow  | *(From Clue 7, since Dunhill is smoked here)*  
+| 2       | Blue  | *(From Clue 14)*  
+| 3       | Red  | *(Since the British lives here, from Clue 1)*  
+| 4       | Green | *(From Clue 4, as it's before White)*  
+| 5       | White | *(From Clue 4, as it's after Green)*  
+
+Thus, **Red is in House 3**.
+
+---
+
+### Answer:
+**red:3**"	red:3	red:3	True	True
+Einstein_orig_white-2	white	3	"We will now solve the puzzle step by step.
+
+---
+
+### **Step 1: Setting up the grid**
+There are 5 houses, so we represent them as a table:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | ?          | ?      | ?        | ?     | ?   |
+| 2       | ?          | ?      | ?        | ?     | ?   |
+| 3       | ?          | ?      | ?        | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 2: Placing direct clues**
+From **Clue 9**, the **Norwegian** lives in **House 1**.  
+From **Clue 14**, the **Norwegian** lives next to the **blue** house → **House 2 is Blue**.  
+From **Clue 8**, **Milk is drunk in the middle house** → **House 3 has Milk**.  
+From **Clue 1**, **The British lives in the Red house** → **House 3 is Red**.
+
+Now, the table looks like this:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | ?      | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 3: Using the color clues**
+From **Clue 4**, **Green is to the left of White** → Green is either **House 4 or House 2**.  
+From **Clue 5**, **Green drinks Coffee**.  
+Since House 2 (Blue) is not Green, Green must be **House 4**, and White must be **House 5**.
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | Yellow | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | Green  | Coffee   | ?     | ?   |
+| 5       | ?          | White  | ?        | ?     | ?   |
+
+Thus, the **White house is House 5**.
+
+### **Final Answer**
+**white:5**"	white:5	white:5	True	True
+Einstein_orig_yellow-2	yellow	4	"Let's solve this step by step.  
+
+---
+
+### **Step 1: Setting up the grid**
+We have 5 houses with different characteristics.  
+
+| House # | Nationality | Color | Beverage | Cigar | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | ?          | ?      | ?        | ?      | ?    |
+| 2       | ?          | ?      | ?        | ?      | ?    |
+| 3       | ?          | ?      | ?        | ?      | ?    |
+| 4       | ?          | ?      | ?        | ?      | ?    |
+| 5       | ?          | ?      | ?        | ?      | ?    |
+
+---
+
+### **Step 2: Placing direct clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **blue** house → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+- **Clue 4**: **Green is to the left of White**.
+- **Clue 5**: **Green drinks Coffee**.
+- Since **House 2 is Blue**, **House 4 must be Green**, and **House 5 must be White**.
+- **Clue 7**: **The person who likes Yellow smokes Dunhill**. Since we only have one remaining house color, **House 1 is Yellow**.
+
+Thus, our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill | ?    |
+| 2       | ?          | Blue   | ?        | ?       | ?    |
+| 3       | British    | Red    | Milk     | ?       | ?    |
+| 4       | ?          | Green  | Coffee   | ?       | ?    |
+| 5       | ?          | White  | ?        | ?       | ?    |
+
+---
+
+### **Final Answer**
+**yellow:1**"	yellow:1	yellow:1	True	True
+Einstein_orig_british-2	british	4	"We will solve the puzzle step by step to determine where the **British** person lives.
+
+---
+
+### **Step 1: Organizing the Houses**
+We have **five houses** and need to assign each **nationality, color, beverage, cigar, and pet**.
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | ?          | ?      | ?        | ?       | ?    |
+| 2       | ?          | ?      | ?        | ?       | ?    |
+| 3       | ?          | ?      | ?        | ?       | ?    |
+| 4       | ?          | ?      | ?        | ?       | ?    |
+| 5       | ?          | ?      | ?        | ?       | ?    |
+
+---
+
+### **Step 2: Placing Direct Clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **Blue house** → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+
+Our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | Norwegian  | ?      | ?        | ?       | ?    |
+| 2       | ?          | Blue   | ?        | ?       | ?    |
+| 3       | British    | Red    | Milk     | ?       | ?    |
+| 4       | ?          | ?      | ?        | ?       | ?    |
+| 5       | ?          | ?      | ?        | ?       | ?    |
+
+---
+
+### **Final Answer**
+**british:3**"	british:3	british:3	True	True
+Einstein_orig_danish-2	danish	6	"From the logical deductions, we determined that the **Danish** person lives in **House 2**.
+
+### **Final Answer:**
+**danish:2**"	danish:2	danish:2	True	True
+Einstein_orig_german-2	german	7	"From solving the logic puzzle, the **German** person is in **House 4**.
+
+### **Final Answer:**
+**german:4**"	german:4	german:4	True	True
+Einstein_orig_norwegian-2	norwegian	1	"The **Norwegian** is in **House 1**.
+
+### **Final Answer:**  
+**norwegian:1**"	norwegian:1	norwegian:1	True	True
+Einstein_orig_swedish-2	swedish	7	"The **Swedish** is in **House 5**.  
+
+### **Final Answer:**  
+**swedish:5**"	swedish:5	swedish:5	True	True
+Einstein_orig_beer-2	beer	6	"The **person drinking beer** is in **House 4**.  
+
+### **Final Answer:**  
+**beer:4**"	beer:5	beer:4	True	False
+Einstein_orig_coffee-2	coffee	3	"The **person drinking coffee** is in **House 4**.  
+
+### **Final Answer:**  
+**coffee:4**"	coffee:4	coffee:4	True	True
+Einstein_orig_milk-2	milk	1	"The **person drinking milk** is in **House 3**.  
+
+### **Final Answer:**  
+**milk:3**"	milk:3	milk:3	True	True
+Einstein_orig_tea-2	tea	6	"The **person drinking tea** is in **House 2**.  
+
+### **Final Answer:**  
+**tea:2**"	tea:2	tea:2	True	True
+Einstein_orig_water-2	water	6	"The **person drinking water** is in **House 5**.  
+
+### **Final Answer:**  
+**water:5**"	water:1	water:5	True	False
+Einstein_orig_bluemaster-2	bluemaster	6	"The **Bluemaster smoker** is in **House 4**.  
+
+### **Final Answer:**  
+**bluemaster:4**"	bluemaster:5	bluemaster:4	True	False
+Einstein_orig_dunhill-2	dunhill	5	"The **Dunhill smoker** is in **House 1**.  
+
+### **Final Answer:**  
+**dunhill:1**"	dunhill:1	dunhill:1	True	True
+Einstein_orig_pall-mall-2	pall-mall	8	"The **Pall Mall smoker** is in **House 3**.  
+
+### **Final Answer:**  
+**pall-mall:3**"	pall-mall:3	pall-mall:3	True	True
+Einstein_orig_prince-2	prince	7	"The **Prince smoker** is in **House 4**.  
+
+### **Final Answer:**  
+**prince:4**"	prince:4	prince:4	True	True
+Einstein_orig_blend-2	blend	6	"The **Blend smoker** is in **House 2**.  
+
+### **Final Answer:**  
+**blend:2**"	blend:2	blend:2	True	True
+Einstein_orig_cat-2	cat	6	"The **owner of the cat** is in **House 4**.  
+
+### **Final Answer:**  
+**cat:4**"	cat:1	cat:4	True	False
+Einstein_orig_bird-2	bird	8	"The **owner of the bird** is in **House 3**.  
+
+### **Final Answer:**  
+**bird:3**"	bird:3	bird:3	True	True
+Einstein_orig_dog-2	dog	7	"The **owner of the dog** is in **House 5**.  
+
+### **Final Answer:**  
+**dog:5**"	dog:5	dog:5	True	True
+Einstein_orig_fish-2	fish	9	"The **owner of the fish** is in **House 4**.  
+
+### **Final Answer:**  
+**fish:4**"	fish:4	fish:4	True	True
+Einstein_orig_horse-2	horse	5	"The **owner of the horse** is in **House 2**.  
+
+### **Final Answer:**  
+**horse:2**"	horse:2	horse:2	True	True
+Einstein_orig_blue-3	blue	2	"Let's solve this logic puzzle systematically.
+
+---
+
+### **Step 1: Structure the Problem**
+We have 5 houses in a row. Each house has:
+- A **Nationality**
+- A **Color**
+- A **Beverage**
+- A **Cigar Brand**
+- A **Pet**
+
+We will fill in the table step by step.
+
+---
+
+### **Step 2: Place Given Hints**
+We start with direct clues:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|-------|----------|-------|-----|
+| 1       | Norwegian  |       |          |       |     |
+| 2       |            |       |          |       |     |
+| 3       |            |       | **Milk**  |       |     |
+| 4       |            |       |          |       |     |
+| 5       |            |       |          |       |     |
+
+- **(9) The Norwegian is in the first house.**
+- **(8) The person drinking milk is in the middle (House 3).**
+- **(14) The Norwegian lives next to the blue house → So, House 2 is Blue.**
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  |        |          |       |     |
+| 2       |            | **Blue** |          |       |     |
+| 3       |            |        | **Milk**  |       |     |
+| 4       |            |        |          |       |     |
+| 5       |            |        |          |       |     |
+
+- **(4) The Green house is to the left of the White house.**
+- **(5) The Green house drinks coffee.**
+- That means House 4 is Green and drinks Coffee, and House 5 is White.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       |            |        | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(1) The British lives in the Red house.**
+- That means House 3 is **Red** and the British lives there.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       |            | **Blue**  |           |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       |            | **Green** | **Coffee**  |       |     |
+| 5       |            | **White**  |           |       |     |
+
+- **(13) The German smokes Prince.**  
+  Since **House 4 is Green**, it must belong to the **German**.
+
+| House # | Nationality | Color  | Beverage  | Cigar  | Pet |
+|---------|------------|--------|-----------|--------|-----|
+| 1       | Norwegian  |        |           |        |     |
+| 2       |            | **Blue**  |           |        |     |
+| 3       | **British** | **Red**  | **Milk**   |        |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |        |     |
+
+- **(3) The Danish drinks Tea → So House 2 is Danish.**
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet |
+|---------|------------|--------|-----------|-------|-----|
+| 1       | Norwegian  |        |           |       |     |
+| 2       | **Danish**  | **Blue**  | **Tea**      |       |     |
+| 3       | **British** | **Red**  | **Milk**   |       |     |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |     |
+| 5       |            | **White**  |           |       |     |
+
+- The only nationality left is **Swedish**, so House 5 is **Swedish**.
+- **(2) The Swedish owns a dog** → House 5 has a **dog**.
+
+| House # | Nationality | Color  | Beverage  | Cigar | Pet  |
+|---------|------------|--------|-----------|--------|------|
+| 1       | Norwegian  |        |           |        |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      |        |      |
+| 3       | **British** | **Red**  | **Milk**   |        |      |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  |      |
+| 5       | **Swedish** | **White**  |           |        | **Dog**  |
+
+- **(7) The person who likes Yellow smokes Dunhill** → House 1 must be Yellow and smokes Dunhill.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** |          | **Dunhill** |      |
+| 2       | **Danish**  | **Blue**  | **Tea**  |        |      |
+| 3       | **British** | **Red**   | **Milk** |        | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(6) The Pall Mall smoker owns the bird** → House 3 must smoke Pall Mall.
+
+| House # | Nationality | Color  | Beverage  | Cigar       | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** |           | **Dunhill**  |      |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee**  | **Prince**  | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+- **(15) Blend is next to the Water drinker** → House 1 drinks **Water**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill** | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**  | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**   | **Milk** | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+---
+
+### **Final Answer**
+**blue:2**"	blue:2	blue:2	True	True
+Einstein_orig_green-3	green	3	"From solving the logic puzzle step by step, we determine the house positions as follows:
+
+| House # | Nationality | Color  | Beverage  | Cigar        | Pet  |
+|---------|------------|--------|-----------|-------------|------|
+| 1       | Norwegian  | **Yellow** | **Water**  | **Dunhill**  | **Cat**  |
+| 2       | **Danish**  | **Blue**  | **Tea**      | **Blend**  | **Horse**  |
+| 3       | **British** | **Red**  | **Milk**   | **Pall Mall** | **Bird** |
+| 4       | **German**  | **Green** | **Coffee** | **Prince** | **Fish** |
+| 5       | **Swedish** | **White**  | **Beer** | **Bluemaster** | **Dog** |
+
+Thus, the **Green** house is in position **4**.
+
+**Answer: green:4**."	green:4	green:4	True	True
+Einstein_orig_red-3	red	4	"We will solve this step by step using logical deductions.
+
+---
+
+### **Step 1: Setting up the grid**
+There are 5 houses, so we represent them as a table:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | ?          | ?      | ?        | ?     | ?   |
+| 2       | ?          | ?      | ?        | ?     | ?   |
+| 3       | ?          | ?      | ?        | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 2: Placing direct clues**
+From **Clue 9**, the **Norwegian** lives in **House 1**.  
+From **Clue 14**, the **Norwegian** lives next to the **blue** house → **House 2 is Blue**.  
+From **Clue 8**, **Milk is drunk in the middle house** → **House 3 has Milk**.  
+From **Clue 1**, **The British lives in the Red house** → **House 3 is Red**.
+
+Now, the table looks like this:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | ?      | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 3: Using the color clues**
+From **Clue 4**, **Green is to the left of White** → Green is either **House 4 or House 2**.  
+From **Clue 5**, **Green drinks Coffee**.  
+Since House 2 (Blue) is not Green, Green must be **House 4**, and White must be **House 5**.
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | Yellow | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | Green  | Coffee   | ?     | ?   |
+| 5       | ?          | White  | ?        | ?     | ?   |
+
+From **Clue 7**, **Yellow house smokes Dunhill** → House 1 smokes **Dunhill**.
+
+---
+
+### **Step 4: Filling in remaining nationalities**
+From **Clue 3**, **Danish drinks Tea** → House 2 must be **Danish** (since it's the only free slot where we don't know the drink yet).
+
+From **Clue 13**, **German smokes Prince** → The only remaining nationality for **House 4** is **German**.
+
+The only missing nationality is **Swedish**, which must be **House 5**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill | ?  |
+| 2       | Danish     | Blue   | Tea      | ?      | ?  |
+| 3       | British    | Red    | Milk     | ?      | ?  |
+| 4       | German     | Green  | Coffee   | Prince | ?  |
+| 5       | Swedish    | White  | ?        | ?      | Dog |
+
+---
+
+### **Step 5: Filling in beverages**
+From **Clue 12**, **Bluemaster smokes beer** → That must be **House 5**.
+
+From **Clue 15**, **Blend smoker is next to the person who drinks Water**. Since House 5 drinks Beer and House 3 drinks Milk, **House 2 must drink Water**, and the **Blend smoker** must be **House 1 or 3**.
+
+| House # | Nationality | Color  | Beverage | Cigar  | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill | ?  |
+| 2       | Danish     | Blue   | Water    | ?      | ?  |
+| 3       | British    | Red    | Milk     | ?      | ?  |
+| 4       | German     | Green  | Coffee   | Prince | ?  |
+| 5       | Swedish    | White  | Beer     | Bluemaster | Dog |
+
+From **Clue 6**, **Pall-Mall smokes Bird** → This means **House 3 (British) smokes Pall-Mall and owns Bird**.
+
+From **Clue 11**, **Horses are next to the Dunhill smoker** → This means **House 2 owns Horses**.
+
+From **Clue 10**, **Blend smoker is next to the Cat owner**. Since House 1 and 3 are possibilities for Blend, **House 2 cannot have Cat** → So **House 1 owns the Cat**.
+
+The only pet missing is **Fish**, which must belong to **House 4**.
+
+| House # | Nationality | Color  | Beverage | Cigar      | Pet  |
+|---------|------------|--------|----------|-----------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill   | Cat  |
+| 2       | Danish     | Blue   | Water    | Blend     | Horse |
+| 3       | British    | Red    | Milk     | Pall-Mall | Bird |
+| 4       | German     | Green  | Coffee   | Prince    | Fish |
+| 5       | Swedish    | White  | Beer     | Bluemaster | Dog |
+
+The only missing drink is **Orange Juice**, which belongs to **House 1**.
+
+---
+
+### **Final Solution**
+| House # | Nationality | Color  | Beverage    | Cigar       | Pet   |
+|---------|------------|--------|------------|------------|------|
+| 1       | Norwegian  | Yellow | Orange Juice | Dunhill    | Cat  |
+| 2       | Danish     | Blue   | Water       | Blend      | Horse |
+| 3       | British    | Red    | Milk        | Pall-Mall  | Bird |
+| 4       | German     | Green  | Coffee      | Prince     | Fish |
+| 5       | Swedish    | White  | Beer        | Bluemaster | Dog  |
+
+Thus, **Red is in House 3**.
+
+### **Final Answer**
+**red:3**"	red:3	red:3	True	True
+Einstein_orig_white-3	white	3	"We will solve this logic puzzle step by step.
+
+---
+
+### **Step 1: Setting up the grid**
+We have 5 houses with different characteristics. Let’s structure our table:
+
+| House # | Nationality | Color | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | ?          | ?      | ?        | ?     | ?   |
+| 2       | ?          | ?      | ?        | ?     | ?   |
+| 3       | ?          | ?      | ?        | ?     | ?   |
+| 4       | ?          | ?      | ?        | ?     | ?   |
+| 5       | ?          | ?      | ?        | ?     | ?   |
+
+---
+
+### **Step 2: Placing direct clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **blue** house → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+- **Clue 4**: **Green is to the left of White**.
+- **Clue 5**: **Green drinks Coffee**.
+- Since **House 2 is Blue**, **House 4 must be Green**, and **House 5 must be White**.
+
+Thus, our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar | Pet |
+|---------|------------|--------|----------|-------|-----|
+| 1       | Norwegian  | Yellow | ?        | ?     | ?   |
+| 2       | ?          | Blue   | ?        | ?     | ?   |
+| 3       | British    | Red    | Milk     | ?     | ?   |
+| 4       | ?          | Green  | Coffee   | ?     | ?   |
+| 5       | ?          | White  | ?        | ?     | ?   |
+
+---
+
+### **Final Answer**
+**white:5**"	white:5	white:5	True	True
+Einstein_orig_yellow-3	yellow	4	"We will solve the puzzle step by step and determine where **yellow** is.  
+
+---
+
+### **Step 1: Organizing the houses**
+We have **five houses** and need to assign each **nationality, color, beverage, cigar, and pet**.
+
+| House # | Nationality | Color | Beverage | Cigar | Pet  |
+|---------|------------|--------|----------|--------|------|
+| 1       | ?          | ?      | ?        | ?      | ?    |
+| 2       | ?          | ?      | ?        | ?      | ?    |
+| 3       | ?          | ?      | ?        | ?      | ?    |
+| 4       | ?          | ?      | ?        | ?      | ?    |
+| 5       | ?          | ?      | ?        | ?      | ?    |
+
+---
+
+### **Step 2: Placing Direct Clues**
+- **Clue 9**: The **Norwegian** lives in **House 1**.
+- **Clue 14**: The **Norwegian** lives next to the **blue house** → **House 2 is Blue**.
+- **Clue 8**: **Milk is drunk in the middle house** → **House 3 has Milk**.
+- **Clue 1**: **The British lives in the Red house** → **House 3 is Red**.
+- **Clue 4**: **Green is to the left of White**.
+- **Clue 5**: **Green drinks Coffee**.
+- Since **House 2 is Blue**, **House 4 must be Green**, and **House 5 must be White**.
+- **Clue 7**: **The person who likes Yellow smokes Dunhill**. Since we only have one remaining house color, **House 1 is Yellow**.
+
+Our updated table:
+
+| House # | Nationality | Color  | Beverage | Cigar   | Pet  |
+|---------|------------|--------|----------|---------|------|
+| 1       | Norwegian  | Yellow | ?        | Dunhill | ?    |
+| 2       | ?          | Blue   | ?        | ?       | ?    |
+| 3       | British    | Red    | Milk     | ?       | ?    |
+| 4       | ?          | Green  | Coffee   | ?       | ?    |
+| 5       | ?          | White  | ?        | ?       | ?    |
+
+---
+
+### **Final Answer**
+**yellow:1**"	yellow:1	yellow:1	True	True
+Einstein_orig_british-3	british	4	"From our logical deductions, we determined that the **British** person lives in **House 3**.
+
+### **Final Answer:**
+**british:3**"	british:3	british:3	True	True
+Einstein_orig_danish-3	danish	6	"From solving the logic puzzle, the **Danish** person is in **House 2**.
+
+### **Final Answer:**
+**danish:2**"	danish:2	danish:2	True	True
+Einstein_orig_german-3	german	7	"The **German** is in **House 4**.
+
+### **Final Answer:**  
+**german:4**"	german:4	german:4	True	True
+Einstein_orig_norwegian-3	norwegian	1	"The **Norwegian** is in **House 1**.
+
+### **Final Answer:**  
+**norwegian:1**"	norwegian:1	norwegian:1	True	True
+Einstein_orig_swedish-3	swedish	7	"The **Swedish** is in **House 5**.  
+
+### **Final Answer:**  
+**swedish:5**"	swedish:5	swedish:5	True	True
+Einstein_orig_beer-3	beer	6	"The **person drinking beer** is in **House 4**.  
+
+### **Final Answer:**  
+**beer:4**"	beer:5	beer:4	True	False
+Einstein_orig_coffee-3	coffee	3	"The **person drinking coffee** is in **House 4**.  
+
+### **Final Answer:**  
+**coffee:4**"	coffee:4	coffee:4	True	True
+Einstein_orig_milk-3	milk	1	"The **person drinking milk** is in **House 3**.  
+
+### **Final Answer:**  
+**milk:3**"	milk:3	milk:3	True	True
+Einstein_orig_tea-3	tea	6	"The **person drinking tea** is in **House 2**.  
+
+### **Final Answer:**  
+**tea:2**"	tea:2	tea:2	True	True
+Einstein_orig_water-3	water	6	"The **person drinking water** is in **House 1**.  
+
+### **Final Answer:**  
+**water:1**"	water:1	water:1	True	True
+Einstein_orig_bluemaster-3	bluemaster	6	"The **Bluemaster smoker** is in **House 4**.  
+
+### **Final Answer:**  
+**bluemaster:4**"	bluemaster:5	bluemaster:4	True	False
+Einstein_orig_dunhill-3	dunhill	5	"The **Dunhill smoker** is in **House 1**.  
+
+### **Final Answer:**  
+**dunhill:1**"	dunhill:1	dunhill:1	True	True
+Einstein_orig_pall-mall-3	pall-mall	8	"The **Pall Mall smoker** is in **House 3**.  
+
+### **Final Answer:**  
+**pall-mall:3**"	pall-mall:3	pall-mall:3	True	True
+Einstein_orig_prince-3	prince	7	"The Prince smoker is in House 4.
+
+Final Answer:
+Prince:4"	prince:4	prince:4	True	True
+Einstein_orig_blend-3	blend	6	"The **Blend smoker** is in **House 2**.  
+
+### **Final Answer:**  
+**blend:2**"	blend:2	blend:2	True	True
+Einstein_orig_cat-3	cat	6	"The **owner of the cat** is in **House 3**.  
+
+### **Final Answer:**  
+**cat:3**"	cat:1	cat:3	True	False
+Einstein_orig_bird-3	bird	8	"The **owner of the bird** is in **House 3**.  
+
+### **Final Answer:**  
+**bird:3**"	bird:3	bird:3	True	True
+Einstein_orig_dog-3	dog	7	"The **owner of the dog** is in **House 5**.  
+
+### **Final Answer:**  
+**dog:5**"	dog:5	dog:5	True	True
+Einstein_orig_fish-3	fish	9	"The **owner of the fish** is in **House 4**.  
+
+### **Final Answer:**  
+**fish:4**"	fish:4	fish:4	True	True
+Einstein_orig_horse-3	horse	5	"The **owner of the horse** is in **House 2**.  
+
+### **Final Answer:**  
+**horse:2**"	horse:2	horse:2	True	True

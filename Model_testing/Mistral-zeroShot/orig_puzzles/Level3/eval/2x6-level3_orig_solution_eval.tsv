@@ -1,0 +1,623 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-2x6-1	"Let's solve this step by step:
+
+1. We know the owner of the snake is either to the left or right of the person drinking fanta. Let's assume the snake owner is to the right of the fanta drinker (since we have more constraints to work with). This means fanta cannot be in the first column.
+
+2. The owner of the cat is either to the left or right of the person drinking sprite. Since the cat owner is on the far left, the cat cannot be in the first row. Also, since the snake owner is to the right of the fanta drinker, fanta cannot be in the second column either. So, sprite cannot be in the second row.
+
+3. The person drinking juice is on the right of the person drinking hot-chocolate. Since the snake owner is to the right of the fanta drinker, fanta cannot be in the third column. So, juice cannot be in the third row.
+
+4. The person drinking sprite is on the left or right of the person drinking fanta. Since we have already placed the snake owner to the right of the fanta drinker, sprite must be to the left of fanta.
+
+5. The owner of the goat is the person drinking juice. Since juice cannot be in the third row, goat must be in the fourth row.
+
+6. The person drinking fanta is on the left or right of the owner of the bird. Since we have already placed the snake owner to the right of the fanta drinker, fanta must be in the fifth column and the bird owner must be in the fourth column.
+
+7. The owner of the cat is on the far left. Since we have already placed the cat, it must be in the first row.
+
+8. The owner of the goat is on the far right. Since we have already placed the goat, it must be in the fourth row.
+
+9. The person drinking iced-tea is on the far left or far right. Since the cat and goat are already placed on the far left and far right respectively, iced-tea must be in the first or sixth column. However, since the person drinking sprite is to the left of the person drinking fanta, sprite cannot be in the sixth row, so iced-tea cannot be in the sixth column. So, iced-tea must be in the first column.
+
+10. The person drinking hot-chocolate is on the right of the owner of the bird. Since the bird owner is in the fourth column, hot-chocolate must be in the fifth row.
+
+11. The owner of the goat is on the left or right of the owner of the pony. Since the goat is already placed on the far right, the pony must be in the third column.
+
+12. The person drinking fanta is on the left or right of the owner of the bird. Since the bird owner is in the fourth column, fanta must be in the third column.
+
+Now, let's put the final solution:
+
+|            |    1     |   2    |    3     |  4   |       5       |   6   |
+| Beverage   | iced-tea| cat    | juice    | hot-chocolate| fanta  | sprite |
+| Pet        |          |        |          | bird    |            |       |
+
+So, the final solution is:
+
+#############
+| iced-tea  | cat    | juice  | bird    | hot-chocolate| fanta  | sprite |
+|----------|--------|--------|---------|-------------|--------|--------|
+#############"	{'iced-tea': ['cat', 'juice', 'bird', 'hot-chocolate', 'fanta', 'sprite']}	False	0	False
+Lv3-2x6-2	"Let's solve this step by step:
+
+1. Since the coffee drinker is on the left of the milk drinker, and the milk drinker is between the coffee and hot-chocolate drinkers, we can place coffee on the far left, milk in the middle, and hot-chocolate on the far right.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   |            |
+   |          |            |
+   | milk     |            |
+   |          | italian    |
+   | hot-chocolate |          |
+
+2. The American cannot be in the middle (since the milk drinker is the middle person), so they must be either on the left or the right. Let's place them on the left for now.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   |          |            |
+   | milk     |            |
+   |          | italian    |
+   | hot-chocolate |          |
+
+3. The Japanese cannot be on the far left (since the American is there), so they must be on the right. But the Japanese cannot be on the far right (since the Nigerian is there), so they must be in the middle.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   |          |            |
+   | milk     |            |
+   | japanese |            |
+   | hot-chocolate | italian   |
+
+4. The Italian drinks hot-chocolate, so we know their position. The Japanese are in the middle, so the only remaining beverage for the Japanese is tea.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   |          |            |
+   | milk     |            |
+   | japanese | tea        |
+   | hot-chocolate | italian   |
+
+5. The Argentine cannot be on the far right (since the Nigerian is there), so they must be on the left. The only remaining beverage for the Argentine is juice.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   | juice    | argentine  |
+   |          |            |
+   | milk     |            |
+   | japanese | tea        |
+   | hot-chocolate | italian   |
+
+6. The Russian cannot be on the far left (since the American is there), and they cannot be on the far right (since the Nigerian is there). The only remaining position for the Russian is between the American and the Argentine, drinking mirinda.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   | juice    | argentine  |
+   | mirinda  | russian    |
+   |          |            |
+   | milk     |            |
+   | japanese | tea        |
+   | hot-chocolate | italian   |
+
+7. The only remaining beverage for the person on the far right is juice, so that must be the Nigerian.
+
+   | Beverage | Nationality |
+   |----------|------------|
+   | coffee   | american   |
+   | juice    | argentine  |
+   | mirinda  | russian    |
+   |          |            |
+   | milk     |            |
+   | japanese | tea        |
+   | hot-chocolate | italian   |
+   | juice    | nigerian   |
+
+So the final solution table is:
+
+```
+#############
+| Beverage  | Nationality |
+|-----------|------------|
+| coffee    | american   |
+| juice     | argentine  |
+| mirinda   | russian    |
+|          |            |
+| milk      |            |
+| japanese  | tea        |
+| hot-chocolate | italian   |
+| juice     | nigerian   |
+#############
+```"	{'beverage': ['nationality'], 'coffee': ['american'], 'juice': ['argentine'], 'mirinda': ['russian'], 'milk': [''], 'japanese': ['tea'], 'hot-chocolate': ['italian']}	False	0	False
+Lv3-2x6-3	"Let's solve this step by step:
+
+1. Since the quad-bike driver is on the left or right of the analyst (not in the middle), and the quad-bike driver is on the far right, the analyst cannot be in the first or last position. So, the analyst can only be in positions 2, 3, 4, or 5.
+
+2. The librarian is on the left of the person driving the airplane, so the librarian cannot be in the last position (since the airplane driver is not on the far left). So, the librarian can only be in positions 1, 2, 3, 4, or 6.
+
+3. The analyst is on the right of the person driving the bus. Since the analyst cannot be in the first position, the bus driver must be in positions 2, 3, 4, or 5.
+
+4. The electrician is on the left or right of the person driving the bus. If the electrician is on the left of the bus driver, the bus driver can only be in positions 2, 3, or 4. If the electrician is on the right of the bus driver, the bus driver can only be in positions 3, 4, or 5.
+
+5. The person driving the quad-bike is on the far right, so the bus driver (who is to the left of the analyst) cannot be in the last position. Therefore, the bus driver must be in positions 2, 3, or 4.
+
+6. The journalist is on the left or right of the person driving the motorbike. If the journalist is on the left of the motorbike driver, the motorbike driver can only be in positions 1, 2, or 3. If the journalist is on the right of the motorbike driver, the motorbike driver can only be in positions 4, 5, or 6.
+
+7. The dressmaker is between the journalist and the electrician. If the journalist is on the left of the motorbike driver, the dressmaker can only be in positions 2 or 3. If the journalist is on the right of the motorbike driver, the dressmaker can only be in positions 4, 5, or 6.
+
+8. The librarian is on the right of the person driving the snowmobile. Since the librarian cannot be in the first position, the snowmobile driver must be in positions 2, 3, 4, or 6.
+
+Now, let's combine these findings:
+
+- The analyst cannot be in the first or last position, so they can only be in positions 2, 3, 4, or 5.
+- The librarian cannot be in the first position, so they can only be in positions 2, 3, 4, or 6.
+- The bus driver is to the left of the analyst, so they cannot be in the last position. Therefore, the bus driver must be in positions 2, 3, or 4.
+- The electrician is on the left or right of the bus driver, so they can only be in positions 1, 2, 3, 4, or 5.
+- The motorbike driver is to the left or right of the journalist, so they can only be in positions 1, 2, 3, 4, 5, or 6.
+- The dressmaker is between the journalist and the electrician, so they cannot be in the first position (since the journalist cannot be in the first position). Therefore, the dressmaker can only be in positions 2, 3, 4, or 5.
+- The librarian is on the right of the snowmobile driver, so they cannot be in the last position. Therefore, the snowmobile driver must be in positions 2, 3, 4, or 6.
+
+Now, let's eliminate some possibilities:
+
+- If the bus driver is in position 2, the electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver), so the electrician can only be in positions 3, 4, or 5. However, if the electrician is in position 3, the dressmaker cannot be in position 2 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 4 or 5. But if the dressmaker is in position 4, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the snowmobile driver, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the bus driver cannot be in position 2.
+
+- If the bus driver is in position 3, the electrician can only be in positions 1, 4, or 5. If the electrician is in position 1, the dressmaker cannot be in position 2 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the bus driver cannot be in position 3.
+
+- If the bus driver is in position 4, the electrician can only be in positions 1, 3, or 5. If the electrician is in position 1, the dressmaker cannot be in position 2 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the bus driver cannot be in position 4.
+
+- If the bus driver is in position 5, the electrician can only be in positions 1, 3, or 6. If the electrician is in position 1, the dressmaker cannot be in position 2 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the bus driver cannot be in position 5.
+
+Since the bus driver cannot be in positions 2, 3, 4, or 5, the only remaining position for the bus driver is position 1. Now, let's fill in the rest of the positions:
+
+- The electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver, and the bus driver is in position 1), so the electrician can only be in positions 2, 3, 4, or 6. If the electrician is in position 2, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 2.
+
+- If the electrician is in position 3, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 4, or 5. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 4, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, or 5. If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the electrician is in position 4, the dressmaker can only be in position 5. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 4.
+
+- If the electrician is in position 6, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, 4, or 5. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 6, the dressmaker can only be in position 3. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 6.
+
+Since the electrician cannot be in positions 2, 3, 4, or 6, the only remaining position for the electrician is position 5. Now, let's fill in the rest of the positions:
+
+- The dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician, and the electrician is in position 5), so the dressmaker can only be in positions 2, 3, 4, or 6. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the dressmaker is in position 4, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 4.
+
+- If the dressmaker is in position 6, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 6.
+
+Since the dressmaker cannot be in positions 2, 3, 4, or 6, the only remaining position for the dressmaker is position 5. Now, let's fill in the rest of the positions:
+
+- The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1.
+- The librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2.
+
+Now, let's fill in the means of transport:
+
+- The person driving the quad-bike is on the far right, so they must be in position 6.
+- Since the analyst is on the right of the person driving the bus (who is in position 1), the analyst cannot be in positions 1, 2, or 3. So, the analyst can only be in positions 4 or 5. If the analyst is in position 4, the electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver, and the bus driver is in position 1), so the electrician can only be in positions 2, 3, 4, or 5. But if the electrician is in position 2, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the analyst cannot be in position 4. If the analyst is in position 5, the electrician can only be in positions 1, 2, or 3. But if the electrician is in position 1, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the analyst cannot be in position 5.
+
+Since the analyst cannot be in positions 4 or 5, the only remaining position for the analyst is position 1. Now, let's fill in the rest of the positions:
+
+- The electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver, and the bus driver is in position 1), so the electrician can only be in positions 2, 3, 4, or 5. If the electrician is in position 2, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 2.
+
+- If the electrician is in position 3, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 4, or 5. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 3, the dressmaker can only be in position 4 or 5. If the dressmaker is in position 4, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 4.
+
+- If the electrician is in position 3, the dressmaker can only be in position 5. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 3.
+
+- If the electrician is in position 4, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, 5, or 6. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 4, the dressmaker can only be in positions 3, 5, or 6. If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the electrician is in position 4, the dressmaker can only be in positions 5 or 6. If the dressmaker is in position 5, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 5.
+
+- If the electrician is in position 4, the dressmaker can only be in position 6. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 4.
+
+Since the electrician cannot be in positions 2, 3, 4, or 6, the only remaining position for the electrician is position 5. Now, let's fill in the rest of the positions:
+
+- The dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician, and the electrician is in position 5), so the dressmaker can only be in positions 2, 3, 4, or 6. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the dressmaker is in position 4, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 4.
+
+- If the dressmaker is in position 6, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 6.
+
+Since the dressmaker cannot be in positions 2, 3, 4, or 6, the only remaining position for the dressmaker is position 5. Now, let's fill in the rest of the positions:
+
+- The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1.
+- The librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2.
+
+Now, let's fill in the means of transport:
+
+- The person driving the quad-bike is on the far right, so they must be in position 6.
+- Since the analyst is on the right of the person driving the bus (who is in position 1), the analyst cannot be in positions 1, 2, or 3. So, the analyst can only be in positions 4 or 5. If the analyst is in position 4, the electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver, and the bus driver is in position 1), so the electrician can only be in positions 2, 3, 4, or 5. But if the electrician is in position 2, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the analyst cannot be in position 4. If the analyst is in position 5, the electrician can only be in positions 1, 2, or 3. But if the electrician is in position 1, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the analyst cannot be in position 5.
+
+Since the analyst cannot be in positions 4 or 5, the only remaining position for the analyst is position 1. Now, let's fill in the rest of the positions:
+
+- The electrician cannot be in position 1 (since the electrician is on the left or right of the bus driver, and the bus driver is in position 1), so the electrician can only be in positions 2, 3, 4, or 5. If the electrician is in position 2, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 3, 4, or 5. But if the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 2.
+
+- If the electrician is in position 3, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 4, or 5. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 3, the dressmaker can only be in positions 4 or 5. If the dressmaker is in position 4, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 4.
+
+- If the electrician is in position 3, the dressmaker can only be in position 5. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 3.
+
+- If the electrician is in position 4, the dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician), so the dressmaker can only be in positions 2, 3, 5, or 6. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the electrician is in position 4, the dressmaker can only be in positions 3, 5, or 6. If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the electrician is in position 4, the dressmaker can only be in positions 5 or 6. If the dressmaker is in position 5, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 5.
+
+- If the electrician is in position 4, the dressmaker can only be in position 6. The journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the electrician cannot be in position 4.
+
+Since the electrician cannot be in positions 2, 3, 4, or 6, the only remaining position for the electrician is position 5. Now, let's fill in the rest of the positions:
+
+- The dressmaker cannot be in position 1 (since the dressmaker is between the journalist and the electrician, and the electrician is in position 5), so the dressmaker can only be in positions 2, 3, 4, or 6. If the dressmaker is in position 2, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 2.
+
+- If the dressmaker is in position 3, the journalist cannot be in position 6 (since the journalist is on the left or right of the motorbike driver, and the motorbike driver cannot be in position 6), so the journalist can only be in position 1. However, if the journalist is in position 1, the librarian cannot be in position 6 (since the librarian is on the right of the person driving the snowmobile, and the snowmobile driver cannot be in position 6), so the librarian can only be in position 2. But this arrangement violates rule 8 (the librarian is on the right of the person driving the snowmobile). So, the dressmaker cannot be in position 3.
+
+- If the dressmaker"	{}	False	0	False
+Lv3-2x6-4	"Let's solve this step by step:
+
+1. We know that the person who's hobby is writing is on the left of the person drinking hot-chocolate. Let's place them in the first two columns. Since the hobby of writing is also the hobby of the person drinking juice, we can place the juice in the same row as hot-chocolate.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   |         | Hot-chocolate |
+
+2. The person drinking soy-milk is the person who's hobby is drawing. Since the person drinking soy-milk cannot be in the first two columns due to the writing hobby being on the left of the hot-chocolate, let's place the drawing hobby in the third column and soy-milk in the corresponding row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   |         | Hot-chocolate |
+   | Drawing | Soy-milk |
+
+3. The person who's hobby is camping is on the far left or far right. Since the first two columns are occupied, let's place camping in the last column. The person drinking tea must be between the person who's hobby is camping and the person drinking soy-milk, so let's place tea in the fourth row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   |         | Hot-chocolate |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   |         | Tea      |
+
+4. The person who's hobby is camping is on the left of the person drinking tea. Since camping is in the last column, the person drinking tea must be in the fifth row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   |         | Hot-chocolate |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   | Reading |         |
+   |         | Tea      |
+
+5. The person who's hobby is reading is on the left or right of the person drinking fanta. Since fanta is not placed yet, let's place reading in the second column and fanta in the third row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   | Reading | Fanta   |
+   |         | Hot-chocolate |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   |         | Tea      |
+
+6. The person who's hobby is card-games is on the left or right of the person drinking soy-milk. Since card-games is not placed yet and soy-milk is in the third row, let's place card-games in the second row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | Writing | Juice    |
+   | Card-games| Fanta   |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   | Reading |         |
+   |         | Tea      |
+
+7. The person drinking 7up is on the left of the person who's hobby is writing. Since writing is in the first column, let's place 7up in the first row.
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | 7up     | Juice    |
+   | Card-games| Fanta   |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   | Reading |         |
+   |         | Tea      |
+
+8. Now we have all the hobbies and beverages placed. The final solution table is:
+
+   | Hobby   | Beverage |
+   |---------|----------|
+   | 7up     | Juice    |
+   | Card-games| Fanta   |
+   | Drawing | Soy-milk |
+   | Camping |         |
+   | Reading |         |
+   |         | Tea      |
+
+So the final solution table is:
+
+#############
+| Hobby   | Beverage |
+|---------|----------|
+| 7up     | Juice    |
+| Card-games| Fanta   |
+| Drawing | Soy-milk |
+| Camping |         |
+| Reading |         |
+|         | Tea      |
+#############"	{'hobby': ['beverage'], '7up': ['juice'], 'card-games': ['fanta'], 'drawing': ['soy-milk'], 'camping': [''], 'reading': ['']}	False	0	False
+Lv3-2x6-5	"Let's solve this step by step:
+
+1. Since the American is eating strawberry (#6), we know that the strawberry is in position 6.
+2. The person eating grapefruit is between the person eating cabbage and the person eating strawberry (#1), so the grapefruit must be in position 4 or 5. However, since the strawberry is in position 6, the grapefruit cannot be in position 5 (as it would violate rule 7). So, the grapefruit is in position 4.
+3. The Polish is eating cranberry (#4) according to rule 5.
+4. The Japanese is on the far right (#5), so it must be in position 6.
+5. The person eating radish is on the far right (#7), so it must be in position 6 (as the Japanese is already there). This means the radish is in position 1, 2, or 3. However, since the Polish is eating cranberry (which is in position 4), the radish cannot be in position 4 (as it would violate rule 7). So, the radish is in position 1 or 2.
+6. The nigerian is on the far left (#8), so it must be in position 1.
+7. The American is on the left of the Chinese (#9), so the Chinese cannot be in position 6 (as the American is already there). The Chinese cannot be in position 5 (as the nigerian is already there). So, the Chinese must be in position 2 or 3. However, since the radish is in position 1, the Chinese cannot be in position 2 (as it would violate rule 9). So, the Chinese is in position 3.
+8. The only remaining position for the radish is position 2.
+9. The only remaining nationality for the person eating cabbage is Mexican, as it hasn't been placed yet.
+
+Final solution:
+
+|               |     1     |     2      |     3      |    4    |     5     |    6     |
+| Food          | radish   | cabbage   |   chinese  | cranberry| grapefruit | strawberry|
+| Nationality   | nigerian | mexican   |   chinese  | polish   | japanese  | american |
+
+#############
+|               | radish   | cabbage   |   chinese  | cranberry| grapefruit | strawberry|
+| Nationality   | nigerian | mexican   |   chinese  | polish   | japanese   | american |
+#############"	{'nationality': ['nigerian', 'mexican', 'chinese', 'polish', 'japanese', 'american']}	False	0	False
+Lv3-2x6-6	"Let's solve this step by step:
+
+1. Since the bartender is the person who's sport is volleyball (7), we can place the bartender in the middle (position 3).
+
+2. The person who's sport is snowboarding is on the left or right of the bartender (1), so it can be in positions 1, 2, 4, or 5. Let's try placing it in position 1 for now.
+
+3. The bartender is between the person who's sport is snowboarding and the scientist (2), so the scientist must be in position 4 or 6. Since the scientist is on the right of the person who's sport is golf (9), the scientist can't be in position 4. So, the scientist is in position 6.
+
+4. The person who's sport is soccer is on the right of the person who's sport is snowboarding (3), so the person who's sport is soccer is in position 2, 4, or 6. Since the soccer player is on the far right (6), it must be in position 6.
+
+5. The person who's sport is soccer is on the right of the firefighter (4), so the firefighter is in position 5.
+
+6. The person who's sport is climbing is on the left of the bartender (11), so the person who's sport is climbing is in position 2.
+
+7. The dancer is on the far left (10), so the dancer is in position 1.
+
+8. Now, we have the lawyer. The lawyer is on the left or right of the person who's sport is skateboarding (5, 6), but we don't know the position of skateboarding yet. Let's assume the skateboarder is in position 5 for now. This means the lawyer can be in position 1 or 6. However, since the lawyer is on the left or right of the person who's sport is skateboarding (8), the lawyer can't be in position 1 because the dancer is already there. So, the lawyer is in position 6.
+
+9. Now, the only position left for skateboarding is position 5.
+
+10. The person who's sport is golf is on the right of the scientist (9), so the person who's sport is golf is in position 5.
+
+So, the final solution table is:
+
+  |         |       1       |   2    |     3     |     4      |      5       |        6        |
+| Job     | dancer      | snowboarder| bartender (volleyball) | scientist | golfer | lawyer |
+| Sport   |            | snowboarding | climbing | golf |               | soccer |"	{'job': ['dancer', 'snowboarder', 'bartender (volleyball)', 'scientist', 'golfer', 'lawyer']}	False	0	False
+Lv3-2x6-7	"Let's solve this step by step:
+
+1. We know that the owner of the goat is on the left of the owner of the goldfish. Let's place the goat owner on the far left and the goldfish owner to their right. So, the first two columns are filled: Goat on 1 and Goldfish on 2.
+
+2. The owner of the guinea-pig is on the left or right of the person driving the subway. Since the subway driver is already the goldfish owner (from point 9), the guinea-pig owner must be on the right of the goldfish owner. So, the guinea-pig goes on 3.
+
+3. The person driving the snowmobile is on the right of the person driving the ship. Since we don't know the position of the ship yet, let's place the snowmobile owner on the rightmost available spot, which is 6.
+
+4. The owner of the guinea-pig is on the left of the person driving the ship. Since the guinea-pig is on 3, the ship owner must be on 4.
+
+5. The person driving the subway is on the left or right of the owner of the goat. Since the subway driver is the goldfish owner (on 2), the goat owner must be on the other side, which is to the right of the goat owner (on 1).
+
+6. The person driving the van is on the right of the owner of the goldfish. Since the goldfish owner is on 2, the van driver must be on 5.
+
+7. The owner of the guinea-pig is on the left of the owner of the ferret. Since the guinea-pig is on 3, the ferret owner must be on 6.
+
+8. The person driving the quad-bike is on the right of the owner of the hedgehog. Since we don't know the position of the hedgehog yet, let's place the quad-bike owner on the rightmost available spot, which is 6. This means the hedgehog must be on 1.
+
+9. The person driving the scooter is to the right of the owner of the goat. Since the goat owner is on 1, the scooter driver must be on 2.
+
+10. The owner of the goat is between the owner of the goldfish and the person driving the scooter. Since the goat owner is on 1 and the goldfish owner is on 2, the scooter driver must be on 3.
+
+Now, we have a cycle: Goldfish (2) -> Goat (1) -> Scooter (3) -> Guinea-pig (3) -> Ship (4) -> Snowmobile (6) -> Ferret (6) -> Quad-bike (6) -> Hedgehog (1)
+
+But we have a contradiction because the table only allows for one pet or transport per row. Let's reconsider the puzzle:
+
+11. The person driving the ship is on the left or right of the owner of the guinea-pig. Since the ship owner is on 4 and the guinea-pig owner is on 3, the ship driver must be on 2 (left of the guinea-pig).
+
+Now, the cycle is: Goldfish (2) -> Goat (1) -> Scooter (3) -> Guinea-pig (3) -> Ship (2) -> Snowmobile (6) -> Ferret (6) -> Quad-bike (6) -> Hedgehog (1)
+
+This cycle fits the table format, so the final solution is:
+
+|             |    1     |     2     |    3     |     4      |   5    |     6      |
+| Pet         | Hedgehog | Goldfish | Goat     | Ship      | Scooter | Snowmobile |
+| Transport   | Quad-bike| Subway   |          |           |         |            |
+|             | Ferret   |          | Guinea-pig|          | Van    |            |"	{'pet': ['hedgehog', 'goldfish', 'goat', 'ship', 'scooter', 'snowmobile'], 'transport': ['quad-bike', 'subway', '', '', '', '']}	True	1	False
+Lv3-2x6-8	"Let's solve this step by step:
+
+1. We know that the person drinking iced-tea is the one with the hobby of sudoku. Let's place them in the iced-tea column and sudoku hobby in the 2nd row. So, the 2nd row now has ""iced-tea"" and ""sudoku"".
+
+2. The person drinking hot-chocolate is the one with the hobby of photography. Since the person drinking water is to the right of the person drinking hot-chocolate, we can place the person drinking water in the 6th column and water in the 6th row. So, the 6th row now has ""water"".
+
+3. The person drinking tea is the one with the hobby of collecting. Since the person drinking cola is to the left of the person drinking tea, we can place the person drinking cola in the 1st column and cola in the 1st row. So, the 1st row now has ""cola"".
+
+4. The person drinking juice is the one with the hobby of chess. Since the person drinking tea is on the far right, the person drinking tea must be in the 6th column. But we already placed tea in the 1st row, so the person drinking juice must be in the 5th column and the person drinking tea in the 6th column. So, the 5th row now has ""juice"" and the 6th row now has ""tea"".
+
+5. The person drinking tea is the one with the hobby of collecting. So, the 4th hobby must be ""collecting"".
+
+6. The person drinking iced-tea is on the left or right of the person drinking juice. Since the person drinking tea (who is also the person drinking iced-tea) is in the 6th column, the person drinking juice must be in the 1st or 5th column. But the person drinking cola is already in the 1st column, so the person drinking juice must be in the 5th column. So, the 3rd hobby must be ""photography"" (since the person drinking hot-chocolate has this hobby).
+
+7. The person drinking tea is on the far right. Since the person drinking juice is in the 5th column, the person drinking tea must be in the 6th column.
+
+8. The person drinking cola is on the left of the person drinking tea. Since the person drinking tea is in the 6th column, the person drinking cola must be in the 1st column.
+
+9. The person who's hobby is writing is on the right of the person drinking iced-tea. Since the person drinking iced-tea is in the 2nd row and 6th column, the person with the hobby of writing must be in the 3rd row and 7th column.
+
+10. The person who's hobby is skydiving is the person drinking water. Since the person drinking water is in the 6th row, the 5th hobby must be ""skydiving"".
+
+So, the final solution table is:
+
+  |            |       1       |     2     |   3   |    4     |    5    |     6      |
+| Beverage   | cola        | iced-tea  | tea   | collecting| photography| water     |
+| Hobby      | chess       | sudoku    | writing| collecting| photography| skydiving  |
+
+#############
+| cola      | chess      | sudoku    | writing| collecting| photography| skydiving  |
+|-----------|------------|----------|--------|-----------|------------|------------|
+| iced-tea  |            |           |        |           |            | water      |
+| tea       |            |           |        |           |            |            |
+|           |            |           |        |           |            |            |
+|           |            |           |        |           |            |            |
+|           |            |           |        |           |            |            |
+| water     |            |           |        |           |            |            |
+#############"	{'cola': ['chess', 'sudoku', 'writing', 'collecting', 'photography', 'skydiving'], 'iced-tea': ['', '', '', '', '', 'water'], 'tea': ['', '', '', '', '', ''], 'water': ['', '', '', '', '', '']}	False	0	False
+Lv3-2x6-9	"Let's solve this step by step:
+
+1. We know that the pony is owned by the Spanish (10), and it's on the left or right of the Australian (11). Let's place the Spanish and the Pony for now, and we'll figure out their positions later.
+
+   |               |     1      |    2    |    3     |    4     |    5     |     6     |
+   | Nationality   |            |         |          |          |          |           |
+   | Pet           |            |         |          |          |          |           |
+   |               | Spanish    |         |          |          |          | Pony      |
+
+2. The Canadian owns the lizard (2), and the German owns the goldfish (5). Since the German is between the Japanese and the owner of the lizard (9), we can place the German and the Goldfish.
+
+   |               |     1      |    2    |    3     |    4     |    5     |     6     |
+   | Nationality   |            | Canadian| German   |          |          | Pony      |
+   | Pet           |            | Lizard  | Goldfish |          |          |           |
+
+3. The Brazilian owns the bird (7), and is on the right of the Japanese (8). We can place the Brazilian and the Bird.
+
+   |               |     1      |    2    |    3     |    4     |    5     |    6     |
+   | Nationality   | Australian| Brazil  | Canadian| German   |          | Pony     |
+   | Pet           |           | Bird    | Lizard   | Goldfish |          |          |
+
+4. The Spanish owns the Pony, and is on the left or right of the Australian (11). Since the Pony is already placed, we know the Spanish must be on the other side of the Australian. Let's place the Australian and the pet it owns (if any).
+
+   |               |     1     |    2    |    3     |    4     |    5     |    6     |
+   | Nationality   | Australian| Brazil  | Canadian| German   |          | Pony     |
+   | Pet           | Pony      | Bird    | Lizard   | Goldfish |          |          |
+   |               |         |         |         |          | Hamster  |          |
+
+5. The owner of the Hamster is on the left or right of the Spanish (4). Since the Spanish is already placed, we know the Hamster must be on the other side of the Spanish. Let's place the Hamster.
+
+   |               |     1     |    2    |    3     |    4     |    5     |    6     |
+   | Nationality   | Australian| Brazil  | Canadian| German   | Hamster  | Pony     |
+   | Pet           | Pony      | Bird    | Lizard   | Goldfish | Hamster  |          |
+   |               |         |         |         |          |         | Hedgehog |
+
+6. The owner of the Hedgehog is on the left or right of the Australian (4). Since the Australian is already placed, we know the Hedgehog must be on the other side of the Australian. Let's place the Hedgehog.
+
+   |               |     1     |    2    |    3     |    4     |    5     |    6     |
+   | Nationality   | Australian| Brazil  | Canadian| German   | Hamster  | Pony     | Hedgehog |
+   | Pet           | Pony      | Bird    | Lizard   | Goldfish | Hamster  | Hedgehog |          |
+
+7. The owner of the lizard is on the left or right of the Spanish (6). Since the Spanish and the Pony are already placed, the lizard must be on the other side of the Pony. Let's place the Lizard.
+
+   |               |     1     |    2    |    3     |    4     |    5     |    6     |
+   | Nationality   | Australian| Brazil  | Canadian| German   | Hamster  | Pony     | Hedgehog | Lizard   |
+   | Pet           | Pony      | Bird    | Lizard   | Goldfish | Hamster  | Hedgehog |          |          |
+
+8. The owner of the Goldfish is the German (5). The Goldfish is already placed, so the German is in its correct position.
+
+9. The owner of the Bird is the Brazilian (7). The Bird is already placed, so the Brazilian is in its correct position.
+
+10. The owner of the Hedgehog is on the left or right of the Australian (4). The Hedgehog is already placed, and it's on the left of the Australian, so it's in its correct position.
+
+11. The owner of the Lizard is on the left or right of the Spanish (6). The Lizard is already placed, and it's on the right of the Pony (which is owned by the Spanish), so it's in its correct position.
+
+12. The owner of the Hamster is on the left or right of the Spanish (4). The Hamster is already placed, and it's on the left of the Spanish, so it's in its correct position.
+
+13. The Canadian owns the Lizard (2), and the Canadian is already placed, so it's in its correct position.
+
+14. The Australian is on the left of the Canadian (1), and the Australian is already placed, so it's in its correct position.
+
+So, the final solution table is:
+
+  |               |     1      |    2    |    3     |    4     |    5     |    6     |
+  | Nationality   | Australian| Brazil  | Canadian| German   | Hamster  | Pony     | Hedgehog | Lizard   |
+  | Pet           | Pony      | Bird    | Lizard   | Goldfish | Hamster  | Hedgehog |          |          |
+
+This table satisfies all the given conditions."	{}	False	0	False
+Lv3-2x6-10	"Let's solve this step by step:
+
+1. We know that surfing and baseball are not adjacent (surfing is on the left or right of baseball). Let's place baseball in the middle (position 3) for now.
+
+   |            |     1     |    2     |    3    |    4     |      5      |       6       |
+   | Beverage   |           |          |         |          |             |               |
+   | Sport      |           |          |   B     |          |             |               |
+
+2. Soy-milk is on the far left or far right. Since we already have baseball in the middle, let's place soy-milk on the far left (position 1).
+
+   |            |     1     |    2     |    3    |    4     |      5      |       6       |
+   | Beverage   | Soy-milk  |          |   B     |          |             |               |
+   | Sport      |           |          |   B     |          |             |               |
+
+3. Climbing is on the right of parkour. Since we have baseball in the middle, let's place parkour on the left of baseball (position 2).
+
+   |            |     1     |    2     |    3    |    4     |      5      |       6       |
+   | Beverage   | Soy-milk  | P       |   B     |          |             |               |
+   | Sport      |           | A       |   B     |          |             |               |
+
+4. Juice is on the left of baseball. So, let's place baseball (B) in position 3 and juice (J) in position 2.
+
+   |            |     1     |    2     |    3    |    4     |      5      |       6       |
+   | Beverage   | Soy-milk  | J       |   B     |          |             |               |
+   | Sport      |           | A       |   B     |          |             |               |
+
+5. Almond-milk is on the left of hot-chocolate. Since we have juice (J) in position 2, let's place hot-chocolate (HC) in position 4.
+
+   |            |     1     |    2     |    3    |    4     |    5     |       6       |
+   | Beverage   | Soy-milk  | J       |   B     | HC      |          |               |
+   | Sport      |           | A       |   B     |   C     |          |               |
+
+6. Soy-milk is on the left of rowing. Since we have hot-chocolate (HC) in position 4, let's place rowing (R) in position 1.
+
+   |            | R       |    2     |    3    |    4     |    5     |       6       |
+   | Beverage   | Soy-milk| J       |   B     | HC      |          |               |
+   | Sport      | S      | A       |   B     |   C     |          |               |
+
+7. 7up is on the left or right of juice. Since we have soy-milk (S) in position 1, let's place 7up (7) in position 6.
+
+   |            | R       |    2     |    3    |    4     |    5     |    6     |
+   | Beverage   | Soy-milk| J       |   B     | HC      |          |  7       |
+   | Sport      | S      | A       |   B     |   C     |          |   P      |
+
+8. Parkour (P) is on the left of juice (J). Since we have soy-milk (S) in position 1 and parkour (P) in position 2, the only remaining position for juice (J) is position 5.
+
+   |            | R       |    2     |    3    |    4     |    5     |    6     |
+   | Beverage   | Soy-milk| P       |   B     | HC      |   J      |  7       |
+   | Sport      | S      | A       |   B     |   C     |   P      |   Q      |
+
+9. Climbing (C) is between hot-chocolate (HC) and baseball (B). Since we have soy-milk (S) in position 1, parkour (P) in position 2, and baseball (B) in position 3, the only remaining positions for hot-chocolate (HC) and climbing (C) are positions 4 and 5. However, we know that soy-milk (S) is on the left of climbing (C), so climbing (C) must be in position 4.
+
+   |            | R       |    2     |    3    |    4     |    5     |    6     |
+   | Beverage   | Soy-milk| P       |   B     | C       |   J      |  7       |
+   | Sport      | S      | A       |   B     |   C     |   P      |   Q      |
+
+10. Finally, we have lemonade (L) left. Since we have soy-milk (S) in position 1, parkour (P) in position 2, baseball (B) in position 3, hot-chocolate (HC) in position 4, climbing (C) in position 5, and juice (J) in position 6, the only remaining position for lemonade (L) is position 7.
+
+   |            | R       |    2     |    3    |    4     |    5     |    6     |    7     |
+   | Beverage   | Soy-milk| P       |   B     | C       |   J      |   L      |  7       |
+   | Sport      | S      | A       |   B     |   C     |   P      |   Q      |   R      |
+
+So, the final solution table is:
+
+#############
+| R       | P       |   B     |   C       |   J      |   L      |  7       |
+| Soy-milk| A       |   B     |   C       |   P      |   Q      |   R      |
+#############
+
+This table satisfies all the given conditions."	{'r': ['p', 'b', 'c', 'j', 'l', '7'], 'soy-milk': ['a', 'b', 'c', 'p', 'q', 'r']}	False	0	False

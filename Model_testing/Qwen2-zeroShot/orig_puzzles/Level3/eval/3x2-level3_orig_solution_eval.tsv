@@ -1,0 +1,684 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-3x2-1	"Sure, let's solve this step-by-step.
+
+We have:
+- 2 types of food: avocado and mango
+- 2 types of music-genre: d&b and soul
+- 2 types of sport: badminton and surfing
+
+And we have the following clues:
+1. The person who's sport is surfing is on the right of the fan of d&b.
+2. The person eating mango is on the left or right of the fan of soul.
+
+Let's denote:
+- F1 (first person) and F2 (second person)
+- M1 (first person's food) and M2 (second person's food)
+- MG1 (first person's music genre) and MG2 (second person's music genre)
+- S1 (first person's sport) and S2 (second person's sport)
+
+### Step-by-Step Solution:
+
+1. **Clue 1**: The person who's sport is surfing is on the right of the fan of d&b.
+   - This means if S1 = surfing, then S2 must be badminton, and if S2 = surfing, then S1 must be badminton.
+
+2. **Clue 2**: The person eating mango is on the left or right of the fan of soul.
+   - This means either M1 = mango and M2 ≠ mango or M2 = mango and M1 ≠ mango.
+
+Let's consider the possible arrangements:
+
+#### Case 1: S1 = surfing
+- If S1 = surfing, then S2 = badminton (from Clue 1).
+
+Now, we need to place the foods and music genres such that Clue 2 is satisfied.
+
+- If M1 = mango, then M2 ≠ mango (so M2 = avocado).
+- If M2 = mango, then M1 ≠ mango (so M1 = avocado).
+
+Let's try both sub-cases:
+
+##### Sub-case 1.1: M1 = mango, M2 = avocado
+- We need to check if we can fit the music genres.
+- If M1 = mango, then we need to place soul or d&b for MG1 and MG2.
+- Since M2 = avocado, we can place the remaining music genre for M2.
+
+Possible arrangement:
+- F1 = mango, MG1 = soul, S1 = surfing
+- F2 = avocado, MG2 = d&b, S2 = badminton
+
+This satisfies all conditions.
+
+##### Sub-case 1.2: M2 = mango, M1 = avocado
+- Similarly, we need to check if we can fit the music genres.
+- If M2 = mango, then we need to place soul or d&b for MG2 and MG1.
+- Since M1 = avocado, we can place the remaining music genre for M1.
+
+Possible arrangement:
+- F1 = avocado, MG1 = d&b, S1 = surfing
+- F2 = mango, MG2 = soul, S2 = badminton
+
+This also satisfies all conditions.
+
+#### Case 2: S2 = surfing
+- If S2 = surfing, then S1 = badminton (from Clue 1).
+
+Now, we need to place the foods and music genres such that Clue 2 is satisfied.
+
+- If M1 = mango, then M2 ≠ mango (so M2 = avocado).
+- If M2 = mango, then M1 ≠ mango (so M1 = avocado).
+
+Let's try both sub-cases:
+
+##### Sub-case 2.1: M1 = mango, M2 = avocado
+- We need to check if we can fit the music genres.
+- If M1 = mango, then we need to place soul or d&b for MG1 and MG2.
+- Since M2 = avocado, we can place the remaining music genre for M2.
+
+Possible arrangement:
+- F1 = mango, MG1 = soul, S1 = badminton
+- F2 = avocado, MG2 = d&b, S2 = surfing
+
+This satisfies all conditions.
+
+##### Sub-case 2.2: M2 = mango, M1 = avocado
+- Similarly, we need to check if we can fit the music genres.
+- If M2 = mango, then we need to place soul or d&b for MG2 and MG1.
+- Since M1 = avocado, we can place the remaining music genre for M1.
+
+Possible arrangement:
+- F1 = avocado, MG1 = d&b, S1 = badminton
+- F2 = mango, MG2 = soul, S2 = surfing
+
+This also satisfies all conditions.
+
+### Final Solution Table:
+
+```
+|               |     1     |    2    |
+| Food          | mango     | avocado |
+| Music-Genre   | soul      | d&b     |
+| Sport         | badminton | surfing |
+```
+
+or
+
+```
+|               |     1     |    2    |
+| Food          | avocado   | mango   |
+| Music-Genre   | d&b      | soul    |
+| Sport         | badminton | surfing |
+```
+
+Both solutions are valid based on the given clues."	{'food': ['avocado', 'mango'], 'music-genre': ['d&b', 'soul'], 'sport': ['badminton', 'surfing']}	True	4	False
+Lv3-3x2-2	"To solve this puzzle, we need to carefully analyze the given clues and place the information into the provided table.
+
+### Clues Analysis:
+1. **The videographer is on the right of the person driving the car.**
+2. **The person driving the car is on the left or right of the Nigerian.**
+
+Let's denote:
+- Job: Paramedic (P) or Videographer (V)
+- Nationality: German (G) or Nigerian (N)
+- Transport: Car (C) or Quad-bike (Q)
+
+Given the clues, let's break it down step-by-step:
+
+#### Step 1: Analyze the first clue
+""The videographer is on the right of the person driving the car.""
+
+This implies that if the person driving the car is in position 1, then the videographer must be in position 2. Conversely, if the videographer is in position 2, then the person driving the car must be in position 1.
+
+#### Step 2: Analyze the second clue
+""The person driving the car is on the left or right of the Nigerian.""
+
+This means the Nigerian cannot be in the same column as the person driving the car.
+
+### Possible Scenarios:
+Let's consider the possible scenarios based on the clues:
+
+1. **Person 1 drives the car:**
+   - The videographer must be in position 2.
+   - The Nigerian cannot be in position 1 (since the person driving the car is there).
+
+2. **Person 2 drives the car:**
+   - The videographer must be in position 1.
+   - The Nigerian cannot be in position 2 (since the person driving the car is there).
+
+Given these constraints, let's fill in the table:
+
+|               |     1     |      2       |
+|---------------|-----------|--------------|
+| Job           | Videographer | Paramedic   |
+| Nationality   | Nigerian    | German       |
+| Transport     | Car         | Quad-bike    |
+
+### Verification:
+- **Clue 1:** The videographer (V) is on the right of the person driving the car (C).
+  - Videographer is in position 2, and the person driving the car is in position 1.
+- **Clue 2:** The person driving the car is on the left or right of the Nigerian.
+  - The person driving the car (C) is in position 1, and the Nigerian (N) is in position 2.
+
+Thus, the solution fits both clues perfectly.
+
+### Final Solution Table:
+```
+|               |     1     |      2       |
+|---------------|-----------|--------------|
+| Job           | Videographer | Paramedic   |
+| Nationality   | Nigerian    | German       |
+| Transport     | Car         | Quad-bike    |
+```"	{'job': ['videographer', 'paramedic'], 'nationality': ['nigerian', 'german'], 'transport': ['car', 'quad-bike']}	True	2	False
+Lv3-3x2-3	"Let's break down the information and solve the puzzle step-by-step.
+
+### Given Information:
+1. There are two different movie genres: fantasy and thriller.
+2. There are two different nationalities: Australian and Chinese.
+3. There are two different sports: climbing and ice-hockey.
+4. The Chinese person is on the left of the person watching fantasy movies.
+5. The person who prefers climbing is either to the left or right of the person watching thriller movies.
+
+### Step-by-Step Solution:
+
+#### Step 1: Identify the Movie Genres and Nationalities
+- Fantasy and Thriller are the movie genres.
+- Australian and Chinese are the nationalities.
+
+#### Step 2: Determine the Sport Preferences
+- Climbing and Ice-hockey are the sports.
+
+#### Step 3: Apply the Clues
+
+**Clue 1:** The Chinese person is on the left of the person watching fantasy movies.
+- This means if we denote the positions as follows:
+  - Position 1: Left
+  - Position 2: Right
+- If the Chinese person is in position 1, then the person in position 2 must be watching fantasy movies.
+
+**Clue 2:** The person who prefers climbing is either to the left or right of the person watching thriller movies.
+- We need to consider both possibilities for the position of the person who prefers climbing.
+
+Let's test the possible configurations based on these clues.
+
+### Possible Configurations:
+
+#### Configuration 1:
+- Position 1 (Left): Chinese
+- Position 2 (Right): Australian, watching fantasy movies
+
+This configuration satisfies Clue 1. Now, let's place the sports:
+- The person in position 1 (Chinese) cannot be watching thriller movies because the person in position 2 is watching fantasy movies.
+- Therefore, the person in position 1 (Chinese) must be watching thriller movies.
+- The person in position 2 (Australian) must be watching fantasy movies.
+
+Now, we need to place the sports:
+- The person in position 1 (Chinese) can be either doing climbing or ice-hockey.
+- The person in position 2 (Australian) can be either doing climbing or ice-hockey.
+
+We need to ensure that the person who prefers climbing is either to the left or right of the person watching thriller movies. Since the Chinese person is already watching thriller movies, the person in position 2 (Australian) must be doing the other sport.
+
+Thus, we have:
+- Position 1 (Left): Chinese, watching thriller movies, doing ice-hockey.
+- Position 2 (Right): Australian, watching fantasy movies, doing climbing.
+
+### Final Table:
+
+```
+|               |     1      |     2      |
+| Movie-Genre   | Thriller  | Fantasy    |
+| Nationality   | Chinese   | Australian |
+| Sport         | Ice-hockey| Climbing   |
+```
+
+### Final Solution:
+
+```
+|               |     1      |     2      |
+| Movie-Genre   | Thriller  | Fantasy    |
+| Nationality   | Chinese   | Australian |
+| Sport         | Ice-hockey| Climbing   |
+```"	{'movie-genre': ['thriller', 'fantasy'], 'nationality': ['chinese', 'australian'], 'sport': ['ice-hockey', 'climbing']}	True	6	True
+Lv3-3x2-4	"To solve this logic puzzle, we need to carefully analyze and apply each clue to determine the correct arrangement. Let's break down the clues and solve step by step.
+
+### Clues:
+1. The British is on the left of the person watching satire movies.
+2. The owner of the hedgehog is on the left or right of the French.
+3. There are two different movie genres: Satire and Superhero.
+4. There are two different nationalities: British and French.
+5. There are two different pets: Hedgehog and Snake.
+
+### Step-by-Step Analysis:
+
+#### Clue 1: The British is on the left of the person watching satire movies.
+- This means if the British person is in position 1, the person in position 2 must be watching satire.
+- If the British person is in position 2, there is no one to their left who could be watching satire.
+
+#### Clue 2: The owner of the hedgehog is on the left or right of the French.
+- This means the French person can be in either position 1 or 2, but the hedgehog owner must be adjacent to them.
+
+### Possible Arrangements Based on Clues:
+
+Let's start with the British person:
+
+1. **British in Position 1:**
+   - The person in Position 2 must be watching satire.
+   - The French person cannot be in Position 1 (since the British is already there).
+   - The French person must be in Position 2, so the hedgehog owner must be either in Position 1 or 2.
+
+   Since the British is in Position 1 and the French is in Position 2, the hedgehog owner must be in Position 1 (left of the French).
+
+2. **British in Position 2:**
+   - The person in Position 1 must be watching satire.
+   - The French person cannot be in Position 1 (since the British is already there).
+   - The French person must be in Position 2, so the hedgehog owner must be either in Position 1 or 2.
+
+   However, if the British is in Position 2 and the French is in Position 1, the hedgehog owner must be in Position 1 (left of the French), which contradicts the British being in Position 2.
+
+Thus, the only valid arrangement is:
+- British in Position 1
+- French in Position 2
+- Hedgehog owner in Position 1
+
+Now, let's assign the remaining details:
+
+- Since the British is in Position 1, they must be watching satire.
+- The French is in Position 2, so they must be watching superhero.
+- The hedgehog owner is in Position 1, so the snake must be in Position 2.
+
+### Final Solution Table:
+
+```
+|               |     1     |   2    |
+| Movie-Genre   | Satire    | Superhero |
+| Nationality   | British   | French   |
+| Pet           | Hedgehog  | Snake    |
+```
+
+```plaintext
+|               |     1     |   2    |
+| Movie-Genre   | Satire    | Superhero |
+| Nationality   | British   | French   |
+| Pet           | Hedgehog  | Snake    |
+```"	{'movie-genre': ['satire', 'superhero'], 'nationality': ['british', 'french'], 'pet': ['hedgehog', 'snake']}	True	4	False
+Lv3-3x2-5	"Let's break down the given clues and systematically place the information into the table.
+
+### Clues:
+1. The person drinking lemonade is on the right of the fisherman.
+2. The Brazilian is on the left or right of the fisherman.
+
+### Possible Arrangements:
+
+Since we have two positions (1 and 2) for each category (Beverage, Job, Nationality), let's denote the positions as follows:
+- Position 1: Left
+- Position 2: Right
+
+#### Step-by-Step Solution:
+
+1. **Clue 1: The person drinking lemonade is on the right of the fisherman.**
+   - This means if someone is drinking lemonade, they must be in position 2, and the fisherman must be in position 1.
+   
+2. **Clue 2: The Brazilian is on the left or right of the fisherman.**
+   - This means the Brazilian can be either in position 1 or 2 relative to the fisherman.
+
+Given these constraints, let's consider the possible placements:
+
+- If the fisherman is in position 1, then the Brazilian must be in position 2 because the Brazilian can only be next to the fisherman.
+- Therefore, the fisherman cannot be in position 2, and the Brazilian cannot be in position 1.
+
+So, the only logical arrangement is:
+- Fisherman in position 1
+- Brazilian in position 2
+
+Now, let's fill in the rest of the information based on these positions:
+
+- Since the Brazilian is in position 2, and the fisherman is in position 1, the person in position 1 must be drinking lemonade (as per Clue 1).
+- The person in position 2 must be drinking water (since there are only two beverages and one is already assigned).
+
+Therefore, the final table looks like this:
+
+```
+|               |     1      |     2     |
+| Beverage      | Lemonade   | Water     |
+| Job           | Fisherman  | Scientist |
+| Nationality   | Australian | Brazilian |
+```
+
+### Final Solution Table:
+```
+|               |     1      |     2     |
+| Beverage      | Lemonade   | Water     |
+| Job           | Fisherman  | Scientist |
+| Nationality   | Australian | Brazilian |
+```"	{'beverage': ['lemonade', 'water'], 'job': ['fisherman', 'scientist'], 'nationality': ['australian', 'brazilian']}	True	4	False
+Lv3-3x2-6	"To solve this logic puzzle, let's break down the clues and fill in the table accordingly.
+
+### Clues:
+1. The person drinking Fanta is on the left or right of the fan of Rock.
+2. The person who's hobby is Photography is on the left of the fan of Rock.
+
+### Possible Combinations:
+Let's denote the positions as follows:
+- Position 1: Left
+- Position 2: Right
+
+#### Step-by-Step Analysis:
+
+1. **Clue 2**: The person with Photography as a hobby is on the left of the fan of Rock.
+   - This means if Rock is at position 2, then Photography must be at position 1.
+   - If Rock is at position 1, then Photography cannot be at position 1 (since it would not be to the left of Rock).
+
+2. **Clue 1**: The person drinking Fanta is on the left or right of the fan of Rock.
+   - If Rock is at position 1, Fanta can be at either position 1 or 2.
+   - If Rock is at position 2, Fanta can only be at position 2.
+
+Given these clues, let's try placing the elements step-by-step:
+
+- **Case 1: Rock at position 1**
+  - Photography must be at position 1 (contradicts Rock being at position 1).
+  - Therefore, Rock cannot be at position 1.
+
+- **Case 2: Rock at position 2**
+  - Photography must be at position 1.
+  - Fanta can be at either position 1 or 2.
+
+Now we need to place the remaining elements (Chess, Tea) and the other music genre (Soul).
+
+### Final Solution Table:
+
+```markdown
+|               |      1      |   2   |
+| Beverage      |     Tea     |  Fanta |
+| Hobby         |  Photography |   Chess |
+| Music-Genre   |      Soul    |   Rock  |
+```
+
+### Explanation:
+- Photography is at position 1.
+- Rock is at position 2.
+- Since Fanta is on the left or right of Rock, it fits at position 2.
+- Tea must be at position 1 for Beverage.
+- Chess must be at position 2 for Hobby.
+- Soul must be at position 1 for Music-Genre.
+
+Thus, the final solution table is:
+
+```
+|               |      1      |   2   |
+| Beverage      |     Tea     |  Fanta |
+| Hobby         |  Photography |   Chess |
+| Music-Genre   |      Soul    |   Rock  |
+```"	{'beverage': ['tea', 'fanta'], 'hobby': ['photography', 'chess'], 'music-genre': ['soul', 'rock']}	True	4	False
+Lv3-3x2-7	"To solve this puzzle, let's break down the information and constraints step-by-step.
+
+1. **Movie-Genres**: Martial-arts, Mystery
+2. **Music-Genres**: D&B, Trance
+3. **Transport**: Ship, Tram
+
+### Constraints:
+1. The person watching martial-arts movies is on the right of the person driving the tram.
+2. The person driving the ship is on the left or right of the fan of D&B.
+
+### Step-by-Step Solution:
+
+#### Step 1: Assigning Movie-Genres
+We have two columns (1 and 2) and two movie-genres (Martial-arts, Mystery). Let's denote the movie-genre in column 1 as \(M_1\) and in column 2 as \(M_2\).
+
+Since the person watching martial-arts movies is on the right of the person driving the tram, we can deduce that:
+- If the person in column 1 is watching martial-arts, then the person in column 2 must be driving the tram.
+- If the person in column 2 is watching martial-arts, then the person in column 1 must be driving the tram.
+
+Let's try both scenarios to see which fits all the constraints.
+
+#### Scenario 1: \(M_1 = \text{Martial-arts}\) and \(M_2 = \text{Mystery}\)
+- Column 1: Martial-arts
+- Column 2: Mystery
+
+In this case, the person in column 2 (Mystery) cannot be driving the tram because the person in column 1 (Martial-arts) is on the left. Therefore, this scenario does not fit the first constraint.
+
+#### Scenario 2: \(M_1 = \text{Mystery}\) and \(M_2 = \text{Martial-arts}\)
+- Column 1: Mystery
+- Column 2: Martial-arts
+
+Here, the person in column 2 (Martial-arts) is on the right of the person in column 1 (Mystery), which fits the first constraint.
+
+#### Step 2: Assigning Music-Genres
+We have two columns and two music-genres (D&B, Trance). Let's denote the music-genre in column 1 as \(G_1\) and in column 2 as \(G_2\).
+
+Since the person driving the ship is on the left or right of the fan of D&B, we need to consider the transport assignments.
+
+#### Step 3: Assigning Transport
+We have two columns and two types of transport (Ship, Tram). Let's denote the transport in column 1 as \(T_1\) and in column 2 as \(T_2\).
+
+Given the second constraint:
+- The person driving the ship is on the left or right of the fan of D&B.
+
+Let's assign the transports while ensuring the second constraint is met.
+
+#### Scenario 2 Revisited with Transports:
+- Since the person in column 2 (Martial-arts) is on the right of the person in column 1 (Mystery), the person in column 2 must be driving the tram.
+
+So, we have:
+- Column 1: Mystery
+- Column 2: Martial-arts
+- Column 2: Tram
+
+Now, we need to assign the ship to one of the remaining columns and the D&B to one of the remaining genres.
+
+Since the person driving the ship must be on the left or right of the fan of D&B:
+- If the person in column 1 is driving the ship, they must be on the left of the fan of D&B.
+- If the person in column 2 is driving the ship, they must be on the right of the fan of D&B.
+
+Given that column 2 is already assigned to the tram, the person in column 1 must be driving the ship.
+
+So, we have:
+- Column 1: Mystery
+- Column 1: Ship
+- Column 2: Martial-arts
+- Column 2: Tram
+
+Finally, we assign the music-genres:
+- The fan of D&B must be in column 1 (since the person in column 2 is driving the tram).
+- The fan of Trance must be in column 2.
+
+So, we have:
+- Column 1: Mystery
+- Column 1: Ship
+- Column 2: Martial-arts
+- Column 2: Tram
+- Column 1: D&B
+- Column 2: Trance
+
+### Final Solution Table:
+
+```
+|               |    1    |      2       |
+| Movie-Genre   | Mystery | Martial-arts |
+| Music-Genre   | D&B     | Trance       |
+| Transport     | Ship    | Tram         |
+```
+
+```markdown
+|               |    1    |      2       |
+| Movie-Genre   | Mystery | Martial-arts |
+| Music-Genre   | D&B     | Trance       |
+| Transport     | Ship    | Tram         |
+```"	{'movie-genre': ['mystery', 'martial-arts'], 'music-genre': ['d&b', 'trance'], 'transport': ['ship', 'tram']}	True	4	False
+Lv3-3x2-8	"To solve this logic puzzle, let's break down the information and constraints given:
+
+1. There are two different favorite beverages: Fanta and Mirinda.
+2. There are two different movie genres: Epic and Satire.
+3. There are two different sports: Parkour and Skateboarding.
+
+Given clues:
+1. The person watching satire movies is to the right of the person whose sport is skateboarding.
+2. The person whose sport is skateboarding is either to the left or right of the person drinking Mirinda.
+
+We need to place these items in the table while satisfying all the conditions.
+
+Let's denote:
+- F = Fanta
+- M = Mirinda
+- E = Epic
+- S = Satire
+- P = Parkour
+- K = Skateboarding
+
+From clue 1, we know:
+- If the person watching Satire (S) is to the right of the person whose sport is Skateboarding (K), then K must be in the leftmost position and S must be in the rightmost position.
+
+From clue 2, we know:
+- The person whose sport is Skateboarding (K) is either to the left or right of the person drinking Mirinda (M).
+
+Combining these clues, we can deduce:
+- Since K must be to the left of S, and K must also be to the left or right of M, it follows that K must be in the first column and M must be in the second column. This leaves S in the second column as well.
+
+So, the layout should be:
+- First column (left): K (Skateboarding)
+- Second column (right): S (Satire) and M (Mirinda)
+
+Now, let's fill in the table with these deductions:
+
+```
+|               |       1       |    2    |
+| Beverage      |     M         |    F    |
+| Movie-Genre   |     S         |    E    |
+| Sport         |     K         |    P    |
+```
+
+Here's the reasoning:
+- In column 1, the sport is Skateboarding (K).
+- In column 2, the movie genre is Satire (S) and the beverage is Mirinda (M).
+- The remaining sport, Parkour (P), is placed in the second column.
+
+This arrangement satisfies all the given conditions. Therefore, the final solution table is:
+
+```
+|               |       1       |    2    |
+| Beverage      |     Mirinda   |    Fanta |
+| Movie-Genre   |     Satire    |    Epic  |
+| Sport         |     Skateboarding | Parkour |
+```"	{'beverage': ['mirinda', 'fanta'], 'movie-genre': ['satire', 'epic'], 'sport': ['skateboarding', 'parkour']}	True	2	False
+Lv3-3x2-9	"Let's break down the puzzle step-by-step and use the given clues to fill in the table.
+
+### Clues:
+1. The people prefer 2 different movie-genres: sports, western.
+2. The people prefer 2 different music-genres: disco, house.
+3. The people prefer 2 different types of sport: tennis, weightlifting.
+4. The person watching western movies is on the left of the fan of disco.
+5. The person who's sport is weightlifting is on the left or right of the fan of disco.
+
+### Step-by-Step Solution:
+
+#### Step 1: Determine the positions of the genres
+Since there are only two genres for each category (movie, music, sport), and they need to be distributed across the two columns, we can start by placing them.
+
+For **Movie-Genres**:
+- Western
+- Sports
+
+For **Music-Genres**:
+- Disco
+- House
+
+For **Sports**:
+- Tennis
+- Weightlifting
+
+#### Step 2: Apply Clue 4
+The person watching western movies is on the left of the fan of disco. This means that if ""Western"" is in column 1, ""Disco"" must be in column 2.
+
+|               |       1       |   2    |
+| Movie-Genre   | Western       | Disco  |
+| Music-Genre   |               |        |
+| Sport         |               |        |
+
+#### Step 3: Apply Clue 5
+The person who's sport is weightlifting is on the left or right of the fan of disco. Since ""Disco"" is in column 2, weightlifting could be in either column 1 or column 2.
+
+Since western movies are already in column 1, weightlifting cannot be in column 1 because it would violate clue 4. Therefore, weightlifting must be in column 2.
+
+|               |       1       |   2    |
+| Movie-Genre   | Western       | Disco  |
+| Music-Genre   |               |        |
+| Sport         | Tennis        | Weightlifting |
+
+#### Step 4: Determine the remaining music genre
+The only remaining music genre is house, which must go in column 1.
+
+|               |       1       |   2    |
+| Movie-Genre   | Western       | Disco  |
+| Music-Genre   | House         |        |
+| Sport         | Tennis        | Weightlifting |
+
+### Final Solution Table:
+```
+|               |       1       |   2    |
+| Movie-Genre   | Western       | Disco  |
+| Music-Genre   | House         |        |
+| Sport         | Tennis        | Weightlifting |
+```"	{'movie-genre': ['western', 'disco'], 'music-genre': ['house', ''], 'sport': ['tennis', 'weightlifting']}	True	2	False
+Lv3-3x2-10	"To solve this logic puzzle, let's break down the clues and place the information step-by-step into the table.
+
+### Clues:
+1. The person watching romance movies is on the left or right of the person eating nectarine.
+2. The person eating nectarine is on the right of the person whose sport is golf.
+
+### Initial Setup:
+We have two columns (1 and 2) and three rows (Food, Movie-Genre, Sport).
+
+|               |    1     |       2       |
+|---------------|----------|---------------|
+| Food          |          |               |
+| Movie-Genre   |          |               |
+| Sport         |          |               |
+
+### Analyzing Clue 2:
+- The person eating nectarine is on the right of the person whose sport is golf.
+  - This means if the person playing golf is in column 1, then the person eating nectarine must be in column 2.
+  - If the person playing golf is in column 2, there would be no room for the person eating nectarine.
+
+So, we can conclude that the person playing golf is in column 1, and the person eating nectarine is in column 2.
+
+### Placing Golf and Nectarine:
+- Column 1: Golf
+- Column 2: Nectarine
+
+|               |    1     |       2       |
+|---------------|----------|---------------|
+| Food          |          |               |
+| Movie-Genre   |          |               |
+| Sport         | Golf     | Nectarine     |
+
+### Analyzing Clue 1:
+- The person watching romance movies is on the left or right of the person eating nectarine.
+  - Since the person eating nectarine is in column 2, the person watching romance movies can be in either column 1 or column 2.
+  - However, since we already placed someone in column 2, the person watching romance movies must be in column 1.
+
+### Placing Romance Movies:
+- Column 1: Romance
+- Column 2: Nectarine
+
+|               |    1     |       2       |
+|---------------|----------|---------------|
+| Food          |          |               |
+| Movie-Genre   | Romance  | Nectarine     |
+| Sport         | Golf     | Nectarine     |
+
+### Placing Eggplant and Skateboarding:
+- The only remaining food is eggplant.
+- The only remaining sport is skateboarding.
+
+Since the person eating nectarine is in column 2, the person eating eggplant must be in column 1.
+
+|               |    1     |       2       |
+|---------------|----------|---------------|
+| Food          | Eggplant | Nectarine     |
+| Movie-Genre   | Romance  | Nectarine     |
+| Sport         | Golf     | Skateboarding |
+
+### Final Solution Table:
+```
+|               |    1     |       2       |
+|---------------|----------|---------------|
+| Food          | Eggplant | Nectarine     |
+| Movie-Genre   | Romance  | Nectarine     |
+| Sport         | Golf     | Skateboarding |
+```"	{'food': ['eggplant', 'nectarine'], 'movie-genre': ['romance', 'nectarine'], 'sport': ['golf', 'skateboarding']}	True	5	False

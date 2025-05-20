@@ -1,0 +1,355 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x2-1	"Let's break down the clues:
+
+1. The dressmaker is somewhere to the left of the fan of dubstep.
+
+This means that the dressmaker cannot be the fan of dubstep, and the fan of dubstep must be to the right of the dressmaker.
+
+We can start by placing the dressmaker in one of the two columns:
+
+|               |     1      |    2     |
+| Job           |            |          |
+| Music-Genre   |            |          |
+
+Let's say the dressmaker is in column 1. Then, the fan of dubstep must be in column 2.
+
+|               | designer | dressmaker |
+| Job           |          |          |
+| Music-Genre   |          |          |
+
+Now, we know that the designer is not the dressmaker, and the designer is not the fan of dubstep. This means that the designer must be the fan of reggae.
+
+|               | designer | dressmaker |
+| Job           | reggae   |          |
+| Music-Genre   |          |          |
+
+Finally, we can fill in the remaining cell:
+
+|               | designer | dressmaker |
+| Job           | reggae   | dressmaker |
+| Music-Genre   | dubstep  |          |
+
+So, the final solution is:
+
+#############
+|               | designer | dressmaker |
+| Job           | reggae   | dressmaker |
+| Music-Genre   | dubstep  |          |
+#############"	{'job': ['reggae', 'dressmaker'], 'music-genre': ['dubstep', '']}	True	0	False
+Lv1-2x2-2	"Let's break down the clues:
+
+1. The person driving the airplane is somewhere to the left of the owner of the goat.
+
+This means that the owner of the goat is to the right of the person driving the airplane. Let's represent this as:
+
+Airplane |? | Goat
+
+2. There are 2 different pets: goat, lizard
+3. There are 2 different means of transport: airplane, motorbike
+
+We can start filling in the table:
+
+#############
+|             |    1     |     2     |
+| Pet         |          |           |
+| Transport   |          |           |
+#############
+| Goat        |          |           |
+| Lizard      |          |           |
+| Airplane    | X        |           |
+| Motorbike   |          | X         |
+#############
+
+From clue 1, we know the owner of the goat is to the right of the person driving the airplane. Since there are only 2 columns, the owner of the goat must be in column 2.
+
+From clue 2, we know there are 2 pets: goat and lizard. Since the goat is already in column 2, the lizard must be in column 1.
+
+From clue 3, we know there are 2 means of transport: airplane and motorbike. Since the airplane is already in column 1, the motorbike must be in column 2.
+
+The final solution table is:
+
+#############
+|             |    1     |     2     |
+| Pet         | Lizard  | Goat      |
+| Transport   | Airplane| Motorbike |
+#############
+
+Let me know if you have any questions or need further clarification!"	{'pet': ['lizard', 'goat'], 'transport': ['airplane', 'motorbike']}	True	4	True
+Lv1-2x2-3	"Let's break down the clues:
+
+1. The people prefer 2 different music-genres: r&b, rock
+This means we have two people, each preferring one of the two genres.
+
+2. The people use 2 different means of transport: boat, subway
+This means we have two people, each using one of the two means of transport.
+
+3. The fan of r&b is somewhere to the right of the person driving the boat
+This means that the person who prefers r&b is to the right of the person driving the boat.
+
+From the clues, we can create a table:
+
+|               |  1   |   2    |
+| Music-Genre   |      |        |
+| Transport     |      |        |
+
+Let's fill in the table based on the clues:
+
+|               |  1   |   2    |
+| Music-Genre   | r&b | rock  |
+| Transport     | boat | subway |
+
+The person driving the boat is on the left, and the person who prefers r&b is to the right of them. Therefore, the person who prefers r&b is on the right.
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |  1   |   2    |
+| Music-Genre   | r&b | rock  |
+| Transport     | boat | subway |
+#############"	{'music-genre': ['r&b', 'rock'], 'transport': ['boat', 'subway']}	True	2	False
+Lv1-2x2-4	"Let's break down the puzzle step by step:
+
+1. The people prefer 2 different movie-genres: musical, zombie
+This means that the person who likes musical movies also likes another movie genre, which is zombie.
+
+2. The people prefer 2 different music-genres: classical, gospel
+This means that the person who likes gospel music also likes another music genre, which is classical.
+
+3. The fan of gospel is somewhere to the right of the person watching musical movies
+This means that the person who likes gospel music is either the one who likes classical music or the one who likes zombie movies. We can't determine which one yet, but we know the order.
+
+Now, let's create a table to represent the puzzle:
+
+#############
+|               |     1     |   2    |
+| Movie-Genre   |           |        |
+| Music-Genre   |           |        |
+#############
+
+From step 1, we know that the person who likes musical movies also likes zombie movies. From step 2, we know that the person who likes gospel music also likes classical music. We can start filling in the table:
+
+#############
+|               |     1     |   2    |
+| Movie-Genre   | Musical  | Zombie |
+| Music-Genre   |          |        |
+#############
+
+Since the fan of gospel is somewhere to the right of the person watching musical movies, we can conclude that the person who likes gospel music is either the one who likes classical music or the one who likes zombie movies. Let's assume the person who likes gospel music is the one who likes classical music (we can try the other way later and see if it works). Then, the table would look like this:
+
+#############
+|               |     1     |   2    |
+| Movie-Genre   | Musical  | Zombie |
+| Music-Genre   |          | Gospel |
+#############
+
+This solution satisfies all the conditions given in the puzzle. The person who likes gospel music is indeed to the right of the person watching musical movies, and the person who likes classical music is paired with the person who likes gospel music.
+
+If we try the other way (the person who likes gospel music is the one who likes zombie movies), we would get:
+
+#############
+|               |     1     |   2    |
+| Movie-Genre   | Musical  | Classical |
+| Music-Genre   |          | Gospel   |
+#############
+
+This solution does not satisfy the condition that the fan of gospel is somewhere to the right of the person watching musical movies. Therefore, the original solution is the correct one:
+
+#############
+|               |     1     |   2    |
+| Movie-Genre   | Musical  | Zombie |
+| Music-Genre   |          | Gospel |
+#############"	{'movie-genre': ['musical', 'zombie'], 'music-genre': ['', 'gospel']}	True	3	False
+Lv1-2x2-5	"Let's break down the clues:
+
+1. The German is somewhere to the right of the person driving the ship.
+
+This means that the German cannot be in the leftmost column (Transport = Bus). Let's assume the German is in the rightmost column (Transport = Ship).
+
+|               |    1    |   2    |
+| Nationality   |         |        |
+| Transport     | Bus     | Ship   |
+
+2. There are 2 different nationalities: German, Mexican
+
+We know the German is in the rightmost column (Transport = Ship). The Mexican must be in the leftmost column (Transport = Bus).
+
+|               |    1    |   2    |
+| Nationality   | Mexican | German |
+| Transport     | Bus     | Ship   |
+
+The final solution is:
+
+#############
+|               |    1    |   2    |
+| Nationality   | Mexican | German |
+| Transport     | Bus     | Ship   |
+#############"	{'nationality': ['mexican', 'german'], 'transport': ['bus', 'ship']}	True	2	False
+Lv1-2x2-6	"Let's break down the clues:
+
+1. The person drinking almond-milk is somewhere to the right of the pilot.
+
+This means that the pilot cannot be the one drinking almond-milk. Let's assume the pilot is on the left side of the table.
+
+|            |   1   |        2        |
+| Beverage   |       |                 |
+| Job        |       |                 |
+
+Since there are only two jobs, the pilot must be on the left side, and the project-manager must be on the right side.
+
+2. There are 2 different favourite beverages: almond-milk, milk
+
+We know the pilot is not drinking almond-milk, so the pilot must be drinking milk. This leaves almond-milk for the project-manager.
+
+|            |   1   |        2        |
+| Beverage   | milk  | almond-milk  |
+| Job        | pilot | project-manager |
+
+Now we have a complete solution:
+
+#############
+|            |   1   |        2        |
+| Beverage   | milk  | almond-milk  |
+| Job        | pilot | project-manager |
+#############"	{'beverage': ['milk', 'almond-milk'], 'job': ['pilot', 'project-manager']}	True	4	True
+Lv1-2x2-7	"Let's break down the information we have:
+
+1. There are 2 different favourite beverages: iced-tea, tea
+2. The people prefer 2 different movie-genres: crime, romance
+3. The person drinking tea is somewhere to the left of the person watching romance movies
+
+From statement 3, we can conclude that the person drinking tea is either in the 1st or 2nd position, and the person watching romance movies is either in the 2nd or 3rd position.
+
+Here's a possible solution:
+
+#############
+|               |   1   |    2     |
+| Beverage      | iced-tea | tea      |
+| Movie-Genre   | crime   | romance |
+#############
+
+In this solution, the person drinking iced-tea is in the 1st position, and the person drinking tea is in the 2nd position. The person watching crime movies is in the 1st position, and the person watching romance movies is in the 2nd position. This satisfies all the given conditions."	{'beverage': ['iced-tea', 'tea'], 'movie-genre': ['crime', 'romance']}	True	2	False
+Lv1-2x2-8	"Let's break down the clues:
+
+1. The person drinking lemonade is somewhere to the left of the fan of techno.
+
+This means that the person who drinks lemonade cannot be the one who likes techno. Let's assume the person who drinks lemonade is on the left, and the person who likes techno is on the right.
+
+|               |    1     |   2    |
+| Beverage      |          |        |
+| Music-Genre   |          |        |
+
+Since there are only 2 people, and 2 beverages, we can start filling in the table:
+
+|               |    1     |   2    |
+| 7up           |          |        |
+| Lemonade      |          |        |
+| Techno        |          |        |
+| Trance        |          |        |
+
+Now, let's apply the first clue:
+
+1. The person drinking lemonade is somewhere to the left of the fan of techno.
+
+This means that the person who drinks lemonade cannot be the one who likes techno. So, the person who drinks lemonade must be on the left, and the person who likes techno must be on the right.
+
+|               |    1     |   2    |
+| 7up           | Lemonade |        |
+| Techno        |          |        |
+| Trance        |          |        |
+
+Now, we can fill in the remaining cells:
+
+|               |    1     |   2    |
+| 7up           | Lemonade |        |
+| Techno        |          | Trance |
+|                |          |        |
+
+The final solution is:
+
+#############
+|               |    1     |   2    |
+| 7up           | Lemonade |        |
+| Techno        |          | Trance |
+#############
+
+The person who drinks 7up likes trance, and the person who drinks lemonade likes techno."	{'7up': ['lemonade', ''], 'techno': ['', 'trance']}	False	0	False
+Lv1-2x2-9	"Let's break down the clues and solve the puzzle step by step.
+
+Clue 1: ""the person drinking soy-milk is somewhere to the right of the owner of the fish""
+
+This means that the person who drinks soy-milk cannot be the one who owns the fish. Let's represent the table as follows:
+
+|            |   1   |    2     |
+| Beverage   |       |          |
+| Pet        |       |          |
+
+We can start by placing the fish owner in one of the two columns. Let's say the fish owner is in column 1.
+
+|            |   1   |    2     |
+| Beverage   |       |          |
+| Pet        | Fish |          |
+
+Now, we know that the soy-milk drinker is to the right of the fish owner. This means they must be in column 2.
+
+|            |   1   |    2     |
+| Beverage   |       | Soy-milk |
+| Pet        | Fish |          |
+
+Next, we need to figure out who owns the hedgehog. Since there are only two pets and two beverages, we can deduce that the hedgehog owner must be the one who drinks water.
+
+|            |   1   |    2     |
+| Beverage   | Water | Soy-milk |
+| Pet        | Fish | Hedgehog |
+
+Now we have a complete solution:
+
+#############
+|            |   1   |    2     |
+| Beverage   | Water | Soy-milk |
+| Pet        | Fish | Hedgehog |
+#############
+
+The final solution shows that the person who drinks water owns the fish, and the person who drinks soy-milk owns the hedgehog."	{'beverage': ['water', 'soy-milk'], 'pet': ['fish', 'hedgehog']}	True	4	True
+Lv1-2x2-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The people prefer 2 different music-genres: country, disco
+This clue tells us that there are two people, each preferring one of the two music genres.
+
+2. The people use 2 different means of transport: bike, bus
+This clue tells us that there are two people, each using one of the two means of transport.
+
+3. the person driving the bus is somewhere to the left of the person driving the bike
+This clue tells us that the person driving the bus is to the left of the person driving the bike.
+
+4. the fan of country is somewhere to the right of the fan of disco
+This clue tells us that the fan of country is to the right of the fan of disco.
+
+Now, let's create a table to represent the puzzle:
+
+|               |   1   |    2    |
+| Music-Genre   |       |         |
+| Transport     |       |         |
+
+From clue 3, we know that the person driving the bus is to the left of the person driving the bike. Let's assume the person driving the bus is in position 1 and the person driving the bike is in position 2.
+
+|               |   1 (Bus) |    2 (Bike)    |
+| Music-Genre   |       |         |
+| Transport     | Bus    | Bike       |
+
+From clue 4, we know that the fan of country is to the right of the fan of disco. Let's assume the fan of disco is in position 1 and the fan of country is in position 2.
+
+|               |   1 (Disco) |    2 (Country)    |
+| Music-Genre   | Disco    | Country      |
+| Transport     | Bus    | Bike       |
+
+Now, we can fill in the table:
+
+#############
+|               |   1 (Disco, Bus) |    2 (Country, Bike)    |
+| Music-Genre   | Disco    | Country      |
+| Transport     | Bus    | Bike       |
+#############
+
+The final solution is:
+
+The person driving the bus (Disco fan) is in position 1, and the person driving the bike (Country fan) is in position 2."	{'music-genre': ['disco', 'country'], 'transport': ['bus', 'bike']}	True	4	True

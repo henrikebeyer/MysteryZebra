@@ -1,0 +1,561 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-6x2-1	"Let's start solving the puzzle step by step.
+
+From clue 1, we know that the owner of the goldfish is on the far right, so we can fill in the pet column for person 2:
+
+|               |    1     |     2      |
+| Beverage      |          |            |
+| Food          |          |            |
+| Job           |          |            |
+| Nationality   |          |            |
+| Pet           |          | Goldfish  |
+| Sport         |          |            |
+
+From clue 3, we know that the person drinking soy-milk is on the left of the person eating strawberry. Since there are only two types of food and beverages, this means that the person drinking soy-milk must be person 1, and the person eating strawberry must be person 2:
+
+|               |    1     |     2      |
+| Beverage      | Soy-milk |            |
+| Food          |          | Strawberry|
+| Job           |          |            |
+| Nationality   |          |            |
+| Pet           |          | Goldfish  |
+| Sport         |          |            |
+
+From clue 4, we know that the analyst is on the right of the Turkish person. Since there are only two jobs and nationalities, this means that the analyst must be person 2, and the Turkish person must be person 1:
+
+|               |    1     |     2      |
+| Beverage      | Soy-milk |            |
+| Food          |          | Strawberry|
+| Job           |          | Analyst   |
+| Nationality   | Turkish  |            |
+| Pet           |          | Goldfish  |
+| Sport         |          |            |
+
+From clue 2, we know that the person eating kiwi is on the left or right of the person who's sport is rowing. Since person 1 is already occupied with soy-milk and being Turkish, they must be the one eating kiwi. Also, since person 2 is on the far right and has a goldfish, their sport cannot be rowing. Therefore, person 1's sport must be lacrosse, and person 2's sport must be rowing:
+
+|               |    1     |     2      |
+| Beverage      | Soy-milk |            |
+| Food          | Kiwi     | Strawberry|
+| Job           |          | Analyst   |
+| Nationality   | Turkish  |            |
+| Pet           |          | Goldfish  |
+| Sport         | Lacrosse | Rowing    |
+
+The only remaining columns to fill in are the job and nationality for person 1, and the beverage for person 2. Since there is only one job left (manager) and one nationality left (British), we can fill those in:
+
+|               |    1     |     2      |
+| Beverage      | Soy-milk |            |
+| Food          | Kiwi     | Strawberry|
+| Job           | Manager  | Analyst   |
+| Nationality   | Turkish  | British    |
+| Pet           | Frog     | Goldfish  |
+| Sport         | Lacrosse | Rowing    |
+
+The only remaining column to fill in is the beverage for person 2. Since there is only one beverage left (iced-tea), we can fill that in:
+
+#############
+|               |    1     |     2      |
+| Beverage      | Soy-milk | Iced-Tea  |
+| Food          | Kiwi     | Strawberry|
+| Job           | Manager  | Analyst   |
+| Nationality   | Turkish  | British    |
+| Pet           | Frog     | Goldfish  |
+| Sport         | Lacrosse | Rowing    |
+#############"	{'beverage': ['soy-milk', 'iced-tea'], 'food': ['kiwi', 'strawberry'], 'job': ['manager', 'analyst'], 'nationality': ['turkish', 'british'], 'pet': ['frog', 'goldfish'], 'sport': ['lacrosse', 'rowing']}	True	12	True
+Lv3-6x2-2	"After analyzing the clues, I've come up with a possible solution:
+
+
+#############
+|               |     1     |     2      |
+| Beverage      | cola     | iced-tea   |
+| Food          | mango    | cabbage    |
+| Music-Genre   | hip-hop  | pop        |
+| Nationality   | german   | dutch       |
+| Pet           | goldfish | guinea-pig |
+| Transport     | taxi     | motorbike  |
+#############
+
+
+Here's how I arrived at this solution:
+
+
+From clue 1, the owner of the guinea-pig is on the far right, so it must be in column 2.
+
+
+From clue 2, the german is on the left of the fan of pop. Since there are only two nationalities and music genres, this means the german must be in column 1, and the dutch person must be in column 2.
+
+
+From clue 3, the person drinking cola is on the left or right of the fan of pop. Given the previous deductions, it's more likely that the person drinking cola is in column 1, as they need to be adjacent to the fan of pop (who is in column 2).
+
+
+From clue 4, the person driving the taxi is on the right of the person eating mango. Since the german (in column 1) is most likely to drive a taxi, this means the person eating mango must also be in column 1.
+
+
+The remaining options are placed based on the constraints:
+
+
+* The fan of hip-hop must be in column 1.
+* The owner of the goldfish must be in column 1.
+* The motorbike rider and cabbage-eater (dutch) must be in column 2.
+
+Note that this solution is not unique, as there might be other possible arrangements. However, this solution satisfies all the given clues."	{'beverage': ['cola', 'iced-tea'], 'food': ['mango', 'cabbage'], 'music-genre': ['hip-hop', 'pop'], 'nationality': ['german', 'dutch'], 'pet': ['goldfish', 'guinea-pig'], 'transport': ['taxi', 'motorbike']}	True	10	False
+Lv3-6x2-3	"Let's analyze the clues step by step:
+
+
+From clue 1, we know that singing is on the right and woodworking is on the left.
+
+
+|               |      1      |      2      |
+| Beverage      |             |             |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   |             |             |
+| Music-Genre   |             |             |
+| Nationality   |             |             |
+| Sport         |             |             |
+
+From clue 3, we know that reggae is on the left of climbing.
+
+
+Since singing is already placed on the right, reggae must be on the left (column 1), and climbing must be on the right (column 2).
+
+
+|               |      1      |      2      |
+| Beverage      |             |             |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   |             |             |
+| Music-Genre   | Reggae      |             |
+| Nationality   |             |             |
+| Sport         |             | Climbing    |
+
+From clue 4, we know that lemonade is on the left of the Chinese.
+
+
+Since reggae is already placed on the left (column 1), lemonade must also be on the left (column 1), and the Chinese person must be on the right (column 2).
+
+
+|               |      1      |      2      |
+| Beverage      | Lemonade    |             |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   |             |             |
+| Music-Genre   | Reggae      |             |
+| Nationality   |             | Chinese     |
+| Sport         |             | Climbing    |
+
+From clue 2, we know that documentary is on the left or right of skiing.
+
+
+Since climbing is already placed on the right (column 2), skiing must be on the left (column 1), and documentary must also be on the left (column 1).
+
+
+|               |      1      |      2      |
+| Beverage      | Lemonade    |             |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   | Documentary |             |
+| Music-Genre   | Reggae      |             |
+| Nationality   | Indonesian  | Chinese     |
+| Sport         | Skiing      | Climbing    |
+
+The only remaining options are coffee and satire for column 2, and indie for the music genre.
+
+
+|               |      1      |      2      |
+| Beverage      | Lemonade    | Coffee      |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   | Documentary | Satire      |
+| Music-Genre   | Reggae      | Indie       |
+| Nationality   | Indonesian  | Chinese     |
+| Sport         | Skiing      | Climbing    |
+
+The final solution is:
+
+
+#############
+|               |      1      |      2      |
+| Beverage      | Lemonade    | Coffee      |
+| Hobby         | Woodworking | Singing     |
+| Movie-Genre   | Documentary | Satire      |
+| Music-Genre   | Reggae      | Indie       |
+| Nationality   | Indonesian  | Chinese     |
+| Sport         | Skiing      | Climbing    |
+#############"	{'beverage': ['lemonade', 'coffee'], 'hobby': ['woodworking', 'singing'], 'movie-genre': ['documentary', 'satire'], 'music-genre': ['reggae', 'indie'], 'nationality': ['indonesian', 'chinese'], 'sport': ['skiing', 'climbing']}	True	10	False
+Lv3-6x2-4	"After analyzing the clues, I've come up with a solution. Here is the completed table:
+
+
+|               |      1       |       2        |
+| Hobby         | puzzles     | sudoku        |
+| Job           | lawyer      | police-officer|
+| Movie-Genre   | martial-arts| scientific    |
+| Music-Genre   | salsa       | soul          |
+| Pet           | dog         | rabbit        |
+| Transport     | skateboard  | tram          |
+
+Here's how I arrived at this solution:
+
+From clue 3, the owner of the rabbit is either on the far left or far right. Since the dog is on the left of the rabbit (clue 5), the rabbit must be on the far right.
+
+Clue 4 tells us that the fan of salsa has puzzles as their hobby. This means person 1's music-genre is salsa and their hobby is puzzles.
+
+From clue 2, the person watching scientific movies is to the right of the person whose hobby is sudoku. Since the rabbit (and therefore the owner of the rabbit) is on the far right, the person watching scientific movies must be person 2, and the person with sudoku as their hobby must be person 1.
+
+Clue 1 states that the person driving the tram is to the right of the lawyer. This means person 2's transport is tram and person 1's job is lawyer.
+
+The only remaining movie-genre (martial-arts) goes to person 1, and the only remaining music-genre (soul) goes to person 2.
+
+Finally, since person 1 has puzzles as their hobby and salsa as their music-genre, they must have dog as their pet. Person 2's pet is therefore rabbit.
+
+
+#############"	{'hobby': ['puzzles', 'sudoku'], 'job': ['lawyer', 'police-officer'], 'movie-genre': ['martial-arts', 'scientific'], 'music-genre': ['salsa', 'soul'], 'pet': ['dog', 'rabbit'], 'transport': ['skateboard', 'tram']}	True	8	False
+Lv3-6x2-5	"After solving the logic puzzle, I arrived at the following solution:
+
+
+|               |      1      |     2     |
+| Beverage      | Sprite      | Water    |
+| Food          | Peas        | Avocado  |
+| Hobby         | Photography | Reading   |
+| Movie-Genre   | Fantasy     | Western   |
+| Sport         | Badminton   | Lacrosse  |
+| Transport     | Motorbike   | Scooter   |
+
+Please note that I have followed the clues to arrive at this solution. Here's a brief explanation of my reasoning:
+
+
+From clue 1, we know the person drinking water is on the right of the person watching western movies.
+From clue 5, we know the person watching western movies eats avocado.
+
+Combining these two clues, we can place Water and Avocado in column 2.
+
+
+Clue 3 tells us that the person driving the scooter plays lacrosse. We can place Scooter and Lacrosse in column 2.
+
+
+Clue 2 places Photography on the left of Motorbike.
+Clue 4 suggests that Reading is next to Sprite, so we can place Reading on the right side of Photography (since Photography is already placed on the left of Motorbike).
+
+
+The remaining options fit neatly into their respective categories.
+
+Here is the final solution table with '#############' around it:
+
+
+#############
+|               |      1      |     2     |
+| Beverage      | Sprite      | Water    |
+| Food          | Peas        | Avocado  |
+| Hobby         | Photography | Reading   |
+| Movie-Genre   | Fantasy     | Western   |
+| Sport         | Badminton   | Lacrosse  |
+| Transport     | Motorbike   | Scooter   |
+#############"	{'beverage': ['sprite', 'water'], 'food': ['peas', 'avocado'], 'hobby': ['photography', 'reading'], 'movie-genre': ['fantasy', 'western'], 'sport': ['badminton', 'lacrosse'], 'transport': ['motorbike', 'scooter']}	True	4	False
+Lv3-6x2-6	"Let's start by using the clues to fill in the table.
+
+From clue 3, we know that the person watching horror movies is on the right of the person who's hobby is magic-tricks. So, the person with magic-tricks as their hobby must be in column 1.
+
+From clue 2, we know that the person eating carrot is on the left or right of the person watching horror movies. Since the person watching horror movies is already placed in column 2, the person eating carrot must be in column 1.
+
+So far, we have:
+
+|               |      1       |     2      |
+| Beverage      |              |            |
+| Food          | carrot      |            |
+| Hobby         | magic-tricks |            |
+| Movie-Genre   |              | horror     |
+| Nationality   |              |            |
+| Sport         |              |            |
+
+From clue 1, we know that the Malaysian is on the right of the person who's hobby is magic-tricks. Therefore, the person in column 2 must be Malaysian.
+
+We also know from clue 4 that the person whose sport is surfing is on the right of the person drinking tea. Since the person with surfing as their sport can only be placed in column 2, we can conclude that the person in column 1 drinks tea.
+
+From clue 2, we also know that the person eating carrot is on the left or right of the person watching horror movies. We've already established that they are in column 1, so the person watching horror movies must be eating watermelon (since carrot and watermelon are the only two types of food).
+
+Now, let's fill in the rest of the table.
+
+|               |      1       |     2      |
+| Beverage      | tea          | mirinda    |
+| Food          | carrot      | watermelon |
+| Hobby         | magic-tricks | drawing    |
+| Movie-Genre   |              | horror     |
+| Nationality   |              | malaysian  |
+| Sport         | lacrosse     | surfing    |
+
+The only movie genre left is crime, which must be placed in column 1.
+
+The only nationality left is Indonesian, which must be placed in column 1.
+
+So, the final solution is:
+
+#############
+|               |      1       |     2      |
+| Beverage      | tea          | mirinda    |
+| Food          | carrot      | watermelon |
+| Hobby         | magic-tricks | drawing    |
+| Movie-Genre   | crime        | horror     |
+| Nationality   | indonesian   | malaysian  |
+| Sport         | lacrosse     | surfing    |
+#############"	{'beverage': ['tea', 'mirinda'], 'food': ['carrot', 'watermelon'], 'hobby': ['magic-tricks', 'drawing'], 'movie-genre': ['crime', 'horror'], 'nationality': ['indonesian', 'malaysian'], 'sport': ['lacrosse', 'surfing']}	True	12	True
+Lv3-6x2-7	"After analyzing the clues, I came up with a possible solution:
+
+
+#############
+
+|               |     1     |         2          |
+| Food          | asparagus |      apple        |
+| Job           | mechanic   | software-developer|
+| Movie-Genre   | superhero |    scientific     |
+| Music-Genre   | indie      |       funk        |
+| Nationality   | german     |      american     |
+| Transport     | skateboard |      roller       |
+
+#############
+
+
+Here's a brief explanation of how I arrived at this solution:
+
+From clue 1, we know that the person eating apple is on the right of the person driving the roller. This means that the roller is driven by person 1.
+
+Clue 3 tells us that the software-developer is on the left or right of the mechanic. Since there are only two people, this means that the mechanic and software-developer must be in positions 1 and 2, respectively.
+
+From clue 5, we know that the american is on the right of the mechanic. This means that person 1 (the mechanic) cannot be american, so they must be german.
+
+Clue 4 states that the person watching superhero movies is on the left of the fan of indie. Since there are only two people, this means that person 1 watches superhero movies and person 2 listens to indie music.
+
+Finally, clue 2 tells us that the fan of funk is on the far left or far right. Given the other constraints, the only remaining option for the fan of funk is person 2.
+
+Putting all these pieces together leads to the solution above!"	{'food': ['asparagus', 'apple'], 'job': ['mechanic', 'software-developer'], 'movie-genre': ['superhero', 'scientific'], 'music-genre': ['indie', 'funk'], 'nationality': ['german', 'american'], 'transport': ['skateboard', 'roller']}	True	8	False
+Lv3-6x2-8	"Let's break down the clues and solve the puzzle step by step.
+
+
+From clue 1, we know that the owner of the cat is on the far left.
+
+|               |      1      |     2      |
+| Beverage      |             |            |
+| Food          |             |            |
+| Hobby         |             |            |
+| Music-Genre   |             |            |
+| Pet           | Cat        |            |
+| Transport     |             |            |
+
+From clue 3, we know that the fan of hip-hop is driving the snowmobile.
+
+|               |      1      |     2      |
+| Beverage      |             |            |
+| Food          |             |            |
+| Hobby         |             |            |
+| Music-Genre   |             | Hip-Hop    |
+| Pet           | Cat        |            |
+| Transport     |             | Snowmobile |
+
+From clue 4, we know that the person driving the snowmobile is on the left or right of the person drinking soy-milk.
+
+Since the person drinking soy-milk can't be on the far left (because of the cat owner), they must be in column 1. The person driving the snowmobile must then be in column 2.
+
+
+From clue 5, we know that the owner of the chinchilla is on the left or right of the person eating kiwi.
+
+Since there are only two columns, and the cat owner is already in column 1, the owner of the chinchilla must be in column 2. The person eating kiwi can then either be in column 1 (to the left of the chinchilla) or not exist (in which case the clue doesn't give us any information).
+
+
+From clue 2, we know that the person drinking soy-milk is on the right of the person who's hobby is video-games.
+
+The only way this can be true is if the person with the hobby of video-games is in column 1.
+
+
+Now let's try to fill in some more values:
+
+
+Since the cat owner is in column 1, and they must have a beverage, food, hobby, music genre, and transport method that are different from everyone else, we can deduce some things:
+
+
+* They can't drink soy-milk (because of clue 2), so they must drink cola.
+* They can't eat kiwi (because of clue 5), so they must eat raspberry.
+
+
+We also know that the person driving the snowmobile is a fan of hip-hop, and they are on the right of the person drinking soy-milk.
+
+
+The only hobby left for column 1 is collecting. The music genre left for column 1 is blues.
+
+
+Putting it all together:
+
+
+#############
+|               |      1      |     2      |
+| Beverage      | Cola       | Soy-Milk   |
+| Food          | Raspberry  | Kiwi        |
+| Hobby         | Collecting | Video-Games|
+| Music-Genre   | Blues      | Hip-Hop    |
+| Pet           | Cat        | Chinchilla  |
+| Transport     | Ship       | Snowmobile |
+#############"	{'beverage': ['cola', 'soy-milk'], 'food': ['raspberry', 'kiwi'], 'hobby': ['collecting', 'video-games'], 'music-genre': ['blues', 'hip-hop'], 'pet': ['cat', 'chinchilla'], 'transport': ['ship', 'snowmobile']}	True	4	False
+Lv3-6x2-9	"Let's analyze the clues:
+
+
+From clue 2 and 3, we know that the dressmaker is on the left of the person watching comedy movies.
+
+
+|               |     1      |        2        |
+| Beverage      |            |                 |
+| Job           | Dressmaker|                 |
+| Movie-Genre   |            | Comedy          |
+| Music-Genre   |            |                 |
+| Nationality   |            |                 |
+| Pet           |            |                 |
+
+From clue 1, we know that the fan of trance is the person watching action movies.
+
+
+|               |     1      |        2        |
+| Beverage      |            |                 |
+| Job           | Dressmaker|                 |
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     |                 |
+| Nationality   |            |                 |
+| Pet           |            |                 |
+
+From clue 4, we know that the spanish is on the right of the owner of the bird.
+
+
+|               |     1      |        2        |
+| Beverage      |            |                 |
+| Job           | Dressmaker|                 |
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     |                 |
+| Nationality   |            | Spanish         |
+| Pet           | Bird       |                 |
+
+From clue 5, we know that the owner of the guinea-pig is the person drinking fanta.
+
+
+|               |     1      |        2        |
+| Beverage      | Sprite     | Fanta          |
+| Job           | Dressmaker|                 |
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     |                 |
+| Nationality   |            | Spanish         |
+| Pet           | Bird       | Guinea-pig     |
+
+The only job left is project-manager, which must be on the right.
+
+
+|               |     1      |        2        |
+| Beverage      | Sprite     | Fanta          |
+| Job           | Dressmaker| Project-Manager|
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     |                 |
+| Nationality   |            | Spanish         |
+| Pet           | Bird       | Guinea-pig     |
+
+The only music-genre left is dubstep, which must be on the right.
+
+
+|               |     1      |        2        |
+| Beverage      | Sprite     | Fanta          |
+| Job           | Dressmaker| Project-Manager|
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     | Dubstep        |
+| Nationality   |            | Spanish         |
+| Pet           | Bird       | Guinea-pig     |
+
+The only nationality left is polish, which must be on the left.
+
+
+|               |     1      |        2        |
+| Beverage      | Sprite     | Fanta          |
+| Job           | Dressmaker| Project-Manager|
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     | Dubstep        |
+| Nationality   | Polish     | Spanish         |
+| Pet           | Bird       | Guinea-pig     |
+
+#############
+ 
+The final solution is:
+
+
+|               |     1      |        2        |
+| Beverage      | Sprite     | Fanta          |
+| Job           | Dressmaker| Project-Manager|
+| Movie-Genre   | Action     | Comedy          |
+| Music-Genre   | Trance     | Dubstep        |
+| Nationality   | Polish     | Spanish         |
+| Pet           | Bird       | Guinea-pig     |
+
+#############"	{'beverage': ['sprite', 'fanta'], 'job': ['dressmaker', 'project-manager'], 'movie-genre': ['action', 'comedy'], 'music-genre': ['trance', 'dubstep'], 'nationality': ['polish', 'spanish'], 'pet': ['bird', 'guinea-pig']}	True	12	True
+Lv3-6x2-10	"Let's analyze the clues:
+
+
+From clue 1, we know that the person with hobby hiking is to the left of the person who uses boat as transport.
+
+
+From clue 2, we know that the person watching western movies is next to the person with hobby hiking.
+
+
+From clue 3, we know that the person drinking hot-chocolate is to the left of the software-developer.
+
+
+From clue 4, we know that the american is to the right of the person drinking hot-chocolate.
+
+Now, let's try to fill in the table:
+
+
+Since there are only two nationalities, and the american is to the right of the person drinking hot-chocolate, the person drinking hot-chocolate must be indian.
+
+
+We also know that the person drinking hot-chocolate is to the left of the software-developer. So, the indian must be on the left, and the software-developer must be on the right.
+
+
+The american can only be on the right, so the american must use boat as transport (because the person with hobby hiking is to the left of the person who uses boat as transport).
+
+
+Now we have:
+
+
+|               |       1       |         2          |
+| Beverage      | hot-chocolate |                    |
+| Hobby         |               |                    |
+| Job           | software-developer |                |
+| Movie-Genre   |               |                    |
+| Nationality   | indian        | american          |
+| Transport     |               | boat              |
+
+From clue 1, we know that the person with hobby hiking is to the left of the person who uses boat as transport. So, the person with hobby hiking must be on the left.
+
+
+We also know that the person watching western movies is next to the person with hobby hiking. Since there are only two movie-genres, the person watching family movies must be on the right.
+
+
+Now we have:
+
+
+|               |       1       |         2          |
+| Beverage      | hot-chocolate |                    |
+| Hobby         | hiking        |                    |
+| Job           | software-developer |                |
+| Movie-Genre   | western       | family            |
+| Nationality   | indian        | american          |
+| Transport     |               | boat              |
+
+The only job left is pilot, which must be on the left.
+
+
+The only beverage left is iced-tea, which must be on the right.
+
+
+The only hobby left is skydiving, which must be on the right.
+
+
+The only transport left is subway, which must be on the left.
+
+Here's the final solution:
+
+
+#############
+|               |       1       |         2          |
+| Beverage      | hot-chocolate | iced-tea          |
+| Hobby         | hiking        | skydiving         |
+| Job           | pilot         | software-developer|
+| Movie-Genre   | western       | family            |
+| Nationality   | indian        | american          |
+| Transport     | subway        | boat              |
+#############"	{'beverage': ['hot-chocolate', 'iced-tea'], 'hobby': ['hiking', 'skydiving'], 'job': ['pilot', 'software-developer'], 'movie-genre': ['western', 'family'], 'nationality': ['indian', 'american'], 'transport': ['subway', 'boat']}	True	10	False

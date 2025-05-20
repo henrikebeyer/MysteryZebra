@@ -1,0 +1,592 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-5x3-1	"Let's break down the puzzle step by step:
+
+From statement 2, we know the person driving the helicopter is drinking cola.
+
+From statement 8, we know the person drinking cola is also playing basketball.
+
+From statement 3, we know the person driving the skateboard is on the left of the person drinking cola.
+
+From statement 1, we know the person watching drama movies is between the person driving the helicopter and the dancer.
+
+From statement 2, we know the person driving the helicopter is drinking cola, so the person watching drama movies is between the person drinking cola (playing basketball) and the dancer.
+
+From statement 4, we know the person watching satire movies is on the far left or far right. Since the person watching drama movies is between the person drinking cola and the dancer, the person watching satire movies must be on the far left or far right.
+
+From statement 5, we know the person watching mystery movies is on the left or right of the person who's sport is biathlon. Since the person drinking hot-chocolate is the chef (statement 6), and the person watching mystery movies is on the right of the person drinking hot-chocolate (statement 7), the person who's sport is biathlon must be on the left of the person drinking hot-chocolate.
+
+From statement 1, we know the person watching drama movies is between the person driving the helicopter and the dancer. Since the person driving the helicopter is drinking cola, the person watching drama movies is between the person drinking cola and the dancer.
+
+From statement 7, we know the person watching mystery movies is on the right of the person drinking hot-chocolate. Since the person drinking hot-chocolate is the chef, the person watching mystery movies is on the right of the chef.
+
+Now, let's fill in the table:
+
+#############
+|               |     1      |       2       |     3      |
+| Beverage      | cola      | hot-chocolate | sprite    |
+| Job           | chef      | dancer       | musician  |
+| Movie-Genre   | drama     | mystery      | satire    |
+| Sport         | basketball| biathlon     | ice-hockey|
+| Transport     | helicopter| skateboard  | trike     |
+#############
+
+Here's the solution:
+
+* The person drinking cola is playing basketball and driving the helicopter.
+* The person drinking hot-chocolate is the chef.
+* The person watching drama movies is between the person drinking cola and the dancer.
+* The person watching mystery movies is on the right of the person drinking hot-chocolate.
+* The person watching satire movies is on the far left or far right.
+* The person who's sport is biathlon is on the left of the person drinking hot-chocolate.
+* The person driving the skateboard is on the left of the person drinking cola.
+* The person using the trike is watching satire movies."	{'beverage': ['cola', 'hot-chocolate', 'sprite'], 'job': ['chef', 'dancer', 'musician'], 'movie-genre': ['drama', 'mystery', 'satire'], 'sport': ['basketball', 'biathlon', 'ice-hockey'], 'transport': ['helicopter', 'skateboard', 'trike']}	True	4	False
+Lv1-5x3-2	"Let's break down the puzzle step by step:
+
+1. The person driving the scooter is on the left or right of the person eating cucumber##3
+This means the person eating cucumber is either on the left or right of the scooter driver.
+
+2. The person watching scientific movies is the person driving the subway
+This means the subway driver watches scientific movies.
+
+3. The person who's hobby is skydiving is between the person eating pear and the architect##2
+This means the person eating pear is on the left of the skydiver, and the architect is on the right of the skydiver.
+
+4. The person driving the subway is on the far right
+This means the subway driver is on the rightmost position.
+
+5. The bartender is on the right of the person eating cucumber
+This means the person eating cucumber is on the left of the bartender.
+
+6. The person who's hobby is rock-climbing is the bartender
+This means the bartender's hobby is rock-climbing.
+
+7. The person who's hobby is filmmaking is on the left of the person watching satire movies
+This means the person watching satire movies is on the right of the filmmaker.
+
+Now, let's start filling in the table:
+
+|               |     1      |       2       |       3       |
+| Food          |            |               |               |
+| Hobby         |            |               |               |
+| Job           |            |               |               |
+| Movie-Genre   |            |               |               |
+| Transport     |            |               |               |
+
+From statement 2, we know the subway driver watches scientific movies. From statement 4, we know the subway driver is on the far right. So, we can place the subway driver and scientific movies on the rightmost position:
+
+|               |     1      |       2       |       3       |
+| Food          |            |               |               |
+| Hobby         |            |               |               |
+| Job           |            |               |               |
+| Movie-Genre   |            |               | Scientific |
+| Transport     |            |               | Subway     |
+
+From statement 5, we know the bartender is on the right of the person eating cucumber. From statement 6, we know the bartender's hobby is rock-climbing. So, we can place the bartender and rock-climbing on the right of the person eating cucumber:
+
+|               |     1      |       2       |       3       |
+| Food          | Cucumber |               |               |
+| Hobby         |            | Rock-climbing |               |
+| Job           |            |               |               |
+| Movie-Genre   |            |               | Scientific |
+| Transport     |            |               | Subway     |
+
+From statement 3, we know the person eating pear is on the left of the skydiver, and the architect is on the right of the skydiver. We also know the person eating cucumber is on the left or right of the scooter driver. Since the person eating cucumber is already placed, the person eating pear must be on the left of the scooter driver. We can place the person eating pear and the skydiver:
+
+|               |     1      |       2       |       3       |
+| Food          | Cucumber | Pear        |               |
+| Hobby         |            | Rock-climbing | Skydiving    |
+| Job           |            |               |               |
+| Movie-Genre   |            |               | Scientific |
+| Transport     |            |               | Subway     |
+
+From statement 7, we know the person watching satire movies is on the right of the filmmaker. We also know the person eating cucumber is on the left of the bartender. Since the person eating cucumber is already placed, the filmmaker must be on the left of the person eating cucumber. We can place the filmmaker and satire movies:
+
+|               |     1      |       2       |       3       |
+| Food          | Cucumber | Pear        |               |
+| Hobby         | Filmmaker | Rock-climbing | Skydiving    |
+| Job           |            |               |               |
+| Movie-Genre   | Satire    |               | Scientific |
+| Transport     |            |               | Subway     |
+
+From the remaining positions, we can place the architect and social-worker:
+
+|               |     1      |       2       |       3       |
+| Food          | Cucumber | Pear        | Spinach     |
+| Hobby         | Filmmaker | Rock-climbing | Skydiving    |
+| Job           | Social-worker | Architect | Bartender  |
+| Movie-Genre   | Satire    |               | Scientific |
+| Transport     |            | Scooter    | Subway     |
+
+The final solution is:
+
+#############
+|               |     1      |       2       |       3       |
+| Food          | Cucumber | Pear        | Spinach     |
+| Hobby         | Filmmaker | Rock-climbing | Skydiving    |
+| Job           | Social-worker | Architect | Bartender  |
+| Movie-Genre   | Satire    |               | Scientific |
+| Transport     |            | Scooter    | Subway     |
+#############"	{'food': ['cucumber', 'pear', 'spinach'], 'hobby': ['filmmaker', 'rock-climbing', 'skydiving'], 'job': ['social-worker', 'architect', 'bartender'], 'movie-genre': ['satire', '', 'scientific'], 'transport': ['', 'scooter', 'subway']}	True	3	False
+Lv1-5x3-3	"Let's start by analyzing the clues and filling in the table step by step.
+
+From clue 5, we know the indonesian drinks cola.
+
+From clue 1, we know the person who's hobby is hiking is on the right of the person who's hobby is singing. Let's assume the person who's hobby is hiking is on the right. Then, the person who's hobby is singing must be on the left.
+
+From clue 6, we know the person drinking soy-milk is on the right of the person who's hobby is hiking. Since the person who's hobby is hiking is on the right, the person drinking soy-milk must be on the far right.
+
+From clue 3, we know the person drinking tea is on the right of the person driving the train. Since the person drinking soy-milk is on the far right, the person driving the train must be on the second-to-right position.
+
+From clue 4, we know the person watching family movies is on the right of the person driving the train. Since the person driving the train is on the second-to-right position, the person watching family movies must be on the right.
+
+From clue 7, we know the person driving the bus is the person watching thriller movies. Since the person driving the bus is not the person driving the train, the person watching thriller movies must be on the left.
+
+From clue 2, we know the person watching epic movies is on the left or right of the turkish person. Since the person watching thriller movies is on the left, the turkish person must be on the right.
+
+Now, let's fill in the table:
+
+#############
+|               |     1      |    2    |     3     |
+| Beverage      |            |         |           |
+| Hobby         |            |         |           |
+| Movie-Genre   |            |         |           |
+| Nationality   |            |         |           |
+| Transport     |            |         |           |
+#############
+| Beverage      | Cola      | Soy-milk | Tea       |
+| Hobby         | Singing  | Hiking   | Skydiving |
+| Movie-Genre   | Thriller | Family   | Epic      |
+| Nationality   | Indonesian| Nigerian | Turkish   |
+| Transport     | Bus      | Train    | Ship      |
+#############
+
+Note that the table is not unique, as there are multiple possible arrangements of the people. However, this solution satisfies all the given clues."	{'beverage': ['cola', 'soy-milk', 'tea'], 'hobby': ['singing', 'hiking', 'skydiving'], 'movie-genre': ['thriller', 'family', 'epic'], 'nationality': ['indonesian', 'nigerian', 'turkish'], 'transport': ['bus', 'train', 'ship']}	True	6	False
+Lv1-5x3-4	"Let's start by analyzing the clues and filling in the table step by step.
+
+From clue 10, we know the german is the person eating papaya.
+
+|               |    1     |     2     |      3       |
+| Food          |          |           |              |
+| Music-Genre   |          |           |              |
+| Nationality   |          |           |              |
+| Pet           |          |           |              |
+| Sport         |          |           |              |
+
+| Food          | papaya | peach | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         |        |       |      |
+
+From clue 7, we know the person eating papaya is on the right of the brazilian.
+
+| Food          | papaya | peach | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         |        |       |      |
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         |        |       |      |
+
+From clue 8, we know the person who's sport is biathlon is on the left of the brazilian.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         | biathlon |       |      |
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         | biathlon | brazilian |      |
+
+From clue 1, we know the person eating pear is on the left or right of the person who's sport is parkour.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         | biathlon | brazilian | parkour |
+
+Since the person eating pear is on the left or right of the person who's sport is parkour, and the person who's sport is biathlon is already on the left of the brazilian, the person eating pear must be on the right of the brazilian.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         | biathlon | brazilian | parkour |
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        |       |      |
+| Sport         | biathlon | brazilian | parkour |
+
+From clue 9, we know the person eating pear is on the left of the owner of the lizard.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           |        | lizard |      |
+| Sport         | biathlon | brazilian | parkour |
+
+From clue 2, we know the person eating peach is on the left of the owner of the cat.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           | cat |        | lizard |
+| Sport         | biathlon | brazilian | parkour |
+
+From clue 3, we know the person who's sport is snowboarding is on the right of the person eating peach.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   |        |       |      |
+| Pet           | cat |        | lizard |
+| Sport         | biathlon | brazilian | parkour | snowboarding |
+
+From clue 4, we know the brazilian is on the left of the fan of techno.
+
+| Food          |        | papaya | pear |
+| Music-Genre   |        |       |      |
+| Nationality   | brazilian |       |      |
+| Pet           | cat |        | lizard |
+| Sport         | biathlon | brazilian | parkour | snowboarding |
+
+From clue 6, we know the fan of folk is on the left of the fan of ambient.
+
+| Food          |        | papaya | pear |
+| Music-Genre   | folk | ambient |      |
+| Nationality   | brazilian |       |      |
+| Pet           | cat |        | lizard |
+| Sport         | biathlon | brazilian | parkour | snowboarding |
+
+From clue 5, we know the owner of the cat is on the right of the person who's sport is parkour.
+
+| Food          |        | papaya | pear |
+| Music-Genre   | folk | ambient |      |
+| Nationality   | brazilian |       |      |
+| Pet           |        | cat | lizard |
+| Sport         | biathlon | brazilian | parkour | snowboarding |
+
+Now we can fill in the remaining gaps.
+
+| Food          | papaya | peach | pear |
+| Music-Genre   | folk | ambient | techno |
+| Nationality   | german | italian | brazilian |
+| Pet           |        | cat | lizard |
+| Sport         | biathlon | parkour | snowboarding |
+
+#############
+| Food          | papaya | peach | pear |
+| Music-Genre   | folk | ambient | techno |
+| Nationality   | german | italian | brazilian |
+| Pet           |        | cat | lizard |
+| Sport         | biathlon | parkour | snowboarding |
+#############"	{'food': ['papaya', 'peach', 'pear'], 'music-genre': ['folk', 'ambient', 'techno'], 'nationality': ['german', 'italian', 'brazilian'], 'pet': ['', 'cat', 'lizard'], 'sport': ['biathlon', 'parkour', 'snowboarding']}	True	7	False
+Lv1-5x3-5	"Let's break down the puzzle step by step:
+
+1. The person drinking Mirinda is the owner of the ferret.
+2. The Argentine is on the left or right of the Japanese.
+3. The dressmaker is the owner of the horse.
+4. The person drinking Mirinda is in the middle.
+5. The owner of the horse is on the far right.
+6. The person watching epic movies is between the owner of the horse and the person watching romance movies.
+7. The coach is the Argentine.
+8. The dressmaker is on the far left or far right.
+9. The manager is on the left of the person drinking juice.
+
+From statement 1, we know the person drinking Mirinda is the owner of the ferret. From statement 4, we know this person is in the middle. From statement 5, we know the owner of the horse is on the far right.
+
+From statement 3, we know the dressmaker is the owner of the horse, so the dressmaker is on the far right. From statement 8, we know the dressmaker is on the far left or far right, so the dressmaker is on the far right.
+
+From statement 7, we know the coach is the Argentine. From statement 2, we know the Argentine is on the left or right of the Japanese. Since the Argentine is the coach, the Japanese must be on the other side of the Argentine.
+
+From statement 9, we know the manager is on the left of the person drinking juice. Since the person drinking Mirinda is in the middle, the person drinking juice must be on the left of the manager.
+
+Now, let's fill in the table:
+
+#############
+|               |     1     |    2     |      3      |
+| Beverage      |           |          |             |
+| Job           |           |          |             |
+| Movie-Genre   |           |          |             |
+| Nationality   |           |          |             |
+| Pet           |           |          |             |
+#############
+|               | Coach(A) | Dressmaker | Manager    |
+| Beverage      | Soy-milk | Juice     | Mirinda    |
+| Job           |          | Dressmaker| Manager    |
+| Movie-Genre   | Romance  | Epic      | Documentary|
+| Nationality   | Argentine| Japanese | Australian |
+| Pet           | Ferret   | Horse     | Pony      |
+#############
+
+The solution is:
+
+* The coach is Argentine, and drinks soy-milk.
+* The dressmaker is the owner of the horse, and drinks juice.
+* The manager is on the left of the person drinking juice, and drinks Mirinda.
+* The person watching romance movies is the coach (Argentine).
+* The person watching epic movies is the dressmaker.
+* The person watching documentary movies is the manager.
+* The Japanese is on the right of the Argentine.
+* The person owning the ferret drinks Mirinda.
+* The person owning the pony is Australian."	{'beverage': ['soy-milk', 'juice', 'mirinda'], 'job': ['', 'dressmaker', 'manager'], 'movie-genre': ['romance', 'epic', 'documentary'], 'nationality': ['argentine', 'japanese', 'australian'], 'pet': ['ferret', 'horse', 'pony']}	True	7	False
+Lv1-5x3-6	"Let's break down the puzzle step by step:
+
+1. The owner of the horse is on the left or right of the person who's sport is tennis.
+This means the horse owner is either next to the tennis player or on the opposite side.
+
+2. The person eating apricot is on the left or right of the person who's sport is climbing.
+This means the apricot eater is either next to the climbing person or on the opposite side.
+
+3. The person driving the van is in the middle.
+This means the van driver is in the middle row.
+
+4. The person driving the van is the person driving the van.
+This is a redundant statement, but it doesn't provide any new information.
+
+5. The person who's sport is tennis is between the owner of the mouse and the entrepreneur.
+This means the tennis player is between the mouse owner and the entrepreneur.
+
+6. The chef is on the far right.
+This means the chef is in the last column.
+
+7. The person eating banana is the person driving the ship.
+This means the banana eater is driving the ship.
+
+8. The person who's sport is tennis is on the right of the person driving the quad-bike.
+This means the tennis player is to the right of the quad-bike driver.
+
+9. The person who's sport is climbing is on the far right.
+This means the climbing person is in the same column as the chef.
+
+Now, let's start filling in the table:
+
+|             |      1       |    2    |    3     |
+| Food        |              |         |          |
+| Job         |              |         |          |
+| Pet         |              |         |          |
+| Sport       |              |         |          |
+| Transport   |              |         |          |
+
+From statement 6, we know the chef is on the far right. From statement 9, we know the climbing person is also on the far right. This means the chef and climbing person are in the same column.
+
+From statement 7, we know the banana eater is driving the ship. Since the chef is on the far right, the banana eater must be in the second column.
+
+From statement 5, we know the tennis player is between the mouse owner and the entrepreneur. Since the banana eater is in the second column, the mouse owner and entrepreneur must be in the first and third columns, respectively.
+
+From statement 8, we know the tennis player is to the right of the quad-bike driver. Since the tennis player is between the mouse owner and entrepreneur, the quad-bike driver must be in the first column.
+
+From statement 1, we know the horse owner is on the left or right of the tennis player. Since the tennis player is between the mouse owner and entrepreneur, the horse owner must be in the first or third column.
+
+From statement 2, we know the apricot eater is on the left or right of the climbing person. Since the climbing person is on the far right, the apricot eater must be in the second column.
+
+Now we can fill in the table:
+
+#############
+|             |      1       |    2    |    3     |
+| Food        |  apricot    |  banana |  kiwi    |
+| Job         |  pilot     |  chef   |  entrepreneur |
+| Pet         |  horse     |  mouse  |  rat     |
+| Sport       |  climbing  |  tennis  |  golf    |
+| Transport   |  quad-bike |  ship   |  van     |
+#############
+
+Note that this solution is not unique, and there may be other possible arrangements that satisfy the given conditions."	{'food': ['apricot', 'banana', 'kiwi'], 'job': ['pilot', 'chef', 'entrepreneur'], 'pet': ['horse', 'mouse', 'rat'], 'sport': ['climbing', 'tennis', 'golf'], 'transport': ['quad-bike', 'ship', 'van']}	True	3	False
+Lv1-5x3-7	"Let's break down the puzzle step by step:
+
+1. The person watching sports movies is on the left or right of the person driving the train.
+2. The person watching musical movies is the person who's hobby is cooking.
+3. The person who's hobby is reading is on the left of the person watching musical movies.
+4. The person who's hobby is cooking is the person who's sport is rowing.
+5. The person who's hobby is reading is on the right of the person who's sport is weightlifting.
+6. The person watching sports movies is on the right of the owner of the goat.
+7. The person watching sports movies is on the right of the person who's sport is weightlifting.
+8. The owner of the lizard is on the right of the person driving the bike.
+9. The owner of the goat is on the left or right of the owner of the lizard.
+
+From statement 2, we know the person who's hobby is cooking is watching musical movies. From statement 4, we know this person's sport is rowing.
+
+From statement 5, we know the person who's hobby is reading is on the right of the person who's sport is weightlifting. Since the person who's hobby is cooking is watching musical movies, the person who's hobby is reading must be on the right of the person who's sport is weightlifting.
+
+From statement 1, we know the person watching sports movies is on the left or right of the person driving the train. From statement 7, we know the person watching sports movies is on the right of the person who's sport is weightlifting. Therefore, the person driving the train must be on the left of the person who's sport is weightlifting.
+
+From statement 6, we know the person watching sports movies is on the right of the owner of the goat. From statement 9, we know the owner of the goat is on the left or right of the owner of the lizard. Therefore, the owner of the goat must be on the right of the owner of the lizard.
+
+Now, let's fill in the table:
+
+#############
+|               |       1       |    2     |    3    |
+| Hobby         |  Cooking     | Reading |        |
+| Movie-Genre   |  Musical     |         | Sports  |
+| Pet           |              |  Lizard |  Goat   |
+| Sport         |  Rowing      | Weightlifting | Biathlon |
+| Transport     |              |  Bike    | Train   |
+#############
+
+Note that the person who's hobby is photography is not mentioned in the puzzle, so we can't determine their position. However, we can conclude that the person who's hobby is reading is on the right of the person who's sport is weightlifting, and the person who's hobby is cooking is watching musical movies and doing rowing."	{'hobby': ['cooking', 'reading', ''], 'movie-genre': ['musical', '', 'sports'], 'pet': ['', 'lizard', 'goat'], 'sport': ['rowing', 'weightlifting', 'biathlon'], 'transport': ['', 'bike', 'train']}	True	3	False
+Lv1-5x3-8	"Let's start by analyzing the clues and filling in the table step by step.
+
+From clue 1, we know that the person watching fantasy movies is on the right of the person who's sport is sailing. Let's assume the person watching fantasy movies is in column 3. Then, the person who's sport is sailing must be in column 1 or 2.
+
+From clue 2, we know that the person who's sport is basketball is on the left of the person who's hobby is skydiving. Since the person who's sport is sailing is in column 1 or 2, the person who's sport is basketball must be in column 1.
+
+From clue 3, we know that the owner of the hamster is the person who's sport is basketball. Since the person who's sport is basketball is in column 1, the owner of the hamster is in column 1.
+
+From clue 4, we know that the person watching scientific movies is on the right of the person who's hobby is puzzles. Since the person who's hobby is puzzles is not yet assigned, let's assume it's in column 2. Then, the person watching scientific movies is in column 3.
+
+From clue 5, we know that the person who's sport is skateboarding is the person who's hobby is skydiving. Since the person who's hobby is skydiving is not yet assigned, let's assume it's in column 3. Then, the person who's sport is skateboarding is in column 3.
+
+From clue 6, we know that the person who's hobby is puzzles is on the left or right of the person driving the bus. Since the person who's hobby is puzzles is in column 2, the person driving the bus must be in column 1 or 3.
+
+From clue 7, we know that the person driving the tram is on the right of the owner of the pony. Since the owner of the pony is not yet assigned, let's assume it's in column 2. Then, the person driving the tram is in column 3.
+
+From clue 8, we know that the person driving the skateboard is on the right of the person watching fantasy movies. Since the person watching fantasy movies is in column 3, the person driving the skateboard is in column 3.
+
+Now, let's summarize what we have:
+
+* Column 1: owner of the hamster (basketball), bus driver
+* Column 2: owner of the pony, person who's hobby is puzzles
+* Column 3: person watching fantasy movies, person who's hobby is skydiving, person driving the tram, person driving the skateboard
+
+The only remaining pet is the snake, which must be in column 3.
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |    1    |     2      |       3       |
+| Hobby         | puzzles | singing   | skydiving    |
+| Movie-Genre   |         | scientific| fantasy     |
+| Pet           | hamster | pony      | snake       |
+| Sport         | basketball| sailing   | skateboarding|
+| Transport     | bus     |          | tram, skateboard|
+#############"	{'hobby': ['puzzles', 'singing', 'skydiving'], 'movie-genre': ['', 'scientific', 'fantasy'], 'pet': ['hamster', 'pony', 'snake'], 'sport': ['basketball', 'sailing', 'skateboarding'], 'transport': ['bus', '', 'tram, skateboard']}	True	4	False
+Lv1-5x3-9	"Let's break down the puzzle step by step:
+
+1. The person driving the trike is on the left or right of the person eating pepper##3
+This means the person eating pepper is either 1st or 3rd in the table.
+
+2. The person who's hobby is dancing is on the left or right of the accountant##3
+This means the accountant is either 1st or 2nd, and the person with the dancing hobby is either 1st or 3rd.
+
+3. The owner of the horse is between the owner of the rabbit and the person who's hobby is fishing##2
+This means the owner of the horse is either 2nd or 3rd, and the owner of the rabbit is either 1st or 2nd.
+
+4. The person eating spinach is on the right of the person eating plum
+This means the person eating spinach is either 2nd or 3rd, and the person eating plum is either 1st or 2nd.
+
+5. The owner of the horse is on the right of the person driving the bus
+This means the person driving the bus is either 1st or 2nd, and the owner of the horse is either 2nd or 3rd.
+
+6. The photographer is the person eating pepper
+This means the photographer is either 1st or 3rd.
+
+7. The person eating plum is in the middle
+This means the person eating plum is 2nd.
+
+8. The person eating plum is on the left of the person who's hobby is dancing
+This means the person with the dancing hobby is either 3rd or 1st.
+
+Now, let's combine the information:
+
+* The photographer is either 1st or 3rd (6).
+* The person eating plum is 2nd (7).
+* The person eating plum is on the left of the person with the dancing hobby (8), so the person with the dancing hobby is either 3rd or 1st.
+* The person eating pepper is either 1st or 3rd (1).
+* The person eating spinach is on the right of the person eating plum, so it's either 3rd or 1st.
+* The owner of the horse is between the owner of the rabbit and the person who's hobby is fishing, so the owner of the horse is either 2nd or 3rd.
+* The owner of the horse is on the right of the person driving the bus, so the person driving the bus is either 1st or 2nd.
+
+Now, let's try to fill in the table:
+
+|             |      1       |      2      |     3      |
+| Food        |              |             |            |
+| Hobby       |              |             |            |
+| Job         |              |             |            |
+| Pet         |              |             |            |
+| Transport   |              |             |            |
+
+From the above analysis, we can conclude that:
+
+* The photographer (eating pepper) is either 1st or 3rd.
+* The person eating plum is 2nd.
+* The person with the dancing hobby is either 1st or 3rd.
+* The person eating spinach is either 1st or 3rd.
+* The owner of the horse is either 2nd or 3rd.
+* The person driving the bus is either 1st or 2nd.
+
+Let's try to fill in the table:
+
+|             |      1       |      2      |     3      |
+| Food        |  Pepper     |  Plum      |  Spinach  |
+| Hobby       |  Dancing   |            |  Fishing  |
+| Job         |  Photographer |  Accountant |  Engineer |
+| Pet         |  Bird      |  Horse     |  Rabbit   |
+| Transport   |  Trike     |  Bus      |  Helicopter|
+
+This is the final solution table:
+
+#############
+|             |      1       |      2      |     3      |
+| Food        |  Pepper     |  Plum      |  Spinach  |
+| Hobby       |  Dancing   |            |  Fishing  |
+| Job         |  Photographer |  Accountant |  Engineer |
+| Pet         |  Bird      |  Horse     |  Rabbit   |
+| Transport   |  Trike     |  Bus      |  Helicopter|
+#############"	{'food': ['pepper', 'plum', 'spinach'], 'hobby': ['dancing', '', 'fishing'], 'job': ['photographer', 'accountant', 'engineer'], 'pet': ['bird', 'horse', 'rabbit'], 'transport': ['trike', 'bus', 'helicopter']}	True	10	False
+Lv1-5x3-10	"Let's break down the puzzle step by step:
+
+1. The person watching satire movies is on the far left.
+2. The person driving the boat is on the left or right of the person watching satire movies.
+3. The person who's hobby is collecting is on the left or right of the person who's hobby is gardening.
+4. The fan of salsa is on the far right.
+5. The person watching drama movies is on the right of the person who's hobby is gardening.
+6. The chef is the fan of salsa.
+7. The person who's hobby is collecting is on the left of the person driving the skateboard.
+8. The fan of jazz is on the right of the software-developer.
+9. The person who's hobby is collecting is on the left or right of the person who's hobby is video-games.
+
+From statement 1, we know the person watching satire movies is on the far left. From statement 2, we know the person driving the boat is on the left or right of the person watching satire movies. Since the person watching satire movies is on the far left, the person driving the boat must be on the left or right of the person watching satire movies.
+
+From statement 3, we know the person who's hobby is collecting is on the left or right of the person who's hobby is gardening. Since the person watching satire movies is on the far left, the person who's hobby is collecting must be on the left or right of the person watching satire movies.
+
+From statement 4, we know the fan of salsa is on the far right. From statement 6, we know the chef is the fan of salsa, so the chef must be on the far right.
+
+From statement 5, we know the person watching drama movies is on the right of the person who's hobby is gardening. Since the person watching satire movies is on the far left, the person watching drama movies must be on the right of the person who's hobby is gardening.
+
+From statement 7, we know the person who's hobby is collecting is on the left of the person driving the skateboard. Since the person driving the boat is on the left or right of the person watching satire movies, the person driving the skateboard must be on the right of the person watching satire movies.
+
+From statement 8, we know the fan of jazz is on the right of the software-developer. Since the person watching drama movies is on the right of the person who's hobby is gardening, the software-developer must be on the left of the person who's hobby is gardening.
+
+From statement 9, we know the person who's hobby is collecting is on the left or right of the person who's hobby is video-games. Since the person who's hobby is collecting is on the left or right of the person watching satire movies, the person who's hobby is video-games must be on the right of the person watching satire movies.
+
+Now, let's fill in the table:
+
+#############
+|               |         1          |     2      |      3      |
+| Hobby         | Collecting         | Gardening | Video-games |
+| Job           | Software-developer | Chef      | Nurse      |
+| Movie-Genre   | Satire             | Drama     | Spy       |
+| Music-Genre   | Jazz               | Metal     | Salsa     |
+| Transport     | Bike               | Boat      | Skateboard |
+#############
+
+The final solution table is:
+
+#############
+|               |         1          |     2      |      3      |
+| Hobby         | Collecting         | Gardening | Video-games |
+| Job           | Software-developer | Chef      | Nurse      |
+| Movie-Genre   | Satire             | Drama     | Spy       |
+| Music-Genre   | Jazz               | Metal     | Salsa     |
+| Transport     | Bike               | Boat      | Skateboard |
+#############"	{'hobby': ['collecting', 'gardening', 'video-games'], 'job': ['software-developer', 'chef', 'nurse'], 'movie-genre': ['satire', 'drama', 'spy'], 'music-genre': ['jazz', 'metal', 'salsa'], 'transport': ['bike', 'boat', 'skateboard']}	True	9	False

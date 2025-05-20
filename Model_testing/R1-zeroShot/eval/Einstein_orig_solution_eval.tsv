@@ -1,0 +1,714 @@
+setup	output	predicted_grid	formatting	score	correct
+R1-Einstein-orig-1	"Okay, let's try to tackle this logic puzzle. It's one of those classic Einstein puzzles, right? I remember they can be pretty tricky, but with patience, maybe I can figure it out. Let me start by laying out all the clues and see how they connect.
+
+First, the setup: there are five houses in a row, each with a unique color, nationality, pet, beverage, and cigar brand. The goal is to assign each of these attributes to the correct house number from 1 to 5. The clues are given, and I need to use them to deduce the correct arrangement.
+
+Let me list all the clues again to have them clear:
+
+1. The Brit lives in a Red house.
+
+2. The Swede keeps Dogs as pets.
+
+3. The Dane drinks Tea.
+
+4. The Green house is on the left of the White house.
+
+5. The Green house owner drinks Coffee.
+
+6. The owner who smokes Pall Mall rears Birds.
+
+7. The owner of the Yellow house smokes Dunhill.
+
+8. The owner living in the center house (house 3) drinks Milk.
+
+9. The Norwegian lives in the first house.
+
+10. The owner who smokes Blend lives next to the one who keeps Cats.
+
+11. The owner who keeps horses lives next to the man who smokes Dunhill.
+
+12. The owner who smokes Bluemaster drinks Beer.
+
+13. The German smokes Prince.
+
+14. The Norwegian lives next to the Blue house.
+
+15. The owner who smokes Blend has a neighbor who drinks Water.
+
+Alright, let's start by noting the fixed points. Clue 9 says the Norwegian is in house 1. Clue 14 says the Norwegian lives next to the Blue house. Since house 1 is the first, the adjacent house is 2. Therefore, house 2 must be Blue. So:
+
+House 1: Nationality = Norwegian; Color = ? (but house 2 is Blue)
+
+House 2: Color = Blue
+
+Clue 4 says Green is to the left of White. So the order must be Green before White. Since there are five houses, possible positions for Green could be 1,2,3,4 (with White being 2,3,4,5 respectively). But house 2 is Blue, so Green can't be 2. So possible Green positions: 1,3,4. But house 1's color is not yet known. Wait, house 1's color: since house 2 is Blue, house 1 could be Green, Yellow, Red, or White. But clue 7 says the Yellow house smokes Dunhill. Let's hold that thought.
+
+Clue 9 says Norwegian is in house 1. Clue 14: Norwegian next to Blue (which is house 2). So house 1's color can't be Blue. Therefore, possible colors for house 1: Yellow, Green, Red, White.
+
+Clue 7: Yellow house smokes Dunhill. If house 1 was Yellow, then the owner smokes Dunhill. But let's check other clues. The Norwegian in house 1's nationality. So Dunhill would be in house 1. Then, maybe that's possible.
+
+But let's see clue 11: Owner with horses lives next to Dunhill smoker. If house 1 is Yellow and smokes Dunhill, then the owner of house 2 (Blue) must have horses or the owner of house 0 (which doesn't exist). So maybe house 2 has horses. But not sure yet. Let's hold that.
+
+Clue 8: House 3 drinks Milk. That's a fixed point. So Beverage for house 3 is Milk.
+
+Clue 5: Green house drinks Coffee. Since house 3 drinks Milk, Green can't be house 3. So Green must be in house 1,2,4. But house 2 is Blue, so Green can't be 2. So Green is 1,4. But Green must be left of White (clue 4). If Green is 1, White could be 2, but house 2 is Blue. So White can't be 2. If Green is 4, then White is 5. Alternatively, if Green is 3, White is 4 or 5. Wait, clue 4 says Green is immediately to the left of White? Or just somewhere to the left? The wording is on the left of, which usually means directly adjacent. Let me check: the original clue says the Green house is on the left of the White house. So Green is immediately to the left of White. So their positions must be consecutive, with Green in n and White in n+1. So possible pairs: (1,2), (2,3), (3,4), (4,5). But house 2 is Blue, so Green can't be in 2. Therefore, possible Green/White pairs: (3,4) or (4,5). Because if Green is 1, White would have to be 2, which is Blue, so that's invalid. So Green can't be in 1. So Green is either 3 with White 4, or 4 with White 5.
+
+But clue 5 says the Green house drinks Coffee. Since house 3 drinks Milk, if Green were 3, that would conflict (Milk vs Coffee). Therefore, Green must be house 4 and White house 5. That makes sense. So:
+
+House 4: Color = Green; Beverage = Coffee
+
+House 5: Color = White
+
+That's a good step. Now, the remaining colors are Red, Yellow, and Blue. Wait, house 2 is Blue, house 4 is Green, house 5 is White. So remaining colors for houses 1 and 3: Red and Yellow. Also, clue 1 says the Brit lives in a Red house. So wherever the Red house is, the Brit is there.
+
+But house 1 is Norwegian, so Brit can't be there. So Red must be in house 3 or another. Wait, possible colors left are Red and Yellow for houses 1 and 3. Let's see:
+
+If house 1 is Yellow, then according to clue 7, the owner smokes Dunhill. Also, since Norwegian is in house 1, that would mean the Norwegian smokes Dunhill. Then house 2 is Blue, which we've established.
+
+If house 3 is Red, then the Brit lives there (clue 1). So:
+
+House 3: Color = Red; Nationality = Brit; Beverage = Milk (from clue 8)
+
+But let's check if that works. Let's tentatively assign:
+
+House 1: Color = Yellow; Nationality = Norwegian; Cigar = Dunhill (clue 7)
+
+House 2: Color = Blue
+
+House 3: Color = Red; Nationality = Brit; Beverage = Milk
+
+House 4: Color = Green; Beverage = Coffee
+
+House 5: Color = White
+
+Now, let's check clue 14: Norwegian (house 1) next to Blue (house 2), which is correct.
+
+Clue 7: Yellow house (1) smokes Dunhill. Correct.
+
+Clue 1: Brit in Red house (3). Correct.
+
+Clue 5: Green (4) drinks Coffee. Correct.
+
+Clue 4: Green (4) left of White (5). Correct.
+
+So far so good.
+
+Now, remaining nationalities: Dane, German, Swede.
+
+Clue 3: Dane drinks Tea. So we need to find where the Dane is, who drinks Tea.
+
+Clue 2: Swede keeps Dogs. So Swede has Dogs.
+
+Clue 13: German smokes Prince.
+
+Clue 6: Pall Mall smoker has Birds.
+
+Clue 12: Bluemaster smoker drinks Beer.
+
+Clue 10: Blend smoker next to Cats.
+
+Clue 11: Horses next to Dunhill (house 1 smokes Dunhill, so neighbor house 2 has Horses?)
+
+Clue 15: Blend smoker has neighbor who drinks Water.
+
+Let me start assigning the nationalities. House 1: Norwegian. House 3: Brit. So remaining houses 2,4,5: Dane, German, Swede.
+
+Clue 2: Swede has Dogs. Let's see where Swede can be. Maybe house 5? Let's check.
+
+If Swede is in house 5 (White), then Dogs are there. Let's tentatively say:
+
+House 5: Nationality = Swede; Pet = Dogs
+
+Then Dane and German are left for houses 2 and 4.
+
+Clue 3: Dane drinks Tea. So if Dane is in house 2 or 4, their beverage is Tea.
+
+Looking at beverages: house 3 drinks Milk, house 4 drinks Coffee. So remaining beverages for houses 1,2,5: Beer, Tea, Water.
+
+House 1's beverage: let's see. House 1 is Norwegian. The beverages left are Beer, Tea, Water. House 5's beverage: since house 4 is Coffee and house 3 is Milk, house 5 could have Water or Beer. But clue 12 says Bluemaster smoker drinks Beer. If someone in house 5 drinks Beer, they must smoke Bluemaster. Alternatively, maybe house 2.
+
+Wait, let's list the beverages:
+
+House 1: ?
+
+House 2: ?
+
+House 3: Milk
+
+House 4: Coffee
+
+House 5: ?
+
+Available beverages: Beer, Tea, Water.
+
+Clue 3: Dane drinks Tea. So wherever the Dane is, their drink is Tea. Let's assume Dane is in house 2. Then house 2's drink is Tea. Then remaining beverages for 1 and 5: Beer and Water.
+
+Clue 15 says Blend smoker has a neighbor who drinks Water. So if house 1 or 5 drinks Water, their neighbor must smoke Blend. Let's see.
+
+If house 1's beverage is Water, then house 2 (next to it) must smoke Blend. But house 2's nationality would be Dane, drinks Tea. Then their cigar would be Blend. Is that possible?
+
+Alternatively, if house 5 drinks Water, then house 4 (Green, Coffee) would need to smoke Blend. But house 4's nationality could be German, but clue 13 says German smokes Prince. So house 4 can't smoke Blend if it's German. Wait, let's see.
+
+Let's proceed step by step.
+
+Nationalities:
+
+House 1: Norwegian
+
+House 2: Dane or German
+
+House 3: Brit
+
+House 4: Dane or German
+
+House 5: Swede
+
+If Dane is in house 2, then house 2 drinks Tea (clue 3). Then house 2's beverage is Tea.
+
+So beverages:
+
+House 1: ?
+
+House 2: Tea
+
+House 3: Milk
+
+House 4: Coffee
+
+House 5: ?
+
+Leftover beverages: Beer, Water.
+
+Clue 12: Bluemaster smoker drinks Beer. So whoever has Beer must smoke Bluemaster.
+
+Clue 15: Blend smoker has neighbor with Water.
+
+Suppose house 5 drinks Beer (so smokes Bluemaster). Then house 5's beverage is Beer, cigar Bluemaster. Then house 1 and 2 would have to have Water. But house 2 already has Tea. So house 1 would have Water. Then:
+
+House 1: Water
+
+House 5: Beer
+
+Then, according to clue 15, the Blend smoker must be next to Water. If house 1 has Water, then house 2 (next to 1) smokes Blend. Let's check:
+
+House 2: Cigar = Blend.
+
+Is that allowed? Let's see. If house 2 is Dane, drinks Tea, smokes Blend. Possible.
+
+Then the remaining cigars are Pall Mall, Prince, and the ones already assigned: Dunhill (house 1), Blend (house 2), Bluemaster (house 5). Remaining cigars: Pall Mall and Prince for houses 3 and 4.
+
+Clue 6: Pall Mall smoker has Birds. So if house 3 or 4 smokes Pall Mall, they have Birds.
+
+House 3: Brit, drinks Milk. Their pet is ?
+
+House 4: Green, drinks Coffee. Nationality could be German (since Dane is in 2, Swede in 5, Brit in 3, Norwegian in 1). So German in house 4. Clue 13 says German smokes Prince. So house 4's cigar is Prince. Then remaining cigar Pall Mall would be in house 3.
+
+So:
+
+House 3: Cigar = Pall Mall → Pet = Birds (clue 6)
+
+House 4: Cigar = Prince (German)
+
+House 5: Cigar = Bluemaster (drinks Beer)
+
+Now, pets. Let's list pets: Cats, Birds, Dogs, Fish, Horses.
+
+Assigned pets: House 3 has Birds, house 5 has Dogs (Swede). So remaining pets: Cats, Fish, Horses.
+
+Clue 10: Blend smoker (house 2) lives next to Cats. So house 1 or 3 has Cats. But house 3 has Birds. So house 1, which is next to house 2 (Blend smoker), must have Cats. Therefore:
+
+House 1: Pet = Cats
+
+Then remaining pets for houses 4 and 2: Fish and Horses.
+
+Clue 11: Owner who keeps Horses lives next to Dunhill smoker. Dunhill is in house 1. So Horses must be in house 2 (next to 1). So:
+
+House 2: Pet = Horses
+
+Then remaining pet for house 4 is Fish.
+
+So:
+
+House 4: Pet = Fish
+
+Thus, the Fish is in house 4, which is German's house. So the German has Fish? Wait, the question is who keeps the Fish? That's the answer needed. Let me check.
+
+But let's confirm all clues.
+
+Let's recap:
+
+House 1:
+
+Color: Yellow
+
+Nationality: Norwegian
+
+Pet: Cats
+
+Beverage: Water
+
+Cigar: Dunhill
+
+House 2:
+
+Color: Blue
+
+Nationality: Dane
+
+Pet: Horses
+
+Beverage: Tea
+
+Cigar: Blend
+
+House 3:
+
+Color: Red
+
+Nationality: Brit
+
+Pet: Birds
+
+Beverage: Milk
+
+Cigar: Pall Mall
+
+House 4:
+
+Color: Green
+
+Nationality: German
+
+Pet: Fish
+
+Beverage: Coffee
+
+Cigar: Prince
+
+House 5:
+
+Color: White
+
+Nationality: Swede
+
+Pet: Dogs
+
+Beverage: Beer
+
+Cigar: Bluemaster
+
+Now, let's verify all clues:
+
+1. Brit in Red house: Yes, house 3.
+
+2. Swede has Dogs: Yes, house 5.
+
+3. Dane drinks Tea: Yes, house 2.
+
+4. Green (4) left of White (5): Correct.
+
+5. Green drinks Coffee: Yes.
+
+6. Pall Mall (house 3) has Birds: Correct.
+
+7. Yellow (1) smokes Dunhill: Yes.
+
+8. Center (3) drinks Milk: Correct.
+
+9. Norwegian in 1: Yes.
+
+10. Blend smoker (2) next to Cats (1): Correct.
+
+11. Horses (2) next to Dunhill (1): Correct.
+
+12. Bluemaster (5) drinks Beer: Yes.
+
+13. German (4) smokes Prince: Yes.
+
+14. Norwegian (1) next to Blue (2): Yes.
+
+15. Blend (2) neighbor (1) drinks Water: Yes.
+
+All clues are satisfied! So the final answer should be the Fish in house 4, which is the German's pet. But according to the table, the Fish is in house 4. So the person who keeps the Fish is the German in house 4.
+
+But the problem asks to fill out the table with all attributes. Let me structure the table accordingly.
+
+#############
+|        | 1      | 2      | 3      | 4      | 5      |
+| Color  | Yellow | Blue   | Red    | Green  | White  |
+| Nationality | Norwegian | Dane   | Brit   | German | Swede  |
+| Pet    | Cats   | Horses | Birds  | Fish   | Dogs   |
+| Beverage | Water  | Tea    | Milk   | Coffee | Beer   |
+| Cigar  | Dunhill| Blend  | Pall Mall | Prince | Bluemaster |
+#############"	{'color': ['yellow', 'blue', 'red', 'green', 'white'], 'nationality': ['norwegian', 'danish', 'british', 'german', 'swedish'], 'pet': ['cat', 'horse', 'bird', 'fish', 'dog'], 'beverage': ['water', 'tea', 'milk', 'coffee', 'beer'], 'cigar': ['dunhill', 'blend', 'pall-mall', 'prince', 'bluemaster']}	True	25	True
+R1-Einstein-orig-2	"Okay, let's tackle this logic puzzle step by step. I remember this is similar to the classic Einstein puzzle. First, I need to organize the clues and see how they connect. Let's list out all the given clues again to make sure I don't miss any:
+
+1. The Brit lives in a Red house.
+
+2. The Swede keeps Dogs as pets.
+
+3. The Dane drinks Tea.
+
+4. The Green house is on the left of the White house.
+
+5. The Green house owner drinks Coffee.
+
+6. The owner who smokes Pall Mall rears Birds.
+
+7. The owner of the Yellow house smokes Dunhill.
+
+8. The owner living in the center house (House 3) drinks Milk.
+
+9. The Norwegian lives in the first house.
+
+10. The owner who smokes Blend lives next to the one who keeps Cats.
+
+11. The owner who keeps Horses lives next to the man who smokes Dunhill.
+
+12. The owner who smokes Bluemaster drinks Beer.
+
+13. The German smokes Prince.
+
+14. The Norwegian lives next to the Blue house.
+
+15. The owner who smokes Blend has a neighbor who drinks Water.
+
+Alright, let's start by setting up the table structure with houses 1 to 5 and the categories: Color, Nationality, Pet, Beverage, Cigar.
+
+First, clue 9 says the Norwegian is in house 1. So Nationality for house 1 is Norwegian.
+
+Clue 14: Norwegian (house 1) is next to Blue. So house 2 must be Blue.
+
+Clue 4: Green is on the left of White. So Green must be before White. Possible positions: Green in 3, White in 4; Green in 4, White in 5. But since house 2 is Blue, and house 1 is Norwegian (which might relate to color via other clues). Wait, house 1's color isn't specified yet. Let's check clue 7: Yellow house smokes Dunhill. So Yellow is one of the colors. The colors are Blue, Green, Red, White, Yellow. We have Blue in house 2. So house 1's color could be Yellow? Let's see. If house 1 is Yellow, then according to clue 7, they smoke Dunhill. But clue 14 says Norwegian (house 1) is next to Blue (house 2), so that works. So maybe house 1 is Yellow. Let's tentatively assign:
+
+House 1: Color Yellow, Nationality Norwegian, Cigar Dunhill (from clue 7).
+
+Then, house 2 is Blue (from clue 14).
+
+Clue 4: Green is left of White. So Green can't be in house 5. Possible positions: Green in 3 and White in 4, or Green in 4 and White in 5. Let's see. Clue 5: Green drinks Coffee. Clue 8: House 3 drinks Milk. So if Green is in house 4, then their beverage is Coffee (clue 5), and house 3's drink is Milk. That works. So maybe Green in 4, White in 5.
+
+So tentative colors:
+
+1: Yellow
+
+2: Blue
+
+3: ?
+
+4: Green
+
+5: White
+
+Wait, but clue 1 says Brit lives in Red. So Red must be one of the remaining colors. The remaining color for house 3 would be Red. So house 3 is Red. Therefore:
+
+Colors:
+
+1: Yellow
+
+2: Blue
+
+3: Red
+
+4: Green
+
+5: White
+
+Check if Green is left of White: Yes, house 4 is Green, 5 is White. Good.
+
+Now, from clue 1: Brit lives in Red (house 3). So Nationality for house 3 is Brit.
+
+So Nationalities so far:
+
+1: Norwegian
+
+2: ?
+
+3: Brit
+
+4: ?
+
+5: ?
+
+Clue 3: Dane drinks Tea. So we need to find where Dane is. Nationalities left: Dane, German, Swede.
+
+Clue 2: Swede keeps Dogs. So Swede must be in house 5 (since White is house 5, and Swede's pet is Dogs). Let's check. If Swede is in house 5, then their pet is Dogs. That works. Then Nationality for house 5: Swede.
+
+So Nationalities:
+
+1: Norwegian
+
+2: ?
+
+3: Brit
+
+4: German (since clue 13 says German smokes Prince; remaining nationality)
+
+5: Swede
+
+Wait, but clue 13: German smokes Prince. So house 4's nationality is German, and their cigar is Prince.
+
+So Nationalities:
+
+1: Norwegian
+
+2: Dane (since only Dane and German left, and clue 3 says Dane drinks Tea. Let's see)
+
+Clue 3: Dane drinks Tea. If house 2 is Dane, then their beverage is Tea.
+
+So Beverages:
+
+House 2: Tea
+
+House 3: Milk (clue 8)
+
+House 4: Coffee (clue 5, Green house)
+
+House 5: ?
+
+Clue 12: Bluemaster smoker drinks Beer. So if house 5's cigar is Bluemaster, then their drink is Beer. Let's check if that's possible. House 5 is Swede, pet Dogs, drink Beer (if Bluemaster). But clue 12 says Bluemaster is linked to Beer, so that works.
+
+Then remaining beverages are Water. House 1's drink would be Water.
+
+So Beverages:
+
+1: Water
+
+2: Tea
+
+3: Milk
+
+4: Coffee
+
+5: Beer
+
+Now, check clue 15: Blend smoker has neighbor who drinks Water. Blend's neighbor must be Water. Since house 1 drinks Water, the neighbor would be house 2. So house 2 smokes Blend? Let's see.
+
+But wait, house 1's cigar is Dunhill (from clue 7, Yellow house smokes Dunhill). House 2: their cigar could be Blend. Then house 2's cigar is Blend, and their neighbor (house 1) drinks Water. That satisfies clue 15. Yes.
+
+So Cigars:
+
+1: Dunhill
+
+2: Blend
+
+3: ?
+
+4: Prince (clue 13, German in 4 smokes Prince)
+
+5: Bluemaster (since drink is Beer, per clue 12)
+
+Then remaining cigar is Pall Mall for house 3.
+
+Clue 6: Pall Mall smoker rears Birds. So house 3's pet is Birds.
+
+Pets so far:
+
+1: ?
+
+2: ?
+
+3: Birds
+
+4: ?
+
+5: Dogs (Swede in 5)
+
+Clue 10: Blend smoker (house 2) lives next to Cats. So house 1 or 3 must have Cats. House 3 has Birds, so house 1 must have Cats. Therefore, house 1's pet is Cats.
+
+Then clue 11: Horses next to Dunhill smoker. Dunhill is in house 1. So neighbor is house 2. Therefore, house 2's pet is Horses.
+
+Pets:
+
+1: Cats
+
+2: Horses
+
+3: Birds
+
+4: ?
+
+5: Dogs
+
+Remaining pet is Fish for house 4.
+
+So:
+
+4: Fish
+
+5: Dogs
+
+Check if all pets are unique: Yes.
+
+Now, let's check all clues:
+
+1. Brit (house 3) in Red. Correct.
+
+2. Swede (5) has Dogs. Correct.
+
+3. Dane (2) drinks Tea. Correct.
+
+4. Green (4) left of White (5). Correct.
+
+5. Green (4) drinks Coffee. Correct.
+
+6. Pall Mall (3) has Birds. Correct.
+
+7. Yellow (1) smokes Dunhill. Correct.
+
+8. House 3 drinks Milk. Correct.
+
+9. Norwegian in 1. Correct.
+
+10. Blend (2) next to Cats (1). Correct.
+
+11. Horses (2) next to Dunhill (1). Correct.
+
+12. Bluemaster (5) drinks Beer. Correct.
+
+13. German (4) smokes Prince. Correct.
+
+14. Norwegian (1) next to Blue (2). Correct.
+
+15. Blend (2) neighbor (1) drinks Water. Correct.
+
+Everything checks out!
+#############
+|        | 1      | 2      | 3      | 4      | 5      |
+| Color  | Yellow | Blue   | Red    | Green  | White  |
+| Nationality | Norwegian | Dane   | Brit   | German | Swede  |
+| Pet    | Cats   | Horses | Birds  | Fish   | Dogs   |
+| Beverage | Water  | Tea    | Milk   | Coffee | Beer   |
+| Cigar  | Dunhill| Blend  | Pall Mall | Prince | Bluemaster |
+#############"	{'color': ['yellow', 'blue', 'red', 'green', 'white'], 'nationality': ['norwegian', 'danish', 'british', 'german', 'swedish'], 'pet': ['cat', 'horse', 'bird', 'fish', 'dog'], 'beverage': ['water', 'tea', 'milk', 'coffee', 'beer'], 'cigar': ['dunhill', 'blend', 'pall-mall', 'prince', 'bluemaster']}	True	25	True
+R1-Einstein-orig-3	"Okay, let's tackle this logic puzzle. It's similar to the Einstein's Riddle, so I'll need to use the clues systematically. Let me jot down all the clues first and see how they connect.
+
+Starting with the given table structure, there are five houses in a row, each with different attributes: Color, Nationality, Pet, Beverage, and Cigar. All these attributes are unique across the houses. The goal is to fill in the table correctly based on the 15 clues provided.
+
+Let me list out the clues again for clarity:
+
+1. The Brit lives in a Red house.
+
+2. The Swede keeps Dogs as pets.
+
+3. The Dane drinks Tea.
+
+4. The Green house is on the left of the White house.
+
+5. The Green house owner drinks Coffee.
+
+6. The owner who smokes Pall Mall rears Birds.
+
+7. The owner of the Yellow house smokes Dunhill.
+
+8. The owner living in the center house (House 3) drinks Milk.
+
+9. The Norwegian lives in the first house.
+
+10. The owner who smokes Blend lives next to the one who keeps Cats.
+
+11. The owner who keeps Horses lives next to the man who smokes Dunhill.
+
+12. The owner who smokes Bluemaster drinks Beer.
+
+13. The German smokes Prince.
+
+14. The Norwegian lives next to the Blue house.
+
+15. The owner who smokes Blend has a neighbor who drinks Water.
+
+Now, let's start mapping these clues step by step.
+
+First, clue 9 says the Norwegian is in House 1. So Nationality for House 1 is Norwegian. Clue 14 adds that the Norwegian is next to the Blue house. Since House 1 is Norwegian, the adjacent house (House 2) must be Blue. So Color of House 2 is Blue.
+
+Clue 7 mentions the Yellow house smokes Dunhill. Let's note that somewhere. But we need to figure out which house is Yellow. House 1 is Norwegian, House 2 is Blue. Let's see other color clues. Clue 4: Green is left of White. So Green must be in a house with a lower number than White. Possible positions for Green and White could be (1,2), (2,3), (3,4), (4,5). But House 1 is Norwegian, and House 2 is Blue. So Green can't be in House 1 if the color is Yellow (from clue 7?), wait, need to check. Wait, colors are Blue, Green, Red, White, Yellow. So House 1's color isn't known yet except that House 2 is Blue. Clue 9 says Norwegian is in House 1, and clue 14 says House 1 is next to Blue (which is House 2), so House 1's color must be either Yellow or another color. Wait, clue 7 says the owner of the Yellow house smokes Dunhill. So if House 1 is Yellow, then they smoke Dunhill, but House 1 is Norwegian. Let me check if that's possible. Let's assume House 1 is Yellow. Then their cigar is Dunhill (clue 7). Then, since Norwegian is in House 1, and adjacent to Blue (House 2), which we already have. So House 1: Color Yellow, Nationality Norwegian, Cigar Dunhill. That fits with clue 7 and 14.
+
+So House 1: Color Yellow, Nationality Norwegian, Cigar Dunhill.
+
+Now, clue 8: House 3 drinks Milk. So Beverage for House 3 is Milk.
+
+Clue 4 and 5: Green house is left of White, and Green drinks Coffee. Since House 2 is Blue, House 3 might be a candidate. Wait, Green can't be House 3 if White is House 4 or 5. Let's see. Possible positions for Green and White: Since Green must be left of White, possible pairs are (1,2), (2,3), (3,4), (4,5). But House 1 is Yellow, House 2 is Blue, so Green can't be in 1 or 2. Wait, House 2 is Blue. So Green could be in House 3 or 4. If Green is in 3, then White would be in 4 or 5. But House 3 drinks Milk (clue 8), and clue 5 says Green drinks Coffee. So if Green is in House 4, then White is in 5. Let's try that. House 4: Green, drinks Coffee (clue 5). Then House 5: White. That fits clue 4. So Color for House 4: Green, House 5: White. Then the remaining color is Red. Which house is Red? Clue 1 says Brit lives in Red. So Red must be one of the remaining houses. Houses 1: Yellow, 2: Blue, 3: ?, 4: Green, 5: White. So House 3 must be Red. Therefore, House 3: Color Red. Then, from clue 1, the Brit lives there. So Nationality of House 3 is Brit.
+
+So far:
+
+House 1: Yellow, Norwegian, Dunhill, Beverage?, Pet?
+
+House 2: Blue, Nationality?, Pet?, Beverage?, Cigar?
+
+House 3: Red, Brit, Beverage Milk, Pet?, Cigar?
+
+House 4: Green, Nationality?, Beverage Coffee, Pet?, Cigar?
+
+House 5: White, Nationality?, Pet Dogs (clue 2: Swede keeps Dogs, so House 5's Nationality is Swede, Pet Dogs).
+
+So House 5: Nationality Swede, Pet Dogs.
+
+Now Nationalities left are Dane, German. Since House 1 is Norwegian, House 3 Brit, House 5 Swede. So House 2 and 4 must be Dane and German. Clue 3: Dane drinks Tea. So if House 2 is Dane, then Beverage is Tea. Let's check if that works. Let's tentatively assign House 2: Dane, Beverage Tea (clue 3). Then House 4 would be German. Clue 13: German smokes Prince. So House 4's Cigar is Prince. Then House 5: Swede, Cigar? Let's check other cigars: Bluemaster, Pall Mall, Blend, Prince, Dunhill. Dunhill is in House 1. Prince in House 4. So remaining for Houses 2,3,5: Bluemaster, Pall Mall, Blend.
+
+Clue 6: Pall Mall smoker has Birds. Let's see. House 3 is Brit, Red, drinks Milk. What's their pet and cigar? If they smoke Pall Mall, then their pet is Birds. Let's see if that works. Let's tentatively assign House 3: Cigar Pall Mall, Pet Birds (clue 6). Then House 3's cigar is Pall Mall, Pet Birds.
+
+Clue 12: Bluemaster smoker drinks Beer. So whoever has Bluemaster must have Beverage Beer. House 5's Beverage: since House 4 drinks Coffee, House 3 Milk, House 2 Tea, House 1's beverage is Water or Beer? Wait, Beverages are Beer, Coffee, Milk, Tea, Water. House 1: Beverage? Not yet assigned. House 5: Swede, needs a Beverage. The remaining beverages after House 2 (Tea), House 3 (Milk), House 4 (Coffee) are Beer and Water. If House 5 has Bluemaster, then Beverage Beer (clue 12). So House 5: Cigar Bluemaster, Beverage Beer. That leaves House 1's Beverage as Water. Then House 1: Beverage Water.
+
+Now Cigars left: House 2 has to have Blend, since the remaining cigars are Blend and others. Wait, let's check. Cigars so far: House 1: Dunhill, House 3: Pall Mall, House 4: Prince, House 5: Bluemaster. So House 2 must have Blend. So House 2: Cigar Blend.
+
+Clue 10: Blend smoker lives next to Cats. So House 2 (Blend) is adjacent to House 1 or 3. If House 2's neighbor has Cats, then House 1 or 3 has Cats. House 1's Pet is not yet known. Let's assume House 1 has Cats. Then House 1: Pet Cats. That satisfies clue 10.
+
+Clue 15: Blend smoker (House 2) has a neighbor who drinks Water. House 2's neighbors are House 1 and 3. House 1 drinks Water, so that fits. So House 1: Beverage Water. That works.
+
+Now Pets: House 1: Cats, House 3: Birds, House 5: Dogs. Remaining pets are Fish and Horses. House 2 and 4 need these. Clue 11: Horses next to Dunhill smoker. Dunhill is in House 1. So Horses must be in House 2 (adjacent to House 1). So House 2: Pet Horses. Then House 4's Pet is Fish.
+
+So House 4: Pet Fish. That leaves House 2: Horses.
+
+Now Nationalities: House 2 is Dane, House 4 is German (as per earlier assignment). Let's check clue 13: German smokes Prince, which we have in House 4. Correct.
+
+Clue 11: Owner with Horses (House 2) is next to Dunhill smoker (House 1). Correct, since House 2 is next to House 1.
+
+Clue 10: Blend (House 2) next to Cats (House 1). Correct.
+
+Clue 15: Blend (House 2) neighbor drinks Water (House 1). Correct.
+
+Clue 12: Bluemaster (House 5) drinks Beer. Correct.
+
+Clue 7: Yellow house (House 1) smokes Dunhill. Correct.
+
+Clue 6: Pall Mall (House 3) has Birds. Correct.
+
+Clue 5: Green (House 4) drinks Coffee. Correct.
+
+Clue 4: Green (4) is left of White (5). Correct.
+
+Clue 3: Dane (House 2) drinks Tea. Correct.
+
+Clue 2: Swede (House 5) has Dogs. Correct.
+
+Clue 1: Brit (House 3) in Red. Correct.
+
+Clue 13: German (House 4) smokes Prince. Correct.
+
+Clue 14: Norwegian (House 1) next to Blue (House 2). Correct.
+
+Clue 8: House 3 drinks Milk. Correct.
+
+Clue 9: Norwegian in House 1. Correct.
+
+All clues seem to be satisfied. Let's confirm all attributes are unique:
+
+Colors: Yellow, Blue, Red, Green, White – all unique.
+
+Nationalities: Norwegian, Dane, Brit, German, Swede – all unique.
+
+Pets: Cats, Horses, Birds, Fish, Dogs – all unique.
+
+Beverages: Water, Tea, Milk, Coffee, Beer – all unique.
+
+Cigars: Dunhill, Blend, Pall Mall, Prince, Bluemaster – all unique.
+
+Looks like everything checks out.
+
+#############
+|        | 1      | 2      | 3      | 4      | 5      |
+| Color  | Yellow | Blue   | Red    | Green  | White  |
+| Nationality | Norwegian | Dane   | Brit   | German | Swede  |
+| Pet    | Cats   | Horses | Birds  | Fish   | Dogs   |
+| Beverage | Water  | Tea    | Milk   | Coffee | Beer   |
+| Cigar  | Dunhill| Blend  | Pall Mall | Prince | Bluemaster |
+#############"	{'color': ['yellow', 'blue', 'red', 'green', 'white'], 'nationality': ['norwegian', 'danish', 'british', 'german', 'swedish'], 'pet': ['cat', 'horse', 'bird', 'fish', 'dog'], 'beverage': ['water', 'tea', 'milk', 'coffee', 'beer'], 'cigar': ['dunhill', 'blend', 'pall-mall', 'prince', 'bluemaster']}	True	25	True

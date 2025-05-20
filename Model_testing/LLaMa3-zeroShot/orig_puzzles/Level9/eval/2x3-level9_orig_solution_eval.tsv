@@ -1,0 +1,341 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x3-1	"Let's break down the puzzle step by step:
+
+1. The owner of the rabbit is on the left or right of the owner of the horse.
+This means the rabbit and horse owners are adjacent to each other.
+
+2. The Mexican is not to the left of the German.
+This means the Mexican is either to the right of the German or in the middle.
+
+3. The owner of the rabbit is somewhere to the right of the owner of the horse.
+This means the rabbit owner is either to the right of the horse owner or in the middle.
+
+4. The owner of the hamster and the German have the same parity positions.
+This means the hamster and German owners are either both on the left or both on the right.
+
+5. The owner of the hamster is not to the left of the Mexican.
+This means the hamster owner is either to the right of the Mexican or in the middle.
+
+6. The owner of the rabbit is on the left of the Egyptian.
+This means the Egyptian is either to the right of the rabbit owner or in the middle.
+
+Now, let's combine the information:
+
+* The rabbit and horse owners are adjacent.
+* The Mexican is not to the left of the German.
+* The hamster and German owners have the same parity positions.
+* The hamster owner is not to the left of the Mexican.
+* The rabbit owner is on the left of the Egyptian.
+
+From these constraints, we can deduce the following:
+
+* The German is not to the left of the Mexican (from 2).
+* The hamster owner is not to the left of the Mexican (from 5).
+* The hamster and German owners have the same parity positions (from 4).
+* The rabbit owner is on the left of the Egyptian (from 6).
+
+Putting it all together, we get:
+
+#############
+| Nationality   |   1    |    2    |    3     |
+| Egyptian     |        |  Hamster |  Rabbit  |
+| German       |  Hamster |        |  Horse   |
+| Mexican      |        |  Horse   |        |
+#############
+
+The final solution is:
+
+The Egyptian owns the rabbit, the German owns the hamster, and the Mexican owns the horse."	{'nationality': ['1', '2', '3'], 'egyptian': ['', 'hamster', 'rabbit'], 'german': ['hamster', '', 'horse'], 'mexican': ['', 'horse', '']}	False	0	False
+Lv1-2x3-2	"Let's break down the puzzle step by step:
+
+1. The person who's hobby is cooking is in the middle.
+This means that the cooking hobby is either in position 2 or position 2.
+
+2. The person driving the airplane and the person who's hobby is hiking have different parity positions.
+This means that the person driving the airplane is either in an odd position (1 or 3) or the person who's hobby is hiking is in an odd position. Since the person who's hobby is cooking is in the middle, the person driving the airplane cannot be in position 2. Therefore, the person driving the airplane is in position 1, and the person who's hobby is hiking is in position 3.
+
+3. The person who's hobby is dancing is somewhere to the left of the person driving the quad-bike.
+This means that the person who's hobby is dancing is either in position 1 or position 2. Since the person driving the airplane is in position 1, the person who's hobby is dancing cannot be in position 1. Therefore, the person who's hobby is dancing is in position 2.
+
+4. The person driving the airplane is between the person driving the quad-bike and the person driving the ship.
+This means that the person driving the airplane is in position 1, and the person driving the quad-bike is in position 3, and the person driving the ship is in position 2.
+
+Now we can fill in the table:
+
+#############
+|             |    1    |    2     |     3     |
+| Hobby       |  Dancing |  Cooking |  Hiking  |
+| Transport   |  Airplane |  Ship   |  Quad-bike |
+#############
+
+The final solution is:
+
+The person who's hobby is dancing is driving the airplane, the person who's hobby is cooking is driving the ship, and the person who's hobby is hiking is driving the quad-bike."	{'hobby': ['dancing', 'cooking', 'hiking'], 'transport': ['airplane', 'ship', 'quad-bike']}	True	4	False
+Lv1-2x3-3	"Let's break down the puzzle step by step:
+
+1. The person eating cucumber is not to the left of the owner of the horse.
+This means that the owner of the horse is either to the left of the person eating cucumber or to the right of the person eating cucumber.
+
+2. The person eating cucumber is between the owner of the fish and the person eating carrot.
+This means that the owner of the fish is to the left of the person eating cucumber, and the person eating carrot is to the right of the person eating cucumber.
+
+3. The owner of the horse is not to the right of the person eating carrot.
+This means that the owner of the horse is either to the left of the person eating carrot or to the right of the person eating cucumber.
+
+4. The person eating carrot is the owner of the guinea-pig.
+This means that the person eating carrot is also the owner of the guinea-pig.
+
+5. The person eating carrot and the owner of the fish have the same parity positions.
+This means that the person eating carrot and the owner of the fish are either both to the left or both to the right of the person eating cucumber.
+
+Now, let's try to fill in the table:
+
+|        |     1     |    2     |     3      |
+| Food   |           |          |            |
+| Pet    |           |          |            |
+
+From statement 4, we know that the person eating carrot is the owner of the guinea-pig. Let's assume that the person eating carrot is to the right of the person eating cucumber. Then, the owner of the fish would be to the left of the person eating cucumber, and the owner of the horse would be to the right of the person eating carrot.
+
+|        |     1     |    2     |     3      |
+| Food   | Cucumber | Carrot  | Blueberry |
+| Pet    | Fish     | Guinea-pig | Horse     |
+
+However, this solution doesn't satisfy statement 3, which says that the owner of the horse is not to the right of the person eating carrot. This means that the person eating carrot cannot be to the right of the person eating cucumber.
+
+Let's try again. This time, let's assume that the person eating carrot is to the left of the person eating cucumber. Then, the owner of the fish would be to the right of the person eating cucumber, and the owner of the horse would be to the left of the person eating carrot.
+
+|        |     1     |    2     |     3      |
+| Food   | Blueberry | Carrot  | Cucumber |
+| Pet    | Horse     | Guinea-pig | Fish     |
+
+This solution satisfies all the statements:
+
+1. The person eating cucumber is not to the left of the owner of the horse.
+2. The person eating cucumber is between the owner of the fish and the person eating carrot.
+3. The owner of the horse is not to the right of the person eating carrot.
+4. The person eating carrot is the owner of the guinea-pig.
+5. The person eating carrot and the owner of the fish have the same parity positions.
+
+#############
+|        |     1     |    2     |     3      |
+| Food   | Blueberry | Carrot  | Cucumber |
+| Pet    | Horse     | Guinea-pig | Fish     |
+#############"	{'food': ['blueberry', 'carrot', 'cucumber'], 'pet': ['horse', 'guinea-pig', 'fish']}	True	1	False
+Lv1-2x3-4	"Let's break down the clues and solve the puzzle step by step:
+
+1. The owner of the lizard is on the left of the person watching romance movies.
+
+This means that the person watching romance movies must be in position 2 or 3.
+
+2. The person watching documentary movies is somewhere to the right of the owner of the frog.
+
+This means that the owner of the frog must be in position 1, and the person watching documentary movies must be in position 2 or 3.
+
+3. The person watching documentary movies is on the far left or far right.
+
+This means that the person watching documentary movies must be in position 1 or 3.
+
+4. The person watching documentary movies and the owner of the lizard have the same parity positions.
+
+This means that if the person watching documentary movies is in an odd-numbered position, the owner of the lizard must also be in an odd-numbered position. If the person watching documentary movies is in an even-numbered position, the owner of the lizard must also be in an even-numbered position.
+
+Now, let's combine the information:
+
+* The owner of the frog is in position 1.
+* The person watching documentary movies is in position 1 or 3.
+* The owner of the lizard is on the left of the person watching romance movies, so the owner of the lizard must be in position 2.
+
+Here's the final solution:
+
+#############
+|               |    1    |    2    |      3      |
+| Movie-Genre   |  Doc   |  Romance |  Western   |
+| Pet           |  Frog  |  Lizard  |  Mouse     |
+#############
+
+The person watching documentary movies is in position 1, the owner of the frog is in position 1, and the owner of the lizard is in position 2."	{'movie-genre': ['doc', 'romance', 'western'], 'pet': ['frog', 'lizard', 'mouse']}	True	2	False
+Lv1-2x3-5	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking water is the person drinking water (no new information)
+2. The person drinking tea is somewhere to the right of the person drinking cola
+This means that the order of cola, tea, and water is either cola-water-tea or cola-tea-water. We'll come back to this later.
+3. The person drinking water and the fan country have the same parity positions
+This means that the person drinking water is either the first or the third person. Since the person drinking water is on the left of the fan metal (clue 4), the person drinking water must be the first person.
+4. The person drinking water is on the left of the fan metal
+This confirms that the person drinking water is the first person.
+5. The fan hip-hop is somewhere to the right of the person drinking water
+Since the person drinking water is the first person, the fan hip-hop must be the third person.
+
+Now, let's fill in the table:
+
+#############
+|               |    1    |   2   |    3    |
+| Beverage      |  Water  |  Tea   |  Cola   |
+| Music-Genre   |  Country|  Hip-Hop|  Metal  |
+#############
+
+The final solution is:
+
+The person drinking water prefers country music, the person drinking tea prefers hip-hop music, and the person drinking cola prefers metal music."	{'beverage': ['water', 'tea', 'cola'], 'music-genre': ['country', 'hip-hop', 'metal']}	True	2	False
+Lv1-2x3-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The Chinese is somewhere to the left of the Nigerian.
+This means the Chinese cannot be in the third position, so they must be in either the first or second position.
+
+2. The person who's sport is surfing is somewhere between the person who's sport is skateboarding and the French.
+This means the French cannot be in the first position, so they must be in either the second or third position. The surfer must be between the skateboarder and the French, so the surfer cannot be in the first position either.
+
+3. The Chinese and the person who's sport is parkour have different parity positions.
+This means the Chinese and the parkour person have different positions (first or second). If the Chinese is in the first position, the parkour person must be in the second position. If the Chinese is in the second position, the parkour person must be in the first position.
+
+4. The person who's sport is surfing is not to the left of the person who's sport is skateboarding.
+This means the surfer must be to the right of the skateboarder. Since the surfer is between the skateboarder and the French, the French must be in the third position.
+
+Now, let's combine the information:
+
+* The Chinese is in either the first or second position.
+* The French is in the third position.
+* The surfer is between the skateboarder and the French, so the surfer is in the second position.
+* The parkour person is in the first position (since the Chinese and the parkour person have different parity positions).
+
+Here's the final solution:
+
+#############
+| Nationality   |    1    |    2    |       3       |
+| Chinese      |  Parkour |  Surfer  |  French      |
+#############
+
+The Chinese person prefers parkour, the person in the second position prefers surfing, and the French person prefers skateboarding."	{'nationality': ['1', '2', '3'], 'chinese': ['parkour', 'surfer', 'french']}	False	0	False
+Lv1-2x3-7	"Let's break down the clues and solve the puzzle step by step:
+
+1. The Japanese is on the left of the entrepreneur.
+This means the order is: Japanese,?, Entrepreneur
+
+2. The pilot is not to the left of the Brazilian.
+This means the pilot cannot be in the first position, so the order is:?,?, Entrepreneur
+
+3. The pilot and the Brazilian have different parity positions.
+This means the pilot is either on an odd-numbered position or the Brazilian is on an odd-numbered position. Since the pilot is not on the left, it must be on an odd-numbered position. Let's assume the pilot is on position 1.
+
+4. The pilot is on the far left or far right.
+This means the pilot is either on position 1 or position 3.
+
+5. The Brazilian is on the left or right of the Pakistani.
+This means the Brazilian cannot be in the middle position, so the order is: Pilot,?, Brazilian,?, Entrepreneur
+
+Now, let's combine the information:
+
+* Pilot is on position 1 or 3
+* Brazilian is on the left or right of the Pakistani
+* Japanese is on the left of the entrepreneur
+
+If the pilot is on position 1, the order would be: Pilot, Japanese, Brazilian, Entrepreneur. However, this would mean the Brazilian is in the middle position, which contradicts clue 5.
+
+Therefore, the pilot must be on position 3. The order is: Pilot, Pakistani, Brazilian, Japanese, Entrepreneur
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |    1     |      2       |     3     |
+| Job           |  Pilot  | Pakistani | Brazilian | Engineer |
+| Nationality   | Japanese |           |           | Entrepreneur |
+#############"	{'job': ['pilot', 'pakistani', 'brazilian', 'engineer'], 'nationality': ['japanese', '', '', 'entrepreneur']}	True	1	False
+Lv1-2x3-8	"Let's break down the puzzle step by step:
+
+1. The person eating lemon is the journalist.
+2. The journalist is not to the right of the dancer, so the journalist must be to the left of the dancer.
+3. The dancer and the person eating kale have the same parity positions, which means they are either both to the left or both to the right of the designer.
+4. The person eating kale is somewhere to the right of the designer, so the designer must be to the left of the kale-eater.
+5. The person eating pear is between the journalist and the dancer, which means the journalist is to the left of the pear-eater, and the pear-eater is to the left of the dancer.
+6. The person eating kale and the dancer have the same parity positions, which means they are either both to the left or both to the right of the designer. Since we already know the kale-eater is to the right of the designer, the dancer must also be to the right of the designer.
+
+Now, let's fill in the table:
+
+#############
+|        |     1      |    2     |   3    |
+| Food   |            |          |        |
+| Job    |            |          |        |
+#############
+| Food   | Pear | Lemon | Kale  |
+| Job    | Journalist | Dancer | Designer |
+#############
+
+Here's the solution:
+
+* The person eating pear is the journalist, who is to the left of the dancer.
+* The person eating lemon is the journalist, who is to the left of the dancer.
+* The person eating kale is the designer, who is to the right of the designer.
+
+Note that the parity positions of the dancer and the kale-eater are the same, as required by the puzzle."	{'food': ['pear', 'lemon', 'kale'], 'job': ['journalist', 'dancer', 'designer']}	True	2	False
+Lv1-2x3-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fisherman is not to the left of the doctor.
+
+This means the doctor cannot be in the first position, so the fisherman must be in the first position or the third position.
+
+2. The person drinking sprite and the fisherman have different parity positions.
+
+This means that if the fisherman is in an odd-numbered position, the person drinking sprite must be in an even-numbered position, and vice versa.
+
+3. The doctor is between the fisherman and the person drinking milk.
+
+This means the doctor cannot be in the first position (since the fisherman is already there), so the doctor must be in the second position. This also means the person drinking milk must be in the third position.
+
+Now, let's combine the information:
+
+* Fisherman is in the first position or the third position.
+* Doctor is in the second position.
+* Person drinking milk is in the third position.
+
+The only possible arrangement is:
+
+#############
+|            |  1   |   2    |     3     |
+| Beverage   |  Milk |  Tea   |  Sprite  |
+| Job        | Fisherman | Doctor | Chef    |
+#############
+
+So, the solution is:
+
+* The fisherman drinks milk.
+* The doctor drinks tea.
+* The chef drinks sprite."	{'beverage': ['milk', 'tea', 'sprite'], 'job': ['fisherman', 'doctor', 'chef']}	True	2	False
+Lv1-2x3-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fan punk is on the left of the fan soul
+This means that the paramedic (fan punk) is on the left of the fan soul.
+
+2. The fan indie and the coach have the same parity positions
+This means that the fan indie and the coach are either both on the left or both on the right.
+
+3. The paramedic is the fan punk
+This confirms that the paramedic is the fan punk, which we already knew.
+
+4. The fan indie is on the right of the fan soul
+This means that the fan indie is on the right of the fan soul, which is already known.
+
+5. The paramedic is somewhere to the left of the coach
+This means that the paramedic (fan punk) is to the left of the coach.
+
+Now, let's combine the information:
+
+* The paramedic (fan punk) is on the left of the fan soul.
+* The fan indie is on the right of the fan soul.
+* The coach is to the right of the paramedic.
+
+The final solution table is:
+
+#############
+|               |     1     |   2    |   3   |
+| Job           |           |        |       |
+| Music-Genre   |           |        |       |
+| Paramedic    | Punk      |        |       |
+| Fan Soul     |        | Soul   |       |
+| Coach       |        |        | Indie |
+#############
+
+The solution is:
+
+* Paramedic (fan punk) is the fan of punk music and has the job of paramedic.
+* Fan Soul is the fan of soul music.
+* Coach is the fan of indie music and has the job of coach."	{'job': ['', '', ''], 'music-genre': ['', '', ''], 'paramedic': ['punk', '', ''], 'fan soul': ['', 'soul', ''], 'coach': ['', '', 'indie']}	True	0	False

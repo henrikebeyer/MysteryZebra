@@ -1,0 +1,1291 @@
+setup	output
+R1-Zebra-lexical-1	"Okay, let's try to solve this logic puzzle. Hmm, so there are five houses (positions 1 to 5), each with different attributes: nationality, color, beverage, cigar, and pet. The goal is to fill out the table correctly based on the given clues. Let's take it step by step.
+
+First, let's list all the clues again to have them handy:
+
+1. The Malaysian likes orange.
+
+2. The Italian owns the goldfish.
+
+3. The person drinking cola likes black.
+
+4. The Dutch drinks almond-lemonade.
+
+5. The person who likes black is to the right of the person who likes aquamarine.
+
+6. The Fonseca-smoker owns the bird.
+
+7. The Havana-smoker likes chestnut.
+
+8. The person drinking lemonade is in the middle (position 3).
+
+9. The German is on the far left (position 1).
+
+10. The Pall-Mall-smoker is adjacent to the lizard owner.
+
+11. The Havana-smoker is adjacent to the mouse owner.
+
+12. The Baccarat-smoker drinks iced-tea.
+
+13. The Mexican smokes Tiparillo.
+
+14. The German is adjacent to the person who likes coral.
+
+Alright, let's start by placing the fixed positions first. Clue 9 says the German is in position 1. So nationality column 1 is German. Clue 8 says the middle (position 3) drinks lemonade. So beverage 3 is lemonade.
+
+Clue 14 says the German (position 1) is adjacent to someone who likes coral. Since position 1 is leftmost, adjacent is position 2. Therefore, position 2's color is coral. Or position 1's neighbor is position 2, so color 2 is coral. Wait, no. The German is in position 1. So the person next to German (position 2) must like coral. So color 2 is coral. Wait, but color possibilities are orange, black, aquamarine, chestnut, coral. So position 2's color is coral.
+
+Wait, let me confirm. Clue 14: German (position 1) is adjacent to the person who likes coral. So that's either position 2. So color 2 is coral. So that's fixed. So color 2: coral.
+
+Then clue 5 says the person who likes black is to the right of the person who likes aquamarine. So aquamarine must be in a position left of black. So if black is in position x, then aquamarine is in x-1. Let's note that.
+
+Clue 3: cola drinker likes black. So whoever is in the position that likes black also drinks cola.
+
+Clue 1: Malaysian likes orange. So nationality Malaysian has color orange.
+
+Clue 2: Italian owns goldfish. So nationality Italian has pet goldfish.
+
+Clue 4: Dutch drinks almond-lemonade. So nationality Dutch has beverage almond-lemonade.
+
+Clue 6: Fonseca cigar smoker has bird. So cigar Fonseca → pet bird.
+
+Clue 7: Havana smoker likes chestnut. So cigar Havana → color chestnut.
+
+Clue 10: Pall-Mall smoker is adjacent to lizard owner.
+
+Clue 11: Havana smoker is adjacent to mouse owner.
+
+Clue 12: Baccarat smoker drinks iced-tea. So cigar Baccarat → beverage iced-tea.
+
+Clue 13: Mexican smokes Tiparillo. So nationality Mexican → cigar Tiparillo.
+
+Okay, let's start building the table step by step.
+
+Position 1: Nationality is German (clue 9). Color: we don't know yet, but position 2's color is coral (clue 14). So position 1's color can't be coral. The colors are orange, black, aquamarine, chestnut, coral. So position 1's color is either orange, black, aquamarine, or chestnut. But clue 1 says Malaysian likes orange. Since position 1 is German, their nationality isn't Malaysian, so they can't be orange. So possible colors for position 1: black, aquamarine, chestnut. Hmm, but let's think.
+
+Clue 5: black is to the right of aquamarine. So aquamarine must be somewhere left of black. If position 1 had aquamarine, then black could be in 2,3,4,5. If position 1 had black, then that's impossible because aquamarine has to be left of black. So position 1 can't be black. Therefore, position 1's color is either aquamarine or chestnut. Wait, but clue 7 says Havana smoker likes chestnut. So if position 1's color is chestnut, then the person in position 1 smokes Havana. But nationality is German. Let's see.
+
+Alternatively, maybe position 1's color is aquamarine. Let's see. If position 1 is aquamarine, then black must be to the right (positions 2-5). But position 2's color is coral. So black can't be in 2. Then black could be in 3,4,5. But cola is drunk by the person who likes black (clue 3). Also, position 3's beverage is lemonade (clue 8). So position 3 can't be cola. So black can't be in position 3. So black would be in 4 or 5. Let's consider that possibility.
+
+Alternatively, if position 1's color is chestnut, then according to clue 7, that person smokes Havana. So cigar in position 1 is Havana. But then nationality is German. Let's see if that's possible. Then, from clue 11: Havana smoker (position 1) is adjacent to mouse owner (position 2). So position 2's pet is mouse. Then, let's see if that works. But position 2's color is coral. Let's proceed.
+
+But let's check if position 1's color is aquamarine first. If position 1 is aquamarine, then according to clue 5, black is to the right, so in positions 2-5. But position 2 is coral (from clue 14). So black can't be in 2. Then possible positions for black: 3,4,5. But position 3's beverage is lemonade (clue 8), so cola can't be there (clue 3 says cola is with black). Therefore, black must be in 4 or 5, and cola is in 4 or 5. Let's hold that thought.
+
+Alternatively, position 1's color is chestnut, so the person smokes Havana (clue 7), and then the mouse owner is adjacent (clue 11). But position 2's color is coral, so let's see.
+
+This is getting a bit tangled. Maybe let's proceed step by step.
+
+We know:
+
+Position 1: Nationality: German. Color: ?
+
+Position 2: Color: coral (from clue 14). Nationality: ?
+
+Position 3: Beverage: lemonade. Nationality: ?
+
+Beverages: cola, almond-lemonade, lemonade (position 3), iced-tea, hot-chocolate.
+
+Nationalities: Malaysian, Italian, Dutch, German (position1), Mexican.
+
+Cigars: Fonseca, Havana, Pall-Mall, Baccarat, Tiparillo.
+
+Pets: goldfish (Italian), lizard, cat, mouse, bird (Fonseca).
+
+Clue 4: Dutch drinks almond-lemonade. So find which position has Dutch nationality and almond-lemonade.
+
+Clue 13: Mexican smokes Tiparillo. So Mexican's cigar is Tiparillo.
+
+Clue 12: Baccarat → iced-tea. So whoever smokes Baccarat drinks iced-tea.
+
+Clue 7: Havana → chestnut.
+
+Clue 6: Fonseca → bird.
+
+Clue 10: Pall-Mall adjacent to lizard.
+
+Clue 11: Havana adjacent to mouse.
+
+Clue 2: Italian has goldfish.
+
+Clue 1: Malaysian likes orange.
+
+Clue 3: cola with black.
+
+Clue 5: black right of aquamarine.
+
+Let's start with the Dutch (clue 4). Since Dutch drinks almond-lemonade, and position 3 is lemonade, so almond-lemonade must be in another position. Let's assume the Dutch is in position 4 or 5, but let's see.
+
+Wait, position 1 is German. So the remaining nationalities are Malaysian, Italian, Dutch, Mexican. Let's see where they can be.
+
+Clue 1: Malaysian likes orange. So the Malaysian's color is orange.
+
+Clue 14: position 2's color is coral (from earlier conclusion). So orange can't be in 2. So Malaysian could be in 3,4,5, but their color is orange.
+
+But position 1's color is either aquamarine or chestnut. Let's suppose position 3's color is orange. Then the Malaysian is in 3. But position 3's beverage is lemonade. Let's see.
+
+Alternatively, position 5's color is orange. Then Malaysian is in 5.
+
+Alternatively, position 4's color is orange. Then Malaysian is in 4.
+
+But we need to fit the clues. Let's see.
+
+Also, clue 5: black is right of aquamarine. So aquamarine must be left of black. Suppose position 1 is aquamarine (color), then black must be in 2,3,4,5. But position 2 is coral, so black can't be there. Then black is in 3,4,5. But position 3's beverage is lemonade, and cola is drunk by black (clue3). So if black is in 4 or 5, then cola is in 4 or 5.
+
+Alternatively, if position 1's color is chestnut, then clue7 says the person smokes Havana. So position1's cigar is Havana. Then clue11 says Havana smoker is adjacent to mouse owner. So position2's pet is mouse. But position2's color is coral.
+
+Let me try this approach. Let's suppose position1's color is chestnut. Then:
+
+Position1: nationality=German, color=chestnut, cigar=Havana (clue7). Then, per clue11, adjacent (position2) has pet=mouse. So position2's pet is mouse.
+
+But position2's color is coral (from clue14). So position2's color is coral, pet is mouse. Nationality: not German, so could be Malaysian, Italian, Dutch, Mexican. Let's see.
+
+Clue2: Italian owns goldfish. So if position2's pet is mouse, nationality isn't Italian. So position2's nationality is either Malaysian, Dutch, or Mexican. But Malaysian's color is orange (clue1), but position2's color is coral. So Malaysian can't be in position2. So position2's nationality is either Dutch or Mexican.
+
+If position2's nationality is Dutch, then per clue4, their beverage is almond-lemonade. So position2's beverage is almond-lemonade. Then position2's attributes: nationality=Dutch, color=coral, beverage=almond-lemonade, pet=mouse, cigar=?
+
+But position1's cigar is Havana. So remaining cigars: Fonseca, Pall-Mall, Baccarat, Tiparillo.
+
+Clue13: Mexican smokes Tiparillo. So if position2 is Mexican, then cigar=Tiparillo. But let's check. If position2 is Dutch, their beverage is almond-lemonade. So let's see.
+
+Wait, position2's nationality possibilities: Dutch or Mexican. Let's try Dutch first.
+
+Position2: nationality=Dutch, beverage=almond-lemonade (clue4), color=coral, pet=mouse. Then, what's their cigar? Cigars left: Fonseca, Pall-Mall, Baccarat, Tiparillo.
+
+Clue6: Fonseca smoker has bird. So if someone smokes Fonseca, their pet is bird. So position2's pet is mouse, so they can't smoke Fonseca.
+
+Clue12: Baccarat smoker drinks iced-tea. So if position2's beverage is almond-lemonade, they can't be Baccarat.
+
+Clue13: Mexican smokes Tiparillo. So if position2 is Dutch, they can't be Mexican, so Tiparillo is for Mexican elsewhere.
+
+Clue10: Pall-Mall adjacent to lizard. If position2's cigar is Pall-Mall, then adjacent (position1 or 3) must have lizard. Position1's pet is unknown. Let's see.
+
+Alternatively, maybe position2's cigar is Baccarat, but then their beverage would have to be iced-tea (clue12), but position2's beverage is almond-lemonade. So no. So position2's cigar can't be Baccarat. So possible cigars: Pall-Mall or Tiparillo. But Tiparillo is for Mexican. Since position2 is Dutch, they can't smoke Tiparillo. So position2's cigar must be Pall-Mall.
+
+So position2: cigar=Pall-Mall. Then, per clue10: Pall-Mall smoker is adjacent to lizard owner. So the owner of the lizard is either position1 or position3. Position1's pet is unknown. Let's check position1: nationality German, color chestnut, cigar Havana, beverage? Pet? If position2's cigar is Pall-Mall, then the adjacent lizard owner could be position1 or 3.
+
+If position3's pet is lizard, then that's possible. Let's tentatively assign position3's pet as lizard. Then, per clue10, that's satisfied. So position3's pet is lizard. Then, position3's attributes: beverage=lemonade (clue8), pet=lizard. Nationality? Nationalities left are Malaysian, Italian, Mexican (since position1 is German, position2 is Dutch). So position3's nationality could be Malaysian, Italian, or Mexican.
+
+But position3's color is unknown. Let's think about colors. Position1: chestnut, position2: coral. Colors left: orange (Malaysian), black, aquamarine. Clue5: black is right of aquamarine. So aquamarine must be in a position left of black. If position3's color is aquamarine, then black can be in 4 or 5. If position3 is aquamarine, then black in 4 or 5. Also, cola is in 4 or 5 (clue3).
+
+Alternatively, position3's color could be orange, meaning Malaysian is in position3. Let's see.
+
+If position3's nationality is Malaysian, then their color is orange (clue1). So color=orange. Then colors left: aquamarine and black. Then, according to clue5, aquamarine must be left of black. If position3 is orange (aquamarine not here), then aquamarine must be in position1 or 2. But position1 is chestnut, position2 is coral. So no. That can't happen. Therefore, position3's color can't be orange. So Malaysian must be in position4 or 5, with color orange.
+
+Therefore, position3's color can't be orange. So colors left for position3: aquamarine or black. But black must be right of aquamarine. If position3 is aquamarine, then black can be in 4 or 5. If position3 is black, then aquamarine must be in 1 or 2, but position1 is chestnut, position2 is coral. So position3 can't be black. Therefore, position3's color must be aquamarine. Then black is in 4 or 5.
+
+So position3: color=aquamarine, beverage=lemonade, pet=lizard, nationality? Nationalities left: Italian, Malaysian, Mexican. Let's check.
+
+If position3's nationality is Italian, then per clue2, their pet is goldfish. But position3's pet is lizard. Contradiction. So position3's nationality can't be Italian. Therefore, position3 is either Malaysian or Mexican. But Malaysian's color is orange, and position3's color is aquamarine. So nationality can't be Malaysian. Therefore, position3's nationality must be Mexican. But clue13 says Mexican smokes Tiparillo. Let's check.
+
+Position3's nationality=Mexican → cigar=Tiparillo (clue13). So position3's cigar=Tiparillo. But position2's cigar is Pall-Mall, position1's is Havana. Then remaining cigars: Fonseca, Baccarat.
+
+But wait, position3 is Mexican, so cigar=Tiparillo. Then in position3: cigar=Tiparillo. So that's okay.
+
+Now, let's check the colors. Position3 is aquamarine. Then per clue5, black must be to the right, so positions4 or 5. Also, per clue3, cola is drunk by the person who likes black. So cola is in 4 or 5.
+
+Now, let's look at beverages. Position1's beverage is unknown. Position2: almond-lemonade. Position3: lemonade. Position4 and 5: cola, iced-tea, hot-chocolate. Clue12: Baccarat smoker drinks iced-tea. So if someone smokes Baccarat, they are in 4 or 5 with iced-tea.
+
+Clue7: Havana is smoked by position1 (chestnut). Correct.
+
+Now, let's check position4 and 5. Let's consider position4:
+
+Nationalities left: Malaysian and Italian (since position1: German, 2: Dutch, 3: Mexican). So position4 and 5 are Malaysian and Italian.
+
+Clue1: Malaysian likes orange. So whichever of 4 or 5 is Malaysian must have color orange. Let's say position4 is Malaysian: color orange. Then position5 must be Italian. But clue2 says Italian owns goldfish. So position5's pet would be goldfish. Alternatively, position5 is Malaysian (orange) and position4 is Italian (goldfish). Let's see.
+
+But let's proceed. Let's assume position4 is Malaysian (color orange). Then position5's nationality is Italian. But Italian's pet is goldfish (clue2). So position5's pet is goldfish. Let's check if that's possible.
+
+But first, position4's color is orange (Malaysian). Then position5's color must be black (since colors left are black and chestnut, but chestnut is already in position1). Wait, colors used: position1 chestnut, 2 coral, 3 aquamarine, 4 orange, so remaining color is black. So position5's color is black. Then per clue3, cola is drunk by black, so position5's beverage is cola. That's okay.
+
+Now, position5's nationality is Italian (since Malaysian is in 4), so per clue2, their pet is goldfish. So position5's pet is goldfish. That's okay.
+
+Now, let's check beverages. Position1: ?
+
+Position2: almond-lemonade (Dutch)
+
+Position3: lemonade (Mexican)
+
+Position4: ?
+
+Position5: cola (Italian)
+
+Remaining beverages: hot-chocolate and iced-tea. So position1 and 4 need to have hot-chocolate and iced-tea.
+
+Clue12: Baccarat smoker drinks iced-tea. So whoever drinks iced-tea smokes Baccarat. Let's see. Position1's beverage: either hot-chocolate or iced-tea.
+
+If position1's beverage is iced-tea, then they smoke Baccarat. But position1's cigar is Havana (from earlier assumption). So contradiction. Therefore, position1 can't drink iced-tea. So position1's beverage must be hot-chocolate. Then position4's beverage is iced-tea. So position4's beverage=iced-tea, which means they smoke Baccarat (clue12). So position4's cigar=Baccarat.
+
+Now, let's check cigars:
+
+Position1: Havana
+
+Position2: Pall-Mall
+
+Position3: Tiparillo
+
+Position4: Baccarat
+
+Remaining cigar: Fonseca (for position5). So position5's cigar=Fonseca. But clue6 says Fonseca smoker owns the bird. So position5's pet should be bird. But we previously thought position5's pet is goldfish (Italian). Contradiction. Hmm, problem here.
+
+So where's the mistake? Let's retrace.
+
+If position5 is Italian, their pet must be goldfish (clue2). But if position5's cigar is Fonseca (the only remaining), then their pet should be bird (clue6). Conflict. Therefore, our assumption that position4 is Malaysian and position5 is Italian is wrong.
+
+Let's try the other way: position5 is Malaysian (orange), and position4 is Italian (goldfish). So:
+
+Position4: nationality=Italian, pet=goldfish (clue2), color=black (since cola is drunk here? Wait, no. Let's re-examine.
+
+If position5 is Malaysian, then color=orange. So position5's color is orange. Then position4's color would be black (remaining color). Because colors are: chestnut (1), coral (2), aquamarine (3), orange (5), so black must be in 4. Then per clue3, cola is in position4. So position4's beverage=cola. Then remaining beverages: position1: hot-chocolate, iced-tea.
+
+Position4's beverage=cola (because color=black). So position4's attributes: nationality=Italian, color=black, beverage=cola, pet=goldfish (clue2), cigar=?
+
+Then position5: nationality=Malaysian, color=orange, beverage=hot-chocolate or iced-tea. Let's see.
+
+Clue12: Baccarat smoker drinks iced-tea. So whoever drinks iced-tea smokes Baccarat. So if position5's beverage is iced-tea, then their cigar is Baccarat. Or position1's beverage is iced-tea.
+
+Position1's beverage is either hot-chocolate or iced-tea. If position1's beverage is iced-tea, then their cigar is Baccarat. But position1's cigar is Havana (from earlier assumption). So position1's beverage must be hot-chocolate. Then position5's beverage is iced-tea. So position5's beverage=iced-tea, cigar=Baccarat. But clue12 says Baccarat smoker drinks iced-tea. So that's correct. Then position5's cigar=Baccarat.
+
+But remaining cigars: Fonseca and others? Let's check. Used cigars so far:
+
+Position1: Havana
+
+Position2: Pall-Mall
+
+Position3: Tiparillo
+
+Position4: ?
+
+Position5: Baccarat
+
+So remaining cigars: Fonseca. So position4's cigar must be Fonseca. But clue6 says Fonseca smoker has bird. So position4's pet should be bird. But position4's pet is goldfish (clue2). Contradiction again. So this path also leads to a problem.
+
+Hmm. So both possibilities (position4 as Malaysian or Italian) lead to contradictions regarding the pets and cigars. So maybe our initial assumption that position1's color is chestnut is wrong. Let's backtrack.
+
+Alternative approach: position1's color is aquamarine. Then per clue5, black is to the right (positions2-5). But position2's color is coral (clue14), so black must be in positions3,4,5. But position3's beverage is lemonade, so cola can't be there. Therefore, black must be in 4 or 5 with cola.
+
+Let's proceed with position1's color as aquamarine.
+
+Position1: nationality=German, color=aquamarine. Then per clue5, black is to the right. So black in 2,3,4,5. But position2's color is coral (from clue14). So black must be in 3,4,5. Position3's beverage is lemonade, so cola can't be there (clue3). So black must be in 4 or 5, cola in 4 or 5.
+
+Clue3: cola and black go together.
+
+Now, let's check clue7: Havana smoker likes chestnut. So whoever smokes Havana has color chestnut. So we need to assign chestnut to someone, and their cigar is Havana.
+
+Also, clue1: Malaysian likes orange. So Malaysian's color is orange.
+
+Clue13: Mexican smokes Tiparillo.
+
+Clue14: German (position1) is adjacent to coral (position2). That's already set.
+
+Let's see colors. Position1: aquamarine. Position2: coral. Colors left: orange, black, chestnut. So need to assign these to positions3,4,5.
+
+Clue5: black is right of aquamarine (position1), so black can be in 2,3,4,5. But position2 is coral. So black in 3,4,5. But position3's beverage is lemonade, so cola can't be there. So black must be in 4 or 5. Therefore, cola is in 4 or 5.
+
+Let's assume position4 is black, cola. Then:
+
+Position4: color=black, beverage=cola.
+
+Then, position5's color would be chestnut or orange. But Malaysian's color is orange. So if position5 is orange, then nationality is Malaysian. Alternatively, position5 is chestnut, then someone else is chestnut.
+
+Clue7: Havana smoker likes chestnut. So whoever has chestnut must smoke Havana.
+
+Let's assign position5's color as chestnut. Then, position5 smokes Havana. But wait, position1's color is aquamarine, so Havana is in position5. Then per clue11: Havana smoker (position5) is adjacent to mouse owner (position4). So position4's pet is mouse.
+
+But position4's beverage is cola, color is black. Nationality? Let's see.
+
+Nationalities: position1: German, positions2,3,4,5: Malaysian, Italian, Dutch, Mexican.
+
+Clue4: Dutch drinks almond-lemonade. So Dutch's beverage is almond-lemonade. Position2's color is coral. Let's assign Dutch to position2, as follows:
+
+Position2: nationality=Dutch (clue4), beverage=almond-lemonade, color=coral. Then, their pet is?
+
+Cigar? Cigars available: Fonseca, Havana (if position5), Pall-Mall, Baccarat, Tiparillo.
+
+Wait, position5's cigar would be Havana (since color chestnut, per clue7). So position5's cigar=Havana. Then per clue11, Havana smoker (position5) is adjacent to mouse owner (position4). So position4's pet=mouse.
+
+Now, position4's attributes: color=black, beverage=cola, pet=mouse. Nationality? Nationalities left: Malaysian, Italian, Mexican.
+
+Clue3: cola drinker is black, which is position4. So position4's nationality could be anyone, but let's see.
+
+Clue1: Malaysian likes orange. So if position3's color is orange, then Malaysian is there. But position3's color options are orange, chestnut, but chestnut is in position5. So position3's color could be orange. Let's assign position3: color=orange, nationality=Malaysian. Then, position3's attributes: color=orange, beverage=lemonade (clue8), nationality=Malaysian. Pet? Let's see.
+
+Now, pets: position2's pet is unknown, position3's pet, position4's pet=mouse, position5's pet=?
+
+Clue6: Fonseca smoker owns bird. So if someone smokes Fonseca, their pet is bird.
+
+Clue2: Italian owns goldfish. So Italian's pet is goldfish.
+
+Clue10: Pall-Mall smoker is adjacent to lizard owner.
+
+Clue11: Havana smoker (position5) is adjacent to mouse owner (position4). That's satisfied.
+
+Now, let's assign cigars:
+
+Position5: cigar=Havana (clue7).
+
+Available cigars: Fonseca, Pall-Mall, Baccarat, Tiparillo.
+
+Position1's cigar: not yet assigned. Position2,3,4.
+
+Position1's attributes: nationality=German, color=aquamarine, beverage=?
+
+Beverages left: position1: ?, position2: almond-lemonade, position3: lemonade, position4: cola, position5: ?. The remaining beverages are hot-chocolate and iced-tea. So position1 and 5 need beverages. Clue12: Baccarat smoker drinks iced-tea. So if someone smokes Baccarat, they drink iced-tea.
+
+Position5's beverage: could be hot-chocolate or iced-tea. Let's see.
+
+If position5's beverage is iced-tea, then their cigar would be Baccarat. But position5's cigar is Havana. Contradiction. So position5's beverage must be hot-chocolate, and position1's beverage is iced-tea. Wait, no. Position1's beverage options are hot-chocolate and iced-tea. If position1 drinks iced-tea, then their cigar is Baccarat (clue12). Let's assign that.
+
+Position1: beverage=iced-tea, cigar=Baccarat. Then per clue12, correct.
+
+Then position5's beverage=hot-chocolate.
+
+Now, position1's cigar=Baccarat. But clue12 says Baccarat smoker drinks iced-tea, which matches.
+
+Now, cigars left: Fonseca, Pall-Mall, Tiparillo.
+
+Position2: nationality=Dutch, beverage=almond-lemonade. Cigar?
+
+Position3: nationality=Malaysian, beverage=lemonade. Cigar?
+
+Position4: nationality=?, beverage=cola. Cigar?
+
+Position5: nationality=?, beverage=hot-chocolate, cigar=Havana.
+
+Nationalities left: Italian, Mexican.
+
+Position4's nationality: Either Italian or Mexican. If Italian, then pet=goldfish (clue2). But position4's pet is mouse. Contradiction. Therefore, position4's nationality must be Mexican. Then per clue13, their cigar=Tiparillo. But position4's cigar is not yet assigned. So position4's nationality=Mexican, cigar=Tiparillo. Then position5's nationality must be Italian. But position5's pet? Italian's pet is goldfish (clue2). So position5's pet=goldfish. But position5's color is chestnut, beverage=hot-chocolate, cigar=Havana.
+
+Now, let's check pets:
+
+Position1: pet=?
+
+Position2: pet=?
+
+Position3: pet=?
+
+Position4: pet=mouse.
+
+Position5: pet=goldfish.
+
+Clue6: Fonseca smoker has bird. So someone smokes Fonseca and has bird.
+
+Available pets: lizard, cat, bird.
+
+Remaining pets: position1,2,3 need to have lizard, cat, bird.
+
+Clue10: Pall-Mall smoker is adjacent to lizard owner.
+
+Position2's cigar is still to be determined. Available cigars: Fonseca, Pall-Mall.
+
+Position3's cigar: ?
+
+Position2's cigar: Let's assign Pall-Mall. Then per clue10, adjacent to lizard owner. So position2's adjacent positions are 1 and 3. If position2 smokes Pall-Mall, then either position1 or 3 has lizard. Position1's pet is unknown. Let's assign position3's pet=lizard. Then position3's pet=lizard, and since position2 smokes Pall-Mall, adjacent to lizard owner (position3), that's okay.
+
+So position3's pet=lizard. Then remaining pets: position1 and 2 need to have cat and bird.
+
+Clue6: Fonseca smoker has bird. So whoever smokes Fonseca must have bird. Let's assign position1's cigar=Fonseca, but position1's cigar is Baccarat. Wait, no. Position1's cigar is Baccarat (from earlier). So Fonseca must be in position2 or3. But position2's cigar is Pall-Mall, position3's nationality=Malaysian. Cigar options: position3's cigar could be Fonseca. Then their pet would be bird. But position3's pet is lizard. Contradiction. So Fonseca must be in position2, but position2's cigar is Pall-Mall. Hmm, conflict.
+
+Wait, position2's cigar options: Fonseca or Pall-Mall.
+
+If position2's cigar=Fonseca, then their pet=bird. So position2's pet=bird. Then per clue10: Pall-Mall smoker adjacent to lizard. But position2's cigar is Fonseca, so Pall-Mall must be elsewhere. So position3 or 4's cigar=Pall-Mall.
+
+Wait, this is getting complicated. Let's try to adjust.
+
+Position1: cigar=Baccarat.
+
+Position5: cigar=Havana.
+
+Position4: cigar=Tiparillo (since Mexican).
+
+Remaining cigars: Fonseca and Pall-Mall for positions2 and3.
+
+If position2's cigar=Pall-Mall, then per clue10, adjacent to lizard owner. So either position1 or3 has lizard. Position1's pet is unknown. Let's say position3's pet=lizard. Then position3's pet=lizard. Then position2's cigar=Pall-Mall, adjacent to position3's lizard. That works.
+
+Then remaining pets: position1 and2 need to have cat and bird.
+
+Clue6: Fonseca smoker has bird. So position3's cigar must be Fonseca (since position2's is Pall-Mall), but position3's cigar is either Fonseca or Pall-Mall. If position3's cigar=Fonseca, then their pet=bird. But position3's pet is lizard. Contradiction. So position3 can't smoke Fonseca. Therefore, position3's cigar must be Pall-Mall, but position2's cigar is Pall-Mall. Can't have duplicates. So this is impossible.
+
+Therefore, our assumption that position2's cigar is Pall-Mall might be wrong. Let's try position2's cigar=Fonseca. Then their pet=bird (clue6). So position2's pet=bird. Then per clue10: Pall-Mall smoker must be adjacent to lizard owner. So Pall-Mall is in another position, adjacent to lizard.
+
+Position3's cigar could be Pall-Mall. Then, per clue10, adjacent to lizard owner. So position3's adjacent positions are 2 and4. If position3's cigar=Pall-Mall, then either position2 or4 has lizard. But position2's pet=bird. So position4's pet must be lizard. But position4's pet is mouse. Contradiction. Therefore, this path also fails.
+
+Hmm, seems like a dead end. Maybe we need to re-examine our assumptions.
+
+Let's go back to position1's color being aquamarine. Maybe we made a mistake in assigning position4's color as black. Let's try position5's color=black.
+
+Position5: color=black, beverage=cola (clue3). Then, position4's color=chestnut or orange. But Malaysian's color=orange. So position4 could be chestnut, then per clue7, their cigar=Havana. But position5's color=black, so position4's color=chestnut. Then position4's cigar=Havana (clue7). But position5's color=black, so position4's color=chestnut. Then position4's cigar=Havana. Then per clue11: Havana smoker (position4) is adjacent to mouse owner (position3 or5). So either position3 or5 has mouse. Position5's pet is unknown. Let's say position5's pet=mouse. But position5's nationality is Italian (clue2), whose pet is goldfish. Contradiction.
+
+Alternatively, position3's pet=mouse. But position3's beverage is lemonade, nationality=Malaysian (if color=orange). Let's see.
+
+This is getting too convoluted. Let's try to list all possibilities systematically.
+
+Alternative approach: Make a grid and use process of elimination.
+
+Nationalities: German (1), Malaysian, Italian, Dutch, Mexican.
+
+Colors: aquamarine (1?), chestnut, coral (2), orange, black.
+
+Beverages: almond-lemonade (Dutch), lemonade (3), cola (black), iced-tea (Baccarat), hot-chocolate.
+
+Cigars: Fonseca (bird), Havana (chestnut), Pall-Mall (adjacent to lizard), Baccarat (iced-tea), Tiparillo (Mexican).
+
+Pets: goldfish (Italian), lizard (adjacent to Pall-Mall), mouse (adjacent to Havana), bird (Fonseca), cat.
+
+Let me try building step by step with position1 as German, color aquamarine.
+
+Position1:
+
+Nationality: German
+
+Color: aquamarine
+
+Beverage: ?
+
+Cigar: ?
+
+Pet: ?
+
+Position2:
+
+Nationality: ?
+
+Color: coral
+
+Beverage: ?
+
+Cigar: ?
+
+Pet: ?
+
+Position3:
+
+Nationality: ?
+
+Color: ?
+
+Beverage: lemonade
+
+Cigar: ?
+
+Pet: ?
+
+Position4:
+
+Nationality: ?
+
+Color: ?
+
+Beverage: ?
+
+Cigar: ?
+
+Pet: ?
+
+Position5:
+
+Nationality: ?
+
+Color: ?
+
+Beverage: ?
+
+Cigar: ?
+
+Pet: ?
+
+Clue5: black is right of aquamarine. So black in 2-5. But position2's color is coral, so black in3-5.
+
+Clue3: cola with black. So cola in3-5. But position3's beverage is lemonade. So cola in4 or5.
+
+Clue7: Havana with chestnut. So if someone is chestnut, they smoke Havana.
+
+Clue1: Malaysian with orange.
+
+Clue2: Italian with goldfish.
+
+Clue4: Dutch with almond-lemonade.
+
+Clue6: Fonseca with bird.
+
+Clue10: Pall-Mall adjacent to lizard.
+
+Clue11: Havana adjacent to mouse.
+
+Clue12: Baccarat with iced-tea.
+
+Clue13: Mexican with Tiparillo.
+
+Clue14: German (1) adjacent to coral (2), which is already the case.
+
+Let's assign Dutch to position2, since their beverage is almond-lemonade.
+
+Position2: nationality=Dutch, beverage=almond-lemonade, color=coral.
+
+Now, position2's pet and cigar are unknown.
+
+Clue11: Havana adjacent to mouse. Let's assume position3 is Havana smoker (chestnut). Then position3's color=chestnut. So per clue7, position3 smokes Havana. Then per clue11, position3 (Havana) is adjacent to mouse owner (position2 or4). If position3 is Havana smoker, then mouse owner is position2 or4. But position2's pet could be mouse. Let's say position2's pet=mouse. Then per clue11, that's satisfied. But position2's nationality=Dutch, so no conflict yet.
+
+But position2's cigar: if position3 is Havana, then position2's cigar is something else. Let's see.
+
+Now, position3: color=chestnut (clue7), cigar=Havana. Beverage=lemonade. Nationality=?
+
+Nationalities left: Malaysian, Italian, Mexican.
+
+Clue1: Malaysian's color=orange. So position3 can't be Malaysian (color chestnut). So position3's nationality is Italian or Mexican. If Italian, their pet=goldfish. But position3's pet? Let's see.
+
+Pets: position3's pet could be goldfish (if Italian), but per clue2, Italian has goldfish. But position3's nationality=Italian, then their pet=goldfish. But position3's color=chestnut, cigar=Havana, beverage=lemonade. Is that possible? Let's tentatively assign position3: nationality=Italian, pet=goldfish. Then position3's attributes are:
+
+Nationality=Italian
+
+Color=chestnut
+
+Beverage=lemonade
+
+Cigar=Havana
+
+Pet=goldfish
+
+But clue2 says Italian owns goldfish, so that's okay. But position3's beverage is lemonade, which is okay. However, position3's color is chestnut, which is allowed. Now, position3's cigar=Havana, so per clue7, correct.
+
+But then per clue11: Havana smoker (position3) is adjacent to mouse owner (position2 or4). Since position3 is in position3, adjacent to position2 and4. If position2's pet=mouse, that's satisfied. So position2's pet=mouse. So:
+
+Position2: pet=mouse.
+
+Now, per clue10: Pall-Mall smoker is adjacent to lizard owner. So Pall-Mall smoker must be in a position adjacent to someone with lizard. Let's see.
+
+Position3's cigar=Havana, position2's cigar=unknown. Position4's attributes: ?
+
+Position4's nationality: Malaysian, Mexican. Because position1: German, 2:Dutch, 3:Italian, so left are Malaysian and Mexican.
+
+Clue1: Malaysian's color=orange. So if position4 is Malaysian, color=orange. position5's color would then be black (since colors left are orange and black). But black must be right of aquamarine (position1), so black in5. Then cola in5 (clue3).
+
+Position5: color=black, beverage=cola.
+
+Then, position4: nationality=Malaysian, color=orange. Beverage? Beverages left: position1: iced-tea or hot-chocolate, position4: hot-chocolate or iced-tea, position5: cola.
+
+Clue12: Baccarat smoker drinks iced-tea. So if position4 or5 drinks iced-tea, they smoke Baccarat. But position5's beverage=cola. So position4 or1 drinks iced-tea.
+
+If position4's beverage=iced-tea, then their cigar=Baccarat. Position4's nationality=Malaysian. Then their cigar=Baccarat. Then remaining cigars: Fonseca, Pall-Mall, Tiparillo.
+
+Position5's cigar: remaining options. Let's see.
+
+Position1's cigar: ?
+
+Position1: nationality=German, color=aquamarine, beverage=?
+
+If position1's beverage=hot-chocolate, then their cigar=?
+
+Available cigars: Fonseca, Pall-Mall, Tiparillo.
+
+Clue6: Fonseca smoker owns bird. So if position1 smokes Fonseca, their pet=bird.
+
+Position5's nationality=Mexican (since remaining). So position5's cigar=Tiparillo (clue13). So position5: cigar=Tiparillo.
+
+Then, position4's cigar=Baccarat (if beverage=iced-tea). So position4's cigar=Baccarat, beverage=iced-tea. That's okay per clue12.
+
+Now, position5's attributes:
+
+Nationality=Mexican
+
+Color=black
+
+Beverage=cola
+
+Cigar=Tiparillo
+
+Pet=?
+
+Pets left: lizard, cat, bird (since position2=mouse, position3=goldfish).
+
+Clue6: Fonseca smoker has bird. So if position1 smokes Fonseca, their pet=bird. Then position1's pet=bird.
+
+Position5's pet would be lizard or cat. Clue10: Pall-Mall smoker is adjacent to lizard. Let's see.
+
+Remaining cigars: Fonseca (position1), Pall-Mall (position4 or5), but position4's cigar=Baccarat, position5's=Tiparillo. So Pall-Mall must be in position2 or position4. But position4's cigar is Baccarat. So position2's cigar=Pall-Mall.
+
+Position2: cigar=Pall-Mall. Then per clue10, adjacent to lizard owner. So position2's adjacent positions are 1 and3. If position1 has lizard, then position2's Pall-Mall is adjacent. Or position3 has lizard.
+
+Position3's pet=goldfish. So position1's pet=lizard. Then position1's pet=lizard. Now, remaining pets: position5's pet=cat.
+
+So position5's pet=cat.
+
+Now, let's check all:
+
+Position1:
+
+Nationality=German
+
+Color=aquamarine
+
+Beverage=hot-chocolate (remaining beverage)
+
+Cigar=Fonseca (to have pet=bird)
+
+Pet=bird? Wait, no. If position1's cigar=Fonseca, then pet=bird (clue6). So position1's pet=bird.
+
+But then position5's pet would be cat.
+
+Position2:
+
+Nationality=Dutch
+
+Color=coral
+
+Beverage=almond-lemonade
+
+Cigar=Pall-Mall
+
+Pet=mouse
+
+Position3:
+
+Nationality=Italian
+
+Color=chestnut
+
+Beverage=lemonade
+
+Cigar=Havana
+
+Pet=goldfish
+
+Position4:
+
+Nationality=Malaysian
+
+Color=orange
+
+Beverage=iced-tea
+
+Cigar=Baccarat
+
+Pet=?
+
+Pets left: lizard. Because position1=bird, 2=mouse,3=goldfish,5=cat. So position4's pet=lizard.
+
+Clue10: Pall-Mall smoker (position2) is adjacent to lizard owner (position1 or3). position1's pet=bird, position3's pet=goldfish. No, position4's pet=lizard. So position2's Pall-Mall is not adjacent to lizard. Contradiction.
+
+Ah, here's the problem. position4's pet=lizard, but position2's Pall-Mall is not adjacent to position4. position2 is adjacent to 1 and3. So clue10 is not satisfied. Therefore, this arrangement is invalid.
+
+Let's adjust. If position4's pet=lizard, then the Pall-Mall smoker must be adjacent to position4. So Pall-Mall smoker would be position3 or5. But position3's cigar=Havana, position5's=Tiparillo. So no. Therefore, our assignment is incorrect.
+
+This indicates that our current path is flawed. Let's try a different approach.
+
+Alternative: Assign position3's nationality=Mexican. Then their cigar=Tiparillo (clue13). Let's see.
+
+Position3: nationality=Mexican, color=?
+
+Beverage=lemonade.
+
+Clue7: Havana smoker likes chestnut. So if position4 or5 smokes Havana, their color is chestnut.
+
+Clue1: Malaysian likes orange. So Malaysian is in position4 or5 with color orange.
+
+Let me try:
+
+Position1: German, aquamarine
+
+Position2: Dutch, coral, almond-lemonade
+
+Position3: Mexican, color=?, lemonade, Tiparillo
+
+Position4: Malaysian, orange
+
+Position5: Italian, color=black, cola, goldfish
+
+Now, position5's color=black (per clue3, cola here). Then, per clue5, aquamarine (position1) is left of black (position5), which works.
+
+Clue7: Havana smoker likes chestnut. So someone with chestnut color smokes Havana. Available colors: chestnut. So position3's color must be chestnut. So position3: color=chestnut, cigar=Havana. But wait, position3's cigar is Tiparillo (clue13). Contradiction. So can't have position3's color=chestnut.
+
+Therefore, position3's color must be something else. Available colors: aquamarine (position1), coral (2), orange (4), black (5), so chestnut is left for position3. But position3's cigar is Tiparillo (Mexican), but chestnut requires Havana (clue7). Conflict. So position3 can't be Mexican in this setup.
+
+Hmm, I'm stuck. Maybe I need to start over with a different initial assumption.
+
+Alternative approach: Let's consider that the German is in position1, and adjacent to coral (position2). Clue14 says German is adjacent to coral, which is position2's color. Now, clue5: black is right of aquamarine. Let's assign aquamarine to position3, then black must be in4 or5. But position3's beverage is lemonade. So cola is in4 or5.
+
+But let's try:
+
+Position1: German, color=?
+
+Position2: color=coral, nationality=?
+
+Position3: color=aquamarine, beverage=lemonade
+
+Position4: color=black, beverage=cola
+
+Position5: color=orange (Malaysian) or chestnut (Havana smoker)
+
+But then, per clue1, Malaysian is in position5 (color orange). So position5: nationality=Malaysian, color=orange. Then, position5's attributes: beverage=?, cigar=?, pet=?
+
+Clue7: Havana smoker likes chestnut. So someone must have chestnut and smoke Havana. Let's assign position4's color=chestnut, then their cigar=Havana. But position4's color is supposed to be black. Contradiction. Therefore, position4 can't be chestnut.
+
+Wait, perhaps position5's color=chestnut, then cigar=Havana. Then per clue5, aquamarine (position3) is left of black, which would be in position4 or5. But position5's color=chestnut, so black must be in4. So position4: color=black, beverage=cola. Then, position5's color=chestnut, cigar=Havana.
+
+Then, per clue11: Havana smoker (position5) is adjacent to mouse owner (position4). So position4's pet=mouse.
+
+Now, position4's attributes: color=black, beverage=cola, pet=mouse. Nationality=?
+
+Nationalities: German (1), Dutch (2?), Malaysian (5), Italian, Mexican.
+
+Clue2: Italian has goldfish. So if position4's nationality is Italian, their pet=goldfish. But position4's pet=mouse. Contradiction. So position4's nationality can't be Italian. Therefore, position4's nationality=Mexican. Then per clue13, their cigar=Tiparillo. But position4's cigar=Havana (from color chestnut), which is impossible. Therefore, contradiction.
+
+This approach also fails.
+
+I think I need to look for another angle. Let's consider the beverages:
+
+Beverages: cola (black), almond-lemonade (Dutch), lemonade (3), iced-tea (Baccarat), hot-chocolate.
+
+Position1's beverage: either iced-tea or hot-chocolate.
+
+If position1's beverage=iced-tea, then their cigar=Baccarat (clue12). Position1's nationality=German. Then, their pet=?
+
+Clue6: Fonseca smoker has bird.
+
+Clue10: Pall-Mall adjacent to lizard.
+
+Clue11: Havana adjacent to mouse.
+
+Clue7: Havana and chestnut.
+
+Let's try:
+
+Position1: German, color=aquamarine, beverage=iced-tea, cigar=Baccarat, pet=?
+
+Position2: Dutch, coral, almond-lemonade, cigar=?
+
+Position3: lemonade, color=?, nationality=?
+
+Position4: color=black, beverage=cola, nationality=?
+
+Position5: color=orange (Malaysian), beverage=hot-chocolate, cigar=?
+
+Clue1: Malaysian in position5.
+
+Clue7: Havana smoker likes chestnut. So someone must have chestnut and smoke Havana. Let's assign position3: color=chestnut, cigar=Havana. Then per clue11, Havana (position3) adjacent to mouse owner (position2 or4). If position4's pet=mouse, then position3 is adjacent to4. So position4's pet=mouse.
+
+Position3's attributes: color=chestnut, cigar=Havana, beverage=lemonade, nationality=?, pet=?
+
+Nationalities left: Italian, Mexican. Position3's nationality could be Italian or Mexican. If Italian, their pet=goldfish. But position3's pet is unknown. Let's assign position3's nationality=Italian, pet=goldfish. But position3's color=chestnut, which is allowed. Then position3's attributes:
+
+Nationality=Italian, color=chestnut, beverage=lemonade, cigar=Havana, pet=goldfish.
+
+But clue2 says Italian has goldfish, which matches. Good.
+
+Now, position4: color=black, beverage=cola, nationality=Mexican (remaining), pet=mouse. Then per clue13, Mexican smokes Tiparillo. So position4's cigar=Tiparillo.
+
+Position5: nationality=Malaysian, color=orange, beverage=hot-chocolate, cigar=?
+
+Remaining cigars: Fonseca, Pall-Mall.
+
+Clue6: Fonseca smoker has bird. So if position5 smokes Fonseca, their pet=bird. Let's assign position5's cigar=Fonseca, pet=bird.
+
+Position1's pet: remaining pets are lizard and cat. Position1's pet=?
+
+Clue10: Pall-Mall smoker adjacent to lizard owner. The remaining cigar is Pall-Mall for position2. So position2's cigar=Pall-Mall. Then per clue10, adjacent to lizard owner. So position2's adjacent positions are1 and3. If position1's pet=lizard, then Pall-Mall (position2) is adjacent. So position1's pet=lizard. Then remaining pet for position1: lizard. Position2's pet=cat (remaining). But position2's nationality=Dutch, no conflict.
+
+So:
+
+Position1: pet=lizard.
+
+Position2's pet=cat.
+
+But let's check:
+
+Position1: pet=lizard.
+
+Position2: nationality=Dutch, color=coral, beverage=almond-lemonade, cigar=Pall-Mall, pet=cat.
+
+Position3: Italian, chestnut, lemonade, Havana, goldfish.
+
+Position4: Mexican, black, cola, Tiparillo, mouse.
+
+Position5: Malaysian, orange, hot-chocolate, Fonseca, bird.
+
+Now, let's verify all clues:
+
+1. Malaysian likes orange: Yes, position5.
+
+2. Italian has goldfish: Yes, position3.
+
+3. Cola drinker likes black: Yes, position4.
+
+4. Dutch drinks almond-lemonade: Yes, position2.
+
+5. Black (position4) is right of aquamarine (position1): Yes.
+
+6. Fonseca-smoker has bird: Yes, position5.
+
+7. Havana-smoker likes chestnut: Yes, position3.
+
+8. Lemonade in middle: Yes, position3.
+
+9. German on far left: Yes.
+
+10. Pall-Mall-smoker (position2) adjacent to lizard owner (position1): Yes.
+
+11. Havana-smoker (position3) adjacent to mouse owner (position4): Yes.
+
+12. Baccarat-smoker (position1) drinks iced-tea: Yes.
+
+13. Mexican (position4) smokes Tiparillo: Yes.
+
+14. German (position1) adjacent to coral (position2): Yes.
+
+All clues are satisfied! So this should be the solution.
+
+#############
+
+1	2	3	4	5
+nationality	German	Dutch	Italian	Mexican	Malaysian
+color	aquamarine	coral	chestnut	black	orange
+beverage	iced-tea	almond-lemonade	lemonade	cola	hot-chocolate
+cigar	Baccarat	Pall-Mall	Havana	Tiparillo	Fonseca
+pet	lizard	cat	goldfish	mouse	bird
+#############
+New chat
+
+#############
+|        |       1       |    2       |    3        |    4       |    5       |
+| nationality | German      | Dutch      | Italian     | Mexican    | Malaysian  |
+| color   | aquamarine  | coral      | chestnut    | black      | orange     |
+| beverage| iced-tea    | almond-lemonade | lemonade    | cola       | hot-chocolate |
+| cigar   | Baccarat    | Pall-Mall  | Havana      | Tiparillo  | Fonseca    |
+| pet     | lizard      | cat        | goldfish    | mouse      | bird       |
+#############"
+R1-Zebra-lexical-2	"Okay, so I have to solve this logic puzzle. Let's see. There are five houses in a row, each with different attributes: nationality, color, beverage, cigar brand, and pet. The goal is to fill in the table correctly based on the given clues. Let me go through the clues one by one and try to piece this together.
+
+First, let's list all the categories and their possible values:
+
+Nationalities: Colombian, Brazilian, Argentine, German, Nigerian
+
+Colors: Light-chestnut, Lilac, Fuchsia, Coral, Chestnut
+
+Cigars: Aristoff, Oliveros, Dunhill, Swisher, Tiparillo
+
+Beverages: Cola, Juice, Soy-milk, Fanta, 7up
+
+Pets: Goldfish, Cat, Guinea-pig, Hamster, Mouse
+
+Now, the clues:
+
+1. The Colombian is the person who likes light-chestnut.
+
+2. The Brazilian is the owner of the goldfish.
+
+3. The person drinking cola is the person who likes lilac.
+
+4. The Argentine is the person drinking juice.
+
+5. The person who likes lilac is to the right of the person who likes fuchsia.
+
+6. The Aristoff-smoker is the owner of the mouse.
+
+7. The Oliveros-smoker is the person who likes coral.
+
+8. The person drinking soy-milk is in the middle (position 3).
+
+9. The German is on the far left (position 1).
+
+10. The Dunhill-smoker is on the left or right of the owner of the cat.
+
+11. The Oliveros-smoker is to the left or right of the owner of the hamster.
+
+12. The Swisher-smoker is the person drinking Fanta.
+
+13. The Nigerian is the Tiparillo-smoker.
+
+14. The German is to the left or right of the person who likes chestnut.
+
+Starting with clue 9: German is in position 1. So nationality 1 is German.
+
+Clue 14: German is adjacent to someone who likes chestnut. So position 2 or 5 must be chestnut. Wait, no, the German is in position 1, so chestnut must be in position 2. Because if it's adjacent, it can only be position 2 (since position 1 can't have left neighbor). Wait, but the clue says left OR right, so chestnut could be in position 2. Let's note that.
+
+Clue 1: Colombian likes light-chestnut. So Colombian's color is light-chestnut.
+
+Clue 3: Cola drinker likes lilac. So wherever cola is, that color is lilac.
+
+Clue 5: Lilac is to the right of fuchsia. So fuchsia must be in a lower position than lilac. For example, if fuchsia is in 1, lilac in 2; fuchsia in 2, lilac in 3, etc.
+
+Clue 8: Soy-milk is in position 3. So beverage 3 is soy-milk.
+
+Clue 4: Argentine drinks juice. So Argentine's beverage is juice.
+
+Clue 2: Brazilian owns goldfish. So Brazilian's pet is goldfish.
+
+Clue 6: Aristoff smoker has mouse. So Aristoff = mouse.
+
+Clue 7: Oliveros smoker likes coral. So Oliveros = coral.
+
+Clue 12: Swisher smoker drinks Fanta. So Swisher = Fanta.
+
+Clue 13: Nigerian smokes Tiparillo. So Nigerian = Tiparillo.
+
+Clue 10: Dunhill smoker is adjacent to cat owner.
+
+Clue 11: Oliveros smoker (coral) is adjacent to hamster owner.
+
+Now, let's start building the table step by step.
+
+Position 1: Nationality is German (clue 9). Let's see color. Clue 14: German is adjacent to chestnut. So position 2 must be chestnut or position 1's color is adjacent to chestnut. Wait, if German is in position 1, then the person next to him (position 2) must like chestnut. So color 2 is chestnut. But wait, the colors are light-chestnut, lilac, fuchsia, coral, chestnut. So chestnut is a color, and light-chestnut is another. So position 2's color is chestnut. Then position 1's color must be adjacent to chestnut. But position 1's color is yet to be determined. But clue 14 says German is adjacent to chestnut, so position 2's color is chestnut.
+
+So color 2: Chestnut.
+
+Then, position 1's color: What's left? The colors are light-chestnut, lilac, fuchsia, coral, chestnut. Chestnut is in position 2. So position 1 could be any of the others except chestnut. Let's see other clues.
+
+Clue 1: Colombian likes light-chestnut. So Colombian's color is light-chestnut. Where is the Colombian? The nationalities are Colombian, Brazilian, Argentine, German, Nigerian. German is in position 1. So Colombian must be in positions 2-5. Let's hold that thought.
+
+Clue 3: Cola drinker likes lilac. So wherever cola is, that's lilac. Let's see where cola can be. Beverages are cola, juice, soy-milk, Fanta, 7up. Soy-milk is position 3. Argentine drinks juice (clue 4), so juice is in the position where Argentine is. So juice is in, say, position X where nationality X is Argentine.
+
+Clue 5: Lilac is to the right of fuchsia. So fuchsia must be in a lower-numbered position than lilac. Let's consider possible placements for fuchsia and lilac.
+
+If fuchsia is in 1, then lilac can be 2-5. But position 2 is chestnut (from clue 14), so lilac can't be in 2. So if fuchsia is in 1, lilac would have to be 3,4,5. But position 1's color is German's color. But German's color is adjacent to chestnut (position 2). Wait, position 1's color isn't determined yet. Let's think again.
+
+Wait, German is in position 1. Clue 14 says German is adjacent to chestnut, so position 2 is chestnut. So position 1's color is not chestnut. Possible colors for position 1: light-chestnut, fuchsia, coral, lilac. But Colombian is the one who likes light-chestnut (clue 1), so unless Colombian is in position 1, which can't be because German is there. So Colombian must be in 2-5. So position 1's color can't be light-chestnut. So position 1's color must be fuchsia, coral, or lilac. But clue 5 says lilac is to the right of fuchsia. So if position 1 is fuchsia, then lilac must be to the right. But position 2 is chestnut, so lilac can't be there. So lilac would be 3-5. Alternatively, if position 1 is not fuchsia, then fuchsia could be in position 2-4, with lilac to the right. But position 2 is chestnut, so fuchsia can't be there. Wait, position 2's color is chestnut, so fuchsia can't be in position 2. So fuchsia must be in 1, 3, 4, or 5.
+
+Wait, but position 1's color: if German is in 1, and the color adjacent to chestnut (position 2), then maybe position 1's color is fuchsia. Let's try that. Suppose position 1's color is fuchsia. Then, according to clue 5, lilac must be to the right. So lilac could be in 3,4,5. Also, clue 3 says cola is drunk by the person who likes lilac. So wherever lilac is, that's where cola is. Let's see.
+
+But position 3's beverage is soy-milk (clue 8), so lilac can't be in 3 because cola would conflict with soy-milk. Therefore, if lilac is in 4 or 5, then cola would be in 4 or 5.
+
+Alternatively, maybe position 1 is coral. Let's see. Let me try to map possible colors.
+
+Let me make a table:
+
+Position | Nationality | Color       | Beverage   | Cigar     | Pet
+
+1       | German      | ?           | ?          | ?         | ?
+
+2       | ?           | Chestnut    | ?          | ?         | ?
+
+3       | ?           | ?           | Soy-milk   | ?         | ?
+
+4       | ?           | ?           | ?          | ?         | ?
+
+5       | ?           | ?           | ?          | ?         | ?
+
+Clue 1: Colombian likes light-chestnut. So Colombian must be in a position with light-chestnut color. So that color is in one of the positions, and the nationality there is Colombian.
+
+Clue 3: Cola is drunk where color is lilac. So wherever lilac is, cola is there.
+
+Clue 5: Lilac is right of fuchsia. So fuchsia must be in a lower position than lilac.
+
+Possible color assignments:
+
+If position 1 is fuchsia, then lilac must be in 3,4,5. But position 2 is chestnut. Let's try:
+
+Position 1: Fuchsia
+
+Then lilac must be in 3,4,5. But position 3's beverage is soy-milk, so if lilac is in 3, then cola would be in 3, conflicting with soy-milk. Therefore, lilac can't be in 3. So lilac must be in 4 or 5. So cola would be in 4 or 5.
+
+Alternatively, if position 1 is coral, then fuchsia must be in 2, but position 2's color is chestnut, so that's impossible. So position 1 can't be coral. Wait, position 2 is chestnut, so position 1 can't be coral if we're considering adjacent. Wait, position 1's color is adjacent to chestnut (position 2), but the clue 14 is about German being adjacent to chestnut, which we've already placed as position 2. So the color in position 1 is separate from that. So position 1's color is not necessarily related to chestnut except that it's adjacent in nationality.
+
+Wait, maybe I confused. Clue 14 says the German is to the left or right of the person who likes chestnut. Since German is in position 1, the person who likes chestnut must be in position 2. So position 2's color is chestnut, as we had before. So that's settled.
+
+Now, position 1's color: must be one of the remaining colors: light-chestnut, fuchsia, coral, lilac. But light-chestnut is for Colombian, who isn't in position 1. So position 1's color can't be light-chestnut. So possible colors: fuchsia, coral, lilac.
+
+But clue 5: lilac is to the right of fuchsia. If position 1 is fuchsia, then lilac must be in 2-5. But position 2 is chestnut, so lilac can't be there. So lilac would be in 3,4,5. If position 1 is coral, then fuchsia must be in 2-5, but position 2 is chestnut. So fuchsia would have to be in 3,4, or 5, and lilac to the right. Let's explore both possibilities.
+
+Let me try position 1: Fuchsia. Then lilac must be in 3,4,5. But position 3's beverage is soy-milk. So if lilac is in 3, then cola would be in 3, which conflicts with soy-milk. So lilac can't be in 3. Therefore, lilac must be in 4 or 5.
+
+If lilac is in 4, then cola is in 4. If lilac is in 5, cola is in 5.
+
+Let's try lilac in 4, cola in 4. Then:
+
+Position 4: Color lilac, beverage cola.
+
+Then, fuchsia is in 1, lilac in 4. That satisfies clue 5.
+
+Now, remaining colors: light-chestnut (Colombian), coral (Oliveros smoker, clue 7), and chestnut already in 2. So position 5's color must be light-chestnut or coral. But Colombian is somewhere else. Let's see.
+
+Clue 7: Oliveros smoker likes coral. So wherever coral is, that's the Oliveros smoker. Also, clue 11 says Oliveros smoker is adjacent to hamster owner. So the person with coral (Oliveros) is next to the hamster.
+
+Let's see. If coral is in position 5, then Oliveros is in 5, and hamster would be in 4 or 6 (but there's no 6). So hamster would have to be in 4. But position 4's pet is yet to be determined. Alternatively, if coral is in 3, but position 3's color is... Wait, position 3's color hasn't been assigned yet. Let's see.
+
+Wait, position 1: Fuchsia
+
+position 2: Chestnut
+
+position 3: ?
+
+position 4: Lilac
+
+position 5: ?
+
+Remaining colors: light-chestnut, coral. So positions 3 and 5 must be light-chestnut and coral. But Colombian must be in the position with light-chestnut (clue 1). So Colombian is in 3 or 5.
+
+Also, clue 7: Oliveros smoker likes coral, so coral is in some position, and that's where Oliveros is.
+
+Let's assign coral to position 5. Then position 5's color is coral, and Oliveros is smoked there. Then position 3's color would be light-chestnut, and Colombian is in position 3. Let's check:
+
+Position 3: Color light-chestnut, nationality Colombian. Beverage soy-milk (from clue 8). So Colombian in 3, color light-chestnut, beverage soy-milk. That fits clue 1.
+
+Then position 5: Color coral, nationality? Remaining nationalities are Brazilian, Argentine, Nigerian. Let's see:
+
+Nationalities so far: 1: German, 3: Colombian. So remaining: Brazilian, Argentine, Nigerian in 2,4,5.
+
+Clue 2: Brazilian owns goldfish. So Brazilian's pet is goldfish.
+
+Clue 4: Argentine drinks juice. So Argentine's beverage is juice.
+
+Clue 13: Nigerian is Tiparillo-smoker. So Nigerian smokes Tiparillo.
+
+Clue 12: Swisher smoker drinks Fanta. So Swisher and Fanta go together.
+
+Clue 6: Aristoff smoker has mouse. So Aristoff and mouse together.
+
+Clue 10: Dunhill smoker is adjacent to cat owner.
+
+Clue 11: Oliveros smoker (position 5, coral) is adjacent to hamster owner. So position 5's neighbor is position 4. So position 4's pet is hamster.
+
+Let's start filling in:
+
+Position 1: German, color Fuchsia, beverage ?, cigar ?, pet ?
+
+Position 2: Nationality ?, color Chestnut, beverage ?, cigar ?, pet ?
+
+Position 3: Colombian, color Light-chestnut, beverage Soy-milk, cigar ?, pet ?
+
+Position 4: Nationality ?, color Lilac, beverage Cola, cigar ?, pet Hamster (from clue 11, adjacent to Oliveros in 5)
+
+Position 5: Nationality ?, color Coral, beverage ?, cigar Oliveros (clue 7), pet ?
+
+Now, beverages:
+
+Position 4: Cola (from clue 3, since color is Lilac)
+
+Position 3: Soy-milk
+
+Position 1,2,5: remaining beverages are Juice (Argentine's), Fanta, 7up.
+
+Clue 4: Argentine drinks juice. So Argentine is in position 2,4, or 5. Let's see.
+
+If Argentine is in position 2, then beverage is juice. Position 2's beverage would be juice. Then nationality 2 is Argentine.
+
+But position 2's color is Chestnut. Does that conflict? No, because color and nationality are separate. So possible.
+
+Then position 2: Nationality Argentine, beverage Juice.
+
+Then remaining beverages for position 1 and 5: Fanta and 7up.
+
+Clue 12: Swisher smoker drinks Fanta. So wherever Swisher is, Fanta is there.
+
+Also, clue 13: Nigerian smokes Tiparillo. So position 5's nationality could be Nigerian (since Tiparillo is their cigar). Let's check:
+
+Position 5: Nationality Nigerian (clue 13), smokes Tiparillo. So that's settled. Then position 5's beverage: remaining are Fanta or 7up. But Nigerian's beverage is either Fanta or 7up. If Swisher is in another position, then Fanta is there.
+
+But position 5's cigar is Oliveros (from clue 7), wait no: clue 7 says Oliveros smoker likes coral, which is position 5. So position 5's cigar is Oliveros. But clue 13 says Nigerian smokes Tiparillo. Wait, contradiction! Wait, position 5: if nationality is Nigerian, then cigar is Tiparillo (clue 13). But clue 7 says Oliveros smoker likes coral (position 5's color). So position 5's cigar must be Oliveros. But Nigerian must smoke Tiparillo. Therefore, this is a contradiction. So my previous assumption that position 5's nationality is Nigerian is wrong.
+
+Therefore, there's a mistake here. Let me backtrack.
+
+If position 5's color is coral, then the Oliveros smoker is there (clue 7). So position 5's cigar is Oliveros. But clue 13 says Nigerian smokes Tiparillo. Therefore, Nigerian cannot be in position 5. So Nigerian must be in another position, and position 5's nationality must be someone else.
+
+So let's reassign nationalities.
+
+We have nationalities: German (1), Colombian (3). Remaining: Brazilian, Argentine, Nigerian in 2,4,5.
+
+Clue 13: Nigerian smokes Tiparillo. So wherever Nigerian is, Tiparillo is there. Also, position 5's cigar is Oliveros (clue 7), so Nigerian can't be in 5. Therefore, Nigerian must be in 2 or 4.
+
+If Nigerian is in 4, then Tiparillo is in 4. Then position 5's nationality would be Brazilian or Argentine. Let's try:
+
+Position 5: Nationality Brazilian or Argentine.
+
+But clue 2: Brazilian owns goldfish. So Brazilian's pet is goldfish.
+
+Also, position 4's pet is hamster (from clue 11, adjacent to Oliveros in 5). So position 4's pet is hamster.
+
+Position 5's pet: if Brazilian is in 5, then pet is goldfish. Otherwise, if Argentine is in 5, pet is something else.
+
+Wait, let's try assigning nationalities:
+
+Position 2: Nationality Argentine (since beverage juice is here). Let's say position 2: Argentine, beverage juice. Then:
+
+Position 2: Nationality Argentine, color Chestnut, beverage Juice, cigar ?, pet ?.
+
+Then remaining nationalities for 4 and 5: Brazilian and Nigerian.
+
+Position 4: Let's say nationality Nigerian. Then cigar is Tiparillo (clue 13). Position 4's cigar is Tiparillo. But position 4's color is Lilac, which is associated with cola (clue 3), so beverage is cola. That's okay.
+
+But position 5's nationality would be Brazilian, pet goldfish (clue 2). So position 5: Brazilian, pet goldfish. But position 5's color is coral, cigar Oliveros. That's okay.
+
+Let's check:
+
+Position 5: Nationality Brazilian, color Coral, beverage ?, cigar Oliveros, pet Goldfish.
+
+But wait, clue 2 says Brazilian owns goldfish, so that matches.
+
+Now, beverages:
+
+Position 1: German, color Fuchsia, beverage ?
+
+Position 2: Argentine, Chestnut, Juice
+
+Position 3: Colombian, Light-chestnut, Soy-milk
+
+Position 4: Nigerian, Lilac, Cola (from clue 3), Tiparillo (clue 13)
+
+Wait, but position 4's cigar is Tiparillo (Nigerian), but clue 3 says cola is drunk by Lilac (position 4), which is okay. However, clue 12 says Swisher smoker drinks Fanta. So Swisher must be in a position where beverage is Fanta. So where is Fanta?
+
+Remaining beverages: Position 1 and 5. Position 1: German's beverage. Position 5: Brazilian's beverage. The remaining beverages are Fanta and 7up.
+
+If position 1's beverage is Fanta, then cigar there is Swisher (clue 12). If position 5's beverage is 7up.
+
+Alternatively, position 5's beverage could be Fanta, so cigar Swisher there. But position 5's cigar is Oliveros (clue 7), so that can't be. Therefore, Swisher must be in position 1, with beverage Fanta. Then position 1's cigar is Swisher, beverage Fanta.
+
+So:
+
+Position 1: German, Fuchsia, Fanta, Swisher, pet ?
+
+Position 5: Brazilian, Coral, 7up, Oliveros, Goldfish.
+
+Now, checking clue 12: Swisher smoker (position 1) drinks Fanta – correct.
+
+Clue 7: Oliveros smoker (position 5) likes Coral – correct.
+
+Clue 6: Aristoff smoker owns mouse. So we need to find where Aristoff is. The cigars used so far: Swisher (1), Tiparillo (4), Oliveros (5). Remaining cigars: Aristoff and Dunhill.
+
+Position 2 and 3's cigars are Dunhill and Aristoff.
+
+Clue 10: Dunhill smoker is adjacent to cat owner. So wherever Dunhill is, next to them is a cat.
+
+Position 2: Cigar could be Dunhill or Aristoff.
+
+If position 2's cigar is Dunhill, then the cat must be in 1 or 3. Position 1's pet is unknown. If position 2's cigar is Dunhill, then adjacent (1 or 3) has cat.
+
+But position 1's pet is still unknown. Let's see possible pets.
+
+Pets assigned: position 4: hamster, position 5: goldfish. Remaining pets: cat, guinea-pig, mouse (from clue 6, Aristoff has mouse).
+
+So remaining pets: cat, guinea-pig, mouse. But clue 6 says Aristoff smoker has mouse. So wherever Aristoff is, mouse is there.
+
+If position 2's cigar is Aristoff, then pet is mouse. Then clue 10: Dunhill must be adjacent to cat. Let's try:
+
+Position 2: Cigar Aristoff, pet mouse. Then clue 6 is satisfied. Then Dunhill would be in another position, adjacent to cat.
+
+But then remaining cigar is Dunhill in position 3 or 4 or 5. Position 3's cigar is ? Position 3: Colombian, maybe Dunhill? But position 4's cigar is Tiparillo, position 5's Oliveros.
+
+If position 3's cigar is Dunhill, then adjacent to position 3 (positions 2 and 4) must have cat. Position 2's pet is mouse, so position 4's pet is hamster. So no cat there. Therefore, Dunhill in position 3 wouldn't work. Alternatively, Dunhill in position 4, but position 4's cigar is Tiparillo. So that's not possible. Hmm.
+
+Alternatively, position 3's cigar is Dunhill, but then where is the cat? The cat must be in position 2 or 4. Position 2's pet is mouse (if we assigned Aristoff to position 2), so position 4's pet is hamster. So no cat. Therefore, this approach might be wrong.
+
+Alternative: position 3's cigar is Aristoff, pet mouse. Then position 3: Aristoff, mouse. Then clue 6 is satisfied. Then Dunhill would be in position 2 or 4.
+
+If Dunhill is in position 2, then adjacent to position 2 (positions 1 and 3) must have cat. Position 1's pet could be cat, or position 3's pet is mouse, so position 3 can't be cat. So position 1's pet would be cat. Then:
+
+Position 1: pet cat. Then clue 10: Dunhill smoker (position 2) is adjacent to cat (position 1) – correct.
+
+So let's try:
+
+Position 2: Cigar Dunhill, pet ?
+
+Position 3: Cigar Aristoff, pet mouse.
+
+Position 1: pet cat.
+
+Then:
+
+Position 1: German, Fuchsia, Fanta, Swisher, Cat
+
+Position 2: Argentine, Chestnut, Juice, Dunhill, pet ?
+
+Position 3: Colombian, Light-chestnut, Soy-milk, Aristoff, Mouse
+
+Position 4: Nigerian, Lilac, Cola, Tiparillo, Hamster
+
+Position 5: Brazilian, Coral, 7up, Oliveros, Goldfish
+
+Now, remaining pet for position 2: guinea-pig. Because pets are goldfish, cat, mouse, hamster, guinea-pig. Position 2's pet is guinea-pig.
+
+Now, check clue 11: Oliveros smoker (position 5) is adjacent to hamster owner (position 4). Yes, position 4 is next to 5. So that's satisfied.
+
+Clue 10: Dunhill smoker (position 2) is adjacent to cat owner (position 1). Correct.
+
+Now, check all clues:
+
+1. Colombian (3) likes light-chestnut – correct.
+
+2. Brazilian (5) owns goldfish – correct.
+
+3. Cola (4) is where lilac is – correct.
+
+4. Argentine (2) drinks juice – correct.
+
+5. Lilac (4) is right of fuchsia (1) – correct.
+
+6. Aristoff (3) has mouse – correct.
+
+7. Oliveros (5) likes coral – correct.
+
+8. Soy-milk in 3 – correct.
+
+9. German in 1 – correct.
+
+10. Dunhill (2) adjacent to cat (1) – correct.
+
+11. Oliveros (5) adjacent to hamster (4) – correct.
+
+12. Swisher (1) drinks Fanta – correct.
+
+13. Nigerian (4) smokes Tiparillo – correct.
+
+14. German (1) adjacent to chestnut (2) – correct.
+
+All clues seem satisfied. Let me just check if all categories are unique.
+
+Nationalities: 1:German, 2:Argentine, 3:Colombian, 4:Nigerian, 5:Brazilian – all unique.
+
+Colors: 1:Fuchsia, 2:Chestnut, 3:Light-chestnut, 4:Lilac, 5:Coral – all unique.
+
+Beverages: 1:Fanta, 2:Juice, 3:Soy-milk, 4:Cola, 5:7up – all unique.
+
+Cigars: 1:Swisher, 2:Dunhill, 3:Aristoff, 4:Tiparillo, 5:Oliveros – all unique.
+
+Pets: 1:Cat, 2:Guinea-pig, 3:Mouse, 4:Hamster, 5:Goldfish – all unique.
+
+Yes, everything fits. So the final table should be as follows:
+#############
+|        |       1       |    2          |    3           |    4       |    5        |
+| nationality | German      | Argentine     | Colombian      | Nigerian   | Brazilian   |
+| color   | fuchsia      | chestnut      | light-chestnut | lilac      | coral       |
+| beverage| fanta        | juice         | soy-milk       | cola       | 7up         |
+| cigar   | Swisher      | Dunhill       | Aristoff       | Tiparillo  | Oliveros    |
+| pet     | cat          | guinea-pig    | mouse          | hamster    | goldfish    |
+#############"
+R1-Zebra-lexical-3	"Please solve the following logic puzzle in the following table: 
+
+|        |       1    |    2    |    3     |    4    |    5    |
+| nationality |         |         |         |         |         |
+| color  |         |         |         |         |         |
+| beverage |         |         |         |         |         |
+| cigar  |         |         |         |         |         |
+| pet  |         |         |         |         |          
+
+Puzzle: 
+ 
+There are 5 different favourite colors: ebony, lilac, blood-red, amber, white
+There are 5 different nationalities: nigerian, canadian, brazilian, dutch, pakistani
+5 different brands of cigars are smoked: swisher, montecristo, dannemann, tiparillo, game
+There are 5 different favourite beverages: almond-soy-milk, hot-chocolate, soy-milk, fanta, mirinda
+5 different pets are kept: rabbit, pony, frog, hamster, chinchilla
+
+1. the nigerian is the person who likes ebony
+2. the canadian is the owner of the rabbit
+3. the person drinking almond-soy-milk is the person who likes lilac
+4. the brazilian is the person drinking hot-chocolate
+5. the person who likes lilac is to the right of the person who likes blood-red
+6. the swisher-smoker is the owner of the chinchilla
+7. the montecristo-smoker is the person who likes amber
+8. the person drinking soy-milk is in the middle
+9. the dutch is on the far left
+10. the dannemann-smoker is on the left or right of the owner of the pony
+11. the montecristo-smoker is to the left or right of the owner of the hamster
+12. the tiparillo-smoker is the person drinking fanta
+13. the pakistani is the game-smoker
+14. the dutch is to the left or right of the person who likes white. Please put '#############' around the final solution table.
+
+#############
+|        |       1       |    2          |    3           |    4       |    5        |
+| nationality | Dutch       | Brazilian     | Nigerian       | Pakistani  | Canadian    |
+| color   | blood-red    | amber         | ebony          | lilac      | white       |
+| beverage| mirinda      | hot-chocolate | soy-milk       | almond-soy-milk | fanta      |
+| cigar   | Dannemann    | Montecristo   | Swisher        | Game       | Tiparillo   |
+| pet     | pony         | hamster       | chinchilla     | frog       | rabbit      |
+#############"

@@ -1,0 +1,237 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-1x4-1	"Let's break this down step by step:
+
+1. Since the person eating blueberry is on the far left, we can place the blueberry in the first column. So, the first row is filled with 'blueberry'.
+
+2. The person eating cranberry is either to the left or right of the blueberry. If we place the cranberry to the right of the blueberry, then the second row would be 'cranberry'. However, this would mean that the person eating kale must be on the left of the cranberry, leaving only the third column for kale. But then, there would be no place for the radish. So, the cranberry cannot be on the right of the blueberry.
+
+3. Therefore, the cranberry must be on the left of the blueberry. This means the second row is 'cranberry' and the first row is 'blueberry'. Now, the person eating kale can be either in the second or fourth column.
+
+4. The person eating kale cannot be in the fourth column because the cranberry is to the left of the kale, and there is no more room to the left. So, the person eating kale must be in the second column. This means the third row is 'kale'.
+
+5. Now, the only remaining food is radish. Since it cannot be in the first column (because the blueberry is there), it cannot be in the second column (because the cranberry and kale are there), and it cannot be in the fourth column (because the puzzle states that the person eating blueberry is on the far left), the only place left for the radish is the third column.
+
+So, the final solution table is:
+
+```
+#############
+| blueberry | cranberry | kale   | radish |
+#############"	{}	False	0	False
+Lv3-1x4-2	"Let's break this down step by step:
+
+1. Since the person drinking coffee is to the right of the person drinking fanta, we can't have coffee in the first position (as there's no one to its left). So, coffee must be in the second, third, or fourth position.
+
+2. Similarly, since the person drinking water is to the left of the person drinking iced-tea, water can't be in the fourth position (as there's no one to its right). So, water must be in the first, second, or third position.
+
+3. The person drinking iced-tea is on the far left or far right. If it were on the far left, it would have to be in the first position, but that would mean water is in the second position, which contradicts the fact that water is to the left of iced-tea. So, iced-tea must be on the far right.
+
+4. Now, since iced-tea is on the far right, water must be in the first position.
+
+5. Since the person drinking coffee is to the right of the person drinking fanta, coffee can't be in the first position (as water is there). So, coffee must be in the second, third, or fourth position. But if coffee were in the third position, it would be to the left of iced-tea, which contradicts the fact that iced-tea is on the far right. So, coffee must be in the fourth position.
+
+6. Finally, fanta must be in the third position, as it is to the left of coffee.
+
+So, the final solution table is:
+
+```
+#############
+|   1   |   2    |   3   |    4     |
+| water | fanta | iced-tea| coffee |
+#############
+```"	{'1': ['2', '3', '4'], 'water': ['fanta', 'iced-tea', 'coffee']}	False	0	False
+Lv3-1x4-3	"Let's break this down step by step:
+
+1. We know that the person who enjoys card-games is not on the far left or far right (rule 2 and 3), so they must be in the middle (position 2 or 4). Let's assume for now that they are in position 2 (we'll check later if this assumption is correct).
+
+2. If the person who enjoys card-games is in position 2, then the person who enjoys fishing must be in position 3 (rule 1).
+
+3. Now, the person who enjoys fishing is on the far right (rule 3), so the hobbies on the left of position 3 must be different. Since we already have card-games in position 2, the hobbies on the left of position 3 must be either baking or drawing. Let's assume baking is on the far left (position 1).
+
+4. Now, we have:
+   | 1 | 2 | 3 | 4 |
+   |---|---|---|---|
+   | Baking | Card-games | Fishing | Drawing |
+
+5. However, this arrangement violates rule 2 because the person who enjoys baking is not on the far left or far right. So, our initial assumption that card-games is in position 2 was incorrect. Let's try placing card-games in position 4 instead.
+
+6. If card-games is in position 4, then the person who enjoys fishing must be in position 3. The person who enjoys baking must be on the far left (position 1) because the person who enjoys card-games is not on the far left or far right (rule 2). The remaining hobby, drawing, must be on the far right (position 5), but there are no more positions. This is a contradiction, so our assumption that card-games is in position 4 was also incorrect.
+
+7. Let's try placing card-games in position 1. This means the person who enjoys fishing is in position 2, and the person who enjoys baking is in position 3. The only remaining hobby, drawing, must be in position 4.
+
+8. We have:
+   | 1 | 2 | 3 | 4 |
+   |---|---|---|---|
+   | Card-games | Fishing | Baking | Drawing |
+
+This arrangement satisfies all the rules, so the final solution is:
+
+#############
+| 1 | 2 | 3 | 4 |
+|----|----|----|----|
+| Card-games | Fishing | Baking | Drawing |
+#############"	{'1': ['2', '3', '4'], 'card-games': ['fishing', 'baking', 'drawing']}	False	0	False
+Lv3-1x4-4	"Let's break this down step by step:
+
+1. We know there are 4 different movie genres: animation, musical, spy, and superhero.
+
+2. The person watching spy movies is on the far right, so we can place it in the last column (column 4). Let's denote the genres in the table as A (animation), M (musical), S (spy), and SH (superhero). So, the fourth column is S.
+
+3. The person watching spy movies is on the right of the person watching superhero movies. This means that superhero movies must be in one of the three columns to the left of the spy movies (columns 1, 2, or 3). Let's try placing superhero movies in each of these columns and see if it satisfies the other condition.
+
+   - If we place SH in column 1, then the person watching spy movies would be in column 4, and the person watching superhero movies would be in column 3. However, this doesn't satisfy the condition that the person watching animation movies is on the left or right of the person watching superhero movies.
+
+   - If we place SH in column 2, then the person watching spy movies would be in column 4, and the person watching superhero movies would be in column 3. In this case, the person watching animation movies could be in column 1 (to the left of superhero movies) or column 3 (to the right of superhero movies).
+
+   - If we place SH in column 3, then the person watching spy movies would be in column 4, and the person watching superhero movies would be in column 2. In this case, the person watching animation movies must be in column 1 (to the left of superhero movies).
+
+4. Since placing SH in column 3 satisfies all the conditions, the table would look like this:
+
+   |               |    1    |     2     |     3     |  4  |
+   | Movie-Genre   | A       | SH        | M        | S   |
+
+So, the final solution table is:
+
+#############
+|               |    1    |     2     |     3     |  4  |
+| Movie-Genre   | A       | SH        | M        | S   |
+#############"	{'movie-genre': ['a', 'sh', 'm', 's']}	True	0	False
+Lv3-1x4-5	"Let's solve this step by step:
+
+1. Since the sports are different, we can't have the same sport in two adjacent columns. So, we can't have basketball, golf, or surfing in columns 1 and 2, or columns 2 and 3. This leaves us with weightlifting for column 1.
+
+2. Now, let's place golf. Since it's on the right of surfing, it can't be in column 1 or 4. So, it must be in column 2.
+
+3. Now, since the person who plays basketball is on the right of the person who plays golf, basketball must be in column 3.
+
+4. Finally, surfing is on the left of golf, so it must be in column 1.
+
+So, the final solution table is:
+
+```
+#############
+| Weightlifting | Golf | Basketball | Surfing |
+#############
+```"	{}	False	0	False
+Lv3-1x4-6	"Let's solve this step by step:
+
+1. We know that the person watching animation movies is on the left of the person watching mystery movies. Let's place animation on the far left and mystery next to it. So, the first two columns are filled:
+
+   |               | Animation | Mystery |
+   | Movie-Genre   |           |         |
+
+2. The person watching mystery movies is on the left or right of the person watching crime movies. Since we already placed mystery to the left of animation, crime must be to the right of mystery. So, let's place crime in the third column:
+
+   |               | Animation | Mystery | Crime  |
+   | Movie-Genre   |           |         |       |
+
+3. The person watching crime movies is on the right of the person watching mystery movies. This condition is already satisfied.
+
+4. The person watching crime movies is on the left of the person watching zombie movies. Since we already placed crime in the third column, zombie must be in the fourth column:
+
+   |               | Animation | Mystery | Crime  | Zombie |
+   | Movie-Genre   |           |         |       |        |
+
+5. We still have one genre left, which is the animation genre. Since we placed animation on the far left, it is already in the correct position.
+
+So, the final solution table is:
+
+  #############
+  |               | Animation | Mystery | Crime  | Zombie |
+  | Movie-Genre   |           |         |       |        |
+  #############"	{}	False	0	False
+Lv3-1x4-7	"Let's solve this step by step:
+
+1. We know that the person drinking fanta is on the right of the person drinking iced-tea. So, we can place iced-tea in the first position and fanta in the second position. Let's mark them as 1 (iced-tea) and 2 (fanta).
+
+   |            |   1   |    2     |   3   |   4    |
+   | Beverage   |   Iced-Tea |   Fanta   |   ?   |   ?    |
+
+2. The person drinking iced-tea is on the right of the person drinking juice. Since we already placed iced-tea and fanta, the only possible position for juice is the third position. Let's mark it as 3 (juice).
+
+   |            |   1   |    2     |   3   |   4    |
+   | Beverage   |   Iced-Tea |   Fanta   |   Juice |   ?    |
+
+3. The person drinking fanta is on the left or right of the person drinking coffee. Since we already placed fanta and juice, the only possible positions for coffee are the first and fourth positions. However, if coffee were in the first position, it would mean that fanta is on the left of coffee, which contradicts the third rule. So, coffee must be in the fourth position. Let's mark it as 4 (coffee).
+
+   |            |   1   |    2     |   3   |   4    |
+   | Beverage   |   Iced-Tea |   Fanta   |   Juice |   Coffee |
+
+4. Now, we have placed all the beverages according to the rules. So, the final solution table is:
+
+   |            |   1   |    2     |   3   |   4    |
+   | Beverage   | Iced-Tea | Fanta   | Juice | Coffee |
+
+   However, to make it clear that it's a table, we should surround it with '#############':
+
+  #############
+  |            |   1   |    2     |   3   |   4    |
+  | Beverage   | Iced-Tea | Fanta   | Juice | Coffee |
+  ############"	{}	False	0	False
+Lv3-1x4-8	"Let's solve this step by step:
+
+1. We know that the person watching disaster movies is on the left of the person watching comedy movies. Let's denote D for Disaster and C for Comedy. So, D is on the left of C.
+
+2. The person watching documentary movies is on the left of the person watching disaster movies. Let's denote Doc for Documentary. So, Doc is on the left of D.
+
+3. Now, we have Doc < D < C. This means that Documentary, Disaster, and Comedy are in that order from left to right.
+
+4. The person watching comedy movies is on the left or right of the person watching sports movies. Since we already have the order of Comedy, we can't place Sports to the left of Comedy because that would violate rule 1. So, Sports must be on the right of Comedy. Let's denote S for Sports. So, C < S.
+
+5. The person watching disaster movies is on the left or right of the person watching comedy movies. Since we already have D and C in order, this rule doesn't provide any new information.
+
+6. Now we have Doc < D < C < S. We have 4 genres in a linear order from left to right. So, we can fill the table as follows:
+
+|               |      1      |    2     |   3    |   4    |
+| Movie-Genre   | Documentary | Disaster | Comedy | Sports |
+
+So, the final solution table is:
+
+#############
+|               |      1      |    2     |   3    |   4    |
+| Movie-Genre   | Documentary | Disaster | Comedy | Sports |
+#############"	{'movie-genre': ['documentary', 'disaster', 'comedy', 'sports']}	True	4	True
+Lv3-1x4-9	"Let's break this down step by step:
+
+1. We know that the genres are arranged left to right in a row, and there are 4 genres: adventure, disaster, epic, and fantasy.
+
+2. From point 1, we know that the person watching disaster movies is either to the left or right of the person watching epic movies. If disaster is on the left, then epic must be on the right, and vice versa. Let's consider both possibilities:
+
+   - If disaster is on the left, then the order is: adventure, disaster, epic, fantasy.
+   - If disaster is on the right, then the order is: adventure, epic, disaster, fantasy.
+
+3. From point 2, we know that the person watching epic movies is on the far left or far right. If epic is on the far left, then the order is: adventure, epic, disaster, fantasy. If epic is on the far right, then the order is: adventure, disaster, epic, fantasy. Since we already have one possibility with epic on the far left, let's consider the case where epic is on the far right:
+
+   - If epic is on the far right, then the order is: adventure, disaster, epic, fantasy.
+
+4. From point 3, we know that the person watching adventure movies is on the left of the person watching fantasy movies. In our current order, adventure is already on the far left, so fantasy must be on its right. So the final order is: adventure, disaster, epic, fantasy.
+
+5. Now we can fill in the table:
+
+   |               |  1   |    2     |     3     |    4    |
+   | Movie-Genre   | Adventure | Disaster | Epic | Fantasy |
+
+   The final solution is:
+
+  #############
+   |               |  1   |    2     |     3     |    4    |
+   | Movie-Genre   | Adventure | Disaster | Epic | Fantasy |
+  #############"	{}	False	0	False
+Lv3-1x4-10	"Let's break this down step by step:
+
+1. We know that the broccoli eater is to the right of the strawberry eater. This means that the order of the three foods (avocado, pumpkin, and strawberry) on the left side of the broccoli eater must be arranged in such a way that when we add the broccoli eater on the right, the broccoli eater is to the right of the strawberry eater.
+
+2. The broccoli eater is also between the avocado and strawberry eaters. This means that the avocado eater cannot be on the far left, as there is no one to the left of them. So, the arrangement on the left side of the broccoli eater must be pumpkin-avocado.
+
+3. The avocado eater is on the left or right of the pumpkin eater. Since the avocado eater cannot be on the far left, they must be on the right of the pumpkin eater. So, the arrangement on the left side of the broccoli eater is pumpkin-avocado, and the broccoli eater is on the far right.
+
+4. Now we have the arrangement of the three foods on the left side: pumpkin-avocado-broccoli. The strawberry eater must be on the far left, as they are to the right of the broccoli eater. So, the final arrangement is:
+
+   |        |      pumpkin     |     avocado     |     broccoli    |     strawberry    |
+   | Food   |            |          |         |         |
+
+So, the final solution table is:
+
+#############
+|        |      pumpkin     |     avocado     |     broccoli    |     strawberry    |
+| Food   |            |          |         |         |
+#############"	{'food': ['', '', '', '']}	True	0	False

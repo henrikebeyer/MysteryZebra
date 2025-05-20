@@ -1,0 +1,333 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv8-2x4-1	"Let's solve this step by step:
+
+1. From rule 5, we know that the person who's hobby is drawing is to the right of the person who's hobby is camping. So, we can place camping in the first or second position, and drawing in the third, fourth, or fifth position.
+
+2. From rule 6, we know that the person who's hobby is camping is on the right of the person who's sport is biathlon. Since camping can only be in the first or second position, biathlon must be in the second position. So, camping is in the first position.
+
+3. From rule 1, we know that the person who's hobby is drawing is between the person who's sport is rugby and the person who's sport is rowing. Since we know that biathlon is in the second position, and camping is in the first position, the only possible positions for rugby and rowing are the third and fourth positions. But from rule 4, we know that the person who's hobby is drawing is not the person who's sport is rowing. So, rugby must be in the third position, and rowing in the fourth position.
+
+4. From rule 2, we know that the person who's hobby is reading is on the left or right of the person who's sport is rugby. Since we know that rugby is in the third position, reading can be in the first, second, or fifth position.
+
+5. From rule 3, we know that the person who's sport is rugby is not to the left of the person who's sport is rugby (this rule is redundant because we already know where rugby is).
+
+6. From rule 8, we know that the person who's sport is rugby is not in the first position. So, reading cannot be in the first position.
+
+7. Now, if reading is in the second position, then the hobby in the first position must be chess (because we know that the hobbies are different and we've placed camping and drawing). But this would mean that the person who's hobby is reading is to the left of the person who's sport is rugby, which contradicts rule 2. So, reading cannot be in the second position.
+
+8. Therefore, reading must be in the fifth position. The only hobby left for the first position is chess.
+
+So, the final solution table is:
+
+  |         |    1     |    2    |    3    |   4    |
+| Hobby   | Chess    | Camping | Rugby   | Drawing |
+| Sport   |         | Biathlon|         | Rowing  |
+
+#############
+| Chess    | Camping | Biathlon| Rugby   | Drawing |
+|---------|---------|---------|---------|---------|
+#############"	{'chess': ['camping', 'biathlon', 'rugby', 'drawing']}	False	0	False
+Lv8-2x4-2	"Let's solve this step by step:
+
+1. From rule 7, we know that the designer is in the last position (4).
+2. From rule 6, the nurse is to the left of the person eating tomato, so the tomato must be in position 3.
+3. From rule 5, the person eating tomato is between the person eating watermelon and the designer, so the watermelon must be in position 2.
+4. From rule 4, the person eating zucchini is between the person eating grapes and the person eating tomato, so the zucchini must be in position 1.
+5. From rule 3, the person eating grapes is the journalist, so the journalist is in position 3.
+6. Now we know the positions of all the jobs, so we can fill in the food:
+
+   |        |     1      |        2        |    3     |     4      |
+   | Food   | zucchini  | watermelon    | grapes   | designer   |
+   | Job    | nurse     |               | journalist| project-manager|
+
+So the final solution table is:
+
+#############
+|        |     1      |        2        |    3     |     4      |
+| Food   | zucchini  | watermelon    | grapes   | designer   |
+| Job    | nurse     |               | journalist| project-manager|
+#############"	{'food': ['zucchini', 'watermelon', 'grapes', 'designer'], 'job': ['nurse', '', 'journalist', 'project-manager']}	True	1	False
+Lv8-2x4-3	"Let's solve this step by step:
+
+1. The person watching adventure movies is not to the left of the nurse. This means the adventure movie can't be in the first column (column 1).
+
+2. The person watching comedy movies is on the far left. So, the comedy movie goes in the first column (column 1).
+
+3. The electrician is on the right of the bartender. Since we know the comedy movie is the far left, the bartender can't be in the first column. So, the bartender goes in the second column (column 2). Now, the electrician must be in the third or fourth column.
+
+4. The electrician is in an even position. Since the bartender is in the second column (an odd position), the electrician must be in the fourth column (column 4).
+
+5. The paramedic is on the far left or far right. Since the comedy movie is already in the far left (column 1), the paramedic can't be there. So, the paramedic must be in the third column (column 3).
+
+6. The bartender is somewhere to the left of the person watching superhero movies. Since the bartender is in the second column (column 2), the superhero movie must be in the third or fourth column. But we already placed the paramedic in the third column, so the superhero movie must be in the fourth column (column 4).
+
+7. The paramedic is the person watching family movies. So, the family movie goes in the third column (column 3).
+
+Now, let's put the jobs:
+
+|               |     1     |      2      |     3     |     4     |
+| Job           | Comedy   | Bartender  | Paramedic | Superhero |
+| Movie-Genre   | Adventure|           | Family    |           |
+
+But we still need to find the movie genre for the fourth job (electrician). Since the electrician is in the fourth column (column 4), the only remaining genre is adventure.
+
+So, the final solution table is:
+
+#############
+|               |     1     |      2      |     3     |     4     |
+| Job           | Comedy   | Bartender  | Paramedic | Electrician|
+| Movie-Genre   | Adventure|           | Family    | Superhero  |
+#############"	{'job': ['comedy', 'bartender', 'paramedic', 'electrician'], 'movie-genre': ['adventure', '', 'family', 'superhero']}	True	0	False
+Lv8-2x4-4	"Let's solve this step by step:
+
+1. We know that the people prefer 4 different music-genres and 4 different sports. So, each row and each column should have unique values.
+
+2. From point 1, we can deduce that each music genre must be paired with a unique sport.
+
+3. Let's assign the music genres to the sports based on the given information:
+   - From point 5, the fan of blues is the person who's sport is lacrosse. So, we can place blues in the first row and lacrosse in the first column.
+
+4. Now, we have one more piece of information about the sports: the person who's sport is parkour is on the left of the person who's sport is weightlifting. Since we know the position of lacrosse, we can place parkour to its left and weightlifting to its right. So, parkour goes in the second column and weightlifting in the third column.
+
+5. Now, we have two more pieces of information about the sports: the person who's sport is soccer is on the right of the fan of disco and the fan of rock is not to the right of the person who's sport is soccer. Since we know the position of parkour and weightlifting, we can place soccer in the fourth column. This means disco must be in the second row and rock in the third row.
+
+6. Now, we have one more piece of information about the music genres: the fan of metal is somewhere to the left of the fan of rock. Since we know the position of rock, we can place metal in the first row or the second row. However, since blues is already in the first row, metal must be in the second row.
+
+7. Now, we have one more piece of information about the music genres: the fan of metal is to the left of the fan of rock and the fan of blues is on the right of the person who's sport is soccer. Since we know the position of rock and soccer, blues must be in the fourth column.
+
+8. Now, we have only one remaining music genre, disco. Since it cannot be in the first row (because blues is there), it must be in the third row.
+
+The final solution table is:
+
+```
+#############
+|  Blues     |  Disco  |  Metal  |  Rock   |
+|-----------|--------|--------|--------|
+|  Lacrosse |        |        |        |
+|  Parkour  |  Soccer|        |  Weightlifting|
+|  ##########|#######|#######|#######|
+```
+
+This table satisfies all the given conditions."	{'blues': ['disco', 'metal', 'rock'], 'lacrosse': ['', '', ''], 'parkour': ['soccer', '', 'weightlifting']}	False	0	False
+Lv8-2x4-5	"Let's break down the puzzle step by step:
+
+1. From point 3 and 7, we know that the person watching scientific movies is between the person watching romance movies and the person watching epic movies. Let's place them in order: Romance, Epic, Scientific.
+
+2. From point 2, the person watching romance movies is to the left of the person who's sport is handball. Since we already placed the romance movies, let's place handball to the right of the romance movies.
+
+3. From point 4, the person watching romance movies is not to the left of the person who's sport is rugby. Since we already placed the romance movies and handball, let's place rugby to the right of the handball.
+
+4. From point 5, the person who's sport is rugby is between the person watching family movies and the person who's sport is cycling. Since we already placed the handball and rugby, let's place cycling to the right of the rugby.
+
+5. From point 6, the person who's sport is cycling is to the right of the person watching scientific movies. Since we already placed the cycling, the scientific movies must be to the left of the cycling.
+
+6. From point 8, the person who's sport is cycling is on the left or right of the person watching scientific movies. Since we already placed the cycling to the right of the scientific movies, it must be on the left.
+
+7. From point 1, the person watching scientific movies is somewhere between the person watching epic movies and the person watching family movies. Since we already placed the scientific movies, the epic movies must be to the left of the scientific movies and the family movies to the right.
+
+8. From point 7 of point 8, the person who's sport is cycling is not to the left of the person watching epic movies. Since we already placed the cycling to the left of the scientific movies and the epic movies to the left of the scientific movies, the family movies must be to the right of the cycling.
+
+So, the final solution table is:
+
+  |               |    1     |    2    |     3      |    4    |
+| Movie-Genre   | Epic     | Romance | Scientific | Family  |
+| Sport         |         |         | Cycling   | Rugby   |
+
+#############
+| Movie-Genre   | Epic     | Romance | Scientific | Family  |
+| Sport         |         |         | Cycling   | Rugby   |
+#############"	{'movie-genre': ['epic', 'romance', 'scientific', 'family'], 'sport': ['', '', 'cycling', 'rugby']}	True	2	False
+Lv8-2x4-6	"Let's solve this step by step:
+
+1. We know that the fan of pop is on the left of the fan of indie, so we can place them in the first two columns. Let's assume the fan of pop is in column 1 and the fan of indie is in column 2.
+
+2. The fan of dubstep is somewhere to the left of the person eating cauliflower, so it can only be in the first three columns. Since the fan of pop is in column 1 and the fan of indie is in column 2, the fan of dubstep must be in column 1. However, we also know that the fan of dubstep is the person eating pineapple (from rule 7), so we can place pineapple in the first column.
+
+3. The person eating lettuce is on the right of the fan of indie, so it must be in column 3 or 4. Since the fan of dubstep (pineapple) is in column 1, the person eating lettuce can only be in column 4.
+
+4. The fan of ambient is on the left or right of the fan of indie (rule 4), but we already know the positions of both the fan of pop and the fan of indie. Since the fan of pop is on the left of the fan of indie, the fan of ambient must be on the right of the fan of indie, so it can be in column 3.
+
+5. The person eating cauliflower is somewhere to the left of the person eating kiwi (rule 5), so it can be in any of the first three columns. Since the fan of dubstep (pineapple) is in column 1, the person eating cauliflower cannot be in column 1. Also, the person eating lettuce is in column 4, so the person eating cauliflower must be in column 2.
+
+6. The person eating kiwi can only be in the last two columns (columns 3 and 4), but since the person eating lettuce is in column 4, the person eating kiwi must be in column 3.
+
+So, the final solution table is:
+
+  |               |      Pineapple (Dubstep)     |       Kiwi       |    Lettuce    |     Cauliflower    |
+| Food          |           |             |       |         |
+| Music-Genre   | Ambient | Indie | Pop | Dubstep |
+
+#############
+|               | Pineapple (Dubstep)     |       Kiwi       |    Lettuce    |     Cauliflower    |
+| Food          | Ambient | Indie | Pop | Dubstep |
+#############"	{'food': ['ambient', 'indie', 'pop', 'dubstep']}	False	0	False
+Lv8-2x4-7	"Let's solve this step by step:
+
+1. From rule 3, we know that the person who's sport is rowing is to the right of the person who's sport is badminton. So, let's place badminton and rowing in the first two spots, with badminton on the left (1st position) and rowing on the right (2nd position).
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Badminton| Rowing |             |         |
+   | Beverage  |         |       |             |         |
+
+2. From rule 7, we know that the person drinking almond-milk is on the left of the person drinking water. So, let's place water in the 4th position and almond-milk in the 3rd position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Badminton| Rowing | Almond-milk | Water   |
+   | Beverage  |         |       |             |         |
+
+3. From rule 8, we know that the person drinking almond-milk is on the left of the person drinking sprite. So, let's place sprite in the 1st position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Rowing | Almond-milk | Water   |
+   | Beverage  |         |       |             |         |
+
+4. From rule 6, we know that the person drinking almond-milk is on the left or right of the person drinking sprite. Since almond-milk is already in the 3rd position, it cannot be on the left of sprite (1st position). So, it must be in the 4th position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Rowing | Almond-milk | Water   |
+   | Beverage  | Cola    |       |             |         |
+
+5. From rule 1, we know that the person who's sport is cricket is not to the left of the person drinking cola. Since cola is not yet placed, we can't place cricket yet. Let's place the remaining beverage, sprite, in the 2nd position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Rowing | Almond-milk | Water   |
+   | Beverage  | Cola    | Sprite |         |         |
+
+6. From rule 4, we know that the person who's sport is volleyball is not to the left of the person who's sport is badminton. Since badminton is in the 1st position, volleyball cannot be in the 1st or 2nd position. So, let's place volleyball in the 3rd position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Volleyball | Almond-milk | Water   |
+   | Beverage  | Cola    | Sprite |         |         |
+
+7. From rule 2, we know that the person who's sport is volleyball is somewhere between the person drinking water and the person who's sport is rowing. Since volleyball is in the 3rd position and rowing is in the 2nd position, the only remaining spot between them is the 4th position. So, let's place cricket in the 4th position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Volleyball | Cricket  | Almond-milk | Water   |
+   | Beverage  | Cola    | Sprite |         |         |
+
+8. From rule 5, we know that the person who's sport is volleyball is not to the left of the person who's sport is cricket. Since volleyball is in the 3rd position and cricket is in the 4th position, this rule is satisfied.
+
+9. From rule 6, we know that the person drinking cola is either to the left or right of the person drinking sprite. Since sprite is in the 2nd position, cola can be either in the 1st or 3rd position. However, since the person who's sport is cricket is in the 4th position, and rule 1 states that the person who's sport is cricket is not to the left of the person drinking cola, cola must be in the 3rd position.
+
+   |            |     1     |   2    |      3      |    4    |
+   |-----------|----------|--------|-------------|---------|
+   | Sport     | Sprite   | Badminton| Volleyball | Cricket  | Almond-milk | Cola   |
+   | Beverage  |         |       |             |         | Water   |
+
+10. Finally, the only remaining beverage is water, which must be in the 5th position.
+
+   |            |     1     |   2    |      3      |    4    |    5    |
+   |-----------|----------|--------|-------------|---------|---------|
+   | Sport     | Sprite   | Badminton| Volleyball | Cricket  | Almond-milk | Cola   |
+   | Beverage  |         |       |             |         | Water   |
+
+So, the final solution table is:
+
+#############
+|            |     1     |   2    |      3      |    4    |    5    |
+|-----------|----------|--------|-------------|---------|---------|
+| Sport     | Sprite   | Badminton| Volleyball | Cricket  | Almond-milk | Cola   |
+| Beverage  |         |       |             |         | Water   |
+#############"	{'sport': ['sprite', 'badminton', 'volleyball', 'cricket', 'almond-milk', 'cola'], 'beverage': ['', '', '', '', 'water']}	True	0	False
+Lv8-2x4-8	"Let's solve this step by step:
+
+1. We know that the entrepreneur is not to the right of the person who's sport is tennis. Let's place the entrepreneur in the first three positions (1, 2, 3). Since there are only four people and they have to be in different positions, the person with tennis must be in the last position (4).
+
+2. The person with tennis is to the right of the person with rugby. So, the person with rugby must be in one of the first three positions (1, 2, 3).
+
+3. The dressmaker is on the left of the person with rugby. So, the dressmaker can only be in position 1, and rugby must be in position 2 or 3.
+
+4. The person with rugby is between the person with ice-hockey and the dressmaker. Since the dressmaker is in position 1 and rugby is either 2 or 3, the person with ice-hockey must be in position 4.
+
+5. The project-manager is between the person with ice-hockey and the entrepreneur. Since the person with ice-hockey is in position 4 and the entrepreneur is not to the right of the project-manager, the project-manager must be in position 3.
+
+6. Now we know that the entrepreneur is in position 1, the project-manager is in position 3, and the person with ice-hockey is in position 4. So, the person with tennis must be in position 2.
+
+7. The sport of the person in position 1 is baseball (since all other sports are taken). The sport of the person in position 2 is tennis. The sport of the person in position 3 is project-management (since it's a job). The sport of the person in position 4 is ice-hockey.
+
+So, the final solution table is:
+
+  |         |     1      |      2       |        3        |     4      |
+  | Job     | doctor    | tennis      | project-manager | ice-hockey |
+  | Sport   | baseball  | tennis      | project-management| ice-hockey |
+
+#############
+|         |     1      |      2       |        3        |     4      |
+| Job     | doctor    | tennis      | project-manager | ice-hockey |
+| Sport   | baseball  | tennis      | project-management| ice-hockey |
+#############"	{'job': ['doctor', 'tennis', 'project-manager', 'ice-hockey'], 'sport': ['baseball', 'tennis', 'project-management', 'ice-hockey']}	True	3	False
+Lv8-2x4-9	"Let's solve this step by step:
+
+1. Since there are 4 people and 4 music genres, each person must prefer a unique genre. Similarly, each person must drive a unique mode of transport.
+
+2. From point 1, we can assign the genres to the people as follows:
+   - Person 1: Classical
+   - Person 2: Pop
+   - Person 3: Dubstep
+   - Person 4: Indie
+
+3. From point 2, we can assign the transport to the people as follows:
+   - Person 1 (Classical): Boat (since the boat driver is between the pop fan and the classical fan, and the trike driver is on the far left, so the boat driver cannot be on the far left)
+   - Person 2 (Pop): Taxi (since the pop fan is not to the right of the indie fan, and the bus driver is the bus driver, so the pop fan cannot be the bus driver or the indie fan)
+   - Person 3 (Dubstep): Bus (since the dubstep fan is to the right of the boat driver, and the pop fan is not the bus driver or the indie fan, so the dubstep fan cannot be the taxi driver or the trike driver)
+   - Person 4 (Indie): Trike (since the indie fan is not the taxi driver, and the dubstep fan is to the right of the boat driver, so the indie fan cannot be the boat driver or the bus driver)
+
+4. Now we can fill in the table:
+
+|               |   1   |     2     |   3   |    4    |
+| Music-Genre   | Classical | Pop | Dubstep | Indie |
+| Transport     | Boat  | Taxi | Bus    | Trike |
+
+5. To confirm our solution, let's check the remaining clues:
+   - The fan of classical is between the fan of pop and the person driving the boat (correct)
+   - The person driving the trike is on the far left (correct)
+   - The person driving the trike is on the left or right of the fan of classical (correct)
+   - The fan of dubstep is somewhere to the right of the person driving the boat (correct)
+   - The person driving the bus is the person driving the bus (correct)
+   - The fan of indie is not the person driving the taxi (correct)
+   - The fan of pop is not to the right of the fan of indie (correct)
+   - The person driving the boat is not to the left of the person driving the bus (correct)
+
+So the final solution table is:
+
+#############
+|               |   1   |     2     |   3   |    4    |
+| Music-Genre   | Classical | Pop | Dubstep | Indie |
+| Transport     | Boat  | Taxi | Bus    | Trike |
+#############"	{'music-genre': ['classical', 'pop', 'dubstep', 'indie'], 'transport': ['boat', 'taxi', 'bus', 'trike']}	True	0	False
+Lv8-2x4-10	"Let's solve this step by step:
+
+1. From point 5, we know the airplane is on the left or right of the chef. Let's assume the airplane is on the right of the chef for now (we'll check later if it's on the left).
+
+2. From point 1, the writer is between the person driving the motorbike and the person driving the snowmobile. Since the airplane is on the right of the chef, the only possible positions for the motorbike and snowmobile are to the left of the chef. So, the writer must be between the chef and the motorbike or between the chef and the snowmobile.
+
+3. From point 2, the librarian is not the person driving the airplane. Since the airplane is on the right of the chef, the librarian cannot be to the right of the chef. So, the librarian must be either to the left of the chef or below the chef (since there are only 4 positions).
+
+4. From point 3, the manager is not to the right of the chef. So, the manager must be either to the left of the chef or below the chef.
+
+5. Now, let's check if the airplane can be on the left of the chef. If it is, then the writer must be to the right of the chef (since the writer is between the motorbike and the snowmobile, and the motorbike and snowmobile are to the left of the chef). But this would mean the librarian is to the left of the chef, which contradicts point 3. So, the airplane must be on the right of the chef.
+
+6. Now we know the positions of the airplane, motorbike, and snowmobile. The writer is between the motorbike and the snowmobile. The only possible position for the writer is to the right of the motorbike and to the left of the snowmobile.
+
+7. The librarian is not the person driving the airplane, and is not to the right of the chef. So, the librarian must be to the left of the chef.
+
+8. The manager is not to the right of the chef. Since the librarian is to the left of the chef, the manager must be below the chef.
+
+Final solution:
+
+|             |    1    |     2     |    3     |     4      |
+| Job         | chef   | librarian| manager  | writer     |
+| Transport   |       | motorbike|         | snowmobile |
+
+#############
+|             |    1    |     2     |    3     |     4      |
+| Job         | chef   | librarian| manager  | writer     |
+| Transport   | taxi   | motorbike| airplane | snowmobile |
+#############"	{'job': ['chef', 'librarian', 'manager', 'writer'], 'transport': ['taxi', 'motorbike', 'airplane', 'snowmobile']}	True	4	False

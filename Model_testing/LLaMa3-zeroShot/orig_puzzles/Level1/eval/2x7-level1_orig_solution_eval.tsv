@@ -1,0 +1,499 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x7-1	"Let's break down the puzzle step by step:
+
+1. The paramedic is on the left of the Chinese.
+2. The Mexican is the paramedic.
+3. The videographer is on the right of the social-worker.
+4. The Canadian is on the right of the Nigerian.
+5. The mechanic is in the middle.
+6. The Argentine is on the far left.
+7. The photographer is the Argentine.
+8. The electrician is on the right of the Nigerian.
+9. The Canadian is on the left of the Australian.
+10. The Chinese is on the left of the mechanic.
+11. The videographer is on the right of the Australian.
+
+From statement 2, we know the Mexican is the paramedic. From statement 1, we know the paramedic is on the left of the Chinese, so the Mexican is on the left of the Chinese.
+
+From statement 6, we know the Argentine is on the far left. From statement 7, we know the photographer is the Argentine. So, the photographer is on the far left.
+
+From statement 5, we know the mechanic is in the middle. From statement 10, we know the Chinese is on the left of the mechanic, so the Chinese is two positions to the left of the middle.
+
+From statement 9, we know the Canadian is on the left of the Australian. From statement 4, we know the Canadian is on the right of the Nigerian. So, the Nigerian is on the left of the Canadian, and the Australian is on the right of the Canadian.
+
+From statement 8, we know the electrician is on the right of the Nigerian. From statement 11, we know the videographer is on the right of the Australian. So, the videographer is on the right of the Australian, and the electrician is on the right of the Nigerian.
+
+Now, let's fill in the table:
+
+#############
+| Job           | Argentine | Canadian | Chinese | Mexican | Mechanic | Nigerian | Australian |
+| Nationality   |           |          |         |         |          |          |             |
+#############
+| Photographer | Argentine |          |         |         |          |          |             |
+| Electrician  |           |          |         |         |          | Nigerian |             |
+| Videographer |           |          |         |         |          |          | Australian |
+| Social-worker|           |          |         |         | Mechanic |          |             |
+| Paramedic    |           |          | Mexican |         |          |          |             |
+#############
+
+Note that the social-worker is in the middle, between the mechanic and the videographer."	{'photographer': ['argentine', '', '', '', '', '', ''], 'electrician': ['', '', '', '', '', 'nigerian', ''], 'videographer': ['', '', '', '', '', '', 'australian'], 'social-worker': ['', '', '', '', 'mechanic', '', ''], 'paramedic': ['', '', 'mexican', '', '', '', '']}	False	0	False
+Lv1-2x7-2	"Let's break down the puzzle step by step:
+
+1. The fan of punk is the person eating nectarine.
+2. The person eating raspberry is on the left of the fan of soul.
+3. The fan of rock is on the far right.
+4. The person eating cucumber is on the right of the fan of funk.
+5. The person eating nectarine is on the right of the fan of pop.
+6. The person eating raspberry is on the left of the person eating watermelon.
+7. The fan of punk is in the middle.
+8. The fan of punk is on the right of the person eating peach.
+9. The fan of soul is on the left of the person eating eggplant.
+10. The person eating nectarine is on the left of the fan of d&b.
+
+From statement 1, we know the fan of punk is eating nectarine. From statement 7, we know the fan of punk is in the middle. From statement 8, we know the fan of punk is on the right of the person eating peach. This means the person eating peach must be on the left of the fan of punk.
+
+From statement 2, we know the person eating raspberry is on the left of the fan of soul. From statement 9, we know the fan of soul is on the left of the person eating eggplant. This means the person eating eggplant must be on the right of the person eating raspberry.
+
+From statement 6, we know the person eating raspberry is on the left of the person eating watermelon. This means the person eating watermelon must be on the right of the person eating raspberry.
+
+From statement 4, we know the person eating cucumber is on the right of the fan of funk. From statement 3, we know the fan of rock is on the far right. This means the fan of funk must be on the left of the fan of rock.
+
+From statement 5, we know the person eating nectarine is on the right of the fan of pop. From statement 10, we know the person eating nectarine is on the left of the fan of d&b. This means the fan of pop must be on the left of the fan of d&b.
+
+Now we can start filling in the table:
+
+|               |     1     |    2     |   3   |     4     |     5     |     6      |    7     |
+| Food          |           |          |       |           |           |            |          |
+| Music-Genre   |           |          |       |           |           |            |          |
+
+1. Nectarine - Punk
+2.? -?
+3.? -?
+4. Cucumber - Funk
+5.? - Pop
+6. Raspberry - Soul
+7. Watermelon -?
+
+From statement 1, we know the fan of punk is eating nectarine. From statement 7, we know the fan of punk is in the middle. This means the person eating watermelon must be on the right of the fan of punk.
+
+From statement 8, we know the fan of punk is on the right of the person eating peach. This means the person eating peach must be on the left of the fan of punk.
+
+From statement 9, we know the fan of soul is on the left of the person eating eggplant. This means the person eating eggplant must be on the right of the person eating raspberry.
+
+From statement 4, we know the person eating cucumber is on the right of the fan of funk. This means the fan of funk must be on the left of the person eating cucumber.
+
+From statement 5, we know the person eating nectarine is on the right of the fan of pop. This means the fan of pop must be on the left of the person eating nectarine.
+
+From statement 10, we know the person eating nectarine is on the left of the fan of d&b. This means the fan of d&b must be on the right of the person eating nectarine.
+
+Now we can fill in the rest of the table:
+
+|               |     1     |    2     |   3   |     4     |     5     |     6      |    7     |
+| Food          |           |          |       |           |           |            |          |
+| Music-Genre   |           |          |       |           |           |            |          |
+| Cranberry    | Funk      | Soul     | Rock  | Pop       | D&B       | Watermelon | Punk     |
+| Cucumber    | Funk      |          |       |           |           |            |          |
+| Eggplant    |          | Soul     |        |           |           |            |          |
+| Nectarine   | Punk      |          |       | Pop       | D&B       |            |          |
+| Peach      |          |          |       | Pop       |          |            |          |
+| Raspberry  |          | Soul     |        |           |           | Watermelon |          |
+| Watermelon |          |          |       |           |           |            | Punk     |
+
+#############
+| Food          |     Cranberry    | Cucumber    | Eggplant    | Nectarine   | Peach      | Raspberry  | Watermelon |
+| Music-Genre   | Funk      | Funk      | Soul     | Punk      | Pop       | Soul     | Punk     |
+#############"	{'food': ['cranberry', 'cucumber', 'eggplant', 'nectarine', 'peach', 'raspberry', 'watermelon'], 'music-genre': ['funk', 'funk', 'soul', 'punk', 'pop', 'soul', 'punk']}	True	6	False
+Lv1-2x7-3	"Let's break down the puzzle step by step:
+
+From statement 5, we know the bartender is the person eating onion.
+
+From statement 2, we know the person eating onion is on the left of the writer. So, the writer is on the right of the bartender.
+
+From statement 1, we know the person eating cucumber is on the left of the person eating onion. So, the person eating cucumber is on the left of the bartender.
+
+From statement 12, we know the person eating spinach is on the left of the scientist. Since the freelancer is on the left of the person eating spinach (statement 3), the freelancer is on the left of the scientist.
+
+From statement 7, we know the freelancer is on the left of the mechanic. So, the mechanic is on the right of the freelancer.
+
+From statement 9, we know the person eating pepper is the photographer. Since the photographer is in the middle (statement 11), the person eating pepper is in the middle.
+
+From statement 4, we know the person eating corn is on the right of the person eating pepper. So, the person eating corn is on the right of the photographer.
+
+From statement 8, we know the freelancer is on the right of the photographer. So, the freelancer is on the right of the person eating corn.
+
+From statement 10, we know the person eating lemon is on the right of the bartender. Since the bartender is the person eating onion, the person eating lemon is on the right of the person eating onion.
+
+Now, let's fill in the table:
+
+#############
+|        |    1     |     2     |   3    |      4       |     5      |    6     |     7     |
+| Food   |          |           |        |              |            |          |           |
+| Job    |          |           |        |              |            |          |           |
+|        | Cucumber | Onion    | Spinach | Pepper      | Lemon     | Corn    | Lettuce  |
+| Job    | Freelancer| Bartender| Scientist| Photographer| Teacher  | Mechanic| Writer   |
+#############
+
+The final solution is:
+
+The person eating cucumber is the freelancer, the person eating onion is the bartender, the person eating spinach is the scientist, the person eating pepper is the photographer, the person eating lemon is the teacher, the person eating corn is unknown, and the person eating lettuce is the writer."	{'food': ['', '', '', '', '', '', ''], 'job': ['freelancer', 'bartender', 'scientist', 'photographer', 'teacher', 'mechanic', 'writer']}	True	3	False
+Lv1-2x7-4	"Let's break down the puzzle step by step:
+
+1. The fan of metal is the australian
+2. The fan of rock is on the right of the fan of r&b
+3. The nigerian is on the right of the egyptian
+4. The argentine is on the right of the fan of metal
+5. The fan of metal is on the left of the fan of disco
+6. The fan of r&b is on the far left
+7. The egyptian is on the right of the fan of r&b
+8. The fan of indie is on the right of the nigerian
+9. The fan of indie is the indonesian
+10. The indonesian is on the left of the fan of folk
+11. The thai is the fan of folk
+
+From statement 1, we know the australian is the fan of metal.
+
+From statement 2, we know the fan of rock is on the right of the fan of r&b.
+
+From statement 6, we know the fan of r&b is on the far left. Therefore, the fan of rock is on the second position.
+
+From statement 3, we know the nigerian is on the right of the egyptian. Since the fan of r&b is on the far left, the egyptian must be on the third position.
+
+From statement 4, we know the argentine is on the right of the fan of metal. Since the australian is the fan of metal, the argentine must be on the fifth position.
+
+From statement 5, we know the fan of metal is on the left of the fan of disco. Since the australian is the fan of metal, the fan of disco must be on the fourth position.
+
+From statement 9, we know the indonesian is the fan of indie.
+
+From statement 10, we know the indonesian is on the left of the fan of folk. Since the thai is the fan of folk, the thai must be on the sixth position.
+
+From statement 11, we know the thai is the fan of folk.
+
+Now, let's fill in the table:
+
+#############
+| Music-Genre | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| Nationality |    |    |    |    |    |    |    |
+| R&B        | 1 |    |    |    |    |    |    |
+| Rock       |    | 2 |    |    |    |    |    |
+| Metal      |    |    | 3 |    | 4 |    |    |
+| Indie      |    |    |    |    |    | 5 | 6 |
+| Disco     |    |    |    | 4 |    |    |    |
+| Folk      |    |    |    |    |    | 6 |    |
+| Nigerian  |    |    | 3 |    |    |    |    |
+| Egyptian  |    | 2 | 3 |    |    |    |    |
+| Argentine |    |    |    | 4 | 5 |    |    |
+| Indonesian|    |    |    |    |    | 5 | 6 |
+| Thai      |    |    |    |    |    | 6 |    |
+#############
+
+The final solution is:
+
+R&B - Nigerian
+Rock - Egyptian
+Metal - Australian
+Indie - Indonesian
+Disco - Argentine
+Folk - Thai"	{'egyptian': ['', '2', '3', '', '', '', ''], 'argentine': ['', '', '', '4', '5', '', ''], 'indonesian': ['', '', '', '', '', '5', '6'], 'thai': ['', '', '', '', '', '6', '']}	False	0	False
+Lv1-2x7-5	"Let's start by using the given information to fill in the table. We'll work through the clues one by one.
+
+From clue 1, we know the person who's hobby is cooking is the owner of the snake.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |         |         |            |           |             | gold         |             |
+| Cooking |  Snake  |         |            |           |             |              |             |
+
+From clue 2, we know the owner of the fish is on the right of the person who's hobby is magic-tricks. Since we don't know who has magic-tricks as a hobby yet, we'll come back to this clue later.
+
+From clue 3, we know the owner of the horse is in the middle.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |         |         |  Horse    |           |             | gold         |             |
+| Cooking |  Snake  |         |            |           |             |              |             |
+
+From clue 4, we know the owner of the guinea-pig is on the right of the owner of the frog. Since we don't know who has the frog yet, we'll come back to this clue later.
+
+From clue 5, we know the owner of the guinea-pig is the person who's hobby is sudoku.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |         |         |  Horse    |  Guinea-pig |             | gold         |             |
+| Cooking |  Snake  |         |            | Sudoku     |             |              |             |
+
+From clue 6, we know the person who's hobby is magic-tricks is on the right of the owner of the dog. Since we don't know who has the dog yet, we'll come back to this clue later.
+
+From clue 7, we know the owner of the horse is on the left of the person who's hobby is video-games.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    |         |  Horse    |  Guinea-pig |             | gold         |             |
+| Cooking |  Snake  |         |            | Sudoku     |             |              |             |
+
+From clue 8, we know the person who's hobby is drawing is on the right of the person who's hobby is cooking.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    |         |  Horse    |  Guinea-pig |             | gold         |             |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |              |             |
+
+From clue 9, we know the person who's hobby is gardening is on the right of the owner of the guinea-pig.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    |         |  Horse    |  Guinea-pig | Gardening | gold         |             |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |              |             |
+
+From clue 10, we know the person who's hobby is magic-tricks is on the right of the person who's hobby is video-games. Since we don't know who has video-games yet, we'll come back to this clue later.
+
+Now, let's go back to clue 2 and use the information we've gathered so far. We know the owner of the fish is on the right of the person who's hobby is magic-tricks. Since the person who's hobby is magic-tricks is on the right of the owner of the dog (clue 6), the owner of the fish must be on the right of the owner of the dog.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    | Fish   |  Horse    |  Guinea-pig | Gardening | gold         |             |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |              |             |
+
+From clue 6, we know the person who's hobby is magic-tricks is on the right of the owner of the dog. Since the owner of the fish is on the right of the person who's hobby is magic-tricks, the person who's hobby is magic-tricks must be on the right of the owner of the fish.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    | Fish   |  Horse    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |              |             |
+
+From clue 7, we know the owner of the horse is on the left of the person who's hobby is video-games. Since the owner of the horse is already in the middle, the person who's hobby is video-games must be on the right of the owner of the horse.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    | Fish   |  Horse    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             | Video-games |             |
+
+From clue 10, we know the person who's hobby is magic-tricks is on the right of the person who's hobby is video-games. Since the person who's hobby is magic-tricks is already on the right, the person who's hobby is video-games must be on the far right.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |            |           |             |              |             |
+| Pet     |  Dog    | Fish   |  Horse    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |             | Video-games |
+
+Now, let's go back to clue 4 and use the information we've gathered so far. We know the owner of the guinea-pig is on the right of the owner of the frog. Since the owner of the guinea-pig is already in position 4, the owner of the frog must be in position 3.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         |         |  Frog    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Pet     |  Dog    | Fish   |  Horse    |             |             |             |             |
+| Cooking |  Snake  | Drawing |            | Sudoku     |             |             | Video-games |
+
+Finally, let's go back to clue 1 and use the information we've gathered so far. We know the person who's hobby is cooking is the owner of the snake. Since the snake is already in position 2, the person who's hobby is cooking must be in position 2.
+
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         | Cooking |  Frog    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Pet     |  Dog    | Snake   |  Horse    |             |             |             |             |
+|         |         | Drawing |            | Sudoku     |             |             | Video-games |
+
+Here is the final solution table with '#############' around it:
+
+#############
+|         |    1    |    2    |     3      |     4     |      5      |      6       |      7      |
+| Hobby   |         | Cooking |  Frog    |  Guinea-pig | Gardening | gold         | Magic-tricks |
+| Pet     |  Dog    | Snake   |  Horse    |             |             |             |             |
+|         |         | Drawing |            | Sudoku     |             |             | Video-games |
+#############"	{'hobby': ['', 'cooking', 'frog', 'guinea-pig', 'gardening', 'gold', 'magic-tricks'], 'pet': ['dog', 'snake', 'horse', '', '', '', '']}	True	0	False
+Lv1-2x7-6	"Let's break down the clues and solve the puzzle step by step.
+
+From clue 2, we know the person drinking 7up is driving the bus.
+
+From clue 6, we know the person drinking soy-milk is on the left of the person drinking 7up. Since the person drinking 7up is driving the bus, the person drinking soy-milk must be on the left of the bus.
+
+From clue 1, we know the person drinking soy-milk is on the right of the person driving the ship. This means the person driving the ship must be on the right of the bus.
+
+From clue 4, we know the person driving the bus is on the left of the person driving the tram. This means the person driving the tram must be on the right of the bus.
+
+From clue 8, we know the person drinking coffee is on the left of the person driving the skateboard. Since the person driving the bus is on the left of the person driving the tram, the person driving the skateboard must be on the right of the tram.
+
+From clue 10, we know the person drinking coffee is on the left of the person drinking soy-milk. Since the person drinking soy-milk is on the left of the bus, the person drinking coffee must be on the left of the bus.
+
+From clue 5, we know the person driving the trike is on the right of the person drinking sprite. Since the person drinking soy-milk is on the left of the bus, the person drinking sprite must be on the right of the bus.
+
+From clue 9, we know the person drinking almond-milk is on the right of the person driving the trike. Since the person driving the trike is on the right of the bus, the person drinking almond-milk must be on the right of the bus.
+
+From clue 3, we know the person drinking juice is on the right of the person driving the jet-ski. Since the person driving the bus is on the left of the person driving the tram, the person driving the jet-ski must be on the left of the tram.
+
+From clue 7, we know the person drinking iced-tea is in the middle. Since the person drinking iced-tea is in the middle, and the person drinking soy-milk is on the left of the bus, the person drinking iced-tea must be on the right of the bus.
+
+Now we can fill in the table:
+
+#############
+|             | 7up    | Almond-milk | Coffee | Iced-tea | Juice | Sprite | Soy-milk |
+| Beverage    |        |            |       |         |      |       |         |
+| Transport   | Bus    | Trike      | Skateboard | Jet-ski | Tram | Ship | Quad-bike |
+#############
+
+Note that the person driving the quad-bike is not explicitly mentioned in the clues, but it can be inferred that it must be the person drinking soy-milk, since the person drinking soy-milk is on the right of the person driving the ship."	{'beverage': ['', '', '', '', '', '', ''], 'transport': ['bus', 'trike', 'skateboard', 'jet-ski', 'tram', 'ship', 'quad-bike']}	True	1	False
+Lv1-2x7-7	"Let's break down the puzzle step by step:
+
+1. The person watching satire movies is on the left of the person driving the jet-ski.
+2. The person watching drama movies is on the left of the person watching martial-arts movies.
+3. The person watching time-travel movies is the person driving the roller.
+4. The person driving the skateboard is on the left of the person watching animation movies.
+5. The person watching satire movies is on the right of the person driving the motorbike.
+6. The person driving the trike is on the left of the person driving the motorbike.
+7. The person driving the boat is the person watching crime movies.
+8. The person watching martial-arts movies is in the middle.
+9. The person driving the trike is on the right of the person watching time-travel movies.
+10. The person driving the boat is on the right of the person watching animation movies.
+
+From statement 8, we know the person watching martial-arts movies is in the middle. Let's assume the middle position is position 4.
+
+From statement 3, we know the person driving the roller is watching time-travel movies. Since the roller is not mentioned in any other statement, we can place it in position 3.
+
+From statement 9, we know the person driving the trike is on the right of the person watching time-travel movies. Since the trike is not mentioned in any other statement, we can place it in position 7.
+
+From statement 10, we know the person driving the boat is on the right of the person watching animation movies. Since the boat is not mentioned in any other statement, we can place it in position 6.
+
+From statement 7, we know the person driving the boat is watching crime movies. We can place crime in position 6.
+
+From statement 2, we know the person watching drama movies is on the left of the person watching martial-arts movies. Since drama is not mentioned in any other statement, we can place it in position 2.
+
+From statement 4, we know the person driving the skateboard is on the left of the person watching animation movies. Since skateboard is not mentioned in any other statement, we can place it in position 5.
+
+From statement 1, we know the person watching satire movies is on the left of the person driving the jet-ski. Since satire is not mentioned in any other statement, we can place it in position 1.
+
+From statement 5, we know the person watching satire movies is on the right of the person driving the motorbike. Since motorbike is not mentioned in any other statement, we can place it in position 8.
+
+Here is the final solution table with '#############' around it:
+
+#############
+| Movie-Genre   |     1      |      2      |   3   |      4       |     5      |     6     |   7   |
+| Transport     |            |             |       |              |            |           |       |
+|               |  Satire    |  Drama     | Time-travel | Martial-arts | Skateboard | Boat     | Trike  |
+#############"	{'movie-genre': ['1', '2', '3', '4', '5', '6', '7'], 'transport': ['', '', '', '', '', '', '']}	True	0	False
+Lv1-2x7-8	"Let's break down the puzzle step by step:
+
+1. The person who's hobby is puzzles is on the right of the person driving the roller.
+2. The person driving the train is in the middle.
+3. The person driving the quad-bike is on the far left.
+4. The person driving the scooter is on the right of the person driving the roller.
+5. The person who's hobby is filmmaking is the person driving the roller.
+6. The person who's hobby is rock-climbing is on the left of the person driving the helicopter.
+7. The person driving the boat is on the right of the person who's hobby is gardening.
+8. The person who's hobby is rock-climbing is in the middle.
+9. The person who's hobby is filmmaking is on the right of the person who's hobby is baking.
+
+From statement 3, we know the person driving the quad-bike is on the far left. From statement 4, we know the person driving the scooter is on the right of the person driving the roller. Since the person driving the roller is not on the far left, the person driving the scooter must be on the second position.
+
+From statement 1, we know the person who's hobby is puzzles is on the right of the person driving the roller. Since the person driving the scooter is on the right of the person driving the roller, the person who's hobby is puzzles must be on the right of the person driving the scooter.
+
+From statement 2, we know the person driving the train is in the middle. Since the person driving the scooter is on the second position, the person driving the train must be on the third position.
+
+From statement 8, we know the person driving the boat is on the right of the person who's hobby is gardening. Since the person driving the train is in the middle, the person driving the boat must be on the right of the person driving the train.
+
+From statement 6, we know the person who's hobby is rock-climbing is on the left of the person driving the helicopter. Since the person driving the train is in the middle, the person driving the helicopter must be on the right of the person driving the train.
+
+From statement 9, we know the person who's hobby is filmmaking is on the right of the person who's hobby is baking. Since the person driving the roller is the person who's hobby is filmmaking, the person who's hobby is baking must be on the left of the person driving the roller.
+
+Now, let's fill in the table:
+
+#############
+|             |     1     |     2     |      3      |       4       |     5      |     6      |    7    |
+| Hobby       |           |           |             |               |            |            |         |
+| Transport   |           |           |             |               |            |            |         |
+| Baking      | 1         |           |             |               |            |            |         |
+| Dancing     |           | 3         |             |               |            |            |         |
+| Filmaking   |           |           |             | 5             | 4         |            |         |
+| Gardening   |           |           |             |               |            | 6         |         |
+| Puzzles     |           |           |             |               | 2         |            |         |
+| Rock-climbing|           | 2         | 3         |               |            |            |         |
+#############
+
+Note that the person driving the helicopter is not explicitly mentioned in the puzzle, but it can be inferred that they are on the right of the person driving the train, which is in the middle."	{'hobby': ['', '', '', '', '', '', ''], 'transport': ['', '', '', '', '', '', ''], 'baking': ['1', '', '', '', '', '', ''], 'dancing': ['', '3', '', '', '', '', ''], 'filmaking': ['', '', '', '5', '4', '', ''], 'gardening': ['', '', '', '', '', '6', ''], 'puzzles': ['', '', '', '', '2', '', ''], 'rock-climbing': ['', '2', '3', '', '', '', '']}	True	0	False
+Lv1-2x7-9	"Let's start by analyzing the clues and making some deductions.
+
+From clue 5, we know that the person driving the jet-ski is the person eating broccoli.
+
+From clue 6, we know that the person driving the subway is the person eating radish.
+
+From clue 8, we know that the person driving the airplane is on the left of the person driving the subway.
+
+From clue 1, we know that the person driving the subway is on the left of the person eating watermelon.
+
+So, we can conclude that the person driving the airplane is on the left of the person eating watermelon.
+
+From clue 3, we know that the person eating watermelon is on the left of the person eating papaya.
+
+From clue 4, we know that the person driving the airplane is in the middle.
+
+So, we can conclude that the person eating papaya is in the middle.
+
+From clue 7, we know that the person eating kiwi is on the right of the person eating grapes.
+
+From clue 9, we know that the person eating broccoli is on the right of the person eating corn.
+
+So, we can conclude that the person eating kiwi is on the right of the person eating papaya, and the person eating corn is on the left of the person eating broccoli.
+
+From clue 10, we know that the person driving the boat is on the right of the person driving the bike.
+
+From clue 11, we know that the person driving the bike is on the right of the person eating radish.
+
+So, we can conclude that the person driving the boat is on the right of the person eating radish.
+
+Now, let's fill in the table:
+
+#############
+|             |  1   |    2     |   3    |    4     |   5    |     6      |   7    |
+| Food        |      |          |        |          |        |            |        |
+| Transport   |      |          |        |          |        |            |        |
+| Radish      | 6    |          |        |          |        |            |        |
+| Broccoli    | 5    |          |        |          |        |            |        |
+| Corn       | 3    |          |        |          |        |            |        |
+| Papaya     | 4    |          |        |          |        |            |        |
+| Grapes     | 2    |          |        |          |        |            |        |
+| Kiwi       | 7    |          |        |          |        |            |        |
+| Watermelon | 1    |          |        |          |        |            |        |
+#############
+
+The final solution is:
+
+Radish is eaten by the person driving the subway (6)
+Broccoli is eaten by the person driving the jet-ski (5)
+Corn is eaten by the person in position 3
+Papaya is eaten by the person in position 4
+Grapes is eaten by the person in position 2
+Kiwi is eaten by the person in position 7
+Watermelon is eaten by the person in position 1"	{'food': ['', '', '', '', '', '', ''], 'transport': ['', '', '', '', '', '', ''], 'radish': ['6', '', '', '', '', '', ''], 'broccoli': ['5', '', '', '', '', '', ''], 'corn': ['3', '', '', '', '', '', ''], 'papaya': ['4', '', '', '', '', '', ''], 'grapes': ['2', '', '', '', '', '', ''], 'kiwi': ['7', '', '', '', '', '', '']}	True	0	False
+Lv1-2x7-10	"Let's break down the puzzle step by step:
+
+1. The person eating potato is the engineer.
+2. The person eating watermelon is on the right of the chef, and on the left of the person eating potato. This means the chef is on the far left, and the engineer is on the right of the chef.
+3. The person eating watermelon is on the left of the person eating potato, so the order is: chef, watermelon, potato, engineer.
+4. The person eating orange is on the right of the person eating pumpkin. Since the engineer is on the right of the lawyer (statement 7), the engineer cannot be eating orange. Therefore, the person eating orange is on the right of the person eating pumpkin, which is on the far left.
+5. The person eating pumpkin is on the far left, so the order is: pumpkin, orange,....
+6. The person eating kiwi is on the left of the scientist. Since the engineer is on the right of the lawyer, the engineer cannot be eating kiwi. Therefore, the person eating kiwi is on the left of the scientist, which is on the right of the engineer.
+7. The engineer is on the right of the lawyer, and the person eating potato is the engineer. Therefore, the lawyer is on the left of the engineer.
+8. The person eating strawberry is in the middle. Since the engineer is on the right of the lawyer, the engineer cannot be eating strawberry. Therefore, the person eating strawberry is in the middle, which means it's the scientist.
+9. The person eating kiwi is on the right of the paramedic. Since the engineer is on the right of the lawyer, the engineer cannot be eating kiwi. Therefore, the person eating kiwi is on the right of the paramedic, which is on the left of the engineer.
+10. The writer is on the right of the person eating orange. Since the person eating orange is on the right of the person eating pumpkin, the writer is on the right of the person eating pumpkin.
+
+Now, let's fill in the table:
+
+#############
+|        |     1      |     2     |   3    |     4      |     5      |     6      |    7     |
+| Food   |            |           |        |            |            |            |          |
+| Job    |            |           |        |            |            |            |          |
+|        | Pumpkin    | Orange   | Kiwi    | Strawberry | Watermelon | Potato    | Engineer |
+|        |            |          |         |            |            |          |          |
+|        | Chef       |          | Paramedic| Scientist  |            |          |          |
+|        |            |          |          |            | Writer     |          |          |
+#############
+
+The final solution is:
+
+* Pumpkin: Job 1 (far left)
+* Orange: Job 2
+* Kiwi: Job 3
+* Strawberry: Job 4 (middle)
+* Watermelon: Job 5
+* Potato: Job 6
+* Engineer: Job 7
+
+* Chef: Job 1
+* Paramedic: Job 2
+* Scientist: Job 4
+* Writer: Job 5"	{'food': ['', '', '', '', '', '', ''], 'job': ['', '', '', '', '', '', '']}	True	0	False

@@ -1,0 +1,427 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv11-3x4-1	"Let's solve this step by step:
+
+1. Since there are 4 people and an even position for the Brazilian, the positions are either 1, 2, 3, or 4. Let's assume the Brazilian is in position 1 (we'll see if this assumption leads to a contradiction).
+
+2. The person in position 1 watches family movies and drinks fanta (since they have the same parity positions).
+
+3. The person in position 2 can't be Brazilian (as per condition 5). Let's assume they are Indian. This means they can't drink cola (as per condition 7, since the person watching family movies is the person drinking cola or the person drinking cola is the Nigerian, and we already have a person watching family movies). So, the options for the beverage of person 2 are almond-milk, fanta, juice, or cola (but not cola). Let's assume they drink almond-milk.
+
+4. The person in position 3 can't be Brazilian either (as per condition 5). They can't drink cola (as per condition 7, since the person watching family movies is the person drinking cola or the person drinking cola is the Nigerian, and we already have a person watching family movies and a person drinking almond-milk). So, the options for the beverage of person 3 are fanta, juice, or almond-milk (but not almond-milk, as it's already taken). Let's assume they drink fanta.
+
+5. The person in position 4 must be the Nigerian (as per condition 5, since the Indian can't be to the left of the Brazilian, and we already have the Brazilian in position 1 and the Indian in position 2). They can't drink cola (as per condition 7, since the person watching family movies is the person drinking cola or the person drinking cola is the Nigerian, and we already have a person watching family movies and a person drinking almond-milk). So, the options for the beverage of person 4 are juice or almond-milk. Let's assume they drink juice.
+
+6. Now, let's check the movie genres. The person in position 1 watches family movies, the person in position 2 watches almond-milk movies (assuming almond-milk is a genre), the person in position 3 watches martial-arts movies (since the Brazilian can't watch martial-arts movies or the person watching martial-arts movies is the person drinking juice, and we already have a person drinking almond-milk in position 2), and the person in position 4 watches western movies (since the Nigerian can't watch western movies, and we already have the Nigerian in position 4).
+
+7. The nationalities are also correct: Brazilian in position 1, Indian in position 2, Nigerian in position 4, and the person in position 3 is not specified by the conditions.
+
+8. All conditions are satisfied, so the final solution is:
+
+   | Beverage      |    1    |      2       |    3     |    4     |
+   | Movie-Genre   | family  |   almond-milk| martial-arts| western  |
+   | Nationality   |   brazilian|   indian    |          | nigerian |
+
+   However, the positions of the nationalities are not specified for positions 3 and 4, so there are multiple possible arrangements for those positions. For example, if the person in position 3 is Russian, the final solution would be:
+
+   | Beverage      |    1    |      2       |    3     |    4     |
+   | Movie-Genre   | family  |   almond-milk| martial-arts| western  |
+   | Nationality   |   brazilian|   indian    | russian  | nigerian |
+
+   If the person in position 3 is not Russian, the final solution would be:
+
+   | Beverage      |    1    |      2       |    3     |    4     |
+   | Movie-Genre   | family  |   almond-milk| martial-arts| western  |
+   | Nationality   |   brazilian|   indian    |          | nigerian |
+   And the nationality in position 3 can be any of the remaining nationalities (Brazilian, Indian, and Russian are already taken).
+
+   So, the final solution is:
+
+  #############
+   | Beverage      |    1    |      2       |    3     |    4     |
+   | Movie-Genre   | family  |   almond-milk| martial-arts| western  |
+   | Nationality   |   brazilian|   indian    | russian  | nigerian |
+   ##############
+
+   Or any arrangement where the positions 3 and 4 nationalities are not Brazilian, Indian, or Russian, and the conditions are satisfied."	{}	False	0	False
+Lv11-3x4-2	"Let's solve this step by step:
+
+1. From rule 3, we know that the person who's sport is climbing is between the person drinking 7up and the person who's sport is snowboarding. Let's place the climbing person in position 3. Since the person drinking 7up is to the left or right of the person drinking milk (rule 2), and the person who's sport is climbing is to the right of the person drinking fanta (rule 11), we can place the 7up drinker in position 1 or 2. Let's place them in position 1 for now. This means the milk drinker is in position 4, and the snowboarder (who is also the fanta drinker, rule 5) is in position 2.
+
+2. Now, the person who's sport is volleyball is not to the left of the person who's sport is climbing (rule 7). So, the volleyball person cannot be in position 1, 2, or 3. They must be in position 4.
+
+3. The owner of the fish is between the person who's sport is climbing and the owner of the horse (rule 6). Since the climbing person is in position 3, the fish owner can only be in position 2 or 4. However, the fish owner cannot be in position 4 because the volleyball person is there (rule 2). So, the fish owner is in position 2.
+
+4. The person drinking water must be in position 5 because there are no other empty positions left.
+
+5. The owner of the cat is to the left of the owner of the hedgehog (rule 9). Since the cat owner cannot be in position 1 (because the 7up drinker is there), the cat owner must be in position 3. This means the hedgehog owner is in position 4.
+
+6. The owner of the hedgehog and the person drinking fanta have different parity positions (rule 4). Since the fanta drinker is in an odd position (2), the hedgehog owner must be in an even position (4).
+
+7. The person drinking 7up is on the left or right of the owner of the hedgehog (rule 8). Since the 7up drinker is in position 1 and the hedgehog owner is in position 4, the 7up drinker is in position 1. However, this contradicts rule 10, which states that the 7up drinker is the owner of the horse or the person drinking 7up is the person who's sport is volleyball or both. Since we've already placed the volleyball person in position 4, the 7up drinker cannot be the volleyball person. Therefore, the 7up drinker must be the horse owner. But this contradicts rule 12, which states that the person drinking 7up and the owner of the horse have different parity positions.
+
+Unfortunately, there seems to be a contradiction in the rules provided, and it's not possible to create a valid solution table based on them.
+
+Final solution table:
+
+|            |      1       |    2     |     3      |    4     |
+| Beverage   | horse       | fanta    | climbing   | volleyball|
+| Pet        | horse       | fish     | cat        | hedgehog  |
+| Sport      | climbing    | snowboard|            |          |
+
+However, this solution table contains contradictions with rules 8 and 12."	{'beverage': ['horse', 'fanta', 'climbing', 'volleyball'], 'pet': ['horse', 'fish', 'cat', 'hedgehog'], 'sport': ['climbing', 'snowboard', '', '']}	True	0	False
+Lv11-3x4-3	"Let's solve this step by step:
+
+1. We know there are 4 people, so we can label them A, B, C, and D from left to right.
+
+2. Let's assign the beverages:
+   - A drinks almond-milk (since it's on the left of hot-chocolate)
+   - B drinks hot-chocolate (since it's not traveling and not to the left of A)
+   - C drinks mirinda (since it's either traveling or dubstep, and B is not traveling)
+   - D drinks fanta or salsa (the remaining options)
+
+3. Now let's assign the hobbies:
+   - A has board-games (since it's to the left of fishing)
+   - B has fishing (since it's not traveling and salsa is to its right)
+   - C has reading (since it's between fishing and traveling)
+   - D has traveling (since it's not B and C, and hot-chocolate is not D)
+
+4. Now let's assign the music-genres:
+   - A listens to dubstep (since it's not to the left of almond-milk)
+   - B listens to trance (since it's to the left of dubstep)
+   - C listens to funk (since it has the same parity position as reading, and neither A nor D can have funk)
+   - D listens to salsa (since it's the only option left for D)
+
+The final solution table is:
+
+|               |       A      |        B       |       C      |     D    |
+| Beverage      | almond-milk | hot-chocolate | mirinda     | fanta    |
+| Hobby         | board-games  | fishing       | reading     | traveling |
+| Music-Genre   | dubstep     | trance       | funk       | salsa    |
+
+#############
+|               |       A      |        B       |       C      |     D    |
+| Beverage      | almond-milk | hot-chocolate | mirinda     | fanta    |
+| Hobby         | board-games  | fishing       | reading     | traveling |
+| Music-Genre   | dubstep     | trance       | funk       | salsa    |
+#############"	{'beverage': ['almond-milk', 'hot-chocolate', 'mirinda', 'fanta'], 'hobby': ['board-games', 'fishing', 'reading', 'traveling'], 'music-genre': ['dubstep', 'trance', 'funk', 'salsa']}	True	2	False
+Lv11-3x4-4	"Let's solve this step by step:
+
+1. From rule 7, the person playing cricket is in an even position. Let's assume position 2, 4, or 6.
+2. From rule 8, the person playing cricket and the person who fishes have different parity positions. So, cricket can't be in position 2 (since position 2 is even and the person who fishes must be in an odd position). Therefore, cricket is either in position 4 or 6.
+3. From rule 9, the person drinking coffee is not to the right of the person playing handball. If cricket is in position 4, then handball must be in position 1, 2, or 3. But if handball is in position 1, then coffee must be in position 4, which contradicts rule 9. So, handball can't be in position 1. If handball is in position 2, then coffee must be in position 3, which also contradicts rule 9. Therefore, handball must be in position 3.
+4. From rule 1, the person drinking cola is somewhere to the right of the person playing handball. So, cola can't be in position 1 or 2. Therefore, cola is either in position 3 or 4.
+5. From rule 12, the person drinking fanta is the person who's sport is cricket or the person who's sport is cricket is the person who's hobby is writing or both. Since we know the position of cricket, we can check this rule for fanta and writing. If fanta is in position 1, then writing must be in position 4, but this contradicts rule 6. If fanta is in position 2, then writing must be in position 3, which is possible. So, let's assume fanta is in position 2.
+6. From rule 11, the person playing swimming is not to the left of the person drinking cola. So, swimming can't be in position 1. Therefore, swimming is either in position 3 or 4.
+7. From rule 2, the person drinking fanta is on the right of the person playing swimming. So, swimming can't be in position 4 (since fanta is in position 2). Therefore, swimming is in position 3.
+8. From rule 3, the person playing handball is on the right of the person drinking sprite. So, sprite can't be in position 1 or 2. Therefore, sprite is in position 3 or 4.
+9. From rule 13, the person playing handball and the person drinking coffee have the same parity positions. Since handball is in position 3, coffee must be in position 1, 3, or 5. But if coffee is in position 1, then it contradicts rule 9. So, coffee can't be in position 1. Therefore, coffee is in position 5.
+10. From rule 4, the person drinking coffee is not to the left of the person who's hobby is fishing. So, fishing can't be in position 1 or 2. Therefore, fishing is in position 4.
+11. From rule 6, the person who's hobby is writing is somewhere to the right of the person who's hobby is filmmaking. So, filmmaking can't be in position 4 (since writing is in position 3). Therefore, filmmaking is in position 1.
+12. From rule 10, the person who's sport is cricket and the person who's hobby is writing have the same parity positions. Since cricket is in position 4, writing must be in position 2 (since writing is to the right of filmmaking).
+13. From rule 11, the person playing swimming is not to the left of the person drinking cola. So, cola can't be in position 1. Therefore, cola is in position 4.
+
+Final solution table:
+
+|            |     1      |     2      |       3       |    4    |
+| Beverage   | coffee     | fanta     | sprite       | cola    |
+| Hobby      | filmmaking | writing    | rock-climbing | fishing  |
+| Sport      | cricket    | handball   | swimming      | water-polo|"	{'beverage': ['coffee', 'fanta', 'sprite', 'cola'], 'hobby': ['filmmaking', 'writing', 'rock-climbing', 'fishing']}	False	0	False
+Lv11-3x4-5	"Let's solve this step by step:
+
+1. Since there are 4 positions and the parity of the positions of the person eating grapefruit and the person watching thriller movies should be the same (modulo 2), they can only be in positions 1 and 3 or positions 2 and 4.
+
+2. The person eating potato and the Indonesian have the same parity positions (modulo 9), so they can be in positions 1 and 3, 2 and 4, or any combination of positions with a difference of 3 or 6. However, since the Indonesian cannot be in position 4 (as per point 5), they can only be in positions 1 and 3 or positions 2 and 4.
+
+3. The person watching mystery movies is somewhere to the left of the person eating pineapple (modulo 5). Since the person eating grapefruit is not to the right of the person eating pineapple (modulo 8), the person eating pineapple cannot be in position 1 or 4. So, the person eating pineapple can only be in position 2 or 3.
+
+4. The japanese is not to the right of the person eating grapefruit (modulo 8), so the person eating grapefruit cannot be in position 4. Since the person eating pineapple is not to the left of the person eating grapefruit (modulo 8), the person eating grapefruit cannot be in position 2. So, the person eating grapefruit can only be in position 1.
+
+5. The person watching mystery movies is somewhere to the left of the japanese (modulo 5). Since the person eating pineapple is not to the left of the person eating grapefruit (modulo 8), the person eating pineapple cannot be in position 1. So, the person eating pineapple can only be in position 3.
+
+6. The person watching scientific movies is not to the left of the indonesian (modulo 8). Since the person eating pineapple is not to the left of the indonesian (as they are in the same position or 3 positions apart), the person watching scientific movies cannot be in position 1 or 2. So, the person watching scientific movies can only be in position 4.
+
+7. The person eating watermelon and the Indonesian have different parity positions (modulo 9), so the person eating watermelon cannot be in the same position as the Indonesian. Since the Indonesian is in position 1 or 3, the person eating watermelon can only be in position 2 or 4.
+
+8. The person watching martial-arts movies is not specified yet, but since it's a different genre, it cannot be the same as any of the already assigned movie genres.
+
+Final solution:
+
+|               |      1       |     2      |     3      |     4      |
+| Food          | grapefruit  | pineapple | potato    | watermelon |
+| Movie-Genre   | thriller    | scientific | mystery   | martial-arts|
+| Nationality   | british     | japanese  | indonesian |            |
+
+Note that the nationality for the fourth person is not determined due to the lack of information in the puzzle."	{'food': ['grapefruit', 'pineapple', 'potato', 'watermelon'], 'movie-genre': ['thriller', 'scientific', 'mystery', 'martial-arts'], 'nationality': ['british', 'japanese', 'indonesian', '']}	True	0	False
+Lv11-3x4-6	"Let's solve this step by step:
+
+1. The dancer is not to the left of the fan classical, so the dancer can't be in position 1. Therefore, the dancer must be in position 2, 3, or 4. Since the dancer is the person who's hobby is fishing (from rule 3), the hobby of the person in position 1 must be either cooking, photography, rock-climbing, or the hobby of the person in position 4.
+
+2. The person who's hobby is cooking is between the fan blues and the fan folk (from rule 2). Since the fan blues is not in position 1 (as the dancer is in position 2), the hobby of the person in position 1 can't be cooking. So, the hobby of the person in position 1 must be either photography, rock-climbing, or the hobby of the person in position 4.
+
+3. The fan blues is somewhere to the left of the person who's hobby is photography (from rule 4). Since the dancer (who is the person with the hobby of fishing) is in position 2, the fan blues can't be in position 1. So, the hobby of the person in position 1 can't be photography. Therefore, the hobby of the person in position 1 must be either cooking, rock-climbing, or the hobby of the person in position 4.
+
+4. The social-worker is on the left of the fan reggae (from rule 9). Since the dancer (who is the person with the hobby of fishing) is in position 2, the social-worker can't be in position 2. So, the social-worker can be in position 1, 3, or 4.
+
+5. The person who's hobby is photography is the fan folk (from rule 6). Since the social-worker is on the left of the fan reggae (from rule 9), the social-worker can't be the fan folk. So, the social-worker can't be in position 4.
+
+6. The social-worker and the fan blues have the same parity positions (from rule 8). Since the social-worker can't be in position 4 (as the fan folk is in position 4), the social-worker can't be in position 2 (as the fan blues can't be in position 1). So, the social-worker can only be in position 1 or 3.
+
+7. The person who's hobby is photography is on the left or right of the person who's hobby is fishing (from rule 10). Since the person with the hobby of fishing is the dancer (in position 2), the person with the hobby of photography can't be in position 1 (as the social-worker can't be in position 1). So, the person with the hobby of photography must be in position 3 or 4.
+
+8. The person who's hobby is rock-climbing and the fan reggae have different parity positions (from rule 11). Since the social-worker can only be in position 1 or 3, the person with the hobby of rock-climbing can't be in position 1 (as the social-worker is in position 1). So, the person with the hobby of rock-climbing must be in position 2, 3, or 4.
+
+9. The musician is on the left of the social-worker (from rule 5). Since the social-worker can only be in position 1 or 3, the musician can't be in position 1. So, the musician can only be in position 2, 3, or 4.
+
+10. Now we have the following possibilities for the hobbies:
+    - Position 1: Cooking or Rock-climbing
+    - Position 2: Dancer (Fishing), Musician
+    - Position 3: Photography, Social-worker
+    - Position 4: Folk (Photography), Reggae
+
+11. Since the dancer is in position 2, the hobby in position 2 can't be cooking (as cooking is to the left of the fan blues, and the fan blues is to the left of the dancer). So, the hobby in position 2 must be musician.
+
+12. Since the social-worker is in position 3, the hobby in position 3 can't be cooking (as cooking is to the left of the fan blues, and the fan blues is to the left of the social-worker). So, the hobby in position 3 must be photography.
+
+13. Since the fan folk is in position 4, the hobby in position 4 must be reggae.
+
+14. Since the hobby in position 1 can't be cooking, it must be rock-climbing.
+
+So, the final solution table is:
+
+|               |        Rock-climbing       |      Musician     |        Photography       |     Reggae    |
+| Hobby         |                            |                   |                          |              |
+| Job           |                            |                   |                          |              |
+| Music-Genre   |                            |                   |                          |              |
+
+Now, let's fill in the jobs and music-genres:
+
+1. Since the dancer is in position 2, the job in position 2 must be dancer. The only remaining job is architect, so the job in position 1 must be architect.
+
+2. Since the musician is in position 2, the music-genre in position 2 must be blues (as it's to the left of the fan blues, and the fan blues is to the left of the musician). The only remaining music-genre is classical, so the music-genre in position 1 must be classical.
+
+3. Since the social-worker is in position 3, the music-genre in position 3 must be folk (as it's the hobby of the person in position 3, which is photography, and the fan folk is in position 4). The only remaining music-genre is reggae, so the music-genre in position 4 must be reggae.
+
+So, the final solution table is:
+
+|               |        Rock-climbing       |      Musician (Blues)     |        Photography       |     Reggae    |
+| Hobby         |                            |                           |                          |              |
+| Job           |               Architect      |                           |               Social-worker |              |
+| Music-Genre   |               Classical      |                           |                   Folk      |              |
+
+#############
+|               | Rock-climbing |   Musician (Blues) | Photography |   Reggae  |
+| Hobby         |              |                    |             |           |
+| Job           |  Architect    |                    | Social-worker |          |
+| Music-Genre   | Classical     |                    |      Folk     |   Reggae   |
+#############"	{'hobby': ['', '', '', ''], 'job': ['architect', '', 'social-worker', ''], 'music-genre': ['classical', '', 'folk', 'reggae']}	True	4	False
+Lv11-3x4-7	"Let's solve this step by step:
+
+1. We know that there are 4 people and 4 categories (Movie-Genre, Music-Genre, Nationality) with 4 different options in each category. So, each person must have one option from each category.
+
+2. From rule 3, the person watching epic movies is on the far left or far right. Since there are only 4 positions, if one person is on the far left, the other three must be on the right, and vice versa. Let's assume the person watching epic movies is on the far left (position 1).
+
+3. From rule 6, the person watching epic movies is the fan of reggae. So, the first row and first column can be filled as follows:
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae |  |  |  |
+   | Nationality | Canadian |  |  |  |
+
+4. From rule 14, the fan of reggae is the Canadian. So, we fill the second row as well:
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian |  |  |
+   | Nationality | Canadian |  |  |  |
+
+5. From rule 10, the fan of d&b is not to the right of the Indian. Since the Canadian is already in position 1, the Indian cannot be in position 2, 3, or 4. Let's place the Indian in position 2:
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Indian |  |
+   | Nationality | Canadian | Indian |  |  |
+
+6. From rule 5, the Pakistani and the fan of d&b have the same parity positions. Since the Indian is in an even position (2), the Pakistani must be in an odd position (1, 3, or 4). Let's place the Pakistani in position 3:
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Indian | Pakistani |
+   | Nationality | Canadian | Indian | Pakistani |  |
+
+7. From rule 11, the Spanish is on the left or right of the fan of reggae (Canadian). Since the Canadian is already in position 1, the Spanish cannot be in position 2. Let's place the Spanish in position 4:
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Indian | Pakistani |
+   | Nationality | Canadian | Indian | Pakistani | Spanish |
+
+8. From rule 9, the person watching fantasy movies is on the left of the fan of jazz. Since the Canadian (fan of reggae) is in position 1, the fan of jazz must be in position 2 or 3. However, rule 13 states that the person watching fantasy movies is the Indian or the fan of jazz or both. Since the Indian is already in position 2, the fan of jazz cannot be in position 2. So, the fan of jazz must be in position 3.
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Jazz | Pakistani |
+   | Nationality | Canadian | Indian | Jazz | Spanish |
+
+9. From rule 4, the fan of jazz is on the left or right of the person watching fantasy movies. Since the Indian (fan of fantasy) is in position 2, the fan of jazz must be in position 1 or 3. However, rule 13 states that the person watching fantasy movies is the Indian or the fan of jazz or both. Since the Indian is already in position 2, the fan of jazz cannot be in position 1. So, the fan of jazz must be in position 3.
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Jazz | Pakistani |
+   | Nationality | Canadian | Indian | Jazz | Spanish |
+
+10. From rule 8, the person watching drama movies is on the left of the fan of reggae (Canadian). Since the Canadian is in position 1, the person watching drama movies must be in position 4.
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Jazz | Drama |
+   | Nationality | Canadian | Indian | Jazz | Spanish |
+
+11. From rule 12, the person watching drama movies is on the right of the person watching fantasy movies. Since the Indian (fantasy) is in position 2, the person watching drama movies must be in position 3.
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Jazz | Drama |
+   | Nationality | Canadian | Indian | Jazz | Spanish |
+
+12. From rule 7, the person watching adventure movies is not to the right of the Pakistani. Since the Pakistani is in position 3, the person watching adventure movies must be in position 1, 2, or 4. However, rule 1 states that there are 4 different movie-genres, and we have already filled positions 1, 2, and 3. So, the person watching adventure movies must be in position 4.
+
+   | Movie-Genre | 1 | 2 | 3 | 4 |
+   |------------|---|---|---|---|
+   | Music-Genre | Reggae | Canadian | Jazz | Drama |
+   | Nationality | Canadian | Indian | Jazz | Pakistani |
+   | Movie-Genre | Adventure |  |  |  |
+
+13. From rule 13, the person watching fantasy movies is the Indian or the fan of jazz or both. Since we have already placed the Indian in position 2 and the fan of jazz in position 3, the person watching fantasy movies must be both the Indian and the fan of jazz. However, this contradicts rule 9, which states that the fan of jazz is on the left or right of the person watching fantasy movies. This puzzle has a contradiction and cannot be solved with the given rules.
+
+So, the final solution table is:
+
+#############
+| Movie-Genre | 1 | 2 | 3 | 4 |
+|------------|---|---|---|---|
+| Music-Genre | Reggae | Canadian | Jazz | Drama |
+| Nationality | Canadian | Indian | Jazz | Pakistani |
+| Movie-Genre | Adventure |  |  |  |
+#############
+
+However, this solution is not valid due to the contradiction in rule 13. The puzzle has an inconsistency and cannot be solved with the given rules."	{'movie-genre': ['adventure', '', '', ''], 'music-genre': ['reggae', 'canadian', 'jazz', 'drama'], 'nationality': ['canadian', 'indian', 'jazz', 'pakistani']}	True	3	False
+Lv11-3x4-8	"Let's solve this step by step:
+
+1. We can start by placing the person watching animation movies (A) and the person driving the airplane (P) in the first two positions. Since A is to the left of P, we can place A in position 1 and P in position 2.
+
+2. Now, we know that A is to the right of the person drinking 7up (G). So, G cannot be in position 1 (as A is already there). G can be in position 2, 3, or 4. But since A is also to the right of G, G cannot be in position 2. So, G must be in position 3 or 4.
+
+3. The person driving the boat (B) is to the right of the person watching adventure movies (Ad). So, Ad cannot be in position 1 or 2. Ad can be in position 3 or 4. But since Ad is also even-positioned (rule 6), Ad cannot be in position 4. So, Ad is in position 3.
+
+4. The person drinking fanta (F) and the person watching zombie movies (Z) have different parity positions. Since Ad is in position 3 (even), F or Z cannot be in position 3. So, F and Z must be in positions 1, 2, or 4.
+
+5. The person drinking soy-milk (S) is not the person driving the snowmobile (Sm). So, S cannot be in position 2 (as Sm is driving the airplane and we already placed A in position 2). S can be in position 1, 3, or 4. But since Ad is in position 3, S cannot be in position 3. So, S is in position 1 or 4.
+
+6. The person watching drama movies (D) is on the right of the person drinking coffee (C). Since C cannot be in position 1 (as S is there), C can be in position 2, 3, or 4. But since Ad is in position 3, C cannot be in position 3. So, C is in position 2 or 4.
+
+7. The person watching drama movies (D) is to the right of the person drinking coffee (C). So, D cannot be in position 1 or 2. D can be in position 3 or 4. But since Ad is in position 3, D cannot be in position 3. So, D is in position 4.
+
+8. The person watching adventure movies (Ad) is somewhere to the left of the person watching drama movies (D). So, Ad cannot be in position 4. Ad is in position 3.
+
+9. Now, we have three possibilities for S: position 1, 2, or 4. But since Ad is in position 3, S cannot be in position 2. So, S is either in position 1 or 4. But since Ad is the person drinking soy-milk (rule 9.1), S cannot be in position 1 (as Ad is already in position 3). So, S is in position 4.
+
+10. The person watching adventure movies (Ad) and the person driving the van (V) have different parity positions. Since Ad is in an odd position (3), V must be in an even position (2).
+
+Final solution table:
+
+| Beverage      |    1     |     2      |     3     |    4     |
+| Movie-Genre   |     S    |    C      |    Ad    |    D     |
+| Transport     |    V     |   P       |    B     |   Sm    |
+
+Where S = soy-milk, C = coffee, Ad = adventure, D = drama, P = airplane, B = boat, Sm = snowmobile, V = van."	{'beverage': ['1', '2', '3', '4'], 'movie-genre': ['s', 'c', 'ad', 'd'], 'transport': ['v', 'p', 'b', 'sm']}	True	0	False
+Lv11-3x4-9	"Let's solve this step by step:
+
+1. From rule 1, the person drinking juice and the fan of trance have different parity positions. Since there are 4 items in each row, an even position is 2, 4, and an odd position is 1, 3. So, the juice can't be in positions 2 or 4, and trance can't be in positions 1 or 3.
+
+2. The fan of disco is the person drinking fanta (rule 2).
+
+3. The person eating eggplant is to the right of the person drinking juice by 5 positions (rule 3). Since we know the position of fanta (disco), we can find the position of juice. Let's say juice is in position 1. Then, eggplant is in position 6.
+
+4. The fan of rock is between the fan of d&b and the fan of trance (rule 4). Since trance can't be in position 1, it must be in position 3 or 4. If trance is in position 3, then rock must be in position 2. If trance is in position 4, then rock can be in position 2 or 3. Let's assume trance is in position 3, so rock is in position 2.
+
+5. The person drinking fanta and the person eating lettuce have the same parity positions (rule 5). Since we know fanta is in position 1, lettuce can only be in position 3 or 5.
+
+6. The person eating radish is between the person eating lettuce and the person drinking juice (rule 6). If lettuce is in position 3, then radish can only be in position 2 or 4. If lettuce is in position 5, then radish can only be in position 3 or 4. Let's assume lettuce is in position 3, so radish is in position 2.
+
+7. The person drinking tea is the fan of trance or the fan of trance is the person eating eggplant, but not both (rule 7). Since we know trance is in position 3, tea can't be in position 3. So, tea must be the fan of trance, which means the person eating eggplant is the fan of trance.
+
+8. The person eating kale is the fan of rock or the person drinking fanta is the person eating kale or both (rule 8). Since we know rock is in position 2, kale can't be in position 2. So, either kale is in position 1 (making fanta in position 4), or kale is in position 4 (making fanta in position 1).
+
+9. The person eating radish is on the left or right of the person eating lettuce (rule 9). Since we know radish is in position 2, lettuce can't be in position 1 or 3. So, lettuce must be in position 5.
+
+10. The person eating lettuce is not to the right of the person drinking juice (rule 10). Since we know lettuce is in position 5 and juice is in position 1, this rule is satisfied.
+
+11. The fan of rock is to the right of the person eating radish (rule 11). Since we know rock is in position 2 and radish is in position 2, this rule is not applicable. However, since rock is to the right of radish, it doesn't violate any rules.
+
+12. The fan of trance is not to the left of the person eating kale (rule 12). Since we know trance is in position 3 and kale can be in position 1 or 4, this rule is satisfied.
+
+13. The person drinking juice is not the person eating lettuce (rule 13). Since we know juice is in position 1 and lettuce is in position 5, this rule is satisfied.
+
+Now, let's put the final solution table:
+
+| Beverage      |    1    |   2    |   3   |    4     |
+| Food          |         |        |       |          |
+| Music-Genre   |         |        |       |          |
+
+| Beverage      | Cola   | Fantas | Juice  | Tea     |
+| Food          | Eggplant| Lettuce| Radish | Kale    |
+| Music-Genre   | D&B    | Disco  | Trance | Rock    |
+
+The final solution is:
+- Beverage: Cola, Fantas, Juice, Tea
+- Food: Eggplant, Lettuce, Radish, Kale
+- Music-Genre: D&B, Disco, Trance, Rock"	{'beverage': ['cola', 'fantas', 'juice', 'tea'], 'food': ['eggplant', 'lettuce', 'radish', 'kale'], 'music-genre': ['d&b', 'disco', 'trance', 'rock']}	True	1	False
+Lv11-3x4-10	"Let's solve this step by step:
+
+1. We know that there are 4 people, so each row represents a person. Let's label them A, B, C, and D from left to right.
+
+2. We know the music genres, pets, and sports, so we can fill in the table with these:
+
+   |   | Music-Genre | Pet   | Sport   |
+   |--|------------|-------|---------|
+   | A | d&b       | ferret| handball|
+   | B | electronic| fish  | sailing |
+   | C | funk      | lizard| rugby   |
+   | D | trance    | turtle| volleyball|
+
+3. From rule 1, the owner of the ferret is to the left of the fan funk, so A cannot be the fan funk. Let's assume A is the fan d&b.
+
+4. From rule 2, the person who's sport is sailing is on the left of the fan electronic, so B must be the fan electronic.
+
+5. From rule 3, the owner of the fish is on the right of the person who's sport is sailing, so C cannot be the owner of the fish. Let's assume C is the owner of the lizard.
+
+6. From rule 4, the person who's sport is volleyball is not to the right of the fan funk, so D cannot be the fan funk. Also, D is not the owner of the fish (from rule 5), so D must be the fan funk.
+
+7. From rule 6, the fan funk and the owner of the lizard have the same parity positions. Since D is the fan funk, C must be the owner of the lizard.
+
+8. From rule 7, the owner of the turtle is to the left of the owner of the fish. Since C is the owner of the lizard, A must be the owner of the fish.
+
+9. From rule 9, the owner of the turtle is not to the right of the owner of the fish, so A cannot be the owner of the turtle. Let's assume A is the owner of the ferret.
+
+10. From rule 10, the owner of the turtle is between the fan funk (D) and the person who's sport is handball. Since A is the owner of the ferret, D must be the person who's sport is handball.
+
+11. From rule 11, the owner of the turtle is the person who's sport is volleyball or the fan trance is the owner of the turtle or both. Since D is the person who's sport is handball, the fan trance must be the owner of the turtle.
+
+12. From rule 12, the person who's sport is rugby and the fan funk have different parity positions. Since D is the fan funk, the person who's sport is rugby must be C (the owner of the lizard).
+
+So, the final solution table is:
+
+   |   | Music-Genre | Pet   | Sport   |
+   |--|------------|-------|---------|
+   | A | d&b       | ferret| handball|
+   | B | electronic| fish  | sailing |
+   | C | funk      | lizard| rugby   |
+   | D | trance    | turtle| volleyball|
+
+#############
+|   | Music-Genre | Pet   | Sport   |
+|---|------------|-------|---------|
+| A | d&b       | ferret| handball|
+| B | electronic| fish  | sailing |
+| C | funk      | lizard| rugby   |
+| D | trance    | turtle| volleyball|
+#############"	{'a': ['d&b', 'ferret', 'handball'], 'b': ['electronic', 'fish', 'sailing'], 'c': ['funk', 'lizard', 'rugby'], 'd': ['trance', 'turtle', 'volleyball']}	False	0	False

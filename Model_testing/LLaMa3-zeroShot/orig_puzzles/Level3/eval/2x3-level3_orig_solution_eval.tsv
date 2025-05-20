@@ -1,0 +1,433 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x3-1	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person watching adventure movies is the person driving the subway.
+This means the person driving the subway has a preference for adventure movies.
+
+2. The person driving the taxi is on the right of the person driving the subway.
+This means the person driving the taxi is to the right of the person driving the subway.
+
+3. The person driving the taxi is on the left or right of the person watching mystery movies.
+This means the person watching mystery movies is either to the left or right of the person driving the taxi.
+
+4. The person driving the subway is on the far left.
+This means the person driving the subway is in the first position.
+
+Now, let's fill in the table:
+
+|               |     1     |     2      |     3      |
+| Movie-Genre   |           |            |            |
+| Transport     |           |            |            |
+
+From clue 4, we know the person driving the subway is in the first position. From clue 1, we know this person watches adventure movies.
+
+|               |     1     |     2      |     3      |
+| Movie-Genre   | Adventure |           |            |
+| Transport     | Subway    |            |            |
+
+From clue 2, we know the person driving the taxi is to the right of the person driving the subway. This means the person driving the taxi is in the second or third position.
+
+|               |     1     |     2      |     3      |
+| Movie-Genre   | Adventure |           |            |
+| Transport     | Subway    | Taxi      |            |
+
+From clue 3, we know the person driving the taxi is on the left or right of the person watching mystery movies. Since the person driving the taxi is in the second or third position, the person watching mystery movies must be in the first or third position.
+
+|               |     1     |     2      |     3      |
+| Movie-Genre   | Mystery   |           | Adventure |
+| Transport     | Subway    | Taxi      |            |
+
+The only remaining genre is scientific, which must be watched by the person in the second position.
+
+|               |     1     |     2      |     3      |
+| Movie-Genre   | Mystery   | Scientific | Adventure |
+| Transport     | Subway    | Taxi      |            |
+
+The final solution is:
+
+#############
+|               |     1     |     2      |     3      |
+| Movie-Genre   | Mystery   | Scientific | Adventure |
+| Transport     | Subway    | Taxi      |            |
+#############"	{'movie-genre': ['mystery', 'scientific', 'adventure'], 'transport': ['subway', 'taxi', '']}	True	3	False
+Lv1-2x3-2	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person who's sport is golf is on the left of the person who's sport is handball.
+
+This means that the person who's sport is golf is either on the leftmost position or the rightmost position, and the person who's sport is handball is in the middle.
+
+2. The pilot is on the left of the fisherman.
+
+This means that the pilot is either in the leftmost position or the second position from the left, and the fisherman is in the rightmost position or the second position from the right.
+
+3. The person who's sport is golf is on the far left or far right.
+
+This clue is already satisfied by clue 1, which states that the person who's sport is golf is either on the leftmost position or the rightmost position.
+
+4. The librarian is the person who's sport is ice-hockey.
+
+This means that the librarian is in the middle position, since the person who's sport is ice-hockey cannot be in the leftmost or rightmost position.
+
+Now, let's combine the information:
+
+* The pilot is on the left of the fisherman, so the pilot is either in the leftmost position or the second position from the left.
+* The librarian is in the middle position, and their sport is ice-hockey.
+* The person who's sport is golf is on the left of the person who's sport is handball, so the person who's sport is golf is either in the leftmost position or the rightmost position.
+
+Here's the final solution:
+
+#############
+|         |   1   |     2     |     3      |
+| Job     |       |           |            |
+| Sport   |       |           |            |
+| Pilot   | 1     |           |            | Golf
+| Librarian|       | 2         |            | Ice-hockey
+| Fisherman|       |           | 3          | Handball
+#############
+
+The solution is:
+
+* Pilot (Golf) is in the leftmost position (1)
+* Librarian (Ice-hockey) is in the middle position (2)
+* Fisherman (Handball) is in the rightmost position (3)"	{'job': ['', '', ''], 'sport': ['', '', '']}	True	0	False
+Lv1-2x3-3	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fan of R&B is on the far left or far right.
+2. The accountant is on the far right.
+3. The paramedic is the fan of techno.
+4. The fan of R&B is on the right of the fan of techno.
+
+From clue 1, we know the fan of R&B is either on the leftmost or rightmost position.
+
+From clue 2, we know the accountant is on the far right, so the fan of R&B cannot be on the rightmost position (since the accountant is already there). Therefore, the fan of R&B must be on the leftmost position.
+
+From clue 3, we know the paramedic is the fan of techno.
+
+From clue 4, we know the fan of R&B is on the right of the fan of techno. Since the fan of R&B is already on the leftmost position, the fan of techno must be in the middle position.
+
+Now we can fill in the table:
+
+#############
+|               |      1       |     2     |     3      |
+| Job           |              |           |            |
+| Music-Genre   |              |           |            |
+|               |  R&B        |  Techno  |  Accountant |
+|               |  (Paramedic) |  (Musician) |  (Videographer) |
+#############
+
+The final solution is:
+
+* The fan of R&B (Paramedic) is on the leftmost position.
+* The fan of Techno (Musician) is in the middle position.
+* The Accountant (Videographer) is on the far right position."	{'job': ['', '', ''], 'music-genre': ['', '', '']}	True	0	False
+Lv1-2x3-4	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person who's hobby is video-games is on the left of the person who's hobby is fishing.
+
+This means that the video-games person is either on the left of the fishing person or on the right of the fishing person.
+
+2. The person who's hobby is video-games is on the left or right of the person who's hobby is fishing.
+
+This clue doesn't add much new information, but it reinforces the idea that the video-games person is either on the left or right of the fishing person.
+
+3. The owner of the fish is between the person who's hobby is video-games and the owner of the mouse.
+
+This clue tells us that the fish owner is sandwiched between the video-games person and the mouse owner.
+
+Now, let's start filling in the table:
+
+|         |      1      |    2    |   3    |
+| Hobby   |             |         |        |
+| Pet     |             |         |        |
+
+From clue 1, we know the video-games person is on the left of the fishing person. Let's assume the video-games person is in position 1.
+
+|         | Video-games |    2    |   3    |
+| Hobby   |             |         |        |
+| Pet     |             |         |        |
+
+From clue 3, we know the fish owner is between the video-games person and the mouse owner. Since the video-games person is in position 1, the fish owner must be in position 2.
+
+|         | Video-games | Fish    |   3    |
+| Hobby   |             |         |        |
+| Pet     |             |         |        |
+
+Now, we know the fish owner is in position 2, and the video-games person is in position 1. From clue 1, we know the fishing person is to the right of the video-games person, so the fishing person must be in position 3.
+
+|         | Video-games | Fish    | Fishing |
+| Hobby   |             |         |        |
+| Pet     |             |         |        |
+
+The only pet left is the mouse, which must be owned by the person in position 3 (fishing).
+
+|         | Video-games | Fish    | Fishing |
+| Hobby   |             |         |        |
+| Pet     |             | Mouse  |        |
+
+Finally, the only hobby left is baking, which must be the hobby of the person in position 1 (video-games).
+
+|         | Video-games | Fish    | Fishing |
+| Hobby   | Baking     |         |        |
+| Pet     |             | Mouse  |        |
+
+The final solution is:
+
+#############
+|         | Video-games | Fish    | Fishing |
+| Hobby   | Baking     |         |        |
+| Pet     |             | Mouse  |        |
+#############"	{'hobby': ['baking', '', ''], 'pet': ['', 'mouse', '']}	True	0	False
+Lv1-2x3-5	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person driving the taxi is on the left or right of the person watching action movies##3
+This means the person watching action movies is either on the left or right of the taxi driver.
+
+2. The person driving the subway is on the left of the person driving the ship
+This means the subway driver is to the left of the ship driver.
+
+3. The person driving the taxi is on the right of the person watching action movies
+This means the taxi driver is to the right of the person watching action movies.
+
+4. The person watching action movies is between the person watching disaster movies and the person driving the taxi##2
+This means the person watching action movies is sandwiched between the person watching disaster movies and the taxi driver.
+
+From clue 4, we know the order is: disaster movies -> action movies -> taxi driver
+
+From clue 3, we know the taxi driver is to the right of the person watching action movies, so the order is: disaster movies -> action movies -> taxi driver
+
+From clue 1, we know the taxi driver is on the left or right of the person watching action movies. Since we already know the taxi driver is to the right of the person watching action movies, the taxi driver must be on the right.
+
+From clue 2, we know the subway driver is on the left of the ship driver. Since we don't have any information about the subway driver's position relative to the person watching action movies, we'll come back to this clue later.
+
+Now, let's fill in the table:
+
+#############
+| Movie-Genre | Transport |
+| Action      | Taxi      |
+| Disaster    |?        |
+| Family      |?        |
+|            | Ship     |
+|            | Subway   |
+#############
+
+We know the taxi driver is on the right of the person watching action movies, so the taxi driver must be in the ""Transport"" column. We also know the person watching action movies is between the person watching disaster movies and the taxi driver, so the person watching action movies must be in the ""Action"" row.
+
+From clue 4, we know the person watching disaster movies is to the left of the person watching action movies. Since the taxi driver is on the right of the person watching action movies, the person watching disaster movies must be on the left of the taxi driver.
+
+Now, let's fill in the remaining cells:
+
+#############
+| Movie-Genre | Transport |
+| Action      | Taxi      |
+| Disaster    | Ship     |
+| Family      | Subway   |
+#############
+
+We've solved the puzzle! The person watching action movies is in the ""Action"" row, the person watching disaster movies is in the ""Disaster"" row, and the person watching family movies is in the ""Family"" row. The taxi driver is in the ""Transport"" column, the ship driver is in the ""Disaster"" row, and the subway driver is in the ""Family"" row."	{'movie-genre': ['transport'], 'action': ['taxi'], 'disaster': ['ship'], 'family': ['subway']}	False	0	False
+Lv1-2x3-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The lawyer is on the left of the accountant.
+This means the order is:? (lawyer) - accountant -?
+
+2. The person who's hobby is chess is on the right of the person who's hobby is baking.
+This means the person who bakes is on the left of the person who plays chess.
+
+3. The person who's hobby is traveling is on the left or right of the person who's hobby is baking.
+This means the person who bakes is sandwiched between the person who travels and the person who plays chess.
+
+4. The person who's hobby is baking is on the right of the engineer.
+This means the order is:? (engineer) -? (baking) -?
+
+Now, let's combine the clues:
+
+* The lawyer is on the left of the accountant.
+* The engineer is on the left of the person who bakes.
+* The person who bakes is on the left of the person who plays chess.
+* The person who travels is on the left or right of the person who bakes.
+
+The possible order is:
+
+|         |     1     |   2    |     3      |
+| Hobby   |           |        |            |
+| Job     |           |        |            |
+
+ Lawyer (traveling) - Engineer - Baker (baking) - Accountant (chess)
+
+Or:
+
+|         |     1     |   2    |     3      |
+| Hobby   |           |        |            |
+| Job     |           |        |            |
+
+ Lawyer (traveling) - Baker (baking) - Engineer - Accountant (chess)
+
+The second option is not possible because the lawyer would be on the right of the accountant, which contradicts clue 1.
+
+So, the final solution is:
+
+#############
+|         |     1     |   2    |     3      |
+| Hobby   |           |        |            |
+| Job     |           |        |            |
+ Lawyer (traveling) - Engineer - Baker (baking) - Accountant (chess)
+#############"	{'hobby': ['', '', ''], 'job': ['', '', '']}	True	0	False
+Lv1-2x3-7	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fan of techno is on the right of the Dutch.
+This means the Dutch is not on the rightmost position, and the fan of techno is to their right.
+
+2. The Malaysian is on the left of the fan of funk.
+This means the Malaysian is not on the rightmost position, and the fan of funk is to their right.
+
+3. The Malaysian is on the left or right of the fan of rock.
+This means the Malaysian is either to the left or right of the fan of rock.
+
+From clue 1, we know the Dutch is not on the rightmost position, and the fan of techno is to their right. From clue 2, we know the Malaysian is not on the rightmost position, and the fan of funk is to their right. This means the Malaysian is on the left of the Dutch.
+
+From clue 3, we know the Malaysian is either to the left or right of the fan of rock. Since the Malaysian is already on the left of the Dutch, they must be on the left of the fan of rock as well.
+
+Now, let's try to arrange the people in the correct order:
+
+|               |   1   |     2     |     3      |
+| Music-Genre   |       |           |            |
+| Nationality   |       |           |            |
+
+From clue 1, the fan of techno is on the right of the Dutch. Let's place the Dutch on the leftmost position, and the fan of techno on the rightmost position.
+
+|               |   1   |     2     |     3      |
+| Music-Genre   |       |           |            |
+| Nationality   | Dutch |?        | Malaysian |
+
+From clue 2, the Malaysian is on the left of the fan of funk. Since the Malaysian is already on the left of the Dutch, they must be on the left of the fan of funk as well.
+
+|               |   1   |     2     |     3      |
+| Music-Genre   |       |           |            |
+| Nationality   | Dutch | Malaysian |?        |
+
+From clue 3, the Malaysian is either to the left or right of the fan of rock. Since the Malaysian is already on the left of the Dutch, they must be on the left of the fan of rock as well. This means the fan of rock must be on the right of the Malaysian.
+
+|               |   1   |     2     |     3      |
+| Music-Genre   |       |           |            |
+| Nationality   | Dutch | Malaysian | Fan of Rock |
+
+Now, we can fill in the music genres:
+
+|               |   1   |     2     |     3      |
+| Music-Genre   | Funk  | Techno  | Rock     |
+| Nationality   | Dutch | Malaysian | Fan of Rock |
+
+The final solution is:
+
+#############
+|               |   1   |     2     |     3      |
+| Music-Genre   | Funk  | Techno  | Rock     |
+| Nationality   | Dutch | Malaysian | Fan of Rock |
+#############"	{'music-genre': ['funk', 'techno', 'rock'], 'nationality': ['dutch', 'malaysian', 'fan of rock']}	True	3	False
+Lv1-2x3-8	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking cola is the person eating grapes.
+This means that the person drinking cola is in the leftmost position, and the person eating grapes is in the same position.
+
+2. The person eating orange is in the middle.
+This means that the person eating orange is in the second position.
+
+3. The person drinking milk is on the left of the person drinking fanta.
+This means that the person drinking milk is in the leftmost position, and the person drinking fanta is in the second position.
+
+4. The person drinking fanta is on the left or right of the person eating grapes.
+Since the person drinking cola is already in the leftmost position and eating grapes, the person drinking fanta must be in the second position, which is already occupied by the person eating orange. Therefore, the person drinking fanta must be on the right of the person eating grapes.
+
+Now that we have all the clues, we can fill in the table:
+
+#############
+|            |      1      |   2    |   3    |
+| Beverage   |  Milk     |  Fanta  |  Cola   |
+| Food       |  Grapes   |  Orange |  Pomegranate |
+#############
+
+The final solution is:
+
+* The person drinking milk is eating grapes.
+* The person drinking fanta is eating orange.
+* The person drinking cola is eating pomegranate."	{'beverage': ['milk', 'fanta', 'cola'], 'food': ['grapes', 'orange', 'pomegranate']}	True	4	False
+Lv1-2x3-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fisherman is on the left or right of the nurse, which means the nurse is not in the middle.
+2. The fan of disco is on the left of the teacher, which means the teacher is not in the first position.
+3. The nurse is on the right of the fan of techno, which means the fan of techno is not in the last position.
+
+From clue 1, we know the nurse is not in the middle. From clue 2, we know the teacher is not in the first position. From clue 3, we know the fan of techno is not in the last position.
+
+Let's try to place the people in the table:
+
+|               |     1     |   2   |    3    |
+| Job           |           |       |         |
+| Music-Genre   |           |       |         |
+
+Since the nurse is not in the middle, let's place the nurse in position 2:
+
+|               |     1     |   2   |    3    |
+| Job           |           | Nurse |         |
+| Music-Genre   |           |       |         |
+
+From clue 2, we know the fan of disco is on the left of the teacher. Since the teacher is not in the first position, let's place the fan of disco in position 1:
+
+|               | Disco |   2   |    3    |
+| Job           |       | Nurse |         |
+| Music-Genre   | Disco |       |         |
+
+From clue 3, we know the nurse is on the right of the fan of techno. Since the fan of techno is not in the last position, let's place the fan of techno in position 3:
+
+|               | Disco |   2   | Techno |
+| Job           |       | Nurse |         |
+| Music-Genre   | Disco |       | Techno |
+
+Now we have a possible solution:
+
+#############
+|               | Disco | Nurse | Techno |
+| Job           | Fisherman |       |         |
+| Music-Genre   | Disco | R&B | Techno |
+#############
+
+The fisherman is not mentioned in the clues, but we can place him in position 1 since the nurse is in position 2. The fan of disco is in position 1, the fan of R&B (nurse) is in position 2, and the fan of techno is in position 3."	{'job': ['fisherman', '', ''], 'music-genre': ['disco', 'r&b', 'techno']}	True	1	False
+Lv1-2x3-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking water is on the left or right of the person watching animation movies.
+This means that the person drinking water is either the first or the third person.
+
+2. The person watching scientific movies is on the far right.
+This means that the person watching scientific movies is the third person.
+
+3. The person drinking hot-chocolate is on the left of the person watching animation movies.
+This means that the person drinking hot-chocolate is either the first or the second person, and the person watching animation movies is either the second or the third person.
+
+Now, let's combine the information:
+
+* The person drinking water is on the left or right of the person watching animation movies, so it's either the first or the third person.
+* The person watching scientific movies is on the far right, so it's the third person.
+* The person drinking hot-chocolate is on the left of the person watching animation movies, so it's either the first or the second person.
+
+Here's the possible arrangement:
+
+|               |       1       |     2     |     3      |
+| Beverage      |               |           |            |
+| Movie-Genre   |               |           |            |
+
+* 1: Water, Animation
+* 2: Hot-Chocolate, Musical
+* 3: Sprite, Scientific
+
+This arrangement satisfies all the clues:
+
+* The person drinking water is on the left or right of the person watching animation movies (1 and 2 are adjacent).
+* The person watching scientific movies is on the far right (3).
+* The person drinking hot-chocolate is on the left of the person watching animation movies (2 is on the left of 1).
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |       1       |     2     |     3      |
+| Beverage      |  Water       | Hot-Chocolate | Sprite     |
+| Movie-Genre   |  Animation   | Musical     | Scientific |
+#############"	{'beverage': ['water', 'hot-chocolate', 'sprite'], 'movie-genre': ['animation', 'musical', 'scientific']}	True	1	False

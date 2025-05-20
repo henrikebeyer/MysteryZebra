@@ -1,0 +1,385 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv5-4x2-1	"Let's break this down step by step:
+
+1. We know there are 2 different nationalities, 2 types of food, 2 hobbies, and 2 movie genres. So, we can arrange them in a 4x4 grid, but since we have some clues, we can simplify it.
+
+   |               |     1      |     2     |     3     |     4     |
+   | Food          |            |           |           |           |
+   | Hobby         |            |           |           |           |
+   | Movie-Genre   |            |           |           |           |
+   | Nationality   |            |           |           |           |
+
+2. The pakistani is somewhere to the right of the person eating pumpkin. This means that the Nationality column of the person eating pumpkin cannot be the last column (column 4). So, we can fill the Nationality of the first column with Argentine, and the Nationality of the second column with Pakistani.
+
+   |               |     1      |     2     |     3     |     4     |
+   | Food          |            |           |           |           |
+   | Hobby         |            |           |           |           |
+   | Movie-Genre   |            |           |           |           |
+   | Nationality   | Argentine  | Pakistani |           |           |
+
+3. The person watching satire movies is the pakistani. Since we know the Nationality of the second column is Pakistani, we can fill the Movie-Genre of the second column with Satire.
+
+   |               |     1      |     2     |     3     |     4     |
+   | Food          |            | Satire   |           |           |
+   | Hobby         |            | Pakistani |           |           |
+   | Movie-Genre   |            |           |           |           |
+   | Nationality   | Argentine  | Pakistani |           |           |
+
+4. The person who's hobby is skydiving is on the right of the person who's hobby is filmmaking. Since we don't have any hobbies filled yet, we can't determine the order of the hobbies at the moment. But we know that the hobby of the second column (Pakistani) cannot be skydiving because it should be on the right of the hobby of the first column. So, the hobby of the first column cannot be skydiving.
+
+   |               |     1      |     2     |     3     |     4     |
+   | Food          |            | Satire   |           |           |
+   | Hobby         | Film Making| Pakistani | Skydiving |           |
+   | Movie-Genre   |            |           |           |           |
+   | Nationality   | Argentine  | Pakistani |           |           |
+
+5. Now, we have 2 types of food left (blueberry, pumpkin) and 2 hobbies left (skydiving, filmmaking). Since the person eating pumpkin is to the left of the Pakistani, the Food of the first column cannot be pumpkin. So, the Food of the first column is blueberry, and the Food of the second column is pumpkin.
+
+   |               |     1      |     2     |     3     |     4     |
+   | Food          | Blueberry  | Pumpkin  |           |           |
+   | Hobby         | Film Making| Pakistani | Skydiving |           |
+   | Movie-Genre   |            | Satire   |           |           |
+   | Nationality   | Argentine  | Pakistani |           |           |
+
+6. We have filled all the information except for the last column (column 3 and 4). Since we have no more clues, we can't determine the order of the remaining items.
+
+So, the final solution table is:
+
+#############
+|               |     1      |     2     |     3     |     4     |
+| Food          | Blueberry  | Pumpkin  |           |           |
+| Hobby         | Film Making| Pakistani | Skydiving |           |
+| Movie-Genre   |            | Satire   |           |           |
+| Nationality   | Argentine  | Pakistani |           |           |
+#############"	{'food': ['blueberry', 'pumpkin', '', ''], 'hobby': ['film making', 'pakistani', 'skydiving', ''], 'movie-genre': ['', 'satire', '', ''], 'nationality': ['argentine', 'pakistani', '', '']}	True	3	False
+Lv5-4x2-2	"Let's break this down step by step:
+
+1. Since there are 2 different types of food, let's label them as Food_1 (pomegranate) and Food_2 (zucchini).
+
+2. Similarly, since there are 2 different movie-genres, let's label them as Movie_1 (comedy) and Movie_2 (epic).
+
+3. For pets, since there are 2 different types, let's label them as Pet_1 (cat) and Pet_2 (rabbit).
+
+4. Lastly, since there are 2 different means of transport, let's label them as Transport_1 (bus) and Transport_2 (snowmobile).
+
+Now, let's use the given clues:
+
+1. The person driving the snowmobile is somewhere to the right of the person eating pomegranate. This means that either Transport_2 (snowmobile) is in the second column and Food_1 (pomegranate) is in the first column, or both are in the second column. But since the second column is already occupied (by Movie_1 or Pet_1), Transport_2 (snowmobile) must be in the first column, and Food_1 (pomegranate) must be in the second column.
+
+2. The person watching epic movies is somewhere to the left of the owner of the rabbit. This means that Movie_2 (epic) cannot be in the second column (since Pet_2 is there). So, Movie_2 (epic) must be in the first column, and Movie_1 (comedy) must be in the second column.
+
+Now, let's fill in the table:
+
+|               |      1      |     2      |
+| Food          | Pomegranate | Zucchini  |
+| Movie-Genre   | Epic       | Comedy    |
+| Pet           | Cat        | Rabbit    |
+| Transport     | Snowmobile | Bus       |
+
+So, the final solution table is:
+
+#############
+|               |      1      |     2      |
+| Food          | Pomegranate | Zucchini  |
+| Movie-Genre   | Epic       | Comedy    |
+| Pet           | Cat        | Rabbit    |
+| Transport     | Snowmobile | Bus       |
+#############"	{'food': ['pomegranate', 'zucchini'], 'movie-genre': ['epic', 'comedy'], 'pet': ['cat', 'rabbit'], 'transport': ['snowmobile', 'bus']}	True	6	False
+Lv5-4x2-3	"Let's solve this step by step:
+
+1. Since the hobbies are different and there are only two, one person must have chess as a hobby, and the other has puzzles. Let's assume that the person with chess is in the first column (Column 1) and the person with puzzles is in the second column (Column 2).
+
+2. Since the jobs are different, one person must be an entrepreneur and the other a mechanic. The entrepreneur is to the left of the fan of house, so the entrepreneur must be in Column 1 (since house is in Column 2). So, the entrepreneur is a job in Row 1. The mechanic is the person driving the ship, so the mechanic is in Row 4 (since the ship is in Row 4).
+
+3. Since the music-genres are different, one person must prefer house and the other prefers trance. Since the entrepreneur is in Row 1 and house is in Row 2, the entrepreneur must prefer trance. So, trance is in Row 1. Since the mechanic is in Row 4 and the entrepreneur is not a fan of house, the person in Row 4 (mechanic) must prefer house.
+
+4. Now we know the jobs, hobbies, and music-genres. The only thing left is the transport. Since the mechanic is the one driving the ship, the transport in Row 4 (ship) must be associated with the mechanic. The only remaining transport is motorbike, so it must be associated with the entrepreneur (Row 1).
+
+Final solution table:
+
+|               |      1       |    2     |
+| Hobby         |  Chess      | Puzzles  |
+| Job           |  Entrepreneur| Mechanic |
+| Music-Genre   |  Trance     | House    |
+| Transport     |  Motorbike  | Ship     |
+
+#############
+|               |      1       |    2     |
+| Hobby         |  Chess      | Puzzles  |
+| Job           |  Entrepreneur| Mechanic |
+| Music-Genre   |  Trance     | House    |
+| Transport     |  Motorbike  | Ship     |
+#############"	{'hobby': ['chess', 'puzzles'], 'job': ['entrepreneur', 'mechanic'], 'music-genre': ['trance', 'house'], 'transport': ['motorbike', 'ship']}	True	6	False
+Lv5-4x2-4	"Let's break this down step by step:
+
+1. We know there are 2 different beverages, 2 hobbies, 2 movie genres, and 2 means of transport. This means each category will have one item repeated.
+
+2. The person drinking 7up is somewhere to the right of the person driving the jet-ski. This means 7up cannot be in the first column (as it would have nothing to its right). So, 7up must be in the second column.
+
+3. The person who's hobby is collecting is on the far right. Since we know 7up is in the second column, collecting must be in the first column.
+
+4. The person drinking 7up is on the left or right of the person watching epic movies. Since we know 7up is in the second column, epic movies must be in the first or second row. But since collecting is in the first column, epic movies cannot be in the first row (as it would have nothing to the left). So, epic movies must be in the second row.
+
+5. The remaining beverage, coffee, must be in the first row.
+
+6. The remaining hobby, drawing, must be in the second row.
+
+7. The remaining movie genre, western, must be in the first column.
+
+8. The remaining means of transport, bus, must be in the first row.
+
+So, the final solution table is:
+
+|               |    1    |     2      |
+| Beverage      | Coffee  |    7up     |
+| Hobby         | Collect |   Drawing  |
+| Movie-Genre   | Western |   Epic    |
+| Transport     |   Bus   | Jet-ski   |
+
+#############
+| Coffee | Collect | Western | Bus |
+|--------|--------|--------|-----|
+| 7up    | Drawing | Epic   | Jet-ski |
+#############"	{'coffee': ['collect', 'western', 'bus'], '7up': ['drawing', 'epic', 'jet-ski']}	False	0	False
+Lv5-4x2-5	"Let's solve this step by step:
+
+1. Since there are 2 different types of food, 2 jobs, 2 nationalities, and 2 sports, we can place one of each in the first row (let's say Food-1, Job-1, Nationality-1, Sport-1 in the first row).
+
+2. From point 1, we know that the second row must have the remaining options (Food-2, Job-2, Nationality-2, Sport-2).
+
+3. From point 2, we know that the firefighter (Job-1) is on the right of the person eating asparagus (Food-1). So, the firefighter must be in the second column (column 2) and the person eating asparagus in the first column (column 1).
+
+4. From point 3, the scientist (Job-1) is somewhere to the left of the colombian (Nationality-2). Since the firefighter is in the second column, the scientist must be in the first column. This means the scientist is eating asparagus (Food-1).
+
+5. From point 4, the colombian (Nationality-2) must be in the second column.
+
+6. From point 3, the scientist's sport (Sport-1) is to the left of the colombian's sport (Sport-2). Since the sports are cycling, surfing, and they are in odd positions, cycling must be in the first row and surfing in the second row.
+
+7. Now we know that the first row is (Food-1, Job-1, Nationality-1, Sport-1) and the second row is (Food-2, Job-2, Nationality-2, Sport-2). Since we know the positions of the first row, the second row must be (Food-2, Job-2, Nationality-2, Sport-2).
+
+The final solution table is:
+
+|               |     1     |      2      |
+| Food          | asparagus | tomato      |
+| Job           | firefighter| scientist    |
+| Nationality   | canadian  | colombian    |
+| Sport         | cycling   | surfing      |
+
+#############
+|               |     1     |      2      |
+| Food          | asparagus | tomato      |
+| Job           | firefighter| scientist    |
+| Nationality   | canadian  | colombian    |
+| Sport         | cycling   | surfing      |
+#############"	{'food': ['asparagus', 'tomato'], 'job': ['firefighter', 'scientist'], 'nationality': ['canadian', 'colombian'], 'sport': ['cycling', 'surfing']}	True	4	False
+Lv5-4x2-6	"Let's solve this step by step:
+
+1. We know there are two different beverages, mirinda and sprite. Let's place them in the table:
+
+   |               |      1      |        2        |
+   | Beverage      | mirinda    | sprite         |
+
+2. Since the firefighter is the person drinking sprite, we can place the firefighter in the second row and second column:
+
+   |               |      1      |        2        |
+   | Beverage      | mirinda    | firefighter     |
+   | Job           |           | project-manager |
+
+3. Now, let's place the other job, project-manager. Since the firefighter is on the right side of the project-manager (according to the puzzle), we can place the project-manager in the first row and second column:
+
+   |               | project-manager |        2        |
+   | Beverage      | mirinda        | firefighter     |
+   | Job           | project-manager |                |
+
+4. We know there are two different types of food, cucumber and tomato. Since the person eating cucumber is to the left of the person drinking mirinda, we can place cucumber in the first column and tomato in the second column:
+
+   |               | project-manager |        2        |
+   | Beverage      | mirinda        | firefighter     |
+   | Job           | project-manager | cucumber        |
+   | Food          | tomato         |                |
+
+5. Finally, we know there are two different music-genres, hip-hop and metal. Since the fan of hip-hop is on the far left, we can place hip-hop in the first column:
+
+   |               | project-manager |        2        |
+   | Beverage      | mirinda        | firefighter     |
+   | Job           | project-manager | cucumber        |
+   | Food          | tomato         |                |
+   | Music-Genre   | hip-hop        | metal           |
+
+The final solution table is:
+
+#############
+| Music-Genre | project-manager |        2        |
+| Beverage   | mirinda        | firefighter     |
+| Job        | project-manager | cucumber        |
+| Food       | tomato         |                |
+#############"	{'music-genre': ['project-manager', '2'], 'beverage': ['mirinda', 'firefighter'], 'job': ['project-manager', 'cucumber'], 'food': ['tomato', '']}	True	0	False
+Lv5-4x2-7	"Let's solve this step by step:
+
+1. We know that there are 2 different favorite beverages, 2 different hobbies, 2 different jobs, and 2 different pets. So, we can fill in the table as follows:
+
+   |            |    1    |      2      |
+   | Beverage   | Coffee  | Sprite     |
+   | Hobby      | Camping | Photography|
+   | Job        |        |            |
+   | Pet        | Fish    | Horse      |
+
+2. Now, let's use the clues:
+
+   a. The person drinking coffee is somewhere to the left of the owner of the fish. So, the person drinking coffee can only be in column 1 (Coffee) and cannot be in the same row as Fish (since Fish is in column 2).
+
+   b. The owner of the fish is somewhere to the right of the coach. So, the Fish cannot be in the same row as the Job ""Coach"".
+
+   c. The person drinking coffee is the person who's hobby is camping. Since we already know that the person drinking coffee is in column 1, and we know that the hobby ""Camping"" is in column 1, they must be the same.
+
+   d. Now we have one more piece of information: the person with the hobby ""Camping"" is the person drinking coffee. So, we can fill in the Job for the person in column 1 (Coffee). Let's say the Job is ""Job1"".
+
+   e. Now we have one more person left to fill in the table. We know that the person with the hobby ""Photography"" is in column 2. We also know that the person with the hobby ""Photography"" cannot be the owner of the fish (since the owner of the fish is to the right of the coach, and the coach is already filled in). So, the person with the hobby ""Photography"" cannot have the job ""Coach"" either. Let's say the Job for the person in column 2 is ""Job2"".
+
+   f. The last thing left to fill is the pet for the person in column 2. Since the person with the hobby ""Photography"" cannot have the pet ""Fish"" (because the owner of the fish is to the right of the coach, and the coach is already filled in), the person with the hobby ""Photography"" must have the pet ""Horse"".
+
+   g. So, the final solution table is:
+
+   |            |    1    |      2      |
+   | Beverage   | Coffee  | Sprite     |
+   | Hobby      | Camping | Photography|
+   | Job        | Coach   | Paramedic  |
+   | Pet        |        | Horse      |
+
+   However, we don't have enough information to determine the exact position of the beverages, hobbies, jobs, and pets within the columns. So, the final solution table with the given information is:
+
+  #############
+   |            |    1    |      2      |
+   | Beverage   | Coffee  | Sprite     |
+   | Hobby      | Camping | Photography|
+   | Job        | Coach   | Paramedic  |
+   | Pet        |        | Horse      |
+  #############"	{}	False	0	False
+Lv5-4x2-8	"Let's break this down step by step:
+
+1. We have 4 variables (Job, Music-Genre, Nationality, Sport) and 2 people. Each variable has 2 unique options, so we can fill in the first row with the unique options for each variable.
+
+   |               |      1      |       2       |
+   | Job           | Firefighter | Fisherman    |
+   | Music-Genre   | Electronic  | Gospel      |
+   | Nationality   | British    | Polish      |
+   | Sport         | Baseball   | Weightlifting|
+
+2. From point 1, we know that the Polish is on the right of the British. So, the Nationality column should look like this:
+
+   |               |      1      |       2       |
+   | Job           | Firefighter | Fisherman    |
+   | Music-Genre   | Electronic  | Gospel      |
+   | Nationality   | British    | Polish      |
+   | Sport         | Baseball   | Weightlifting|
+
+3. Now, the fan of gospel is on the left or right of the person who's sport is weightlifting. Since we already know the Nationalities, we can check the Sports. The only way to satisfy this condition is if the person who prefers weightlifting is person 2 (Polish), and the person who prefers gospel is person 1 (British). So, the Music-Genre column should look like this:
+
+   |               |      1      |       2       |
+   | Job           | Firefighter | Fisherman    |
+   | Music-Genre   | Gospel     | Electronic   |
+   | Nationality   | British    | Polish      |
+   | Sport         | Baseball   | Weightlifting|
+
+4. The fan of electronic is somewhere to the right of the firefighter. Since the only person to the right of the firefighter is the fisherman, the fisherman must prefer electronic music. So, the Music-Genre column should look like this:
+
+   |               |      1      |       2       |
+   | Job           | Firefighter | Fisherman    |
+   | Music-Genre   | Gospel     | Electronic   |
+   | Nationality   | British    | Polish      |
+   | Sport         | Baseball   | Weightlifting|
+
+5. Now, we have a consistent table that satisfies all the conditions:
+
+   |               |      1      |       2       |
+   | Job           | Firefighter | Fisherman    |
+   | Music-Genre   | Gospel     | Electronic   |
+   | Nationality   | British    | Polish      |
+   | Sport         | Baseball   | Weightlifting|
+
+So, the final solution table is:
+
+#############
+|               |      1      |       2       |
+| Job           | Firefighter | Fisherman    |
+| Music-Genre   | Gospel     | Electronic   |
+| Nationality   | British    | Polish      |
+| Sport         | Baseball   | Weightlifting|
+#############"	{'job': ['firefighter', 'fisherman'], 'music-genre': ['gospel', 'electronic'], 'nationality': ['british', 'polish'], 'sport': ['baseball', 'weightlifting']}	True	8	True
+Lv5-4x2-9	"Let's break this down step by step:
+
+1. We know there are 2 different favorite beverages, 2 movie genres, 2 music genres, and 2 nationalities. So, we can fill in the first row of the table with the 2 beverages, the second row with the 2 movie genres, the third row with the 2 music genres, and the fourth row with the 2 nationalities.
+
+2. Since there are only 2 options for each category, we can label them for easier reference. Let's label the beverages as A and B, the movie genres as C and D, the music genres as E and F, and the nationalities as G and H.
+
+3. From the clues, we know that the person watching fantasy movies (D) is to the right of the person drinking milk (B). This means that D cannot be in the first column, so it must be in the second column. Similarly, since the fan of funk (F) is to the right of the Malaysian (G), F cannot be in the first row, so it must be in the third row.
+
+4. Now we have some information about the positions of D and F. Let's fill in the rest of the table with the remaining options:
+
+   |               |     1     |     2     |
+   | Beverage      | A        | B        |
+   | Movie-Genre   | C        | D        |
+   | Music-Genre   | E        | F        |
+   | Nationality   | G        | H        |
+
+5. We still don't know the exact positions of A, C, E, G, and H. However, since the Malaysian (G) is a nationality, it cannot be a beverage, movie genre, or music genre. So, G must be in the fourth row, which means H must be in the third row.
+
+6. Now we know that H is the nationality in the third row, which means F (music genre) cannot be in the third row because F is to the right of H. So, F must be in the second row. But since D (movie genre) is to the right of F, D cannot be in the first column. This means D must be in the second column as well.
+
+7. Now we know the positions of D and F. Since D is in the second column and F is to its right, F must be in the third column. This means H (nationality) must be in the first column.
+
+8. Now we know the positions of H and F. Since H is in the first column, G (nationality) must be in the second column. This means A (beverage) cannot be in the first row because A is to the left of G. So, A must be in the second row.
+
+9. Now we know the positions of A and G. Since A is in the second row, B (beverage) must be in the first row.
+
+10. Now we know the positions of B and A. Since B is in the first row, C (movie genre) cannot be in the first row because C is to the left of B. So, C must be in the second row.
+
+11. Now we know the positions of C and A. Since C is in the second row, E (music genre) must be in the third row.
+
+So, the final solution table is:
+
+#############
+| Beverage      | 7up    | Milk   |
+| Movie-Genre   | Action | Fantasy |
+| Music-Genre   | Funk   | Hip-Hop |
+| Nationality   | Malaysian | Pakistani |
+#############
+
+This solution satisfies all the given clues."	{'beverage': ['7up', 'milk'], 'movie-genre': ['action', 'fantasy'], 'music-genre': ['funk', 'hip-hop'], 'nationality': ['malaysian', 'pakistani']}	True	4	False
+Lv5-4x2-10	"Let's solve this step by step:
+
+1. We know that each person has 2 different hobbies, movie-genres, music-genres, and sports. So, we can fill in one hobby, movie-genre, music-genre, and sport for each person, and the other one will be the opposite.
+
+   |               |     1      |    2    |
+   | Hobby         | Baking    | Collecting |
+   | Movie-Genre   | Family   | Horror   |
+   | Music-Genre   | D&B     | Dubstep  |
+   | Sport         | Biathlon | Parkour  |
+
+2. Now we know that the person watching family movies is on the right of the person who's sport is biathlon. So, the person watching family movies must be person 2, and the person watching horror movies must be person 1.
+
+   |               |     1      |    2    |
+   | Hobby         | Baking    | Collecting |
+   | Movie-Genre   | Horror   | Family   |
+   | Music-Genre   | D&B     | Dubstep  |
+   | Sport         | Biathlon | Parkour  |
+
+3. The last piece of information is that the fan of d&b is somewhere to the right of the person who's hobby is collecting. Since we already know the positions of the people based on their movie-genres, we can check the music-genres. Person 1's music-genre is D&B, and person 2's hobby is collecting. So, person 2 must be the fan of D&B, and person 1 must be the fan of Dubstep.
+
+   |               |     1      |    2    |
+   | Hobby         | Baking    | Collecting |
+   | Movie-Genre   | Horror   | Family   |
+   | Music-Genre   | Dubstep  | D&B     |
+   | Sport         | Biathlon | Parkour  |
+
+4. Now that we have filled all the cells with the correct information, we can put the final solution table:
+
+   ```#############
+   |               |     1      |    2    |
+   | Hobby         | Baking    | Collecting |
+   | Movie-Genre   | Horror   | Family   |
+   | Music-Genre   | Dubstep  | D&B     |
+   | Sport         | Biathlon | Parkour  |
+   ```#############
+
+This is the final solution to the puzzle."	{}	False	0	False

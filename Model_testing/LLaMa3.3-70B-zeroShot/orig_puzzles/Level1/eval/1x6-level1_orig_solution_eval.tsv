@@ -1,0 +1,461 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-1x6-1	"To solve this puzzle, let's follow the clues step by step:
+
+
+1. The lawyer is on the far right: This means the lawyer is in position 6.
+2. The lawyer is on the right of the nurse: This places the nurse in position 5, since the lawyer must be to the right of the nurse and the lawyer is already determined to be in position 6.
+3. The nurse is on the right of the videographer: Given that the nurse is in position 5, this means the videographer must be in position 4, as the nurse has to be to the right of the videographer.
+4. The security-guard is on the left of the architect: Without specific positions yet for these two, we know their order but not where they fit among the remaining spots (positions 1, 2, and 3). Since the bartender is on the far left (as per clue 5), this means the security-guard and architect must occupy positions 2 and 3 in some order because position 1 is taken by the bartender.
+5. The bartender is on the far left: This places the bartender in position 1.
+
+
+Given these clues, let's assemble the table:
+
+
+- Position 1 (far left): Bartender
+- Position 6 (far right): Lawyer
+- Position 5: Nurse
+- Position 4: Videographer
+- Positions 2 and 3 must be occupied by the security-guard and architect in that order because if the architect were on the left, it would violate clue 4.
+
+
+So, we have:
+
+
+|       |     1     |       2        |     3     |      4       |   5   |   6    |
+| Job   | Bartender | Security-guard | Architect | Videographer | Nurse | Lawyer |
+
+Therefore, the final solution table is:
+
+
+#############
+|       |     1     |       2        |     3     |      4       |   5   |   6    |
+| Job   | Bartender | Security-guard | Architect | Videographer | Nurse | Lawyer |
+#############"	{'job': ['bartender', 'security-guard', 'architect', 'videographer', 'nurse', 'lawyer']}	True	6	True
+Lv1-1x6-2	"To solve this puzzle, let's analyze each statement step by step:
+
+
+1. The person who's hobby is filmmaking is on the right of the person who's hobby is camping.
+2. The person who's hobby is gardening is on the far left.
+3. The person who's hobby is sudoku is on the left of the person who's hobby is drawing.
+4. The person who's hobby is filmmaking is on the left of the person who's hobby is writing.
+5. The person who's hobby is camping is on the right of the person who's hobby is gardening.
+
+
+From statement 2, we know gardening is at position 1.
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening|         |            |         |        |         |
+
+
+From statement 5, camping must be to the right of gardening, so it can start from position 2.
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping|            |         |        |         |
+
+
+Statement 1 says filmmaking is to the right of camping. Since camping is at position 2, filmmaking can start from position 3.
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking|         |        |         |
+
+
+Statement 4 indicates that filmmaking is to the left of writing. With filmmaking at position 3, writing must be at position 4 or further to the right.
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking| Writing |        |         |
+
+
+Statement 3 says sudoku is to the left of drawing. The only positions left that can satisfy all conditions (considering filmmaking and writing's placement) are positions 5 and 6 for drawing, which means sudoku must be at position 5, and drawing at position 6.
+
+
+However, this creates a conflict with our current setup because we've placed writing at position 4 and filmmaking at position 3, leaving no room for the camping-filmmaking sequence without violating other rules. Let's correct the approach considering all clues again:
+
+
+Given gardening is at position 1 (from clue 2), and camping must be to its right (clue 5), we have:
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping|            |         |        |         |
+
+
+From clue 1, filmmaking is to the right of camping:
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking|         |        |         |
+
+
+Clue 4 places writing to the right of filmmaking:
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking| Writing |        |         |
+
+
+Now, clue 3 says sudoku is to the left of drawing. Given our current setup, the only place for sudoku and drawing that doesn't conflict with other clues is:
+
+
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking| Writing | Sudoku| Drawing |
+
+
+This arrangement satisfies all given conditions without any conflicts.
+
+
+#############
+|         |     1     |    2    |     3      |    4    |   5    |    6    |
+| Hobby   | Gardening| Camping| Filmmaking| Writing | Sudoku| Drawing |
+#############"	{'hobby': ['gardening', 'camping', 'filmmaking', 'writing', 'sudoku', 'drawing']}	True	6	True
+Lv1-1x6-3	"To solve this puzzle, let's analyze each clue step by step:
+
+
+1. The person who's sport is skateboarding is on the right of the person who's sport is weightlifting.
+2. The person who's sport is lacrosse is on the left of the person who's sport is skiing.
+3. The person who's sport is skiing is on the left of the person who's sport is baseball.
+4. The person who's sport is cycling is on the far left.
+5. The person who's sport is skateboarding is on the far right.
+
+
+From clue 4, we know cycling is at position 1.
+
+From clue 5, we know skateboarding is at position 6.
+
+Clue 1 tells us that skateboarding (position 6) is to the right of weightlifting, so weightlifting must be at position 5 because skateboarding is already determined to be at the far right.
+
+
+The sequence from clue 2 and clue 3 gives us lacrosse -> skiing -> baseball. This sequence needs to fit into positions 2, 3, and 4 since position 1 is taken by cycling and positions 5 and 6 are taken by weightlifting and skateboarding, respectively.
+
+
+So, the final order is:
+
+
+|         |    1    |    2     |   3    |    4     |       5       |       6       |
+| Sport   | Cycling | Lacrosse | Skiing| Baseball | Weightlifting | Skateboarding |
+
+
+Therefore, the solution table surrounded by '#############' is:
+
+
+#############
+|         |    1    |    2     |   3    |    4     |       5       |       6       |
+| Sport   | Cycling | Lacrosse | Skiing| Baseball | Weightlifting | Skateboarding |
+#############"	{'sport': ['cycling', 'lacrosse', 'skiing', 'baseball', 'weightlifting', 'skateboarding']}	True	6	True
+Lv1-1x6-4	"To solve this puzzle, let's follow the clues step by step.
+
+
+## Step 1: Place the scientific movies on the far left.
+Given clue 5, the person watching scientific movies is on the far left. So, the table starts with scientific movies.
+
+
+|               |     1      |   2   |   3    |    4    |      5      |  6  |
+| Movie-Genre   | Scientific |       |        |         |             |     |
+
+
+## Step 2: Determine the position of romance and time-travel movies.
+From clue 6, we know the person watching time-travel movies is on the right of the person watching romance movies. However, we cannot place them yet without considering other clues.
+
+
+## Step 3: Place crime movies in relation to scientific and zombie movies.
+Clue 3 states the person watching crime movies is on the right of the person watching scientific movies. Clue 2 states the person watching zombie movies is on the right of the person watching crime movies. So, we have a sequence but need more information to place them.
+
+
+## Step 4: Use clue 1 and repeated clue 4 to position time-travel and spy movies.
+The clues about time-travel being on the left of spy movies help us understand there's a sequence involving these two, but without direct relation to the others yet.
+
+
+## Step 5: Combine all information to solve the puzzle.
+From clue 5, scientific is on the far left. Clue 3 tells us crime is after scientific, and clue 2 tells us zombie is after crime. This gives us a partial sequence: Scientific, Crime, Zombie.
+
+Clue 6 says time-travel is after romance, but since time-travel must also be before spy (clues 1 and 4), we need to fit romance, time-travel, and spy into the remaining spots.
+
+
+Given that scientific is first and considering the constraints:
+- Scientific must be followed by crime (Step 3).
+- Crime must be followed by zombie (Step 3).
+- Romance must be before time-travel (Step 2).
+- Time-travel must be before spy (Step 4).
+
+And since scientific is on the far left, we can start building the sequence:
+1. Scientific
+2. Since romance isn't directly related to scientific or crime in the clues, but needs to precede time-travel, and considering crime needs to follow scientific, we place romance after crime would disrupt the needed placements based on other clues. Thus, a logical approach is to place it before crime or after scientific if it doesn't conflict with other rules.
+3. However, clue 6 indicates time-travel follows romance, and given the constraints about spy and zombie's positions relative to others, we need to ensure there's space for all genres.
+
+
+Considering all clues again:
+- Scientific is first.
+- Crime follows scientific (clue 3).
+- Zombie follows crime (clue 2).
+- Romance must precede time-travel (clue 6), and time-travel precedes spy (clues 1 and 4).
+
+So, the most logical sequence that respects all given conditions would start with Scientific, followed by Romance (to allow time-travel to follow it), then Crime, Zombie, Time-travel, and Spy.
+
+
+The final answer is: 
+#############
+|               |     1      |   2   |   3    |    4    |      5      |  6  |
+| Movie-Genre   | Scientific | Romance | Crime | Zombie | Time-travel | Spy |
+#############"	{'movie-genre': ['scientific', 'romance', 'crime', 'zombie', 'time-travel', 'spy']}	True	3	False
+Lv1-1x6-5	"To solve this puzzle, let's analyze each statement step by step:
+
+
+## Step 1: Determine the position of the lizard.
+The owner of the lizard is on the far left (statement 5), so the lizard must be in position 1.
+
+
+## Step 2: Determine the relative positions of the bird and ferret.
+The owner of the bird is on the left of the owner of the ferret (statement 3). This doesn't give us exact positions yet, but we know the order for these two pets.
+
+
+## Step 3: Determine the position of the dog.
+The owner of the dog is on the far right (statement 2), so the dog must be in position 6.
+
+
+## Step 4: Determine the relative positions of the lizard and mouse, and consequently, the turtle.
+The owner of the lizard is on the left of the owner of the mouse (statement 4). Given that the lizard is in position 1, this means the mouse cannot be in position 1 or 2 (since the lizard must be to its left), but we also know from statement 1 that the turtle's owner is to the right of the mouse's owner. This doesn't give us exact positions for the mouse and turtle yet.
+
+
+## Step 5: Combine all information to find a possible arrangement.
+- Lizard is in position 1 (from step 1).
+- Dog is in position 6 (from step 3).
+- The bird must be to the left of the ferret (from step 2), but their exact positions are not yet determined.
+- The mouse cannot be in position 1 (lizard) or 6 (dog), and since the lizard is on the far left, the mouse also cannot be in position 2 if we are to satisfy the condition that the bird is to the left of the ferret and leave room for the turtle to be to the right of the mouse.
+
+
+## Step 6: Try fitting the remaining pets into possible slots.
+Given the constraints:
+- Lizard (1), Dog (6)
+- Mouse cannot be in position 1 or 6. If we place the mouse in position 3, it allows for the lizard to be to its left and leaves room for the turtle to be to its right, satisfying statement 1 and 4.
+- Bird must be to the left of ferret, so if mouse is in 3, bird could be in 2 (to satisfy being on the left of ferret), which then puts ferret in a possible position after the bird.
+
+
+## Step 7: Finalize positions based on all constraints.
+Given:
+- Lizard (1)
+- Dog (6)
+If we place mouse in 3 and remember turtle must be to its right, we could have:
+- Mouse (3)
+- Turtle (4 or 5), but since turtle must be to the right of mouse, and dog is at the far right, turtle can only fit in position 5 if we are to satisfy all conditions.
+
+
+## Step 8: Place the remaining pets.
+With lizard in 1, bird before ferret, mouse in 3, turtle in 5 (to be after mouse), and dog in 6:
+- The only spots left for bird and ferret that satisfy ""bird to the left of ferret"" are positions 2 and 4 respectively.
+
+
+The final answer is: 
+#############
+|       |   1    |   2   |   3    |  4   |   5    |  6  |
+| Pet   | Lizard | Bird  | Mouse  | Ferret| Turtle | Dog |
+#############"	{'pet': ['lizard', 'bird', 'mouse', 'ferret', 'turtle', 'dog']}	True	2	False
+Lv1-1x6-6	"To solve this puzzle, let's analyze each clue step by step.
+
+
+## Step 1: Determine the position of the superhero genre.
+Given that the person watching superhero movies is on the far left, we can start our arrangement with superhero at position 1.
+
+
+## Step 2: Analyze the positions of horror and adventure movies relative to each other and to romance.
+From clue 2, we know horror is to the right of adventure. From clue 3, horror is to the left of romance. This gives us a sequence of adventure -> horror -> romance.
+
+
+## Step 3: Determine the position of martial-arts and comedy movies relative to each other.
+Clue 4 tells us that martial-arts is to the left of comedy.
+
+
+## Step 4: Analyze the relationship between adventure and comedy movies.
+From clue 5, we understand that adventure is to the right of comedy. Combining this with the sequence from step 3 (martial-arts -> comedy) and knowing adventure must be before horror (from step 2), we can start forming a more complete sequence.
+
+
+## Step 5: Combine all clues to form a complete sequence.
+Since superhero is at position 1, and considering the sequences derived:
+- Superhero starts at position 1.
+- Martial-arts and comedy need to be together in that order, but their exact positions are not yet clear.
+- Adventure must come after comedy (from clue 5), which means martial-arts -> comedy -> adventure is a possible sequence. However, this conflicts with our initial understanding unless we place the superhero as part of this sequence or consider other genres' placements more flexibly.
+- Given that adventure -> horror -> romance and knowing the restrictions on the ends (superhero at the start and the need to fit all genres), we must integrate martial-arts and comedy before adventure while respecting the other constraints.
+
+
+## Step 6: Finalize the positions based on all clues.
+Given superhero is at position 1, and considering all relationships:
+1. Superhero
+2. Martial-arts (since it must be before comedy, and there's no direct conflict with this placement)
+3. Comedy
+4. Adventure (must be after comedy)
+5. Horror (after adventure)
+6. Romance (after horror)
+
+The final answer is: 
+#############
+|               |     1     |      2       |   3    |     4     |   5    |    6    |
+| Movie-Genre   | Superhero | Martial-arts | Comedy| Adventure | Horror | Romance |
+#############"	{'movie-genre': ['superhero', 'martial-arts', 'comedy', 'adventure', 'horror', 'romance']}	True	6	True
+Lv1-1x6-7	"To solve this puzzle, we'll follow the clues step by step.
+
+
+## Step 1: Place the lizard
+The owner of the lizard is on the far right, so the lizard goes in column 6.
+|       |   1    |    2     |     3      |   4    |  5   |   6    |
+| Pet   |        |          |            |        |      | lizard |
+
+## Step 2: Place the fish
+The owner of the lizard is on the right of the owner of the fish, so the fish must be in column 5.
+|       |   1    |    2     |     3      |   4    |  5   |   6    |
+| Pet   |        |          |            |        | fish | lizard |
+
+## Step 3: Place the turtle
+The owner of the turtle is on the left of the owner of the fish, and since the fish is in column 5, the turtle must be in column 4 or to its left. However, we don't have enough information yet to place it precisely.
+|       |   1    |    2     |     3      |   4    |  5   |   6    |
+| Pet   |        |          |            | turtle | fish | lizard |
+
+## Step 4: Place the ferret and hedgehog
+The owner of the ferret is on the left of the owner of the hedgehog. Since the hedgehog must be to the left of the chinchilla (from clue 5), and considering the placements so far, we can start building the sequence but need more steps to finalize.
+
+## Step 5: Finalize the placement of the ferret, hedgehog, and chinchilla
+Given that the hedgehog is to the left of the chinchilla (clue 5) and knowing the positions of the lizard, fish, and a potential spot for the turtle, we can start placing these pets. Since the turtle must be to the left of the fish (column 5), and considering all other placements, let's finalize:
+- The turtle is in column 4 or to its left.
+- The ferret and hedgehog need to be placed with the ferret to the left of the hedgehog, and both need to fit with the constraints of the other pets.
+
+Given that we have the lizard in column 6, fish in column 5, and assuming the turtle's position based on the clue that it must be to the left of the fish, let's consider the ferret, hedgehog, and chinchilla. The hedgehog must be to the left of the chinchilla, and since we have limited space, let's place them in a way that respects all constraints.
+
+
+## Step 6: Combine all clues for final placement
+Considering all clues:
+- Lizard is in column 6.
+- Fish is in column 5.
+- Turtle must be to the left of the fish, so it could be in columns 1-4. Given other placements, let's assume its most likely position considering the ferret and hedgehog's relationship and the need for the hedgehog to be to the left of the chinchilla.
+- Ferret is to the left of the hedgehog.
+- Hedgehog is to the left of the chinchilla.
+
+Given these constraints, a possible arrangement that respects all clues could be:
+Turtle in column 1 (as it needs to be to the left of the fish and we need space for ferret, hedgehog, and chinchilla in a sequence), ferret in column 2 (to the left of the hedgehog), hedgehog in column 3 (to the left of the chinchilla), and chinchilla in column 4 (as it must be to the right of the hedgehog). This arrangement respects all given conditions.
+
+
+The final answer is: 
+#############
+|       |   1    |    2     |     3      |   4    |  5   |   6    |
+| Pet   | turtle | ferret   | hedgehog   | chinchilla | fish | lizard |
+#############"	{'pet': ['turtle', 'ferret', 'hedgehog', 'chinchilla', 'fish', 'lizard']}	True	2	False
+Lv1-1x6-8	"To solve this puzzle, let's analyze each clue step by step:
+
+
+## Step 1: Place Salsa
+From clue 1, we know the fan of salsa is on the far right, so the table now looks like this:
+
+|               |  1   |   2   |  3  |   4    |     5     |   6   |
+| Music-Genre   |      |       |     |        |           | salsa |
+
+## Step 2: Place Gospel and Classical
+From clue 2, the fan of gospel is on the left of the fan of classical. This gives us two positions but doesn't specify where they are relative to the others yet.
+
+## Step 3: Place Indie and Jazz
+From clue 3, the fan of indie is on the right of the fan of jazz. Like with gospel and classical, this doesn't tell us their exact positions yet.
+
+## Step 4: Place R&B
+From clue 4, the fan of r&b is on the left of the fan of gospel. This starts to give us a sequence: r&b, gospel, classical (from clue 2).
+
+## Step 5: Resolve Conflict with Indie and R&B
+Clue 5 says the fan of r&b is on the right of the fan of indie, which seems to conflict with our previous steps because we had placed r&b before gospel without considering indie's position. However, given that indie must be to the left of jazz (clue 3) and r&b must be to the right of indie but also to the left of gospel (clues 4 and 5), we have a specific order for some genres: indie, r&b, gospel, classical.
+
+## Step 6: Place Jazz
+Given that indie is to the right of jazz (clue 3) and considering our sequence so far (indie, r&b, gospel, classical), jazz must be before indie. This gives us a full sequence except for salsa, which we already placed at the end.
+
+## Step 7: Final Placement
+So, combining all clues, the order from left to right is: jazz, indie, r&b, gospel, classical, salsa.
+
+
+The final answer is: 
+#############
+|               |  1   |   2   |  3  |   4    |     5     |   6   |
+| Music-Genre   | jazz | indie | r&b | gospel | classical | salsa |
+#############"	{'music-genre': ['jazz', 'indie', 'r&b', 'gospel', 'classical', 'salsa']}	True	6	True
+Lv1-1x6-9	"To solve this puzzle, we will follow the clues step by step.
+
+
+## Step 1: Place the person whose hobby is chess
+Given that the person who's hobby is chess is on the far left (clue 2), we place chess in position 1.
+
+|         |   1   |      2      |    3    |    4    |   5    |    6    |
+| Hobby   | chess |             |         |         |        |         |
+
+## Step 2: Determine the position of video-games
+Since the person who's hobby is chess is on the left of the person who's hobby is video-games (clue 1), and considering clue 3 that states the person who's hobby is video-games is on the left of the person who's hobby is singing, we can't place video-games directly next to chess without knowing where singing is. However, given that chess must be to the left of video-games, and there needs to be at least one position between them for another hobby (because video-games also has to be to the left of singing), we will come back to this after placing other hobbies.
+
+## Step 3: Place puzzles and baking
+The person whose hobby is puzzles is on the left of the person who's hobby is baking (clue 5). This means puzzles and baking must be together in that order. Given that drawing is on the right of baking (clue 4), we have a sequence: puzzles, baking, drawing.
+
+## Step 4: Combine the information
+Since chess is on the far left, followed by video-games at some point to its right, and knowing puzzles must be before baking, which in turn is before drawing, let's see how these can fit together with chess and video-games. Video-games also needs to be before singing.
+
+## Step 5: Final placement
+Given the constraints:
+- Chess is on position 1.
+- Puzzles must come before baking, and baking before drawing.
+- Video-games is after chess but before singing.
+Considering all these points, a possible arrangement that fits all clues could be:
+
+Chess (1), puzzles (2), video-games (3) doesn't work because we need to fit in baking and drawing after puzzles. So, considering the sequence for puzzles, baking, and drawing, and knowing video-games must precede singing but follow chess, a likely arrangement is:
+- Chess on 1,
+- Puzzles on 2 (since it has to be before baking),
+- Baking on 3,
+- Drawing on 4 (because it's after baking),
+- Video-games on 5 (since it needs to be after chess and before singing, but we have a fixed sequence for puzzles, baking, and drawing that fits the first four slots),
+- Singing on 6.
+
+This arrangement satisfies all conditions:
+- Chess is far left.
+- Puzzles is before baking.
+- Drawing is after baking.
+- Video-games is after chess and before singing.
+
+The final answer is: 
+#############
+|         |   1   |      2      |    3    |    4    |   5    |    6    |
+| Hobby   | chess | puzzles    | baking | drawing | video-games | singing |
+#############"	{'hobby': ['chess', 'puzzles', 'baking', 'drawing', 'video-games', 'singing']}	True	1	False
+Lv1-1x6-10	"Let's analyze the given clues:
+
+1. The person driving the jet-ski is on the left of the person driving the subway.
+2. The person driving the airplane is on the left of the person driving the jet-ski.
+3. The person driving the roller is on the right of the person driving the motorbike.
+4. The person driving the airplane is on the right of the person driving the trike.
+5. The person driving the motorbike is on the far left.
+
+From clue 5, we know the motorbike is in position 1. 
+
+Using clue 3, since the roller is on the right of the motorbike, the roller must be in a position to the right of the motorbike, but we don't know exactly where yet.
+
+Clue 4 tells us the airplane is on the right of the trike, and clue 2 tells us the airplane is also on the left of the jet-ski. This means the order for these three is: trike, airplane, jet-ski.
+
+Given that the motorbike is in position 1 (from clue 5) and considering clue 4 (airplane is on the right of the trike), we can start building our sequence:
+
+- Position 1: Motorbike
+- Since the airplane must be to the right of the trike, and the airplane also has to be to the left of the jet-ski, we need to place the trike in a position that allows for this arrangement. The earliest position for the airplane (being after the trike) would logically start from position 2 or later because the motorbike is already at position 1.
+
+However, if we consider clue 2 and the fact that the jet-ski must be to the left of the subway (clue 1), we realize we need a sequence where all these conditions are met. 
+
+Let's place the trike in position 2 for now as it gives us flexibility:
+- Position 1: Motorbike
+- Position 2: Trike
+
+Following clue 4, the airplane should be after the trike:
+- Position 3: Airplane
+
+Given clue 2 (airplane to the left of jet-ski), we place the jet-ski next:
+- Position 4: Jet-ski
+
+Clue 1 tells us the subway is to the right of the jet-ski, so:
+- Position 5: Subway
+
+The only one left without a position is the roller. Clue 3 says it's on the right of the motorbike, but since all positions are filled in a way that respects the other clues when considering the motorbike's fixed position and the need for the roller to be after it, we realize there was an oversight in not directly placing the roller immediately after the motorbike based on initial logic. However, given our current sequence and the constraints:
+- Position 6: Roller (since it must be to the right of the motorbike and this is the only position left that satisfies all given conditions when considering the placements deduced from other clues).
+
+Therefore, our final table looks like this:
+
+#############
+|             |     1     |   2    |   3   |    4     |    5    |   6    |
+| Transport   | Motorbike | Trike  | Airplane | Jet-ski | Subway | Roller |
+#############"	{'transport': ['motorbike', 'trike', 'airplane', 'jet-ski', 'subway', 'roller']}	True	1	False

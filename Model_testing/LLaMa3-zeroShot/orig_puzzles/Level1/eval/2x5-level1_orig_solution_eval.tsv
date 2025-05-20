@@ -1,0 +1,415 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-2x5-1	"Let's break down the clues and solve the puzzle step by step:
+
+1. The fan of pop is on the left of the person watching sports movies.
+2. The person watching superhero movies is on the right of the person watching disaster movies.
+3. The fan of pop is on the right of the fan of jazz.
+4. The person watching musical movies is on the far left.
+5. The fan of soul is on the far left.
+6. The person watching disaster movies is in the middle.
+7. The fan of soul is on the left of the fan of dubstep.
+
+From clue 4, we know the person watching musical movies is on the far left. From clue 5, we know the fan of soul is also on the far left. So, the order from left to right is:
+
+| Music-Genre | Soul |
+
+From clue 7, we know the fan of soul is on the left of the fan of dubstep. So, the order from left to right is:
+
+| Music-Genre | Soul | Dubstep |
+
+From clue 1, we know the fan of pop is on the left of the person watching sports movies. Since the fan of soul is already on the left, the fan of pop must be to the right of the fan of soul. So, the order from left to right is:
+
+| Music-Genre | Soul | Pop | Dubstep |
+
+From clue 3, we know the fan of pop is on the right of the fan of jazz. So, the fan of jazz must be to the left of the fan of pop. Since the fan of soul is already on the left, the fan of jazz must be to the left of the fan of soul. So, the order from left to right is:
+
+| Music-Genre | Soul | Jazz | Pop | Dubstep |
+
+From clue 2, we know the person watching superhero movies is on the right of the person watching disaster movies. Since the person watching disaster movies is in the middle (clue 6), the person watching superhero movies must be on the right of the middle. So, the order from left to right is:
+
+| Music-Genre | Soul | Jazz | Pop | Disaster | Superhero | Dubstep |
+
+Now, let's fill in the movie-genres:
+
+| Movie-Genre | Disaster | Musical | Romance | Sports | Superhero |
+| Music-Genre | Soul | Jazz | Pop | Dubstep |
+
+#############
+| Movie-Genre | Disaster | Musical | Romance | Sports | Superhero |
+| Music-Genre | Soul | Jazz | Pop | Dubstep |
+#############"	{'movie-genre': ['disaster', 'musical', 'romance', 'sports', 'superhero'], 'music-genre': ['soul', 'jazz', 'pop', 'dubstep']}	True	1	False
+Lv1-2x5-2	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking soy-milk is on the left of the person drinking sprite.
+2. The person drinking almond-milk is on the left of the fan of indie.
+3. The person drinking almond-milk is on the right of the person drinking fanta.
+4. The person drinking almond-milk is in the middle.
+5. The person drinking coffee is the fan of metal.
+6. The fan of rock is the person drinking sprite.
+7. The fan of r&b is on the right of the person drinking coffee.
+
+From clue 4, we know that the person drinking almond-milk is in the middle. From clue 3, we know that the person drinking almond-milk is on the right of the person drinking fanta. Therefore, the person drinking fanta must be on the left of the person drinking almond-milk.
+
+From clue 1, we know that the person drinking soy-milk is on the left of the person drinking sprite. Since the fan of rock is the person drinking sprite (clue 6), the person drinking soy-milk must be on the left of the fan of rock.
+
+From clue 5, we know that the person drinking coffee is the fan of metal. From clue 7, we know that the fan of r&b is on the right of the person drinking coffee. Therefore, the fan of r&b must be on the right of the fan of metal.
+
+Now, let's fill in the table:
+
+#############
+|               |   1    |   2   |      3      |    4     |   5    |
+| Beverage      |        |       |             |          |        |
+| Music-Genre   |        |       |             |          |        |
+| Soy-milk      | Disco  |       |             |          |        |
+| Fanta         |        | Indie |             |          |        |
+| Almond-milk   |        |       |             | Coffee   |        |
+| Coffee        |        |       |             | Metal    |        |
+| R&B          |        |       |             |          | Rock    |
+| Sprite        |        |       |             |          |        |
+#############
+
+The final solution is:
+
+* Soy-milk: Disco
+* Fanta: Indie
+* Almond-milk: Coffee
+* Coffee: Metal
+* R&B: Rock
+* Sprite: Rock"	{'beverage': ['', '', '', '', ''], 'music-genre': ['', '', '', '', ''], 'soy-milk': ['disco', '', '', '', ''], 'fanta': ['', 'indie', '', '', ''], 'almond-milk': ['', '', '', 'coffee', ''], 'coffee': ['', '', '', 'metal', ''], 'r&b': ['', '', '', '', 'rock'], 'sprite': ['', '', '', '', '']}	True	0	False
+Lv1-2x5-3	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person driving the bus is on the left of the person driving the boat.
+This means the order is:? (kale) -? (bus) -? (boat)
+
+2. The person eating nectarine is on the left of the person driving the subway.
+This means the order is:? (kale) -? (bus) -? (boat) -? (nectarine) -? (subway)
+
+3. The person eating apricot is on the left of the person driving the ship.
+This means the order is:? (kale) -? (bus) -? (boat) -? (apricot) -? (ship) -? (subway)
+
+4. The person eating kale is on the far left.
+This means the order is:? (kale) -? (bus) -? (boat) -? (apricot) -? (ship) -? (nectarine) -? (subway)
+
+5. The person driving the subway is on the left of the person driving the jet-ski.
+This means the order is:? (kale) -? (bus) -? (boat) -? (apricot) -? (ship) -? (nectarine) -? (subway) -? (jet-ski)
+
+6. The person eating garlic is in the middle.
+This means the order is:? (kale) -? (garlic) -? (bus) -? (boat) -? (apricot) -? (ship) -? (nectarine) -? (subway) -? (jet-ski)
+
+Now, let's analyze the remaining possibilities:
+
+* The person eating garlic is in the middle, so it must be between the person eating kale and the person eating nectarine.
+* The person eating apricot is on the left of the person driving the ship, so it must be before the person driving the ship.
+* The person driving the subway is on the left of the person driving the jet-ski, so it must be before the person driving the jet-ski.
+
+With these constraints, we can fill in the table:
+
+#############
+|             |  1   |     2     |   3    |    4    |     5     |
+| Food        |  kale |  garlic  | apricot | nectarine | raspberry |
+| Transport   | ?    | ?      |  bus    |  ship    |  jet-ski  |
+#############
+
+Now, let's assign the remaining transports:
+
+* The person driving the boat is on the right of the person driving the bus, so it must be in position 5.
+* The person driving the subway is on the left of the person driving the jet-ski, so it must be in position 4.
+* The person driving the ship is on the right of the person eating apricot, so it must be in position 3.
+* The person driving the bus is on the left of the person driving the boat, so it must be in position 2.
+
+The final solution is:
+
+#############
+|             |  1   |     2     |   3    |    4    |     5     |
+| Food        |  kale |  garlic  | apricot | subway  |  nectarine |
+| Transport   | ?    |  bus     |  ship   |  jet-ski |  boat     |
+#############
+
+Note that the person eating raspberry is not mentioned in the clues, so we can't determine their position."	{'food': ['kale', 'garlic', 'apricot', 'subway', 'nectarine'], 'transport': ['?', 'bus', 'ship', 'jet-ski', 'boat']}	True	2	False
+Lv1-2x5-4	"Let's break down the puzzle step by step:
+
+1. The person who's hobby is traveling is on the right of the nurse.
+This means the nurse is not on the far right, and the person who's hobby is traveling is on the right of the nurse.
+
+2. The person who's hobby is reading is on the left of the nurse.
+This means the nurse is not on the far left, and the person who's hobby is reading is on the left of the nurse.
+
+3. The social-worker is on the right of the fisherman.
+This means the fisherman is not on the far right, and the social-worker is on the right of the fisherman.
+
+4. The person who's hobby is fishing is on the right of the writer.
+This means the writer is not on the far right, and the person who's hobby is fishing is on the right of the writer.
+
+5. The person who's hobby is baking is on the left of the person who's hobby is reading.
+This means the person who's hobby is reading is on the right of the person who's hobby is baking.
+
+6. The paramedic is on the far right.
+This means the paramedic is on the right of the person who's hobby is fishing (from point 4) and the writer (from point 7).
+
+7. The writer is on the right of the person who's hobby is baking.
+This means the writer is on the right of the person who's hobby is baking, which is already known to be on the left of the person who's hobby is reading.
+
+Now, let's combine the information:
+
+|         |     1     |       2       |    3    |    4    |     5     |
+| Hobby   |           |               |         |         |           |
+| Job     |           |               |         |         |           |
+
+From point 1, the person who's hobby is traveling is on the right of the nurse. From point 2, the person who's hobby is reading is on the left of the nurse. From point 5, the person who's hobby is baking is on the left of the person who's hobby is reading. This means the order is: baking -> reading -> nurse -> traveling.
+
+From point 3, the social-worker is on the right of the fisherman. From point 4, the person who's hobby is fishing is on the right of the writer. From point 6, the paramedic is on the far right. This means the order is: fisherman -> writer -> fishing -> social-worker -> paramedic.
+
+Now, we can fill in the table:
+
+#############
+|         |     1     |       2       |    3    |    4    |     5     |
+| Hobby   | baking    | reading     |  nurse  |  traveling  |           |
+| Job     | fisherman | writer      |  social-worker  |  paramedic  |           |
+#############
+
+The final solution is:
+
+The person who's hobby is baking is on the left of the person who's hobby is reading, which is the nurse. The person who's hobby is traveling is on the right of the nurse. The social-worker is on the right of the fisherman, and the paramedic is on the far right."	{'hobby': ['baking', 'reading', 'nurse', 'traveling', ''], 'job': ['fisherman', 'writer', 'social-worker', 'paramedic', '']}	True	1	False
+Lv1-2x5-5	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person who's sport is volleyball is on the right of the person eating grapes.
+This means that the person eating grapes is not on the rightmost position.
+
+2. The person who's sport is rowing is the person eating strawberry.
+This means that strawberry is in position 2.
+
+3. The person who's sport is swimming is on the left of the person eating mango.
+This means that mango is not in position 1.
+
+4. The person who's sport is swimming is in the middle.
+This means that swimming is in position 3.
+
+5. The person eating grapes is on the left of the person eating banana.
+This means that banana is not in position 1.
+
+6. The person who's sport is weightlifting is the person eating mango.
+This means that weightlifting is in position 4.
+
+Now, let's combine the information:
+
+|         |    1     |     2      |    3     |       4       |     5      |
+| Food    |          |  Strawberry |          |  Mango  |          |
+| Sport   |          |            |  Swimming |  Weightlifting |  Volleyball |
+
+The final solution is:
+
+#############
+|         |    1     |     2      |    3     |       4       |     5      |
+| Food    |  Banana  |  Strawberry |  Grapes  |  Mango  |  Cherry  |
+| Sport   |          |            |  Swimming |  Weightlifting |  Volleyball |
+#############"	{'food': ['banana', 'strawberry', 'grapes', 'mango', 'cherry'], 'sport': ['', '', 'swimming', 'weightlifting', 'volleyball']}	True	3	False
+Lv1-2x5-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person driving the roller is in the middle.
+2. The person driving the car is on the far right.
+3. The person driving the quad-bike is on the left of the person driving the roller.
+4. The person driving the quad-bike is the person who's sport is cricket.
+5. The person who's sport is volleyball is on the right of the person who's sport is baseball.
+6. The person driving the skateboard is on the left of the person who's sport is badminton.
+
+From clue 1, we know the person driving the roller is in the middle. Let's assume the middle position is 3.
+
+From clue 2, we know the person driving the car is on the far right, so they must be in position 5.
+
+From clue 3, we know the person driving the quad-bike is on the left of the person driving the roller, so they must be in position 2.
+
+From clue 4, we know the person driving the quad-bike is the person who's sport is cricket, so they must be in position 2.
+
+From clue 5, we know the person who's sport is volleyball is on the right of the person who's sport is baseball. Since the person driving the car is on the far right, the person who's sport is baseball must be in position 4, and the person who's sport is volleyball must be in position 5.
+
+From clue 6, we know the person driving the skateboard is on the left of the person who's sport is badminton. Since the person driving the quad-bike is in position 2, the person who's sport is badminton must be in position 1.
+
+Now we can fill in the table:
+
+#############
+| Sport       |     1      |     2     |    3     |     4      |     5     |
+|             |  Badminton | Cricket  | Roller   | Baseball  | Volleyball |
+| Transport   | Skateboard | Quad-bike |          | Car       | Helicopter |
+#############
+
+The final solution is:
+
+The person who's sport is badminton is driving the skateboard, the person who's sport is cricket is driving the quad-bike, the person who's sport is volleyball is driving the helicopter, the person who's sport is baseball is driving the car, and the person who's sport is roller is in the middle."	{'sport': ['1', '2', '3', '4', '5'], 'transport': ['skateboard', 'quad-bike', '', 'car', 'helicopter']}	True	1	False
+Lv1-2x5-7	"Let's break down the clues and solve the puzzle step by step:
+
+1. The owner of the pony is on the right of the person who's sport is tennis.
+This means the pony's owner is either the 4th or 5th person, and tennis is either the 1st or 2nd sport.
+
+2. The person who's sport is baseball is the owner of the chinchilla.
+This means the chinchilla's owner is the 1st person, and baseball is the 1st sport.
+
+3. The owner of the rat is on the right of the person who's sport is rugby.
+This means the rat's owner is either the 3rd or 4th person, and rugby is either the 2nd or 3rd sport.
+
+4. The owner of the chinchilla is on the left of the owner of the rabbit.
+This means the chinchilla's owner (baseball) is the 1st person, and the rabbit's owner is either the 2nd or 3rd person.
+
+5. The person who's sport is biathlon is in the middle.
+This means biathlon is the 3rd sport, and the person who owns it is either the 2nd or 3rd person.
+
+6. The person who's sport is rugby is the owner of the pony.
+This means rugby is the 2nd sport, and the pony's owner is the 2nd person.
+
+Now, let's combine the information:
+
+|         |   1    |   2   |    3     |     4      |     5      |
+| Pet     | Chinchilla | Pony  | Frog/Rabbit | Rat        |            |
+| Sport   | Baseball  | Rugby  | Biathlon   |            |            |
+
+The only remaining pet is the frog, which must be the 3rd pet. Since the person who owns the pony is the 2nd person, and the person who owns the chinchilla is the 1st person, the rabbit must be the 2nd pet.
+
+Here's the final solution:
+
+#############
+|         |   1    |   2   |    3     |     4      |     5      |
+| Pet     | Chinchilla | Rabbit | Frog    | Rat        | Pony      |
+| Sport   | Baseball  | Rugby  | Biathlon | Water-polo | Tennis    |
+#############"	{'pet': ['chinchilla', 'rabbit', 'frog', 'rat', 'pony'], 'sport': ['baseball', 'rugby', 'biathlon', 'water-polo', 'tennis']}	True	2	False
+Lv1-2x5-8	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person who's sport is water-polo is on the left of the teacher. Let's call this person P1.
+
+From statement 2, we know the person who's sport is rugby is on the right of the person who's sport is soccer. Let's call the person who's sport is soccer P2.
+
+From statement 4, we know the teacher is on the left of the person who's sport is rugby. Since P1 is on the left of the teacher, P1 must be on the left of P2.
+
+From statement 3, we know the person who's sport is water-polo is on the right of the person who's sport is tennis. Since P1 is on the left of the teacher, P1 must be on the right of P2.
+
+From statement 5, we know the person who's sport is rugby is on the right of the person who's sport is soccer. This is already known, so we can move on.
+
+From statement 6, we know the chef is on the right of the engineer. Let's call the engineer E and the chef C. This means C is on the right of E.
+
+From statement 7, we know the person who's sport is ice-hockey is on the right of the scientist. Let's call the scientist S and the person who's sport is ice-hockey I. This means I is on the right of S.
+
+Now, let's combine the information:
+
+P1 (water-polo) is on the left of the teacher, who is on the left of P2 (rugby). P1 is also on the right of P2, so P1 must be in the middle.
+
+C (chef) is on the right of E (engineer).
+
+I (ice-hockey) is on the right of S (scientist).
+
+Here's the final solution table with '#############' around it:
+
+#############
+|         |    1     |     2      |    3    |     4     |     5      |
+| Job     |          |            |         |           |            |
+| Sport   |          |            |         |           |            |
+| E (Eng) |          | C (Chef)  |         |           |            |
+| S (Sci) |          |            |         | I (Ice-H) |            |
+| T (Tea) |          |            | P1 (WP) | P2 (Rugby) |            |
+| M (Man) |          |            |         |           | P3 (Tennis) |
+| T (Tea) |          |            |         |           | P4 (Soccer) |
+#############
+
+The jobs and sports are:
+
+* E (Engineer)
+* S (Scientist)
+* T (Teacher)
+* M (Manager)
+* C (Chef)
+
+* I (Ice-Hockey)
+* P1 (Water-Polo)
+* P2 (Rugby)
+* P3 (Tennis)
+* P4 (Soccer)"	{'job': ['', '', '', '', ''], 'sport': ['', '', '', '', ''], 'e (eng)': ['', 'c (chef)', '', '', ''], 's (sci)': ['', '', '', 'i (ice-h)', ''], 't (tea)': ['', '', '', '', 'p4 (soccer)'], 'm (man)': ['', '', '', '', 'p3 (tennis)']}	True	0	False
+Lv1-2x5-9	"Let's break down the puzzle step by step:
+
+1. The fan of house is on the left of the person who's hobby is camping.
+2. The person who's hobby is magic-tricks is on the right of the person who's hobby is camping.
+3. The person who's hobby is dancing is on the far right.
+4. The person who's hobby is photography is on the far left.
+5. The fan of rock is on the left of the fan of classical.
+6. The person who's hobby is woodworking is the fan of classical.
+7. The person who's hobby is photography is on the left of the fan of indie.
+
+From statement 1, we know the fan of house is on the left of the person who's hobby is camping. Let's call the person who's hobby is camping ""C"".
+
+From statement 2, we know the person who's hobby is magic-tricks is on the right of C. Let's call this person ""M"".
+
+From statement 3, we know the person who's hobby is dancing is on the far right. Let's call this person ""D"".
+
+From statement 4, we know the person who's hobby is photography is on the far left. Let's call this person ""P"".
+
+From statement 5, we know the fan of rock is on the left of the fan of classical. Let's call the fan of rock ""R"" and the fan of classical ""Cl"".
+
+From statement 6, we know the person who's hobby is woodworking is the fan of classical. Let's call this person ""W"".
+
+From statement 7, we know the person who's hobby is photography is on the left of the fan of indie. Let's call the fan of indie ""I"".
+
+Now, let's fill in the table:
+
+#############
+|               |      1      |    2    |      3       |      4      |    5    |
+| Hobby         |             |         |              |             |         |
+| P             | Photography |         |              |             |         |
+| C             | Camping     | M       |              |             |         |
+| W             | Woodworking |         |              |             |         |
+| R             |             |         |             |             | Rock    |
+| I             |             |         |             |             | Indie   |
+| D             |             |         |             |             | Dancing |
+| Music-Genre   |             |         |              |             |         |
+|             |             | House   |             |             |         |
+|             |             |         |             |             | Classical|
+|             |             |         |             |             |         |
+|             |             |         |             |             | Rock    |
+|             |             |         |             |             | Indie   |
+|             |             |         |             |             | Blues   |
+#############
+
+The final solution is:
+
+P (Photography) is on the far left.
+C (Camping) is on the left of M (Magic-tricks).
+W (Woodworking) is the fan of classical.
+R (Rock) is on the left of Cl (Classical).
+I (Indie) is on the right of P.
+D (Dancing) is on the far right.
+The music-genres are: House, Classical, Rock, Indie, and Blues."	{}	False	0	False
+Lv1-2x5-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The owner of the fish is on the left of the Argentine.
+This means the Argentine is not the first person, and the fish owner is to their left.
+
+2. The owner of the goldfish is on the left of the British.
+This means the British is not the first person, and the goldfish owner is to their left.
+
+3. The owner of the frog is the American.
+This means the American is the third person (since the frog is not mentioned in the first two clues).
+
+4. The Italian is on the left of the owner of the goldfish.
+This means the Italian is to the left of the goldfish owner, who is already known to be on the left of the British.
+
+5. The owner of the goldfish is in the middle.
+This means the goldfish owner is the third person, which we already know is the American.
+
+6. The owner of the dog is on the left of the American.
+This means the dog owner is the second person, and the American is the third person.
+
+Now, let's fill in the table:
+
+#############
+| Nationality   |    1     |    2    |     3     |    4    |    5     |
+|               |          |         |           |         |          |
+| Pet           |          |         | gold      |         |          |
+| American      |          | dog     | gold      |          |          |
+| Argentine     | fish     |          |           |          |          |
+| British       |          |          | gold      |          |          |
+| Italian       |          |          |           |          | rat     |
+| Nigerian      |          |          |           | frog     |          |
+#############
+
+The final solution is:
+
+* American: dog, goldfish
+* Argentine: fish
+* British: goldfish
+* Italian: rat
+* Nigerian: frog"	{'nationality': ['1', '2', '3', '4', '5'], 'pet': ['', '', 'gold', '', ''], 'american': ['', 'dog', 'gold', '', ''], 'argentine': ['fish', '', '', '', ''], 'british': ['', '', 'gold', '', ''], 'italian': ['', '', '', '', 'rat'], 'nigerian': ['', '', '', 'frog', '']}	True	0	False

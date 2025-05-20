@@ -1,0 +1,553 @@
+Puzzle-ID	output	solution	pred_pos	correct	format
+Zebra_2domain_replacements_0	"To solve this logic puzzle, we need to organize the information and use the clues to determine the positions of each attribute (color, city, brand of cigar, job, pet) for each person.
+
+Let's start by listing the possible positions:
+1. Leftmost
+2. Middle-left
+3. Middle
+4. Middle-right
+5. Rightmost
+
+We will use the clues step-by-step to fill in the grid:
+
+1. The person traveling to Berlin is the person who likes red.
+2. The person traveling to Nizza is the owner of the dog.
+3. The architect is the person who likes green.
+4. The person traveling to Marseilles is the dancer.
+5. The person who likes green is to the right of the person who likes ivory.
+6. The Old Gold smoker is the owner of the snails.
+7. The Kools smoker is the person who likes yellow.
+8. The social worker is in the middle (position 3).
+9. The person traveling to London is on the far left (position 1).
+10. The Chesterfields smoker is on the left or right of the owner of the fox.
+11. The Kools smoker is to the left or right of the owner of the horse.
+12. The Lucky Strike smoker is the project manager.
+13. The person traveling to Colone is the Parliaments smoker.
+14. The person traveling to London is to the left or right of the person who likes blue.
+
+Let's start filling in the grid:
+
+- Position 1: London (Clue 9)
+- Position 3: Social Worker (Clue 8)
+
+From Clue 1, Berlin is associated with red:
+- Position 2 or 4: Berlin, Red
+
+From Clue 2, Nizza is associated with the dog:
+- Position 2 or 4: Nizza, Dog
+
+From Clue 3, the architect likes green:
+- Position 2 or 4: Architect, Green
+
+From Clue 5, the person who likes green is to the right of the person who likes ivory:
+- Position 1: Ivory
+- Position 2: Green (since position 1 must be to the left of position 2)
+
+From Clue 7, the Kools smoker likes yellow:
+- Position 4 or 5: Yellow, Kools
+
+From Clue 6, the Old Gold smoker owns snails:
+- Position 2 or 5: Snails, Old Gold
+
+From Clue 13, the person traveling to Colone is the Parliaments smoker:
+- Position 5: Colone, Parliaments
+
+From Clue 4, the dancer travels to Marseilles:
+- Position 2: Dancer, Marseilles
+
+Now we can fill in the remaining positions:
+
+- Position 1: London, Ivory (Clue 14), Blue (since it must be next to blue)
+- Position 2: Marseilles, Green, Dancer
+- Position 3: Social Worker
+- Position 4: Berlin, Red
+- Position 5: Colone, Parliaments
+
+From Clue 7 and 11:
+- Position 4: Yellow, Kools (since it must be next to the horse)
+- Position 2 or 5: Horse
+
+From Clue 6:
+- Position 2 or 5: Snails, Old Gold
+
+From Clue 10:
+- Position 4: Chesterfields, Fox (since it must be next to Chesterfields)
+
+From Clue 12:
+- Position 3: Lucky Strike, Project Manager
+
+Now we can fill in the remaining jobs and pets:
+
+- Position 1: London, Ivory, Blue, Architect (since green is already taken), Dog
+- Position 2: Marseilles, Green, Dancer, Horse
+- Position 3: Social Worker, Lucky Strike, Project Manager
+- Position 4: Berlin, Red, Kools, Yellow, Fox
+- Position 5: Colone, Parliaments, Old Gold, Snails
+
+Finally, the electrician must be in position 1:
+
+**electrician:1**"	electrician:1	electrician:1	True	True
+Zebra_2domain_replacements_0	"To solve this logic puzzle, we need to use the given clues and systematically deduce the correct arrangement for each category (city, color, cigar brand, job, pet). Let's go through the clues step by step:
+
+1. The person traveling to Berlin is the person who likes red.
+2. The person traveling to Nizza is the owner of the dog.
+3. The architect is the person who likes green.
+4. The person traveling to Marseilles is the dancer.
+5. The person who likes green is to the right of the person who likes ivory.
+6. The old-gold smoker is the owner of the snails.
+7. The kools smoker is the person who likes yellow.
+8. The social worker is in the middle.
+9. The person traveling to London is on the far left.
+10. The chesterfields smoker is on the left or right of the owner of the fox.
+11. The kools smoker is to the left or right of the owner of the horse.
+12. The lucky-strike smoker is the project manager.
+13. The person traveling to Colone is the parliaments smoker.
+14. The person traveling to London is to the left or right of the person who likes blue.
+
+Let's start by placing the known positions:
+
+- **London** is on the far left (Clue 9).
+- **Social worker** is in the middle (Clue 8).
+
+We can represent the positions as follows:
+1. London
+2.
+3. Social worker
+4.
+5. Colone
+
+Now, let's use Clue 1 and place Berlin:
+- The person traveling to Berlin likes red (Clue 1).
+
+Since Berlin is not on the far left or in the middle, it must be in position 4:
+1. London
+2.
+3. Social worker
+4. Berlin (Red)
+5. Colone
+
+Next, let's use Clue 7 and place the kools smoker:
+- The kools smoker likes yellow (Clue 7).
+
+Since the social worker is in the middle, the kools smoker cannot be there. Therefore, the kools smoker must be in position 2 or 3. However, since the social worker is in position 3, the kools smoker must be in position 2:
+1. London
+2. Kools (Yellow)
+3. Social worker
+4. Berlin (Red)
+5. Colone
+
+Now, let's use Clue 6 and place the old-gold smoker:
+- The old-gold smoker owns snails (Clue 6).
+
+The old-gold smoker cannot be in positions 2 or 3 (since kools and social worker are there). Therefore, the old-gold smoker must be in position 5:
+1. London
+2. Kools (Yellow)
+3. Social worker
+4. Berlin (Red)
+5. Colone (Old-gold, Snails)
+
+Next, let's use Clue 13 and place the parliaments smoker:
+- The person traveling to Colone is the parliaments smoker (Clue 13).
+
+This confirms that position 5 is:
+1. London
+2. Kools (Yellow)
+3. Social worker
+4. Berlin (Red)
+5. Colone (Parliaments, Snails)
+
+Now, let's use Clue 3 and place the architect:
+- The architect likes green (Clue 3).
+
+Since the social worker is in position 3, the architect must be in position 2 or 4. However, since Berlin is red, the architect must be in position 2:
+1. London
+2. Kools (Yellow), Architect
+3. Social worker
+4. Berlin (Red)
+5. Colone (Parliaments, Snails)
+
+Next, let's use Clue 5 and place the person who likes ivory:
+- The person who likes green is to the right of the person who likes ivory (Clue 5).
+
+Since the architect likes green and is in position 2, the person who likes ivory must be in position 1:
+1. London (Ivory)
+2. Kools (Yellow), Architect
+3. Social worker
+4. Berlin (Red)
+5. Colone (Parliaments, Snails)
+
+Now, let's use Clue 14 and place the person who likes blue:
+- The person traveling to London is to the left or right of the person who likes blue (Clue 14).
+
+Since London is in position 1, the person who likes blue must be in position 2 or 3. However, since the architect is in position 2, the person who likes blue must be in position 3:
+1. London (Ivory)
+2. Kools (Yellow), Architect
+3. Social worker (Blue)
+4. Berlin (Red)
+5. Colone (Parliaments, Snails)
+
+Next, let's use Clue 10 and place the chesterfields smoker:
+- The chesterfields smoker is on the left or right of the owner of the fox (Clue 10).
+
+Since the social worker is in position 3, the chesterfields smoker must be in position 2 or 4. However, since the architect is in position 2, the chesterfields smoker must be in position 4:
+1. London (Ivory)
+2. Kools (Yellow), Architect
+3. Social worker (Blue)
+4. Berlin (Red), Chesterfields
+5. Colone (Parliaments, Snails)
+
+Now, let's use Clue 11 and place the kools smoker:
+- The kools smoker is to the left or right of the owner of the horse (Clue 11).
+
+Since the kools smoker is in position 2, the owner of the horse must be in position 1 or 3. However, since London is in position 1 and the social worker is in position 3, the owner of the horse must be in position 1:
+1. London (Ivory, Horse)
+2. Kools (Yellow), Architect
+3. Social worker (Blue)
+4. Berlin (Red), Chesterfields
+5. Colone (Parliaments, Snails)
+
+Next, let's use Clue 12 and place the lucky-strike smoker:
+- The lucky-strike smoker is the project manager (Clue 12).
+
+Since the social worker is in position 3, the project manager must be in position 4:
+1. London (Ivory, Horse)
+2. Kools (Yellow), Architect
+3. Social worker (Blue)
+4. Berlin (Red), Chesterfields, Project Manager
+5. Colone (Parliaments, Snails)
+
+Finally, let's place the remaining pet, zebra:
+- The only pet left is the zebra, which must be in position 3.
+
+Therefore, the final arrangement is:
+1. London (Ivory, Horse)
+2. Kools (Yellow), Architect
+3. Social worker (Blue, Zebra)
+4. Berlin (Red), Chesterfields, Project Manager
+5. Colone (Parliaments, Snails)
+
+So, the zebra is in position 3.
+
+**zebra:3**"	zebra:5	zebra:3	False	True
+Zebra_2domain_replacements_1	"To solve this puzzle, we need to carefully analyze each clue and place the information into a grid. Let's start by organizing the clues and placing them step-by-step.
+
+### Step 1: Initial Placement Based on Clues
+
+1. **Clue 9**: The person eating pomegranate is on the far left.
+   - Position 1: Pomegranate
+
+2. **Clue 8**: The person who's sport is surfing is in the middle.
+   - Position 3: Surfing
+
+### Step 2: Placing Other Elements Based on Clues
+
+3. **Clue 5**: The person who likes green is to the right of the person who likes ivory.
+   - This means the person who likes ivory cannot be in position 5, and the person who likes green must be immediately to the right of the person who likes ivory.
+
+4. **Clue 3**: The person who's sport is skiing is the person who likes green.
+   - Since surfing is in position 3, skiing must be in position 2 or 4. Given clue 5, if green is in position 4, then ivory must be in position 3 (but it can't because surfing is there), so green must be in position 2 and ivory in position 1.
+   - Position 1: Ivory
+   - Position 2: Green, Skiing
+
+5. **Clue 7**: The kools-smoker is the person who likes yellow.
+   - Yellow cannot be in positions 1 or 2 (already occupied), so it must be in position 3, 4, or 5.
+
+6. **Clue 10**: The chesterfields-smoker is on the left or right of the owner of the fox.
+   - This means the fox owner and chesterfields-smoker are adjacent.
+
+7. **Clue 11**: The kools-smoker is to the left or right of the owner of the horse.
+   - Since yellow is in position 3, the horse must be in position 2 or 4.
+
+8. **Clue 14**: The person eating pomegranate is to the left or right of the person who likes blue.
+   - Pomegranate is in position 1, so blue must be in position 2.
+
+### Step 3: Filling in Remaining Clues
+
+9. **Clue 1**: The person eating strawberry is the person who likes red.
+   - Red cannot be in positions 1 or 2 (already occupied), so it must be in position 3, 4, or 5. Since yellow is in position 3, red must be in position 4 or 5.
+
+10. **Clue 2**: The person eating lime is the owner of the dog.
+    - Dog cannot be in positions 1 or 2 (already occupied), so it must be in position 3, 4, or 5.
+
+11. **Clue 6**: The old-gold-smoker is the owner of the snails.
+    - Snails cannot be in positions 1 or 2 (already occupied), so it must be in position 3, 4, or 5.
+
+12. **Clue 12**: The lucky-strike-smoker is the person who's sport is handball.
+    - Handball cannot be in positions 1 or 2 (already occupied), so it must be in position 3, 4, or 5.
+
+13. **Clue 13**: The person eating peach is the parliaments-smoker.
+    - Peach and parliaments must be together, and they can only be in positions 3, 4, or 5.
+
+### Step 4: Finalizing the Grid
+
+- Position 1: Pomegranate, Ivory, Blue
+- Position 2: Green, Skiing, Red (strawberry)
+- Position 3: Surfing, Yellow, Kools, Horse
+- Position 4: Red (strawberry), Handball, Lucky-strike
+- Position 5: Peach, Parliaments
+
+### Step 5: Placing Golf
+
+- The only sport left is golf, which must be in position 5.
+
+### Final Answer:
+**golf:5**"	golf:1	golf:5	False	True
+Zebra_2domain_replacements_1	"To solve this logic puzzle, we need to carefully analyze each clue and fill out a grid that tracks all the information. Let's break it down step by step.
+
+### Step-by-Step Analysis
+
+1. **Clue 1:** The person eating strawberry is the person who likes red.
+2. **Clue 2:** The person eating lime is the owner of the dog.
+3. **Clue 3:** The person who's sport is skiing is the person who likes green.
+4. **Clue 4:** The person eating potato is the person whose sport is cycling.
+5. **Clue 5:** The person who likes green is to the right of the person who likes ivory.
+6. **Clue 6:** The old-gold-smoker is the owner of the snails.
+7. **Clue 7:** The kools-smoker is the person who likes yellow.
+8. **Clue 8:** The person whose sport is surfing is in the middle (position 3).
+9. **Clue 9:** The person eating pomegranate is on the far left (position 1).
+10. **Clue 10:** The chesterfields-smoker is on the left or right of the owner of the fox.
+11. **Clue 11:** The kools-smoker is to the left or right of the owner of the horse.
+12. **Clue 12:** The lucky-strike-smoker is the person whose sport is handball.
+13. **Clue 13:** The person eating peach is the parliaments-smoker.
+14. **Clue 14:** The person eating pomegranate is to the left or right of the person who likes blue.
+
+### Setting Up the Grid
+
+We will use a grid with columns for each position (1-5) and rows for colors, foods, cigars, sports, and pets.
+
+| Position | Color   | Food       | Cigar          | Sport      | Pet     |
+|----------|---------|------------|----------------|------------|---------|
+| 1        |         | Pomegranate|                |            |         |
+| 2        |         |            |                |            |         |
+| 3        |         |            |                | Surfing    |         |
+| 4        |         |            |                |            |         |
+| 5        |         |            |                |            |         |
+
+### Filling in the Grid
+
+1. **Clue 9:** The person eating pomegranate is on the far left (position 1).
+   - Position 1: Food = Pomegranate
+
+2. **Clue 8:** The person whose sport is surfing is in the middle (position 3).
+   - Position 3: Sport = Surfing
+
+3. **Clue 14:** The person eating pomegranate is to the left or right of the person who likes blue.
+   - Since position 1 has Pomegranate, positions 2 and 5 must have Blue.
+
+4. **Clue 7:** The kools-smoker is the person who likes yellow.
+   - Kools and Yellow are in the same row.
+
+5. **Clue 6:** The old-gold-smoker is the owner of the snails.
+   - Old-Gold and Snails are in the same row.
+
+6. **Clue 12:** The lucky-strike-smoker is the person whose sport is handball.
+   - Lucky-Strike and Handball are in the same row.
+
+7. **Clue 3:** The person who's sport is skiing is the person who likes green.
+   - Green and Skiing are in the same row.
+
+8. **Clue 5:** The person who likes green is to the right of the person who likes ivory.
+   - If Green is in position 4, Ivory must be in position 3 or 2. Since Surfing is in position 3, Ivy must be in position 2.
+
+9. **Clue 10:** The chesterfields-smoker is on the left or right of the owner of the fox.
+   - Chesterfields and Fox are next to each other.
+
+10. **Clue 11:** The kools-smoker is to the left or right of the owner of the horse.
+    - Kools and Horse are next to each other.
+
+11. **Clue 13:** The person eating peach is the parliaments-smoker.
+    - Peach and Parliaments are in the same row.
+
+12. **Clue 1:** The person eating strawberry is the person who likes red.
+    - Strawberry and Red are in the same row.
+
+13. **Clue 2:** The person eating lime is the owner of the dog.
+    - Lime and Dog are in the same row.
+
+### Solving the Grid
+
+After filling in all the information, we get:
+
+| Position | Color   | Food       | Cigar          | Sport      | Pet     |
+|----------|---------|------------|----------------|------------|---------|
+| 1        | Blue    | Pomegranate| Chesterfields  | Cycling    | Fox     |
+| 2        | Ivory   | Lime       | Old-Gold       | Golf       | Dog     |
+| 3        | Green   | Potato     | Kools          | Surfing    | Horse   |
+| 4        | Red     | Strawberry | Lucky-Strike   | Skiing     | Snails  |
+| 5        | Yellow  | Peach      | Parliaments    | Handball   | Zebra   |
+
+### Answer
+
+The zebra is in position 5.
+
+**zebra:5**"	zebra:5	zebra:5	True	True
+Zebra_2domain_replacements_2	"To solve this puzzle, we need to carefully analyze each clue and place the information into a grid. Let's break it down step by step.
+
+### Step-by-Step Solution:
+
+1. **Clue 8**: The person who's hobby is photography is in the middle (position 3).
+
+2. **Clue 9**: The person eating tomato is on the far left (position 1).
+
+3. **Clue 7**: The kools-smoker is the person who likes yellow.
+
+4. **Clue 5**: The person who likes green is to the right of the person who likes ivory.
+
+5. **Clue 3**: The person whose hobby is collecting is the person who likes green.
+
+6. **Clue 10**: The chesterfields-smoker is on the left or right of the owner of the fox.
+
+7. **Clue 11**: The kools-smoker is to the left or right of the owner of the horse.
+
+8. **Clue 4**: The person eating banana is the person whose hobby is board-games.
+
+9. **Clue 12**: The lucky-strike-smoker is the person whose hobby is skydiving.
+
+10. **Clue 13**: The person eating carrot is the parliaments-smoker.
+
+11. **Clue 14**: The person eating tomato is to the left or right of the person who likes blue.
+
+12. **Clue 1**: The person eating cranberry is the person who likes red.
+
+13. **Clue 2**: The person eating potato is the owner of the dog.
+
+14. **Clue 6**: The old-gold-smoker is the owner of the snails.
+
+### Grid Setup:
+Let's set up a grid to keep track of the information:
+
+| Position | Color   | Food     | Cigar        | Hobby         | Pet       |
+|----------|---------|----------|--------------|---------------|-----------|
+| 1        |         | Tomato   |              |               |           |
+| 2        |         |          |              |               |           |
+| 3        |         |          |              | Photography   |           |
+| 4        |         |          |              |               |           |
+| 5        |         |          |              |               |           |
+
+### Solving the Puzzle:
+
+1. **Position 1 (Tomato)**:
+   - Clue 9: Tomato is eaten.
+   - Clue 14: The person eating tomato is to the left or right of the person who likes blue.
+   - Clue 2: The person eating potato is the owner of the dog.
+
+2. **Position 3 (Photography)**:
+   - Clue 8: Photography is the hobby.
+
+3. **Position 5 (Yellow)**:
+   - Clue 7: Kools-smoker likes yellow.
+   - Clue 11: The kools-smoker is to the left or right of the owner of the horse.
+   - Clue 6: The old-gold-smoker is the owner of the snails.
+
+4. **Position 2 (Green)**:
+   - Clue 3: Collecting hobby likes green.
+   - Clue 5: Green is to the right of ivory.
+   - Clue 10: Chesterfields-smoker is on the left or right of the fox owner.
+
+5. **Position 4 (Red)**:
+   - Clue 1: Cranberry eater likes red.
+   - Clue 13: Carrot eater is parliaments-smoker.
+   - Clue 12: Lucky-strike-smoker is skydiving hobby.
+
+### Final Grid:
+
+| Position | Color   | Food     | Cigar        | Hobby         | Pet       |
+|----------|---------|----------|--------------|---------------|-----------|
+| 1        | Blue    | Tomato   | Chesterfields| Collecting    | Fox       |
+| 2        | Ivory   | Potato   | Kools        | Board-games   | Dog       |
+| 3        | Green   | Banana   | Old-Gold     | Photography   | Snails    |
+| 4        | Red     | Cranberry| Lucky-Strike | Skydiving     | Horse     |
+| 5        | Yellow  | Carrot   | Parliaments  | Woodworking   | Zebra     |
+
+### Answer:
+**Woodworking:5**"	woodworking:1	woodworking:5	False	True
+Zebra_2domain_replacements_2	"To solve this logic puzzle, we need to carefully analyze and piece together the given clues step by step. Let's start by organizing the information:
+
+### Clues:
+1. The person eating cranberry is the person who likes red.
+2. The person eating potato is the owner of the dog.
+3. The person who's hobby is collecting is the person who likes green.
+4. The person eating banana is the person whose hobby is board-games.
+5. The person who likes green is to the right of the person who likes ivory.
+6. The old-gold-smoker is the owner of the snails.
+7. The kools-smoker is the person who likes yellow.
+8. The person whose hobby is photography is in the middle (position 3).
+9. The person eating tomato is on the far left (position 1).
+10. The chesterfields-smoker is on the left or right of the owner of the fox.
+11. The kools-smoker is to the left or right of the owner of the horse.
+12. The lucky-strike-smoker is the person whose hobby is skydiving.
+13. The person eating carrot is the parliaments-smoker.
+14. The person eating tomato is to the left or right of the person who likes blue.
+
+### Step-by-Step Solution:
+
+1. **Position 1 (Tomato):**
+   - The person eating tomato is on the far left (clue 9).
+   - This person must be next to the person who likes blue (clue 14).
+
+2. **Position 3 (Photography):**
+   - The person whose hobby is photography is in the middle (position 3) (clue 8).
+
+3. **Position 5 (Red/Cranberry):**
+   - The person eating cranberry is the person who likes red (clue 1).
+   - Since the person eating tomato is on the far left, and this person must be next to the person who likes blue, the person who likes blue cannot be in position 2.
+   - Therefore, the person who likes blue must be in position 5.
+   - The person who likes red (and eats cranberry) must be in position 4.
+
+4. **Position 4 (Red/Cranberry):**
+   - The person eating cranberry is in position 4 (clue 1).
+   - This person also likes red.
+
+5. **Position 2 (Green/Collecting):**
+   - The person who likes green is to the right of the person who likes ivory (clue 5).
+   - The person who likes green must be in position 2.
+   - Therefore, the person who likes ivory must be in position 1 or 3.
+   - Since position 3 is occupied by the photography hobbyist, the person who likes ivory must be in position 1.
+
+6. **Position 1 (Tomato/Ivory):**
+   - The person eating tomato is also the person who likes ivory (clue 9).
+
+7. **Position 3 (Photography/Blue):**
+   - The person whose hobby is photography is in position 3.
+   - This person must like blue (since the person who likes red is in position 4 and the person who likes green is in position 2).
+
+8. **Position 5 (Red/Cranberry/Blue):**
+   - The person who likes blue is in position 5 (clue 14).
+   - This person cannot be the same as the person who eats tomato or the person who likes red.
+   - Therefore, the person who likes blue must be in position 5.
+
+9. **Position 2 (Green/Collecting):**
+   - The person who likes green is in position 2 (clue 3).
+   - This person's hobby is collecting.
+
+10. **Position 4 (Red/Cranberry/Snails/Old-Gold):**
+    - The old-gold-smoker is the owner of the snails (clue 6).
+    - Since the person eating cranberry is in position 4, this person must be the old-gold-smoker and the owner of the snails.
+
+11. **Position 3 (Photography/Kools/Horse):**
+    - The kools-smoker is to the left or right of the owner of the horse (clue 11).
+    - The person whose hobby is photography is in position 3.
+    - Therefore, the kools-smoker must be in position 2 or 4.
+    - Since the old-gold-smoker is in position 4, the kools-smoker must be in position 2.
+    - The person who likes green (in position 2) must also smoke kools and own the horse.
+
+12. **Position 5 (Red/Cranberry/Snails/Old-Gold):**
+    - The lucky-strike-smoker is the person whose hobby is skydiving (clue 12).
+    - This person must be in position 5.
+    - Therefore, the person who likes blue and eats carrot must smoke parliaments (clue 13).
+
+13. **Position 1 (Tomato/Ivory/Chesterfields/Fox):**
+    - The chesterfields-smoker is on the left or right of the owner of the fox (clue 10).
+    - The person eating tomato is in position 1.
+    - Therefore, this person must smoke chesterfields and own the fox.
+
+### Final Arrangement:
+- **Position 1:** Tomato, Ivory, Chesterfields, Fox
+- **Position 2:** Green, Collecting, Kools, Horse
+- **Position 3:** Photography, Blue, Lucky-Strike, Skydiving
+- **Position 4:** Red, Cranberry, Old-Gold, Snails
+- **Position 5:** Carrot, Yellow, Parliaments, Zebra
+
+### Answer:
+The zebra is in position 5.
+**zebra:5**"	zebra:5	zebra:5	True	True

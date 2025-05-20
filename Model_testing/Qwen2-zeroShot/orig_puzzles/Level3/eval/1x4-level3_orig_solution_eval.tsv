@@ -1,0 +1,461 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-1x4-1	"Certainly! Let's analyze the given conditions step by step:
+
+1. The person eating blueberry is on the far left.
+2. The person eating cranberry is on the left or right of the person eating blueberry.
+3. The person eating cranberry is on the left or right of the person eating kale.
+
+From these conditions, we can deduce the following:
+
+- Since the person eating blueberry is on the far left (position 1), let's denote this as ""B"" for blueberry.
+- The person eating cranberry must be either directly to the right of B or somewhere to the right of the person eating kale. This means the cranberry eater cannot be in position 1.
+- The person eating kale must be such that the cranberry eater is either to the left or right of the kale eater.
+
+Given these constraints, let's place the foods step by step:
+
+1. Position 1 must be blueberry (B).
+2. The cranberry eater (C) can be in positions 2, 3, or 4, but not 1.
+3. The kale eater (K) must be positioned such that C is either to the left or right of K.
+
+Let's test the possible positions for cranberry and kale:
+
+- If the cranberry eater is in position 2 (C), then the kale eater could be in position 3 (K) or 4 (K). This gives us two valid configurations:
+  - B - C - K - _
+  - B - C - _ - K
+
+- If the cranberry eater is in position 3 (C), then the kale eater could be in position 2 (K) or 4 (K). However, if K is in position 2, it would violate the condition that C must be to the left or right of K. So, K must be in position 4 (K). This gives us one valid configuration:
+  - B - _ - C - K
+
+- If the cranberry eater is in position 4 (C), then the kale eater could be in position 2 (K) or 3 (K). However, if K is in position 2, it would violate the condition that C must be to the left or right of K. So, K must be in position 3 (K). This gives us one valid configuration:
+  - B - _ - K - C
+
+Among these configurations, we need to ensure that all positions are filled with unique foods. Let's use the remaining foods (kale and radish) to fill in the gaps:
+
+- For the configuration B - C - K - _, we can fill the last position with radish (R):
+  - B - C - K - R
+
+- For the configuration B - _ - C - K, we can fill the second position with radish (R):
+  - B - R - C - K
+
+- For the configuration B - _ - K - C, we can fill the second position with radish (R):
+  - B - R - K - C
+
+Now, let's check which of these configurations satisfy all the conditions:
+
+- Configuration B - C - K - R:
+  - Blueberry (B) is in position 1.
+  - Cranberry (C) is in position 2, to the right of blueberry.
+  - Kale (K) is in position 3, to the right of cranberry.
+  - Radish (R) is in position 4.
+
+This configuration satisfies all the conditions.
+
+- Configuration B - R - C - K:
+  - Blueberry (B) is in position 1.
+  - Cranberry (C) is in position 3, to the right of blueberry.
+  - Kale (K) is in position 4, to the right of cranberry.
+  - Radish (R) is in position 2.
+
+This configuration also satisfies all the conditions.
+
+- Configuration B - R - K - C:
+  - Blueberry (B) is in position 1.
+  - Kale (K) is in position 3, to the right of blueberry.
+  - Cranberry (C) is in position 4, to the right of kale.
+  - Radish (R) is in position 2.
+
+This configuration also satisfies all the conditions.
+
+Since all three configurations satisfy the conditions, we can choose any one of them. For simplicity, let's use the first configuration:
+
+```
+|        |     1     |     2     |  3   |   4    |
+| Food   | Blueberry | Cranberry | Kale | Radish |
+```"	{'food': ['blueberry', 'cranberry', 'kale', 'radish']}	True	4	True
+Lv3-1x4-2	"Certainly! Let's solve the logic puzzle step-by-step.
+
+### Given Information:
+1. The person drinking coffee is on the right of the person drinking fanta.
+2. The person drinking water is on the left of the person drinking iced-tea.
+3. The person drinking iced-tea is on the far left or far right.
+
+### Step-by-Step Solution:
+
+1. **Identify the Position of Iced Tea:**
+   - From clue 3, the person drinking iced-tea must be either in position 1 (far left) or position 4 (far right).
+
+2. **Consider the Position of Iced Tea as Far Left:**
+   - If iced-tea is in position 1, then:
+     - The person in position 2 cannot drink iced-tea.
+     - The person in position 3 cannot drink iced-tea.
+     - The person in position 4 cannot drink iced-tea.
+     - Therefore, iced-tea is in position 1.
+
+3. **Determine the Remaining Positions:**
+   - Since iced-tea is in position 1, we need to place the other beverages in positions 2, 3, and 4.
+   - Clue 2 states that the person drinking water is on the left of the person drinking iced-tea. This means the person drinking water must be in position 1, but since iced-tea is already in position 1, this scenario is not possible.
+
+4. **Consider the Position of Iced Tea as Far Right:**
+   - If iced-tea is in position 4, then:
+     - The person in position 1 cannot drink iced-tea.
+     - The person in position 2 cannot drink iced-tea.
+     - The person in position 3 cannot drink iced-tea.
+     - Therefore, iced-tea is in position 4.
+
+5. **Determine the Remaining Positions:**
+   - Since iced-tea is in position 4, we need to place the other beverages in positions 1, 2, and 3.
+   - Clue 2 states that the person drinking water is on the left of the person drinking iced-tea. This means the person drinking water must be in position 3.
+   - Clue 1 states that the person drinking coffee is on the right of the person drinking fanta. Since position 3 is occupied by water, the only remaining positions for coffee and fanta are 1 and 2.
+
+6. **Assign the Remaining Beverages:**
+   - Position 1 must be for fanta (since it needs to be on the left of coffee).
+   - Position 2 must be for coffee (since it needs to be on the right of fanta).
+
+### Final Solution Table:
+```
+|            |   1   |   2    |   3   |    4     |
+| Beverage   | Fanta | Coffee | Water | Iced-tea |
+```"	{'beverage': ['fanta', 'coffee', 'water', 'iced-tea']}	True	4	True
+Lv3-1x4-3	"Certainly! Let's solve the logic puzzle step-by-step.
+
+We have four positions (1, 2, 3, and 4) and four different hobbies: baking, card-games, drawing, and fishing. We need to place these hobbies in the correct order based on the given clues:
+
+1. The person who's hobby is card-games is on the left of the person who's hobby is fishing.
+2. The person who's hobby is baking is either on the far left or far right.
+3. The person who's hobby is fishing is on the far right.
+
+Let's break it down:
+
+- From clue 3, we know that the person with the hobby of fishing must be in position 4.
+- From clue 2, since baking can only be in position 1 or 4, and we already know that position 4 is for fishing, the person with the hobby of baking must be in position 1.
+- From clue 1, the person with the hobby of card-games must be to the left of the person with the hobby of fishing. Since the person with the hobby of fishing is in position 4, the person with the hobby of card-games must be in position 2.
+- This leaves position 3 for the remaining hobby, which is drawing.
+
+So, the final arrangement is:
+- Position 1: Baking
+- Position 2: Card-games
+- Position 3: Drawing
+- Position 4: Fishing
+
+Here is the final solution table:
+
+```
+|         |   1    |    2    |     3      |    4    |
+| Hobby   | Baking | Card-games | Drawing   | Fishing |
+```"	{'hobby': ['baking', 'card-games', 'drawing', 'fishing']}	True	2	False
+Lv3-1x4-4	"Sure, let's solve this step-by-step.
+
+Given the constraints:
+1. The person watching spy movies is on the far right (position 4).
+2. The person watching spy movies is on the right of the person watching superhero movies.
+3. The person watching animation movies is on the left or right of the person watching superhero movies.
+
+From constraint 1, we know that the spy movie watcher is in position 4:
+```
+|               |    1    |     2     |     3     |  4  |
+| Movie-Genre   |         |           |           | spy |
+```
+
+From constraint 2, the person watching superhero movies must be in position 3 because the spy movie watcher is to their right:
+```
+|               |    1    |     2     |  hero     | spy |
+| Movie-Genre   |         |           |           |     |
+```
+
+From constraint 3, the person watching animation movies can be either in position 1 or 2 since the person watching superhero movies is in position 3. However, if the person watching animation movies were in position 2, then the person watching musical movies would have to be in position 1, which would leave no room for the remaining genre. Therefore, the person watching animation movies must be in position 1:
+```
+|               | anim   |     2     |  hero     | spy |
+| Movie-Genre   |         |           |           |     |
+```
+
+This leaves position 2 for the person watching musical movies:
+```
+|               | anim   | musical  |  hero     | spy |
+| Movie-Genre   |         |           |           |     |
+```
+
+So, the final solution table is:
+
+```
+|               | anim   | musical  |  hero     | spy  |
+| Movie-Genre   |         |           |           |      |
+```"	{'movie-genre': ['', '', '', '']}	True	0	False
+Lv3-1x4-5	"To solve this logic puzzle, let's analyze each clue step-by-step and place the sports accordingly.
+
+### Clue Analysis:
+1. **The person who's sport is basketball is on the far left or far right.**
+   - This means basketball can only be in position 1 or 4.
+   
+2. **The person who's sport is golf is on the right of the person who's sport is surfing.**
+   - This means if someone is surfing, the person with golf must be to their right.
+   
+3. **The person who's sport is basketball is on the right of the person who's sport is golf.**
+   - This means if someone is golf, the person with basketball must be to their right.
+
+### Step-by-Step Solution:
+
+1. **Clue 1**: Basketball can be in position 1 or 4.
+2. **Clue 3**: If there is a person with golf, there must be a person with basketball to their right. This means basketball cannot be in position 1 (because there would be no space for golf to its left). Therefore, basketball must be in position 4.
+3. **Clue 2**: Golf must be to the left of surfing. Since basketball is in position 4, golf and surfing must be in positions 1, 2, or 3, with golf to the left of surfing.
+
+Given these constraints, let's try placing the sports:
+
+- **Basketball in position 4** (from Clue 3).
+- **Golf must be to the left of surfing**, and since basketball is in position 4, golf and surfing must occupy positions 1, 2, or 3.
+
+Let's start placing golf and surfing:
+- If golf is in position 1, then surfing must be in position 2 or 3.
+- If golf is in position 2, then surfing must be in position 3.
+
+Since basketball is in position 4, we need to check the remaining positions (1, 2, 3) for golf and surfing.
+
+Let's test both scenarios:
+
+#### Scenario 1: Golf in Position 1
+- Golf in position 1.
+- Surfing must be in position 2 or 3.
+- If surfing is in position 2, then the remaining sport (weightlifting) must be in position 3.
+
+This gives us:
+- Position 1: Golf
+- Position 2: Surfing
+- Position 3: Weightlifting
+- Position 4: Basketball
+
+This satisfies all the clues.
+
+#### Scenario 2: Golf in Position 2
+- Golf in position 2.
+- Surfing must be in position 3.
+- The remaining sport (weightlifting) must be in position 1.
+
+This gives us:
+- Position 1: Weightlifting
+- Position 2: Golf
+- Position 3: Surfing
+- Position 4: Basketball
+
+However, this does not satisfy Clue 3 because basketball is in position 4, which should be to the right of golf (position 2).
+
+Therefore, the only valid solution is from Scenario 1:
+
+### Final Solution Table:
+```
+|         |       1       |    2    |  3   |     4      |
+| Sport   |   Golf        | Surfing | Weightlifting | Basketball  |
+```"	{'sport': ['golf', 'surfing', 'weightlifting', 'basketball']}	True	2	False
+Lv3-1x4-6	"To solve this logic puzzle, let's analyze the given conditions step by step and place the movie genres accordingly.
+
+### Conditions Recap:
+1. The person watching animation movies is on the left of the person watching mystery movies.
+2. The person watching mystery movies is on the left or right of the person watching crime movies.
+3. The person watching crime movies is on the left of the person watching zombie movies.
+4. The person watching crime movies is on the right of the person watching mystery movies.
+
+### Step-by-Step Analysis:
+
+1. **Condition 1:** Animation (A) must be to the left of Mystery (M).
+   - A _ M
+
+2. **Condition 2:** Mystery (M) can be on either side of Crime (C), but we need to check other conditions to narrow it down.
+   
+3. **Condition 3:** Crime (C) must be to the left of Zombie (Z).
+   - C _ Z
+
+4. **Condition 4:** Crime (C) must be to the right of Mystery (M).
+   - M _ C
+
+From Condition 4, we know that Mystery (M) must be to the left of Crime (C).
+
+Combining all these conditions, we get:
+- A _ M _ C _ Z
+
+Given there are only four positions, we can deduce:
+- A must be in position 1
+- M must be in position 2
+- C must be in position 3
+- Z must be in position 4
+
+So, the order is:
+- Position 1: Animation (A)
+- Position 2: Mystery (M)
+- Position 3: Crime (C)
+- Position 4: Zombie (Z)
+
+### Final Solution Table:
+```
+|               |     1     |    2    |   3   |   4    |
+| Movie-Genre   |   Animation  |  Mystery  |  Crime  |  Zombie  |
+```"	{'movie-genre': ['animation', 'mystery', 'crime', 'zombie']}	True	4	True
+Lv3-1x4-7	"Certainly! Let's solve the puzzle step by step.
+
+We have four positions (1, 2, 3, 4) and four different beverages: coffee, fanta, iced-tea, and juice.
+
+### Given Conditions:
+1. The person drinking fanta is on the right of the person drinking iced-tea.
+2. The person drinking iced-tea is on the right of the person drinking juice.
+3. The person drinking fanta is on the left or right of the person drinking coffee.
+
+### Step-by-Step Solution:
+
+#### Condition 2:
+- Juice must be in position 1 because it has to be on the leftmost side.
+- Iced-tea must be in position 2 because it has to be immediately to the right of juice.
+- Therefore, we have:
+  ```
+  |   1   |    2    |   3   |   4   |
+  | Juice | Iced-tea |       |       |
+  ```
+
+#### Condition 1:
+- Fanta must be in position 3 or 4 because it has to be on the right of iced-tea.
+- Since iced-tea is in position 2, fanta can only be in position 3 or 4.
+- We will test both possibilities for fanta.
+
+#### Condition 3:
+- Coffee must be either in position 1, 2, or 3 (since fanta is in 3 or 4).
+- Coffee cannot be in position 4 because fanta must be on the right or left of coffee.
+
+Let's test the possibilities:
+
+1. **Fanta in position 3**:
+   - Coffee must be in position 1, 2, or 3.
+   - If coffee is in position 1 or 2, it would conflict with the given conditions.
+   - So, coffee must be in position 3.
+   - This leaves position 4 for juice, but we already have juice in position 1.
+   - Therefore, this scenario is invalid.
+
+2. **Fanta in position 4**:
+   - Coffee must be in position 1, 2, or 3.
+   - If coffee is in position 1 or 2, it would conflict with the given conditions.
+   - So, coffee must be in position 3.
+   - This leaves position 1 and 2 for juice and iced-tea respectively, which fits all conditions perfectly.
+
+Thus, the correct arrangement is:
+```
+|   1   |    2    |   3   |   4   |
+| Juice | Iced-tea | Coffee| Fanta |
+```
+
+### Final Solution Table:
+```
+|   1   |    2    |   3   |   4   |
+| Juice | Iced-tea | Coffee| Fanta |
+```"	{'1': ['2', '3', '4'], 'juice': ['iced-tea', 'coffee', 'fanta']}	False	0	False
+Lv3-1x4-8	"Let's break down the clues and determine the order of the movie genres based on the given information.
+
+1. The person watching disaster movies is on the left of the person watching comedy movies.
+2. The person watching documentary movies is on the left of the person watching disaster movies.
+3. The person watching comedy movies is on the left or right of the person watching sports movies.
+4. The person watching disaster movies is on the left or right of the person watching comedy movies (redundant with clue 1).
+
+From clue 2, we know:
+\[ \text{Documentary} < \text{Disaster} \]
+
+From clue 1, we know:
+\[ \text{Disaster} < \text{Comedy} \]
+
+Combining these two, we get:
+\[ \text{Documentary} < \text{Disaster} < \text{Comedy} \]
+
+From clue 3, we have two possibilities:
+\[ \text{Sports} \text{ can be on the left or right of } \text{Comedy} \]
+So, the possible sequences are:
+\[ \text{Sports, Documentary, Disaster, Comedy} \]
+or
+\[ \text{Documentary, Disaster, Comedy, Sports} \]
+
+However, clue 4 reiterates that the person watching disaster movies is on the left or right of the person watching comedy movies, which is already satisfied by the first sequence.
+
+Thus, the only valid sequence is:
+\[ \text{Sports, Documentary, Disaster, Comedy} \]
+
+Now, let's place this sequence into the table:
+
+```
+|               |      1      |    2     |   3    |   4    |
+| Movie-Genre   | Sports      | Documentary | Disaster | Comedy |
+```
+
+### Final Solution Table
+
+```
+|               |      1      |    2     |   3    |   4    |
+| Movie-Genre   | Sports      | Documentary | Disaster | Comedy |
+```"	{'movie-genre': ['sports', 'documentary', 'disaster', 'comedy']}	True	0	False
+Lv3-1x4-9	"To solve this logic puzzle, let's analyze each clue step-by-step and deduce the correct arrangement.
+
+### Clues Analysis:
+
+1. **Clue 1**: The person watching disaster movies is on the left or right of the person watching epic movies.
+2. **Clue 2**: The person watching epic movies is on the far left or far right.
+3. **Clue 3**: The person watching adventure movies is on the left of the person watching fantasy movies.
+4. **Clue 4**: The person watching fantasy movies is on the far right.
+
+### Step-by-Step Deduction:
+
+1. From **Clue 2**, we know that the person watching epic movies must be either in position 1 (far left) or position 4 (far right).
+   
+2. From **Clue 4**, the person watching fantasy movies must be in position 4 (far right).
+
+Since the person watching fantasy movies is in position 4, the person watching epic movies cannot be in position 4 (as it would conflict with Clue 2). Therefore, the person watching epic movies must be in position 1.
+
+3. Now, the positions look like this:
+   - Position 1: Epic
+   - Position 2: Unknown
+   - Position 3: Unknown
+   - Position 4: Fantasy
+
+4. From **Clue 3**, the person watching adventure movies must be to the left of the person watching fantasy movies. Since fantasy is in position 4, adventure must be in position 2 or 3.
+
+5. From **Clue 1**, the person watching disaster movies must be next to the person watching epic movies (since epic is in position 1). Therefore, disaster can only be in position 2.
+
+6. This leaves position 3 for the person watching adventure movies.
+
+So, the final arrangement is:
+- Position 1: Epic
+- Position 2: Disaster
+- Position 3: Adventure
+- Position 4: Fantasy
+
+### Final Solution Table:
+
+```
+|               |  1   |    2     |     3     |    4    |
+| Movie-Genre   | Epic | Disaster | Adventure | Fantasy |
+```"	{'movie-genre': ['epic', 'disaster', 'adventure', 'fantasy']}	True	4	True
+Lv3-1x4-10	"To solve this logic puzzle, let's analyze each clue step by step:
+
+1. **The person eating broccoli is on the right of the person eating strawberry.**
+   - This means if strawberry is at position 1, broccoli must be at position 2, 3, or 4.
+
+2. **The person eating broccoli is between the person eating avocado and the person eating strawberry.**
+   - This means if strawberry is at position 1, broccoli must be at position 2, and avocado must be at position 3 or 4.
+   - If strawberry is at position 2, broccoli must be at position 3, and avocado must be at position 1 or 4.
+   - If strawberry is at position 3, broccoli must be at position 4, and avocado must be at position 1 or 2.
+   - If strawberry is at position 4, broccoli cannot be in the middle as there is no position to its right.
+
+3. **The person eating avocado is on the left or right of the person eating pumpkin.**
+   - This means avocado and pumpkin can be adjacent or separated by one other food item.
+
+Let's try to place the foods based on these clues:
+
+- From clue 2, we know that if strawberry is at position 1, then:
+  - Strawberry (1), Broccoli (2), Avocado (3 or 4)
+  - This leaves pumpkin for either position 3 or 4, which satisfies clue 3.
+
+- Let's test with Strawberry at position 1 and see if it works:
+  - Strawberry (1), Broccoli (2), Avocado (3), Pumpkin (4)
+  - This arrangement satisfies all clues:
+    - Clue 1: Broccoli is on the right of Strawberry.
+    - Clue 2: Broccoli is between Avocado and Strawberry.
+    - Clue 3: Avocado is next to Pumpkin.
+
+Since this arrangement works, we can conclude:
+
+```
+|        |     1      |    2     |    3    |    4    |
+| Food   | Strawberry | Broccoli | Avocado | Pumpkin |
+```
+
+This is the final solution that satisfies all the given clues."	{'food': ['strawberry', 'broccoli', 'avocado', 'pumpkin']}	True	4	True

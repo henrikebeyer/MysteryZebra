@@ -1,0 +1,507 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-3x4-1	"Let's break down the puzzle step by step:
+
+1. The manager is in an odd position##4: This means the manager is in positions 1 or 3.
+2. The nurse is on the left or right of the person who's sport is cricket##3: This means the nurse is in positions 1, 2, or 4, and the person who's sport is cricket is in positions 2 or 4.
+3. The Spanish is on the right of the doctor: This means the doctor is in positions 1 or 2, and the Spanish is in positions 2 or 4.
+4. The Malaysian is the person who's sport is cricket: This means the Malaysian is in positions 2 or 4, and their sport is cricket.
+5. The American is on the right of the person who's sport is soccer: This means the American is in positions 3 or 4, and the person who's sport is soccer is in positions 1 or 2.
+6. The person who's sport is cricket is in an even position##4: This means the Malaysian is in positions 2 or 4.
+7. The analyst is the person who's sport is ice-hockey: This means the analyst is in positions 1, 2, or 3, and their sport is ice-hockey.
+8. The manager is on the right of the doctor: This means the doctor is in positions 1 or 2, and the manager is in positions 2 or 4.
+9. The person who's sport is ice-hockey is not the nurse##6: This means the analyst is not the nurse.
+10. The person who's sport is soccer is on the left or right of the person who's sport is cricket##3: This means the person who's sport is soccer is in positions 1, 2, or 4, and the Malaysian is in positions 2 or 4.
+11. The person who's sport is soccer is somewhere to the left of the analyst##5: This means the person who's sport is soccer is in positions 1 or 2, and the analyst is in positions 1, 2, or 3.
+
+Now, let's combine the information:
+
+* The manager is in an odd position##4, so they are in position 3.
+* The Malaysian is in positions 2 or 4, and their sport is cricket, so they are in position 4.
+* The doctor is in positions 1 or 2, and the Spanish is on the right of the doctor, so the doctor is in position 1 and the Spanish is in position 2.
+* The American is on the right of the person who's sport is soccer, and the person who's sport is soccer is in positions 1 or 2, so the American is in position 3.
+* The analyst is the person who's sport is ice-hockey, and they are not the nurse, so they are in positions 1, 2, or 3, and their sport is ice-hockey.
+* The person who's sport is soccer is on the left or right of the person who's sport is cricket, and the Malaysian is in position 4, so the person who's sport is soccer is in position 2.
+
+Here is the final solution table with '#############' around it:
+
+#############
+| Job           |       1       |     2     |    3    |     4      |
+| Nationality   |               |           |         |            |
+| Sport         |               |           |         |            |
+| Doctor        | American      | Spanish   | Manager | Malaysian  |
+| Sport         | Soccer        | Cricket   | Ice-Hockey | Skateboarding |
+#############"	{'job': ['1', '2', '3', '4'], 'nationality': ['', '', '', ''], 'sport': ['soccer', 'cricket', 'ice-hockey', 'skateboarding'], 'doctor': ['american', 'spanish', 'manager', 'malaysian']}	True	1	False
+Lv1-3x4-2	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person who's sport is baseball is on the left or right of the person who's sport is soccer. This means that the person who's sport is soccer cannot be in the first or last position.
+
+From statement 2, we know that the fan of classical music is in an even position. This means that the fan of classical music cannot be in the first or last position.
+
+From statement 3, we know that the scientist is somewhere to the left of the person who's sport is golf. This means that the scientist cannot be in the last position.
+
+From statement 4, we know that the writer is on the left or right of the fan of rock music. This means that the writer cannot be in the first or last position.
+
+From statement 5, we know that the scientist is not the fan of funk music. This doesn't give us any new information.
+
+From statement 6, we know that the person who's sport is soccer is between the person who's sport is baseball and the engineer. This means that the engineer cannot be in the first position.
+
+From statement 7, we know that the scientist is in an odd position. This means that the scientist cannot be in an even position.
+
+From statement 8, we know that the writer is between the engineer and the fan of electronic music. This means that the writer cannot be in the first position.
+
+From statement 9, we know that the fan of funk music is somewhere to the right of the fan of classical music. This doesn't give us any new information.
+
+From statement 10, we know that the person who's sport is handball is in an even position. This means that the person who's sport is handball cannot be in the first or last position.
+
+From statement 11, we know that the scientist is in an odd position. This is already known from statement 7.
+
+Now, let's try to fill in the table:
+
+| Job           |     1      |     2     |    3     |     4      |
+| Music-Genre   |            |           |          |            |
+| Sport         |            |           |          |            |
+
+From statement 6, we know that the engineer cannot be in the first position. From statement 8, we know that the writer cannot be in the first position. From statement 10, we know that the person who's sport is handball cannot be in the first or last position. This means that the first position must be occupied by the journalist.
+
+| Job           | Journalist |            |          |            |
+| Music-Genre   |            |           |          |            |
+| Sport         |            |           |          |            |
+
+From statement 2, we know that the fan of classical music is in an even position. From statement 10, we know that the person who's sport is handball is in an even position. This means that the person who's sport is handball must be the fan of classical music.
+
+| Job           | Journalist |            |          |            |
+| Music-Genre   |            | Classical |          |            |
+| Sport         |            | Handball   |          |            |
+
+From statement 3, we know that the scientist is somewhere to the left of the person who's sport is golf. From statement 7, we know that the scientist is in an odd position. This means that the scientist must be in the third position.
+
+| Job           | Journalist | Scientist | Golf     |            |
+| Music-Genre   |            |          |          |            |
+| Sport         |            |          |          |            |
+
+From statement 6, we know that the person who's sport is soccer is between the person who's sport is baseball and the engineer. This means that the engineer must be in the last position.
+
+| Job           | Journalist | Scientist | Golf     | Engineer  |
+| Music-Genre   |            |          |          |            |
+| Sport         |            |          |          |            |
+
+From statement 4, we know that the writer is on the left or right of the fan of rock music. From statement 8, we know that the writer is between the engineer and the fan of electronic music. This means that the writer must be the fan of rock music and must be in the second position.
+
+| Job           | Writer     | Scientist | Golf     | Engineer  |
+| Music-Genre   | Rock       |          |          |            |
+| Sport         |            |          |          |            |
+
+From statement 9, we know that the fan of funk music is somewhere to the right of the fan of classical music. This means that the fan of funk music must be in the last position.
+
+| Job           | Writer     | Scientist | Golf     | Engineer  |
+| Music-Genre   | Rock       |          |          | Funk      |
+| Sport         |            |          |          |            |
+
+Now, let's fill in the remaining positions:
+
+| Job           | Writer     | Scientist | Golf     | Engineer  |
+| Music-Genre   | Rock       | Electronic|          | Funk      |
+| Sport         | Baseball  |          | Soccer   | Handball   |
+
+The final solution is:
+
+#############
+| Job           | Writer     | Scientist | Golf     | Engineer  |
+| Music-Genre   | Rock       | Electronic|          | Funk      |
+| Sport         | Baseball  |          | Soccer   | Handball   |
+#############"	{'job': ['writer', 'scientist', 'golf', 'engineer'], 'music-genre': ['rock', 'electronic', '', 'funk'], 'sport': ['baseball', '', 'soccer', 'handball']}	True	3	False
+Lv1-3x4-3	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person who's hobby is fishing is between the person who's hobby is woodworking and the person watching thriller movies.
+
+From statement 2, we know that the person who's hobby is fishing is between the person watching thriller movies and the person watching satire movies.
+
+Combining these two statements, we can conclude that the person who's hobby is fishing is between the person watching thriller movies and the person watching satire movies.
+
+From statement 3, we know that the person watching satire movies is not the person who's hobby is baking.
+
+From statement 4, we know that the person watching sports movies is on the right of the person watching satire movies.
+
+From statement 5, we know that the person who's sport is skiing is on the right of the person who's hobby is cooking.
+
+From statement 6, we know that the person who's sport is skiing is the person who's hobby is baking.
+
+Combining statements 5 and 6, we can conclude that the person who's hobby is baking is on the right of the person who's hobby is cooking.
+
+From statement 7, we know that the person who's sport is soccer is between the person who's sport is baseball and the person watching superhero movies.
+
+Now, let's start filling in the table:
+
+|               |      1       |    2     |    3     |     4     |
+| Hobby         |              |          |          |           |
+| Movie-Genre   |              |          |          |           |
+| Sport         |              |          |          |           |
+
+From statement 1, we know that the person who's hobby is fishing is between the person who's hobby is woodworking and the person watching thriller movies. Let's assume the person who's hobby is woodworking is at position 1. Then, the person who's hobby is fishing is at position 2, and the person watching thriller movies is at position 3.
+
+From statement 2, we know that the person who's hobby is fishing is between the person watching thriller movies and the person watching satire movies. This means that the person watching satire movies is at position 4.
+
+From statement 3, we know that the person watching satire movies is not the person who's hobby is baking. Since the person watching satire movies is at position 4, the person who's hobby is baking must be at position 1.
+
+From statement 4, we know that the person watching sports movies is on the right of the person watching satire movies. Since the person watching satire movies is at position 4, the person watching sports movies is at position 4.
+
+From statement 5, we know that the person who's sport is skiing is on the right of the person who's hobby is cooking. Since the person who's hobby is baking is at position 1, the person who's hobby is cooking is at position 2. The person who's sport is skiing is at position 3.
+
+From statement 6, we know that the person who's sport is skiing is the person who's hobby is baking. This confirms that the person who's hobby is baking is at position 1.
+
+From statement 7, we know that the person who's sport is soccer is between the person who's sport is baseball and the person watching superhero movies. Let's assume the person who's sport is baseball is at position 1. Then, the person who's sport is soccer is at position 2, and the person watching superhero movies is at position 3.
+
+Now, let's fill in the table:
+
+#############
+|               |      1       |    2     |    3     |     4     |
+| Hobby         |  Baking     |  Cooking |  Fishing |  Woodworking |
+| Movie-Genre   |  Superhero  |  Sports  |  Thriller |  Satire     |
+| Sport         |  Baseball  |  Soccer  |  Skiing  |
+#############
+
+Note that the table is not unique, as there are multiple possible arrangements of the hobbies, movie genres, and sports that satisfy the given statements. However, the above solution is one possible arrangement that satisfies all the statements."	{'hobby': ['baking', 'cooking', 'fishing', 'woodworking'], 'movie-genre': ['superhero', 'sports', 'thriller', 'satire'], 'sport': ['baseball', 'soccer', 'skiing']}	True	2	False
+Lv1-3x4-4	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person driving the bike is on the far left or far right. Let's assume they are on the far left for now.
+
+From statement 3, we know the social-worker is on the right of the person driving the bike. Since the bike driver is on the far left, the social-worker must be in the second position.
+
+From statement 2, we know the social-worker is not the person eating watermelon. Since the social-worker is in the second position, the person eating watermelon must be in the first position.
+
+From statement 4, we know the person eating watermelon is between the fisherman and the person driving the van. Since the person eating watermelon is in the first position, the fisherman must be in the third position, and the person driving the van must be in the fourth position.
+
+From statement 5, we know the project-manager is somewhere to the left of the dressmaker. Since the social-worker is in the second position, the project-manager must be in the first position (since the social-worker is already in the second position).
+
+From statement 6, we know the person eating garlic is on the far right. Since the person eating garlic is in an even position (statement 7), they must be in the second or fourth position. However, since the social-worker is already in the second position, the person eating garlic must be in the fourth position.
+
+From statement 8, we know the person driving the subway is somewhere to the right of the person driving the bus. Since the person driving the van is in the fourth position, the person driving the subway must be in the third position.
+
+From statement 9, we know the person eating pomegranate is on the left or right of the person eating cauliflower. Since the person eating garlic is in the fourth position, the person eating pomegranate must be in the third position (since the person eating garlic is already in the fourth position).
+
+From statement 10, we know the person eating watermelon is on the left or right of the person eating pomegranate. Since the person eating watermelon is in the first position, the person eating pomegranate must be in the third position (which we already know).
+
+From statement 11, we know the person eating garlic is on the right of the person eating watermelon. Since the person eating garlic is in the fourth position, the person eating watermelon must be in the first position (which we already know).
+
+Now that we have all the information, let's fill in the table:
+
+#############
+|             |        1        |       2       |     3      |     4     |
+| Food        |  Watermelon  |  Garlic     |  Pomegranate|  Cauliflower|
+| Job         |  Project-manager|  Social-worker|  Fisherman  |  Dressmaker|
+| Transport   |  Van          |  Bike        |  Subway     |  Bus       |
+#############
+
+The final solution is:
+
+* The person eating watermelon is the project-manager, who is driving the van.
+* The person eating garlic is the social-worker, who is driving the bike.
+* The person eating pomegranate is the fisherman, who is taking the subway.
+* The person eating cauliflower is the dressmaker, who is taking the bus."	{'food': ['watermelon', 'garlic', 'pomegranate', 'cauliflower'], 'job': ['project-manager', 'social-worker', 'fisherman', 'dressmaker'], 'transport': ['van', 'bike', 'subway', 'bus']}	True	2	False
+Lv1-3x4-5	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person watching spy movies is not Turkish.
+2. The Russian is between the person eating mango and the Pakistani.
+3. The American is somewhere to the left of the person watching superhero movies.
+4. The person watching fantasy movies is on the left of the person watching superhero movies.
+5. The person eating blueberry is not the person watching fantasy movies.
+6. The person eating mango is somewhere to the right of the person eating pepper.
+7. The person watching superhero movies is between the Russian and the American.
+8. The person eating pepper is on the left of the person watching martial-arts movies.
+
+From clue 1, we know the Turkish person is not watching spy movies. From clue 2, we know the Russian is between the person eating mango and the Pakistani. This means the Russian is not watching spy movies (since the spy movie watcher is not Turkish).
+
+From clue 3, we know the American is to the left of the superhero movie watcher. From clue 4, we know the fantasy movie watcher is to the left of the superhero movie watcher. This means the American is to the left of the fantasy movie watcher.
+
+From clue 5, we know the blueberry eater is not the fantasy movie watcher. From clue 6, we know the mango eater is to the right of the pepper eater. This means the pepper eater is to the left of the mango eater.
+
+From clue 7, we know the superhero movie watcher is between the Russian and the American. This means the Russian is to the left of the superhero movie watcher, and the American is to the right.
+
+From clue 8, we know the pepper eater is to the left of the martial-arts movie watcher. This means the martial-arts movie watcher is to the right of the pepper eater.
+
+Now, let's fill in the table:
+
+#############
+| Food          |    1     |     2     |    3    |      4       |
+| Movie-Genre   |          |           |         |              |
+| Nationality   |          |           |         |              |
+#############
+| Blueberry    | Turkish  |          |         |              |
+| Mango        |          | Russian  |         |              |
+| Pepper      |          |          | Martial-Arts |              |
+| Carrot      |          |          | Superhero  | Spy          |
+| American    |          |          |          |              |
+| Pakistani   |          |          |          |              |
+| Russian     |          |          |          |              |
+| Turkish     |          |          |          |              |
+#############
+
+The final solution is:
+
+* Blueberry: Turkish
+* Mango: Russian
+* Pepper: Martial-Arts
+* Carrot: Superhero
+* American: Spy
+* Pakistani: Fantasy
+* Russian: None
+* Turkish: None"	{'blueberry': ['turkish', '', '', ''], 'mango': ['', 'russian', '', ''], 'pepper': ['', '', 'martial-arts', ''], 'carrot': ['', '', 'superhero', 'spy'], 'american': ['', '', '', ''], 'pakistani': ['', '', '', ''], 'russian': ['', '', '', ''], 'turkish': ['', '', '', '']}	False	0	False
+Lv1-3x4-6	"Let's break down the puzzle step by step:
+
+From statement 1, we know the person driving the scooter is on the far left or far right. Let's assume they are on the far left for now.
+
+From statement 2, we know the person driving the airplane is somewhere to the right of the person who's sport is climbing. Since the scooter driver is on the far left, the airplane driver must be at least 2 positions to the right.
+
+From statement 3, we know the person driving the subway is not the person drinking milk. This doesn't give us much information yet, but we'll come back to it later.
+
+From statement 4, we know the person who's sport is rugby is not the person driving the snowmobile. This doesn't give us much information yet, but we'll come back to it later.
+
+From statement 5, we know the person drinking milk is on the right of the person driving the snowmobile. This means the milk drinker is at least 2 positions to the right of the snowmobile driver.
+
+From statement 6, we know the person drinking milk is not the person who's sport is rugby. This doesn't give us much information yet, but we'll come back to it later.
+
+From statement 7, we know the person drinking sprite is not the person driving the airplane. This doesn't give us much information yet, but we'll come back to it later.
+
+From statement 8, we know the person who's sport is climbing is somewhere to the left of the person drinking milk. Since the milk drinker is at least 2 positions to the right of the snowmobile driver, the climbing person must be at least 2 positions to the left of the milk drinker.
+
+From statement 9, we know the person who's sport is basketball is somewhere to the left of the person driving the subway. Since the subway driver is not the milk drinker (statement 3), the basketball person must be at least 2 positions to the left of the subway driver.
+
+From statement 10, we know the person who's sport is surfing is somewhere to the left of the person driving the snowmobile. Since the snowmobile driver is not the rugby person (statement 4), the surfing person must be at least 2 positions to the left of the snowmobile driver.
+
+From statement 11, we know the person drinking 7up is on the left of the person drinking mirinda. This doesn't give us much information yet, but we'll come back to it later.
+
+Now, let's try to fill in the table:
+
+|             |    1    |     2      |     3      |   4    |
+| Beverage    |         |            |            |        |
+| Sport       |         |            |            |        |
+| Transport   |         |            |            |        |
+
+From statement 1, we know the scooter driver is on the far left. Let's assume they are in position 1.
+
+From statement 2, we know the airplane driver is at least 2 positions to the right of the climbing person. Since the climbing person is at least 2 positions to the left of the milk drinker (statement 8), the airplane driver must be at least 4 positions to the right of the scooter driver. Let's put the airplane driver in position 4.
+
+From statement 5, we know the milk drinker is on the right of the snowmobile driver. Since the snowmobile driver is not the rugby person (statement 4), the milk drinker must be in position 3.
+
+From statement 8, we know the climbing person is at least 2 positions to the left of the milk drinker. Since the milk drinker is in position 3, the climbing person must be in position 1.
+
+From statement 9, we know the basketball person is at least 2 positions to the left of the subway driver. Since the subway driver is not the milk drinker (statement 3), the basketball person must be in position 2.
+
+From statement 10, we know the surfing person is at least 2 positions to the left of the snowmobile driver. Since the snowmobile driver is not the rugby person (statement 4), the surfing person must be in position 1.
+
+From statement 11, we know the 7up drinker is on the left of the mirinda drinker. Since the mirinda drinker is not in position 1 (surfing person), the 7up drinker must be in position 1.
+
+Now, let's fill in the table:
+
+#############
+|             |    1    |     2      |     3      |   4    |
+| Beverage    |  7up   |  milk     |  mirinda  |  sprite |
+| Sport       | surfing| basketball|  climbing |  rugby  |
+| Transport   | scooter|            |  snowmobile| airplane |
+#############
+
+Note that this solution satisfies all the given statements."	{'beverage': ['7up', 'milk', 'mirinda', 'sprite'], 'sport': ['surfing', 'basketball', 'climbing', 'rugby'], 'transport': ['scooter', '', 'snowmobile', 'airplane']}	True	5	False
+Lv1-3x4-7	"Let's break down the puzzle step by step:
+
+1. The person drinking almond-milk is in an odd position, which means they are in positions 1 or 3.
+2. The person drinking soy-milk is the owner of the guinea-pig. Since the guinea-pig is not in position 1 (due to the frog being in an odd position), the soy-milk drinker must be in position 2 or 4.
+3. The owner of the frog is not the person eating raspberry, which means the frog owner is not in position 1.
+4. The owner of the frog is between the owner of the pony and the owner of the guinea-pig, which means the frog owner is in position 2.
+5. The person drinking juice is on the right of the owner of the pony, which means the juice drinker is in position 3 or 4.
+6. The person eating avocado is somewhere to the right of the person eating apple, which means the avocado eater is in position 2 or 3.
+7. The owner of the turtle is on the left of the person eating radish, which means the turtle owner is in position 1.
+8. The person eating raspberry is on the far left, which means they are in position 1.
+9. The person eating apple is the person eating apple, which means they are in position 1.
+
+Now, let's fill in the table:
+
+#############
+|            |      1      |       2       |   3   |     4      |
+| Beverage   |  Raspberry  |  Soy-milk    |  Juice  |  Almond-milk |
+| Food       |  Apple     |  Avocado    |  Radish | ?        |
+| Pet        |  Frog     |  Guinea-pig |  Pony  |  Turtle   |
+#############
+
+From the puzzle, we know the turtle owner is in position 1, so the turtle owner must be eating radish. The frog owner is in position 2, so the frog owner must be eating avocado. The guinea-pig owner is in position 2, so the guinea-pig owner must be drinking soy-milk. The pony owner is in position 3, so the pony owner must be drinking juice. The person eating apple is in position 1, so they must be eating apple.
+
+The final solution table is:
+
+#############
+|            |      1      |       2       |   3   |     4      |
+| Beverage   |  Raspberry  |  Soy-milk    |  Juice  |  Almond-milk |
+| Food       |  Apple     |  Avocado    |  Radish | ?        |
+| Pet        |  Turtle   |  Frog     |  Pony  |  Guinea-pig |
+#############
+
+Note that the? in the Food column can be filled in with any of the remaining options (almond-milk, hot-chocolate, or juice), but the puzzle does not provide enough information to determine the exact value."	{'beverage': ['raspberry', 'soy-milk', 'juice', 'almond-milk'], 'food': ['apple', 'avocado', 'radish', '?'], 'pet': ['turtle', 'frog', 'pony', 'guinea-pig']}	True	3	False
+Lv1-3x4-8	"Let's break down the puzzle step by step:
+
+From statement 3, we know the social-worker is the person eating lime.
+
+From statement 10, we know the architect is on the right of the social-worker.
+
+From statement 11, we know the social-worker is somewhere to the left of the owner of the goldfish. This means the social-worker is not the owner of the goldfish.
+
+From statement 2, we know the owner of the hedgehog is between the owner of the cat and the social-worker. Since the social-worker is eating lime, the owner of the hedgehog must be to the left of the social-worker.
+
+From statement 7, we know the owner of the hedgehog is on the left or right of the owner of the cat. Since the owner of the hedgehog is between the owner of the cat and the social-worker, the owner of the hedgehog must be to the left of the owner of the cat.
+
+From statement 6, we know the person eating radish is the fisherman. This means the fisherman is not eating lime, corn, or asparagus.
+
+From statement 4, we know the owner of the rat is somewhere to the left of the person eating asparagus. Since the fisherman is eating radish, the owner of the rat must be to the left of the fisherman.
+
+From statement 5, we know the owner of the rat is not the architect. Since the architect is on the right of the social-worker, the owner of the rat must be to the left of the social-worker.
+
+From statement 8, we know the person eating corn is not the owner of the rat. This means the person eating corn is either the social-worker (eating lime) or the architect.
+
+From statement 1, we know the owner of the cat is somewhere to the left of the person eating lime. Since the social-worker is eating lime, the owner of the cat must be to the left of the social-worker.
+
+Now, let's fill in the table:
+
+#############
+|        |     1     |     2      |       3       |     4     |
+| Food   |           |            |               |           |
+| Job    |           |            |               |           |
+| Pet    |           |            |               |           |
+#############
+| Food   | Radish    | Lime      | Asparagus   | Corn     |
+| Job    | Fisherman | Social-worker | Architect  | Freelancer |
+| Pet    |          | Cat        | Hedgehog   | Goldfish  |
+#############
+
+Here's the solution:
+
+* The fisherman eats radish.
+* The social-worker eats lime.
+* The architect eats asparagus.
+* The freelancer eats corn.
+* The owner of the cat is to the left of the social-worker.
+* The owner of the hedgehog is between the owner of the cat and the social-worker.
+* The owner of the rat is to the left of the fisherman.
+* The owner of the goldfish is to the right of the social-worker."	{'food': ['radish', 'lime', 'asparagus', 'corn'], 'job': ['fisherman', 'social-worker', 'architect', 'freelancer'], 'pet': ['', 'cat', 'hedgehog', 'goldfish']}	True	3	False
+Lv1-3x4-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking water is between the dressmaker and the person drinking 7up.
+2. The social-worker is on the left of the person drinking 7up.
+3. The fan of techno is on the left or right of the dressmaker.
+4. The entrepreneur is on the right of the person drinking 7up.
+5. The person drinking 7up is in an even position.
+6. The fan of r&b is on the right of the person drinking sprite.
+7. The person drinking almond-milk is not the fan of salsa.
+
+From clue 1, we know the person drinking water is between the dressmaker and the person drinking 7up. Let's assume the dressmaker is on the left. Then, the person drinking water is in the middle, and the person drinking 7up is on the right.
+
+From clue 2, we know the social-worker is on the left of the person drinking 7up. Since the dressmaker is on the left, the social-worker must be on the far left.
+
+From clue 3, we know the fan of techno is on the left or right of the dressmaker. Since the dressmaker is on the left, the fan of techno must be on the far left, next to the social-worker.
+
+From clue 4, we know the entrepreneur is on the right of the person drinking 7up. Since the person drinking 7up is on the right, the entrepreneur must be on the far right.
+
+From clue 5, we know the person drinking 7up is in an even position. Since the person drinking 7up is on the right, it must be in the 2nd or 4th position.
+
+From clue 6, we know the fan of r&b is on the right of the person drinking sprite. Since the person drinking 7up is on the right, the person drinking sprite must be on the left of the person drinking 7up.
+
+From clue 7, we know the person drinking almond-milk is not the fan of salsa. This doesn't give us any new information, but it helps to rule out some possibilities.
+
+Now, let's fill in the table:
+
+#############
+|               |       1       |        2        |      3       |      4      |
+| Beverage      |               |                 |              |             |
+| Job           |               |                 |              |             |
+| Music-Genre   |               |                 |              |             |
+#############
+| Social-worker |  Punk         |  Techno        |  Water       |  R&B        |
+| Dressmaker    |  Almond-milk  |  Salsa        |  7up         |  Entrepreneur |
+| Project-manager|  Sprite       |  R&B          |  Almond-milk  |  Techno      |
+|                |              |              |              |             |
+#############
+
+The solution is:
+
+* Social-worker: Punk
+* Dressmaker: Almond-milk
+* Project-manager: Sprite
+* Entrepreneur: Techno
+
+Note that the fan of salsa is not explicitly mentioned, but we can infer that the person drinking water is the fan of salsa, since they are between the dressmaker and the person drinking 7up."	{'social-worker': ['punk', 'techno', 'water', 'r&b'], 'dressmaker': ['almond-milk', 'salsa', '7up', 'entrepreneur'], 'project-manager': ['sprite', 'r&b', 'almond-milk', 'techno']}	False	0	False
+Lv1-3x4-10	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person who's hobby is cooking is somewhere to the right of the person who's hobby is reading. This means that the cooking person cannot be in the first column.
+
+From statement 3, we know that the person driving the roller is on the left of the person who's hobby is woodworking. This means that the woodworking person cannot be in the first column.
+
+From statement 5, we know that the person eating radish is somewhere to the left of the person driving the tram. This means that the tram driver cannot be in the first column.
+
+From statement 6, we know that the person who's hobby is woodworking is on the left of the person eating artichoke. This means that the artichoke eater cannot be in the first column.
+
+From statement 7, we know that the person driving the train is on the left of the person who's hobby is writing. This means that the writing person cannot be in the first column.
+
+From statement 8, we know that the person who's hobby is writing is not the person driving the train. This means that the train driver cannot be the writing person.
+
+From statement 9, we know that the person eating cherry is on the right of the person eating artichoke. This means that the artichoke eater cannot be in the last column.
+
+Now, let's try to fill in the table:
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |            |             |           |         |
+| Hobby       |            |             |           |         |
+| Transport   |            |             |           |         |
+
+From the above analysis, we know that the first column cannot have the cooking, woodworking, tram driver, or writing person. Therefore, the first column must be the person eating cherry.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |            |           |         |
+| Hobby       |            |             |           |         |
+| Transport   |            |             |           |         |
+
+From statement 9, we know that the person eating artichoke is to the left of the person eating cherry. Therefore, the artichoke eater must be in the second column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Artichoke |           |         |
+| Hobby       |            |             |           |         |
+| Transport   |            |             |           |         |
+
+From statement 6, we know that the person who's hobby is woodworking is on the left of the person eating artichoke. Therefore, the woodworking person must be in the first column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Artichoke |           |         |
+| Hobby       | Woodworking|             |           |         |
+| Transport   |            |             |           |         |
+
+From statement 3, we know that the person driving the roller is on the left of the person who's hobby is woodworking. Therefore, the roller driver must be in the first column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Artichoke |           |         |
+| Hobby       | Woodworking|             |           |         |
+| Transport   | Roller    |             |           |         |
+
+From statement 5, we know that the person eating radish is somewhere to the left of the person driving the tram. Therefore, the radish eater must be in the second column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Radish   |  Artichoke |         |
+| Hobby       | Woodworking|             |           |         |
+| Transport   | Roller    |             |           |         |
+
+From statement 7, we know that the person driving the train is on the left of the person who's hobby is writing. Therefore, the train driver must be in the first column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Radish   |  Artichoke |         |
+| Hobby       | Woodworking|             |           |         |
+| Transport   | Train     |             |           |         |
+
+From statement 8, we know that the person who's hobby is writing is not the person driving the train. Therefore, the writing person must be in the last column.
+
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Radish   |  Artichoke | Watermelon |
+| Hobby       | Woodworking|             |           |  Writing  |
+| Transport   | Train     |             |           |         |
+
+The final solution is:
+
+#############
+|             |     1      |      2      |     3     |    4    |
+| Food        |  Cherry   |  Radish   |  Artichoke | Watermelon |
+| Hobby       | Woodworking|  Cooking  |  Reading  |  Writing  |
+| Transport   | Train     |  Roller   |  Tram     |  Van      |
+#############"	{'food': ['cherry', 'radish', 'artichoke', 'watermelon'], 'hobby': ['woodworking', 'cooking', 'reading', 'writing'], 'transport': ['train', 'roller', 'tram', 'van']}	True	3	False

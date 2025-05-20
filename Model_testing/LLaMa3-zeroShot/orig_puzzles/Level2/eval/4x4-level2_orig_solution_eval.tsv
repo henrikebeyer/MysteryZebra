@@ -1,0 +1,566 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-4x4-1	"Let's break down the puzzle step by step:
+
+1. The Colombian is the fan of techno.
+2. The Indonesian is between the person watching fantasy movies and the person watching mystery movies.
+3. The Colombian is the person driving the bus.
+4. The person driving the trike is on the left of the person driving the bus.
+5. The fan of metal is on the left of the Canadian.
+6. The person driving the tram is the person watching fantasy movies.
+7. The fan of R&B is on the left of the person watching mystery movies.
+8. The Canadian is on the far right.
+9. The person watching comedy movies is on the far left.
+
+From statement 1, we know the Colombian is the fan of techno.
+
+From statement 2, we know the Indonesian is between the person watching fantasy movies and the person watching mystery movies. Let's call the person watching fantasy movies ""F"" and the person watching mystery movies ""M"". Then, the Indonesian is between F and M.
+
+From statement 3, we know the Colombian is the person driving the bus. Let's call the Colombian ""C"".
+
+From statement 4, we know the person driving the trike is on the left of the person driving the bus. Since C is driving the bus, the person driving the trike must be on the left of C.
+
+From statement 5, we know the fan of metal is on the left of the Canadian. Let's call the fan of metal ""M"" and the Canadian ""Ca"". Then, M is on the left of Ca.
+
+From statement 6, we know the person driving the tram is the person watching fantasy movies. Let's call the person driving the tram ""F"".
+
+From statement 7, we know the fan of R&B is on the left of the person watching mystery movies. Let's call the fan of R&B ""R"" and the person watching mystery movies ""M"". Then, R is on the left of M.
+
+From statement 8, we know the Canadian is on the far right. Since Ca is on the far right, the order from left to right is:?,?,?, Ca.
+
+From statement 9, we know the person watching comedy movies is on the far left. Since the person watching comedy movies is on the far left, the order from left to right is: C,?,?,?, Ca.
+
+Now, let's fill in the table:
+
+#############
+| Movie-Genre | Music-Genre | Nationality | Transport |
+|------------|-------------|------------|-----------|
+| Comedy     |?          |?          |?         |
+|?          |?          |?          |?         |
+|?          |?          |?          |?         |
+|?          |?          |?          |?         |
+|?          |?          | Ca         |?         |
+#############
+
+From statement 1, we know the Colombian is the fan of techno. Since the Colombian is driving the bus, the Colombian must be in the second position.
+
+From statement 2, we know the Indonesian is between the person watching fantasy movies and the person watching mystery movies. Since the person driving the tram is watching fantasy movies, the Indonesian must be in the third position.
+
+From statement 5, we know the fan of metal is on the left of the Canadian. Since the Canadian is on the far right, the fan of metal must be in the fourth position.
+
+From statement 6, we know the person driving the tram is the person watching fantasy movies. Since the person driving the tram is in the third position, the person watching fantasy movies is in the third position.
+
+From statement 7, we know the fan of R&B is on the left of the person watching mystery movies. Since the fan of R&B is on the left of the person watching mystery movies, the fan of R&B must be in the second position.
+
+From statement 8, we know the Canadian is on the far right. Since the Canadian is on the far right, the Canadian must be in the fifth position.
+
+From statement 9, we know the person watching comedy movies is on the far left. Since the person watching comedy movies is on the far left, the person watching comedy movies must be in the first position.
+
+Now, let's fill in the table:
+
+#############
+| Movie-Genre | Music-Genre | Nationality | Transport |
+|------------|-------------|------------|-----------|
+| Comedy     | R&B        |?          | Trike     |
+| Fantasy    |?          | Indonesian | Tram      |
+| Mystery    |?          |?          | Bus      |
+|?          | Metal      | Colombian  |?         |
+|?          | Techno     | Canadian   |?         |
+#############
+
+The final solution is:
+
+* Comedy: R&B, Nationality:?, Transport: Trike
+* Fantasy:?, Nationality: Indonesian, Transport: Tram
+* Mystery:?, Nationality:?, Transport: Bus
+* Metal:?, Nationality: Colombian, Transport:?
+* Techno:?, Nationality: Canadian, Transport:?"	{'movie-genre': ['music-genre', 'nationality', 'transport'], 'comedy': ['r&b', '?', 'trike'], 'fantasy': ['?', 'indonesian', 'tram'], 'mystery': ['?', '?', 'bus'], '?': ['techno', 'canadian', '?']}	False	0	False
+Lv1-4x4-2	"Let's break down the puzzle step by step:
+
+1. The person who's sport is water-polo is on the right of the person who's hobby is woodworking.
+This means that the person who's hobby is woodworking is on the left of the person who's sport is water-polo.
+
+2. The person who's hobby is cooking is on the far right.
+This means that the person who's hobby is cooking is on the right of the person who's hobby is woodworking.
+
+3. The owner of the lizard is the person who's sport is lacrosse.
+This means that the person who's sport is lacrosse is the owner of the lizard.
+
+4. The person who's hobby is singing is on the right of the person who's hobby is drawing.
+This means that the person who's hobby is drawing is on the left of the person who's hobby is singing.
+
+5. The person watching western movies is between the owner of the frog and the person who's sport is ice-hockey.
+This means that the person watching western movies is on the left of the owner of the frog and on the right of the person who's sport is ice-hockey.
+
+6. The person who's sport is water-polo is between the person watching western movies and the owner of the lizard.
+This means that the person who's sport is water-polo is on the right of the person watching western movies and on the left of the owner of the lizard.
+
+7. The owner of the bird is on the far right.
+This means that the person who's hobby is cooking (from statement 2) is on the left of the owner of the bird.
+
+8. The person watching adventure movies is on the left of the person who's hobby is singing.
+This means that the person who's hobby is singing is on the right of the person watching adventure movies.
+
+9. The person watching scientific movies is on the right of the owner of the dog.
+This means that the person who's hobby is drawing (from statement 4) is on the left of the owner of the dog.
+
+Now, let's fill in the table:
+
+#############
+|               |      1      |     2      |    3     |     4      |
+| Hobby         |  Singing   |  Drawing  |  Cooking  |  Woodworking  |
+| Movie-Genre   |  Western   |  Adventure |  Scientific |  Action     |
+| Pet           |  Frog     |  Dog      |  Bird     |  Lizard    |
+| Sport         |  Ice-Hockey|  Water-Polo|  Lacrosse |  Swimming  |
+#############
+
+The final solution is:
+
+* The person who's hobby is singing is on the right of the person who's hobby is drawing.
+* The person who's hobby is cooking is on the far right.
+* The owner of the lizard is the person who's sport is lacrosse.
+* The person watching western movies is between the owner of the frog and the person who's sport is ice-hockey.
+* The person who's sport is water-polo is between the person watching western movies and the owner of the lizard.
+* The owner of the bird is on the far right.
+* The person watching adventure movies is on the left of the person who's hobby is singing.
+* The person watching scientific movies is on the right of the owner of the dog."	{'hobby': ['singing', 'drawing', 'cooking', 'woodworking'], 'movie-genre': ['western', 'adventure', 'scientific', 'action'], 'pet': ['frog', 'dog', 'bird', 'lizard'], 'sport': ['ice-hockey', 'water-polo', 'lacrosse', 'swimming']}	True	3	False
+Lv1-4x4-3	"Let's break down the puzzle step by step:
+
+From statement 1, we know the paramedic drives the motorbike.
+
+From statement 2, we know the person driving the motorbike is on the left of the pilot.
+
+From statement 3, we know the person driving the roller is on the left of the person driving the motorbike.
+
+From statement 4, we know the person driving the motorbike is on the left of the person driving the helicopter.
+
+We can combine these statements to get the order: roller, motorbike, pilot, helicopter.
+
+From statement 5, we know the person eating lemon is on the left of the person who's hobby is photography.
+
+From statement 6, we know the lawyer is the person who's hobby is traveling.
+
+From statement 7, we know the person eating mango is on the right of the person who's hobby is photography.
+
+From statement 8, we know the person eating artichoke is between the person who's hobby is camping and the person who's hobby is traveling.
+
+From statement 9, we know the person who's hobby is photography is between the person eating lemon and the lawyer.
+
+Now, let's fill in the table:
+
+#############
+|             |     1     |     2     |      3      |     4     |
+| Food        | Artichoke | Lemon    | Mango      | Blueberry |
+| Hobby       | Camping  | Photography | Traveling | Fishing    |
+| Job         | Paramedic | Lawyer    | Pilot     | Analyst   |
+| Transport   | Roller    | Motorbike | Helicopter | Subway    |
+#############
+
+Here's the solution:
+
+* The paramedic (job 3) drives the motorbike (transport 2) and eats blueberry (food 4).
+* The person who's hobby is camping (hobby 1) eats artichoke (food 1) and is between the person who's hobby is camping and the person who's hobby is traveling (statement 8).
+* The person who's hobby is photography (hobby 2) eats lemon (food 2) and is between the person eating lemon and the lawyer (statement 9).
+* The lawyer (job 2) has the hobby of traveling (hobby 3) and eats mango (food 3).
+* The pilot (job 3) drives the helicopter (transport 4) and has the hobby of fishing (hobby 4).
+* The analyst (job 4) drives the subway (transport 4) and has the hobby of photography (hobby 2).
+
+Note that there is no unique solution, as the puzzle has some ambiguity. However, the above solution satisfies all the given statements."	{'food': ['artichoke', 'lemon', 'mango', 'blueberry'], 'hobby': ['camping', 'photography', 'traveling', 'fishing'], 'job': ['paramedic', 'lawyer', 'pilot', 'analyst'], 'transport': ['roller', 'motorbike', 'helicopter', 'subway']}	True	6	False
+Lv1-4x4-4	"Let's break down the puzzle step by step:
+
+1. The person watching disaster movies is on the far right.
+2. The person watching scientific movies is the fisherman.
+3. The owner of the bird is on the right of the person who's sport is volleyball.
+4. The person who's sport is ice-hockey is on the far left.
+5. The person watching scientific movies is the owner of the frog.
+6. The owner of the pony is on the right of the person who's sport is ice-hockey.
+7. The person watching disaster movies is the police-officer.
+8. The person watching action movies is on the right of the person watching scientific movies.
+9. The fisherman is on the left of the person who's sport is rugby.
+10. The mechanic is between the owner of the bird and the teacher.
+
+From statement 2, we know the fisherman watches scientific movies and owns the frog.
+
+From statement 5, we know the owner of the frog is the fisherman, so the fisherman owns the frog.
+
+From statement 4, we know the person who's sport is ice-hockey is on the far left. Since the fisherman is on the left of the person who's sport is rugby (statement 9), the fisherman cannot be the one who's sport is ice-hockey. Therefore, the person who's sport is ice-hockey is on the far left.
+
+From statement 6, we know the owner of the pony is on the right of the person who's sport is ice-hockey. Since the person who's sport is ice-hockey is on the far left, the owner of the pony is on the second position from the left.
+
+From statement 1, we know the person watching disaster movies is on the far right. Since the police-officer watches disaster movies (statement 7), the police-officer is on the far right.
+
+From statement 8, we know the person watching action movies is on the right of the person watching scientific movies. Since the fisherman watches scientific movies, the person watching action movies is on the right of the fisherman.
+
+From statement 3, we know the owner of the bird is on the right of the person who's sport is volleyball. Since the owner of the pony is on the second position from the left, the owner of the bird must be on the third position from the left.
+
+From statement 10, we know the mechanic is between the owner of the bird and the teacher. Since the owner of the bird is on the third position from the left, the mechanic must be on the second position from the left.
+
+Now we can fill in the table:
+
+#############
+| Job           | Movie-Genre   | Pet           | Sport         |
+| Fisherman     | Scientific    | Frog         | Rugby         |
+| Mechanic     | Action        | Bird         | Volleyball    |
+| Police-officer| Disaster      | Pony         | Ice-hockey    |
+| Teacher      | Martial-arts  | Hamster      | Soccer        |
+#############
+
+Note that we have to assume the remaining movie-genre, pet, and sport for the teacher, as the puzzle does not provide enough information to determine them uniquely."	{'job': ['movie-genre', 'pet', 'sport'], 'fisherman': ['scientific', 'frog', 'rugby'], 'mechanic': ['action', 'bird', 'volleyball'], 'police-officer': ['disaster', 'pony', 'ice-hockey'], 'teacher': ['martial-arts', 'hamster', 'soccer']}	False	0	False
+Lv1-4x4-5	"Let's break down the puzzle step by step:
+
+1. The person eating lemon is on the right of the person eating garlic.
+2. The person who's sport is basketball is on the far left.
+3. The security-guard is the person eating garlic.
+4. The security-guard is on the left of the person who's sport is sailing.
+5. The person watching scientific movies is on the left of the person eating peach.
+6. The person eating lemon is on the left of the person watching scientific movies.
+7. The social-worker is on the left of the person eating asparagus.
+8. The lawyer is the person watching epic movies.
+9. The person eating lemon is between the person who's sport is weightlifting and the person watching adventure movies.
+10. The person watching romance movies is the person who's sport is sailing.
+
+From statement 2, we know the person who's sport is basketball is on the far left. From statement 3, we know the security-guard is the person eating garlic. Since the security-guard is on the left of the person who's sport is sailing (statement 4), the person who's sport is sailing must be on the right of the person eating garlic.
+
+From statement 5, we know the person watching scientific movies is on the left of the person eating peach. Since the person eating lemon is on the left of the person watching scientific movies (statement 6), the person eating lemon must be on the left of the person eating peach.
+
+From statement 7, we know the social-worker is on the left of the person eating asparagus. Since the person eating lemon is on the left of the person eating peach, the person eating asparagus must be on the right of the person eating lemon.
+
+From statement 8, we know the lawyer is the person watching epic movies. Since the lawyer is not mentioned in any other statement, we can place them anywhere.
+
+From statement 9, we know the person eating lemon is between the person who's sport is weightlifting and the person watching adventure movies. Since the person eating lemon is on the left of the person eating peach, the person who's sport is weightlifting must be on the right of the person eating lemon.
+
+From statement 10, we know the person watching romance movies is the person who's sport is sailing. Since the person who's sport is sailing is on the right of the person eating garlic, the person watching romance movies must be on the right of the person eating garlic.
+
+Now, let's fill in the table:
+
+#############
+| Food          |       1        |       2       |       3       |     4      |
+| Job           |                |               |               |            |
+| Movie-Genre   |                |               |               |            |
+| Sport         |                |               |               |            |
+#############
+| Asparagus    | Social-worker |                |                |            |
+| Garlic       | Security-guard |                |                |            |
+| Lemon        |                |                | Weightlifting |            |
+| Peach        |                | Scientific    | Adventure    |            |
+#############
+| Job           | Freelancer    | Lawyer        | Security-guard| Social-worker|
+#############
+| Movie-Genre   | Romance       | Epic          |                | Scientific  |
+#############
+| Sport         | Basketball    |                | Sailing       | Weightlifting|
+#############
+
+Note that the table is not unique, as there are multiple possible arrangements of the people and their preferences. However, this solution satisfies all the given statements."	{'asparagus': ['social-worker', '', '', ''], 'garlic': ['security-guard', '', '', ''], 'lemon': ['', '', 'weightlifting', ''], 'peach': ['', 'scientific', 'adventure', '']}	False	0	False
+Lv1-4x4-6	"Let's break down the puzzle step by step:
+
+1. The fan of folk is between the person who's sport is sailing and the fan of jazz.
+This means the order is: sailing -> folk -> jazz ->?
+
+2. The freelancer is between the fan of folk and the turkish.
+This means the order is: folk -> freelancer -> turkish ->?
+
+3. The polish is between the person who's sport is cricket and the dutch.
+This means the order is: cricket -> polish -> dutch ->?
+
+4. The librarian is on the left of the dutch.
+This means the librarian is in the position before the dutch.
+
+5. The polish is the polish.
+This is a redundant statement, but it doesn't provide any new information.
+
+6. The dutch is on the right of the person who's sport is cycling.
+This means the order is: cycling -> dutch ->?
+
+7. The dutch is on the left of the analyst.
+This means the analyst is in the position after the dutch.
+
+8. The fan of jazz is on the far right.
+This means the order is:? -> jazz ->
+
+9. The fan of funk is on the far left.
+This means the order is: funk ->?
+
+Now, let's combine the information:
+
+|               |     1     |     2      |    3     |     4     |
+| Job           | funk     | freelancer| librarian| analyst  |
+| Music-Genre   | folk     | jazz      | punk      | punk     |
+| Nationality   | chinese  | polish    | turkish   | dutch    |
+| Sport         | climbing | cricket   | cycling   | sailing  |
+
+Here's the final solution table with '#############' around it:
+
+#############
+|               |     1     |     2      |    3     |     4     |
+| Job           | funk     | freelancer| librarian| analyst  |
+| Music-Genre   | folk     | jazz      | punk      | punk     |
+| Nationality   | chinese  | polish    | turkish   | dutch    |
+| Sport         | climbing | cricket   | cycling   | sailing  |
+#############"	{'job': ['funk', 'freelancer', 'librarian', 'analyst'], 'music-genre': ['folk', 'jazz', 'punk', 'punk'], 'nationality': ['chinese', 'polish', 'turkish', 'dutch'], 'sport': ['climbing', 'cricket', 'cycling', 'sailing']}	True	1	False
+Lv1-4x4-7	"Let's break down the puzzle step by step:
+
+1. The person driving the train is on the right of the fan of blues.
+2. The person watching fantasy movies is the Dutch.
+3. The fan of dubstep is between the Dutch and the person driving the subway.
+4. The fan of metal is the person driving the train.
+5. The Russian is on the left of the person watching zombie movies.
+6. The person watching fantasy movies is on the left of the person driving the bike.
+7. The Argentine is the person driving the airplane.
+8. The fan of soul is on the far right.
+9. The person watching fantasy movies is on the right of the person watching time-travel movies.
+10. The Dutch is the person driving the train.
+
+From statement 2, we know the Dutch person watches fantasy movies.
+
+From statement 10, we know the Dutch person drives the train.
+
+From statement 4, we know the person driving the train is the fan of metal.
+
+From statement 1, we know the fan of blues is on the left of the person driving the train (metal fan).
+
+From statement 3, we know the fan of dubstep is between the Dutch (fantasy fan) and the person driving the subway. Since the Dutch drives the train, the fan of dubstep must be on the left of the train driver (metal fan).
+
+From statement 5, we know the Russian is on the left of the person watching zombie movies. Since the fan of dubstep is on the left of the train driver, the Russian must be on the left of the fan of dubstep.
+
+From statement 6, we know the person watching fantasy movies (Dutch) is on the left of the person driving the bike. Since the Dutch drives the train, the person driving the bike must be on the right of the train driver.
+
+From statement 7, we know the Argentine drives the airplane.
+
+From statement 8, we know the fan of soul is on the far right.
+
+From statement 9, we know the person watching fantasy movies (Dutch) is on the right of the person watching time-travel movies.
+
+Now, let's fill in the table:
+
+#############
+|               |      1      |    2    |    3    |    4    |
+| Movie-Genre   |             |         |         |         |
+| Music-Genre   |             |         |         |         |
+| Nationality   |             |         |         |         |
+| Transport     |             |         |         |         |
+#############
+| Movie-Genre   | Family | Fantasy | Time-Travel | Zombie |
+| Music-Genre   | Blues  | Dubstep | Metal      | Soul   |
+| Nationality   | Russian | Dutch   | Argentine | British |
+| Transport     | Airplane | Train   | Subway    | Bike   |
+#############
+
+Note that the table is not unique, as there are multiple possible arrangements of the people and their preferences. However, this solution satisfies all the given statements."	{'movie-genre': ['family', 'fantasy', 'time-travel', 'zombie'], 'music-genre': ['blues', 'dubstep', 'metal', 'soul'], 'nationality': ['russian', 'dutch', 'argentine', 'british'], 'transport': ['airplane', 'train', 'subway', 'bike']}	True	8	False
+Lv1-4x4-8	"Let's break down the puzzle step by step:
+
+From statement 1, we know that the person watching drama movies is between the person driving the quad-bike and the person driving the car. This means that the order is: quad-bike -> drama -> car.
+
+From statement 2, we know that the person driving the quad-bike is on the left of the person drinking water. This means that the order is: water -> quad-bike.
+
+From statement 3, we know that the owner of the cat is on the left of the owner of the horse. This means that the order is: cat -> horse.
+
+From statement 4, we know that the person driving the car is on the left of the person drinking juice. This means that the order is: juice -> car.
+
+From statement 5, we know that the person driving the jet-ski is between the person driving the quad-bike and the person watching documentary movies. This means that the order is: quad-bike -> jet-ski -> documentary.
+
+From statement 6, we know that the person drinking lemonade is the person watching zombie movies. This means that the person watching zombie movies is on the right of the person drinking lemonade.
+
+From statement 7, we know that the person drinking water is on the left of the owner of the frog. This means that the order is: water -> frog.
+
+From statement 8, we know that the person drinking iced-tea is on the left of the person drinking juice. This means that the order is: iced-tea -> juice.
+
+Now, let's combine the information:
+
+|               |     1     |    2    |      3      |   4    |
+| Beverage      | iced-tea  | water  | lemonade    | juice  |
+| Movie-Genre   |          | drama  | zombie      | documentary |
+| Pet           | cat      | frog   | horse       | snake    |
+| Transport     | quad-bike | jet-ski | car         | subway  |
+
+#############
+
+The final solution is:
+
+* iced-tea is the favorite beverage of the person on the left of the person drinking juice.
+* water is the favorite beverage of the person on the left of the owner of the frog.
+* lemonade is the favorite beverage of the person watching zombie movies.
+* juice is the favorite beverage of the person driving the car.
+* drama is the favorite movie genre of the person driving the car.
+* documentary is the favorite movie genre of the person driving the jet-ski.
+* zombie is the favorite movie genre of the person drinking lemonade.
+* snake is the pet of the person driving the subway.
+* horse is the pet of the person drinking juice.
+* frog is the pet of the person drinking water.
+* cat is the pet of the person drinking iced-tea.
+* quad-bike is the mode of transport of the person drinking iced-tea.
+* jet-ski is the mode of transport of the person watching documentary movies.
+* car is the mode of transport of the person drinking juice.
+* subway is the mode of transport of the person watching drama movies."	{'beverage': ['iced-tea', 'water', 'lemonade', 'juice'], 'movie-genre': ['', 'drama', 'zombie', 'documentary'], 'pet': ['cat', 'frog', 'horse', 'snake'], 'transport': ['quad-bike', 'jet-ski', 'car', 'subway']}	True	9	False
+Lv1-4x4-9	"Let's break down the puzzle step by step:
+
+1. The person eating lettuce is the fisherman.
+2. The person eating tomato is the person who's sport is parkour.
+3. The fisherman is the person who's sport is handball.
+4. The person eating spinach is on the right of the person eating tomato.
+5. The fan of metal is the person eating grapefruit.
+6. The fan of indie is on the far left.
+7. The designer is on the left of the fisherman.
+8. The fan of house is on the far right.
+9. The accountant is between the social-worker and the person who's sport is cycling.
+10. The person eating tomato is on the left of the person eating spinach.
+
+From statement 1, we know the fisherman eats lettuce.
+
+From statement 2, we know the person who eats tomato is the one who does parkour.
+
+From statement 3, we know the fisherman does handball.
+
+From statement 4, we know the person who eats spinach is to the right of the person who eats tomato.
+
+From statement 5, we know the fan of metal eats grapefruit.
+
+From statement 6, we know the fan of indie is on the far left.
+
+From statement 7, we know the designer is to the left of the fisherman.
+
+From statement 8, we know the fan of house is on the far right.
+
+From statement 9, we know the accountant is between the social-worker and the person who does cycling.
+
+From statement 10, we know the person who eats tomato is to the left of the person who eats spinach.
+
+Now, let's start filling in the table:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          |               |            |            |           |
+| Job           |               |            |            |           |
+| Music-Genre   |               |            |            |           |
+| Sport         |               |            |            |           |
+
+From statement 1, we know the fisherman eats lettuce, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | grapefruit  | lettuce  | spinach  | tomato   |
+| Job           |               |            |            |           |
+| Music-Genre   |               |            |            |           |
+| Sport         |               |            |            |           |
+
+From statement 2, we know the person who eats tomato does parkour, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | grapefruit  | lettuce  | spinach  | tomato   |
+| Job           |               |            |            |           |
+| Music-Genre   |               |            |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 3, we know the fisherman does handball, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | grapefruit  | lettuce  | spinach  | tomato   |
+| Job           | fisherman  |               |            |           |
+| Music-Genre   |               |            |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 4, we know the person who eats spinach is to the right of the person who eats tomato. Since the person who eats tomato is already in position 4, the person who eats spinach must be in position 3. We can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | grapefruit  | lettuce  | spinach  | tomato   |
+| Job           | fisherman  |               | designer |           |
+| Music-Genre   |               |            |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 5, we know the fan of metal eats grapefruit, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | lettuce  | spinach  | tomato   |
+| Job           | fisherman  |               | designer |           |
+| Music-Genre   | metal      |            |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 6, we know the fan of indie is on the far left, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | indie    | spinach  | tomato   |
+| Job           | fisherman  |               | designer |           |
+| Music-Genre   | metal      | indie    |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 7, we know the designer is to the left of the fisherman, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | indie    | spinach  | tomato   |
+| Job           |           | designer | fisherman |           |
+| Music-Genre   | metal      | indie    |            |           |
+| Sport         |               | handball |            | parkour  |
+
+From statement 8, we know the fan of house is on the far right, so we can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | indie    | spinach  | tomato   |
+| Job           |           | designer | fisherman | social-worker |
+| Music-Genre   | metal      | indie    |            | house      |
+| Sport         |               | handball |            | parkour  |
+
+From statement 9, we know the accountant is between the social-worker and the person who does cycling. Since there is no cycling in the table, we can conclude that the accountant is in position 2. We can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | accountant | spinach  | tomato   |
+| Job           |           | designer  | fisherman | social-worker |
+| Music-Genre   | metal      | indie    |            | house      |
+| Sport         |               | handball |            | parkour  |
+
+From statement 10, we know the person who eats tomato is to the left of the person who eats spinach. Since the person who eats tomato is already in position 4, the person who eats spinach must be in position 3. We can fill in the table as follows:
+
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | accountant | tomato   | spinach  |
+| Job           |           | designer  | fisherman | social-worker |
+| Music-Genre   | metal      | indie    |            | house      |
+| Sport         |               | handball |            | parkour  |
+
+Now we can fill in the final table:
+
+#############
+|               |       1       |     2      |     3      |     4     |
+| Food          | metal      | accountant | tomato   | spinach  |
+| Job           |           | designer  | fisherman | social-worker |
+| Music-Genre   | metal      | indie    | house     |            |
+| Sport         |               | handball | parkour   |            |
+#############"	{'food': ['metal', 'accountant', 'tomato', 'spinach'], 'job': ['', 'designer', 'fisherman', 'social-worker'], 'music-genre': ['metal', 'indie', 'house', ''], 'sport': ['', 'handball', 'parkour', '']}	True	0	False
+Lv1-4x4-10	"Let's break down the puzzle step by step:
+
+1. The person drinking mirinda is on the right of the person drinking lemonade.
+This means that the order of the beverages is: [lemonade,?, mirinda].
+
+2. The owner of the dog is on the right of the owner of the rat.
+This means that the order of the pets is: [rat, dog,?, turtle].
+
+3. The person who's hobby is hiking is on the right of the person who's hobby is woodworking.
+This means that the order of the hobbies is: [woodworking,?, hiking].
+
+4. The person eating corn is the person drinking lemonade.
+This means that the person eating corn is in the first position.
+
+5. The person drinking hot-chocolate is on the right of the person drinking sprite.
+This means that the order of the beverages is: [lemonade, sprite, hot-chocolate, mirinda].
+
+6. The person who's hobby is filmmaking is on the right of the person eating corn.
+This means that the person eating corn is in the first position, and the person who's hobby is filmmaking is in the second position.
+
+7. The owner of the rat is on the left of the person drinking hot-chocolate.
+This means that the owner of the rat is in the third position.
+
+8. The owner of the turtle is between the person eating corn and the person eating onion.
+This means that the order of the food is: [corn,?, onion,?].
+
+9. The person eating plum is on the right of the owner of the horse.
+This means that the order of the pets is: [rat, dog, horse, turtle].
+
+10. The person who's hobby is filmmaking is between the person eating corn and the person eating onion.
+This means that the order of the food is: [corn, filmmaking, onion,?].
+
+Now, let's fill in the table:
+
+#############
+|            |      1      |     2      |      3      |       4       |
+| Beverage   | lemonade    | sprite     | hot-chocolate| mirinda      |
+| Food       | corn       | filmmaking | onion       | plum         |
+| Hobby      |            | photography| hiking      | woodworking  |
+| Pet        |            |            | rat         | dog, horse, turtle |
+#############
+
+Note that the person eating plum is not specified, but it can be any of the remaining food options (nectarine or onion)."	{'beverage': ['lemonade', 'sprite', 'hot-chocolate', 'mirinda'], 'food': ['corn', 'filmmaking', 'onion', 'plum'], 'hobby': ['', 'photography', 'hiking', 'woodworking'], 'pet': ['', '', 'rat', 'dog, horse, turtle']}	True	4	False

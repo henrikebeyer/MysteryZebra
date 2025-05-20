@@ -1,0 +1,472 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv3-1x5-1	"To solve this logic puzzle, let's analyze each clue step by step and determine the correct order of the movie genres.
+
+### Clues Analysis:
+
+1. **The person watching western movies is on the right of the person watching documentary movies.**
+   - This means if ""Documentary"" is at position \(x\), then ""Western"" must be at position \(x+1\).
+
+2. **The person watching satire movies is on the right of the person watching musical movies.**
+   - If ""Musical"" is at position \(y\), then ""Satire"" must be at position \(y+1\).
+
+3. **The person watching sports movies is on the right of the person watching western movies.**
+   - If ""Western"" is at position \(z\), then ""Sports"" must be at position \(z+1\).
+
+4. **The person watching documentary movies is on the left or right of the person watching satire movies.**
+   - This means that the positions of ""Documentary"" and ""Satire"" can be adjacent to each other, but not necessarily in the order given by clue 2.
+
+5. **The person watching western movies is on the left or right of the person watching sports movies.**
+   - This means that the positions of ""Western"" and ""Sports"" can be adjacent to each other, but not necessarily in the order given by clue 3.
+
+### Step-by-Step Solution:
+
+1. From clues 1 and 3, we know:
+   - ""Documentary"" (D) and ""Western"" (W) must be next to each other.
+   - ""Western"" and ""Sports"" (S) must be next to each other.
+   - Therefore, the sequence must include D-W-S in some order.
+
+2. From clue 2, we know:
+   - ""Musical"" (M) and ""Satire"" (Sa) must be next to each other.
+   - Since ""Satire"" is to the right of ""Musical"", M-Sa must be the order.
+
+3. Combining all the information, we need to fit D-W-S and M-Sa into the five positions while ensuring all conditions are met.
+
+### Possible Arrangements:
+
+- Let's start with the sequence D-W-S and see how we can fit M-Sa around it.
+- One possible arrangement is: D-W-S-M-Sa
+- Another possible arrangement is: M-Sa-D-W-S
+
+However, we need to ensure that ""Documentary"" and ""Satire"" are either next to each other or one is immediately to the left or right of the other, as stated in clues 4 and 5.
+
+Given the constraints, the only valid sequence that fits all the clues is:
+
+**D-W-S-M-Sa**
+
+Let's verify:
+- ""Documentary"" (D) is on the left of ""Western"" (W).
+- ""Western"" (W) is on the left of ""Sports"" (S).
+- ""Musical"" (M) is on the left of ""Satire"" (Sa).
+- ""Documentary"" (D) and ""Satire"" (Sa) are adjacent.
+- ""Western"" (W) and ""Sports"" (S) are adjacent.
+
+Thus, the final solution is:
+
+```
+|               |    1    |   2    |      3      |    4    |   5    |
+| Movie-Genre   | Documentary | Western | Sports | Musical | Satire |
+```"	{'movie-genre': ['documentary', 'western', 'sports', 'musical', 'satire']}	True	0	False
+Lv3-1x5-2	"To solve this logic puzzle, we need to arrange the five jobs (architect, entrepreneur, fisherman, journalist, mechanic) based on the given clues. Let's analyze each clue step-by-step:
+
+1. **The fisherman is on the right of the architect.**
+   - This means the architect must be to the left of the fisherman.
+
+2. **The fisherman is on the left of the entrepreneur.**
+   - This means the entrepreneur must be to the right of the fisherman.
+
+3. **The architect is on the left or right of the journalist.**
+   - This means the journalist can be either to the left or to the right of the architect.
+
+4. **The entrepreneur is on the left of the mechanic.**
+   - This means the mechanic must be to the right of the entrepreneur.
+
+Let's use these clues to deduce the correct order:
+
+- From Clue 1 and Clue 2, we know:
+  - Architect -> Fisherman -> Entrepreneur
+  - Therefore, the sequence so far is: Architect, Fisherman, Entrepreneur.
+
+- From Clue 4, we know:
+  - Entrepreneur -> Mechanic
+  - So now we have: Architect, Fisherman, Entrepreneur, Mechanic.
+
+- From Clue 3, we know:
+  - The journalist can be either to the left or to the right of the architect.
+  - Since the architect is already placed at position 1, the journalist can be in position 2, 3, or 4.
+
+Given the positions we have so far (Architect, Fisherman, Entrepreneur, Mechanic), the only possible place for the journalist is position 5 (since it cannot be in position 2, 3, or 4 without violating the constraints).
+
+Thus, the final arrangement is:
+
+- Position 1: Architect
+- Position 2: Journalist
+- Position 3: Fisherman
+- Position 4: Entrepreneur
+- Position 5: Mechanic
+
+So, the final solution table is:
+
+```
+|       |     1      |     2     |     3     |      4       |    5     |
+| Job   | Architect  | Journalist| Fisherman | Entrepreneur | Mechanic |
+```"	{'job': ['architect', 'journalist', 'fisherman', 'entrepreneur', 'mechanic']}	True	3	False
+Lv3-1x5-3	"To solve this logic puzzle, let's analyze each clue step by step and place the jobs accordingly:
+
+1. **The fisherman is on the right of the coach.**
+   - This means the coach cannot be in position 5 (the far right), and the fisherman must be to the right of the coach.
+
+2. **The security-guard is on the far left or far right.**
+   - This means the security-guard can only be in position 1 or 5.
+
+3. **The fisherman is on the left of the security-guard.**
+   - Since the security-guard is either in position 1 or 5, and the fisherman must be to the left of the security-guard, the security-guard must be in position 5, and the fisherman must be in position 4.
+
+4. **The dancer is on the left or right of the coach.**
+   - This means the coach can be in positions 2 or 3, and the dancer can be to the left or right of the coach.
+
+Given these constraints, let's place the jobs:
+
+- The security-guard must be in position 5.
+- The fisherman must be in position 4 because he is to the left of the security-guard.
+- The coach cannot be in position 5 or 4, so he must be in position 2 or 3.
+- The dancer can be to the left or right of the coach, but not in positions 1, 4, or 5.
+
+Let's try placing the coach in position 2 and see if it fits all the clues:
+- Coach in position 2.
+- Fisherman in position 4 (left of the security-guard).
+- Security-guard in position 5.
+- Dancer can be in position 1 or 3.
+
+If we place the dancer in position 3:
+- The paramedic must be in position 1 (since the security-guard is in position 5 and the fisherman is in position 4).
+
+So the arrangement is:
+1. Paramedic
+2. Coach
+3. Dancer
+4. Fisherman
+5. Security-guard
+
+This arrangement satisfies all the given conditions.
+
+Here is the final solution table:
+
+```
+|       |     1     |   2    |   3   |     4     |       5        |
+| Job   | Paramedic | Coach  | Dancer| Fisherman | Security-guard |
+```"	{'job': ['paramedic', 'coach', 'dancer', 'fisherman', 'security-guard']}	True	3	False
+Lv3-1x5-4	"To solve this logic puzzle, let's break down each clue step by step and place the correct mode of transport for each position.
+
+### Clues:
+1. The person driving the bus is on the far left.
+2. The person driving the taxi is on the right of the person driving the bike.
+3. The person driving the helicopter is between the person driving the bike and the person driving the car.
+4. The person driving the bus is on the left or right of the person driving the car (this clue seems redundant with clue 1 and can be ignored).
+
+Let's start placing the information:
+
+- **Clue 1**: The person driving the bus is on the far left.
+  - Position 1: Bus
+
+Now we have:
+```
+|             |  1  |  2  |     3      |  4   |  5   |
+| Transport   | Bus |     |            |      |      |
+```
+
+- **Clue 2**: The person driving the taxi is on the right of the person driving the bike.
+  - This means the bike must be to the left of the taxi.
+
+- **Clue 3**: The person driving the helicopter is between the person driving the bike and the person driving the car.
+  - This means the order must be bike, helicopter, car.
+
+Given these clues, we need to fit the remaining modes of transport (car, taxi, and helicopter) into positions 2, 3, and 4 while satisfying all conditions.
+
+Since the bus is fixed at position 1, and the bike and taxi need to be positioned such that the taxi is to the right of the bike, and the helicopter is between the bike and the car, let's try to fit them:
+
+1. Bike (B), Helicopter (H), Car (C), Taxi (T)
+2. B, H, C, T
+
+We need to place the remaining two vehicles (helicopter and car) in the middle three positions (2, 3, and 4) while ensuring the taxi is to the right of the bike and the helicopter is between the bike and the car.
+
+- Let's place the bike first (B):
+  - Position 2: Bike (B)
+
+Now:
+```
+|             |  1  |  2  |     3      |  4   |  5   |
+| Transport   | Bus | Bike |            |      |      |
+```
+
+- The helicopter must be between the bike and the car:
+  - Position 3: Helicopter (H)
+  - Position 4: Car (C)
+
+Now:
+```
+|             |  1  |  2  |     3      |  4   |  5   |
+| Transport   | Bus | Bike | Helicopter | Car  |      |
+```
+
+- The taxi must be to the right of the bike:
+  - Position 5: Taxi (T)
+
+Final arrangement:
+```
+|             |  1  |  2  |     3      |  4   |  5   |
+| Transport   | Bus | Bike | Helicopter | Car  | Taxi |
+```
+
+This arrangement satisfies all the given clues. Therefore, the final solution is:
+
+```
+|             |  1  |  2  |     3      |  4   |  5   |
+| Transport   | Bus | Bike | Helicopter | Car  | Taxi |
+```"	{'transport': ['bus', 'bike', 'helicopter', 'car', 'taxi']}	True	3	False
+Lv3-1x5-5	"Let's solve this step by step using the given clues:
+
+1. The person watching sports movies is on the left or right of the person watching crime movies.
+2. The person watching crime movies is in the middle (position 3).
+3. The person watching crime movies is on the left or right of the person watching musical movies.
+4. The person watching western movies is on the left of the person watching sports movies.
+
+From clue 2, we know that the person watching crime movies is in position 3. So the table looks like this initially:
+```
+|               |    1    |   2    |   3   |    4    |   5    |
+| Movie-Genre   |         |        | Crime |         |        |
+```
+
+Now let's use clue 1 and clue 4 to determine the positions of sports and western movies. Since the person watching sports movies must be on the left or right of the person watching crime movies (position 3), and the person watching western movies must be on the left of the person watching sports movies, the only possible positions for western and sports movies are 1 and 2, or 2 and 4. However, since the person watching crime movies is in the middle, the person watching sports movies cannot be in position 4 (as it would violate the order). Therefore, the only possible positions for western and sports movies are 1 and 2, with western in 1 and sports in 2. This gives us:
+```
+|               | Western | Sports | Crime |         |        |
+| Movie-Genre   |         |        |       |         |        |
+```
+
+Now, using clue 3, the person watching crime movies (in position 3) is on the left or right of the person watching musical movies. Since crime is already in position 3, the person watching musical movies must be in position 2 or 4. But position 2 is already occupied by sports, so the person watching musical movies must be in position 4. This gives us:
+```
+|               | Western | Sports | Crime | Musical |        |
+| Movie-Genre   |         |        |       |         |        |
+```
+
+Finally, the only genre left is horror, which must be in position 5. So the final solution is:
+```
+|               | Western | Sports | Crime | Musical | Horror |
+| Movie-Genre   |         |        |       |         |        |
+```"	{'movie-genre': ['', '', '', '', '']}	True	0	False
+Lv3-1x5-6	"Let's analyze the given clues step-by-step to determine the correct order of the pets.
+
+1. The owner of the pony is on the left of the owner of the hamster.
+2. The owner of the cat is on the left or right of the owner of the hamster.
+3. The owner of the horse is on the left of the owner of the goat.
+4. The owner of the goat is between the owner of the horse and the owner of the pony.
+5. The owner of the pony is on the left of the owner of the hamster (repeated from clue 1).
+
+From clues 1 and 5, we know:
+- Pony is on the left of Hamster.
+
+From clue 4, we know:
+- Goat is between Horse and Pony. This means the sequence must be Horse -> Goat -> Pony.
+
+From clue 3, we know:
+- Horse is on the left of Goat, which aligns with clue 4.
+
+Combining all these, we get:
+- Pony is on the left of Hamster.
+- Goat is between Horse and Pony, so the sequence is Horse -> Goat -> Pony.
+- Cat can be on either side of the Hamster.
+
+Given the constraints, let's place the pets in the only logical order that fits all clues:
+
+1. Horse
+2. Goat
+3. Pony
+4. Cat
+5. Hamster
+
+Thus, the final arrangement is:
+
+```
+|       |   1   |  2   |  3   |    4    |  5  |
+| Pet   | Horse | Goat | Pony |   Cat   | Ham |
+```"	{'pet': ['horse', 'goat', 'pony', 'cat', 'ham']}	True	3	False
+Lv3-1x5-7	"Certainly! Let's solve this step-by-step using the given clues.
+
+### Clues Recap:
+1. The person drinking juice is on the right of the person drinking sprite.
+2. The person drinking cola is between the person drinking mirinda and the person drinking juice.
+3. The person drinking sprite is on the far left or far right.
+
+### Step-by-Step Solution:
+
+#### Clue 3 Analysis:
+Since the person drinking sprite is on the far left or far right, we have two possible positions for sprite: either position 1 or position 5.
+
+#### Scenario 1: Sprite at Position 1
+- If sprite is at position 1, then juice must be at position 2 (since it's to the right of sprite).
+
+#### Clue 1 Application:
+- With sprite at position 1 and juice at position 2, the remaining positions (3, 4, 5) must accommodate cola, mirinda, and another beverage.
+
+#### Clue 2 Application:
+- Cola is between mirinda and juice. Since juice is at position 2, cola must be either at position 3 or 4. But if cola were at position 3, mirinda would need to be at position 4, which leaves no room for another beverage at position 5. Therefore, cola must be at position 4, and mirinda must be at position 3.
+
+So, with sprite at position 1, juice at position 2, mirinda at position 3, and cola at position 4, the only beverage left is soy-milk, which goes at position 5.
+
+This gives us:
+- Position 1: Sprite
+- Position 2: Juice
+- Position 3: Mirinda
+- Position 4: Cola
+- Position 5: Soy-milk
+
+#### Scenario 2: Sprite at Position 5
+- If sprite is at position 5, then juice must be at position 4 (since it's to the right of sprite).
+
+#### Clue 1 Application:
+- With sprite at position 5 and juice at position 4, the remaining positions (1, 2, 3) must accommodate cola, mirinda, and another beverage.
+
+#### Clue 2 Application:
+- Cola is between mirinda and juice. Since juice is at position 4, cola must be either at position 2 or 3. But if cola were at position 3, mirinda would need to be at position 2, which leaves no room for another beverage at position 1. Therefore, cola must be at position 2, and mirinda must be at position 3.
+
+So, with sprite at position 5, juice at position 4, mirinda at position 3, and cola at position 2, the only beverage left is soy-milk, which goes at position 1.
+
+This gives us:
+- Position 1: Soy-milk
+- Position 2: Cola
+- Position 3: Mirinda
+- Position 4: Juice
+- Position 5: Sprite
+
+### Final Solution Table:
+```plaintext
+|            |   1    |   2   |  3   |    4    |    5     |
+| Beverage   | Soy-milk| Cola  | Mirinda| Juice   | Sprite   |
+```
+
+or
+
+```plaintext
+|            |   1    |   2   |  3   |    4    |    5     |
+| Beverage   | Sprite | Juice | Mirinda| Cola    | Soy-milk |
+```
+
+Given the constraints, both solutions fit the clues. However, since the problem does not specify a unique solution, both configurations are valid based on the provided clues."	{'beverage': ['sprite', 'juice', 'mirinda', 'cola', 'soy-milk']}	True	3	False
+Lv3-1x5-8	"To solve this logic puzzle, let's analyze each clue step-by-step:
+
+1. **The fan of dubstep is between the fan of pop and the fan of metal.**
+   - This means the order could be Pop, Dubstep, Metal or Metal, Dubstep, Pop.
+
+2. **The fan of pop is in the middle.**
+   - Since pop is in the middle, it must be in position 3.
+
+3. **The fan of d&b is on the left of the fan of soul.**
+   - This means d&b comes before soul.
+
+4. **The fan of soul is on the left or right of the fan of pop.**
+   - Since pop is in position 3, soul can be either to the left (positions 4 or 5) or to the right (positions 2 or 1).
+
+5. **The fan of soul is on the right of the fan of d&b.**
+   - This means d&b cannot be in position 4 or 5 because soul would then have to be to the right, which contradicts the ""left or right"" condition from clue 4. Therefore, d&b must be in position 1 or 2, and soul must be in position 3, 4, or 5.
+
+Let's combine these clues:
+
+- From clue 2, we know pop is in position 3.
+- From clue 1, dubstep must be between pop and metal, so dubstep and metal must be in positions 2 and 4 (since pop is in 3).
+- From clue 3, d&b is on the left of soul.
+- From clue 4 and 5, soul must be in position 4 or 5, and d&b must be in position 1 or 2.
+
+Given these constraints, let's place them in the correct order:
+
+1. **d&b** (left of soul)
+2. **pop** (middle, as per clue 2)
+3. **dubstep** (between pop and metal)
+4. **metal** (right of dubstep)
+5. **soul** (right of d&b)
+
+Thus, the final arrangement is:
+
+|               |  1  |  2   |  3  |    4    |   5   |
+| Music-Genre   | d&b | dubstep | pop | metal | soul |
+
+So, the final solution table is:
+
+```
+|               |  1  |  2   |  3  |    4    |   5   |
+| Music-Genre   | d&b | dubstep | pop | metal | soul |
+```"	{'music-genre': ['d&b', 'dubstep', 'pop', 'metal', 'soul']}	True	2	False
+Lv3-1x5-9	"To solve this logic puzzle, let's analyze each clue step-by-step and place the jobs accordingly.
+
+### Clue Analysis:
+1. **The freelancer is on the left of the chef.**
+   - This means if the freelancer is in position 1, the chef must be in position 2.
+   - If the freelancer is in position 2, the chef must be in position 3, and so on.
+
+2. **The lawyer is on the left or right of the scientist.**
+   - This means the positions of the lawyer and the scientist can be next to each other (e.g., 2 and 3 or 4 and 5).
+
+3. **The lawyer is in the middle.**
+   - The lawyer must be in position 3.
+
+4. **The scientist is on the left of the social-worker.**
+   - This means the scientist must be in a position to the left of the social-worker.
+
+### Step-by-Step Solution:
+
+1. **Lawyer in the middle:**
+   - The lawyer is in position 3.
+
+2. **Freelancer on the left of the chef:**
+   - Since the lawyer is in position 3, the freelancer and chef cannot be in positions 2 and 4 or 4 and 5 because there would not be enough space for the scientist and social-worker to fit the condition that the scientist is on the left of the social-worker.
+
+3. **Scientist on the left of the social-worker:**
+   - Given the lawyer is in position 3, the only possible positions for the scientist and social-worker are 1 and 2, or 2 and 3, or 3 and 4, but since the lawyer is in 3, it leaves positions 1 and 2 for the scientist and social-worker.
+
+4. **Combining all clues:**
+   - If the scientist is in position 1 and the social-worker is in position 2, then the freelancer must be in position 2 and the chef in position 3 (but this contradicts the lawyer being in the middle).
+   - Therefore, the scientist must be in position 2 and the social-worker in position 4.
+   - This leaves positions 1 and 5 for the freelancer and chef. Since the lawyer is in position 3, the freelancer must be in position 1 and the chef in position 5.
+
+So, the final arrangement is:
+- Position 1: Freelancer
+- Position 2: Scientist
+- Position 3: Lawyer
+- Position 4: Social-worker
+- Position 5: Chef
+
+### Final Solution Table:
+```
+|       |     1      |  2   |   3    |     4     |       5       |
+| Job   | Freelancer | Scientist | Lawyer | Social-worker | Chef |
+```"	{'job': ['freelancer', 'scientist', 'lawyer', 'social-worker', 'chef']}	True	2	False
+Lv3-1x5-10	"To solve this logic puzzle, let's analyze each clue step by step and place the sports accordingly.
+
+### Clue Analysis:
+
+1. **Clue 1:** The person who's sport is ice-hockey is on the left or right of the person who's sport is cycling.
+   - This means that ice-hockey and cycling cannot be adjacent to each other but must be next to each other with at least one person between them or directly next to each other.
+
+2. **Clue 2:** The person who's sport is handball is on the left or right of the person who's sport is badminton.
+   - This means that handball and badminton cannot be adjacent to each other but must be next to each other with at least one person between them or directly next to each other.
+
+3. **Clue 3:** The person who's sport is ice-hockey is on the far right.
+   - This means that ice-hockey must be in position 5.
+
+4. **Clue 4:** The person who's sport is handball is on the left of the person who's sport is cycling.
+   - This means that handball must be to the left of cycling, and they cannot be adjacent.
+
+### Step-by-Step Solution:
+
+1. Since ice-hockey is on the far right (position 5), we can place it there:
+   ```
+   |         |   1    |     2     |    3     |    4    |     5      |
+   | Sport   |        |           |          |         | Ice-Hockey |
+   ```
+
+2. Handball must be on the left of cycling and not adjacent to each other. Given the positions, the only possible arrangement for handball and cycling is in positions 1 and 3 respectively:
+   ```
+   |         |   1    |     2     |    3     |    4    |     5      |
+   | Sport   | Handball|           | Cycling  |         | Ice-Hockey |
+   ```
+
+3. Now, we need to place badminton and tennis in positions 2 and 4. Since handball and badminton cannot be adjacent, and we have already placed handball in position 1 and cycling in position 3, badminton must be in position 2 and tennis in position 4:
+   ```
+   |         |   1    |     2     |    3     |    4    |     5      |
+   | Sport   | Handball| Badminton | Cycling  | Tennis  | Ice-Hockey |
+   ```
+
+### Final Solution Table:
+
+```
+|         |   1    |     2     |    3     |    4    |     5      |
+| Sport   | Handball| Badminton | Cycling  | Tennis  | Ice-Hockey |
+```"	{'sport': ['handball', 'badminton', 'cycling', 'tennis', 'ice-hockey']}	True	2	False

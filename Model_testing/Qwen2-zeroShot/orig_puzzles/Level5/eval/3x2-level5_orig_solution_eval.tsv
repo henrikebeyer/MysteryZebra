@@ -1,0 +1,564 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv5-3x2-1	"Certainly! Let's solve this step-by-step.
+
+### Step 1: Identify the given information and constraints:
+
+- There are two types of food: peas and plum.
+- There are two types of pets: goldfish and pony.
+- There are two types of transport: bike and motorbike.
+- The owner of the goldfish is on the right of the owner of the pony.
+- The person driving the motorbike is somewhere to the right of the person eating peas.
+
+### Step 2: Set up the table:
+
+|             | 1    | 2    |
+|-------------|------|------|
+| Food        |      |      |
+| Pet         |      |      |
+| Transport   |      | motor|
+
+### Step 3: Apply the constraints:
+
+1. **Owner of goldfish is on the right of the owner of the pony:**
+   - This means that if we denote the positions as:
+     - Position 1: Owner of pony or goldfish
+     - Position 2: Owner of goldfish (if position 1 is pony) or pony (if position 1 is goldfish)
+   - We can place the pony and goldfish in either of these positions but they must be in adjacent cells.
+
+2. **Person driving the motorbike is somewhere to the right of the person eating peas:**
+   - This means the person with the motorbike cannot be in position 1 if the person eating peas is in position 2.
+
+### Step 4: Deduce the placements:
+
+Let's start with the transport information since it gives us a direct constraint:
+
+- The person driving the motorbike is in position 2. Therefore, the person in position 1 cannot be eating peas.
+
+Now let's consider the pets:
+
+- Since the owner of the goldfish is on the right of the owner of the pony, we have two possible arrangements for the pets:
+  - Position 1: Pony, Position 2: Goldfish
+  - Position 1: Goldfish, Position 2: Pony
+
+Given the transport constraint, we know that the person eating peas cannot be in position 2 (because the person in position 2 is driving the motorbike). Thus, the person eating peas must be in position 1.
+
+- If the person in position 1 is eating peas, then the person in position 2 must be eating plum (since there are only two types of food).
+
+So, we have:
+
+- Position 1: Eating peas, Position 2: Eating plum
+- Position 1: Pony, Position 2: Goldfish
+
+Therefore, the final table looks like this:
+
+```
+|             | 1    | 2    |
+|-------------|------|------|
+| Food        | peas | plum |
+| Pet         | pony | goldfish |
+| Transport   | bike | motorbike |
+```
+
+### Final Solution Table:
+
+```
+|             | 1    | 2    |
+|-------------|------|------|
+| Food        | peas | plum |
+| Pet         | pony | goldfish |
+| Transport   | bike | motorbike |
+```"	{'food': ['peas', 'plum'], 'pet': ['pony', 'goldfish'], 'transport': ['bike', 'motorbike']}	True	6	True
+Lv5-3x2-2	"Certainly! Let's solve this step-by-step based on the given constraints.
+
+### Constraints:
+1. The person watching family movies is on the left of the person eating plum.
+2. The Indonesian is somewhere to the right of the Japanese.
+
+### Given Data:
+- **Food:** Plum, Raspberry
+- **Movie-Genre:** Family, Martial-Arts
+- **Nationality:** Indonesian, Japanese
+
+### Step-by-Step Solution:
+
+1. **Constraint 1:** The person watching family movies is on the left of the person eating plum.
+   - This means if we have ""Family"" and ""Plum,"" ""Family"" must be to the left of ""Plum.""
+
+2. **Constraint 2:** The Indonesian is somewhere to the right of the Japanese.
+   - This means if we have ""Indonesian"" and ""Japanese,"" ""Indonesian"" must be to the right of ""Japanese.""
+
+### Initial Setup:
+We can start by placing the data in a tentative format to see how it fits the constraints:
+
+|               |     1     |      2       |
+|---------------|-----------|--------------|
+| Food          |   Plum    |   Raspberry  |
+| Movie-Genre   |   Family  |   Martial-Arts |
+| Nationality   |   Japanese|   Indonesian |
+
+Let's check if this setup satisfies both constraints:
+
+1. **Constraint 1 (Family on the left of Plum):**
+   - In our setup, ""Family"" is in position 1 and ""Plum"" is in position 1, which doesn't satisfy the constraint because they are not in separate columns.
+
+2. **Constraint 2 (Indonesian on the right of Japanese):**
+   - In our setup, ""Japanese"" is in position 1 and ""Indonesian"" is in position 2, which satisfies the constraint.
+
+Since the first setup does not satisfy Constraint 1, let's try another arrangement:
+
+|               |     1     |      2       |
+|---------------|-----------|--------------|
+| Food          |   Raspberry|   Plum      |
+| Movie-Genre   |   Family  |   Martial-Arts |
+| Nationality   |   Japanese|   Indonesian |
+
+Now let's check if this new setup satisfies both constraints:
+
+1. **Constraint 1 (Family on the left of Plum):**
+   - In our new setup, ""Family"" is in position 1 and ""Plum"" is in position 2, which satisfies the constraint.
+
+2. **Constraint 2 (Indonesian on the right of Japanese):**
+   - In our new setup, ""Japanese"" is in position 1 and ""Indonesian"" is in position 2, which satisfies the constraint.
+
+This new setup satisfies both constraints. Therefore, the final solution is:
+
+```
+|               |     1     |      2       |
+|---------------|-----------|--------------|
+| Food          |   Raspberry|   Plum      |
+| Movie-Genre   |   Family  |   Martial-Arts |
+| Nationality   |   Japanese|   Indonesian |
+```"	{'food': ['raspberry', 'plum'], 'movie-genre': ['family', 'martial-arts'], 'nationality': ['japanese', 'indonesian']}	True	6	True
+Lv5-3x2-3	"Sure, let's solve this step-by-step.
+
+We have:
+- Two jobs: nurse and software-developer.
+- Two movie genres: family and thriller.
+- Two sports: cricket and skateboarding.
+
+Given clues:
+1. The software-developer watches family movies.
+2. The person who prefers skateboarding is to the right of the person who watches thriller movies.
+
+Let's start filling out the table based on these clues:
+
+|               |    1     |         2          |
+|---------------|----------|--------------------|
+| Job           |          |                    |
+| Movie-Genre   |          |                    |
+| Sport         |          |                    |
+
+From clue 1, we know that the software-developer (SD) watches family movies (FM).
+
+So, we can fill in some information:
+- In position 1, if it's SD, then the movie genre must be FM.
+- In position 2, if it's not SD, then it must be the other job (nurse), and the movie genre must be thriller (TM).
+
+|               |    1     |         2          |
+|---------------|----------|--------------------|
+| Job           | SD       | Nurse              |
+| Movie-Genre   | FM       | TM                 |
+| Sport         |          |                    |
+
+Now, from clue 2, we need to place the sports. The person who prefers skateboarding (SB) is to the right of the person who watches thriller movies (TM). Since TM is in position 2, SB must be in position 2 as well.
+
+|               |    1     |         2          |
+|---------------|----------|--------------------|
+| Job           | SD       | Nurse              |
+| Movie-Genre   | FM       | TM                 |
+| Sport         | Cricket  | Skateboarding      |
+
+This fits all the given conditions. The software-developer is in position 1, watching family movies, and the person who prefers skateboarding is to the right of the person watching thriller movies.
+
+Here is the final solution table:
+
+```
+|               |    1     |         2          |
+|---------------|----------|--------------------|
+| Job           | Software-Developer | Nurse              |
+| Movie-Genre   | Family Movies      | Thriller           |
+| Sport         | Cricket            | Skateboarding      |
+```"	{'job': ['software-developer', 'nurse'], 'movie-genre': ['family movies', 'thriller'], 'sport': ['cricket', 'skateboarding']}	True	2	False
+Lv5-3x2-4	"Sure, let's solve the puzzle step by step and fill in the table accordingly.
+
+### Step-by-Step Solution:
+
+1. **Identify the given conditions:**
+   - There are two different beverages: cola and water.
+   - There are two different hobbies: baking and rock-climbing.
+   - There are two different music genres: classical and electronic.
+   
+2. **Condition Analysis:**
+   - Condition 1: The person who's hobby is baking is on the left of the person drinking water.
+   - Condition 2: The person who's hobby is baking is somewhere to the left of the fan of electronic music.
+   - Condition 3: The person drinking water is on the left or right of the person drinking cola.
+
+3. **Determine the positions based on the conditions:**
+
+   Let's denote:
+   - Baking (B) and Rock-climbing (R)
+   - Cola (C) and Water (W)
+   - Classical (Cl) and Electronic (E)
+
+4. **Using Condition 1:**
+   - If Baking is on the left, the person with Baking can be either in position 1 or 2.
+   - Since the person with Baking is on the left of the person drinking Water, if Baking is in position 1, then Water must be in position 2.
+   - So, we can have:
+     - Position 1: Baking (B)
+     - Position 2: Water (W)
+
+5. **Using Condition 2:**
+   - The person with Baking is also to the left of the fan of Electronic music.
+   - Given that Baking is in position 1, the person in position 2 (Water) cannot be a fan of Electronic music.
+   - Therefore, the person in position 2 (Water) must be a fan of Classical music.
+
+6. **Using Condition 3:**
+   - The person drinking Water is on the left or right of the person drinking Cola.
+   - Since Water is in position 2, Cola must be in position 1.
+   - So, we have:
+     - Position 1: Cola (C)
+     - Position 2: Water (W)
+
+7. **Assigning the remaining elements:**
+   - Since Baking is in position 1, the person with Baking must be a fan of Classical music.
+   - This leaves Rock-climbing for position 2.
+   - The person with Water must be a fan of Classical music (from Condition 2).
+
+8. **Final Assignments:**
+   - Position 1: Cola (C), Baking (B), Classical (Cl)
+   - Position 2: Water (W), Rock-climbing (R), Classical (Cl)
+
+### Final Table:
+
+```markdown
+|               |     1     |       2       |
+| Beverage      | Cola (C)  |   Water (W)   |
+| Hobby         | Baking (B)| Rock-climbing (R) |
+| Music-Genre   | Classical (Cl)| Classical (Cl)   |
+```
+
+### Final Solution Table:
+
+```markdown
+|               |     1     |       2       |
+| Beverage      | Cola (C)  |   Water (W)   |
+| Hobby         | Baking (B)| Rock-climbing (R) |
+| Music-Genre   | Classical (Cl)| Classical (Cl)   |
+```"	{'beverage': ['cola (c)', 'water (w)'], 'hobby': ['baking (b)', 'rock-climbing (r)'], 'music-genre': ['classical (cl)', 'classical (cl)']}	True	0	False
+Lv5-3x2-5	"Certainly! Let's solve this step-by-step and place the information into the given table.
+
+### Step-by-Step Solution:
+
+1. **Identify the given constraints:**
+   - There are two types of food: broccoli and grapefruit.
+   - There are two hobbies: reading and singing.
+   - There are two movie genres: drama and epic.
+   
+2. **Constraints from the puzzle:**
+   - The person eating grapefruit is to the left of the person watching epic movies.
+   - The person eating grapefruit is to the left of the person whose hobby is singing.
+
+3. **Possible arrangements:**
+
+Let's denote:
+- Broccoli as B
+- Grapefruit as G
+- Reading as R
+- Singing as S
+- Drama as D
+- Epic as E
+
+We need to arrange these in a way that satisfies both constraints.
+
+4. **Analyzing the constraints:**
+   - Since ""grapefruit"" (G) must be to the left of ""epic movies"" (E), and also to the left of ""singing"" (S), we can infer the following order for columns 1 and 2:
+     - Column 1: G or B
+     - Column 2: B or G (but G must be to the left of E and S)
+
+Given these constraints, let's try placing the items:
+
+### Possible arrangement:
+- If column 1 has G, then column 2 must have B (since G needs to be to the left of E and S).
+- Now, E and S must be placed such that E is to the right of G, and S is to the right of G.
+
+### Final Table:
+
+```
+|               |     1      |    2     |
+| Food          |   Grapefruit | Broccoli  |
+| Hobby         |    Singing   | Reading   |
+| Movie-Genre   |      Epic    |   Drama   |
+```
+
+### Verification:
+- The person eating grapefruit (G) is to the left of the person watching epic movies (E).
+- The person eating grapefruit (G) is to the left of the person whose hobby is singing (S).
+
+This arrangement satisfies all the given constraints.
+
+### Final Solution Table:
+
+```
+|               |     1      |    2     |
+| Food          |   Grapefruit | Broccoli  |
+| Hobby         |    Singing   | Reading   |
+| Movie-Genre   |      Epic    |   Drama   |
+```"	{'food': ['grapefruit', 'broccoli'], 'hobby': ['singing', 'reading'], 'movie-genre': ['epic', 'drama']}	True	2	False
+Lv5-3x2-6	"To solve this logic puzzle, we need to carefully analyze the given clues and place the appropriate values in the table.
+
+### Clues Analysis:
+1. **Mouse** is to the left of **Guinea-pig**.
+2. **Cooking** is on the right of **Scooter**.
+
+### Initial Setup:
+We start with the following table:
+
+```
+|             |    1    |     2      |
+| Hobby       |         |            |
+| Pet         |         |            |
+| Transport   |         |            |
+```
+
+### Step-by-Step Solution:
+
+#### Clue 1: Mouse is to the left of Guinea-pig
+This means that if one person has a mouse, the other must have a guinea-pig, and the person with the mouse must be in position 1, while the person with the guinea-pig must be in position 2.
+
+So, we can fill in the Pet column as follows:
+```
+|             |    1    |     2      |
+| Hobby       |         |            |
+| Pet         |  Mouse  | Guinea-pig |
+| Transport   |         |            |
+```
+
+#### Clue 2: Cooking is on the right of Scooter
+This means that if one person has a scooter, the other must have a hobby of cooking, and the person with the scooter must be in position 1, while the person with the cooking hobby must be in position 2.
+
+So, we can fill in the Hobby and Transport columns as follows:
+```
+|             |    1    |     2      |
+| Hobby       |  Cooking| Reading    |
+| Pet         |  Mouse  | Guinea-pig |
+| Transport   |  Scooter| Train      |
+```
+
+### Final Solution Table:
+
+```
+|             |    1    |     2      |
+| Hobby       |  Cooking| Reading    |
+| Pet         |  Mouse  | Guinea-pig |
+| Transport   |  Scooter| Train      |
+```
+
+### Final Answer:
+```
+|             |    1    |     2      |
+| Hobby       |  Cooking| Reading    |
+| Pet         |  Mouse  | Guinea-pig |
+| Transport   |  Scooter| Train      |
+```"	{'hobby': ['cooking', 'reading'], 'pet': ['mouse', 'guinea-pig'], 'transport': ['scooter', 'train']}	True	4	False
+Lv5-3x2-7	"To solve this logic puzzle, let's break down the information and constraints given:
+
+1. There are two people with two different hobbies: baking and puzzles.
+2. There are two different movie genres they prefer: comedy and western.
+3. There are two different nationalities: Egyptian and Polish.
+4. The person watching comedy movies is somewhere to the left of the person whose hobby is baking.
+5. The Egyptian is somewhere to the left of the Polish.
+
+Let's denote:
+- Person 1 as P1
+- Person 2 as P2
+
+We need to determine the positions for each attribute (Hobby, Movie-Genre, Nationality) for P1 and P2.
+
+### Step-by-Step Solution:
+
+1. **Positioning based on hobbies:**
+   - Baking must be to the right of the person who prefers comedy.
+   - This means if P1 prefers comedy, P2 must have baking as their hobby.
+   - If P2 prefers comedy, P1 must have baking as their hobby.
+
+2. **Positioning based on nationalities:**
+   - The Egyptian must be to the left of the Polish.
+   - This means if P1 is Egyptian, P2 must be Polish.
+   - If P2 is Egyptian, P1 must be Polish.
+
+Given these constraints, we can set up the possible configurations:
+
+#### Configuration 1:
+- If P1 prefers comedy:
+  - P1 must have baking as their hobby.
+  - P2 must be Polish (since the Egyptian must be to the left).
+  - P2 must prefer western movies (since P1 prefers comedy).
+
+So, we have:
+- P1: Comedy, Baking, Egyptian
+- P2: Western, Baking, Polish
+
+#### Configuration 2:
+- If P2 prefers comedy:
+  - P2 must have baking as their hobby.
+  - P1 must be Polish (since the Egyptian must be to the left).
+  - P1 must prefer western movies (since P2 prefers comedy).
+
+So, we have:
+- P1: Western, Puzzles, Polish
+- P2: Comedy, Baking, Egyptian
+
+Since both configurations satisfy all the given constraints, we can present the solutions as follows:
+
+### Final Solution Table:
+
+```
+|               |    1     |    2    |
+| Hobby         | Puzzles  | Baking  |
+| Movie-Genre   | Western  | Comedy  |
+| Nationality   | Polish   | Egyptian
+```
+
+Or, alternatively:
+
+```
+|               |    1     |    2    |
+| Hobby         | Baking   | Baking  |
+| Movie-Genre   | Comedy   | Western |
+| Nationality   | Egyptian | Polish  |
+```
+
+Both configurations are valid based on the given constraints."	{'hobby': ['baking', 'baking'], 'movie-genre': ['comedy', 'western'], 'nationality': ['egyptian', 'polish']}	True	5	False
+Lv5-3x2-8	"To solve this logic puzzle, let's break down the information and constraints provided:
+
+1. There are two people with different hobbies: cooking and singing.
+2. There are two different pets: hedgehog and pony.
+3. There are two different sports: rowing and water-polo.
+4. The person whose hobby is singing owns the hedgehog.
+5. The person whose hobby is cooking is to the left of the person whose sport is rowing.
+
+We can represent the possible combinations for each category (Hobby, Pet, Sport) as follows:
+
+|         |     1      |    2     |
+|---------|------------|----------|
+| Hobby   | Cooking    | Singing  |
+| Pet     | Hedgehog  | Pony     |
+| Sport   | Rowing    | Water-polo|
+
+Now, let's use the given constraints to fill in the table:
+
+### Constraint 4: The person whose hobby is singing owns the hedgehog.
+- This means that in column 2, the pet must be the hedgehog and the hobby must be singing.
+
+So, we can update the table as follows:
+```
+|         |     1      |    2     |
+|---------|------------|----------|
+| Hobby   | Cooking    | Singing  |
+| Pet     | Hedgehog  | Pony     |
+| Sport   | Rowing    | Water-polo|
+```
+
+### Constraint 5: The person whose hobby is cooking is to the left of the person whose sport is rowing.
+- Since the person with the hobby ""cooking"" is in column 1, and the person with the sport ""rowing"" is in column 2, this constraint is satisfied.
+
+Given these constraints, the final solution table is:
+
+```
+|         |     1      |    2     |
+|---------|------------|----------|
+| Hobby   | Cooking    | Singing  |
+| Pet     | Hedgehog  | Pony     |
+| Sport   | Rowing    | Water-polo|
+```"	{'hobby': ['cooking', 'singing'], 'pet': ['hedgehog', 'pony'], 'sport': ['rowing', 'water-polo']}	True	2	False
+Lv5-3x2-9	"Let's break down the given information and solve the puzzle step by step.
+
+### Given Information:
+1. There are two jobs: **freelancer** and **scientist**.
+2. There are two nationalities: **pakistani** and **spanish**.
+3. There are two sports: **rugby** and **surfing**.
+4. The person who prefers surfing is somewhere to the left of the scientist.
+5. The Spanish person is somewhere to the left of the Pakistani person.
+
+### Step-by-Step Solution:
+
+#### Step 1: Determine the positions of the sports and jobs.
+- Since the person who prefers surfing is to the left of the scientist, we can place these two in the order: **surfer (left), scientist (right)** or **freelancer (left), scientist (right)** if the surfer is not the scientist.
+- Similarly, since the Spanish person is to the left of the Pakistani person, we can place these two in the order: **Spanish (left), Pakistani (right)**.
+
+#### Step 2: Fill in the table with possible placements.
+We will use the following format for the table:
+```
+| Job           |     1      |     2     |
+| Nationality   |            |           |
+| Sport         |            |           |
+```
+
+Given the constraints, let's start placing the elements.
+
+1. **Sport:**
+   - If the person who prefers surfing is to the left of the scientist, one possible arrangement is:
+     - **Surfing** in position 1 and **Rugby** in position 2.
+     - Or, if the surfer is not the scientist, we could have:
+       - **Freelancer** in position 1 and **Scientist** in position 2.
+
+2. **Nationality:**
+   - If the Spanish person is to the left of the Pakistani person, one possible arrangement is:
+     - **Spanish** in position 1 and **Pakistani** in position 2.
+
+#### Step 3: Combine the constraints and fill the table.
+Since both constraints must be satisfied simultaneously, let's combine them:
+- The surfer must be in position 1 and the scientist in position 2.
+- The Spanish person must be in position 1 and the Pakistani person in position 2.
+
+This gives us the following table:
+```
+| Job           | Freelancer | Scientist  |
+| Nationality   | Spanish    | Pakistani  |
+| Sport         | Surfing    | Rugby      |
+```
+
+### Final Solution Table:
+```
+| Job           | Freelancer | Scientist  |
+| Nationality   | Spanish    | Pakistani  |
+| Sport         | Surfing    | Rugby      |
+```"	{'job': ['freelancer', 'scientist'], 'nationality': ['spanish', 'pakistani'], 'sport': ['surfing', 'rugby']}	True	6	True
+Lv5-3x2-10	"Certainly! Let's break down the information and solve the puzzle step-by-step.
+
+### Given Information:
+1. There are two different favorite beverages: almond-milk and lemonade.
+2. There are two different movie genres: disaster and fantasy.
+3. There are two different pets: frog and snake.
+4. The person watching disaster movies is the owner of the frog.
+5. The owner of the snake is somewhere to the right of the person drinking almond-milk.
+
+### Step-by-Step Solution:
+
+#### Step 1: Determine the Movie Genre and Pet Ownership
+- From point 4, we know that the person who watches disaster movies owns the frog.
+- Therefore, the person who watches fantasy movies must own the snake (since there are only two pets).
+
+#### Step 2: Determine Beverage Preference
+- From point 5, the owner of the snake (who watches fantasy movies) is to the right of the person drinking almond-milk.
+- This means the person drinking almond-milk must be in position 1, and the person drinking lemonade must be in position 2.
+
+#### Step 3: Assigning Values
+- Since the person who drinks almond-milk is in position 1, and they are not the one who owns the snake (because the snake owner is to their right), they must be the one who owns the frog.
+- Therefore, the person in position 2 (who drinks lemonade) must be the one who owns the snake.
+
+### Final Table:
+```
+|               |      1      |    2     |
+| Beverage      | almond-milk | lemonade |
+| Movie-Genre   | disaster    | fantasy  |
+| Pet           | frog        | snake    |
+```
+
+### Final Solution Table:
+```
+|               |      1      |    2     |
+| Beverage      | almond-milk | lemonade |
+| Movie-Genre   | disaster    | fantasy  |
+| Pet           | frog        | snake    |
+```"	{'beverage': ['almond-milk', 'lemonade'], 'movie-genre': ['disaster', 'fantasy'], 'pet': ['frog', 'snake']}	True	6	True

@@ -1,0 +1,712 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-6x2-1	"Let's start by analyzing the clues:
+
+1. The person watching documentary movies is on the left of the person who's sport is sailing.
+2. The person drinking 7up is not the person who's sport is basketball.
+3. The owner of the horse is on the left or right of the person who's sport is basketball.
+4. The fisherman is on the right of the fan of pop music.
+
+From clue 1, we know that the documentary movie fan is on the left of the sailing sport fan. Let's call the documentary movie fan ""D"" and the sailing sport fan ""S"".
+
+From clue 2, we know that the 7up drinker is not the basketball sport fan. Let's call the 7up drinker ""7"" and the basketball sport fan ""B"".
+
+From clue 3, we know that the horse owner is on the left or right of the basketball sport fan. Let's call the horse owner ""H"" and the basketball sport fan ""B"".
+
+From clue 4, we know that the fisherman is on the right of the pop music fan. Let's call the fisherman ""F"" and the pop music fan ""P"".
+
+Now, let's start filling in the table:
+
+|               |       1       |     2     |
+| Beverage      |               |           |
+| Job           |               |           |
+| Movie-Genre   |               |           |
+| Music-Genre   |               |           |
+| Pet           |               |           |
+| Sport         |               |           |
+
+We know that D is on the left of S, so D must be in position 1. We also know that F is on the right of P, so F must be in position 2.
+
+|               |       1       |     2     |
+| Beverage      |               |           |
+| Job           |               |           |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               |           |
+| Pet           |               |           |
+| Sport         |           | S (sailing) |
+
+We know that the fisherman is on the right of the pop music fan, so F must be in position 2. We also know that the fisherman is not the pop music fan, so F must be the fisherman and P must be the journalist.
+
+|               |       1       |     2     |
+| Beverage      |               |           |
+| Job           |               |           |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               | P (pop) |
+| Pet           |               |           |
+| Sport         |           | S (sailing) |
+
+We know that the horse owner is on the left or right of the basketball sport fan, so H must be in position 1 or 2. We also know that the horse owner is not the basketball sport fan, so H must be the horse owner and B must be the journalist.
+
+|               |       1       |     2     |
+| Beverage      | H (horse)    |           |
+| Job           |               |           |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               | P (pop) |
+| Pet           |               |           |
+| Sport         |           | S (sailing) |
+
+We know that the 7up drinker is not the basketball sport fan, so 7 must be in position 1 or 2. We also know that the 7up drinker is not the horse owner, so 7 must be the hot-chocolate drinker and H must be the 7up drinker.
+
+|               |       1       |     2     |
+| Beverage      | H (7up)     |           |
+| Job           |               |           |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               | P (pop) |
+| Pet           |               |           |
+| Sport         |           | S (sailing) |
+
+Now we can fill in the rest of the table:
+
+|               |       1       |     2     |
+| Beverage      | H (7up)     | F (hot-chocolate) |
+| Job           | H (fisherman) | P (journalist) |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               | P (pop) |
+| Pet           | H (horse)    |           |
+| Sport         | B (basketball) | S (sailing) |
+
+The final solution is:
+
+#############
+|               |       1       |     2     |
+| Beverage      | H (7up)     | F (hot-chocolate) |
+| Job           | H (fisherman) | P (journalist) |
+| Movie-Genre   | D (doc)      |           |
+| Music-Genre   |               | P (pop) |
+| Pet           | H (horse)    |           |
+| Sport         | B (basketball) | S (sailing) |
+#############"	{'beverage': ['h (7up)', 'f (hot-chocolate)'], 'job': ['h (fisherman)', 'p (journalist)'], 'movie-genre': ['d (doc)', ''], 'music-genre': ['', 'p (pop)'], 'pet': ['h (horse)', ''], 'sport': ['b (basketball)', 's (sailing)']}	True	0	False
+Lv1-6x2-2	"Let's break down the puzzle step by step:
+
+1. The person driving the skateboard is on the left or right of the fan house##3
+This means that the skateboarder is either next to the fan of house music or on the opposite side of the fan of house music.
+
+2. The person drinking hot-chocolate is on the left or right of the fan dubstep##3
+This means that the hot-chocolate drinker is either next to the fan of dubstep music or on the opposite side of the fan of dubstep music.
+
+3. The person who's sport is soccer is not the owner of the guinea-pig##6
+This means that the person who plays soccer does not keep a guinea-pig as a pet.
+
+4. The fan dubstep is somewhere to the right of the turkish##5
+This means that the fan of dubstep music is either next to the Turkish person or on the opposite side of the Turkish person.
+
+5. The person who's sport is cricket is somewhere to the left of the owner of the hedgehog##5
+This means that the person who plays cricket is either next to the owner of the hedgehog or on the opposite side of the owner of the hedgehog.
+
+Now, let's start filling in the table:
+
+|               |       1       |     2      |
+| Beverage      |               |            |
+| Music-Genre   |               |            |
+| Nationality   |               |            |
+| Pet           |               |            |
+| Sport         |               |            |
+| Transport     |               |            |
+
+From statement 1, we know the skateboarder is either next to the fan of house music or on the opposite side. Let's assume they are next to the fan of house music. This means the skateboarder is either the fan of house music or on the opposite side of the fan of house music.
+
+From statement 2, we know the hot-chocolate drinker is either next to the fan of dubstep music or on the opposite side. Let's assume they are next to the fan of dubstep music. This means the hot-chocolate drinker is either the fan of dubstep music or on the opposite side of the fan of dubstep music.
+
+From statement 3, we know the soccer player does not keep a guinea-pig. This means the soccer player must keep either the hedgehog or the pet that is not mentioned (let's call it ""X"").
+
+From statement 4, we know the fan of dubstep music is to the right of the Turkish person. This means the fan of dubstep music is either the Turkish person or on the opposite side of the Turkish person.
+
+From statement 5, we know the cricket player is to the left of the owner of the hedgehog. This means the cricket player is either the owner of the hedgehog or on the opposite side of the owner of the hedgehog.
+
+Now, let's try to fill in the table:
+
+|               |       1       |     2      |
+| Beverage      | hot-chocolate | lemonade  |
+| Music-Genre   | dubstep      | house     |
+| Nationality   | turkish      | argentine |
+| Pet           | guinea-pig   | hedgehog  |
+| Sport         | soccer       | cricket   |
+| Transport     | skateboard  | trike     |
+
+Here's the solution:
+
+#############
+|               |       1       |     2      |
+| Beverage      | hot-chocolate | lemonade  |
+| Music-Genre   | dubstep      | house     |
+| Nationality   | turkish      | argentine |
+| Pet           | guinea-pig   | hedgehog  |
+| Sport         | soccer       | cricket   |
+| Transport     | skateboard  | trike     |
+#############"	{'beverage': ['hot-chocolate', 'lemonade'], 'music-genre': ['dubstep', 'house'], 'nationality': ['turkish', 'argentine'], 'pet': ['guinea-pig', 'hedgehog'], 'sport': ['soccer', 'cricket'], 'transport': ['skateboard', 'trike']}	True	6	False
+Lv1-6x2-3	"Let's break down the puzzle step by step:
+
+1. The owner of the frog is somewhere to the left of the owner of the fish.
+This means that the frog owner cannot be in the last column (Transport), as the fish owner would be to their right. So, the frog owner must be in the first two columns (Beverage or Hobby).
+
+2. The fan of indie is not the person driving the helicopter.
+This means that the helicopter driver cannot be the indie fan. Since there are only two music-genre fans, the indie fan must be the person driving the scooter.
+
+3. The person who's hobby is chess is the person drinking lemonade.
+This means that the chess player is the lemonade drinker. Since there are only two hobbies, the chess player must be in the Hobby column.
+
+4. The person watching family movies is somewhere to the right of the person who's hobby is chess.
+This means that the family movie fan cannot be in the same column as the chess player. Since the chess player is in the Hobby column, the family movie fan must be in the Movie-Genre column, to the right of the Hobby column.
+
+5. The person watching family movies is on the right of the person driving the scooter.
+This means that the family movie fan cannot be in the same column as the scooter driver. Since the scooter driver is the indie fan, the family movie fan must be in the Movie-Genre column, to the right of the Music-Genre column.
+
+Now, let's fill in the table:
+
+#############
+|               |    1     |      2      |
+| Beverage      | Almond-milk | Lemonade    |
+| Hobby         | Chess      | Baking     |
+| Movie-Genre   | Action     | Family     |
+| Music-Genre   | Hip-hop    | Indie      |
+| Pet           | Fish      | Frog      |
+| Transport     | Scooter   | Helicopter|
+#############
+
+Here's the solution:
+
+* The frog owner is in the first two columns, so they must be the almond-milk drinker and the baking enthusiast.
+* The chess player is the lemonade drinker, so they must be in the Hobby column.
+* The family movie fan is in the Movie-Genre column, to the right of the Hobby column, so they must be watching family movies.
+* The indie fan is driving the scooter, and the hip-hop fan must be driving the helicopter.
+* The fish owner is in the last column, so they must be the hip-hop fan and the helicopter driver."	{'beverage': ['almond-milk', 'lemonade'], 'hobby': ['chess', 'baking'], 'movie-genre': ['action', 'family'], 'music-genre': ['hip-hop', 'indie'], 'pet': ['fish', 'frog'], 'transport': ['scooter', 'helicopter']}	True	6	False
+Lv1-6x2-4	"Let's start by analyzing the clues:
+
+1. The person eating artichoke is not the person watching documentary movies.
+This means that the person eating artichoke must be watching superhero movies.
+
+2. The person watching superhero movies is somewhere to the left of the person driving the helicopter.
+This means that the person driving the helicopter must be watching documentary movies.
+
+3. The fan of house music is on the right of the Argentine.
+This means that the Argentine cannot be the fan of house music.
+
+4. The Malaysian is somewhere to the right of the owner of the goat.
+This means that the owner of the goat cannot be the Malaysian.
+
+Now, let's start filling in the table:
+
+|               |     1     |      2      |
+| Food          |           |             |
+| Movie-Genre   |           |             |
+| Music-Genre   |           |             |
+| Nationality   |           |             |
+| Pet           |           |             |
+| Transport     |           |             |
+
+From clue 1, we know that the person eating artichoke is watching superhero movies. Let's put the artichoke eater on the left side of the table.
+
+|               |     1     |      2      |
+| Food          | Artichoke |             |
+| Movie-Genre   | Superhero | Documentary |
+| Music-Genre   |           |             |
+| Nationality   |           |             |
+| Pet           |           |             |
+| Transport     |           |             |
+
+From clue 2, we know that the person driving the helicopter is watching documentary movies. Let's put the helicopter driver on the right side of the table.
+
+|               |     1     |      2      |
+| Food          | Artichoke |             |
+| Movie-Genre   | Superhero | Documentary |
+| Music-Genre   |           |             |
+| Nationality   |           |             |
+| Pet           |           |             |
+| Transport     | Bike      | Helicopter |
+
+From clue 3, we know that the fan of house music is on the right of the Argentine. Let's put the Argentine on the left side of the table.
+
+|               |     1     |      2      |
+| Food          | Artichoke |             |
+| Movie-Genre   | Superhero | Documentary |
+| Music-Genre   | House     | Rock       |
+| Nationality   | Argentine |             |
+| Pet           |           |             |
+| Transport     | Bike      | Helicopter |
+
+From clue 4, we know that the Malaysian is somewhere to the right of the owner of the goat. Let's put the Malaysian on the right side of the table.
+
+|               |     1     |      2      |
+| Food          | Artichoke |             |
+| Movie-Genre   | Superhero | Documentary |
+| Music-Genre   | House     | Rock       |
+| Nationality   | Argentine | Malaysian  |
+| Pet           | Goat     | Mouse      |
+| Transport     | Bike      | Helicopter |
+
+Now, let's summarize the solution:
+
+#############
+|               |     1     |      2      |
+| Food          | Artichoke | Apricot    |
+| Movie-Genre   | Superhero | Documentary |
+| Music-Genre   | House     | Rock       |
+| Nationality   | Argentine | Malaysian  |
+| Pet           | Goat     | Mouse      |
+| Transport     | Bike      | Helicopter |
+#############"	{'food': ['artichoke', 'apricot'], 'movie-genre': ['superhero', 'documentary'], 'music-genre': ['house', 'rock'], 'nationality': ['argentine', 'malaysian'], 'pet': ['goat', 'mouse'], 'transport': ['bike', 'helicopter']}	True	10	False
+Lv1-6x2-5	"Let's break down the puzzle step by step:
+
+1. The person who's sport is handball is on the far left or far right.
+This means we can't place the handball sport in the middle two columns.
+
+2. The person eating lettuce is not the person who's hobby is puzzles.
+This means we can't place the lettuce eater in the same row as the puzzles hobby.
+
+3. The person eating orange is on the left or right of the person who's sport is skiing.
+This means we can't place the orange eater in the same row as the skiing sport.
+
+4. The italian is somewhere to the left of the firefighter.
+This means we can place the italian in the leftmost column, and the firefighter in the rightmost column.
+
+5. The person who's hobby is puzzles is somewhere to the left of the fan of funk.
+This means we can place the puzzles hobby in the leftmost column, and the funk fan in the rightmost column.
+
+Now, let's start filling in the table:
+
+|               |      1       |      2      |
+| Food          |              |             |
+| Hobby         |              |             |
+| Job           |              |             |
+| Music-Genre   |              |             |
+| Nationality   |              |             |
+| Sport         |              |             |
+
+From point 4, we know the italian is in the leftmost column, and the firefighter is in the rightmost column. From point 5, we know the puzzles hobby is in the leftmost column, and the funk fan is in the rightmost column.
+
+|               |      1       |      2      |
+| Food          |              |             |
+| Hobby         | Puzzles     |             |
+| Job           |              |             |
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     |             |
+| Sport         |              |             |
+
+From point 1, we know the handball sport is on the far left or far right. Since the italian is already in the leftmost column, the handball sport must be in the rightmost column.
+
+|               |      1       |      2      |
+| Food          |              |             |
+| Hobby         | Puzzles     |             |
+| Job           |              |             |
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     |             |
+| Sport         | Handball    |             |
+
+From point 3, we know the orange eater is on the left or right of the skiing sport. Since the handball sport is already in the rightmost column, the orange eater must be in the leftmost column.
+
+|               |      1       |      2      |
+| Food          | Orange     |             |
+| Hobby         | Puzzles     |             |
+| Job           |              |             |
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     |             |
+| Sport         | Handball    | Skiing      |
+
+From point 2, we know the lettuce eater is not the person who's hobby is puzzles. Since the puzzles hobby is already in the leftmost column, the lettuce eater must be in the rightmost column.
+
+|               |      1       |      2      |
+| Food          | Orange     | Lettuce     |
+| Hobby         | Puzzles     |             |
+| Job           |              |             |
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     |             |
+| Sport         | Handball    | Skiing      |
+
+Finally, we can fill in the remaining columns:
+
+|               |      1       |      2      |
+| Food          | Orange     | Lettuce     |
+| Hobby         | Puzzles     | Skydiving  |
+| Job           | Entrepreneur| Firefighter|
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     | Egyptian    |
+| Sport         | Handball    | Skiing      |
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |      1       |      2      |
+| Food          | Orange     | Lettuce     |
+| Hobby         | Puzzles     | Skydiving  |
+| Job           | Entrepreneur| Firefighter|
+| Music-Genre   |              | Funk        |
+| Nationality   | Italian     | Egyptian    |
+| Sport         | Handball    | Skiing      |
+#############"	{'food': ['orange', 'lettuce'], 'hobby': ['puzzles', 'skydiving'], 'job': ['entrepreneur', 'firefighter'], 'music-genre': ['', 'funk'], 'nationality': ['italian', 'egyptian'], 'sport': ['handball', 'skiing']}	True	11	False
+Lv1-6x2-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The owner of the chinchilla is somewhere to the left of the person who's sport is water-polo.
+This means that the chinchilla owner cannot be the water-polo player.
+
+2. The person driving the car is on the left of the person who's sport is water-polo.
+This means that the car driver is to the left of the water-polo player.
+
+3. The musician is in an odd position.
+This means that the musician is either in the first or third position.
+
+4. The person who's sport is water-polo is not the fan of punk.
+This means that the water-polo player's music genre is not punk.
+
+5. The musician is on the left or right of the person drinking water.
+This means that the musician is adjacent to the person drinking water.
+
+Now, let's start filling in the table:
+
+|               |     1      |     2      |
+| Beverage      |            |            |
+| Job           |            |            |
+| Music-Genre   |            |            |
+| Pet           |            |            |
+| Sport         |            |      -polo |
+| Transport     |            |            |
+
+From clue 1, we know the chinchilla owner is to the left of the water-polo player. Let's assume the chinchilla owner is in position 1.
+
+|               |     1      |     2      |
+| Beverage      |            |            |
+| Job           |            |            |
+| Music-Genre   |            |            |
+| Pet           | Chinchilla |            |
+| Sport         |            |      -polo |
+| Transport     |            |            |
+
+From clue 2, we know the car driver is to the left of the water-polo player. Let's assume the car driver is in position 1.
+
+|               |     1      |     2      |
+| Beverage      |            |            |
+| Job           | Car Driver |            |
+| Music-Genre   |            |            |
+| Pet           | Chinchilla |            |
+| Sport         |            |      -polo |
+| Transport     | Car        |            |
+
+From clue 3, we know the musician is in an odd position. Since the car driver is in position 1, the musician must be in position 2.
+
+|               |     1      |     2      |
+| Beverage      |            |            |
+| Job           | Car Driver | Musician  |
+| Music-Genre   |            |            |
+| Pet           | Chinchilla |            |
+| Sport         |            |      -polo |
+| Transport     | Car        |            |
+
+From clue 4, we know the water-polo player is not a fan of punk. Let's assume the water-polo player is in position 2.
+
+|               |     1      |     2      |
+| Beverage      |            |            |
+| Job           | Car Driver | Musician  |
+| Music-Genre   | Punk       | Ambient   |
+| Pet           | Chinchilla |            |
+| Sport         |            |      -polo |
+| Transport     | Car        |            |
+
+From clue 5, we know the musician is adjacent to the person drinking water. Since the musician is in position 2, the person drinking water must be in position 1.
+
+|               |     1      |     2      |
+| Beverage      | Water      |            |
+| Job           | Car Driver | Musician  |
+| Music-Genre   | Punk       | Ambient   |
+| Pet           | Chinchilla |            |
+| Sport         |            |      -polo |
+| Transport     | Car        |            |
+
+Now we can fill in the remaining blanks:
+
+|               |     1      |     2      |
+| Beverage      | Water      | Sprite     |
+| Job           | Car Driver | Musician  |
+| Music-Genre   | Punk       | Ambient   |
+| Pet           | Chinchilla | Hedgehog  |
+| Sport         | Baseball  | Water-polo |
+| Transport     | Car        | Bike       |
+
+Here is the final solution table with '#############' around it:
+
+#############
+|               |     1      |     2      |
+| Beverage      | Water      | Sprite     |
+| Job           | Car Driver | Musician  |
+| Music-Genre   | Punk       | Ambient   |
+| Pet           | Chinchilla | Hedgehog  |
+| Sport         | Baseball  | Water-polo |
+| Transport     | Car        | Bike       |
+#############"	{'beverage': ['water', 'sprite'], 'job': ['car driver', 'musician'], 'music-genre': ['punk', 'ambient'], 'pet': ['chinchilla', 'hedgehog'], 'sport': ['baseball', 'water-polo'], 'transport': ['car', 'bike']}	True	8	False
+Lv1-6x2-7	"Let's break down the puzzle step by step:
+
+1. The person who's sport is water-polo is somewhere to the right of the owner of the rabbit.
+This means that the owner of the rabbit is on the left of the water-polo player.
+
+2. The person who's sport is water-polo is on the left or right of the person eating lime.
+This means that the person eating lime is either on the left or right of the water-polo player.
+
+3. The fan of gospel is on the left or right of the person who's hobby is singing.
+This means that the person who's hobby is singing is either on the left or right of the gospel fan.
+
+4. The person who's hobby is singing is on the left or right of the owner of the rabbit.
+This means that the owner of the rabbit is either on the left or right of the person who's hobby is singing.
+
+From the above statements, we can conclude that:
+
+* The owner of the rabbit is on the left of the water-polo player.
+* The person eating lime is either on the left or right of the water-polo player.
+* The person who's hobby is singing is either on the left or right of the owner of the rabbit.
+* The fan of gospel is either on the left or right of the person who's hobby is singing.
+
+Now, let's try to fill in the table:
+
+|               |     1      |     2      |
+| Food          |            |            |
+| Hobby         |            |            |
+| Music-Genre   |            |            |
+| Pet           |            |            |
+| Sport         |            |            |
+| Transport     |            |            |
+
+From statement 1, we know that the owner of the rabbit is on the left of the water-polo player. Let's assume the owner of the rabbit is in column 1.
+
+|               |     1      |     2      |
+| Food          |            |            |
+| Hobby         |            |            |
+| Music-Genre   |            |            |
+| Pet           | Rabbit    |            |
+| Sport         |            | Water-Polo |
+| Transport     |            |            |
+
+From statement 2, we know that the person eating lime is either on the left or right of the water-polo player. Let's assume the person eating lime is in column 2.
+
+|               |     1      |     2      |
+| Food          |            | Lime      |
+| Hobby         |            |            |
+| Music-Genre   |            |            |
+| Pet           | Rabbit    |            |
+| Sport         |            | Water-Polo |
+| Transport     |            |            |
+
+From statement 3, we know that the fan of gospel is on the left or right of the person who's hobby is singing. Let's assume the fan of gospel is in column 1.
+
+|               |     1      |     2      |
+| Food          |            | Lime      |
+| Hobby         | Singing   |            |
+| Music-Genre   | Gospel    |            |
+| Pet           | Rabbit    |            |
+| Sport         |            | Water-Polo |
+| Transport     |            |            |
+
+From statement 4, we know that the person who's hobby is singing is on the left or right of the owner of the rabbit. Since the owner of the rabbit is already in column 1, the person who's hobby is singing must be in column 2.
+
+|               |     1      |     2      |
+| Food          |            | Lime      |
+| Hobby         | Singing   | Singing   |
+| Music-Genre   | Gospel    |            |
+| Pet           | Rabbit    |            |
+| Sport         |            | Water-Polo |
+| Transport     |            |            |
+
+Now, let's try to fill in the remaining columns:
+
+* Food: Since there are only two types of food, cherry and lime, and the person eating lime is already in column 2, the person eating cherry must be in column 1.
+* Music-Genre: Since the fan of gospel is already in column 1, the person who prefers pop must be in column 2.
+* Transport: Since the person who's sport is water-polo is not the person driving the roller, and the person driving the roller must be in column 2, the person driving the car must be in column 1.
+
+Here is the final solution table:
+
+#############
+|               |     1      |     2      |
+| Food          | Cherry    | Lime      |
+| Hobby         | Singing   | Singing   |
+| Music-Genre   | Gospel    | Pop       |
+| Pet           | Rabbit    |            |
+| Sport         |            | Water-Polo |
+| Transport     | Car       | Roller    |
+#############"	{'food': ['cherry', 'lime'], 'hobby': ['singing', 'singing'], 'music-genre': ['gospel', 'pop'], 'pet': ['rabbit', ''], 'sport': ['', 'water-polo'], 'transport': ['car', 'roller']}	True	5	False
+Lv1-6x2-8	"Let's break down the puzzle step by step:
+
+1. The fan of indie is not the person driving the scooter.
+This means the person driving the scooter must prefer a different music genre.
+
+2. The person driving the trike is on the left of the person driving the scooter.
+This means the person driving the trike must be on the left side of the table.
+
+3. The person who's sport is handball is the person who's hobby is puzzles.
+This means the person who's hobby is puzzles must also be the person who plays handball.
+
+4. The person who's hobby is puzzles is on the left of the manager.
+This means the manager must be on the right side of the table, and the person who's hobby is puzzles must be on the left side.
+
+5. The chef is the person watching crime movies.
+This means the chef must be on the right side of the table, as the person watching crime movies is on the right side.
+
+Now, let's fill in the table:
+
+#############
+|               |    1     |    2    |
+| Hobby         |          |         |
+| Job           |          |         |
+| Movie-Genre   |          |         |
+| Music-Genre   |          |         |
+| Sport         |          |         |
+| Transport     |          |         |
+#############
+
+From step 1, the person driving the scooter doesn't prefer indie. Let's assume the person driving the scooter prefers disco.
+
+From step 2, the person driving the trike is on the left of the person driving the scooter. Since the person driving the scooter prefers disco, the person driving the trike must prefer indie.
+
+From step 3, the person who's hobby is puzzles plays handball. Since the person driving the trike prefers indie, the person driving the trike must be the one who plays handball and has puzzles as their hobby.
+
+From step 4, the person who's hobby is puzzles is on the left of the manager. Since the person driving the trike is on the left side, the manager must be on the right side.
+
+From step 5, the chef is the person watching crime movies. Since the chef is on the right side, the person watching crime movies must be on the right side.
+
+Now, let's fill in the table:
+
+#############
+|               |    1     |    2    |
+| Hobby         | Puzzles | Drawing |
+| Job           | Manager | Chef    |
+| Movie-Genre   | Crime   | Western |
+| Music-Genre   | Disco   | Indie   |
+| Sport         | Handball| Soccer  |
+| Transport     | Trike   | Scooter |
+#############
+
+The final solution is:
+
+Person 1: Hobby - Puzzles, Job - Manager, Movie-Genre - Western, Music-Genre - Indie, Sport - Handball, Transport - Trike
+Person 2: Hobby - Drawing, Job - Chef, Movie-Genre - Crime, Music-Genre - Disco, Sport - Soccer, Transport - Scooter"	{'hobby': ['puzzles', 'drawing'], 'job': ['manager', 'chef'], 'movie-genre': ['crime', 'western'], 'music-genre': ['disco', 'indie'], 'sport': ['handball', 'soccer'], 'transport': ['trike', 'scooter']}	True	8	False
+Lv1-6x2-9	"Let's break down the clues and fill in the table step by step:
+
+1. The architect is on the far right.
+This means the table will look like this:
+
+|               |      1      |     2      |     3      |
+| Hobby         |             |            |            |
+| Job           |             |            |  Architect |
+| Movie-Genre   |             |            |            |
+| Music-Genre   |             |            |            |
+| Pet           |             |            |            |
+| Transport     |             |            |            |
+
+2. The person who's hobby is sudoku is not the person watching documentary movies.
+This means the person who likes sudoku cannot be in the first column (since documentary movies are not mentioned in the first column). Let's assume the sudoku person is in the second column.
+
+|               |      1      |     2      |     3      |
+| Hobby         |             |  Sudoku  |            |
+| Job           |             |            |  Architect |
+| Movie-Genre   |             |            |            |
+| Music-Genre   |             |            |            |
+| Pet           |             |            |            |
+| Transport     |             |            |            |
+
+3. The person driving the boat is somewhere to the left of the person watching romance movies.
+This means the boat driver cannot be in the third column (since romance movies are mentioned in the third column). Let's assume the boat driver is in the first column.
+
+|               |  Boat     |     2      |     3      |
+| Hobby         |          |  Sudoku  |            |
+| Job           |          |            |  Architect |
+| Movie-Genre   |  Romance |            |            |
+| Music-Genre   |          |            |            |
+| Pet           |          |            |            |
+| Transport     |  Boat    |            |            |
+
+4. The fan of jazz is on the right of the owner of the turtle.
+This means the turtle owner cannot be in the third column (since the jazz fan is mentioned in the third column). Let's assume the turtle owner is in the second column.
+
+|               |  Boat     | Turtle  |     3      |
+| Hobby         |          |  Sudoku |            |
+| Job           |          |  Teacher|  Architect |
+| Movie-Genre   |  Romance |            |            |
+| Music-Genre   |  D&B     |  Jazz   |            |
+| Pet           |          | Turtle  |            |
+| Transport     |  Boat    |          |            |
+
+Now we can fill in the remaining blanks:
+
+|               |  Boat     | Turtle  |  Architect |
+| Hobby         |  Chess   |  Sudoku |            |
+| Job           |  Teacher|  Teacher|  Architect |
+| Movie-Genre   |  Romance |  Documentary|            |
+| Music-Genre   |  D&B     |  Jazz   |            |
+| Pet           |  Chinchilla| Turtle  |            |
+| Transport     |  Boat    |  Scooter|            |
+
+#############
+|               |  Boat     | Turtle  |  Architect |
+| Hobby         |  Chess   |  Sudoku |            |
+| Job           |  Teacher|  Teacher|  Architect |
+| Movie-Genre   |  Romance |  Documentary|            |
+| Music-Genre   |  D&B     |  Jazz   |            |
+| Pet           |  Chinchilla| Turtle  |            |
+| Transport     |  Boat    |  Scooter|            |
+#############"	{'hobby': ['chess', 'sudoku', ''], 'job': ['teacher', 'teacher', 'architect'], 'movie-genre': ['romance', 'documentary', ''], 'music-genre': ['d&b', 'jazz', ''], 'pet': ['chinchilla', 'turtle', ''], 'transport': ['boat', 'scooter', '']}	True	7	False
+Lv1-6x2-10	"Let's break down the puzzle step by step:
+
+1. The chef is not French, so the chef must be Dutch.
+2. The chef is on the far left, so the table looks like this:
+
+|               |     1     |     2     |
+| Beverage      |           |           |
+| Food          |           |           |
+| Hobby         |           |           |
+| Job           | Chef      |           |
+| Music-Genre   |           |           |
+| Nationality   | Dutch     |           |
+
+3. The person who's hobby is skydiving is on the left or right of the French person. Since the chef is Dutch, the French person must be on the right. The person who's hobby is skydiving must be on the right of the French person, so they must be on the far right.
+
+|               |     1     |     2     |
+| Beverage      |           |           |
+| Food          |           |           |
+| Hobby         |           | Skydiving |
+| Job           | Chef      |           |
+| Music-Genre   |           |           |
+| Nationality   | Dutch     | French    |
+
+4. The person eating pineapple is on the far right, so they must be the one who's hobby is skydiving.
+
+|               |     1     |     2     |
+| Beverage      |           |           |
+| Food          |           | Pineapple |
+| Hobby         |           | Skydiving |
+| Job           | Chef      |           |
+| Music-Genre   |           |           |
+| Nationality   | Dutch     | French    |
+
+5. The person drinking tea is on the right of the fan of jazz. Since the person who's hobby is skydiving is on the far right, the person who drinks tea must be on the second position from the right.
+
+|               |     1     |     2     |
+| Beverage      | Coffee   | Tea      |
+| Food          |           | Pineapple |
+| Hobby         |           | Skydiving |
+| Job           | Chef      |           |
+| Music-Genre   | Jazz     |           |
+| Nationality   | Dutch     | French    |
+
+Now we can fill in the remaining blanks:
+
+|               |     1     |     2     |
+| Beverage      | Coffee   | Tea      |
+| Food          | Plum     | Pineapple |
+| Hobby         | Cooking  | Skydiving |
+| Job           | Chef      | Librarian |
+| Music-Genre   | Jazz     | Trance    |
+| Nationality   | Dutch     | French    |
+
+#############
+|               |     1     |     2     |
+| Beverage      | Coffee   | Tea      |
+| Food          | Plum     | Pineapple |
+| Hobby         | Cooking  | Skydiving |
+| Job           | Chef      | Librarian |
+| Music-Genre   | Jazz     | Trance    |
+| Nationality   | Dutch     | French    |
+#############"	{'beverage': ['coffee', 'tea'], 'food': ['plum', 'pineapple'], 'hobby': ['cooking', 'skydiving'], 'job': ['chef', 'librarian'], 'music-genre': ['jazz', 'trance'], 'nationality': ['dutch', 'french']}	True	10	False

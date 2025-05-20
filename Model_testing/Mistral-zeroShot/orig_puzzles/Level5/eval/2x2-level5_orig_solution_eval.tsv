@@ -1,0 +1,295 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv5-2x2-1	"Let's break this down step by step:
+
+1. We know that there are two people with two different jobs and two different music preferences. So, the table will look like this initially:
+
+|               |     1      |    2     |
+| Job           | Designer  | Dressmaker |
+| Music-Genre   | Dubstep   | Reggae    |
+
+2. The dressmaker is to the left of the dubstep fan. This means the dressmaker cannot be in the right column (Reggae), because if she were, she would be to the right of the dubstep fan. So, the table now looks like this:
+
+|               |     1      |    2     |
+| Job           | Designer  | Dressmaker |
+| Music-Genre   | Dubstep   | Reggae    |
+
+3. To avoid having both people preferring the same music genre, we swap the music preferences of the two people:
+
+|               |     1      |    2     |
+| Job           | Designer  | Dressmaker |
+| Music-Genre   | Reggae    | Dubstep   |
+
+4. Now, the dressmaker is to the left of the dubstep fan, as required: the dressmaker (Reggae) is in the left column, and Dubstep is to her right.
+
+So, the final solution table is:
+
+#############
+|               |     1      |    2     |
+| Job           | Designer  | Dressmaker |
+| Music-Genre   | Reggae    | Dubstep   |
+#############"	{'job': ['designer', 'dressmaker'], 'music-genre': ['reggae', 'dubstep']}	True	2	False
+Lv5-2x2-2	"Let's break this down step by step:
+
+1. We know that there are two different pets: a goat and a lizard. Let's denote the pet owner positions as P1 (for the goat owner) and P2 (for the lizard owner), where P1 < P2 (since the goat owner is to the left of the airplane driver).
+
+2. Similarly, there are two different means of transport: an airplane and a motorbike. Let's denote the transport positions as T1 (for the airplane) and T2 (for the motorbike), where T1 < T2 (since the airplane driver is somewhere to the left of the goat owner).
+
+3. Now, we can start filling the table:
+
+   |             |    1     |     2     |
+   | Pet         | Goat    |   Lizard  |
+   | Transport   | Airplane | Motorbike |
+
+4. Since the goat owner is to the left of the airplane driver, we can rearrange the table to have the goat owner first:
+
+   |             |    1     |     2     |
+   | Pet         | Airplane |   Goat   |
+   | Transport   | Goat    | Motorbike |
+
+5. Now, we have the final solution:
+
+   |             |    1     |     2     |
+   | Pet         | Airplane |   Goat   |
+   | Transport   | Goat    | Motorbike |
+
+#############
+|             |    1     |     2     |
+| Pet         | Airplane |   Goat   |
+| Transport   | Goat    | Motorbike |
+#############"	{'pet': ['airplane', 'goat'], 'transport': ['goat', 'motorbike']}	True	2	False
+Lv5-2x2-3	"Let's break this down step by step:
+
+1. We know that there are two people, and they prefer two different music genres (R&B and Rock) and two different means of transport (Boat and Subway).
+
+2. Since they have different preferences, we can write down the possible combinations for each row:
+
+   | Music-Genre   |  1   |   2    |
+   |--------------|------|--------|
+   | Music-Genre   | R&B  | Rock   |
+   | Transport     | Boat | Subway |
+
+3. Now, we know that the fan of R&B is to the right of the person driving the boat. This means that R&B cannot be in the first column (since the boat is in the first row). So, the updated table is:
+
+   | Music-Genre   |  1   |   2    |
+   |--------------|------|--------|
+   | Music-Genre   | Rock | R&B   |
+   | Transport     | Boat | Subway |
+
+4. Now, we can fill in the Transport row since we know that the R&B fan is not driving the boat. The final table is:
+
+   | Music-Genre   |  1   |   2    |
+   |--------------|------|--------|
+   | Music-Genre   | Rock | R&B   |
+   | Transport     | Subway | Boat |
+
+So, the final solution table is:
+
+#############
+| Music-Genre   |  1   |   2    |
+|--------------|------|--------|
+| Music-Genre   | Rock | R&B   |
+| Transport     | Subway | Boat |
+#############"	{'music-genre': ['rock', 'r&b'], 'transport': ['subway', 'boat']}	True	2	False
+Lv5-2x2-4	"Let's break this down step by step:
+
+1. We know that the people prefer 2 different movie-genres: musical and zombie. However, we're told that the person watching musical movies is to the right of the person watching zombie movies. So, let's place the musical movie-genre in the right column and the zombie movie-genre in the left column.
+
+   |               | Zombie   | Musical |
+   | Movie-Genre   |          |         |
+   | Music-Genre   |          |         |
+
+2. We also know that the people prefer 2 different music-genres: classical and gospel. The fan of gospel is somewhere to the right of the person watching musical movies. Since we've already placed the musical movie-genre in the right column, the gospel music-genre should be placed in the rightmost cell.
+
+   |               | Zombie   | Musical |
+   | Movie-Genre   |          |         |
+   | Music-Genre   | Classical| Gospel  |
+
+3. The last genre for each column should be the one that is not already placed. So, the remaining movie-genre is either horror or action. Since we know that the musical movie-genre is not horror, we can place horror in the left column.
+
+   |               | Zombie   | Musical |
+   | Movie-Genre   | Horror  |         |
+   | Music-Genre   | Classical| Gospel  |
+
+4. The last genre for the remaining cell is the one that is not already placed. Since we've placed classical and gospel in the music-genre column, the last music-genre is either rock or jazz. Let's place rock in the left cell to maintain the pattern of different genres in each column.
+
+   |               | Zombie   | Musical |
+   | Movie-Genre   | Horror  | Rock    |
+   | Music-Genre   | Classical| Gospel  |
+
+5. Now, we have filled all the cells with different genres, and the puzzle is solved.
+
+   |               | Zombie   | Musical |
+   | Movie-Genre   | Horror  | Rock    |
+   | Music-Genre   | Classical| Gospel  |
+
+So, the final solution table is:
+
+#############
+|               | Zombie   | Musical |
+| Movie-Genre   | Horror  | Rock    |
+| Music-Genre   | Classical| Gospel  |
+#############"	{'movie-genre': ['horror', 'rock'], 'music-genre': ['classical', 'gospel']}	True	2	False
+Lv5-2x2-5	"Let's break this down step by step:
+
+1. We know there are two nationalities: German and Mexican. Let's denote G for German and M for Mexican.
+
+2. We also know there are two types of transport: bus and ship. Let's denote B for bus and S for ship.
+
+3. The German is to the right of the person driving the ship. This means the German cannot be in the first column (since the ship driver must be there), so the German must be in the second column.
+
+4. Now, let's consider the nationality in the first column. Since the German is in the second column, the nationality in the first column must be Mexican (M).
+
+5. Now, we know the nationality in the first row. Since the Mexican is in the first column, the transport in the first row must be the bus (B).
+
+6. Finally, since the German is in the second column, the transport in the second row must be the ship (S).
+
+The final solution table is:
+
+```
+|               |    1    |   2    |
+| Nationality   |  M      |   G    |
+| Transport     |  B      |   S    |
+#############
+```
+
+This table represents the final solution to the puzzle."	{'nationality': ['m', 'g'], 'transport': ['b', 's']}	True	0	False
+Lv5-2x2-6	"Let's break this down step by step:
+
+1. We know there are two different beverages: almond-milk and milk. Let's denote them as A and M respectively.
+
+2. We also know there are two different jobs: pilot and project-manager. Let's denote them as P and PM respectively.
+
+3. The person drinking almond-milk is somewhere to the right of the pilot. This means the possible positions for the pilot and almond-milk drinker are:
+
+   |            |   1   |        2        |
+   | Beverage   | P    | A or M         |
+
+4. Since the almond-milk drinker is to the right of the pilot, the only possible position for the pilot is in column 1.
+
+   |            |   1   |        2        |
+   | Beverage   | P    | A or M         |
+
+5. Now, we know there are only two beverages, and one is already placed (almond-milk in column 2). So, the other beverage (milk) must be in column 1.
+
+   |            |   1   |        2        |
+   | Beverage   | M    | A              |
+
+6. Finally, we know there are two jobs, and one is already placed (pilot in row 1). The other job (project-manager) must be in the other cell.
+
+   |            |   1   |        2        |
+   | Beverage   | M    | A              |
+   | Job        | PM  | P              |
+
+So, the final solution table is:
+
+#############
+|            |   1   |        2        |
+| Beverage   | M    | A              |
+| Job        | PM  | P              |
+#############"	{'beverage': ['m', 'a'], 'job': ['pm', 'p']}	True	0	False
+Lv5-2x2-7	"Let's break this down step by step:
+
+1. We know there are 2 different favorite beverages: iced-tea and tea. Let's label them as A and B.
+
+2. We also know there are 2 different movie genres: crime and romance. Let's label them as C and R.
+
+3. The person drinking tea is to the left of the person watching romance movies. This means that if we arrange the table in a way that the person watching a genre is in the same row as that genre, the person drinking tea must be in the left column (Column 1) and the person watching romance movies must be in the right column (Column 2).
+
+4. Since there are only 2 people, the only possible arrangement that satisfies the condition is:
+
+   |               |   1   |    2     |
+   | Beverage      | A     | B        |
+   | Movie-Genre   | C     | R        |
+
+   In this arrangement, the person drinking tea (A) is in Column 1, and the person watching romance movies (R) is in Column 2. The person watching crime movies (C) is in the same row as the person drinking the other beverage (B).
+
+So, the final solution table is:
+
+#############
+|               |   1   |    2     |
+| Beverage      | A     | B        |
+| Movie-Genre   | C     | R        |
+#############"	{'beverage': ['a', 'b'], 'movie-genre': ['c', 'r']}	True	0	False
+Lv5-2x2-8	"Let's break this down step by step:
+
+1. We know there are two different beverages (7up and lemonade) and two different music genres (techno and trance).
+
+2. The person drinking lemonade is to the left of the techno fan. This means that the person who prefers techno music cannot be drinking lemonade.
+
+3. Since there are only two people, the person who is not drinking lemonade must be drinking 7up. So, the person who prefers techno music must be drinking 7up.
+
+4. Now, we know that the person who prefers techno music is drinking 7up. Since there is only one person left, they must be the trance music fan.
+
+5. Putting it all together, the final solution table is:
+
+   |               |    1     |   2    |
+   | Beverage      | 7up      | Lemonade|
+   | Music-Genre   | Techno   | Trance  |
+
+#############
+|               |    1     |   2    |
+| Beverage      | 7up      | Lemonade|
+| Music-Genre   | Techno   | Trance  |
+#############"	{'beverage': ['7up', 'lemonade'], 'music-genre': ['techno', 'trance']}	True	0	False
+Lv5-2x2-9	"Let's break this down step by step:
+
+1. We know there are two different beverages (soy-milk and water) and two different pets (fish and hedgehog).
+
+2. The person drinking soy-milk is to the right of the owner of the fish. This means the arrangement of the table could be:
+
+   |            |   1   |    2     |
+   | Beverage   | soy-milk | water |
+   | Pet        | fish | hedgehog |
+
+   But since the person drinking soy-milk is to the right of the owner of the fish, the correct arrangement should be:
+
+   |            |   1   |    2     |
+   | Beverage   | water | soy-milk |
+   | Pet        | fish | hedgehog |
+
+   However, this arrangement doesn't follow the rule that the beverages are different.
+
+   The mistake in the rule is that the person drinking soy-milk is to the right of the owner of the fish, but the owner of the fish could be either row 1 or row 2. Let's correct the rule:
+
+   The person drinking soy-milk is to the right of the owner of the fish, and the owner of the fish is in row 2.
+
+   Now, the correct arrangement is:
+
+   |            |   1   |    2     |
+   | Beverage   | water | soy-milk |
+   | Pet        | fish | hedgehog |
+
+   So, the final solution table is:
+
+  #############
+   |            |   1   |    2     |
+   | Beverage   | water | soy-milk |
+   | Pet        | fish | hedgehog |
+  #############"	{}	False	0	False
+Lv5-2x2-10	"Let's break this down step by step:
+
+1. Since there are two different music genres (Country and Disco) and two different means of transport (Bike and Bus), we can fill the first row and column with the given options.
+
+   |               |   1   |    2    |
+   | Music-Genre   | Country | Disco  |
+   | Transport     | Bike   | Bus    |
+
+2. Now let's apply the second rule: the fan of country is somewhere to the right of the fan of disco. This means that Disco must be in the first column (column 1) and Country in the second column (column 2).
+
+   |               |   1   |    2    |
+   | Music-Genre   | Disco  | Country |
+   | Transport     | Bike   | Bus     |
+
+3. Now let's apply the first rule: the person driving the bus is somewhere to the left of the person driving the bike. Since we already placed the music genres, we can only rearrange the transport options. The only way to satisfy this rule is to swap the rows (i.e., move the Bus to the first row and the Bike to the second row).
+
+   |               |   1   |    2    |
+   | Music-Genre   | Disco  | Country |
+   | Transport     | Bus    | Bike    |
+
+So, the final solution table is:
+
+#############
+|               |   1   |    2    |
+| Music-Genre   | Disco  | Country |
+| Transport     | Bus    | Bike    |
+#############"	{'music-genre': ['disco', 'country'], 'transport': ['bus', 'bike']}	True	4	True

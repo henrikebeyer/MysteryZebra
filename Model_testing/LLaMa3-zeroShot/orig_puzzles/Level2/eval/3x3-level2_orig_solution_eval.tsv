@@ -1,0 +1,488 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-3x3-1	"Let's break down the puzzle step by step:
+
+1. The person eating raspberry is the person driving the train.
+2. The owner of the cat is between the person eating raspberry and the person eating apple.
+3. The person driving the car is on the right of the owner of the lizard.
+4. The owner of the cat is on the left of the person eating apple.
+
+From statement 1, we know that the person eating raspberry is driving the train. Let's call this person R.
+
+From statement 2, we know that the owner of the cat is between R and the person eating apple. Let's call this person C.
+
+From statement 4, we know that C is on the left of the person eating apple. Let's call this person A.
+
+Now, let's look at statement 3. The person driving the car is on the right of the owner of the lizard. Since C is between R and A, C cannot be the owner of the lizard. Therefore, the owner of the lizard must be on the right of C.
+
+We can now start filling in the table:
+
+|             |     1     |    2    |   3   |
+| Food        |           |         |       |
+| Pet         |           |         |       |
+| Transport   |           |         |       |
+
+R (raspberry) - Train
+C (cat) -? - A (apple)
+L (lizard) -? - Car
+
+From statement 3, we know that the owner of the lizard is on the right of C. Since C is between R and A, the owner of the lizard must be on the right of A. Therefore, the owner of the lizard must be eating cabbage.
+
+|             |     1     |    2    |   3   |
+| Food        | apple    | raspberry | cabbage |
+| Pet         |           |         |       |
+| Transport   |           |         |       |
+
+R (raspberry) - Train
+C (cat) -? - A (apple)
+L (lizard) - Cabbage - Car
+
+From statement 2, we know that C is between R and A. Since C is eating fish, C must be on the right of R and on the left of A.
+
+|             |     1     |    2    |   3   |
+| Food        | apple    | raspberry | cabbage |
+| Pet         | cat      | fish     | lizard |
+| Transport   |           |         |       |
+
+R (raspberry) - Train
+C (cat) - Fish - A (apple)
+L (lizard) - Cabbage - Car
+
+The final solution is:
+
+#############
+|             |     1     |    2    |   3   |
+| Food        | apple    | raspberry | cabbage |
+| Pet         | cat      | fish     | lizard |
+| Transport   | Car      | Train    | Boat |
+#############"	{'food': ['apple', 'raspberry', 'cabbage'], 'pet': ['cat', 'fish', 'lizard'], 'transport': ['car', 'train', 'boat']}	True	1	False
+Lv1-3x3-2	"Let's break down the clues and fill in the table step by step:
+
+1. The person who's hobby is chess is the lawyer
+This means the lawyer's hobby is chess. We can't determine the lawyer's job yet, but we know the hobby.
+
+|            |   1    |      2      |        3        |
+| Beverage   |        |             |                 |
+| Hobby      |        |             |                 |
+| Job        |        |             |                 |
+
+2. The person drinking tea is on the right of the person who's hobby is woodworking
+This means the person who drinks tea is either in position 2 or 3. We'll come back to this later.
+
+|            |   1    |      2      |        3        |
+| Beverage   |        |             |                 |
+| Hobby      |        |             |                 |
+| Job        |        |             |                 |
+
+3. The person drinking fanta is between the project-manager and the person drinking 7up
+This means the person drinking fanta is either in position 1 or 2. We'll come back to this later.
+
+|            |   1    |      2      |        3        |
+| Beverage   |        |             |                 |
+| Hobby      |        |             |                 |
+| Job        |        |             |                 |
+
+Now, let's combine the clues:
+
+* The person who's hobby is chess is the lawyer (1)
+* The person drinking tea is on the right of the person who's hobby is woodworking (2)
+* The person drinking fanta is between the project-manager and the person drinking 7up (3)
+
+From clue 1, we know the lawyer's hobby is chess. From clue 2, we know the person drinking tea is on the right of the person who's hobby is woodworking. This means the person who's hobby is woodworking is either in position 1 or 2. Let's assume they're in position 1 for now.
+
+|            |   1    |      2      |        3        |
+| Beverage   |        |             |                 |
+| Hobby      | Woodworking |             |                 |
+| Job        |        |             |                 |
+
+From clue 3, we know the person drinking fanta is between the project-manager and the person drinking 7up. This means the person drinking 7up is either in position 2 or 3. Let's assume they're in position 2 for now.
+
+|            |   1    |      2      |        3        |
+| Beverage   |        | 7up        |                 |
+| Hobby      | Woodworking |             |                 |
+| Job        |        |             |                 |
+
+Now, let's fill in the remaining positions:
+
+* The person drinking tea is on the right of the person who's hobby is woodworking (2). Since the person who's hobby is woodworking is in position 1, the person drinking tea is in position 3.
+* The person drinking fanta is between the project-manager and the person drinking 7up (3). Since the person drinking 7up is in position 2, the project-manager is in position 1, and the person drinking fanta is in position 3.
+* The person who's hobby is chess is the lawyer (1). Since the project-manager is in position 1, the lawyer is in position 2.
+
+Here's the final solution:
+
+#############
+|            |   1    |      2      |        3        |
+| Beverage   | Fanta  | Tea        | 7up        |
+| Hobby      | Woodworking | Chess     |             |
+| Job        | Project-manager | Lawyer    | Musician   |
+#############"	{'beverage': ['fanta', 'tea', '7up'], 'hobby': ['woodworking', 'chess', ''], 'job': ['project-manager', 'lawyer', 'musician']}	True	0	False
+Lv1-3x3-3	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person watching disaster movies is on the left of the firefighter.
+2. The person watching disaster movies is on the left of the person watching spy movies.
+3. The person watching disaster movies is the person who's sport is ice-hockey.
+4. The person who's sport is ice-hockey is between the mechanic and the person who's sport is sailing.
+
+From clue 1, we know the person watching disaster movies is on the left of the firefighter. Let's assume the person watching disaster movies is in the first column.
+
+From clue 2, we know the person watching disaster movies is also on the left of the person watching spy movies. This means the person watching spy movies must be in the third column.
+
+From clue 3, we know the person watching disaster movies is the person who's sport is ice-hockey. Since the person watching disaster movies is in the first column, this person's sport must be ice-hockey.
+
+From clue 4, we know the person who's sport is ice-hockey is between the mechanic and the person who's sport is sailing. Since the person watching disaster movies (and ice-hockey) is in the first column, the mechanic must be in the second column, and the person who's sport is sailing must be in the third column.
+
+Now we can fill in the table:
+
+#############
+|               |      1      |     2      |      3      |
+| Job           |             |            |             |
+| Movie-Genre   |  Disaster  |  Documentary |  Spy       |
+| Sport         |  Ice-Hockey|  Parkour    |  Sailing   |
+#############
+
+We can deduce the jobs as follows:
+
+* The person watching disaster movies (ice-hockey) is the designer.
+* The person watching documentary movies is the firefighter.
+* The person watching spy movies is the mechanic.
+
+So, the final solution table is:
+
+#############
+|               |      1      |     2      |      3      |
+| Job           |  Designer  |  Firefighter|  Mechanic  |
+| Movie-Genre   |  Disaster  |  Documentary |  Spy       |
+| Sport         |  Ice-Hockey|  Parkour    |  Sailing   |
+#############"	{'job': ['designer', 'firefighter', 'mechanic'], 'movie-genre': ['disaster', 'documentary', 'spy'], 'sport': ['ice-hockey', 'parkour', 'sailing']}	True	2	False
+Lv1-3x3-4	"Let's break down the puzzle step by step:
+
+1. The person driving the motorbike is on the far right.
+2. The fan of funk is on the left of the person driving the train.
+3. The person driving the train is between the fan of funk and the person watching drama movies.
+4. The fan of pop is on the right of the person watching epic movies.
+5. The fan of pop is on the far right.
+
+From statement 1, we know the motorbike driver is on the far right.
+
+From statement 2, we know the funk fan is on the left of the train driver.
+
+From statement 3, we know the train driver is between the funk fan and the drama movie fan. This means the drama movie fan is on the right of the train driver.
+
+From statement 4, we know the pop fan is on the right of the epic movie fan.
+
+From statement 5, we know the pop fan is on the far right. This means the epic movie fan is on the second-to-last position.
+
+Now, let's fill in the table:
+
+#############
+|               |     1      |   2   |     3     |
+| Movie-Genre   |            |       |           |
+| Music-Genre   |            |       |           |
+| Transport     |            |       |           |
+#############
+| Movie-Genre   | Funk Fan   | Pop Fan | Drama Fan |
+| Music-Genre   |            |       |           |
+| Transport     | Motorbike | Train   | Helicopter |
+#############
+
+The final solution is:
+
+#############
+|               |     1      |   2   |     3     |
+| Movie-Genre   | Romance   | Epic   | Drama    |
+| Music-Genre   | Funk      | R&B    | Pop      |
+| Transport     | Motorbike | Train   | Helicopter |
+#############
+
+Note that we can't determine the exact music genres for the drama and funk fans, but we can fill in the table with possible combinations."	{'movie-genre': ['romance', 'epic', 'drama'], 'music-genre': ['funk', 'r&b', 'pop'], 'transport': ['motorbike', 'train', 'helicopter']}	True	7	False
+Lv1-3x3-5	"Let's break down the puzzle step by step:
+
+1. The fan of soul is the owner of the ferret.
+2. The owner of the ferret is on the right of the person driving the bike.
+3. The fan of salsa is the person driving the jet-ski.
+4. The owner of the ferret is between the owner of the frog and the fan of salsa.
+
+From statement 1, we know the fan of soul is the owner of the ferret. Let's call this person S.
+
+From statement 2, we know the owner of the ferret is on the right of the person driving the bike. This means the bike driver is to the left of S.
+
+From statement 3, we know the fan of salsa is the person driving the jet-ski. Let's call this person Sa.
+
+From statement 4, we know the owner of the ferret (S) is between the owner of the frog and Sa. This means the owner of the frog is to the left of S, and Sa is to the right of S.
+
+Now, let's fill in the table:
+
+#############
+|               |   1    |   2    |    3    |
+| Music-Genre   |        |        |         |
+| Pet           |        |        |         |
+| Transport     |        |        |         |
+#############
+
+* S (fan of soul) owns the ferret and is on the right of the bike driver.
+* Sa (fan of salsa) drives the jet-ski and is to the right of S.
+* The owner of the frog is to the left of S.
+
+We can't determine the music genre of the frog owner or the bike driver yet, but we can fill in the table with the information we have:
+
+#############
+|               |   1    |   2    |    3    |
+| Music-Genre   |  Soul  | ?    |  Salsa  |
+| Pet           |  Ferret |  Frog  | ?    |
+| Transport     |  Bike  | ?    |  Jet-ski |
+#############
+
+Now, let's analyze the remaining possibilities:
+
+* The bike driver can't be the fan of soul (S) because S owns the ferret and is on the right of the bike driver. The bike driver must be someone who doesn't own a pet.
+* The jet-ski driver (Sa) is the fan of salsa, so the bike driver can't be the fan of salsa.
+* The owner of the frog is to the left of S, so the bike driver can't be the owner of the frog.
+
+The only remaining possibility is that the bike driver is the fan of trance. This means the music genres are:
+
+* Soul: S (fan of soul)
+* Trance: Bike driver
+* Salsa: Sa (fan of salsa)
+
+The pets are:
+
+* Ferret: S (fan of soul)
+* Frog: Owner of the frog
+*? (unknown pet): Sa (fan of salsa)
+
+The transport is:
+
+* Bike: Trance fan
+*? (unknown transport): Owner of the frog
+* Jet-ski: Sa (fan of salsa)
+
+The final solution table is:
+
+#############
+|               |   1    |   2    |    3    |
+| Music-Genre   |  Soul  |  Trance |  Salsa  |
+| Pet           |  Ferret |  Frog  |  Rat    |
+| Transport     |  Bike  |  Van   |  Jet-ski |
+#############
+
+Note that we had to make an assumption about the unknown pet and transport, but the puzzle provides enough information to arrive at a unique solution."	{'music-genre': ['soul', 'trance', 'salsa'], 'pet': ['ferret', 'frog', 'rat'], 'transport': ['bike', 'van', 'jet-ski']}	True	5	False
+Lv1-3x3-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person watching sports movies is on the left of the person who's hobby is reading.
+This means that the person watching sports movies is either in the 1st or 2nd position, and the person who's hobby is reading is in the 2nd or 3rd position.
+
+2. The fan of rock is on the left of the person who's hobby is photography.
+This means that the fan of rock is either in the 1st or 2nd position, and the person who's hobby is photography is in the 2nd or 3rd position.
+
+3. The fan of classical is between the person watching horror movies and the fan of rock.
+This means that the fan of classical is in the 2nd position, and the person watching horror movies is either in the 1st or 3rd position, and the fan of rock is either in the 1st or 3rd position.
+
+Now, let's combine the information:
+
+* The fan of classical is in the 2nd position.
+* The fan of rock is either in the 1st or 3rd position.
+* The person watching sports movies is either in the 1st or 2nd position.
+* The person who's hobby is reading is either in the 2nd or 3rd position.
+* The person who's hobby is photography is either in the 2nd or 3rd position.
+
+With these constraints, we can start filling in the table:
+
+|               |     1     |      2      |    3    |
+| Hobby         |           |             |         |
+| Movie-Genre   |           |             |         |
+| Music-Genre   |           |             |         |
+
+From clue 3, we know the fan of classical is in the 2nd position. Let's assume the fan of classical is in the 2nd position, and the fan of rock is in the 3rd position.
+
+|               |     1     |      2      |    3    |
+| Hobby         |           |  Classical | Rock    |
+| Movie-Genre   |           |             |         |
+| Music-Genre   |           |             |         |
+
+From clue 1, we know the person watching sports movies is on the left of the person who's hobby is reading. Since the fan of classical is in the 2nd position, the person watching sports movies must be in the 1st position.
+
+|               |     1     |      2      |    3    |
+| Hobby         | Sports  |  Classical | Rock    |
+| Movie-Genre   |           |             |         |
+| Music-Genre   |           |             |         |
+
+From clue 2, we know the fan of rock is on the left of the person who's hobby is photography. Since the fan of rock is in the 3rd position, the person who's hobby is photography must be in the 2nd position.
+
+|               |     1     |      2      |    3    |
+| Hobby         | Sports  | Photography | Rock    |
+| Movie-Genre   |           |             |         |
+| Music-Genre   |           |             |         |
+
+Now, let's fill in the remaining cells:
+
+* The person who's hobby is reading is not in the 1st position (from clue 1), so they must be in the 3rd position.
+* The fan of horror movies is not in the 1st position (from clue 3), so they must be in the 3rd position.
+* The fan of ambient music is not in the 1st position (from clue 3), so they must be in the 3rd position.
+
+Here's the final solution:
+
+#############
+|               |     1     |      2      |    3    |
+| Hobby         | Sports  | Photography | Reading |
+| Movie-Genre   | Animation | Horror     | Sports  |
+| Music-Genre   | Ambient  | Classical  | Rock    |
+#############"	{'hobby': ['sports', 'photography', 'reading'], 'movie-genre': ['animation', 'horror', 'sports'], 'music-genre': ['ambient', 'classical', 'rock']}	True	4	False
+Lv1-3x3-7	"Let's break down the puzzle step by step:
+
+1. The person watching documentary movies is on the right of the person who's sport is tennis.
+This means that the person watching documentary movies is either the second or third person from the left.
+
+2. The person driving the snowmobile is on the left of the person driving the jet-ski.
+This means that the person driving the snowmobile is the first person from the left, and the person driving the jet-ski is the second person from the left.
+
+3. The person watching western movies is between the person driving the jet-ski and the person who's sport is baseball.
+This means that the person watching western movies is the third person from the left, and the person who's sport is baseball is the second person from the right.
+
+Now, let's combine the information:
+
+|               |     1      |     2      |      3      |
+| Movie-Genre   |            |            |             |
+| Sport         |            |            |             |
+| Transport     |            |            |             |
+
+From (2), we know the person driving the snowmobile is the first person from the left, and the person driving the jet-ski is the second person from the left.
+
+From (1), we know the person watching documentary movies is on the right of the person who's sport is tennis. Since the person driving the snowmobile is the first person from the left, the person who's sport is tennis must be the second person from the left.
+
+From (3), we know the person watching western movies is between the person driving the jet-ski and the person who's sport is baseball. Since the person driving the jet-ski is the second person from the left, the person watching western movies must be the third person from the left.
+
+Now, let's fill in the table:
+
+|               |     1      |     2      |      3      |
+| Movie-Genre   | Snowmobile | Jet-ski   | Western    |
+| Sport         |            | Baseball | Tennis     |
+| Transport     |            |            |            |
+
+The final solution is:
+
+#############
+|               |     1      |     2      |      3      |
+| Movie-Genre   | Snowmobile | Jet-ski   | Western    |
+| Sport         |            | Baseball | Tennis     |
+| Transport     |            |            |            |
+#############"	{'movie-genre': ['snowmobile', 'jet-ski', 'western'], 'sport': ['', 'baseball', 'tennis'], 'transport': ['', '', '']}	True	0	False
+Lv1-3x3-8	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person who's hobby is magic-tricks is on the left of the fan of r&b
+
+This means that the person who likes magic-tricks is either in the first or second column. Since the fan of r&b is on the right of this person, the fan of r&b must be in the third column.
+
+2. The person who's sport is golf is on the left of the person who's sport is surfing
+
+This means that the person who likes golf is either in the first or second column, and the person who likes surfing is in the third column.
+
+3. The person who's hobby is card-games is between the fan of indie and the person who's sport is climbing
+
+This means that the person who likes card-games is in the second column, and the fan of indie is in the first column. The person who likes climbing is in the third column.
+
+4. The fan of indie is the person who's hobby is magic-tricks
+
+This means that the person who likes indie is the same person who likes magic-tricks, and they are in the first column.
+
+Now, let's fill in the table:
+
+#############
+|               |      1       |     2      |     3      |
+| Hobby         |              |            |            |
+| Music-Genre   |              |            |            |
+| Sport         |              |            |            |
+#############
+|               |  Indie (Magic) | Card-Games |            |
+| Music-Genre   |  R&B          |            |            |
+| Sport         |              |  Climbing   |  Golf, Surfing |
+#############
+
+The final solution is:
+
+The person who likes indie and magic-tricks is in the first column, the person who likes card-games is in the second column, and the person who likes climbing is in the third column. The fan of r&b is in the first column, and the person who likes golf and surfing is in the third column."	{'music-genre': ['r&b', '', ''], 'sport': ['', 'climbing', 'golf, surfing']}	False	0	False
+Lv1-3x3-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The bartender is between the owner of the pony and the analyst.
+This means the order is:? (owner of pony) - bartender - analyst
+
+2. The person driving the ship is between the person driving the bike and the analyst.
+This means the order is:? (driver of bike) -? (driver of ship) - analyst
+
+3. The owner of the chinchilla is in the middle.
+This means the owner of the chinchilla is between the owner of the pony and the bartender.
+
+4. The owner of the pony is on the left of the owner of the chinchilla.
+This means the order is: owner of pony - owner of chinchilla - bartender
+
+Now, let's combine the clues:
+
+|             |    1    |     2      |    3     |
+| Job         |         |            |          |
+| Pet         |         |            |          |
+| Transport   |         |            |          |
+
+From clue 4, we know the order is: owner of pony - owner of chinchilla - bartender
+
+From clue 1, we know the bartender is between the owner of the pony and the analyst, so the order is: owner of pony - owner of chinchilla - bartender - analyst
+
+From clue 2, we know the person driving the ship is between the person driving the bike and the analyst, so the order is:? (driver of bike) -? (driver of ship) - owner of chinchilla - owner of pony - bartender - analyst
+
+Now, let's fill in the remaining blanks:
+
+* The owner of the pony is on the left of the owner of the chinchilla, so the owner of the pony must be driving the bike.
+* The owner of the chinchilla is in the middle, so the owner of the chinchilla must be driving the ship.
+* The bartender is between the owner of the pony and the analyst, so the bartender must be driving the scooter.
+
+Here's the final solution:
+
+#############
+|             |    1    |     2      |    3     |
+| Job         |         |            |          |
+| Pet         |         |            |          |
+| Transport   |         |            |          |
+|             |  Bike   |  Ship     |  Scooter |
+| Job         |  Manager|  Analyst |  Bartender |
+| Pet         |  Pony   |  Chinchilla|  Hedgehog |
+#############
+
+The solution is:
+
+* The manager owns the pony and drives the bike.
+* The analyst owns the chinchilla and drives the ship.
+* The bartender owns the hedgehog and drives the scooter."	{'job': ['manager', 'analyst', 'bartender'], 'pet': ['pony', 'chinchilla', 'hedgehog'], 'transport': ['', '', '']}	True	4	False
+Lv1-3x3-10	"Let's break down the puzzle step by step:
+
+1. The Egyptian is the person who's sport is handball.
+This means the Egyptian is either in the 1st or 2nd column, and their sport is Handball.
+
+2. The fan of indie is between the indonesian and the fan of r&b.
+This means the Indonesian is either in the 1st or 2nd column, and the fan of R&B is either in the 2nd or 3rd column.
+
+3. The person who's sport is handball is on the right of the person who's sport is skateboarding.
+This means the person who's sport is Skateboarding is either in the 1st or 2nd column, and the person who's sport is Handball is in the 2nd or 3rd column.
+
+4. The Mexican is on the left of the fan of r&b.
+This means the Mexican is either in the 1st or 2nd column, and the fan of R&B is in the 2nd or 3rd column.
+
+Now, let's combine the information:
+
+* The Egyptian is in the 1st or 2nd column, and their sport is Handball.
+* The Indonesian is in the 1st or 2nd column, and the fan of R&B is in the 2nd or 3rd column.
+* The Mexican is in the 1st or 2nd column, and the fan of R&B is in the 2nd or 3rd column.
+* The person who's sport is Skateboarding is in the 1st or 2nd column.
+
+The only possible arrangement is:
+
+#############
+| Music-Genre | Nationality | Sport         |
+|             |            |              |
+| Indie       | Indonesian | Skateboarding |
+| Jazz        | Mexican    | Handball      |
+| R&B        | Egyptian   | Soccer        |
+#############
+
+This solution satisfies all the given conditions:
+
+* The Egyptian is the person who's sport is Handball.
+* The fan of Indie is between the Indonesian and the fan of R&B.
+* The person who's sport is Handball is on the right of the person who's sport is Skateboarding.
+* The Mexican is on the left of the fan of R&B."	{'music-genre': ['nationality', 'sport'], 'indie': ['indonesian', 'skateboarding'], 'jazz': ['mexican', 'handball'], 'r&b': ['egyptian', 'soccer']}	False	0	False

@@ -1,0 +1,820 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-4x4-1	"Let's solve this step by step:
+
+1. We know that the photographer is the person who has board-games as a hobby. Let's place the photographer in the first row, first column (1,1).
+
+   | Hobby | 1 (Photographer) | 2 | 3 | 4 |
+   |-------|------------------|----|---|---|
+   | Job   |                |    |   |   |
+   | Music |                |    |   |   |
+   | Pet   |                |    |   |   |
+
+2. The fan of trance is on the left of the owner of the fish. Since the photographer is already in the first column, the fish cannot be in the first row. Let's place the fish in the second row, first column (2,1).
+
+   | Hobby | 1 (Photographer) | 2 (Fish) | 3 | 4 |
+   |-------|------------------|----------|---|---|
+   | Job   |                |         |   |   |
+   | Music |                |         |   |   |
+   | Pet   |                |         |   |   |
+
+3. The fan of r&b is the designer. Since the photographer is already in the first row, the designer cannot be in the first row either. Let's place the designer in the second row, third column (2,3).
+
+   | Hobby | 1 (Photographer) | 2 (Fish) | 3 (Designer) | 4 |
+   |-------|------------------|----------|--------------|---|
+   | Job   |                |         |              |   |
+   | Music |                |         |              |   |
+   | Pet   |                |         |              |   |
+
+4. The person who's hobby is fishing is on the right of the photographer. Since the photographer is in the first row, the fishing hobby must be in the second row, fourth column (2,4).
+
+   | Hobby | 1 (Photographer) | 2 (Fish) | 3 (Designer) | 4 (Fishing) |
+   |-------|------------------|----------|--------------|-------------|
+   | Job   |                |         |              |             |
+   | Music |                |         |              |             |
+   | Pet   |                |         |              |             |
+
+5. The scientist is on the right of the person who's hobby is camping. Since we don't know yet who has camping as a hobby, we can't place the scientist yet.
+
+6. The fan of country is on the left of the fan of house. Since we don't know yet who has house as a music genre, we can't place the fan of country yet.
+
+7. The photographer is the owner of the cat. Since we already know where the photographer is, we can place the cat in the first row, second column (1,2).
+
+   | Hobby | 1 (Photographer) | 2 (Fish) | 3 (Designer) | 4 (Fishing) |
+   |-------|------------------|----------|--------------|-------------|
+   | Job   |                | 2 (Cat)  |              |             |
+   | Music |                |         |              |             |
+   | Pet   |                |         |              |             |
+
+8. The fan of house is on the right of the owner of the frog. Since we already know where the fish is, the frog must be in the second row, second column (2,2).
+
+   | Hobby | 1 (Photographer) | 2 (Fish,Frog) | 3 (Designer) | 4 (Fishing) |
+   |-------|------------------|----------------|--------------|-------------|
+   | Job   |                | 2 (Cat)       |              |             |
+   | Music |                |         |              |             |
+   | Pet   |                |         |              |             |
+
+9. The person who's hobby is fishing is on the left of the owner of the frog. This contradicts the previous placement of the fish and the frog, so we need to swap them.
+
+   | Hobby | 1 (Photographer) | 2 (Fish) | 3 (Designer) | 4 (Fishing,Frog) |
+   |-------|------------------|----------|--------------|------------------|
+   | Job   |                | 2 (Cat)  |              |                  |
+   | Music |                |         |              |                  |
+   | Pet   |                |         |              |                  |
+
+10. Now we can place the scientist on the second row, fourth column (2,4), since the scientist is on the right of the person who's hobby is camping, and we know that the fishing hobby is on the right of the photographer.
+
+    | Hobby | 1 (Photographer) | 2 (Fish) | 3 (Designer) | 4 (Fishing,Frog,Scientist) |
+    |-------|------------------|----------|--------------|--------------------------|
+    | Job   |                | 2 (Cat)  |              |                          |
+    | Music |                |         |              |                          |
+    | Pet   |                |         |              |                          |
+
+11. The fan of country is on the left of the fan of house. Since we know where the house music is, we can place the country music in the second row, third column (2,3).
+
+    | Hobby | 1 (Photographer) | 2 (Fish,Country) | 3 (Designer,House) | 4 (Fishing,Frog,Scientist) |
+    |-------|------------------|-------------------|-----------------------|--------------------------|
+    | Job   |                | 2 (Cat)          |                     |                          |
+    | Music |                |         |              |                          |
+    | Pet   |                |         |              |                          |
+
+12. The remaining hobbies are camping and r&b. Since the scientist is on the right of the person who's hobby is camping, and we know where the scientist is, the camping hobby must be in the first row, fourth column (1,4).
+
+    | Hobby | 1 (Photographer,Camping) | 2 (Fish,Country) | 3 (Designer,House) | 4 (Fishing,Frog,Scientist) |
+    |-------|--------------------------|-------------------|-----------------------|--------------------------|
+    | Job   |                | 2 (Cat)          |                     |                          |
+    | Music |                |         |              |                          |
+    | Pet   |                |         |              |                          |
+
+13. The fan of r&b is the designer. Since we know where the designer is, the r&b music must be in the second row, third column (2,3). This contradicts the previous placement of the country music, so we need to swap them.
+
+    | Hobby | 1 (Photographer,Camping) | 2 (Fish,R&B) | 3 (Designer,Country) | 4 (Fishing,Frog,Scientist) |
+    |-------|--------------------------|--------------|-----------------------|--------------------------|
+    | Job   |                | 2 (Cat)      |                     |                          |
+    | Music |                |         |              |                          |
+    | Pet   |                |         |              |                          |
+
+14. The remaining music genre is trance. Since the fan of trance is on the left of the owner of the fish, and we know where the fish is, the trance music must be in the first row, second column (1,2).
+
+    | Hobby | 1 (Photographer,Camping,Trance) | 2 (Fish,R&B) | 3 (Designer,Country) | 4 (Fishing,Frog,Scientist) |
+    |-------|--------------------------------|--------------|-----------------------|--------------------------|
+    | Job   |                | 2 (Cat)      |                     |                          |
+    | Music | Trance           |         |              |                          |
+    | Pet   |                |         |              |                          |
+
+15. The remaining pet is a rabbit. Since we don't have any restrictions on where to place the rabbit, we can place it in the last column (4).
+
+    | Hobby | 1 (Photographer,Camping,Trance) | 2 (Fish,R&B) | 3 (Designer,Country) | 4 (Fishing,Frog,Scientist,Rabbit) |
+    |-------|--------------------------------|--------------|-----------------------|--------------------------------|
+    | Job   |                | 2 (Cat)      |                     |                                |
+    | Music | Trance           |         |              |                                |
+    | Pet   |                |         |              | Rabbit                         |
+
+Now we have the final solution table:
+
+    | Hobby         | Board-Games (Photographer,Camping,Trance) | Camping | Card-Games (Designer,Country) | Fishing |
+    | Job           |                |         |                     |         |
+    | Music-Genre   | Trance           |         |              |         |
+    | Pet           |                |         |              | Rabbit  |
+
+The table shows the hobbies, jobs, music genres, and pets for the four people. The photographer is the person who has board-games as a hobby, is a designer, prefers trance music, and owns a cat. The scientist is the person who has camping as a hobby, is a photographer, prefers country music, and owns a rabbit. The designer is the person who has card-games as a hobby, is a scientist, prefers r&b music, and owns a frog. The person with fishing as a hobby is not specified in the given information."	{}	False	0	False
+Lv1-4x4-2	"Let's solve this step by step:
+
+1. We know there are 4 people, so we can fill in the number of rows.
+
+2. From point 1, we know the person eating broccoli is on the far right, so we can place it in the last column of the Food section.
+
+3. From point 3, the person eating orange is on the right of the person drinking cola. Since we know the position of broccoli, we can place cola in the cell to the left of broccoli in the Beverage section.
+
+4. From point 8, the person who's sport is volleyball is on the left of the person drinking cola. So, we can place volleyball in the cell above cola in the Sport section.
+
+5. From point 4, the person eating kiwi is to the right of the person playing volleyball. So, we can place kiwi in the cell to the right of volleyball in the Food section.
+
+6. From point 6, the person drinking sprite is the fan of indie. Since we have filled in some positions, we can place indie in the Music-Genre section, but we don't know the exact position yet.
+
+7. From point 7, the fan of folk is on the left of the person drinking iced-tea. Since we have filled in some positions, we can place folk in the Music-Genre section, but we don't know the exact position yet.
+
+8. From point 9, the person who's sport is baseball is on the right of the person who's sport is water-polo. Since we have filled in some positions, we can place baseball in the Sport section, but we don't know the exact position yet.
+
+9. Now we have enough information to place iced-tea. Since the fan of soul is the person who's sport is baseball (point 2), and baseball is on the right of water-polo (point 9), we can place water-polo above baseball in the Sport section. Since the fan of soul is on the left of the fan of dubstep (point 5), and we know the position of baseball, we can place soul in the Music-Genre section to the left of dubstep.
+
+10. Now we have enough information to place sprite and folk. Since the fan of indie is the person drinking sprite (point 6), and we know the position of baseball, we can place sprite in the Beverage section to the right of cola. Since the fan of folk is on the left of the person drinking iced-tea (point 7), and we know the position of soul, we can place folk in the Music-Genre section to the left of soul.
+
+Final solution table:
+
+  |               |     1      |     2      |    3     |     4      |
+| Beverage      | cola      | sprite    | iced-tea | tea       |
+| Food          | broccoli  | orange    | kiwi     | papaya    |
+| Music-Genre   | folk      | indie     | soul     | dubstep   |
+| Sport         | water-polo| volleyball| baseball | ice-hockey|
+
+#############
+| cola       | broccoli | folk      | water-polo|
+| sprite     | orange   | indie     | volleyball |
+| iced-tea   | kiwi     | soul      | baseball  |
+| tea        | papaya   | dubstep   | ice-hockey|
+#############"	{'cola': ['broccoli', 'folk', 'water-polo'], 'sprite': ['orange', 'indie', 'volleyball'], 'iced-tea': ['kiwi', 'soul', 'baseball'], 'tea': ['papaya', 'dubstep', 'ice-hockey']}	False	0	False
+Lv1-4x4-3	"Let's solve this step by step:
+
+1. We know that the person drinking tea is the owner of the pony, so let's place them in the position where the pony is kept (let's say position 4). So, the beverage in position 4 is tea, and the pet in position 4 is a pony.
+
+2. The person drinking mirinda is on the far right, so it must be in position 1, 2, or 3. Since the person watching musical movies is also on the far right, mirinda cannot be in position 3. So, mirinda is either in position 1 or 2. Let's assume it's in position 1 for now.
+
+3. The person watching musical movies is on the far right, so it must be in position 3. So, the movie-genre in position 3 is musical.
+
+4. The person drinking 7up is on the right of the person watching adventure movies. Since the person watching adventure movies is not yet placed, we can't place 7up yet. But we know it's on the right of the person watching adventure movies, so it must be in position 2, 3, or 4.
+
+5. The person watching adventure movies is on the left of the person watching horror movies. Since the person watching horror movies is not yet placed, we can't place the adventure movies yet. But we know the adventure movies are on the left of the horror movies, so they must be in position 1, 2, or 4.
+
+6. The person watching horror movies is on the right of the electrician. Since the electrician is not yet placed, we can't place the horror movies yet. But we know the horror movies are on the right of the electrician, so they must be in position 2, 3, or 4.
+
+7. The person drinking mirinda is the security-guard. So, the job in position 1 is security-guard.
+
+8. The person drinking 7up is on the right of the person watching adventure movies. Since we know the position of the security-guard (mirinda), we can place 7up to the right of the adventure movies (in position 2).
+
+9. The person drinking mirinda is on the right of the designer. Since we know the position of the security-guard (mirinda), we can place the designer to the left of mirinda (in position 3).
+
+10. The person watching adventure movies is on the left of the person watching horror movies. Since we know the position of the designer (musical), we can place the adventure movies to the left of the designer (in position 1).
+
+11. The person watching horror movies is on the right of the electrician. Since we know the position of the designer (musical) and the security-guard (mirinda), we can place the electrician to the left of the horror movies (in position 4).
+
+12. The owner of the mouse is on the left of the owner of the hedgehog. Since we know the position of the pony (tea), we can place the mouse to the left of the pony (in position 3). Since the mouse is to the left of the hedgehog, the hedgehog must be in position 4.
+
+So, the final solution table is:
+
+| Beverage      | 7up      | mirinda  | tea     | tea     |
+| Job           | designer | security-guard | electrician | librarian |
+| Movie-Genre   | adventure | musical   | horror  | scientific |
+| Pet           | mouse    | pony      | hedgehog | lizard   |
+
+#############
+| Beverage      | 7up      | mirinda  | tea     | tea     |
+| Job           | designer | security-guard | electrician | librarian |
+| Movie-Genre   | adventure | musical   | horror  | scientific |
+| Pet           | mouse    | pony      | hedgehog | lizard   |
+#############"	{'beverage': ['7up', 'mirinda', 'tea', 'tea'], 'job': ['designer', 'security-guard', 'electrician', 'librarian'], 'movie-genre': ['adventure', 'musical', 'horror', 'scientific'], 'pet': ['mouse', 'pony', 'hedgehog', 'lizard']}	True	4	False
+Lv1-4x4-4	"Let's solve this step by step:
+
+1. We know that the Thai is to the left of the bartender, so let's place the Thai and bartender in the first two spots. Since there are 4 nationalities, the first row should be filled as follows: [Thai, Bartender, _, _, _]
+
+2. The firefighter is to the right of the horse owner, so the horse owner cannot be in the last spot. Since the Australian is on the far right, the horse owner must be in the second last spot. Let's place the horse owner in the third spot and the firefighter in the fourth spot. The first row is now [Thai, Bartender, Horse Owner, Firefighter, _]
+
+3. The fan of ambient is on the far right, so it must be in the last spot. The scientist is to the right of the bartender, so the scientist must be in the fourth spot. The third spot is already occupied by the horse owner, so the bartender must be in the second spot. The first row is now [Thai, Bartender, Horse Owner, Scientist, Ambient Fan]
+
+4. The fan of ambient is to the right of the fan of d&b, so the fan of d&b must be in the second spot. The scientist is to the left of the cat owner, so the cat owner cannot be in the first spot. Since the Australian is on the far right, the cat owner must be in the third spot. The first row is now [Thai, D&B Fan, Cat Owner, Scientist, Ambient Fan]
+
+5. The fan of funk is to the right of the engineer, so the engineer cannot be in the last spot. Since the Australian is on the far right, the engineer must be in the second last spot. The first row is now [Thai, D&B Fan, Cat Owner, Engineer, Ambient Fan]
+
+6. The only remaining spot is the first one. The only nationality left is Turkish, and the owner of the guinea-pig is Turkish. So the first row is finally [Thai, D&B Fan, Cat Owner, Engineer, Ambient Fan], and the second row is [Turkish, _]
+
+7. The only job left is bartender, so the second row is [Turkish, Bartender]
+
+8. We know that the horse owner is a Dutch nationality, so the third row is [Dutch, _]
+
+9. The only job left is firefighter, so the third row is [Dutch, Firefighter]
+
+10. The only nationality left is Australian, so the fourth row is [Australian, _]
+
+11. The only job left is scientist, so the fourth row is [Australian, Scientist]
+
+The final solution table is:
+
+```
+|               |     1      |     2      |     3     |      4      |
+| Job           | Thai      | Bartender | Dutch    | Australian  |
+| Music-Genre   | Ambient  | D&B      | _        | _          |
+| Nationality   | _        | _        | Firefighter| Scientist   |
+| Pet           | _        | _        | Horse    | Cat         |
+
+|               |     5      |     6      |
+| Job           | _        | Engineer  |
+| Music-Genre   | _        | _        |
+| Nationality   | Turkish  | _        |
+| Pet           | Guinea-pig| _        |
+```
+
+We still need to fill in the missing information in the Music-Genre, Nationality, and Pet columns for the fifth and sixth rows. However, we don't have enough information to do so."	{'job': ['_', 'engineer'], 'music-genre': ['_', '_'], 'nationality': ['turkish', '_'], 'pet': ['guinea-pig', '_']}	True	0	False
+Lv1-4x4-5	"Let's solve this step by step:
+
+1. Since the person watching spy movies is on the far left, we can place it in the first column. Let's put it in row 1. So, the first cell is filled with 'spy'.
+
+2. The person who's sport is biathlon is on the far left, so it must be in the first column as well. Since the person watching spy movies is on the far left, biathlon must be in row 2. So, the second cell is filled with 'biathlon'.
+
+3. The person who's sport is basketball is on the right of the analyst. Since the spy movie watcher is in the first column and the biathlon person is in the second column, the analyst must be in the third column. Since the basketball player is on the right of the analyst, it must be in the fourth row. So, the third cell is filled with 'basketball'.
+
+4. The indian is on the left of the french. Since the biathlon person is in the second column and the basketball player is in the fourth column, the french must be in the third row. Since the indian is on the left of the french, it must be in the first row. So, the fifth cell is filled with 'indian'.
+
+5. The turkish is on the right of the person who's sport is handball. Since the basketball player is in the fourth row and the handball player (yet to be determined) will be on the right of the turkish, the turkish must be in the fifth row.
+
+6. The person who's sport is handball is the thai. So, we need to find a place for the thai that is on the right of the person who's sport is handball, which is the fifth row. Since all other positions are filled, the only remaining position is the second column of the fifth row. So, the sixth cell is filled with 'thai'.
+
+7. The french is on the left of the person watching drama movies. Since the french is in the third row, the person watching drama movies must be in the second row.
+
+8. The social-worker is on the right of the person watching romance movies. Since the person watching drama movies is in the second row, the person watching romance movies must be in the third row.
+
+9. The person watching drama movies is on the right of the teacher. Since the person watching drama movies is in the second row, the teacher must be in the first row.
+
+Here is the final solution table:
+
+```
+#############
+|   spy     | biathlon | basketball | indian     | thai       |
+|----------|----------|------------|------------|------------|
+|   analyst |          |            |            |            |
+|   teacher |          |            |            |            |
+|   social-worker | romance |            |            |            |
+|            |          | handball   |            |            |
+#############
+```
+
+Now we just need to fill in the remaining jobs and movie-genres:
+
+1. The analyst is in the first row, so the job in the third cell is 'analyst'.
+2. The teacher is in the first row, so the genre in the first cell is 'drama'.
+3. The social-worker is in the third row, so the genre in the third cell is 'romance'.
+4. The person watching handball is the thai, so the sport in the sixth cell is 'handball'.
+
+Here is the final solution table:
+
+```
+#############
+|   spy     | biathlon | basketball | indian     | thai       |
+|----------|----------|------------|------------|------------|
+|   analyst |          | analyst    |            |            |
+|   teacher | drama    |            |            |            |
+|   social-worker | romance |            |            | handball   |
+|            |          | basketball | indian     |            |
+#############
+```
+
+Now we just need to fill in the remaining job for the basketball player:
+
+5. The basketball player is in the fourth row, so the job in the third cell is 'videographer'.
+
+Here is the final solution table:
+
+```
+#############
+|   spy     | biathlon | basketball | indian     | thai       |
+|----------|----------|------------|------------|------------|
+|   analyst |          | videographer|            |            |
+|   teacher | drama    |            |            |            |
+|   social-worker | romance |            |            | handball   |
+|            |          | basketball | indian     |            |
+#############
+```
+
+And that's the final solution!"	{'spy': ['biathlon', 'basketball', 'indian', 'thai'], 'analyst': ['', 'videographer', '', ''], 'teacher': ['drama', '', '', ''], 'social-worker': ['romance', '', '', 'handball']}	False	0	False
+Lv1-4x4-6	"Let's solve this step by step:
+
+1. From point 1, we know that the person eating orange is watching fantasy movies. Let's place them in the first row, first column (1,1).
+
+2. From point 2, the person eating banana is watching mystery movies. Since the person eating orange is on the left of the person eating blueberry (point 6), and the owner of the horse is the person eating banana (point 4), we can place the horse owner (banana eater) in the first row, second column (1,2). This means the blueberry eater must be in the first row, third column (1,3). So, the blueberry eater is watching scientific movies (point 5, as the writer watches scientific movies).
+
+3. From point 3, the accountant is the person watching fantasy movies. Since the accountant can't be in the first row (as the accountant is on the left of the doctor, and the doctor is on the far left, point 9), the accountant must be in the second row, first column (2,1).
+
+4. From point 4, the owner of the horse is the person eating banana. We already placed the horse owner in (1,2).
+
+5. From point 7, the doctor is on the left of the owner of the mouse. Since the doctor is on the far left (point 9), the mouse owner must be in the second row, third column (2,3).
+
+6. From point 8, the person watching fantasy movies is on the right of the person watching scientific movies. We already placed the fantasy movie watcher in (2,1) and the scientific movie watcher in (1,3). So, the person watching mystery movies must be in the second row, second column (2,2).
+
+7. From point 10, the owner of the fish is on the left of the person eating blueberry. We already placed the blueberry eater in (1,3). So, the fish owner must be in the first row, fourth column (1,4).
+
+8. The only remaining food, pet, and job are pomegranate, frog, and dancer. Since the dancer can't be on the far left (as the doctor is on the far left, point 9), the dancer must be in the third row. The only available positions for the dancer are (3,1), (3,2), and (3,4). However, if the dancer were in (3,1), they would be the accountant (as the accountant is watching fantasy movies, and the accountant can't be in the first row), which is a contradiction. If the dancer were in (3,2), they would be the writer (as the writer watches scientific movies, and the writer can't be in the second row), which is also a contradiction. So, the dancer must be in (3,4).
+
+9. The only remaining food, pet, and job for the fourth column are pomegranate, frog, and doctor. Since the doctor is on the far left (point 9), the doctor can't be in the fourth column. So, the fourth column must be either pomegranate or frog. If it were pomegranate, the person eating pomegranate would be the accountant (as the accountant is watching fantasy movies, and the accountant can't be in the first row), which is a contradiction. So, the fourth column must be the frog.
+
+Here is the final solution table:
+
+  |               |    1    |      2      |     3      |     4     |
+| Food          | Orange  |   Banana   |   Blueberry|  Pomegranate|
+| Job           | Accountant| Dancer    |   Writer   |   Doctor   |
+| Movie-Genre   | Fantasy | Mystery   | Scientific | Thriller   |
+| Pet           |   Fish  |   Horse    |   Mouse    |   Frog     |
+
+#############
+| Orange  | Accountant| Dancer    |   Writer   |   Fish     |
+| Banana  |   Horse   | Mystery   |   Blueberry|   Mouse    |
+| Blueberry|   Scientific|   Thriller |   Writer   |   Frog     |
+| Pomegranate| Fantasy   |   Thriller |   Doctor   |   Mouse    |
+#############"	{'orange': ['accountant', 'dancer', 'writer', 'fish'], 'banana': ['horse', 'mystery', 'blueberry', 'mouse'], 'blueberry': ['scientific', 'thriller', 'writer', 'frog'], 'pomegranate': ['fantasy', 'thriller', 'doctor', 'mouse']}	False	0	False
+Lv1-4x4-7	"Let's solve this step by step:
+
+1. From point 8, we know that the person drinking coffee is on the far left. Let's place coffee in the first column.
+
+| Beverage | 1 |  |  |  |
+|----------|---|--|--|--|
+| Hobby    |   |  |  |  |
+| Pet      |   |  |  |  |
+| Transport|   |  |  |  |
+
+2. From point 9, we know that the person drinking fanta is to the right of the person drinking coffee. So, let's place fanta in the second column.
+
+| Beverage | Coffee | Fanta |  |  |
+|----------|--------|-------|--|--|
+| Hobby    |       |      |  |  |
+| Pet      |       |      |  |  |
+| Transport|       |      |  |  |
+
+3. From point 10, we know that the person driving the airplane is to the left of the person driving the scooter. Since we already placed coffee and fanta, let's place airplane in the third column and scooter in the fourth column.
+
+| Beverage | Coffee | Fanta | Airplane | Scooter |
+|----------|--------|-------|----------|---------|
+| Hobby    |       |      |          |         |
+| Pet      |       |      |          |         |
+| Transport|       |      |          |         |
+
+4. From point 7, we know that the owner of the bird is the person driving the scooter. Since we already placed scooter, let's place bird in the fourth row.
+
+| Beverage | Coffee | Fanta | Airplane | Scooter |
+|----------|--------|-------|----------|---------|
+| Hobby    |       |      |          | Bird    |
+| Pet      |       |      |          |         |
+| Transport|       |      |          |         |
+
+5. From point 1, we know that there are 4 different favourite beverages. Since we have already placed 3, let's place the remaining beverage (iced-tea) in the first row.
+
+| Beverage | Iced-tea| Coffee | Fanta | Airplane |
+|----------|---------|--------|-------|----------|
+| Hobby    |       |       |      |          |
+| Pet      |       |       |      | Bird     |
+| Transport|       |       |      |         |
+
+6. From point 4, we know that the owner of the frog is on the left of the person who's hobby is sudoku. Since we don't know the hobby of the person with fanta yet, let's place frog in the first column for now.
+
+| Beverage | Frog   | Iced-tea| Coffee | Fanta |
+|----------|--------|---------|--------|-------|
+| Hobby    |       |         |       |      |
+| Pet      | Bird  |         |       |      |
+| Transport|       |         |       |      |
+
+7. From point 6, we know that the person who's hobby is sudoku is on the left of the person who's hobby is woodworking. Since we don't know the hobby of the person with iced-tea yet, let's place sudoku in the second column for now.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Coffee |
+|----------|--------|--------|---------|--------|
+| Hobby    |       |       |         |       |
+| Pet      | Bird  |       |         |      |
+| Transport|       |       |         |      |
+
+8. From point 3, we know that the person drinking iced-tea is on the right of the person who's hobby is sudoku. Since we already placed sudoku, let's place iced-tea in the third column.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Coffee |
+|----------|--------|--------|---------|--------|
+| Hobby    |       |       |         |       |
+| Pet      | Bird  |       |         |      |
+| Transport|       |       |         |      |
+
+9. From point 5, we know that the person who's hobby is cooking is on the right of the owner of the pony. Since we don't know the pet of the person with coffee yet, let's place cooking in the fourth column for now.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    |       |       |         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport|       |       |         |         |
+
+10. From point 2, we know that the person driving the taxi is on the left of the person drinking fanta. Since we already placed fanta, let's place taxi in the second row.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    |       |       |         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport| Taxi  |       | Fanta   |         |
+
+11. From point 1, we know that there are 4 different hobbies. Since we have already placed 3 (cooking, sudoku, and bird's hobby), let's place the remaining hobby (baking) in the first row.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    | Baking |       |         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport| Taxi  |       | Fanta   |         |
+
+12. From point 4, we know that the owner of the frog is on the left of the person who's hobby is sudoku. Since we already placed sudoku, let's place the remaining hobby (woodworking) in the third row.
+
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    | Baking | Woodworking|         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport| Taxi  |       | Fanta   |         |
+
+Now we have a complete table:
+
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    | Baking | Woodworking|         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport| Taxi  |       | Fanta   |         |
+
+This table satisfies all the given conditions. So, the final solution table is:
+
+#############
+| Beverage | Frog   | Sudoku | Iced-tea| Cooking |
+|----------|--------|--------|---------|---------|
+| Hobby    | Baking | Woodworking|         |         |
+| Pet      | Bird  |       |         | Pony    |
+| Transport| Taxi  |       | Fanta   |         |
+#############"	{'beverage': ['frog', 'sudoku', 'iced-tea', 'cooking'], 'hobby': ['baking', 'woodworking', '', ''], 'pet': ['bird', '', '', 'pony'], 'transport': ['taxi', '', 'fanta', '']}	True	3	False
+Lv1-4x4-8	"Let's solve this step by step:
+
+1. We know there are 4 people and 4 items for each category (beverage, job, movie-genre, transport). Let's assign the categories to the rows and the people to the columns.
+
+   Initially, we don't know the order of the people in the columns, but we can start filling in some information based on the clues:
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     |            |             |             |            |
+   | Job          |            |             |             |            |
+   | Movie-Genre  |            |             |             |            |
+   | Transport    |            |             |             |            |
+
+2. From clue 1, we know the journalist is on the left of the person watching zombie movies. So, we can place the journalist in column 1 and the zombie movie-genre in row 4. Let's place the journalist as job 1 and the zombie movie as genre 4.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     |            |             |             |            |
+   | Job          | Electrician| Freelancer  | Journalist  | Paramedic  |
+   | Movie-Genre  | Musical    | Time-Travel  | Western     | Zombie     |
+   | Transport    |            |             |             |            |
+
+3. From clue 2, we know the person drinking water is the person watching western movies. So, we can place water in row 3 and western in row 2. Let's place water as beverage 3.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     |            |             |            |
+   | Job          | Electrician| Freelancer  | Journalist  | Paramedic  |
+   | Movie-Genre  | Musical    | Time-Travel  | Western     | Zombie     |
+   | Transport    |            |             |             |            |
+
+4. From clue 3, we know the person watching musical movies is on the left of the person watching time-travel movies. Since we already placed the journalist (who watches zombie movies) on the left of the person watching zombie movies, the person watching musical movies must be in column 2. Let's place musical as genre 1.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     | Juice      |             |            |
+   | Job          | Electrician| Freelancer  | Journalist  | Paramedic  |
+   | Movie-Genre  | Musical   | Time-Travel | Western     | Zombie     |
+   | Transport    |            |             |             |            |
+
+5. From clue 4, we know the electrician is on the left of the person driving the jet-ski. Since the journalist is already on the left of the person watching zombie movies, the electrician must be in column 1. Let's place the electrician as job 1.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     | Juice      | Milk       |            |
+   | Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+   | Movie-Genre  | Musical   | Time-Travel | Western    | Zombie     |
+   | Transport    | Bus       |             | Jet-Ski    |            |
+
+6. From clue 5, we know the person watching western movies is on the left of the person drinking 7up. Since the electrician is already in column 1 and the water is in beverage 3, the person watching western movies must be in column 2. Let's place western as genre 2.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     | Juice      | Milk       | 7up        |
+   | Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+   | Movie-Genre  | Musical   | Western    | Time-Travel| Zombie     |
+   | Transport    | Bus       | Jet-Ski    |            |            |
+
+7. From clue 6, we know the person watching musical movies is on the right of the person driving the bus. Since the electrician is in column 1 and the journalist is in column 2, the person driving the bus must be in column 3. Let's place the freelancer as job 3 and the bus as transport 1.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     | Juice      | Milk       | 7up        |
+   | Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+   | Movie-Genre  | Musical   | Western    | Time-Travel| Zombie     |
+   | Transport    | Bus       | Jet-Ski    | Scooter    |            |
+
+8. From clue 8, we know the person drinking 7up is the person driving the scooter. Let's place 7up as beverage 4 and scooter as transport 2.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Water     | Juice      | Milk       | 7up        |
+   | Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+   | Movie-Genre  | Musical   | Western    | Time-Travel| Zombie     |
+   | Transport    | Bus       | Jet-Ski    | Scooter    | Skateboard |
+
+9. From clue 9, we know the person driving the skateboard is the person drinking juice. Let's place juice as beverage 1 and skateboard as transport 3.
+
+   |               |     1      |      2      |      3      |     4      |
+   | Beverage     | Juice     | Water     | Milk       | 7up        |
+   | Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+   | Movie-Genre  | Musical   | Western    | Time-Travel| Zombie     |
+   | Transport    | Bus       | Jet-Ski    | Scooter    | Skateboard |
+
+Now we have filled all the categories, and the final solution table is:
+
+#############
+|               |     1      |      2      |      3      |     4      |
+| Beverage     | Juice     | Water     | Milk       | 7up        |
+| Job          | Electrician| Freelancer  | Journalist | Paramedic  |
+| Movie-Genre  | Musical   | Western    | Time-Travel| Zombie     |
+| Transport    | Bus       | Jet-Ski    | Scooter    | Skateboard |
+#############"	{'beverage': ['juice', 'water', 'milk', '7up'], 'job': ['electrician', 'freelancer', 'journalist', 'paramedic'], 'movie-genre': ['musical', 'western', 'time-travel', 'zombie'], 'transport': ['bus', 'jet-ski', 'scooter', 'skateboard']}	True	7	False
+Lv1-4x4-9	"Let's solve this step by step:
+
+1. The owner of the pony is on the far left, so the first row is filled: Pony (1, Pet).
+
+2. The fan of disco is on the far left, so the second row, column 1 is filled: Disco (1, Music-Genre).
+
+3. The person driving the quad-bike is on the right of the owner of the hedgehog. Since the pony is on the far left, the hedgehog must be in the second position. The quad-bike driver is also on the right of the hedgehog owner, so the quad-bike is in the third position. Let's fill the second and third rows, columns 2 and 3: Hedgehog (2, Pet) and Quad-bike (3, Transport).
+
+4. The person driving the snowmobile is on the right of the owner of the mouse. Since the pony, hedgehog, and quad-bike are already placed, the mouse must be in the fourth position. The snowmobile driver is also on the right of the mouse owner, so the snowmobile is in the first position. Let's fill the fourth row, column 4: Mouse (4, Pet) and Snowmobile (1, Transport).
+
+5. The fan of classical is on the right of the person who's hobby is video-games. Since the quad-bike is in the third position, the video-games person must be in the fourth position. The classical fan is on the right of the video-games person, so the classical music is in the second row, but not column 3 (since the quad-bike is there). The only remaining column is column 2, so classical (2, Music-Genre) is in the second row, column 2.
+
+6. The person driving the tram is the person who's hobby is woodworking. Since the classical fan is in the second row, the woodworking person must be in the third row. The only remaining hobby is woodworking, so it goes in the third row, column 4: Woodworking (3, Hobby).
+
+7. The only remaining music genre is blues. Since it can't be in the first row (since disco is there), it must be in the fourth row, column 1: Blues (4, Music-Genre).
+
+Now, let's put the final solution table:
+
+```
+#############
+|   Pony     | Disco   | Hedgehog | Quad-bike |
+|   #########|########|##########|##########|
+|   #########| Classical|   #######|   #######|
+|   Woodworking|   #######|   Mouse  |   #######|
+|   Blues     |   #######|   #######|   Frog  |
+#############
+|   Baking   |   #######|   #######|   #######|
+|   #########|   Metal  |   #######|   #######|
+```
+
+The table is not complete because the hobbies, music genres, and pets are not listed in the table, only their positions are filled. To complete the table, you would need to fill in the names of the hobbies, music genres, and pets in the appropriate positions based on the given information."	{'baking': ['', '', '']}	False	0	False
+Lv1-4x4-10	"Let's solve this step by step:
+
+1. We know that the person drinking coffee is on the far left, so let's place it in the first column. Let's assume it's Coffee.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | ####### | #######    | ####### |
+
+2. Since the person drinking lemonade is the person who's hobby is video-games (from point 4 and 7), and the person who's hobby is video-games is on the right of the person drinking juice (from point 1), the person drinking juice must be something other than Lemonade. Let's assume it's Juice.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | #######    | ####### |
+| Lemonade | Video-games | #######    | ####### |
+
+3. The person drinking tea is on the left of the Egyptian (from point 5), so the Egyptian can't be on the far right. Let's assume the Egyptian is Egyptian.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | ####### |
+| Lemonade | Video-games | #######    | ####### |
+
+4. The person who's hobby is rock-climbing is on the left of the person who's sport is biathlon (from point 6), and the person drinking tea is the person who's hobby is rock-climbing (from point 8). So, the person who's sport is biathlon must be on the right of the Egyptian. Let's assume the Biathlon is Biathlon.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | Biathlon |
+| Lemonade | Video-games | #######    | ####### |
+
+5. The person who's hobby is drawing is on the right of the Malaysian (from point 7), and the argentine is on the right of the person who's sport is volleyball (from point 9). Since the Biathlon is already on the right of the Egyptian, the Malaysian and the Argentine must be on the left of the Biathlon.
+
+6. The only remaining nationality is Indian. So, let's place the Indian on the left of the Biathlon.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | ####### |
+| #######  | Drawing  | Indian     | ####### |
+
+7. The only remaining sport is sailing. Let's place it in the last row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | ####### |
+| #######  | Drawing  | #######    | Sailing  |
+
+8. The only remaining beverage is tea, and we know that the person drinking tea is the person who's hobby is rock-climbing (from point 8). So, let's place the Tea in the row of the person who's hobby is rock-climbing.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| #######  | Drawing  | #######    | Tea     |
+
+9. The only remaining hobby is traveling. Let's place it in the last column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Coffee   | Juice   | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| #######  | Drawing  | #######    | Tea     |
+| #######  | Traveling | #######    | ####### |
+
+10. The only remaining beverage is juice. Let's place it in the first column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Juice   | ####### | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| #######  | Drawing  | #######    | Tea     |
+| #######  | Traveling | #######    | ####### |
+
+11. The only remaining hobby is badminton. Since the person who's hobby is badminton is on the left of the person who's hobby is drawing (from point 2), the person who's hobby is badminton must be in the first row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Juice   | Badminton | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| #######  | Drawing  | #######    | Tea     |
+| #######  | Traveling | #######    | ####### |
+
+12. The only remaining nationality is argentine. Since the argentine is on the right of the person who's sport is volleyball (from point 9), the person who's sport is volleyball must be in the last row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Juice   | Badminton | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | #######  | Argentine  | ####### |
+| #######  | Drawing  | #######    | Tea     |
+| #######  | Traveling | #######    | ####### |
+
+13. The only remaining sport is volleyball. Let's place it in the last row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Juice   | Badminton | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | ####### |
+| #######  | Traveling | #######    | ####### |
+
+14. The only remaining hobby is traveling. Let's place it in the last column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Juice   | Badminton | Egyptian   | Biathlon |
+| Lemonade | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | ####### |
+| #######  | Traveling | #######    | ####### |
+
+15. The only remaining beverage is traveling. Let's place it in the first column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Traveling| Badminton | Egyptian   | Biathlon |
+| Juice    | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | ####### |
+| Lemonade | Traveling | #######    | ####### |
+
+16. The only remaining sport is sailing. Let's place it in the last row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Traveling| Badminton | Egyptian   | Biathlon |
+| Juice    | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | #######    | ####### |
+
+17. The only remaining beverage is sailing. Let's place it in the last column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Traveling| Badminton | Egyptian   | Biathlon |
+| Juice    | Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | Sailing    | ####### |
+
+18. The only remaining hobby is sailing. Let's place it in the first row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Traveling| Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | Sailing    | ####### |
+
+19. The only remaining beverage is badminton. Let's place it in the second row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Tea      | Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | Sailing    | ####### |
+
+20. The only remaining hobby is video-games. Let's place it in the third row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Volleyball | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | Sailing    | ####### |
+
+21. The only remaining nationality is Indian. Let's place it in the fourth row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Sailing  |
+| Lemonade | Traveling | Sailing    | ####### |
+
+22. The only remaining hobby is rock-climbing. Let's place it in the fifth row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Sailing  |
+| Drawing  | Traveling | Sailing    | ####### |
+
+23. The only remaining hobby is drawing. Let's place it in the last row.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Sailing  |
+| Drawing  | Traveling | Argentine  | Sailing  |
+
+24. The only remaining nationality is Argentine. Since the argentine is on the right of the person who's sport is volleyball (from point 9), the person who's sport is volleyball must be in the last column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Volleyball|
+| Drawing  | Traveling | Argentine  | Sailing  |
+
+25. The only remaining sport is volleyball. Let's place it in the last column.
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Volleyball|
+| Drawing  | Traveling | Argentine  | Volleyball|
+
+The final solution table is:
+
+| Beverage | Hobby   | Nationality | Sport   |
+|----------|---------|------------|---------|
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Volleyball|
+| Drawing  | Traveling | Argentine  | Volleyball|
+
+With '#############' around the final solution table:
+
+############
+| Beverage | Hobby   | Nationality | Sport   |
+############
+| Sailing  | Badminton | Egyptian   | Biathlon |
+| Badminton| Video-games | Malaysian  | Sailing  |
+| Video-games| Rock-climbing | Indian     | Sailing  |
+| Rock-climbing | Drawing  | Argentine  | Volleyball|
+| Drawing  | Traveling | Argentine  | Volleyball|
+############"	{'sailing': ['badminton', 'egyptian', 'biathlon'], 'badminton': ['video-games', 'malaysian', 'sailing'], 'video-games': ['rock-climbing', 'indian', 'sailing'], 'rock-climbing': ['drawing', 'argentine', 'volleyball'], 'drawing': ['traveling', 'argentine', 'volleyball']}	False	0	False

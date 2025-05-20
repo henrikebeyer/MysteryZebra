@@ -1,0 +1,438 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv1-1x6-1	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person driving the boat is somewhere to the left of the person driving the snowmobile.
+2. The person driving the boat is in an even position.
+3. The person driving the airplane is on the far right.
+4. The person driving the subway is somewhere to the left of the person driving the bus.
+5. The person driving the snowmobile is in an even position.
+6. The person driving the boat is somewhere to the left of the person driving the motorbike.
+7. The person driving the bus is somewhere to the left of the person driving the snowmobile.
+
+From clue 2, we know the boat driver is in an even position, which means they can be in positions 2, 4, or 6.
+
+From clue 1, we know the boat driver is to the left of the snowmobile driver. Since the boat driver is in an even position, the snowmobile driver must be in an odd position (1, 3, or 5).
+
+From clue 5, we know the snowmobile driver is in an even position. This means they must be in position 2 or 4.
+
+From clue 4, we know the subway driver is to the left of the bus driver. Since the bus driver is to the left of the snowmobile driver (clue 7), the subway driver must be to the left of the bus driver, which means they must be in position 1.
+
+From clue 3, we know the airplane driver is on the far right, which means they must be in position 6.
+
+From clue 6, we know the boat driver is to the left of the motorbike driver. Since the boat driver is in an even position, the motorbike driver must be in an odd position (1, 3, or 5).
+
+Now we can start filling in the table:
+
+|             |   1    |  2   |  3  |     4      |     5     |    6     |
+| Transport   |        |      |     |            |           |          |
+
+Subway (1)
+Bus (2)
+Boat (4)
+Motorbike (3)
+Snowmobile (4)
+Airplane (6)
+
+#############
+
+The final solution is:
+
+|             |   1    |  2   |  3  |     4      |     5     |    6     |
+| Transport   | Subway | Bus  | Motorbike | Boat | Snowmobile | Airplane |
+|             |        |      |          |      |           |          |
+|             |        |      |          |      |           |          |
+|             |        |      |          |      |           |          |
+|             |        |      |          |      |           |          |
+|             |        |      |          |      |           |          |
+|             |        |      |          |      |           |          |
+
+#############"	{'transport': ['subway', 'bus', 'motorbike', 'boat', 'snowmobile', 'airplane']}	True	2	False
+Lv1-1x6-2	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person who's hobby is hiking is on the left or right of the person who's hobby is drawing.
+This means that hiking and drawing are adjacent to each other.
+
+2. The person who's hobby is gardening is on the left of the person who's hobby is puzzles.
+This means that gardening is to the left of puzzles.
+
+3. The person who's hobby is puzzles is in an even position.
+This means that puzzles is in position 2 or 4.
+
+4. The person who's hobby is video-games is somewhere to the left of the person who's hobby is hiking.
+This means that video-games is to the left of hiking.
+
+5. The person who's hobby is gardening is on the right of the person who's hobby is drawing.
+This means that gardening is to the right of drawing.
+
+6. The person who's hobby is video-games is on the right of the person who's hobby is writing.
+This means that video-games is to the right of writing.
+
+7. The person who's hobby is gardening is somewhere to the left of the person who's hobby is puzzles.
+This means that gardening is to the left of puzzles.
+
+Now, let's combine the clues:
+
+* Hiking and drawing are adjacent (1).
+* Gardening is to the left of puzzles (2).
+* Puzzles is in an even position (3).
+* Video-games is to the left of hiking (4).
+* Gardening is to the right of drawing (5).
+* Video-games is to the right of writing (6).
+* Gardening is to the left of puzzles (7).
+
+From clue 3, we know that puzzles is in an even position. Since gardening is to the left of puzzles (2 and 7), gardening must be in position 1 or 3. But if gardening is in position 1, then drawing would be in position 2, and hiking would be in position 3, which contradicts clue 1. Therefore, gardening must be in position 3.
+
+Now, we can fill in the table:
+
+|         |    1    |      2      |   3    |    4    |     5     |    6    |
+| Hobby   |         |             |        |         |           |         |
+| Gardening |         |             |  Gardening  |         |           |         |
+| Drawing  |         |  Drawing  |         |         |           |         |
+| Hiking   |         |             |         |         |  Hiking   |         |
+| Puzzles  |         |  Puzzles  |         |         |           |         |
+| Video-games |         |             |         |         |           |  Video-games |
+| Writing  |         |             |         |         |           |  Writing  |
+
+The final solution is:
+
+#############
+| Hobby   |    1    |      2      |   3    |    4    |     5     |    6    |
+| Gardening | Gardening | Drawing  | Gardening | Puzzles  | Hiking   | Video-games |
+| Drawing  |         |  Drawing  |         |         |           |         |
+| Hiking   |         |             |         |         |  Hiking   |         |
+| Puzzles  |         |  Puzzles  |         |         |           |         |
+| Video-games |         |             |         |         |           |  Video-games |
+| Writing  |         |             |         |         |           |  Writing  |
+#############"	{'hobby': ['1', '2', '3', '4', '5', '6'], 'gardening': ['gardening', 'drawing', 'gardening', 'puzzles', 'hiking', 'video-games'], 'drawing': ['', 'drawing', '', '', '', ''], 'hiking': ['', '', '', '', 'hiking', ''], 'puzzles': ['', 'puzzles', '', '', '', ''], 'video-games': ['', '', '', '', '', 'video-games'], 'writing': ['', '', '', '', '', 'writing']}	True	0	False
+Lv1-1x6-3	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person driving the boat is on the left or right of the person driving the subway.
+This means the boat and subway drivers are adjacent to each other.
+
+2. The person driving the trike is on the left of the person driving the train.
+This means the trike and train drivers are adjacent to each other, and the trike is to the left of the train.
+
+3. The person driving the helicopter is on the far left or far right.
+This means the helicopter driver is either the first or last person in the line.
+
+4. The person driving the subway is on the far left or far right.
+This means the subway driver is either the first or last person in the line, which is consistent with clue 1.
+
+5. The person driving the subway is somewhere to the right of the person driving the boat.
+This means the boat driver is to the left of the subway driver.
+
+6. The person driving the snowmobile is somewhere to the left of the person driving the trike.
+This means the snowmobile driver is to the left of the trike driver.
+
+Now, let's combine the clues and create a possible solution:
+
+| Transport   | Boat | Helicopter | Snowmobile | Trike | Train | Subway |
+|-------------|------|------------|------------|-------|-------|--------|
+| ############# | 1    | 3          | 2          | 5     | 4     | 6      |
+
+Here's the reasoning:
+
+* The boat driver is to the left of the subway driver (clue 5), so the boat is in position 1.
+* The subway driver is either the first or last person in the line (clues 3 and 4), so the subway is in position 6.
+* The trike driver is to the left of the train driver (clue 2), so the trike is in position 5.
+* The snowmobile driver is to the left of the trike driver (clue 6), so the snowmobile is in position 2.
+* The helicopter driver is on the far left or far right (clue 3), so the helicopter is in position 3.
+
+The final solution is:
+
+#############
+| Transport   | Boat | Helicopter | Snowmobile | Trike | Train | Subway |
+|-------------|------|------------|------------|-------|-------|--------|
+| ############# | 1    | 3          | 2          | 5     | 4     | 6      |
+#############"	{'transport': ['boat', 'helicopter', 'snowmobile', 'trike', 'train', 'subway']}	True	1	False
+Lv1-1x6-4	"Let's break down the puzzle step by step:
+
+1. The owner of the horse is on the left or right of the owner of the frog.
+This means the horse and frog cannot be at the extreme ends, so they must be in positions 2, 3, or 4.
+
+2. The owner of the frog is somewhere to the right of the owner of the rat.
+This means the rat cannot be in positions 5 or 6, so it must be in positions 1, 2, or 3.
+
+3. The owner of the lizard is on the left of the owner of the snake.
+This means the lizard and snake cannot be in the same position, so the lizard must be in positions 1, 2, or 3, and the snake must be in positions 4, 5, or 6.
+
+4. The owner of the fish is on the far left.
+This means the fish is in position 1.
+
+5. The owner of the frog is somewhere to the right of the owner of the rat.
+This is already implied by statement 2.
+
+6. The owner of the frog is in an odd position.
+This means the frog is in positions 1, 3, or 5.
+
+7. The owner of the lizard is somewhere to the right of the owner of the horse.
+This means the lizard cannot be in positions 1 or 2, so it must be in positions 3, 4, or 5.
+
+Now, let's combine the information:
+
+* The fish is in position 1.
+* The rat is in positions 1, 2, or 3.
+* The frog is in positions 1, 3, or 5.
+* The lizard is in positions 3, 4, or 5.
+* The horse is in positions 2, 3, or 4.
+* The snake is in positions 4, 5, or 6.
+
+The only possible arrangement that satisfies all the conditions is:
+
+#############
+| Pet   | Fish | Rat | Frog | Lizard | Horse | Snake |
+|-------|------|-----|------|--------|-------|-------|
+|       |  1   |  2  |  3   |   4   |   5    |   6   |
+#############
+
+This solution satisfies all the conditions:
+
+* The owner of the horse is on the left or right of the owner of the frog (3 and 5).
+* The owner of the frog is somewhere to the right of the owner of the rat (3).
+* The owner of the lizard is on the left of the owner of the snake (4 and 6).
+* The owner of the fish is on the far left (1).
+* The owner of the frog is in an odd position (3).
+* The owner of the lizard is somewhere to the right of the owner of the horse (4 and 5)."	{'pet': ['fish', 'rat', 'frog', 'lizard', 'horse', 'snake']}	True	4	False
+Lv1-1x6-5	"Let's break down the clues and solve the puzzle step by step:
+
+1. The American is on the right of the Canadian.
+This means the Canadian is in an odd position (1, 3, or 5), and the American is in the next position to the right.
+
+2. The French is somewhere to the right of the Canadian.
+This means the French is in an odd position (3 or 5), as the Canadian is already in an odd position.
+
+3. The Spanish is on the left of the Canadian.
+This means the Spanish is in an even position (2 or 4), and the Canadian is in an odd position (1, 3, or 5).
+
+4. The Australian is in an even position.
+This means the Australian is in position 2 or 4.
+
+5. The Spanish is on the right of the Australian.
+This means the Australian is in an even position (2 or 4), and the Spanish is in the next position to the right.
+
+Now, let's combine the information:
+
+* The Canadian is in an odd position (1, 3, or 5).
+* The French is in an odd position (3 or 5).
+* The Spanish is in an even position (2 or 4).
+* The Australian is in an even position (2 or 4).
+* The American is on the right of the Canadian.
+
+From clue 5, we know the Australian is in an even position, and the Spanish is in the next position to the right. This means the Australian is in position 2, and the Spanish is in position 4.
+
+From clue 1, we know the American is on the right of the Canadian. Since the Canadian is in an odd position, the American must be in position 6.
+
+From clue 3, we know the Spanish is on the left of the Canadian. Since the Spanish is in position 4, the Canadian must be in position 3.
+
+From clue 2, we know the French is somewhere to the right of the Canadian. Since the Canadian is in position 3, the French must be in position 5.
+
+Now, let's fill in the table:
+
+#############
+| Nationality   |    1    |     2      |    3    |    4     |    5     |   6    |
+|               |         |  Australian  |  Canadian  |  Spanish  |  French  |  American  |
+#############
+
+The final solution is:
+
+Australian (2)
+Canadian (3)
+Spanish (4)
+French (5)
+American (6)"	{'nationality': ['1', '2', '3', '4', '5', '6']}	True	0	False
+Lv1-1x6-6	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person eating lettuce is on the left of the person eating peas.
+2. The person eating broccoli is on the right of the person eating peas.
+3. The person eating pepper is in an even position (4).
+4. The person eating spinach is on the left or right of the person eating broccoli.
+5. The person eating peas is on the right of the person eating lettuce.
+6. The person eating lettuce is somewhere to the left of the person eating spinach.
+7. The person eating peas is on the right of the person eating lettuce.
+8. The person eating lettuce is somewhere to the left of the person eating cucumber.
+
+From clue 1, we know lettuce is to the left of peas. From clue 5, we know peas is to the right of lettuce. This means lettuce and peas are adjacent.
+
+From clue 2, we know broccoli is to the right of peas. From clue 7, we know peas is to the right of lettuce, so broccoli is to the right of lettuce.
+
+From clue 3, we know pepper is in an even position (4). This means pepper is in the middle, with lettuce and peas on one side and broccoli and spinach on the other.
+
+From clue 4, we know spinach is on the left or right of broccoli. Since broccoli is to the right of lettuce, spinach must be to the right of broccoli.
+
+From clue 6, we know lettuce is to the left of spinach. This means the order is: lettuce, peas, pepper, broccoli, spinach,?.
+
+From clue 8, we know lettuce is to the left of cucumber. This means cucumber must be in the last position.
+
+Now we can fill in the table:
+
+#############
+|        |    1    |  2   |    3     |    4    |    5     |   6    |
+| Food   |         |      |          |         |          |        |
+| Lettuce |         |      |          |         |          |        |
+| Peas   |         |      |          |         |          |        |
+| Pepper |         |      |          |         |          |        |
+| Broccoli|         |      |          |         |          |        |
+| Spinach|         |      |          |         |          |        |
+| Cucumber|         |      |          |         |          |        |
+#############
+
+The final solution is:
+
+Lettuce, Peas, Pepper, Broccoli, Spinach, Cucumber"	{'food': ['', '', '', '', '', ''], 'lettuce': ['', '', '', '', '', ''], 'peas': ['', '', '', '', '', ''], 'pepper': ['', '', '', '', '', ''], 'broccoli': ['', '', '', '', '', ''], 'spinach': ['', '', '', '', '', ''], 'cucumber': ['', '', '', '', '', '']}	True	0	False
+Lv1-1x6-7	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking sprite is somewhere to the left of the person drinking water.
+2. The person drinking tea is somewhere to the left of the person drinking sprite.
+3. The person drinking milk is on the left of the person drinking tea.
+4. The person drinking sprite is somewhere to the left of the person drinking water.
+5. The person drinking cola is somewhere to the left of the person drinking fanta.
+6. The person drinking water is somewhere to the left of the person drinking cola.
+7. The person drinking water is somewhere to the right of the person drinking tea.
+
+From clue 1, we know that sprite is to the left of water.
+
+From clue 2, we know that tea is to the left of sprite.
+
+From clue 3, we know that milk is to the left of tea.
+
+So, the order so far is: milk, tea, sprite, water.
+
+From clue 4, we know that sprite is to the left of water, which we already know.
+
+From clue 5, we know that cola is to the left of fanta.
+
+From clue 6, we know that water is to the left of cola.
+
+So, the order so far is: milk, tea, sprite, water, cola, fanta.
+
+From clue 7, we know that water is to the right of tea.
+
+This means that tea must be in the middle, with water to its right and milk to its left.
+
+Here is the final solution:
+
+#############
+|            |  1   |  2  |   3    |   4   |  5   |   6   |
+| Beverage   | milk | tea  | sprite | water | cola | fanta |
+#############
+
+The final solution is: milk, tea, sprite, water, cola, fanta."	{'beverage': ['milk', 'tea', 'sprite', 'water', 'cola', 'fanta']}	True	6	True
+Lv1-1x6-8	"Let's break down the puzzle step by step:
+
+1. The person eating potato is the person eating potato (no new information)
+2. The person eating peach is somewhere to the right of the person eating lettuce (peach is to the right of lettuce)
+3. The person eating broccoli is on the right of the person eating peach (broccoli is to the right of peach)
+4. The person eating cucumber is on the left of the person eating onion (cucumber is to the left of onion)
+5. The person eating potato is somewhere to the left of the person eating peach (potato is to the left of peach)
+6. The person eating potato is on the left of the person eating lettuce (potato is to the left of lettuce)
+7. The person eating cucumber is on the right of the person eating broccoli (cucumber is to the right of broccoli)
+
+From statement 2, we know peach is to the right of lettuce. From statement 3, we know broccoli is to the right of peach. Combining these, we get: lettuce -> peach -> broccoli
+
+From statement 5, we know potato is to the left of peach. From statement 6, we know potato is to the left of lettuce. Combining these, we get: potato -> lettuce
+
+From statement 4, we know cucumber is to the left of onion. We don't have any information about the position of onion yet, but we can conclude that cucumber is to the left of the group lettuce -> peach -> broccoli.
+
+Now, let's try to fit the remaining pieces together:
+
+|        |   1    |    2    |   3   |    4     |    5     |   6   |
+| Food   |        |         |       |          |          |       |
+
+From the above analysis, we can conclude the following:
+
+* Potato is to the left of lettuce
+* Lettuce is to the left of peach
+* Peach is to the left of broccoli
+* Cucumber is to the left of the group lettuce -> peach -> broccoli
+* Onion is to the right of cucumber (since cucumber is to the left of onion)
+
+Here's the final solution:
+
+#############
+|        |   1    |    2    |   3   |    4     |    5     |   6   |
+| Food   | Potato | Lettuce | Peach | Broccoli | Cucumber | Onion |
+#############
+
+Note that this solution satisfies all the given conditions."	{'food': ['potato', 'lettuce', 'peach', 'broccoli', 'cucumber', 'onion']}	True	6	True
+Lv1-1x6-9	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person drinking coffee is somewhere to the right of the person drinking milk.
+This means that milk cannot be in the first position, so we can start by placing milk in the second or third position.
+
+2. The person drinking water is between the person drinking mirinda and the person drinking almond-milk.
+This means that water must be in the fourth position, and mirinda and almond-milk must be on either side of it.
+
+3. The person drinking fanta is somewhere to the left of the person drinking milk.
+This means that fanta cannot be in the second or third position, so it must be in the first or sixth position.
+
+4. The person drinking almond-milk is on the left of the person drinking water.
+This means that almond-milk must be in the third position, and water is in the fourth position.
+
+5. The person drinking mirinda is somewhere to the left of the person drinking fanta.
+This means that mirinda cannot be in the sixth position, so it must be in the second position.
+
+Now that we have all the clues, we can fill in the table:
+
+#############
+|            |      1      |   2   |    3    |   4   |  5   |   6    |
+| Beverage   |  fanta     | mirinda | almond-milk | water | coffee | milk    |
+#############
+
+The final solution is:
+
+fanta - mirinda - almond-milk - water - coffee - milk"	{'beverage': ['fanta', 'mirinda', 'almond-milk', 'water', 'coffee', 'milk']}	True	0	False
+Lv1-1x6-10	"Let's break down the clues and solve the puzzle step by step:
+
+1. The person watching thriller movies is on the left of the person watching horror movies
+This means that the order is: thriller,?, horror
+
+2. The person watching adventure movies is somewhere to the left of the person watching spy movies
+This means that the order is: thriller,?, horror,?,?, spy, adventure
+
+3. The person watching documentary movies is on the left or right of the person watching thriller movies
+This means that documentary can be either to the left or right of thriller. Let's consider both possibilities:
+
+a) Documentary is to the left of thriller:
+   thriller, documentary,?, horror
+b) Documentary is to the right of thriller:
+   thriller,?, horror, documentary
+
+4. The person watching family movies is on the right of the person watching horror movies
+This means that family is to the right of horror, regardless of the documentary position:
+
+a) Documentary is to the left of thriller:
+   thriller, documentary,?, horror, family
+b) Documentary is to the right of thriller:
+   thriller,?, horror, documentary, family
+
+5. The person watching adventure movies is on the right of the person watching family movies
+This means that adventure is to the right of family, regardless of the documentary position:
+
+a) Documentary is to the left of thriller:
+   thriller, documentary,?, horror, family, adventure
+b) Documentary is to the right of thriller:
+   thriller,?, horror, documentary, family, adventure
+
+6. The person watching horror movies is on the right of the person watching thriller movies
+This means that horror is to the right of thriller, regardless of the documentary position:
+
+a) Documentary is to the left of thriller:
+   thriller, documentary, horror, family, adventure
+b) Documentary is to the right of thriller:
+   thriller, horror, documentary, family, adventure
+
+Now, let's combine the possibilities:
+
+a) Documentary is to the left of thriller:
+   thriller, documentary, horror, family, adventure
+b) Documentary is to the right of thriller:
+   thriller, horror, documentary, family, adventure
+
+The only possible solution is:
+
+#############
+| Movie-Genre |      1      |    2     |   3    |   4    |     5     |  6  |
+|             | documentary | thriller | horror | family | adventure | spy |
+#############
+
+The final solution is that the person watching documentary movies is on the left of the person watching thriller movies, and the person watching spy movies is on the right of the person watching adventure movies."	{'movie-genre': ['1', '2', '3', '4', '5', '6']}	True	0	False

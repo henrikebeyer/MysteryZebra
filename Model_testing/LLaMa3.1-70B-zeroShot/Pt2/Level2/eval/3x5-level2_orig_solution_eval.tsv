@@ -1,0 +1,424 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv2-3x5-1	"After analyzing the clues, I came up with the following solution:
+
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        | papaya  |   spinach   |    carrot   |    garlic   | zucchini|
+| Hobby       | singing | video-games | board-games | puzzles     | woodworking|
+| Transport   | roller  | subway      | boat        | taxi        | train    |
+
+
+Here's a step-by-step explanation of how I arrived at this solution:
+
+From clue 1, the person who's hobby is singing is on the far left.
+
+From clue 4, the person driving the roller is on the far left. Combining these two clues, we can fill in the first column:
+
+|             |    1    |
+| Food        |         |
+| Hobby       | singing |
+| Transport   | roller  |
+
+From clue 5, the person who's hobby is singing is on the left of the person who's hobby is video-games. So, the second column must be video-games:
+
+|             |    1    |      2      |
+| Food        |         |             |
+| Hobby       | singing | video-games |
+| Transport   | roller  |             |
+
+From clue 6, the person driving the subway is on the left of the person who's hobby is woodworking. This means that the third column must be a transport method other than subway, and the fourth column must be woodworking. Since the person eating zucchini is between the person eating garlic and the person driving the train (clue 2), we can deduce that the fifth column is train.
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        |         |             |             |             | zucchini|
+| Hobby       | singing | video-games |             | woodworking |         |
+| Transport   | roller  |             |             | subway      | train    |
+
+From clue 9, the person driving the boat is the person eating carrot. This means that column 3 must be carrot and boat:
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        |         |             |   carrot    |             | zucchini|
+| Hobby       | singing | video-games |             | woodworking |         |
+| Transport   | roller  |             | boat        | subway      | train    |
+
+From clue 3, the person driving the taxi is on the right of the person driving the boat. This means that column 4 must be taxi:
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        |         |             |   carrot    |             | zucchini|
+| Hobby       | singing | video-games |             | woodworking |         |
+| Transport   | roller  |             | boat        | taxi        | train    |
+
+From clue 2, the person eating zucchini is between the person eating garlic and the person driving the train. This means that column 5 must be garlic, but we already know that column 5 has train as transport method. So, we can deduce that column 4 is actually garlic, and column 3 has a different food.
+
+From clue 10, the person eating papaya is on the right of the person who's hobby is board-games. This means that column 1 must be papaya:
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        | papaya  |             |   carrot    | garlic      | zucchini|
+| Hobby       | singing | video-games |             | woodworking |         |
+| Transport   | roller  |             | boat        | taxi        | train    |
+
+From clue 7, the person who's hobby is board-games is on the left of the person who's hobby is puzzles. This means that column 3 must be board-games and column 4 (which we previously deduced as garlic) must be puzzles:
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        | papaya  | spinach     |   carrot    | garlic      | zucchini|
+| Hobby       | singing | video-games | board-games | puzzles     | woodworking|
+| Transport   | roller  | subway      | boat        | taxi        | train    |
+
+Finally, from clue 6, the person driving the subway is on the left of the person who's hobby is woodworking. This means that column 2 must be subway and spinach:
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        | papaya  |   spinach   |    carrot   | garlic      | zucchini|
+| Hobby       | singing | video-games | board-games | puzzles     | woodworking|
+| Transport   | roller  | subway      | boat        | taxi        | train    |
+
+Here is the final solution table with '#############' around it:
+
+
+|             |    1    |      2      |      3      |      4      |    5    |
+| Food        | papaya  |   spinach   |    carrot   | garlic      | zucchini|
+| Hobby       | singing | video-games | board-games | puzzles     | woodworking|
+| Transport   | roller  | subway      | boat        | taxi        | train    |
+
+#############"	{'food': ['papaya', 'spinach', 'carrot', 'garlic', 'zucchini'], 'hobby': ['singing', 'video-games', 'board-games', 'puzzles', 'woodworking'], 'transport': ['roller', 'subway', 'boat', 'taxi', 'train']}	True	4	False
+Lv2-3x5-2	"Let's break down the clues step by step:
+
+
+From clue 1, we know the person drinking tea is on the far left.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           |           | soy-     |        |
+| Food          |         |           |           |          |        |
+| Movie-Genre   |         |           |           |          |        |
+
+From clue 2, we know the person drinking soy-milk is the person watching family movies.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           |           | Soy-     |        |
+| Food          |         |           |           |          |        |
+| Movie-Genre   |         |           |           | Family   |        |
+
+From clue 3, we know the person eating apricot is the person watching drama movies.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           |           | Soy-     |        |
+| Food          |         |           |           | Apricot  |        |
+| Movie-Genre   |         | Drama     |           | Family   |        |
+
+From clue 4, we know the person watching spy movies is in the middle.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           |           | Soy-     |        |
+| Food          |         |           | Raspberry | Apricot  |        |
+| Movie-Genre   |         | Spy       | Drama     | Family   |        |
+
+From clue 9, we know the person watching spy movies is the person eating raspberry.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           |           | Soy-     |        |
+| Food          |         | Raspberry |           | Apricot  |        |
+| Movie-Genre   |         | Spy       | Drama     | Family   |        |
+
+From clue 6, we know the person eating mango is on the left of the person drinking milk.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           | Milk      | Soy-     |        |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  |        |
+| Movie-Genre   |         | Spy       | Drama     | Family   |        |
+
+From clue 7, we know the person drinking 7up is the person eating cherry.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    |           | Milk      | Soy-     |        |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   |         | Spy       | Drama     | Family   |        |
+
+From clue 8, we know the person eating raspberry is between the person drinking coffee and the person watching family movies.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    | Coffee    | Milk      | Soy-     |        |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   |         | Spy       | Drama     | Family   |        |
+
+From clue 5, we know the person watching animation movies is on the right of the person drinking tea.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    | Coffee    | Milk      | Soy-     |        |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   |         | Animation | Spy       | Family   | Drama  |
+
+The only beverage left is 7up, which goes with the person eating cherry.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    | Coffee    | Milk      | Soy-milk | 7up    |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   |         | Animation | Spy       | Family   | Drama  |
+
+The only movie-genre left is Satire, which goes with the person drinking tea.
+
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    | Coffee    | Milk      | Soy-milk | 7up    |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   | Satire  | Animation | Spy       | Family   | Drama  |
+
+The final solution is:
+
+
+#############
+
+|               |    1    |     2     |     3     |    4     |   5    |
+| Beverage      |  Tea    | Coffee    | Milk      | Soy-milk | 7up    |
+| Food          | Mango   | Raspberry | Garlic    | Apricot  | Cherry |
+| Movie-Genre   | Satire  | Animation | Spy       | Family   | Drama  |
+
+#############"	{'beverage': ['tea', 'coffee', 'milk', 'soy-milk', '7up'], 'food': ['mango', 'raspberry', 'garlic', 'apricot', 'cherry'], 'movie-genre': ['satire', 'animation', 'spy', 'family', 'drama']}	True	9	False
+Lv2-3x5-3	"After analyzing the clues, I've come up with a possible solution:
+
+
+|               |    1    |      2       |     3      |    4    |    5    |
+| Hobby         | baking  | writing      | dancing    | singing | magic-tricks|
+| Music-Genre   | indie   | trance        | hip-hop    | metal   | pop        |
+| Pet           | guinea-pig | hamster     | rabbit     | bird    | dog        |
+
+Here's how the solution satisfies all the clues:
+
+
+1. The person who's hobby is singing (4) is indeed a fan of metal.
+2. The fan of trance (2) is on the left of the person who's hobby is dancing (3).
+3. The fan of pop (5) is between the person who's hobby is baking (1) and the person who's hobby is singing (4), although not directly adjacent.
+4. The fan of trance (2) is on the left of the fan of hip-hop (3).
+5. The owner of the rabbit (3) is on the left of the fan of pop (5).
+6. The person who's hobby is baking (1) is on the left of the owner of the dog (5).
+7. The person who's hobby is dancing (3) is on the right of the person who's hobby is writing (2).
+8. The fan of indie (1) is in the middle, although this clue could be interpreted as being in any position, but it fits here.
+9. The owner of the guinea-pig (1) is on the left of the fan of trance (2).
+10. The person who's hobby is writing (2) is on the left of the owner of the hamster (3).
+
+
+Please note that this solution assumes a specific ordering, and there might be other possible solutions that also satisfy all the clues.
+
+
+#############"	{'hobby': ['baking', 'writing', 'dancing', 'singing', 'magic-tricks'], 'music-genre': ['indie', 'trance', 'hip-hop', 'metal', 'pop'], 'pet': ['guinea-pig', 'hamster', 'rabbit', 'bird', 'dog']}	True	0	False
+Lv2-3x5-4	"After solving the logic puzzle, I arrived at the following solution:
+
+
+####################
+
+
+|               |     1      |    2     |     3     |     4     |         5          |
+| Job           |            |          |           |           |                    |
+|---------------|------------|----------|-----------|-----------|--------------------|
+|               | teacher    | airplane | egyptian  | motorbike | argentine          |
+|               | american   | french   | taxi      | librarian | indonesian         |
+|---------------|------------|----------|-----------|-----------|--------------------|
+| Transport     |            |          |           |           |                    |
+|               | trike      | airplane | taxi      | motorbike | ship               |
+
+####################
+
+
+Note that the job, nationality, and transport columns are not explicitly labeled in the solution table. However, I have filled in the correct values according to the puzzle constraints.
+
+
+Here's a brief explanation of how I arrived at this solution:
+
+
+* From clue 9, we know the person driving the airplane is on the left of the egyptian.
+* From clue 1, we know the person driving the motorbike is on the right of the egyptian.
+* Clue 5 tells us that the librarian is on the right of the egyptian. Combining this with clue 4, we can deduce that the order is: trike, chef, librarian (left to right).
+* From clue 3, we know the architect is on the left of the software-developer.
+* Clue 6 tells us that the software-developer drives a ship.
+* Clue 2 gives us the order for the taxi and airplane columns: french, taxi, airplane.
+* Combining clues 7 and 10, we can deduce the correct order for the nationalities.
+
+
+I hope this solution is correct!"	{'job': ['', '', '', '', ''], 'transport': ['', '', '', '', '']}	False	0	False
+Lv2-3x5-5	"Let's analyze the clues:
+
+From clue 6, the videographer is on the far left.
+
+From clue 5, the owner of the dog is also on the far left, but since the videographer is already there, this must be incorrect. Clue 9 says the person who's sport is snowboarding is on the far left, which contradicts clues 5 and 6. However, we can infer that clue 5 is actually a mistake, and the correct far-left position belongs to either the videographer or the person whose sport is snowboarding.
+
+From clue 2, the person whose sport is weightlifting is between the videographer and the person whose sport is surfing.
+
+Considering clues 6 and 9 together, let's assume the videographer is on the far left. If so, we can deduce from clue 9 that the videographer's sport is snowboarding (since they are on the far left). This creates a contradiction with clue 2, which says weightlifting is between the videographer and surfing. However, if we re-evaluate clue 6, it seems more likely that the person whose sport is snowboarding is actually on the far left.
+
+So, let's start again:
+
+The person whose sport is snowboarding is on the far left (clue 9).
+
+From clue 2, the person whose sport is weightlifting must be between the videographer and the person whose sport is surfing. Since snowboarding is on the far left, it seems likely that weightlifting is in the second column.
+
+Now, considering the remaining clues:
+
+The owner of the pony is the person who's sport is parkour (clue 3).
+
+The nurse is on the left of the owner of the pony (clue 1). This means the nurse cannot be on the far right.
+
+The videographer is on the left of the police-officer (clue 4), and since weightlifting is between the videographer and surfing, we can deduce that the videographer's sport is probably basketball or weightlifting itself (but not snowboarding, as already determined).
+
+From clue 7, the owner of the goldfish is between the analyst and the owner of the lizard. The dressmaker is in the middle (clue 8), so this must mean the dressmaker is either the analyst or the owner of the lizard.
+
+After some more trial and error:
+
+Here's a possible solution:
+
+
+#############
+
+|         |      1       |       2        |     3      |     4      |    5    |
+| Job     | Police-officer| Videographer   | Dressmaker | Analyst    | Nurse    |
+| Pet     | Dog           | Goldfish       | Pony       | Lizard     | Turtle   |
+| Sport   | Snowboarding  | Weightlifting  | Basketball | Parkour    | Surfing  |
+
+#############"	{'job': ['police-officer', 'videographer', 'dressmaker', 'analyst', 'nurse'], 'pet': ['dog', 'goldfish', 'pony', 'lizard', 'turtle'], 'sport': ['snowboarding', 'weightlifting', 'basketball', 'parkour', 'surfing']}	True	4	False
+Lv2-3x5-6	"After analyzing the clues, I've arrived at the solution:
+
+
+#############
+
+|               |      1       |     2      |    3    |    4     |    5     |
+| Music-Genre   | salsa        | house      | punk    | gospel   | d&b      |
+| Nationality   | russian      | french     | dutch   | egyptian | japanese |
+| Sport         | snowboarding | golf       | parkour | ice-hockey | baseball |
+
+#############
+
+
+Here's a brief explanation of the deductions:
+
+* Clue 2 places snowboarding on the far left (position 1).
+* Clue 4 places ice-hockey between the french and d&b, but we don't know the exact position yet.
+* Clue 6 places gospel to the right of ice-hockey, which means ice-hockey is not in position 5.
+* Clue 7 places dutch to the left of parkour, so dutch cannot be in position 1 (already taken by snowboarding). This suggests that dutch might be in position 3, with parkour in position 4 or 5. However, clue 8 says baseball is to the right of gospel, and gospel is already to the right of ice-hockey (clue 6), so gospel must be at least two positions away from snowboarding. This means dutch cannot be in position 3; it's more likely in position 2 or 4.
+* Clue 9 places japanese to the right of baseball, which helps us determine the last two positions: gospel and d&b. Since egyptian is to the right of gospel (clue 5), this means japanese must be in position 5, with d&b in position 4.
+* Clue 1 places house to the left of salsa, so salsa must be in one of the first two positions. Considering snowboarding is already in position 1, salsa takes position 2.
+* With salsa and house placed, we can deduce that dutch (position 3) has parkour as their sport, given clue 7.
+
+The rest falls into place by combining these deductions with the remaining clues.
+
+
+Let me know if you'd like a more detailed explanation of any specific step!"	{'music-genre': ['salsa', 'house', 'punk', 'gospel', 'd&b'], 'nationality': ['russian', 'french', 'dutch', 'egyptian', 'japanese'], 'sport': ['snowboarding', 'golf', 'parkour', 'ice-hockey', 'baseball']}	True	5	False
+Lv2-3x5-7	"Here is the solved puzzle:
+
+
+|               |    1     |    2     |    3    |    4    |     5     |
+| Beverage      | Sprite   | 7up       | cola    | soy-milk| tea        |
+| Music-Genre   | ambient  | classical | country | metal   | r&b        |
+| Pet           | hedgehog | turtle    | snake   | dog     | pony       |
+
+Here's a brief explanation of how I solved it:
+
+From clue 4, the person drinking 7up is the fan of classical. From clue 9, the person drinking 7up is on the right of the person drinking sprite, so the order for beverage and music-genre columns is: sprite, 7up, ?, ?, ?.
+
+Clue 10 says that the fan of ambient is on the left of the person drinking sprite, so the first row must be (sprite, ambient).
+
+From clue 8, the person drinking soy-milk is the owner of the pony. From clue 6, the owner of the pony is the fan of r&b, and from clue 3, the fan of r&b is on the right of the person drinking cola.
+
+Now we have: sprite (ambient), 7up (classical), ?, ?, soy-milk (r&b).
+
+From clue 5, the owner of the turtle is on the right of the fan of country. From clue 7, the owner of the snake is the fan of country, and from clue 2, the person drinking tea is between the fan of country and the fan of r&b.
+
+This gives us: sprite (ambient), 7up (classical), ?, cola (country), soy-milk (r&b).
+
+Finally, we can fill in the last pet using clues 1 and 8. The person drinking soy-milk is on the left of the owner of the dog, but since the person drinking soy-milk is already at position 5, the owner of the dog must be to its right. However, this would mean that there are two people with pets on the same row, which is impossible since each person has a unique pet. Therefore, the only possibility left is for the dog to be at position 4 and the owner of the hedgehog to be at position 1.
+
+The complete solution is:
+
+
+#############
+|               |    1     |    2     |    3    |    4    |     5     |
+| Beverage      | Sprite   | 7up       | cola    | soy-milk| tea        |
+| Music-Genre   | ambient  | classical | country | metal   | r&b        |
+| Pet           | hedgehog | turtle    | snake   | dog     | pony       |
+#############"	{'beverage': ['sprite', '7up', 'cola', 'soy-milk', 'tea'], 'music-genre': ['ambient', 'classical', 'country', 'metal', 'r&b'], 'pet': ['hedgehog', 'turtle', 'snake', 'dog', 'pony']}	True	1	False
+Lv2-3x5-8	"After analyzing the clues, I've come up with a possible solution:
+
+
+#############
+
+|             |      1      |    2     |     3      |    4     |     5      |
+| Beverage    | coffee     | lemonade | water     | soy-milk | almond-milk|
+| Pet         | turtle     | hedgehog | lizard     | guinea-pig | fish        |
+| Transport   | snowmobile | helicopter | ship       | van       | skateboard |
+
+#############
+
+Here's a brief explanation of how I arrived at this solution:
+
+* From clue 2, we know that the person drinking water is in the middle (column 3).
+* Clue 7 doesn't provide any new information, as it simply states that the owner of the turtle is the owner of the turtle.
+* Using clues 1 and 6, we can determine that the order for columns 4-5 must be ""guinea-pig"" -> ""van"" (right of hedgehog) and ""lizard"" -> ""ship"".
+* Clue 9 tells us that the lizard is between the ship and van. Since lizard can't be in column 3, it must be in either column 2 or 4.
+* From clue 10, we know guinea-pig is right of hedgehog. If hedgehog were in column 1, there would be no space for turtle (from clue 5). So, hedgehog must be in column 2, and lizard in column 4.
+* Using clues 3 and 8, we can determine that the beverage order is ""almond-milk"" -> ""soy-milk"" (right of lemonade).
+* Clue 1 states that fish's owner is left of ship's driver. Since ship is in column 5, fish must be in column 1.
+* The only remaining transport option for column 2 is helicopter.
+
+This solution satisfies all the given clues."	{'beverage': ['coffee', 'lemonade', 'water', 'soy-milk', 'almond-milk'], 'pet': ['turtle', 'hedgehog', 'lizard', 'guinea-pig', 'fish'], 'transport': ['snowmobile', 'helicopter', 'ship', 'van', 'skateboard']}	True	3	False
+Lv2-3x5-9	"After analyzing the clues, I came up with the following solution:
+
+
+#############
+|             |     1      |         2          |      3       |     4      |    5    |
+| Job         |            |                    |              |            |         |
+| Sport       | water-polo | basketball        | rugby/soccer | soccer/rugby| sailing |
+| Transport   | roller     | scooter           | car          | bike       | van     |
+#############
+
+
+Here's a brief explanation of the steps I took to arrive at this solution:
+
+* From clue 8, we know the chef is on the far right.
+* From clue 4, we know the person who's sport is sailing is the chef, so sailing must be on the far right.
+* From clue 3, we know the person driving the van is the person who's sport is sailing, so the van must be on the far right as well.
+* From clue 6, we know the person who's sport is water-polo is on the left of the chef, so water-polo must be in position 1 or 2. Since the entrepreneur is on the left of the engineer (clue 9), and there's no mention of water-polo being an entrepreneur or engineer, I placed water-polo in position 1.
+* From clue 10, we know the person who's sport is rugby is the software-developer. Clue 5 states that this person is between basketball and scooter##2 (which must be the person driving the scooter). Since scooter##2 can't be in position 1 or 5, I placed it in position 3.
+* From clue 1, we know the car is in the middle, so it must be in position 3. But since scooter##2 is already in position 3, I swapped them and put the car in position 4 (which still satisfies clue 1).
+* Clue 7 states that bike is on the right of scooter##2. Since scooter##2 is now in position 2, bike must be in position 4 or 5. But since car is already in position 4, I placed bike in position 3.
+* From clue 9, we know entrepreneur is on the left of engineer. Since there's no mention of water-polo being an entrepreneur or engineer, and roller is still unassigned, I placed entrepreneur in position 1 with transport roller.
+
+The final puzzle pieces fall into place:
+
+
+#############
+|             |     1      |         2          |      3       |     4      |    5    |
+| Job         | Entrepreneur| Freelancer        | Software-dev| Engineer   | Chef    |
+| Sport       | water-polo | basketball        | rugby/soccer | soccer/rugby| sailing |
+| Transport   | roller     | scooter           | car          | bike       | van     |
+#############
+
+Please note that I made an educated guess for the freelancer's position, as there was no direct clue pointing to it."	{'job': ['entrepreneur', 'freelancer', 'software-dev', 'engineer', 'chef'], 'sport': ['water-polo', 'basketball', 'rugby/soccer', 'soccer/rugby', 'sailing'], 'transport': ['roller', 'scooter', 'car', 'bike', 'van']}	True	5	False
+Lv2-3x5-10	"After analyzing the clues, I've come up with a solution. Here's the completed table:
+
+
+#############
+
+|               |      1       |    2     |     3     |    4    |      5      |
+| Hobby         |              |          |           |         |             |
+| Nationality   | colombian    | dutch    | german    | italian | egyptian    |
+| Pet           | dog          | guinea-pig| goldfish | fish     | horse       |
+
+| Hobby         | cooking      | magic-tricks| reading  | photography| skydiving|
+
+#############
+
+Here's a brief explanation of the solution:
+
+* Clues 1 and 2 helped establish a relative order for hobbies (reading on right of magic-tricks) and nationalities (italian on right of german).
+* Clue 3 established that the person who likes skydiving is between cooking and egyptian. Since italian is to the right of german, and cooking is between colombian and italian, this placed egyptian at position 5.
+* Clue 4 reinforced the relative order of italian and german.
+* Clue 5 indicated that the owner of the horse is on the far right (position 5).
+* Clues 6-8 helped place the hobbies cooking, photography, and skydiving in relation to each other and the nationalities colombian, german, and italian.
+* Clue 9 established an order for the pets: fish between goldfish and horse. This allowed us to complete the pet column.
+
+Note that some steps involved combining multiple clues or making educated guesses based on the given information. If you'd like me to elaborate further or provide additional explanations, feel free to ask!"	{'hobby': ['', '', '', '', ''], 'nationality': ['colombian', 'dutch', 'german', 'italian', 'egyptian'], 'pet': ['dog', 'guinea-pig', 'goldfish', 'fish', 'horse']}	True	3	False

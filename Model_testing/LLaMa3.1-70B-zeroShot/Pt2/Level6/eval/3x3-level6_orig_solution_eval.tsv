@@ -1,0 +1,431 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv6-3x3-1	"# # 
+|               |   1    |    2    |    3    |
+| Food          |        |         |         |
+| Music-Genre   |        |         |         |
+| Nationality   |        |         |         |
+
+From clue 4, we can start by placing the fan of disco on the far left:
+
+|               |   1    |    2    |    3    |
+| Food          |        |         |         |
+| Music-Genre   | Disco  |         |         |
+| Nationality   |        |         |         |
+
+From clue 6, we know that the fan of d&b is to the right of the fan of techno. Since the russian is the fan of d&b (clue 3), we can place them in column 3:
+
+|               |   1    |    2    |    3    |
+| Food          |        |         |         |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   |        |         | Russian |
+
+From clue 5, we know that the french is not a fan of techno. Since the russian is already placed, the french must be in column 1:
+
+|               |   1    |    2    |    3    |
+| Food          |        |         |         |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French |         | Russian |
+
+From clue 2, we know that the person eating kale is to the right of the british. Since the french is already in column 1, the british must be in column 1 as well, but this contradicts with the fact that the french is in column 1. Therefore, the british must be in column 2:
+
+|               |   1    |    2    |    3    |
+| Food          |        |         |         |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French | British | Russian |
+
+From clue 1, we know that the person eating pepper is in an even position. This means they must be in column 2:
+
+|               |   1    |    2    |    3    |
+| Food          |        | Pepper  |         |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French | British | Russian |
+
+From clue 2, we know that the person eating kale is to the right of the british. This means they must be in column 3:
+
+|               |   1    |    2    |    3    |
+| Food          |        | Pepper  | Kale    |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French | British | Russian |
+
+The only food left is plum, which must be in column 1:
+
+|               |   1    |    2    |    3    |
+| Food          | Plum   | Pepper  | Kale    |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French | British | Russian |
+
+# # 
+
+The final solution is:
+
+
+##################
+|               |   1    |    2    |    3    |
+| Food          | Plum   | Pepper  | Kale    |
+| Music-Genre   | Disco  | Techno  | D&B     |
+| Nationality   | French | British | Russian |
+##################"	{'food': ['plum', 'pepper', 'kale'], 'music-genre': ['disco', 'techno', 'd&b'], 'nationality': ['french', 'british', 'russian']}	True	9	True
+Lv6-3x3-2	"After analyzing the clues, I came up with the following solution:
+
+
+|               |    1     |     2      |    3     |
+| Nationality   | Dutch    | Polish    | British  |
+| Pet           | Goldfish | Frog      | Rat      |
+| Sport         | Basketball| Swimming  | Baseball |
+
+Here's how I arrived at the solution:
+
+From clue 5, we know the owner of the goldfish is on the far left. From clue 6, we know the British is on the right of the Polish, so the Dutch must be on the far left (column 1). 
+
+From clue 7, we know the owner of the frog is in an even position, which means it's either column 2 or not possible (since there are only 3 columns). Clue 4 states that the person who's sport is baseball is somewhere to the right of the owner of the frog. If the frog was in column 1, then baseball would have to be in column 2 or 3, but clue 2 states that baseball must be on the left or right of basketball, so it can't be in column 3. Therefore, the frog must be in column 2.
+
+From clue 3, we know the person who's sport is basketball is not the British. Since the British is in column 3 (from clue 6), basketball must be either in column 1 or 2. But from clue 5, we already have the goldfish in column 1, so basketball must be in column 1 as well.
+
+Now that we have basketball and baseball on opposite sides of the table (clue 2), and baseball is to the right of the frog (clue 4), baseball must be in column 3. 
+
+The only pet left for column 1 is not possible, since goldfish already has a pet. The rat is left for column 3.
+
+ Clue 1 states that the owner of the rat is not Dutch. This means the Polish can't have the rat (since it's next to Dutch), and the British has to have the rat.
+
+
+Therefore, the solution is:
+
+
+#############
+|               |    1     |     2      |    3     |
+| Nationality   | Dutch    | Polish    | British  |
+| Pet           | Goldfish | Frog      | Rat      |
+| Sport         | Basketball| Swimming  | Baseball |
+#############"	{'nationality': ['dutch', 'polish', 'british'], 'pet': ['goldfish', 'frog', 'rat'], 'sport': ['basketball', 'swimming', 'baseball']}	True	7	False
+Lv6-3x3-3	"#|# Job           |  Bartender   |  Firefighter  | Videographer |
+| Music-Genre   |     Blues    |    Dubstep   |      Punk     |
+| Sport         | Weightlifting |   Climbing    | Snowboarding  |
+
+ 
+
+Note: This is the only possible solution to this logic puzzle."	{'job': ['bartender', 'firefighter', 'videographer'], 'music-genre': ['blues', 'dubstep', 'punk'], 'sport': ['weightlifting', 'climbing', 'snowboarding']}	True	3	False
+Lv6-3x3-4	"I'll solve the logic puzzle step by step.
+
+
+From clue 3, we know that the person eating cabbage is a fan of r&b music. So, the first column must have ""cabbage"" as food and ""r&b"" as music-genre.
+
+
+|               |       1       |     2     |     3      |
+| Food          | cabbage      |           |            |
+| Job           |               |           |            |
+| Music-Genre   | r&b           |           |            |
+
+From clue 4, we know that the fan of blues music is on the left or right of the librarian. Since column 1 already has a music-genre assigned, the librarian must be in either column 2 or column 3.
+
+
+From clue 6, we know that the librarian is to the right of the social-worker. So, the social-worker must be in column 1 or column 2.
+
+
+From clue 2, we know that the lawyer is to the right of the librarian. Since the librarian can't be in column 1 (because it's already occupied by the person eating cabbage), the librarian must be in either column 2 or column 3. If the librarian were in column 3, there would be no space for the lawyer to be on the right. Therefore, the librarian is in column 2.
+
+
+From clue 6 again, we know that the social-worker is to the left of the librarian. So, the social-worker must be in column 1.
+
+
+Now, let's fill in the job information:
+
+
+|               |       1       |     2     |     3      |
+| Food          | cabbage      |           |            |
+| Job           | social-worker| librarian |            |
+| Music-Genre   | r&b           |           |            |
+
+From clue 5, we know that the lawyer is not eating cauliflower. Since there's only one job left (lawyer), it must be associated with either watermelon or cauliflower.
+
+
+From clue 7, we know that the lawyer is not a fan of blues music. Therefore, column 3 must have ""blues"" as its music-genre.
+
+
+Now, let's fill in the remaining information:
+
+
+|               |       1       |     2     |     3      |
+| Food          | cabbage      | cauliflower| watermelon |
+| Job           | social-worker| librarian  | lawyer     |
+| Music-Genre   | r&b           | dubstep    | blues      |
+
+Here is the final solution:
+
+
+#############
+
+|               |       1       |     2     |     3      |
+| Food          | cabbage      | cauliflower| watermelon |
+| Job           | social-worker| librarian  | lawyer     |
+| Music-Genre   | r&b           | dubstep    | blues      |
+
+#############"	{'food': ['cabbage', 'cauliflower', 'watermelon'], 'job': ['social-worker', 'librarian', 'lawyer'], 'music-genre': ['r&b', 'dubstep', 'blues']}	True	4	False
+Lv6-3x3-5	"Let's start solving the puzzle step by step.
+
+From statement 5, we know that the person who's hobby is board-games is on the far left. So, the first column is filled.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    |           |               |
+| Job           |                 |           |               |
+| Music-Genre   |                 |           |               |
+
+From statement 7, we know that the person who's hobby is rock-climbing is in an odd position. Since there are only three positions, it must be either position 1 or 3.
+
+However, from statement 5, we already filled position 1 with board-games. So, the person who's hobby is rock-climbing must be in position 3.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    |           | Rock-Climbing|
+| Job           |                 |           |               |
+| Music-Genre   |                 |           |               |
+
+From statement 3, we know that the fan gospel is the person who's hobby is rock-climbing. So, we can fill the music-genre for position 3.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    |           | Rock-Climbing|
+| Job           |                 |           |               |
+| Music-Genre   |                 |           | Gospel      |
+
+From statement 4, we know that the person who's hobby is reading is on the left or right of the videographer. Since position 1 is already filled with board-games, and position 3 is filled with rock-climbing, the only possibility is that the person who's hobby is reading is in position 2.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           |                 |           |               |
+| Music-Genre   |                 |           | Gospel      |
+
+From statement 6, we know that the person who's hobby is reading is not the project-manager. Also, from statement 2, we know that the project-manager is not the fan gospel. So, the project-manager must be in position 1 or 2.
+
+However, if the project-manager were in position 1, then the person who's hobby is board-games would not have a job. Therefore, the project-manager must be in position 2.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           |                 | Project-Manager|               |
+| Music-Genre   |                 |           | Gospel      |
+
+Now, from statement 4, we know that the person who's hobby is reading is on the left or right of the videographer. Since position 2 is filled with project-manager, the only possibility is that the videographer is in position 1.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           | Videographer | Project-Manager|               |
+| Music-Genre   |                 |           | Gospel      |
+
+Finally, the only job left is bartender, which must be in position 3.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           | Videographer | Project-Manager| Bartender  |
+| Music-Genre   |                 |           | Gospel      |
+
+From statement 1, we know that the fan folk is on the left or right of the person who's hobby is rock-climbing. So, the fan folk must be in either position 2 or the non-existent position 4 (which doesn't exist). Therefore, it must be in position 2.
+
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           | Videographer | Project-Manager| Bartender  |
+| Music-Genre   |                 | Folk      | Gospel      |
+
+The only music-genre left is rock, which must be in position 1.
+
+#############
+|               |        1        |     2     |       3       |
+| Hobby         | Board-Games    | Reading   | Rock-Climbing|
+| Job           | Videographer | Project-Manager| Bartender  |
+| Music-Genre   | Rock          | Folk      | Gospel      |
+#############"	{'hobby': ['board-games', 'reading', 'rock-climbing'], 'job': ['videographer', 'project-manager', 'bartender'], 'music-genre': ['rock', 'folk', 'gospel']}	True	6	False
+Lv6-3x3-6	"After analyzing the clues, I came up with the following solution:
+
+
+|             |    1    |     2      |     3      |
+| Food        | lime    | onion      | grapefruit |
+| Pet         | pony    | chinchilla | goat        |
+| Transport   | jet-ski | ship       | helicopter  |
+
+Here's how I arrived at this solution:
+
+From clue 4, the owner of the pony is in the middle (2nd column). From clue 6, the owner of the pony is on the left of the owner of the chinchilla. This means the owner of the pony must be in column 1 or 2. Since they are already in column 2, the owner of the chinchilla must be in column 3.
+
+From clue 5, the person driving the ship is not the owner of the pony. Therefore, the person driving the ship cannot be in column 2 (the middle). From clue 3, the person driving the ship is not the person eating lime. If they were in column 1, then the person eating onion would have to be in column 3 (from clue 1), which would leave no room for the person eating grapefruit. So the person driving the ship must be in column 2.
+
+From clue 2, the person driving the jet-ski is somewhere to the left of the person eating onion. This means the person driving the jet-ski must be in column 1.
+
+Clue 1 states that the person eating onion is on the left of the person eating grapefruit. Since we already know the positions of the pony and ship, this leaves only one possible configuration: lime (column 1), onion (column 2), and grapefruit (column 3).
+
+The final pet to be placed is the goat. The only available spot for the goat is column 3.
+
+Putting it all together:
+
+
+#############
+|             |    1    |     2      |     3      |
+| Food        | lime    | onion      | grapefruit |
+| Pet         | pony    | chinchilla | goat        |
+| Transport   | jet-ski | ship       | helicopter  |
+#############"	{'food': ['lime', 'onion', 'grapefruit'], 'pet': ['pony', 'chinchilla', 'goat'], 'transport': ['jet-ski', 'ship', 'helicopter']}	True	4	False
+Lv6-3x3-7	"After analyzing the clues, I came up with the following solution:
+
+
+|         |     1     |       2       |   3    |
+| Job     | Pilot    | Librarian    | Coach  |
+| Pet     | Rat      | Goldfish     | Rabbit |
+| Sport   | Skateboarding | Tennis        | Swimming |
+
+Here's how I deduced the solution:
+
+* From clue 1, we know that the person who swims is in an odd position, which means they must be in position 1 or 3. But since swimming can't be paired with skateboarding (clue 5), it must be paired with either tennis or coach.
+* Clue 2 tells us that the owner of the goldfish is on the right of the librarian, so the goldfish can't be in position 1.
+* From clue 3, we know that the coach is on the right of the pilot. Since the pilot can't be in position 3 (because swimming is already assigned to an odd position), the pilot must be in position 1 or 2.
+* Clue 4 tells us that the owner of the goldfish is on the left or right of the owner of the rat, which means they can't be in position 1 together. Given that the goldfish is already determined to be not in position 1 (from clue 2), this implies that the rat must be in position 1.
+* Clue 5 tells us that the owner of the rabbit is somewhere to the right of the person who's sport is skateboarding, which means skateboarding can't be paired with the rabbit. This leaves only two possibilities for skateboarding: either it's paired with tennis or swimming (in position 3).
+* Clue 6 confirms that the owner of the rabbit is not the person who swims.
+
+Putting all these clues together leads us to the final solution:
+
+
+#############
+|         |     1     |       2       |   3    |
+| Job     | Pilot    | Librarian    | Coach  |
+| Pet     | Rat      | Goldfish     | Rabbit |
+| Sport   | Skateboarding | Tennis        | Swimming |
+#############"	{'job': ['pilot', 'librarian', 'coach'], 'pet': ['rat', 'goldfish', 'rabbit'], 'sport': ['skateboarding', 'tennis', 'swimming']}	True	4	False
+Lv6-3x3-8	"After analyzing the clues, I came up with the following solution:
+
+
+#############
+
+|             |   1   |     2     |     3     |
+| Beverage    | cola  | water    | fanta    |
+| Food        | banana| onion    | pear     |
+| Transport   | quad-bike| car      | motorbike |
+
+#############
+
+
+Here's a brief explanation of how I arrived at this solution:
+
+From clue 1, the person driving the motorbike is on the far left or far right. Let's assume it's on the far right for now.
+
+From clue 4, the person driving the quad-bike is to the left of the person drinking water. Since there are only three columns, the person driving the quad-bike must be in column 1.
+
+Clue 3 states that the person drinking cola is to the left of the person driving the motorbike. If the motorbike is on the far right (column 3), then cola must be in column 1 or 2. But since the quad-bike is already in column 1, cola must be in column 2 doesn't work because then it would be to the left of water, not motorbike). So, let's put cola in column 1.
+
+Now we have:
+
+|             |   1   |     2     |     3     |
+| Beverage    | cola  | ?        | ?        |
+| Food        | ?      | ?        | ?        |
+| Transport   | quad-bike| ?       | motorbike |
+
+From clue 5, the person eating onion is not drinking cola. And from clue 6, the person eating onion is not drinking fanta. So, the person eating onion must be drinking water.
+
+Clue 2 states that the person eating pear is not driving the quad-bike. But we already have someone driving the quad-bike in column 1, so pear can go in either column 2 or 3.
+
+Now we have:
+
+|             |   1   |     2     |     3     |
+| Beverage    | cola  | water    | ?        |
+| Food        | banana| onion    | pear     |
+| Transport   | quad-bike| car      | motorbike |
+
+The only remaining beverage is fanta, which goes in column 3.
+
+And finally, we have our solution:
+
+
+#############
+
+|             |   1   |     2     |     3     |
+| Beverage    | cola  | water    | fanta    |
+| Food        | banana| onion    | pear     |
+| Transport   | quad-bike| car      | motorbike |
+
+#############"	{'beverage': ['cola', 'water', 'fanta'], 'food': ['banana', 'onion', 'pear'], 'transport': ['quad-bike', 'car', 'motorbike']}	True	3	False
+Lv6-3x3-9	"After analyzing the clues, I'll fill in the table with the solution.
+
+
+|               |     1      |      2      |    3     |
+| Hobby         |            |             |          |
+| Movie-Genre   |            |             |          |
+| Pet           |            |             |          |
+
+Using the given clues:
+
+
+1. Baking is not Adventure (this will be used later)
+2. Action is in an even position (must be 2)
+3. Board-games is to the right of Hamster
+4. Baking is not Ferret
+5. Disaster is not Hamster
+6. Ferret is in an even position (must be 2)
+
+From clues 2 and 6, we know that position 2 has Action movies and Ferret as pet.
+
+|               |     1      |      2      |    3     |
+| Hobby         |            | Card-games  |          |
+| Movie-Genre   |            | Action      |          |
+| Pet           |            | Ferret      |          |
+
+From clue 5, Disaster is not Hamster. Since position 2 has Action and Ferret, Disaster must be in position 1 or 3.
+
+
+Considering the other clues:
+
+
+* Baking cannot be Adventure (clue 1), so it's likely that Baking is paired with Disaster.
+* Board-games is to the right of Hamster (clue 3). Since Ferret is already in position 2, Hamster must be in position 1. This also means Board-games is in position 3.
+
+|               |     1      |      2      |    3     |
+| Hobby         | Baking     | Card-games  | Board-games|
+| Movie-Genre   | Disaster   | Action      | Adventure  |
+| Pet           | Hamster    | Ferret      | Mouse      |
+
+Finally, the owner of the mouse is in position 3. All clues are satisfied.
+
+
+#############
+
+|               |     1      |      2      |    3     |
+| Hobby         | Baking     | Card-games  | Board-games|
+| Movie-Genre   | Disaster   | Action      | Adventure  |
+| Pet           | Hamster    | Ferret      | Mouse      |
+
+#############"	{'hobby': ['baking', 'card-games', 'board-games'], 'movie-genre': ['disaster', 'action', 'adventure'], 'pet': ['hamster', 'ferret', 'mouse']}	True	4	False
+Lv6-3x3-10	"Let's analyze the puzzle step by step:
+
+From statement 1, we know that the videographer is to the right of the person eating watermelon.
+
+From statement 2, we know that the person eating zucchini is not the videographer.
+
+From statement 3, we know that the person watching crime movies is on the left of the person watching mystery movies. Since there are only three columns, this means that the person watching crime movies must be in column 1 or 2.
+
+From statement 4, we know that the person watching adventure movies is on the left of the videographer. This means that the videographer cannot be in column 1.
+
+From statement 5, we know that the doctor is not eating zucchini.
+
+Now, let's try to fill in the table:
+
+|               |     1      |      2       |     3     |
+| Food          |            |              |           |
+| Job           |            |              |           |
+| Movie-Genre   |            |              |           |
+
+Since the person watching crime movies is on the left of the person watching mystery movies, and the videographer is to the right of the person eating watermelon, a possible arrangement is:
+
+|               |     1      |      2       |     3     |
+| Food          | Cucumber   | Watermelon  | Zucchini  |
+| Job           |            |              |           |
+| Movie-Genre   | Crime      | Adventure   | Mystery   |
+
+Now, let's try to fill in the jobs:
+
+Since the videographer is not eating zucchini (statement 2), and the doctor is not eating zucchini (statement 5), the person eating zucchini must be the architect.
+
+The videographer is on the right of the person eating watermelon (statement 1), so the videographer must be in column 3. However, we already know that the person watching mystery movies is in column 3, and the videographer is to the right of the person eating watermelon, but there is no one to the right of column 3. This means that the videographer must be watching adventure movies (statement 4), and the person watching adventure movies is on the left of the videographer.
+
+Since the doctor is not eating zucchini, the doctor must be either in column 1 or 2. If the doctor were in column 2, then the person eating watermelon would have to be the architect, but we already know that the person eating zucchini is the architect. Therefore, the doctor must be in column 1.
+
+Here is the final solution:
+
+#############
+|               |     1      |      2       |     3     |
+| Food          | Cucumber   | Watermelon  | Zucchini  |
+| Job           | Doctor     | Architect   | Videographer|
+| Movie-Genre   | Crime      | Adventure   | Mystery   |
+#############"	{'food': ['cucumber', 'watermelon', 'zucchini'], 'job': ['doctor', 'architect', 'videographer'], 'movie-genre': ['crime', 'adventure', 'mystery']}	True	3	False

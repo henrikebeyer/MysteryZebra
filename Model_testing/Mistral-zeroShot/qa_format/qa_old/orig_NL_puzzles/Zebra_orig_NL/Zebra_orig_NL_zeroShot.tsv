@@ -1,0 +1,201 @@
+Zebra_orig_NL_1	" To solve this puzzle, let's use the given constraints one by one and find the positions for each variable.
+
+1. English likes red (R)
+2. Spanish owns dog (D)
+3. Coffee drinker likes green (G)
+4. Ukrainian drinks tea (T)
+5. Green is to the right of Ivory, so let's assume Ivory (I) is on the far left because there are only 5 positions
+6. Old-gold smoker owns snails (S)
+7. Kools smoker likes yellow (Y)
+8. Milk drinker is in the middle (M)
+9. Norwegian is on the far left (N)
+10. Chesterfields smoker is left or right of fox owner (F), let's assume F is next to N, making it Chesterfields (C)
+11. Kools smoker is to the left or right of horse owner (H), if H was already placed, we can place Kools. But since we don't know where H is yet, we can only say Kools is left or right of H (K)
+12. Lucky-strike smoker drinks orange-juice (O)
+13. Japanese is the parliaments smoker (P)
+14. Norwegian is to the left or right of blue owner (B)
+
+Now let's use more constraints to place the remaining variables:
+
+15. Since Kools smoker can only be placed where horse owner isn't, the horse owner must be on the other side of C and P. If we place B next to N, then we have no option left for H and B (B) cannot be at the far left due to constraint 9. So let's put B in the middle. This leaves us with only one possible position for horse owner which is between B and S, making it H. Now we can place Kools (K).
+16. Since J is a smoker of Parliments (P), there must be no one smoking Lucky-strike or Chesterfields near Japanese (since they were already placed). So the only option left for J is on the far right, making it J.
+17. Since we know now that H, K, and J are in their positions, we can place O as he drinks Orange-juice (O)
+18. Now there's only one position left for the fox owner which is next to N, making it F.
+
+Finally, since all other favorites are already placed, water must be on the remaining empty position (W).
+
+So **water:5** is the answer."	water:1
+Zebra_orig_NL_2	" To solve this puzzle, we will use a method called ""Elimination by Process of Elimination"" and create a table for each variable (color, nationality, brand, beverage, pet) to keep track of our findings.
+
+| Color  | English | Spanish | Ukrainian | Norwegian | Japanese |
+|--------|---------|---------|-----------|----------|----------|
+| Red    | 1       |         |           |          |          |
+| Green  |         |         |           |          |  3        |
+| Ivory  |         |         |           |          |          |
+| Yellow|         |         |           |  7        |          |
+| Blue   |         |         |           |          |          |
+
+| Nationality | English | Spanish  | Ukrainian | Norwegian | Japanese |
+|-------------|---------|----------|-----------|----------|----------|
+| English     | 1       |         |           |          |          |
+| Spanish     |         |  2       |           |          |          |
+| Ukrainian   |         |         |  4        |          |          |
+| Norwegian   |         |         |           |  9        |          |
+| Japanese    |         |         |           |          | 13       |
+
+| Brand      | English | Spanish  | Ukrainian | Norwegian | Japanese |
+|------------|---------|----------|-----------|----------|----------|
+| Old-gold   | 6       |         |           |          |          |
+| Kools     |         |  2       |           7   |          | 11       |
+| Chesterfields |   10   |         |           |          |          |
+| Lucky-strike  |         |         |           | 12       |          |
+| Parliaments |         |         |           |          | 13      |
+
+| Beverage     | English | Spanish  | Ukrainian | Norwegian   | Japanese    |
+|--------------|---------|----------|-----------|------------|------------|
+| Coffee       | 3       |         |           |           8       |          |
+| Tea          |         |         |  4        |  14         |          |
+| Milk         |         |         |           | 8          |          |
+| Orange-juice |         |         |           |          | 12       |
+| Water       |         |         |           |          |          |
+
+| Pet    | English | Spanish  | Ukrainian | Norwegian   | Japanese    |
+|--------|---------|----------|-----------|------------|------------|
+| Dog     |         |  2       |           |            |          |
+| Fox     |         |         |           |  10        |          |
+| Zebra   |         |         |           |          |          |
+| Horse   |         |         |           |          | 11       |
+| Snails  |  6      |         |           |          |          |
+
+Let's start by filling out the table for colors:
+- From rule 1, we know that the English likes red.
+- From rules 5 and 7, we can infer that green is not ivory or yellow (since green is to the right of ivory). This means green cannot be on the far left since Norwegian is there. So, green must be either to the right of the English (color 3) or in the middle (position 8).
+- From rules 5 and 9, we can also infer that red cannot be on the far left (since green cannot be there). This means red must be either the English (rule 1) or to the right of the English.
+
+Let's fill out the table for nationalities:
+- From rule 2, the Spanish is the owner of a dog (Dog = 2 in pet table). So, the Spanish cannot be on the far left (since Norwegian is there). So, the Spanish must be either to the right of English or Ukrainian. Since we have already determined that red cannot be on the far left, it must also be to the right of English. This means the Spanish cannot be to the right of English and must be to the right of Ukrainian (since the Ukrainian is not in the far right). Therefore, the Ukrainian must be to the left of the Spanish (position 3).
+- From rules 10 and 11, we can infer that the Old-Gold smoker cannot be the owner of the Fox (since chesterfields are either to the left or right of the fox). This means the Old-Gold smoker cannot be on the far right since the Japanese is there. So, the Old-Gold smoker must be either to the left of the horse or Norwegian. Since we have already determined that green cannot be in position 3 (Spanish rule), and the Kools smoker cannot be to the left of the horse, it means that the Old-Gold smoker must be to the left of the Norwegian (position 9). Therefore, the Norwegian must be to the right of Old-Gold.
+
+From now on, we can make educated guesses based on the given rules:
+- Since green cannot be in position 3 and Spanish is not there, it must be in position 8 (coffee rule), making English like red (color rule).
+- If the Japanese smokes Parliaments (rule 13), then they cannot smoke Kools since the Kools smoker is to the left or right of the horse, and the Old-Gold smoker is not in the far right. This leaves us with only one option: the Japanese smokes Lucky Strike (position 12).
+- From rules 10 and 11, we can infer that the Kools smoker cannot be the owner of the horse or fox. This means the Kools smoker must be to the left of the English since they are not in the far right (rules 6 and 9). This leaves us with only one option: the Kools smoker is Ukrainian (position 4), making tea their favorite beverage (tea rule) and yellow their preferred color (rule 7).
+- Since the Old-Gold smoker cannot be the owner of the fox, the Chesterfields smoker must be in the position where either fox or horse can be placed. Since the Kools smoker is to the left of the English, and Ukrainian smokes Kools, the Chesterfields smoker must be Norwegian (position 9).
+- Since the only option left for the pet table in position 6 is snails, the Old-Gold smoker must be the owner of the snails.
+- Now we can place the horse and fox based on their respective cigar rules: since the chesterfields smoker is Norwegian (position 9), they must have either horse or fox as a pet. Since the only option left for pet table in positions 4, 5, and 7 is dog, horse or fox cannot be in those positions. So, the horse must be in position 2, and the fox must be in position 10 (to the left of Chesterfields smoker or Norwegian).
+- Since we have already placed all the pets, we can now fill out the table for Beverages: since the English likes red, they cannot like green (rule 3), so they drink coffee. Since the Ukrainian drinks tea (rule 4), and since we know that the Spanish drinks coffee (rule 3), the Norwegian must drink milk (position 8). This leaves us with Orange-Juice as the favorite beverage for the Japanese, making position 12 their preferred color Lucky Strike.
+- Since we have already placed all the colors and nationalities, we can fill out the pet table: since the Ukrainian smokes Kools (rule 7), they must have either dog or horse as a pet. Since we know that the Spanish drinks coffee (rule 3), they cannot be in position 2 (horse) or position 5 (dog). So, the Ukrainian must have a horse (position 10).
+- Finally, since the Japanese smokes Lucky Strike (rule 13), and since the Norwegian drinks milk (milk rule), the only option left for them in the pet table is fox (position 2). This means that the English must have a dog (position 5).
+
+Here's the final arrangement:
+- Colors: English - Red, Spanish - Coffee, Ukrainian - Kool, Norwegian - Lucky Strike, Japanese - Orange Juice.
+- Nationalities: English - Dog, Spanish - Dog, Ukrainian - Horse, Norwegian - Fox, Japanese - Snails.
+- Beverages: English - Coffee, Spanish - Coffee, Ukrainian - Tea, Norwegian - Milk, Japanese - Orange Juice.
+- Cigars: English - Old Gold, Spanish - Chesterfields, Ukrainian - Kools, Norwegian - Lucky Strike, Japanese - Lucky Strike.
+- Pets: English - Dog, Spanish - Dog, Ukrainian - Horse, Norwegian - Fox, Japanese - Snails."	water:1
+Zebra_orig_NL_3	" To solve this puzzle, let's assign numbers (1-5) to each element of a given category and use logical deduction to find out where each element belongs. Here's my solution:
+
+1. The English likes red: Red is color 1, so the English is person 1.
+2. The Spanish owns the dog: Dog is pet 3, so the Spanish is person 3.
+3. The person drinking coffee likes green: Coffee is beverage 4, and since milk isn't in the middle (point 8), green must be beverage 5 (color 2). So the person drinking coffee is person 5.
+4. The Ukrainian drinks tea: Tea is beverage 1, so the Ukrainian is person 1.
+5. The person who likes green is to the right of the person who likes ivory: Since green (beverage 5) is to the right of red (color 1), ivory must be color 3. So the person who likes ivory is person 3.
+6. The old-gold smoker owns snails: Old-gold is cigar 5, and since kools isn't the snail owner (point 6), old-gold smoker can only be either person 2 or person 4. Since the snails cannot be with the horse (point 11), the old-gold smoker is not person 4 (horse owner). So, the old-gold smoker is person 2.
+7. The kools smoker likes yellow: Kools is cigar 3, and since chesterfields aren't the kools smoker (point 10), the kools smoker can only be either person 1 or person 5. Since the kools smoker isn't the dog owner (point 2), the kools smoker is not person 3. So, the kools smoker is person 5.
+8. The person drinking milk is in the middle: Milk is beverage 2, so the person drinking milk is person 2.
+9. The Norwegian is on the far left: Norwegian is nationality 4, and since they aren't the coffee drinker (point 3), norwegian must be person 4 (far-left).
+10. The chesterfields smoker is on the left or right of the owner of the fox: Chesterfield is cigar 2, and since kools isn't a neighbor of the fox owner (point 10), the chesterfields smoker can only be person 1, 3, or 5. Since the chesterfields smoker isn't the dog owner (point 2) or the old-gold smoker (point 6), and there is no far-right position left for the fox owner, the chesterfields smoker must be person 3.
+11. The kools smoker is to the left or right of the owner of the horse: Since the kools smoker isn't the dog owner (point 2) and has already been placed on the far-right side (person 5), the kools smoker can only be person 1 or 3. However, since there is no fox neighbor left for the chesterfields smoker (point 10), and the horse cannot be with the snails (point 6), the kools smoker must be person 1.
+12. The lucky-strike smoker drinks orange juice: Lucky-strike is cigar 4, so the lucky-strike smoker is person 4. Since milk isn't orange juice (point 8), and coffee isn't orange juice (point 3), the only remaining beverage for orange juice is beverage 3 (color 5). So the lucky-strike smoker drinks orange juice.
+13. The japanese is the parliaments smoker: Japanese is nationality 5, and since there are no more cigar positions left, the japanese must be the parliaments smoker.
+14. The norwegian is to the left or right of the person who likes blue: Since we know that the norwegian (person 4) isn't the coffee drinker (point 3), tea drinker (point 4), green drinker (point 5), or orange juice drinker (point 12), the only remaining beverage is water. The person who likes blue must therefore be either person 1 or 2, and since we know the norwegian is on their left or right, the only possible positions are:
+   - Blue is person 2 (beverage 6) and norwegian is person 3 (pet 5), with water in position 1 (beverage 6).
+   - Blue is person 1 (beverage 6) and norwegian is person 5 (beverage 4), with water in position 2 (beverage 6).
+
+However, since there should be only one possible solution for the puzzle, we can notice that the first arrangement leads to having the chesterfields smoker on the far-left side which contradicts point 10. Therefore, the correct answer is: **water:2**."	water:1
+Zebra_orig_NL_1	" To solve this puzzle, let's use a table and assign each variable (color, nationality, cigar brand, beverage, pet) to a number from 1 to 5. We will populate the table with the given clues, and then deduce the missing information.
+
+| Color   | Nationality | Cigar    | Beverage  | Pet      |
+|---------|------------|---------|----------|---------|
+| R       | E          | OG       | C         | S        |
+| G       | S          | K        | T         | D        |
+| I       | U          | CF       | M         | ?        |
+| Y       | -          | LS       | J         | H        |
+| B       | N          | P        | W         | Z        |
+
+1. From clue 1, we know that E is the English and they like red (R). So, R = E.
+2. From clue 2, we know that S is the Spanish and owns a dog (D). So, D = S.
+3. From clue 3, we know that G is drinking coffee (C), so C = G.
+4. From clue 4, we know that U is the Ukrainian and drinks tea (T). So, T = U.
+5. From clue 5, we know that the person who likes green (G) is to the right of the person who likes ivory (I). Since R = E and it can't be E because it's already assigned, I must be G or B. But since C = G, it means that G cannot be I. So, I = B.
+6. From clue 6, we know that OG is the owner of the snails (S). So, S = OG.
+7. From clue 7, we know that K is smoked by the person who likes yellow (Y). So, Y = K.
+8. From clue 8, we know that M is being drunk by the one in the middle, so we don't have any new information yet.
+9. From clue 9, we know that N is on the far left, but since we already assigned T and S, it must be N. So, N = U.
+10. From clue 10, we know that CF is on the left or right of the owner of the fox. But we don't know yet who has a fox as a pet.
+11. From clue 11, we know that K is to the left or right of the owner of the horse (H), but again, we don't know yet who has a horse as a pet.
+12. From clue 12, we know that LS drinks orange-juice (J). So, J = LS.
+13. From clue 13, we know that P is smoked by the Japanese (J). So, J = P.
+14. From clue 14, we know that N (Ukranian) is to the left or right of the person who likes blue (B), but again, we don't have any new information yet.
+
+Now let's find out which pet goes with whom:
+
+- Since Y = K and K is a cigar brand smoked by someone, that person can't be the one with a dog or horse as it contradicts other clues. So, neither D nor H has a yellow favorite color. Also, Y cannot be the favorite color of the person who likes green (C), as G = C and I = B which means G is not to the right of Y. Therefore, Y must belong to either R, I or B. However, since R = E, and E is already assigned, neither R nor I can have a yellow favorite color. So, B = Y.
+
+- Since P is smoked by J (Japanese), it means that the Japanese cannot be the owner of the dog or horse as it contradicts other clues. So, neither D nor H is Japanese. Therefore, J cannot have a favorite color of red (R) because R = E, and E is already assigned. Neither can J have an ivory favorite color (I) as I = B which means G is not to the right of I. Similarly, J can't have a yellow favorite color (Y) as Y = K which contradicts clue 10. Therefore, J must belong to either G, T or W. But since T = U and U is already assigned, neither T nor W can be the favorite color of the Japanese. So, J = G or T.
+
+- Since LS drinks orange-juice (J), it means that the Japanese cannot drink milk (M) as it contradicts other clues. Therefore, M can't be a favorite beverage of the Japanese. But we already assigned M to someone (N). So, N = U can't be drinking milk. It must be either C, T, J or W. However, since we know that C = G and T = U, neither C nor T can drink milk. Also, since J is already assigned to G or T, it also cannot drink milk. Therefore, there remains only one possibility: W = M (water).
+
+- Since W = M, it means that the person drinking water cannot be the English (R), Ukrainian (U) nor Japanese (G or T), as they have been already assigned. But we know that N is not the English, Ukrainian nor Japanese either. Therefore, it must be either red (R), green (G), ivory (I) or blue (B). However, since R and I are already assigned, the only possibility left is G = W.
+
+- Now, since G = W, it means that the person drinking water cannot be the owner of a dog or horse as it contradicts other clues. So, neither D nor H drinks water. Therefore, neither D nor H can be green (G) because G = W which means G is not to the right of I. Also, neither D nor H can have a yellow favorite color (Y) as Y = K which contradicts clue 10. Therefore, either D or H must belong to either R, I or B. But since R and I are already assigned, only B remains for D or H. However, since we know that N is not the English, Ukrainian nor Japanese, it must be either red (R), green (G), ivory (I) or blue (B). But since G = W, it means that B = D or B = H.
+
+- Since J is already assigned to G or T and M is assigned to W, there remains only one possibility left for the favorite beverage of the Japanese: J can drink milk (M). So, J = M.
+
+- Now, since J = M, it means that the Japanese cannot be the owner of a dog as it contradicts other clues. So, D is not Japanese. Therefore, either red (R) or blue (B) must be the favorite color of the Spanish. But since we know that R = E and B = Y, it's impossible for the Spanish to like either red or blue.
+
+- Now, since neither D nor H drinks water, they both have a different favorite beverage than G = W. Also, neither D nor H can be the English (R) or Ukrainian (U) because R and U are already assigned. Therefore, either D or H must belong to either I or B. But since we know that I = B, it's impossible for either D or H to like ivory.
+
+- Finally, since neither D nor H drinks water, they both have a different favorite beverage than G = W. Also, neither D nor H can be the English (R) or Ukrainian (U), and neither can like ivory (I). Therefore, the only possibility left is that both D and H have the same favorite beverage as each other but different from G = W. However, since we know that G = W, it's impossible for both D and H to drink the same beverage as each other or as G.
+
+In conclusion, there seems to be an inconsistency in the given clues which prevents us from finding a valid solution for this puzzle."	zebra:5
+Zebra_orig_NL_2	" This puzzle can be quite challenging due to its complexity, but let's break it down and solve step by step. Here's my solution for each variable:
+
+1. English likes red (Red:1)
+2. Spanish owns dog (Dog:2)
+3. Coffee drinker likes green (Green:3, Milk:4, Orange-juice:5, Tea:4, Water:5)
+4. Ukrainian drinks tea (Tea:4, so Ukrainian:4 as well)
+5. Green is to the right of Ivory (Ivory:6)
+6. Old-gold smoker owns snails (Snails:6, so Old-gold:6)
+7. Kools smoker likes yellow (Yellow:7, Cigars are unique and named already)
+8. Milk drinker is in the middle (Milk:4, so Middle:4)
+9. Norwegian is on the far left (Norwegian:1)
+10. Chesterfields smoker is left or right of Fox owner (Chesterfields:3,5; Fox owner is 2)
+11. Kools smoker is to the left or right of Horse owner (already determined as Kools:7)
+12. Lucky-strike smoker drinks orange-juice (Orange-juice:5, so Lucky-strike:5)
+13. Japanese smokes parliaments (Parliaments:8, so Japanese:8)
+14. Norwegian is to the left or right of Blue owner (Norwegian:1 and 5 are taken, so Blue owner must be 2 or 4, but since Green:3 and Ukrainian:4 are determined already, Blue can only be 2, so Blue:2)
+
+Now we have all the variables assigned except for Zebra. Since Norwegian (zebra owner) is on the far left (1), and English (Red owner) is at position 1, there's no room for zebra between them, so zebra must be at position 5 (Water drinker).
+
+Therefore, **Zebra:5**"	zebra:5
+Zebra_orig_NL_3	" This problem requires a systematic approach to solve it. Let's find out where each item belongs:
+
+1. English likes red (R)
+2. Spanish owns dog (D)
+3. Coffee drinker likes green (G)
+4. Ukrainian drinks tea (T)
+5. Green is to the right of Ivory (I), so there must be another color between G and I. Let's call this color Y, as it cannot be Red or Green because of points 1 and 3, nor Yellow since point 7 mentions someone who smokes Kools and likes yellow.
+6. Old-Gold smoker owns snails (S)
+7. Kools smoker likes yellow (Y), so this person is neither the coffee drinker nor the tea drinker due to points 3 and 4. Since the kools smoker cannot be on the far left (Norwegian) or in the middle (Milk drinker), they must be on the right of the person who likes blue, which implies that the japanese is not the kools smoker because point 13 says that Japanese smokes parliaments. So let's assume the kools smoker is K, and since K cannot be on the left of the horse owner (point 11), we know that the horse owner must be N (Norwegian) or P (person with blue). In this case, if K was to the right of N/P, it would violate point 4 (Ukrainian drinks tea), so K must be on the left of the horse owner. That means the horse owner is P (person with blue), so the japanese smokes parliaments.
+8. Milk drinker is in the middle.
+9. Norwegian is on the far left (N).
+10. Chesterfields smoker is on the left or right of fox owner (F) -> F can be N/P or D since K and C are already placed, but D cannot be the fox owner because there's no place for the horse owner to go. So let's assume F=D (fox owner = Spanish).
+11. Kools smoker is to the left or right of horse owner (H), so H cannot be N/P or K since we already placed them. That means H can only be I (ivory) or B (blue), but as mentioned earlier, if K was on the left of H, it would violate point 4 (Ukrainian drinks tea). So H must be I (ivory), and K must be on the left of H (Spanish).
+12. Lucky-strike smoker drinks orange juice (O) -> we know that O cannot be English since they like Red, so O can only be P or F, but since P already has a drink, O must be F (fox owner).
+13. Japanese smokes parliaments.
+14. Norwegian is to the left or right of person who likes blue -> the only option left for the blue lover is B (blue), and since we already placed N as far left, the blue lover must be on the right of N (B=Norwegian).
+
+Now that we know all the positions, we can place the pets. Since the English likes Red, they are either R or B, but as mentioned earlier, B is the blue lover. So R must be the English. The Spanish owns a dog (D), so D is the dog owner. The only options left for pets are S, H, K, and F, and since we already placed them in other categories, they cannot be pets. That means none of the listed people keep pets, or there's an error in the puzzle.
+
+In conclusion, it seems that there's an inconsistency in the puzzle as given, as it implies no one keeps a pet, which contradicts the initial setup."	zebra:5

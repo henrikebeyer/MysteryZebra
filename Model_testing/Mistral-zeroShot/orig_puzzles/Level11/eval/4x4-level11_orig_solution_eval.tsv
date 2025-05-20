@@ -1,0 +1,487 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv11-4x4-1	"Let's solve this step by step:
+
+1. We know that the tram driver is either to the left or right of the person with Sudoku as a hobby (#3). Let's assume the tram driver is to the left of Sudoku for now.
+
+2. The bus driver is to the left of the tram driver (#2).
+
+3. The frog owner is either to the left or right of the cola drinker (#3). Let's assume the frog owner is to the right of the cola drinker for now.
+
+4. The bird owner is to the left of the puzzles hobbyist (#4).
+
+5. The juice drinker is to the right of the cola drinker (#5).
+
+6. The cola drinker is between the hedgehog owner and the frog owner (#6). So, the cola drinker is either the hedgehog owner or between them. If the cola drinker is the hedgehog owner, then the frog owner must be in position 1 or 3. But position 1 is occupied by the tram driver (assumption from step 1), so the frog owner must be in position 3. If the cola drinker is not the hedgehog owner, then the cola drinker must be in position 2, and the hedgehog owner must be in position 4.
+
+7. The sprite drinker is in an odd position (#7). So, the sprite drinker can only be in position 1, 3, or 5. But position 1 is occupied by the tram driver (assumption from step 1), so the sprite drinker can't be in position 1. If the sprite drinker is in position 3, then the cola drinker must be the hedgehog owner (from point 6), which contradicts our assumption that the cola drinker is the tram driver (from step 1). So, the sprite drinker must be in position 5.
+
+8. The cola drinker is to the right of the boat driver (#8). But the boat driver can't be the cola drinker (from point 6), so the boat driver must be in position 4.
+
+9. The boat driver is not the collector (#9). So, the collector can't be in position 4 (where the boat driver is).
+
+10. The juice drinker is the owner of the chinchilla or the owner of the chinchilla is the person who's hobby is card-games or both (#10). If the juice drinker is the chinchilla owner, then the chinchilla owner can't be the tram driver (from step 12), so the juice drinker must be the chinchilla owner. If the chinchilla owner is the card-games person, then the card-games person can't be the cola drinker (from point 16), so the chinchilla owner must be the card-games person. In both cases, the chinchilla owner is the juice drinker.
+
+11. The hedgehog owner is between the frog owner and the bird owner (#11). But the frog owner is in position 3 (from point 6), and the bird owner is in position 2 (from point 4), so the hedgehog owner must be in position 4.
+
+12. The tram driver is not to the right of the chinchilla owner (the juice drinker) (#12). So, the tram driver can't be in position 5 (where the sprite drinker is). So, the tram driver must be in position 1.
+
+13. The tram driver is not the Sudoku person (from point 13). So, the Sudoku person can't be in position 1. The Sudoku person must be in position 2, 3, 4, or 5. But position 2 is occupied by the cola drinker (from point 16), position 3 is occupied by the frog owner (from point 3), position 4 is occupied by the boat driver (from point 8), and position 5 is occupied by the sprite drinker (from point 7). So, the Sudoku person can't be in any of these positions. This contradicts point 14. So, there's an error in the puzzle.
+
+Final solution table (assuming the error in point 14 is corrected):
+
+| Beverage    | Cola  | Juice | Soy-milk | Sprite |
+|------------|-------|-------|----------|--------|
+| Hobby       | Card-games | Sudoku | Puzzles  | Collecting |
+| Pet         | Hedgehog | Chinchilla | Bird   | Frog   |
+| Transport   | Boat  | Tram   | Scooter | Bus    |
+
+The error in the puzzle is that the person drinking cola can't be the person who's hobby is Sudoku (point 14)."	{'beverage': ['cola', 'juice', 'soy-milk', 'sprite'], 'hobby': ['card-games', 'sudoku', 'puzzles', 'collecting'], 'pet': ['hedgehog', 'chinchilla', 'bird', 'frog'], 'transport': ['boat', 'tram', 'scooter', 'bus']}	True	1	False
+Lv11-4x4-2	"Let's solve this step by step:
+
+1. From the parity rule, neither the lemonade drinker nor the dressmaker can be in position 1 or 3 (odd positions) since they have different parity positions. So, the dressmaker can only be in positions 2 or 4, and the lemonade can only be in positions 1, 3, or 4.
+
+2. Similarly, the pop fan cannot be in position 1 or 3, so the Mirinda drinker can only be in positions 1, 3, or 4. The pop fan can only be in positions 2 or 4.
+
+3. The doctor cannot be in position 4 because of the left-of rule with the fan reggae. So, the doctor can only be in positions 1, 2, or 3.
+
+4. The fan salsa cannot be in position 1 because of the left-of rule with the fan metal. So, the fan salsa can only be in positions 2, 3, or 4.
+
+5. The fan reggae cannot be in position 4 because of the left-of rule with the photographer. So, the fan reggae can only be in positions 1, 2, or 3.
+
+6. The fan salsa cannot be to the left of the fan reggae because of the right-of rule. So, the fan salsa can only be in position 4, and the fan reggae can only be in position 3.
+
+7. The fan reggae cannot be in position 1 because the person eating avocado must be in position 1 or 2 (from the left-of rule with the fan reggae), and the avocado eater cannot be the lemonade drinker (from rule 14). So, the fan reggae is in position 3, and the person eating avocado is in position 1.
+
+8. Now, the doctor cannot be in position 1 (from rule 3), so the doctor is in position 2 or 4. If the doctor is in position 2, then the Mirinda drinker must be in position 4 (from rule 5), and the blueberry eater must be in position 3 (from rule 13). But this violates rule 14 (the blueberry eater cannot be the lemonade drinker). So, the doctor is in position 4.
+
+9. The Mirinda drinker is in position 1 or 3 (from rule 2). If the Mirinda drinker is in position 1, then the blueberry eater must be in position 2 (from rule 13), but this violates rule 14. So, the Mirinda drinker is in position 3.
+
+10. The fan salsa is in position 4, and the fan metal is not in position 1 or 4 (from rule 11). So, the fan metal is in position 2 or 3. The dressmaker is between the 7up drinker and the fan metal (from rule 15). The 7up drinker cannot be in position 1 (from rule 1), so the 7up drinker is in position 2. This means the dressmaker is in position 3, and the fan metal is in position 1.
+
+11. The coffee drinker cannot be in position 4 (from rule 10), so the coffee drinker is in position 1, 2, or 3. The coffee drinker cannot be in position 1 (from rule 9), so the coffee drinker is in position 2 or 3. The photographer cannot be to the right of the coffee drinker (from rule 9), so the photographer is in position 1 or 2. If the photographer is in position 1, then the onion eater must be in position 4 (from rule 10), but this violates rule 13. So, the photographer is in position 2, and the onion eater is in position 4.
+
+12. The potato eater cannot be in position 4 (from rule 10), so the potato eater is in position 1, 2, or 3. The potato eater cannot be in position 1 (from rule 12), so the potato eater is in position 2 or 3. The Mirinda drinker is in position 3, so the potato eater is in position 2.
+
+13. The blueberry eater cannot be in position 4 (from rule 13), so the blueberry eater is in position 1 or 2. The blueberry eater cannot be in position 1 (from rule 14), so the blueberry eater is in position 2.
+
+14. The lemonade drinker cannot be in position 1 (from rule 1), so the lemonade drinker is in position 3 or 4. The lemonade drinker cannot be in position 4 (from rule 1), so the lemonade drinker is in position 3.
+
+Now, let's put the final solution table:
+
+| Beverage      |     1     |     2      |      3       |       4        |
+| Food          |           |            |              |                |
+| Job           |           |            |              |                |
+| Music-Genre   |           |            |              |                |
+
+| 7up           |           |   doctor    |              |                |
+| Avocado       |   avocado |           |              |                |
+| Job           |           |   photographer|              |                |
+| Music-Genre   |           |   metal     |              |                |
+
+| coffee        |           |           |              |   Mirinda      |
+| Onion         |           |           | onion        |                |
+| Job           |           |           |   police-officer|                |
+| Music-Genre   |           |           |   reggae     |                |
+
+| Lemonade      |   lemonade|           |              |                |
+| Potato        |           | potato    |              |                |
+| Job           |           |   dressmaker|              |                |
+| Music-Genre   |           |           |   salsa      |                |
+
+|               | blueberry |           |              |                |
+| Food          |           |           |              |                |
+| Job           |           |           |              |                |
+| Music-Genre   |   pop     |           |              |                |"	{'food': ['', '', '', ''], 'job': ['', '', '', '']}	False	0	False
+Lv11-4x4-3	"Let's solve this step by step:
+
+1. From rule 1, we know that the person who's hobby is dancing is to the left of the owner of the cat. Let's place them in positions 1, 2, 3, or 4. Since the hobby of dancing can't be in position 1 (because it's to the left of the cat owner), it must be in positions 2, 3, or 4.
+
+2. From rule 2, the person who's hobby is card-games is to the right of the fan of pop. Since the hobby of dancing is already placed, the hobby of card-games can't be in positions 1, 2, or 4. So, it must be in position 3.
+
+3. From rule 3, the fan of rock and the owner of the cat have the same parity positions. Since the hobby of card-games is in position 3 (an odd position), the fan of rock must be in position 1, 2, or 4. Let's place it in position 1 for now.
+
+4. From rule 4, the person drinking hot-chocolate is not to the left of the person drinking mirinda. Since the hobby of card-games is in position 3 and the fan of rock is in position 1, the person drinking hot-chocolate can't be in positions 1, 2, or 3. So, it must be in position 4.
+
+5. From rule 5, the owner of the horse is between the person drinking juice and the person drinking mirinda. Since the person drinking hot-chocolate is in position 4, the owner of the horse can't be in positions 1, 2, or 4. So, it must be in position 3.
+
+6. From rule 6, the person drinking 7up is to the right of the person who's hobby is cooking. Since the hobby of card-games is in position 3 and the person drinking hot-chocolate is in position 4, the person drinking 7up can't be in positions 1, 2, or 4. So, it must be in position 5.
+
+7. From rule 7, the owner of the dog and the fan of house have different parity positions. Since the hobby of card-games is in position 3 (an odd position), the owner of the dog must be in an even position. Since the person drinking 7up is in position 5 (an odd position), the owner of the dog can't be in position 5. So, it must be in position 2.
+
+8. From rule 8, the person who's hobby is card-games is in an even position. We already placed the hobby of card-games in position 3, which is an odd position. This rule is a contradiction, so there seems to be an error in the rules.
+
+9. From rule 9, the person who's hobby is dancing is the fan of pop or the owner of the dog or both. Since the hobby of dancing is already placed, this rule doesn't provide any new information.
+
+10. From rule 10, the person drinking mirinda is not to the right of the fan of house. Since the person drinking 7up is in position 5 and the owner of the horse is in position 3, the person drinking mirinda can't be in positions 4 or 5. So, it must be in position 1 or 2.
+
+11. From rule 11, the fan of pop is not to the right of the owner of the cat. Since the person drinking mirinda is in position 1 or 2, the fan of pop can't be in position 4. So, it must be in position 2.
+
+12. From rule 12, the person drinking mirinda is to the left of the person drinking hot-chocolate. Since the person drinking mirinda is in position 1 or 2 and the person drinking hot-chocolate is in position 4, the person drinking mirinda must be in position 1.
+
+13. From rule 13, the fan of funk and the person drinking 7up have different parity positions. Since the person drinking 7up is in position 5 (an odd position), the fan of funk must be in an even position. Since the fan of pop is in position 2 (an even position), the fan of funk can't be in position 2. So, it must be in position 4.
+
+14. From rule 14, the fan of pop is to the right of the fan of rock. Since the fan of pop is in position 2 and the fan of rock is in position 1, the fan of rock must be in position 3.
+
+15. From rule 15, the owner of the horse is not to the left of the fan of pop. Since the fan of pop is in position 2 and the owner of the horse is in position 3, this rule is satisfied.
+
+16. From rule 16, the person drinking 7up is to the left of the person drinking mirinda. Since the person drinking 7up is in position 5 and the person drinking mirinda is in position 1, this rule is satisfied.
+
+Now, let's put the final solution table:
+
+|               |    1    |    2    |     3     |       4       |
+| Beverage      | mirinda | pop     | rock      | hot-chocolate |
+| Hobby         | dancing | card-games| cooking  | gardening     |
+| Music-Genre   | funk    | house    | rock      | pop           |
+| Pet           | horse   | dog      | cat       | bird          |
+
+However, there seems to be an error in rule 8, as it contradicts the placement of the hobby of card-games. The given rules might need to be revised."	{'beverage': ['mirinda', 'pop', 'rock', 'hot-chocolate'], 'hobby': ['dancing', 'card-games', 'cooking', 'gardening'], 'music-genre': ['funk', 'house', 'rock', 'pop'], 'pet': ['horse', 'dog', 'cat', 'bird']}	True	3	False
+Lv11-4x4-4	"Let's solve this step by step:
+
+1. We can start by placing the person who's sport is skateboarding in the first column (1) because the owner of the goldfish, who can't be the skateboarder, must be in one of the other columns.
+
+2. Since the person who's sport is volleyball is to the right of the person driving the roller, the roller can't be in the first column (1), so it must be in column 2, 3, or 4. Let's place it in column 2 for now.
+
+3. The person who's sport is water-polo is to the right of the person who's sport is skateboarding, so it must be in column 3 or 4. Let's place it in column 3 for now.
+
+4. The person driving the boat can be the person eating carrot or the owner of the turtle is the person driving the boat or both. If the person eating carrot is in column 1, then the turtle owner must be in column 2, 3, or 4. But since the turtle owner can't be the skateboarder or the water-polo player, they can only be in column 2 or 4. If the turtle owner is in column 2, then the person eating carrot must be in column 1. If the turtle owner is in column 4, then the person eating carrot can be in any column. Let's place the turtle owner in column 4 for now and the person eating carrot in column 1.
+
+5. The owner of the rabbit and the person driving the jet-ski have the same parity positions. Since the rabbit can't be in the first column (1) because the skateboarder is there, it must be in an even-numbered column (2, 4). The jet-ski can't be in the first column (1) either, so it must be in an odd-numbered column (3). So, the rabbit is in column 2 and the jet-ski is in column 3.
+
+6. The owner of the rabbit and the person driving the jet-ski have the same parity positions, so the person driving the jet-ski must be in column 2.
+
+7. The person driving the skateboard is on the far right, so it must be in column 4.
+
+8. The person eating tomato is to the left of the owner of the snake, so the snake can't be in the last column (4). It must be in column 1, 2, or 3. Since the skateboarder is in column 4, the snake can't be in column 4. If the snake is in column 1, then the person eating tomato must be in column 2. If the snake is in column 2, then the person eating tomato must be in column 1. If the snake is in column 3, then the person eating tomato can be in any column. Let's place the snake in column 3 for now and the person eating tomato in column 1.
+
+9. The person driving the skateboard is on the far right, so it's already placed.
+
+10. The person who's sport is climbing is on the left of the person eating nectarine. Since the skateboarder is on the far right, the nectarine eater must be in column 1, 2, or 3. The only available spot on the left of the nectarine eater is column 1, so the climber must be in column 2.
+
+11. The person driving the jet-ski is to the left of the person eating carrot, so the person eating carrot must be in column 2 or 3. But since the skateboarder is on the far right, the person eating carrot can't be in column 4. So, the person eating carrot must be in column 2.
+
+12. The owner of the goldfish is on the left or right of the person who's sport is volleyball. Since the volleyball player is in column 2, the goldfish owner can be in column 1 or 3. But since the skateboarder is on the far right, the goldfish owner can't be in column 4. So, the goldfish owner must be in column 1.
+
+Now, let's put the pets and the sports:
+
+|             |    1     |       2       |     3      |     4      |
+| Food        | Carrot   | Tomato       | Nectarine  |            |
+| Pet         | Goldfish | Rabbit       | Snake      | Turtle     |
+| Sport       | Climbing | Volleyball    | Water-polo  | Skateboarding|
+| Transport   | Boat     | Jet-ski      |            | Skateboard  |
+
+The person driving the roller is not specified, but since it's in column 2, it could be any transport.
+
+Final solution table:
+
+#############
+|             |    1     |       2       |     3      |     4      |
+| Food        | Carrot   | Tomato       | Nectarine  |            |
+| Pet         | Goldfish | Rabbit       | Snake      | Turtle     |
+| Sport       | Climbing | Volleyball    | Water-polo  | Skateboarding|
+| Transport   | Boat     | Jet-ski      |            | Skateboard  |
+#############"	{'food': ['carrot', 'tomato', 'nectarine', ''], 'pet': ['goldfish', 'rabbit', 'snake', 'turtle'], 'sport': ['climbing', 'volleyball', 'water-polo', 'skateboarding'], 'transport': ['boat', 'jet-ski', '', 'skateboard']}	True	2	False
+Lv11-4x4-5	"Let's solve this step by step:
+
+1. Since there are 4 people and 4 sports, the person playing handball cannot be in the first column (as there's no one to the left). So, handball must be in columns 2, 3, or 4. Let's assume handball is in column 2 for now.
+
+2. Since the person drinking fanta is on the far right, fanta cannot be in column 2 (as handball is there). So, fanta must be in columns 1, 3, or 4. Let's assume fanta is in column 3 for now.
+
+3. The architect is the person who's sport is snowboarding or the person who's sport is snowboarding is the person drinking fanta, but not both. Since we have assumed fanta is in column 3, the architect cannot be in column 3. So, the architect must be in columns 1, 2, or 4. Let's assume the architect is in column 1 for now.
+
+4. The brazilian is on the right of the person who's sport is handball. Since we have assumed handball is in column 2, the brazilian cannot be in column 1 (as there's no one to the right). So, the brazilian must be in columns 2, 3, or 4. Let's assume the brazilian is in column 4 for now.
+
+5. The person drinking fanta is on the left or right of the brazilian. Since we have assumed the brazilian is in column 4, fanta cannot be in column 1 (as there's no one to the left). So, fanta must be in column 3.
+
+6. The person who's sport is handball is the person drinking sprite or the person who's sport is handball is the brazilian or both. Since we have assumed handball is in column 2 and fanta is in column 3, the person drinking sprite must be in column 2.
+
+7. The architect is in column 1. So, the jobs are: architect (1), pilot (2), project-manager (3), security-guard (4).
+
+8. The nationalities are: brazilian (4), egyptian (1), italian (3), nigerian (2). Since the security-guard is the nigerian, the nationalities are: brazilian (4), egyptian (1), italian (3), nigerian (2) and the jobs are: architect (1), pilot (2), project-manager (3), security-guard (4).
+
+9. The person who's sport is rugby and the pilot have the same parity positions. Since the pilot is in an odd position (2), the person playing rugby must also be in an odd position. The only odd positions left are 1 and 3. Since the architect is in position 1, the person playing rugby must be in position 3.
+
+10. The brazilian is on the left or right of the project-manager. Since the brazilian is in position 4 and the project-manager is in an odd position (3), the brazilian must be to the right of the project-manager.
+
+11. The security-guard is the nigerian. So, the nationalities are: brazilian (4), egyptian (1), italian (3), nigerian (2) and the jobs are: architect (1), pilot (2), project-manager (3), security-guard (4).
+
+12. The person who's sport is handball is the pilot or the pilot is the person drinking fanta, but not both. Since we have assumed the person drinking fanta is in position 3 and the person playing handball is in position 2, the pilot must be in position 2.
+
+13. The person who's sport is rugby is in position 3. So, the sports are: handball (2), rugby (3), skateboarding (1), snowboarding (4).
+
+14. The brazilian is on the right of the person who's sport is handball. Since the brazilian is in position 4 and the person playing handball is in position 2, the person playing skateboarding must be in position 1.
+
+15. The architect is the person who's sport is snowboarding or the person who's sport is snowboarding is the person drinking fanta, but not both. Since we have assumed the person drinking fanta is in position 3 and the person playing snowboarding must be in an even position (4), the architect must be in position 1.
+
+So, the final solution table is:
+
+|               |       1        |        2        |      3       |    4     |
+| Beverage      | fanta          | sprite          | hot-chocolate | water    |
+| Job           | architect      | pilot            | project-manager | security-guard |
+| Nationality   | italian        | brazilian       | egyptian      | nigerian   |
+| Sport         | skateboarding   | handball         | rugby         | snowboarding |"	{'beverage': ['fanta', 'sprite', 'hot-chocolate', 'water'], 'job': ['architect', 'pilot', 'project-manager', 'security-guard'], 'nationality': ['italian', 'brazilian', 'egyptian', 'nigerian']}	False	0	False
+Lv11-4x4-6	"Let's solve this step by step:
+
+1. From rule 1, we know that the fan rock is either in position 1 or 2, and the fan punk is in position 3, 4, 5, or 6.
+2. From rule 2, the Canadian cannot be in position 1, so the Canadian is in position 2, 4, 5, or 6. Since the Canadian cannot be the librarian (rule 12), the Canadian cannot be in position 4 (as it would leave only one position for the librarian, which is a contradiction). So, the Canadian is in position 2, 5, or 6.
+3. From rule 3, the person who's hobby is rock-climbing is not the librarian, so the rock-climber cannot be in position 2 (as it would leave only one position for the librarian). So, the rock-climber is in position 1, 3, 4, 5, or 6.
+4. From rule 4, the fan techno is not in an even position, so the fan techno is in position 1, 3, or 5.
+5. From rule 5, the fan rock is the Spanish or the dressmaker or both. Since the fan rock is already placed in position 1 or 2, the Spanish or the dressmaker must be in position 3, 4, or 5.
+6. From rule 6, the fan techno is not in position 2 (as it would leave only one position for the fan rock, which is a contradiction). So, the fan techno is in position 1, 3, or 5.
+7. From rule 7, the Brazilian is not the fan techno, so the Brazilian is in position 1, 3, 4, or 6.
+8. From rule 8, the person who's hobby is board-games is to the left of the Spanish. Since the Spanish is in position 1, 3, 4, or 6, the board-games person is in position 1, 2, or 4.
+9. From rule 9, the fan punk is between the librarian and the dressmaker. Since the Canadian is not the librarian (rule 12), the librarian is in position 1, 3, 4, or 5. If the librarian is in position 1, the fan punk would be in position 2, and the dressmaker would be in position 3, 4, or 5. If the librarian is in position 3, the fan punk would be in position 4, and the dressmaker would be in position 1, 2, or 5. If the librarian is in position 4, the fan punk would be in position 5, and the dressmaker would be in position 1, 2, or 3. If the librarian is in position 5, the fan punk would be in position 6, and the dressmaker would be in position 1, 2, 3, or 4.
+10. From rule 10, the person who's hobby is board-games is not the fan hip-hop. Since the board-games person is in position 1, 2, or 4, the fan hip-hop is in position 3 or 5.
+11. From rule 11, the indonesian and the person who's hobby is collecting have the same parity positions. Since the Indonesian is not in position 1 (as it would leave only one position for the board-games person, which is a contradiction), the Indonesian is in position 3 or 5. If the Indonesian is in position 3, the person who's hobby is collecting is in position 4 or 6. If the Indonesian is in position 5, the person who's hobby is collecting is in position 1, 2, or 6.
+12. From rule 13, the manager and the fan hip-hop have the same parity positions. Since the manager is not in position 1 (as it would leave only one position for the board-games person, which is a contradiction), the manager is in position 3 or 5. If the manager is in position 3, the fan hip-hop is in position 4 or 6. If the manager is in position 5, the fan hip-hop is in position 1, 2, or 4.
+13. From rule 14, the fan punk is to the left of the fan techno. Since the fan techno is in position 1, 3, or 5, the fan punk is in position 2, 4, or 6.
+14. From rule 15, the manager is on the far left or far right. Since the manager is in position 3 or 5, the manager is in position 5.
+15. From rule 16, the person who's hobby is writing is not to the left of the person who's hobby is rock-climbing. Since the rock-climber is in position 1, 3, 4, or 5, the person who's hobby is writing is in position 2, 4, or 6.
+16. From rule 17, the person who's hobby is rock-climbing is not to the right of the person who's hobby is writing. Since the person who's hobby is writing is in position 2, 4, or 6, the person who's hobby is rock-climbing is in position 1, 3, or 5. But we already know that the rock-climber is in position 5 (from rule 14 and 15), so the person who's hobby is writing is in position 6.
+17. From rule 18, the fan punk and the Brazilian have the same parity positions. Since the fan punk is in position 2, 4, or 6, the Brazilian is in position 2, 4, or 6. But we already know that the Brazilian is in position 2 (from rule 2), so the fan punk is in position 4 or 6.
+18. From rule 9, the fan punk is between the librarian and the dressmaker. Since the librarian is in position 5 and the dressmaker is in position 1, the fan punk is in position 3.
+
+Final solution table:
+
+|               |       1       |       2        |     3     |     4      |
+| Hobby         | Rock-climbing | Board-games   | Fan Punk   | Fan Techno |
+| Job           | Security-Guard| Librarian     | Manager    | Dressmaker  |
+| Music-Genre   |               |                | Hip-Hop    | Techno     |
+| Nationality   | Indonesian    | Brazilian      | Canadian   | Spanish    |"	{'hobby': ['rock-climbing', 'board-games', 'fan punk', 'fan techno'], 'job': ['security-guard', 'librarian', 'manager', 'dressmaker'], 'music-genre': ['', '', 'hip-hop', 'techno']}	False	0	False
+Lv11-4x4-7	"Let's solve this step by step:
+
+1. We know that the person eating lettuce is not the owner of the hedgehog. Let's assign the hedgehog to the person in position 1 (since we know the person eating lettuce can't be there).
+
+2. The person watching scientific movies is on the left or right of the person watching musical movies. Since the scientific movies are on the far left (rule 5), the musical movies must be on the right. Let's assign musical movies to position 4.
+
+3. The owner of the horse is not to the left of the person eating mango. Since the hedgehog and musical movies are already assigned, the horse can't be in position 1, 2, or 3. So, let's assign the horse to position 4 (since the musical movies are there). This means the person eating mango is in position 3.
+
+4. The indian and the person watching spy movies have different parity positions. Since the horse (and thus the person eating mango) is in an odd position (rule 10), the person watching spy movies must be in an even position. So, let's assign spy movies to position 2. This means the indian is in position 1.
+
+5. The nigerian is not the person watching musical movies (rule 8). Since musical movies are in position 4, the nigerian can't be in positions 1, 2, or 3. Let's assign the nigerian to position 4 (since musical movies are not there). This means the person watching mystery movies is in position 4.
+
+6. The mexican is somewhere to the right of the owner of the mouse (rule 6). Since the hedgehog and horse are already assigned, the mouse can only be in positions 1, 2, or 3. Let's assign the mouse to position 2. This means the mexican is in position 3 or 4.
+
+7. The person watching mystery movies is on the left or right of the mexican (rule 16). Since the mexican is in position 3 or 4, the mystery movies must be in position 1 or 2. Let's assign mystery movies to position 1. This means the mexican is in position 3.
+
+8. The owner of the chinchilla and the person watching spy movies have the same parity positions (rule 9). Since the person watching spy movies is in an even position (rule 4), the chinchilla must be in an even position. Since the hedgehog, horse, and mouse are already assigned, the chinchilla can only be in position 2 or 4. But the chinchilla can't be in position 2 because the mexican is there (rule 6). So, the chinchilla is in position 4. This means the person watching spy movies is in position 2.
+
+9. The person eating strawberry is on the far left (rule 12). Since the indian, hedgehog, horse, chinchilla, and mystery movies are already assigned, the person eating strawberry must be in position 1.
+
+10. The person watching musical movies is the person eating mango or the polish is the person watching musical movies or both (rule 11). Since the person eating mango is in position 3, the polish must be in position 4 (since the person watching musical movies is already assigned).
+
+So, the final solution table is:
+
+|               |     1      |    2    |    3    |     4      |
+| Food          | strawberry | mango   |         | musical    |
+| Movie-Genre   |            |         | mystery  |            |
+| Nationality   | indian     |         | polish   | nigerian   |
+| Pet           |            | hedgehog | horse    | chinchilla  |"	{'food': ['strawberry', 'mango', '', 'musical'], 'movie-genre': ['', '', 'mystery', ''], 'nationality': ['indian', '', 'polish', 'nigerian']}	False	0	False
+Lv11-4x4-8	"Let's solve this step by step:
+
+1. From rule 1, we know that the traveler is either watching musical movies or is the librarian, or both. Since they can't be both (as they have different hobbies), let's assume the traveler is the librarian and watches crime movies (this satisfies both conditions).
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      |             |
+   | ?     | ?     | ?          |             |
+   | ?     | ?     | ?          |             |
+   | ?     | ?     | ?          |             |
+
+2. From rule 2, the fan of punk and the person watching scientific movies have different parity positions. Since we already have one person (the librarian), let's assume the fan of punk is in position 1. The person watching scientific movies must then be in an even position (position 2, 4, or 6).
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | ?     | ?     | Scientific | ?          |
+   | ?     | ?     | ?          | ?          |
+   | ?     | ?     | ?          | ?          |
+
+3. From rule 3, the person who enjoys skydiving is to the right of the person watching romance movies. Since we know the librarian watches crime movies, the person watching romance movies must be in position 2, 3, or 5. Let's place them in position 2 for now.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| ?     | ?          | ?          |
+   | ?     | ?     | Scientific | ?          |
+   | ?     | ?     | ?          | ?          |
+
+4. From rule 4, the person watching musical movies and the person who's hobby is traveling have the same parity positions. Since we placed the traveler in position 2, the person watching musical movies must be in an odd position (position 1, 3, or 5). Let's place them in position 1 for now.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| ?     | ?          | ?          |
+   | Musical| ?     | ?          | ?          |
+   | ?     | ?     | Scientific | ?          |
+
+5. From rule 5, the person watching scientific movies is not to the left of the person watching crime movies. Since we placed the person watching crime movies in position 2, the person watching scientific movies must be in position 4 or 6. Let's place them in position 4 for now.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| ?     | ?          | ?          |
+   | Musical| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | ?          |
+
+6. From rule 6, the musician is on the far right. Since we have only 5 positions left, the musician must be in position 5.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| ?     | ?          | ?          |
+   | Musical| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | Music      |
+
+7. From rule 7, the person watching romance movies is not the fan of gospel. Since we have only one fan of gospel left (the person watching crime movies), the person watching romance movies must be the mechanic (as the teacher and librarian are already taken).
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| Mechanic | ?          | ?          |
+   | Musical| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | Music      |
+
+8. From rule 8, the fan of punk is on the left or right of the fan of trance. Since we placed the fan of punk in position 1 and the fan of trance in position 5, the fan of trance must be in position 3.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| Mechanic | ?          | ?          |
+   | ?     | ?     | ?          | Trance     |
+   | Scientific| ?     | ?          | Music      |
+
+9. From rule 9, the person who's hobby is traveling is on the left of the person watching crime movies. Since we placed the traveler in position 2 and the person watching crime movies in position 2, this rule is already satisfied.
+
+10. From rule 10, the person watching musical movies is in an odd position. Since we placed the person watching musical movies in position 1, this rule is already satisfied.
+
+11. From rule 11, the mechanic is somewhere to the right of the teacher. Since we placed the mechanic in position 2 and the teacher in position 3, this rule is already satisfied.
+
+12. From rule 12, the fan of trance is somewhere to the right of the person watching crime movies. Since we placed the person watching crime movies in position 2 and the fan of trance in position 3, this rule is already satisfied.
+
+13. From rule 13, the mechanic is not to the left of the person who's hobby is traveling. Since we placed the mechanic in position 2 and the traveler in position 1, this rule is already satisfied.
+
+14. From rule 14, the person who's hobby is traveling is somewhere to the left of the teacher. Since we placed the traveler in position 1 and the teacher in position 3, this rule is already satisfied.
+
+15. From rule 15, the person who's hobby is skydiving is on the left or right of the person who's hobby is collecting. Since we have not placed the person who's hobby is collecting yet, let's place them in position 4 for now.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| Mechanic | ?          | ?          |
+   | ?     | ?     | ?          | Trance     |
+   | Collecting| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | Music      |
+
+16. From rule 16, the person who's hobby is skydiving is on the left of the person watching musical movies. Since we placed the person watching musical movies in position 1 and we have not placed the person who's hobby is skydiving yet, let's place them in position 4.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Romance| Mechanic | ?          | ?          |
+   | Skydiving| ?     | ?          | ?          |
+   | Collecting| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | Music      |
+
+17. From rule 17, the person watching crime movies is the fan of gospel. Since we placed the person watching crime movies in position 2 and we have not placed the fan of gospel yet, let's place them in position 2.
+
+   | Hobby | Job | Movie-Genre | Music-Genre |
+   |-------|-----|------------|-------------|
+   | Travel| Librarian| Crime      | Punk       |
+   | Gospel| ?     | Crime      | ?          |
+   | Skydiving| ?     | ?          | ?          |
+   | Collecting| ?     | ?          | ?          |
+   | Scientific| ?     | ?          | Music      |
+
+Now we have a contradiction because the person watching crime movies (the fan of gospel) is also the librarian, but the librarian is already placed in position 1. This means the puzzle has no solution with the given conditions.
+
+Final solution table:
+
+#############
+| Hobby | Job | Movie-Genre | Music-Genre |
+|-------|-----|------------|-------------|
+| Travel| Librarian| Crime      | Punk       |
+| Gospel| ?     | Crime      | ?          |
+| Skydiving| ?     | ?          | ?          |
+| Collecting| ?     | ?          | ?          |
+| Scientific| ?     | ?          | Music      |
+#############"	{'hobby': ['job', 'movie-genre', 'music-genre'], 'travel': ['librarian', 'crime', 'punk'], 'gospel': ['?', 'crime', '?'], 'skydiving': ['?', '?', '?'], 'collecting': ['?', '?', '?'], 'scientific': ['?', '?', 'music']}	False	0	False
+Lv11-4x4-9	"Let's solve this step by step:
+
+1. We know that the people have 4 different hobbies, movie-genres, music-genres, and means of transport. Let's assign them numbers from 1 to 4 for each category.
+
+2. From rule 1, we know that the person watching romance movies is not the person driving the jet-ski and the jet-ski driver is either an electronic music fan or not. Let's assign the jet-ski driver as hobby number 3 and the romance movie watcher as hobby number 2.
+
+3. From rule 2, the jet-ski driver is either to the left or right of the person watching scientific movies. Since the jet-ski driver is hobby number 3, let's assign the scientific movie watcher as hobby number 1.
+
+4. From rule 3, the jet-ski driver is between the metal and indie music fans. Since the jet-ski driver is hobby number 3, the metal fan must be hobby number 4 and the indie fan must be hobby number 2 or 4 (not 1 or 3).
+
+5. From rule 4, the metal fan is to the right of the person watching romance movies. Since the romance movie watcher is hobby number 2, the metal fan must be hobby number 4.
+
+6. From rule 5, the person who's hobby is traveling is the person watching romance movies. So, hobby number 2 is traveling.
+
+7. From rule 6, the person who's hobby is cooking is on the left of the person who's hobby is traveling. So, hobby number 1 is cooking.
+
+8. From rule 7, the person watching documentary movies is not to the right of the person watching romance movies. Since the romance movie watcher is hobby number 2, the documentary movie watcher must be hobby number 1, 3, or 4 (not 2).
+
+9. From rule 8, the person who's hobby is reading is the person driving the skateboard or the person watching documentary movies is the person who's hobby is reading or both. Since the documentary movie watcher can't be hobby number 2, it must be hobby number 1, 3, or 4. Let's assume it's hobby number 1 for now. So, the skateboard driver is hobby number 1 (reading).
+
+10. From rule 10, the person who's hobby is reading is not to the right of the person who's hobby is drawing. Since the reading person is hobby number 1, the drawing person must be hobby number 2, 3, or 4 (not 1).
+
+11. From rule 11, the fan electronic is the person who's hobby is cooking or the person watching western movies is the fan electronic or both. Since the cooking person is hobby number 1, the fan electronic can't be hobby number 1. So, the fan electronic must be hobby number 2, 3, or 4. Let's assume it's hobby number 3 for now. So, the western movie watcher is hobby number 3 (electronic).
+
+12. From rule 12, the person watching documentary movies is not to the left of the fan indie. Since the indie fan is hobby number 2 or 4, the documentary movie watcher can't be hobby number 1. So, the documentary movie watcher must be hobby number 3 or 4. But since the documentary movie watcher can't be hobby number 2 (from rule 8), it must be hobby number 4.
+
+13. From rule 13, the bus driver is on the left or right of the person who's hobby is reading. Since the reading person is hobby number 1, the bus driver can't be hobby number 1. So, the bus driver must be hobby number 2, 3, or 4. But since the bus driver can't be hobby number 3 (from rule 9), it must be hobby number 2 or 4. Since the bus driver can't be hobby number 2 (from rule 6), it must be hobby number 4.
+
+14. From rule 14, the fan indie is somewhere to the right of the person who's hobby is reading. But we already assigned the reading person as hobby number 1. So, this rule is contradictory and can't be true.
+
+Since we have a contradiction, the puzzle has an inconsistency and can't be solved with the given rules.
+
+Final solution table:
+
+|               |     1      |      2      |     3     |     4      |
+| Hobby         | Cooking    | Traveling   | Electronic| Reading    |
+| Movie-Genre   | Documentary| Romance     | Western   | Scientific  |
+| Music-Genre   | Not given  | Not given   | Not given | Indie      |
+| Transport     | Bus        | Jet-ski     | Skateboard| Trike      |
+
+Please note that the Music-Genre and the Transport columns are not filled because they are not determined by the given rules."	{'hobby': ['cooking', 'traveling', 'electronic', 'reading'], 'movie-genre': ['documentary', 'romance', 'western', 'scientific'], 'music-genre': ['not given', 'not given', 'not given', 'indie'], 'transport': ['bus', 'jet-ski', 'skateboard', 'trike']}	True	2	False
+Lv11-4x4-10	"Let's solve this step by step:
+
+1. Since there are 4 people, the paramedic and the person driving the subway cannot be in the same position (odd and even positions). Let's assume the paramedic is in position 1 (odd) and the subway driver is in position 2 (even).
+
+2. The owner of the snake is in position 3 (since the owner of the snake is to the right of the subway driver).
+
+3. The owner of the fish is to the right of the owner of the ferret. Since the owner of the snake is already in position 3, the owner of the ferret must be in position 1 or 2. However, we know the paramedic is in position 1, so the owner of the ferret must be in position 2. This means the owner of the fish is in position 4.
+
+4. The lawyer cannot have rock-climbing as a hobby, so it must be one of the remaining hobbies: cooking, reading, or skydiving. Let's assume the lawyer has the hobby of reading (position 3).
+
+5. The person who's hobby is cooking must be to the right of the person who's hobby is rock-climbing. Since the lawyer has the hobby of reading, the person who's hobby is cooking must be in position 4.
+
+6. The person who's hobby is skydiving must be in position 1 (far left or far right, and we've already placed the lawyer and the owner of the ferret in positions 2 and 4, respectively).
+
+7. The owner of the turtle cannot be to the right of the person who's hobby is skydiving, so the owner of the turtle must be in position 2 (subway driver). However, this contradicts our initial assumption that the subway driver has a different parity position from the paramedic. So, the owner of the turtle must have the hobby of skydiving (position 1).
+
+8. The fisherman must be between the owner of the snake and the paramedic. Since the owner of the snake is in position 3 and the paramedic is in position 1, the fisherman must be in position 2 (subway driver). This means the owner of the turtle cannot be the subway driver, so the owner of the turtle must have the hobby of skydiving.
+
+9. The person who's hobby is reading is somewhere between the lawyer and the person who's hobby is cooking. Since the lawyer is in position 3 and the person who's hobby is cooking is in position 4, the person who's hobby is reading must be in position 2 (subway driver). This contradicts our previous conclusion that the subway driver is the fisherman. So, the person who's hobby is reading must be in position 1 (skydiving).
+
+10. The paramedic is the person driving the roller or the paramedic is the person who's hobby is cooking or both. Since we've already placed the paramedic in position 1 (skydiving), this condition is not met. This means the paramedic must be in position 4 (cooking).
+
+11. The owner of the ferret is the person who's hobby is rock-climbing or the owner of the ferret is the person driving the roller or both. Since we've already placed the owner of the ferret in position 2 (subway driver), this condition is not met. This means the owner of the ferret must be in position 3 (rock-climbing).
+
+12. The person driving the ship is the person who's hobby is reading or the person who's hobby is reading is the lawyer or both. Since we've already placed the person who's hobby is reading in position 1 (skydiving), this condition is not met. This means the person driving the ship must be the lawyer (position 3).
+
+13. The person who's hobby is cooking is on the right of the person who's hobby is rock-climbing. Since we've already placed the person who's hobby is cooking in position 4 and the person who's hobby is rock-climbing in position 3, this condition is met.
+
+14. The person driving the van is the person who's hobby is skydiving or the person who's hobby is skydiving is the owner of the turtle or both. Since we've already placed the person who's hobby is skydiving in position 1, this condition is not met. This means the person driving the van must be the owner of the turtle (position 2).
+
+The final solution table is:
+
+|             |     1     |    2     |       3       |     4     |
+| Hobby       | Skydiving | Turtle   | Rock-climbing | Cooking   |
+| Job         | Paramedic | Subway   | Lawyer       | Fisherman |
+| Pet         | Turtle   | Ferret   |              |           |
+| Transport   | Roller   | Van      | Ship         |           |
+
+However, there seems to be a contradiction in the conditions 10 and 15 for the paramedic and the owner of the ferret. I'm unable to resolve this contradiction with the given conditions. The puzzle might have an error or additional information is needed to solve it correctly."	{'hobby': ['skydiving', 'turtle', 'rock-climbing', 'cooking'], 'job': ['paramedic', 'subway', 'lawyer', 'fisherman'], 'pet': ['turtle', 'ferret', '', ''], 'transport': ['roller', 'van', 'ship', '']}	True	4	False

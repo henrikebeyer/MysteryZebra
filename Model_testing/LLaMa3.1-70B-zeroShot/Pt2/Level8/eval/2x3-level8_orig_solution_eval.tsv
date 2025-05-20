@@ -1,0 +1,406 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Lv8-2x3-1	"Let's break down the clues:
+
+From clue 1, we know that the car driver is not to the left of the quad-bike driver.
+
+From clue 3, we know that the quad-bike driver is between the architect and the journalist. This means that the architect must be to the left of the quad-bike driver, and the journalist must be to the right.
+
+Combining these two clues, we can conclude that:
+
+* The architect drives a car (since they are to the left of the quad-bike driver)
+* The journalist drives a motorbike (since they are to the right of the quad-bike driver)
+
+The remaining job is the analyst, who must drive the quad-bike.
+
+So, the solution table is:
+
+
+#############
+
+|             |     1     |     2     |     3      |
+| Job         | Architect | Analyst   | Journalist |
+| Transport   | Car       | Quad-bike | Motorbike |
+
+#############"	{'job': ['architect', 'analyst', 'journalist'], 'transport': ['car', 'quad-bike', 'motorbike']}	True	4	False
+Lv8-2x3-2	"Let's break down the clues and try to solve the puzzle.
+
+From clue 1, we know that the person drinking cola is between the person drinking tea and the owner of the chinchilla. This means that either:
+
+* Tea - Cola - Chinchilla
+* Chinchilla - Cola - Tea
+
+We don't know which order yet, but this helps narrow it down.
+
+From clue 2, we know that the owner of the turtle is on the left or right of the person drinking tea. This means that either:
+
+* Turtle - Tea - ...
+* ... - Tea - Turtle
+
+Again, we don't know which order yet, but this helps narrow it down.
+
+From clue 3, we know that the owner of the rat is not to the right of the person drinking cola. This means that if Cola is in position 2, Rat cannot be in position 3.
+
+Let's try to combine these clues. Suppose Tea is in position 1 (since Turtle has to be on one side or the other). Then we have:
+
+* Tea - ? - ?
+
+If Cola is in position 2, then Chinchilla must be in position 3 (from clue 1). But then Rat would have to be in position 1 (contradicting our assumption that Tea is in position 1).
+
+So, let's try the other possibility: Cola is not in position 2. Suppose Cola is in position 1 (with Turtle or Chinchilla on one side and Tea on the other). Then we have:
+
+* Cola - ? - ?
+
+If Tea is in position 3, then Rat would have to be in position 2 (contradicting clue 3).
+
+So, let's try the final possibility: Cola is in position 2, but not with Chinchilla on one side and Tea on the other. Suppose we have:
+
+* Turtle - Cola - ?
+* ... or ...
+* ? - Cola - Turtle
+
+In either case, Tea must be in position 1 (since it can't be next to Turtle). Then Chinchilla must be in position 3 (from clue 1).
+
+The only remaining pet is Rat, which cannot be on the right of Cola (clue 3). So, Rat must be the owner of the person drinking Soy-milk.
+
+Here's the final solution:
+
+
+#############
+|            |  1  |   2    |     3      |
+| Beverage   | Tea |  Cola  | Soy-milk  |
+| Pet        | Rat | Turtle | Chinchilla|
+#############"	{'beverage': ['tea', 'cola', 'soy-milk'], 'pet': ['rat', 'turtle', 'chinchilla']}	True	6	True
+Lv8-2x3-3	"Let's analyze the clues:
+
+From clue 2, we know the order is: cauliflower, strawberry, bus (since strawberry is between cauliflower and bus)
+
+From clue 4, we know the order is: bus, strawberry
+
+Combining these two, we get: cauliflower, bus, strawberry
+
+Now, let's consider the transport for each person:
+
+From clue 1, we know the person eating cauliflower is not to the left of the person driving the car. This means the car must be on the right side of the table.
+
+From clue 3, we know the person eating strawberry is not to the left of the person driving the subway. Since strawberry is already placed in the middle column, the subway must be in the rightmost column (column 3).
+
+So, we have:
+
+|             |     1     |     2      |      3      |
+| Food        | cauliflower | strawberry | nectarine   |
+| Transport   | bus        |            | subway      |
+
+The only remaining transport is the car, which must be in column 2.
+
+Here's the final solution:
+
+#############
+ 
+|             |     1     |     2      |      3      |
+| Food        | cauliflower | strawberry | nectarine   |
+| Transport   | bus        | car        | subway      |
+
+#############"	{'food': ['cauliflower', 'strawberry', 'nectarine'], 'transport': ['bus', 'car', 'subway']}	True	2	False
+Lv8-2x3-4	"After analyzing the clues, I've come up with the following solution:
+
+
+|               |    1    |     2     |     3     |
+| Job           |         |           |           |
+| Movie-Genre   |         |           |           |
+
+Solution:
+|               |    1    |     2     |     3     |
+| Job           | Analyst | Architect | Bartender |
+| Movie-Genre   | Horror  | Adventure | Zombie    |
+
+Here's how the solution satisfies all the clues:
+
+
+Clue 1: The bartender is not to the right of the architect
+=> True, since the bartender is in column 3 and the architect is in column 2.
+
+Clue 2: The bartender is on the right of the analyst
+=> True, since the bartender is in column 3 and the analyst is in column 1.
+
+Clue 3: The person watching adventure movies is somewhere between the person watching horror movies and the analyst
+=> True, since the person watching adventure movies (column 2) is between the person watching horror movies (column 1) and the analyst (column 1).
+
+
+The final solution table with '#############' around it:
+
+
+#############
+|               |    1    |     2     |     3     |
+| Job           | Analyst | Architect | Bartender |
+| Movie-Genre   | Horror  | Adventure | Zombie    |
+#############"	{'job': ['analyst', 'architect', 'bartender'], 'movie-genre': ['horror', 'adventure', 'zombie']}	True	2	False
+Lv8-2x3-5	"After analyzing the clues, I came up with the following solution:
+
+
+|               |    1     |      2      |     3     |
+| Movie-Genre   |          |             |           |
+| Pet           |          |             |           |
+
+
+Here's how I solved it:
+
+
+From clue 5, we know that the owner of the horse is to the left of the person watching time-travel movies. From clue 1, we also know that the owner of the horse is to the left of the owner of the turtle.
+
+
+Let's start by placing the horse in position 1 and the turtle in either position 2 or 3:
+
+
+|               |    1     |      2      |     3     |
+| Movie-Genre   |          |             |           |
+| Pet           | Horse    | Turtle     |           |
+
+
+Now, from clue 5, we know that the owner of the horse is to the left of the person watching time-travel movies. This means that time-travel must be in position 2 or 3.
+
+
+From clue 2, we know that time-travel and thriller are next to each other. Since time-travel can't be in position 1 (because of the horse), it must be in either position 2 or 3.
+
+
+If we place time-travel in position 2, then thriller would have to go in position 3. But this contradicts clue 4, which says that thriller is not to the right of adventure.
+
+
+So, let's try placing time-travel in position 3:
+
+
+|               |    1     |      2      |     3     |
+| Movie-Genre   |          |             | Time-travel|
+| Pet           | Horse    | Turtle     |           |
+
+
+Now, thriller must go in position 2. From clue 4, we know that adventure can't be to the right of thriller (which is already ruled out by time-travel being in position 3), so adventure must be in position 1.
+
+
+We have one more pet left: hedgehog. Clue 6 says that turtle is to the left of hedgehog. Since turtle is already in position 2, hedgehog must go in position 3... but wait, that's taken by time-travel!
+
+
+So, let's place hedgehog in a different table position:
+
+
+|               |    1     |      2      |     3     |
+| Movie-Genre   | Adventure|  Thriller | Time-travel|
+| Pet           | Horse    | Turtle     | Hedgehog  |
+
+
+And that's the solution!
+
+
+Here is the final answer with '#############' around it:
+
+
+################
+|               |    1     |      2      |     3     |
+| Movie-Genre   | Adventure|  Thriller | Time-travel|
+| Pet           | Horse    | Turtle     | Hedgehog  |
+################"	{'movie-genre': ['adventure', 'thriller', 'time-travel'], 'pet': ['horse', 'turtle', 'hedgehog']}	True	3	False
+Lv8-2x3-6	"Let's break down the clues and solve the puzzle step by step.
+
+From clue 4, we know the photographer is on the left of the dancer, so the photographer must be in column 1.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer |        |                |
+| Pet   |              |        |                |
+
+From clue 1, we know the owner of the horse is somewhere to the left of the dancer. Since the photographer is already in column 1, the owner of the horse must also be in column 1.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer |        |                |
+| Pet   | Horse        |        |                |
+
+From clue 2, we know the owner of the chinchilla is somewhere to the right of the dancer. Since the photographer and horse owner are already in column 1, the dancer must be in column 2.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        |                |
+
+Now, from clue 2 again, we know the owner of the chinchilla is somewhere to the right of the dancer. The only remaining column is column 3, so the owner of the chinchilla must be in column 3.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        | Chinchilla     |
+
+From clue 3, we know the security-guard is not to the right of the owner of the chinchilla. Since the owner of the chinchilla is in column 3, the security-guard must be either in column 1 or column 2.
+
+However, column 1 already has a job (photographer), and column 2 already has a job (dancer). Therefore, the security-guard must be in column 3, but this contradicts clue 3. This means our previous assumption was incorrect, and we need to re-evaluate.
+
+Let's go back to the point where we had:
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        |                |
+
+We can now try a different approach. From clue 3, we know the security-guard is not to the right of the owner of the chinchilla. This means the owner of the chinchilla must be in column 2 or 1. However, from clue 2, we know the owner of the chinchilla is somewhere to the right of the dancer. Therefore, the owner of the chinchilla must be in column 3, and the security-guard must be in column 1 or 2.
+
+Since column 1 already has a job (photographer), the security-guard must be in column 2. However, this would mean the security-guard is to the right of the photographer, but from clue 3, we know the security-guard is not to the right of the owner of the chinchilla. This means our previous assumption was incorrect again.
+
+Let's re-evaluate again. We can try a different approach:
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer |        |                |
+| Pet   | Horse        |        |                |
+
+From clue 4, we know the photographer is on the left of the dancer. This means the dancer must be in column 2 or 3.
+
+From clue 1, we know the owner of the horse is somewhere to the left of the dancer. Since the horse is already in column 1, the dancer cannot be in column 1. Therefore, the dancer must be in column 2 or 3.
+
+From clue 2, we know the owner of the chinchilla is somewhere to the right of the dancer. This means the dancer must be in column 2, and the owner of the chinchilla must be in column 3.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        | Chinchilla     |
+
+Now we can see that the security-guard is not to the right of the owner of the chinchilla, so it must be in column 1 or 2. However, column 1 already has a job (photographer), and column 2 already has a job (dancer). This means the security-guard must be on the same row as one of these jobs.
+
+Since we have already filled the pet for column 1, the security-guard cannot be in column 1. Therefore, the security-guard must be in column 2, but this would mean the security-guard is to the right of the photographer. This contradicts our previous assumption that the security-guard is not to the right of the owner of the chinchilla.
+
+Wait a minute! We made another incorrect assumption. Let's try again:
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        | Chinchilla     |
+
+We can see that the only remaining pet is the goat, which must be in column 2. We also know that the security-guard is not to the right of the owner of the chinchilla.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer | Security-Guard|
+| Pet   | Horse        | Goat   | Chinchilla     |
+
+No, this doesn't work. The security-guard is still to the right of the owner of the chinchilla.
+
+Let's try again:
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        |        | Chinchilla     |
+
+We can see that the only remaining pet is the goat, which must be in column 1 or 2. However, column 1 already has a pet (horse). Therefore, the goat must be in column 2.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer |                |
+| Pet   | Horse        | Goat   | Chinchilla     |
+
+Now we can see that the security-guard is not to the right of the owner of the chinchilla. This means the security-guard must be in column 1 or 2.
+
+Since column 1 already has a job (photographer), and column 2 already has a job (dancer), this would mean the security-guard is on the same row as one of these jobs.
+
+However, we can also see that the only remaining job is the security-guard. This means the security-guard must be in column 3.
+
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer | Security-Guard|
+| Pet   | Horse        | Goat   | Chinchilla     |
+
+This solution satisfies all the clues.
+
+
+#############
+|       |      1       |   2    |       3        |
+| Job   | Photographer | Dancer | Security-Guard|
+| Pet   | Horse        | Goat   | Chinchilla     |
+#############"	{'job': ['photographer', 'dancer', 'security-guard'], 'pet': ['horse', 'goat', 'chinchilla']}	True	6	True
+Lv8-2x3-7	"After analyzing the clues, I came up with the following solution:
+
+
+|            |      1      |    2     |   3    |
+| Beverage   |             |          |        |
+| Job        |             |          |        |
+
+## Solution Table ##
+
+
+|            |      1      |    2     |   3    |
+| Beverage   | Iced-Tea   | Almond-Milk | Sprite |
+| Job        | Pilot      | Writer     | Lawyer |
+
+#############"	{'beverage': ['iced-tea', 'almond-milk', 'sprite'], 'job': ['pilot', 'writer', 'lawyer']}	True	2	False
+Lv8-2x3-8	"After analyzing the clues, I came up with a solution:
+
+
+|               |    1    |    2     |    3     |
+| Nationality   |  Turkish | Egyptian |  Dutch    |
+| Sport         |  Skiing  | Climbing | Swimming  |
+
+Here's how the clues fit:
+
+* Clue 1: The person who's sport is skiing (Turkish) is to the left of the Dutch.
+* Clue 2: The person who's sport is climbing (Egyptian) is not to the right of the person who's sport is swimming (Dutch), so they must be in the middle.
+* Clue 3: The person who's sport is swimming (Dutch) is to the right of the Dutch, which means it can only be the Dutch themselves.
+* Clue 4: The Egyptian is not to the left of the person who's sport is swimming (Dutch), so they must be in the middle or right. But since the Dutch are already on the right, the Egyptian must be in the middle.
+
+So, here is the final solution table with '#############' around it:
+
+
+#############
+|               |    1    |    2     |    3     |
+| Nationality   |  Turkish | Egyptian |  Dutch    |
+| Sport         |  Skiing  | Climbing | Swimming  |
+#############"	{'nationality': ['turkish', 'egyptian', 'dutch'], 'sport': ['skiing', 'climbing', 'swimming']}	True	4	False
+Lv8-2x3-9	"After analyzing the clues, I came up with the following solution:
+
+
+#################
+|               |     1      |   2   |     3     |
+| Food          | Watermelon | Pear  | Raspberry |
+| Movie-Genre   | Action     | Drama | Romance    |
+#################
+
+
+Here's how I arrived at this solution:
+
+From clue 3, we know the person watching action movies is on the far left, so that goes in column 1.
+
+From clue 2, we know the person eating watermelon is to the left of the person eating raspberry. Since the person watching action movies is already on the far left, the person eating watermelon must be in column 1 as well.
+
+Now, from clue 4, we know the person watching drama movies is not to the right of the person eating pear. This means the person eating pear cannot be in column 1 (since the person watching drama would have to be in column 2 or 3), so it must be in column 2.
+
+Finally, from clue 1, we know the person eating pear is to the left of the person watching romance movies. Since the person eating pear is in column 2, the person watching romance movies must be in column 3.
+
+The only remaining food option is raspberry, which goes in column 3.
+
+Similarly, the only remaining movie-genre option is drama, which goes in column 2 (since action is already in column 1 and romance is in column 3).
+
+And that's how we arrive at the solution!"	{'food': ['watermelon', 'pear', 'raspberry'], 'movie-genre': ['action', 'drama', 'romance']}	True	6	True
+Lv8-2x3-10	"Let's break down the clues and fill in the table step by step.
+
+From clue 1, we know that the person drinking Sprite is in the middle, so we can start with that:
+
+|            |    1    |       2       |    3     |
+| Beverage   |         |  Sprite      |          |
+| Sport      |         |               |          |
+
+From clue 5, we know that the person who's sport is tennis is somewhere to the left of the person drinking Sprite. Since Sprite is in the middle, tennis must be on the left:
+
+|            |    1    |       2       |    3     |
+| Beverage   |         |  Sprite      |          |
+| Sport      | Tennis  |               |          |
+
+From clue 2, we know that the person who's sport is tennis is not to the left of the person drinking Mirinda. This means that Mirinda must be on the right:
+
+|            |    1    |       2       |    3     |
+| Beverage   |         |  Sprite      | Mirinda  |
+| Sport      | Tennis  |               |          |
+
+From clue 3 and 4, we know that the person who's sport is biathlon is somewhere to the right of the person who's sport is weightlifting. This means that weightlifting must be on the left:
+
+|            |    1    |       2       |    3     |
+| Beverage   |         |  Sprite      | Mirinda  |
+| Sport      | Tennis  | Weightlifting | Biathlon |
+
+Now, let's fill in the beverage for person 1. Since person 1 is drinking neither Sprite nor Mirinda (which are already assigned to persons 2 and 3), they must be drinking Juice:
+
+|            |    1    |       2       |    3     |
+| Beverage   | Juice   |  Sprite      | Mirinda  |
+| Sport      | Tennis  | Weightlifting | Biathlon |
+
+Here is the final solution table:
+
+
+#############
+|            |    1    |       2       |    3     |
+| Beverage   | Juice   |  Sprite      | Mirinda  |
+| Sport      | Tennis  | Weightlifting | Biathlon |
+#############"	{'beverage': ['juice', 'sprite', 'mirinda'], 'sport': ['tennis', 'weightlifting', 'biathlon']}	True	4	False

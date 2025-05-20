@@ -1,0 +1,313 @@
+Puzzle-ID	output	predicted_grid	formatting	score	correct
+Zebra_orig_1	"To solve this puzzle, we can use a process of elimination and deduction. Let's start by assigning variables to each unknown:
+
+- R: Red house
+- G: Green house
+- I: Ivory house
+- Y: Yellow house
+- B: Blue house
+
+- E: Englishman
+- S: Spaniard
+- U: Ukrainian
+- N: Norwegian
+- J: Japanese
+
+- D: Dog
+- F: Fox
+- Z: Zebra
+- H: Horse
+- S'l: Snails
+
+- C: Coffee
+- T: Tea
+- M: Milk
+- O: Orange juice
+- W: Water
+
+- OG: Old Gold
+- K: Kools
+- Cf: Chesterfields
+- LS: Lucky Strike
+- P: Parliaments
+
+Now let's use the given facts to fill in the table:
+
+|		|        R	|	G	|	I	|	Y	|	B	|
+| Nationality	|            	|            	|            	|           	|    japanese	|
+| Color		|          	|      blue	|         	|          	|          	|
+| Beverage	|          	|         	|          	|             	|           	|
+| Cigar		|          	| chesterfield	|    olg-gold	|             	|   parliament	|
+| Pet		|        	|          	|           	|        	|          	| 
+
+Now let's use the given facts to fill in the remaining information:
+
+1. The Norwegian lives in the first house (N -> R)
+2. The Englishman lives in the red house (E -> R)
+3. The Spaniard owns the dog (S -> D)
+4. Coffee is drunk in the green house (C -> G)
+5. The Ukrainian drinks tea (U -> T)
+6. The green house is immediately to the right of the ivory house (G -> I+1)
+7. The Old Gold smoker owns snails (OG -> S'l)
+8. Kools are smoked in the yellow house (K -> Y)
+9. Milk is drunk in the middle house (M -> I)
+10. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+11. The man who smokes Chesterfields lives in the house next to the man with the fox (Cf -> Y or B)
+12. Kools are smoked in a house next to the house where the horse is kept (K -> Y-1 or Y+1 or B-1 or B+1)
+13. The Lucky Strike smoker drinks orange juice (LS -> O)
+14. The Japanese smokes Parliaments (J -> P)
+15. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+
+From the 10th fact, we know the Norwegian lives either to the left or right of the blue house. Since the Norwegian lives in the red house (R), and the Japanese lives next to the blue house (J -> B-1 or B+1), the Norwegian cannot live to the right of the blue house (I+1). So, the Norwegian lives to the left of the blue house (I-1).
+
+From the 11th fact, the man who smokes Chesterfields lives in the house next to the man with the fox. Since the Norwegian lives in the red house (R), the man who smokes Chesterfields cannot live in the red house (Cf -> Y or B). Since the Japanese smokes Parliaments (J -> P), the man who smokes Chesterfields cannot live in the blue house (B) because there is only one brand of cigarettes per house. So, the man who smokes Chesterfields lives in the yellow house (Cf -> Y).
+
+From the 12th fact, Kools are smoked in a house next to the house where the horse is kept. Since the man who smokes Chesterfields lives in the yellow house (Cf -> Y), the horse cannot be in the yellow house (H -> I, Y, B). Since the Norwegian lives to the left of the blue house (I-1), the horse cannot be in the red house (H -> I, B). So, the horse is in the blue house (H -> B).
+
+From the 15th fact, the Norwegian lives next to the blue house (N -> I-1). Since the horse is in the blue house (H -> B), the Norwegian lives in the ivory house (N -> I).
+
+Now we know the nationality of the residents:
+- R: Englishman (E)
+- I: Norwegian (N)
+- Y: Spaniard (S)
+- B: Japanese (J)
+
+From the 6th fact, the green house is immediately to the right of the ivory house (G -> I+1). Since the Norwegian lives in the ivory house (N -> I), the green house is the yellow house (G -> Y).
+
+From the 4th fact, coffee is drunk in the green house (C -> G). Since the green house is the yellow house (G -> Y), the beverage in the yellow house is coffee (C -> Y).
+
+From the 8th fact, Kools are smoked in the yellow house (K -> Y). Since the beverage in the yellow house is coffee (C -> Y), the cigar in the yellow house is Kools (K -> Y).
+
+From the 13th fact, the Lucky Strike smoker drinks orange juice (LS -> O). Since the horse is in the blue house (H -> B), the Lucky Strike smoker cannot live in the blue house (LS -> I or Y). Since the Norwegian lives in the ivory house (N -> I), the Lucky Strike smoker lives in the yellow house (LS -> Y).
+
+From the 14th fact, the Japanese smokes Parliaments (J -> P). Since the Japanese lives in the blue house (J -> B), the cigar in the blue house is Parliaments (P -> B).
+
+From the 9th fact, milk is drunk in the middle house (M -> I). Since the Norwegian lives in the ivory house (N -> I), the beverage in the red house is not milk (C, T, or W). Since the Englishman lives in the red house (E -> R), the beverage in the red house is tea (T -> R).
+
+From the 3rd fact, the Spaniard owns the dog (S -> D). Since the Spaniard lives in the yellow house (S -> Y), the pet in the red house is not the dog (D -> I, B). Since the Norwegian lives in the ivory house (N -> I), the pet in the blue house is not the dog (D -> R). So, the dog is in the red house (D -> R).
+
+Now we have the final solution table:
+
+  |		|        R	|	Y	|	I	|	B	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+
+#############
+|		|        1	|	2	|	3	|	4	|	5	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+#############"	{'nationality': ['english', 'spanish', 'norwegian', 'japanese'], 'color': ['', 'yellow', '', ''], 'beverage': ['', '', 'tea', ''], 'cigar': ['', 'kools', 'old-gold', 'parliament'], 'pet': ['', '', '', '', 'dog']}	True	0	False
+Zebra_orig_2	"To solve this puzzle, we can use a process of elimination and deduction. Let's start by assigning variables to each unknown:
+
+- R: Red house
+- G: Green house
+- I: Ivory house
+- Y: Yellow house
+- B: Blue house
+
+- E: Englishman
+- S: Spaniard
+- U: Ukrainian
+- N: Norwegian
+- J: Japanese
+
+- D: Dog
+- F: Fox
+- Z: Zebra
+- H: Horse
+- S'l: Snails
+
+- C: Coffee
+- T: Tea
+- M: Milk
+- O: Orange juice
+- W: Water
+
+- OG: Old Gold
+- K: Kools
+- Cf: Chesterfields
+- LS: Lucky Strike
+- P: Parliaments
+
+Now let's use the given facts to fill in the table:
+
+|		|        1	|	2	|	3	|	4	|	5	|
+| Nationality	|            	|            	|            	|           	|    japanese	|
+| Color		|          	|      blue	|         	|          	|          	|
+| Beverage	|          	|         	|          	|             	|           	|
+| Cigar		|          	| chesterfield	|    olg-gold	|             	|   parliament	|
+| Pet		|        	|          	|           	|        	|          	| 
+
+Now let's use the given facts to fill in the remaining information:
+
+1. The Norwegian lives in the first house (N -> R)
+2. The Englishman lives in the red house (E -> R)
+3. The Spaniard owns the dog (S -> D)
+4. Coffee is drunk in the green house (C -> G)
+5. The Ukrainian drinks tea (U -> T)
+6. The green house is immediately to the right of the ivory house (G -> I+1)
+7. The Old Gold smoker owns snails (OG -> S'l)
+8. Kools are smoked in the yellow house (K -> Y)
+9. Milk is drunk in the middle house (M -> I)
+10. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+11. The man who smokes Chesterfields lives in the house next to the man with the fox (Cf -> Y or B)
+12. Kools are smoked in a house next to the house where the horse is kept (K -> Y-1 or Y+1 or B-1 or B+1)
+13. The Lucky Strike smoker drinks orange juice (LS -> O)
+14. The Japanese smokes Parliaments (J -> P)
+15. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+
+From the 10th fact, we know the Norwegian lives either to the left or right of the blue house. Since the Norwegian lives in the red house (R), and the Japanese lives next to the blue house (J -> B-1 or B+1), the Norwegian cannot live to the right of the blue house (I+1). So, the Norwegian lives to the left of the blue house (I-1).
+
+From the 11th fact, the man who smokes Chesterfields lives in the house next to the man with the fox. Since the Norwegian lives in the red house (R), the man who smokes Chesterfields cannot live in the red house (Cf -> Y or B). Since the Japanese smokes Parliaments (J -> P), the man who smokes Chesterfields cannot live in the blue house (B) because there is only one brand of cigarettes per house. So, the man who smokes Chesterfields lives in the yellow house (Cf -> Y).
+
+From the 12th fact, Kools are smoked in a house next to the house where the horse is kept. Since the man who smokes Chesterfields lives in the yellow house (Cf -> Y), the horse cannot be in the yellow house (H -> I, Y, B). Since the Norwegian lives to the left of the blue house (I-1), the horse cannot be in the red house (H -> I, B). So, the horse is in the blue house (H -> B).
+
+From the 15th fact, the Norwegian lives next to the blue house (N -> I-1). Since the horse is in the blue house (H -> B), the Norwegian lives in the ivory house (N -> I).
+
+Now we know the nationality of the residents:
+- R: Englishman (E)
+- I: Norwegian (N)
+- Y: Spaniard (S)
+- B: Japanese (J)
+
+From the 6th fact, the green house is immediately to the right of the ivory house (G -> I+1). Since the Norwegian lives in the ivory house (N -> I), the green house is the yellow house (G -> Y).
+
+From the 4th fact, coffee is drunk in the green house (C -> G). Since the green house is the yellow house (G -> Y), the beverage in the yellow house is coffee (C -> Y).
+
+From the 8th fact, Kools are smoked in the yellow house (K -> Y). Since the beverage in the yellow house is coffee (C -> Y), the cigar in the yellow house is Kools (K -> Y).
+
+From the 13th fact, the Lucky Strike smoker drinks orange juice (LS -> O). Since the horse is in the blue house (H -> B), the Lucky Strike smoker cannot live in the blue house (LS -> I or Y). Since the Norwegian lives in the ivory house (N -> I), the Lucky Strike smoker lives in the yellow house (LS -> Y).
+
+From the 14th fact, the Japanese smokes Parliaments (J -> P). Since the Japanese lives in the blue house (J -> B), the cigar in the blue house is Parliaments (P -> B).
+
+From the 9th fact, milk is drunk in the middle house (M -> I). Since the Norwegian lives in the ivory house (N -> I), the beverage in the red house is not milk (C, T, or W). Since the Englishman lives in the red house (E -> R), the beverage in the red house is tea (T -> R).
+
+From the 3rd fact, the Spaniard owns the dog (S -> D). Since the Spaniard lives in the yellow house (S -> Y), the pet in the red house is not the dog (D -> I, B). Since the Norwegian lives in the ivory house (N -> I), the pet in the blue house is not the dog (D -> R). So, the dog is in the red house (D -> R).
+
+Now we have the final solution table:
+
+  |		|        R	|	Y	|	I	|	B	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+
+#############
+|		|        1	|	2	|	3	|	4	|	5	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+#############"	{'nationality': ['english', 'spanish', 'norwegian', 'japanese'], 'color': ['', 'yellow', '', ''], 'beverage': ['', '', 'tea', ''], 'cigar': ['', 'kools', 'old-gold', 'parliament'], 'pet': ['', '', '', '', 'dog']}	True	0	False
+Zebra_orig_3	"To solve this puzzle, we can use a process of elimination and deduction. Let's start by assigning variables to each unknown:
+
+- R: Red house
+- G: Green house
+- I: Ivory house
+- Y: Yellow house
+- B: Blue house
+
+- E: Englishman
+- S: Spaniard
+- U: Ukrainian
+- N: Norwegian
+- J: Japanese
+
+- D: Dog
+- F: Fox
+- Z: Zebra
+- H: Horse
+- S'l: Snails
+
+- C: Coffee
+- T: Tea
+- M: Milk
+- O: Orange juice
+- W: Water
+
+- OG: Old Gold
+- K: Kools
+- Cf: Chesterfields
+- LS: Lucky Strike
+- P: Parliaments
+
+Now let's use the given facts to fill in the table:
+
+|		|        R	|	G	|	I	|	Y	|	B	|
+| Nationality	|            	|            	|            	|           	|    japanese	|
+| Color		|          	|      blue	|         	|          	|          	|
+| Beverage	|          	|         	|          	|             	|           	|
+| Cigar		|          	| chesterfield	|    olg-gold	|             	|   parliament	|
+| Pet		|        	|          	|           	|        	|          	| 
+
+Now let's use the given facts to fill in the remaining information:
+
+1. The Norwegian lives in the first house (N -> R)
+2. The Englishman lives in the red house (E -> R)
+3. The Spaniard owns the dog (S -> D)
+4. Coffee is drunk in the green house (C -> G)
+5. The Ukrainian drinks tea (U -> T)
+6. The green house is immediately to the right of the ivory house (G -> I+1)
+7. The Old Gold smoker owns snails (OG -> S'l)
+8. Kools are smoked in the yellow house (K -> Y)
+9. Milk is drunk in the middle house (M -> I)
+10. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+11. The man who smokes Chesterfields lives in the house next to the man with the fox (Cf -> Y or B)
+12. Kools are smoked in a house next to the house where the horse is kept (K -> Y-1 or Y+1 or B-1 or B+1)
+13. The Lucky Strike smoker drinks orange juice (LS -> O)
+14. The Japanese smokes Parliaments (J -> P)
+15. The Norwegian lives next to the blue house (N -> I-1 or I+1)
+
+From the 10th fact, we know the Norwegian lives either to the left or right of the blue house. Since the Norwegian lives in the red house (R), and the Japanese lives next to the blue house (J -> B-1 or B+1), the Norwegian cannot live to the right of the blue house (I+1). So, the Norwegian lives to the left of the blue house (I-1).
+
+From the 11th fact, the man who smokes Chesterfields lives in the house next to the man with the fox. Since the Norwegian lives in the red house (R), the man who smokes Chesterfields cannot live in the red house (Cf -> Y or B). Since the Japanese smokes Parliaments (J -> P), the man who smokes Chesterfields cannot live in the blue house (B) because there is only one brand of cigarettes per house. So, the man who smokes Chesterfields lives in the yellow house (Cf -> Y).
+
+From the 12th fact, Kools are smoked in a house next to the house where the horse is kept. Since the man who smokes Chesterfields lives in the yellow house (Cf -> Y), the horse cannot be in the yellow house (H -> I, Y, B). Since the Norwegian lives to the left of the blue house (I-1), the horse cannot be in the red house (H -> I, B). So, the horse is in the blue house (H -> B).
+
+From the 15th fact, the Norwegian lives next to the blue house (N -> I-1). Since the horse is in the blue house (H -> B), the Norwegian lives in the ivory house (N -> I).
+
+Now we know the nationality of the residents:
+- R: Englishman (E)
+- I: Norwegian (N)
+- Y: Spaniard (S)
+- B: Japanese (J)
+
+From the 6th fact, the green house is immediately to the right of the ivory house (G -> I+1). Since the Norwegian lives in the ivory house (N -> I), the green house is the yellow house (G -> Y).
+
+From the 4th fact, coffee is drunk in the green house (C -> G). Since the green house is the yellow house (G -> Y), the beverage in the yellow house is coffee (C -> Y).
+
+From the 8th fact, Kools are smoked in the yellow house (K -> Y). Since the beverage in the yellow house is coffee (C -> Y), the cigar in the yellow house is Kools (K -> Y).
+
+From the 13th fact, the Lucky Strike smoker drinks orange juice (LS -> O). Since the horse is in the blue house (H -> B), the Lucky Strike smoker cannot live in the blue house (LS -> I or Y). Since the Norwegian lives in the ivory house (N -> I), the Lucky Strike smoker lives in the yellow house (LS -> Y).
+
+From the 14th fact, the Japanese smokes Parliaments (J -> P). Since the Japanese lives in the blue house (J -> B), the cigar in the blue house is Parliaments (P -> B).
+
+From the 9th fact, milk is drunk in the middle house (M -> I). Since the Norwegian lives in the ivory house (N -> I), the beverage in the red house is not milk (C, T, or W). Since the Englishman lives in the red house (E -> R), the beverage in the red house is tea (T -> R).
+
+From the 3rd fact, the Spaniard owns the dog (S -> D). Since the Spaniard lives in the yellow house (S -> Y), the pet in the red house is not the dog (D -> I, B). Since the Norwegian lives in the ivory house (N -> I), the pet in the blue house is not the dog (D -> R). So, the dog is in the red house (D -> R).
+
+Now we have the final solution table:
+
+  |		|        R	|	Y	|	I	|	B	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+
+#############
+|		|        1	|	2	|	3	|	4	|	5	|
+| Nationality	| english	|	spanish	|	norwegian	|	japanese	|
+| Color		|          	|      yellow	|         	|          	|
+| Beverage	|          	|         	|      tea	|          	|
+| Cigar		|          	|      kools	|    old-gold	|   parliament	|
+| Pet		|        	|          	|           	|          	|  dog	|
+#############"	{'nationality': ['english', 'spanish', 'norwegian', 'japanese'], 'color': ['', 'yellow', '', ''], 'beverage': ['', '', 'tea', ''], 'cigar': ['', 'kools', 'old-gold', 'parliament'], 'pet': ['', '', '', '', 'dog']}	True	0	False
